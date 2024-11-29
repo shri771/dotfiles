@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Define the key remapping
+cat <<EOF > ~/.Xmodmap
+clear Lock
+keysym super+1 = super+i
+EOF
+
+# Apply the key remapping
+xmodmap ~/.Xmodmap
+
+# Log the action
+echo "Keys remapped using xmodmap at $(date)" >> /tmp/key_remap.log
+
