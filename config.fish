@@ -11,7 +11,7 @@ if status is-interactive
 
 
     ## oh-my-posh  theme ##
-    ## oh-my-posh init fish --config /home/shri/Terminal-themes/larserikfinholt.omp.json | source
+     oh-my-posh init fish --config /home/shri/Terminal-themes/larserikfinholt.omp.json | source
 
 
     ## nightly-colors ##
@@ -57,6 +57,6 @@ if status is-interactive
 
 end
 
-##oh-my-posh init fish | source
+oh-my-posh init fish | source
 
-eval "$(starship init fish)"
+##eval "$(starship init fish)"
