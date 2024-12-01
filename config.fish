@@ -8,10 +8,24 @@ if status is-interactive
     alias aptup='sudo apt update && sudo apt upgrade'
     alias fishcon='nvim ~/.config/fish/config.fish'
     alias nv='nvim'
+    alias aptrm='sudo apt uninstall'
+    alias aptins='sudo apt install'
+    alias fishpth='~/.config/fish/config.fish'
+    alias awcon='nvim /home/shri/.config/awesome/rc.lua'
+    alias ..='cd ..'
+    alias .='cd'
+    alias add='git add'
+    alias commit='git commit'
+    alias push='git push'
+    alias pull='git pull'
+
+
+
+
 
 
     ## oh-my-posh  theme ##
-     oh-my-posh init fish --config /home/shri/Terminal-themes/larserikfinholt.omp.json | source
+    oh-my-posh init fish --config /home/shri/Terminal-themes/kushal.omp.json | source
 
 
     ## nightly-colors ##
@@ -59,4 +73,4 @@ end
 
 oh-my-posh init fish | source
 
-##eval "$(starship init fish)"
+#eval "$(starship init fish)"
