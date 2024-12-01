@@ -9,4 +9,3 @@ else
   # Set "Always on Top"
   xprop -id $ACTIVE_WIN -f _NET_WM_STATE 32a -set _NET_WM_STATE_ABOVE
 fi
-##while set -

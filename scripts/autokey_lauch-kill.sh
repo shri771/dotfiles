@@ -11,4 +11,3 @@ sleep 3
 
 # Kill the application
 kill $APP_PID
-
