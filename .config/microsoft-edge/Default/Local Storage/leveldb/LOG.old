@@ -1,0 +1,6 @@
+2024/12/01-01:34:39.552 4 Reusing MANIFEST /home/shri/.config/microsoft-edge/Default/Local Storage/leveldb/MANIFEST-000001
+2024/12/01-01:34:39.556 4 Recovering log #107
+2024/12/01-01:34:39.556 4 Reusing old log /home/shri/.config/microsoft-edge/Default/Local Storage/leveldb/000107.log 
+2024/12/01-01:34:51.287 4 Level-0 table #112: started
+2024/12/01-01:34:51.294 4 Level-0 table #112: 60325 bytes OK
+2024/12/01-01:34:51.300 4 Delete type=0 #107

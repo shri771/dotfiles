@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://pricehistory.app/assets/css/bootstrap.css">
+    <!-- Custom CSS -->
+    <style>
+        .form-check .form-check-input {
+            height: 1rem;
+            width: 1rem;
+            position: relative;
+            top: 0.1rem;
+        }
+
+        .form-check .form-check-label {
+            padding-left: 0.75rem;
+        }
+
+        * {
+            transition: 0.3s;
+        }
+
+        .join-button {
+            color: white;
+            border-radius: 1rem;
+            padding: 0.25rem 1rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, .075) !important;
+            display: inline-block;
+            margin: 0.125rem 0.25rem;
+        }
+
+        .join-button:hover, .join-button:active {
+            color: white;
+            text-decoration: none;
+        }
+
+        .telegram-join {
+            background-color: #0088cc;
+        }
+
+        .whatsapp-join {
+            background-color: #008037;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="h3 mb-4 mt-3">Price History - Extension</h1>
+            </div>
+            <div class="col-12">
+                <a href="https://t.me/PriceHistory_deals" target="_blank" class="join-button telegram-join">Join
+                    Pricehistory Deals on
+                    Telegram</a>
+                <a href="https://pricehistory.app/whatsapp" target="_blank" class="join-button whatsapp-join">Join
+                    Pricehistory Deals on
+                    WhatsApp</a>
+            </div>
+            <div class="col-12">
+                <h2 class="mb-4 h4">Settings and Options</h2>
+                <div class="row">
+
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="true" id="ph-ext-enable">
+                            <label class="form-check-label font-weight-bold" for="ph-ext-enable">
+                                Enable Charts
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 input-column">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="true"
+                                id="ph-ext-enable-floating-button">
+                            <label class="form-check-label" for="ph-ext-enable-floating-button">
+                                Floating icon
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 input-column">
+                        <div class="">
+                            <select class="form-select" value="" id="ph-ext-floating-button-location">
+                                <option value="top-right" selected>Top Right</option>
+                                <option value="top-left">Top Left</option>
+                                <option value="bottom-right">Bottom Right</option>
+                                <option value="bottom-left">Bottom Left</option>
+                            </select>
+                            <label for="ph-ext-floating-button-location">
+                                Floating Position
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 text-right mb-3">
+                        <button class="btn btn-dark py-1 mt-2" id="ph-ext-save" disabled>Save</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="settings.js"></script>
+</body>
+
+</html>

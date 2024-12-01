@@ -1,0 +1,45 @@
+[ActivityManager]
+_k_friendly_name=Activity Manager
+switch-to-activity-444f645b-8b12-40c8-af1d-a37870b896af=none,none,Switch to activity "Default"
+
+[KDE Keyboard Layout Switcher]
+Switch to Next Keyboard Layout=Meta+Alt+K,none,Switch to Next Keyboard Layout
+_k_friendly_name=Keyboard Layout Switcher
+
+[klipper]
+_k_friendly_name=Klipper
+clear-history=none,none,Clear Clipboard History
+clipboard_action=Meta+Ctrl+X,Meta+Ctrl+X,Automatic Action Popup Menu
+cycleNextAction=none,none,Next History Item
+cyclePrevAction=none,none,Previous History Item
+edit_clipboard=none,none,Edit Contents…
+repeat_action=Meta+Ctrl+R,Meta+Ctrl+R,Manually Invoke Action on Current Clipboard
+show-barcode=none,none,Show Barcode…
+show-on-mouse-pos=Meta+V,Meta+V,Show Items at Mouse Position
+
+[ksmserver]
+Lock Session=Meta+L\tScreensaver,none,Lock Session
+_k_friendly_name=Session Management
+
+[org.kde.krunner.desktop]
+RunClipboard=Alt+Shift+F2,Alt+Shift+F2,Run command on clipboard contents
+_k_friendly_name=KRunner
+_launch=Alt+Space\tAlt+F2\tSearch,Alt+Space\tAlt+F2\tSearch,KRunner
+
+[org.kde.plasma.emojier.desktop]
+_k_friendly_name=Emoji Selector
+_launch=Meta+.\tMeta+Ctrl+Alt+Shift+Space,Meta+.\tMeta+Ctrl+Alt+Shift+Space,Emoji Selector
+
+[plasmashell]
+_k_friendly_name=Activity switching
+next activity=Meta+Tab,Meta+Tab,Walk through activities
+previous activity=Meta+Shift+Tab,Meta+Shift+Tab,Walk through activities (Reverse)
+
+[systemsettings.desktop]
+_k_friendly_name=System Settings
+_launch=Tools,Tools,System Settings
+kcm-kscreen=none,none,Display Configuration
+kcm-lookandfeel=none,none,Global Theme
+kcm-users=none,none,Users
+powerdevilprofilesconfig=none,none,Energy Saving
+screenlocker=none,none,Screen Locking

@@ -1,0 +1,946 @@
+00:00:00.000300 main     VirtualBox XPCOM Server 7.1.4 r165100 linux.amd64 (Oct 10 2024 18:25:43) release log
+00:00:00.000303 main     Log opened 2024-11-30T12:23:25.169594000Z
+00:00:00.000304 main     Build Type: release
+00:00:00.000306 main     OS Product: Linux
+00:00:00.000306 main     OS Release: 6.8.0-49-generic
+00:00:00.000307 main     OS Version: #49-Ubuntu SMP PREEMPT_DYNAMIC Mon Nov  4 02:06:24 UTC 2024
+00:00:00.000328 main     DMI Product Name: BRN-FXXC
+00:00:00.000332 main     DMI Product Version: M1060
+00:00:00.000336 main     Firmware type: UEFI
+00:00:00.000978 main     Secure Boot: Disabled
+00:00:00.001030 main     Host RAM: 15717MB (15.3GB) total, 10094MB (9.8GB) available
+00:00:00.001032 main     Executable: /usr/lib/virtualbox/VBoxSVC
+00:00:00.001032 main     Process ID: 106503
+00:00:00.001032 main     Package type: LINUX_64BITS_UBUNTU_24_04
+00:00:00.002597 main     IPC socket path: /tmp/.vbox-shri-ipc/ipcd
+00:00:00.009626 DCon01   VirtualBox: object creation starts
+00:00:00.009709 DCon01   Home directory: '/home/shri/.config/VirtualBox'
+00:00:00.010008 DCon01   Loading settings file "/home/shri/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+00:00:00.010866 DCon01   USB: Unknown USB device detected (idVendor: 0x8087, idProduct: 0x0026)
+00:00:00.010936 DCon01   Successfully initialised host USB using sysfs
+00:00:00.017734 DCon01   NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+00:00:00.018550 DCon01   HostDnsMonitor: initializing
+00:00:00.018785 DCon01   NAT: resolv.conf: nameserver 127.0.0.53
+00:00:00.018792 DCon01   NAT: resolv.conf: ignoring "options edns0 trust-ad"
+00:00:00.018799 DCon01   HostDnsMonitor: updating information
+00:00:00.018812 DCon01   HostDnsMonitor: old information
+00:00:00.018814 DCon01     no server entries
+00:00:00.018816 DCon01     no domain set
+00:00:00.018817 DCon01     no search string entries
+00:00:00.018818 DCon01   HostDnsMonitor: new information
+00:00:00.018819 DCon01     server 1: 127.0.0.53
+00:00:00.018821 DCon01     domain: .
+00:00:00.018822 DCon01     search string 1: .
+00:00:00.020506 DCon01   VD: VDInit finished with VINF_SUCCESS
+00:00:00.022717 DCon01   Platform architecture set to 'x86'
+00:00:00.022967 DCon01   Loading settings file "/home/shri/VirtualBox VMs/ubuntu2/ubuntu2.vbox" with version "1.19-linux"
+00:00:00.023058 DCon01   Platform architecture set to 'x86'
+00:00:00.023156 DCon01   Platform architecture set to 'x86'
+00:00:00.023368 DCon01   Loading settings file "/home/shri/VirtualBox VMs/mint-c/mint-c.vbox" with version "1.19-linux"
+00:00:00.023429 DCon01   Platform architecture set to 'x86'
+00:00:00.023488 DCon01   Platform architecture set to 'x86'
+00:00:00.023600 DCon01   Loading settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:00:00.023660 DCon01   Platform architecture set to 'x86'
+00:00:00.024395 DCon01   OCI: Local config file '/home/shri/.config/VirtualBox/oci_config' does not exist
+00:00:00.024401 DCon01   OCI: Original config file '/home/shri/.oci/config' does not exist
+00:00:00.024402 DCon01   OCI: Reading profiles finished with status NS_OK
+00:00:00.024405 DCon01   ExtPack: Created cloud provider 'OCI' (hrc=NS_OK)
+00:00:00.024425 DCon01   VirtualBox: object created
+00:00:00.121646 DCon03   Saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+00:00:00.126665 DCon03   Finished saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml"
+00:00:00.126915 DCon03   Saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+00:00:00.130579 DCon03   Finished saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml"
+00:00:00.130789 DCon03   Saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+00:00:00.134172 DCon03   Finished saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml"
+00:00:00.486660 DCon04   ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+00:00:00.550499 DCon05   ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+00:00:03.245708 DCon01   Launched VM: 2416456336 pid: 106568 (0x1a048) frontend: GUI/Qt name: arch
+00:00:03.271117 DCon04   ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+00:00:03.283615 DCon03   ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+00:00:03.437028 DCon06   Platform architecture set to 'x86'
+00:00:03.449741 DCon02   ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+00:00:03.453066 DCon07   ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+00:00:03.754294 DCon07   Load [/usr/lib/virtualbox/ExtensionPacks/Oracle_VirtualBox_Extension_Pack/linux.amd64/VBoxHostWebcam.so] vrc=VINF_SUCCESS
+00:00:03.880453 DCon07   ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+00:00:03.912290 DCon02   NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+00:00:03.973052 DCon06   ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+00:00:03.975553 DCon06   ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+00:00:03.983702 DCon02   ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Starting)}, preserve=false aResultDetail=0
+00:00:04.068465 DCon02   ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={7d510820-a678-4730-a862-818dcd3fbed0} aComponent={MediumWrap} aText={Property 'CRYPT/KeyId' does not exist}, preserve=false aResultDetail=0
+00:00:04.069112 DCon02   ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={7d510820-a678-4730-a862-818dcd3fbed0} aComponent={MediumWrap} aText={Property 'CRYPT/KeyId' does not exist}, preserve=false aResultDetail=0
+00:00:04.069909 DCon02   HostDnsMonitorProxy::GetDomainName: .
+00:00:04.069963 DCon02   HostDnsMonitorProxy::GetNameServers:
+00:00:04.069965 DCon02     name server 1: 127.0.0.53
+00:00:04.070009 DCon02   HostDnsMonitorProxy::GetSearchStrings:
+00:00:04.070010 DCon02     search string 1: .
+00:00:04.121787 DCon07   ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+00:00:04.139888 DCon02   ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+00:00:04.151591 DCon06   ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+00:00:04.207548 DCon06   Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:00:04.215797 DCon06   Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:00:04.221920 DCon07   ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+00:00:04.237276 DCon07   ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+00:00:11.420944 DCon01   Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:00:11.427753 DCon01   Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:00:12.116601 DCon10   Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:00:12.123267 DCon10   Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:00:22.724585 DCon07   Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:00:22.748913 DCon07   Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:00:25.205518 DCon07   Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:00:25.212220 DCon07   Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:00:27.611697 DCon05   Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:00:27.618329 DCon05   Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:38:28.340039 DCon86   Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:38:28.345539 DCon86   Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:45:23.106829 DCon101  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:45:23.113553 DCon101  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:50:45.714186 DCon116  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:50:45.720816 DCon116  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:50:53.506797 DCon117  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:50:53.513909 DCon117  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:52:00.712311 DCon117  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:52:00.719059 DCon117  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:52:01.311269 DCon112  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:52:01.317911 DCon112  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:54:19.514003 DCon125  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:54:19.521091 DCon125  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:54:20.786682 DCon117  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:54:20.793663 DCon117  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:54:55.413489 DCon125  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:54:55.420122 DCon125  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:54:56.032616 DCon125  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:54:56.039336 DCon125  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:55:17.706454 DCon128  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:55:17.713174 DCon128  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:57:00.378437 DCon133  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:57:00.385331 DCon133  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:57:06.016106 DCon135  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:57:06.022781 DCon135  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:58:30.842741 DCon140  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:58:30.849467 DCon140  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+00:58:47.914048 DCon127  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+00:58:47.922067 DCon127  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:03:41.545920 DCon153  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:03:41.552545 DCon153  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:03:52.303943 DCon148  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:03:52.327806 DCon148  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:11:48.788939 DCon172  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:11:48.814822 DCon172  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:11:58.512583 DCon171  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:11:58.536264 DCon171  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:13:31.383553 DCon171  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:13:31.390325 DCon171  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:14:34.097134 DCon180  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:14:34.121221 DCon180  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:19:03.221863 DCon189  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:19:03.246480 DCon189  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:19:04.224585 DCon189  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:19:04.231458 DCon189  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:19:04.985230 DCon187  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:19:04.992082 DCon187  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:19:16.535519 DCon177  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:19:16.559763 DCon177  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:19:51.912781 DCon189  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:19:51.919749 DCon189  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:21:28.912919 DCon193  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:21:28.919524 DCon193  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:21:31.723795 DCon193  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:21:31.730546 DCon193  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:26:07.377518 DCon206  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:26:07.384403 DCon206  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:26:25.915094 DCon198  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:26:25.921869 DCon198  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:29:01.811856 DCon213  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:29:01.837314 DCon213  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:29:09.546352 DCon217  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:29:09.549965 DCon217  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:29:51.929635 DCon213  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:29:51.954206 DCon213  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:30:02.614282 DCon212  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:30:02.618561 DCon212  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:30:19.002056 DCon220  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:30:19.008834 DCon220  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:30:26.215088 DCon212  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:30:26.221721 DCon212  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:30:38.011318 DCon213  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:30:38.035347 DCon213  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:30:49.777623 DCon213  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:30:49.782060 DCon213  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:32:24.215013 DCon212  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:32:24.221834 DCon212  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:33:52.923992 DCon212  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:33:52.928410 DCon212  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:40:25.897592 DCon244  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:40:25.904449 DCon244  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:40:30.114760 DCon240  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:40:30.121478 DCon240  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:40:32.321582 DCon240  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:40:32.328333 DCon240  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:40:35.582439 DCon241  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:40:35.589389 DCon241  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:40:52.044115 DCon241  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:40:52.050739 DCon241  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:41:00.724058 DCon241  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:41:00.748336 DCon241  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:41:08.812430 DCon248  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:41:08.819166 DCon248  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:42:08.131023 DCon253  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:42:08.137894 DCon253  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:44:37.912632 DCon257  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:44:37.919915 DCon257  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:44:57.113354 DCon259  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:44:57.120252 DCon259  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:45:33.714233 DCon261  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:45:33.720866 DCon261  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:45:36.113107 DCon260  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:45:36.119844 DCon260  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:45:36.431295 DCon260  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:45:36.438005 DCon260  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:45:37.293367 DCon259  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:45:37.300113 DCon259  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:46:24.043120 DCon259  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:46:24.068071 DCon259  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:47:21.592444 DCon268  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:47:21.599431 DCon268  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:47:42.530735 DCon270  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:47:42.537478 DCon270  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:48:27.913282 DCon272  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:48:27.920077 DCon272  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:48:29.198179 DCon265  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:48:29.204904 DCon265  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:48:32.592622 DCon266  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:48:32.597082 DCon266  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:48:36.912298 DCon271  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:48:36.919064 DCon271  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:49:14.214077 DCon272  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:49:14.220848 DCon272  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:49:52.388555 DCon272  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:49:52.395267 DCon272  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:50:53.206337 DCon266  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:50:53.213111 DCon266  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:51:06.813326 DCon275  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:51:06.820041 DCon275  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:52:24.613250 DCon272  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:52:24.637030 DCon272  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:52:52.113811 DCon278  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:52:52.120811 DCon278  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:53:44.801536 DCon281  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:53:44.808340 DCon281  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:54:10.618337 DCon285  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:54:10.624997 DCon285  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:54:36.239121 DCon283  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:54:36.243506 DCon283  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:54:36.636239 DCon287  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:54:36.640724 DCon287  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:55:24.884674 DCon289  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:55:24.891378 DCon289  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:55:26.112507 DCon286  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:55:26.119192 DCon286  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:56:12.135089 DCon286  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:56:12.143055 DCon286  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:56:12.633766 DCon286  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:56:12.640447 DCon286  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:58:03.108830 DCon291  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:58:03.115775 DCon291  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:58:04.215828 DCon288  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:58:04.222621 DCon288  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:58:08.743920 DCon289  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:58:08.750769 DCon289  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:58:11.117484 DCon291  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:58:11.141550 DCon291  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:58:12.694749 DCon289  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:58:12.701432 DCon289  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:58:14.328773 DCon289  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:58:14.335806 DCon289  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:58:18.812363 DCon289  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:58:18.836148 DCon289  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:58:20.931050 DCon288  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:58:20.937837 DCon288  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:58:30.617036 DCon294  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:58:30.623624 DCon294  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:58:32.588424 DCon296  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:58:32.592842 DCon296  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:58:52.532580 DCon297  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:58:52.557272 DCon297  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:58:52.908624 DCon298  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:58:52.915315 DCon298  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:58:53.709931 DCon296  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:58:53.716631 DCon296  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:58:54.793856 DCon296  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:58:54.800450 DCon296  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+01:58:55.731737 DCon297  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+01:58:55.739195 DCon297  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:00:59.315187 DCon303  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:00:59.321964 DCon303  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:01:34.991417 DCon303  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:01:35.016151 DCon303  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:01:39.312543 DCon300  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:01:39.321959 DCon300  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:02:12.944623 DCon307  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:02:12.951437 DCon307  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:02:13.514564 DCon305  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:02:13.521277 DCon305  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:02:15.394276 DCon303  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:02:15.400954 DCon303  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:02:18.813874 DCon302  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:02:18.820557 DCon302  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:02:19.442421 DCon308  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:02:19.449257 DCon308  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:02:23.880599 DCon302  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+02:02:33.905528 DCon310  Saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+02:02:33.909399 DCon310  Finished saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml"
+02:02:33.909498 DCon310  Saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+02:02:33.912809 DCon310  Finished saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml"
+02:02:33.912967 DCon310  Saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+02:02:33.918107 DCon310  Finished saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml"
+02:02:34.266778 DCon310  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:02:34.356697 DCon312  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Paused)}, preserve=false aResultDetail=0
+02:02:39.420433 DCon310  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:02:39.434494 DCon310  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:02:39.441571 DCon310  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:03:21.643766 DCon302  Saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+02:03:21.668533 DCon302  Finished saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml"
+02:03:23.744832 DCon310  Saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+02:03:23.751437 DCon310  Finished saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml"
+02:03:34.678846 DCon318  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+02:03:34.687819 DCon316  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:03:34.694162 DCon316  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:03:37.009199 DCon318  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+02:03:37.012838 DCon318  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:03:37.021049 DCon312  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Paused)}, preserve=false aResultDetail=0
+02:03:41.923641 DCon314  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:03:41.948433 DCon314  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:03:41.955780 DCon313  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:03:41.971348 DCon310  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:03:41.973532 DCon322  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+02:03:41.978402 DCon310  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:03:42.159854 DCon322  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:03:42.170082 DCon322  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Saving)}, preserve=false aResultDetail=0
+02:03:53.684821 DCon316  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:03:53.689089 DCon316  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:03:53.691917 DCon318  ERROR [COM]: aRC=VBOX_E_IPRT_ERROR (0x80bb0005) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={Saved screenshot thumbnail data is not available (VERR_NOT_SUPPORTED)}, preserve=false aResultDetail=-37
+02:03:53.700331 DCon318  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+02:03:53.712165 DCon318  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:03:53.713458 DCon318  ERROR [COM]: aRC=VBOX_E_IPRT_ERROR (0x80bb0005) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={Saved screenshot thumbnail data is not available (VERR_NOT_SUPPORTED)}, preserve=false aResultDetail=-37
+02:03:53.722731 DCon318  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Saved)}, preserve=false aResultDetail=0
+02:03:53.778631 SaveState Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:03:53.783261 SaveState Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:03:53.786398 DCon322  ERROR [COM]: aRC=NS_ERROR_INVALID_ARG (0x80070057) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={SessionMachine} aText={Properties with TRANSIENT or TRANSRESET flag cannot be set or modified if VM is not running}, preserve=false aResultDetail=0
+02:03:53.804305 DCon322  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:03:53.826273 DCon322  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:03:53.832942 DCon322  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:03:54.113361 DCon322  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:03:54.134334 DCon322  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Saved)}, preserve=false aResultDetail=0
+02:03:54.693722 DCon322  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:03:54.702953 DCon318  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Saved)}, preserve=false aResultDetail=0
+02:04:09.492159 DCon322  Platform architecture set to 'x86'
+02:04:09.494206 DCon322  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:04:09.507911 DCon322  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:04:09.512996 DCon322  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:04:09.938049 DCon322  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:04:10.086869 DCon322  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Saved)}, preserve=false aResultDetail=0
+02:04:17.838104 DCon318  Saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+02:04:17.862271 DCon318  Finished saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml"
+02:04:17.867686 DCon324  Platform architecture set to 'x86'
+02:04:17.869731 DCon323  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:04:17.882309 DCon324  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:04:17.888665 DCon324  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:04:18.270059 DCon318  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:04:18.317110 DCon318  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+02:04:26.739597 DCon322  Saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+02:04:26.746446 DCon322  Finished saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml"
+02:04:26.756991 DCon323  Platform architecture set to 'x86'
+02:04:26.758828 DCon324  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:04:26.771746 DCon318  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:04:26.779788 DCon318  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:04:26.853934 DCon318  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:04:26.877677 DCon318  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Saved)}, preserve=false aResultDetail=0
+02:04:37.168494 DCon324  Saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+02:04:37.172071 DCon324  Finished saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml"
+02:04:37.172272 DCon324  Saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+02:04:37.175842 DCon324  Finished saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml"
+02:04:37.176004 DCon324  Saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+02:04:37.179444 DCon324  Finished saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml"
+02:04:37.543266 DCon325  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:04:37.609442 DCon328  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Saved)}, preserve=false aResultDetail=0
+02:04:40.686518 DCon328  Platform architecture set to 'x86'
+02:04:40.688545 DCon318  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:04:40.701989 DCon318  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:04:40.707394 DCon318  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:04:41.322710 DCon328  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:04:41.544038 DCon325  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Saved)}, preserve=false aResultDetail=0
+02:04:59.342374 DCon318  Launched VM: 1889144688 pid: 124166 (0x1e506) frontend: GUI/Qt name: arch
+02:04:59.349368 DCon330  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:04:59.355328 DCon330  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Saved)}, preserve=false aResultDetail=0
+02:04:59.541822 DCon331  Platform architecture set to 'x86'
+02:04:59.557772 DCon331  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:04:59.563984 DCon331  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Saved)}, preserve=false aResultDetail=0
+02:04:59.855666 DCon331  Load [/usr/lib/virtualbox/ExtensionPacks/Oracle_VirtualBox_Extension_Pack/linux.amd64/VBoxHostWebcam.so] vrc=VINF_SUCCESS
+02:04:59.983458 DCon331  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+02:05:00.067287 DCon331  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+02:05:00.067509 DCon331  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:05:00.084534 DCon318  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Restoring)}, preserve=false aResultDetail=0
+02:05:00.166438 DCon331  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={7d510820-a678-4730-a862-818dcd3fbed0} aComponent={MediumWrap} aText={Property 'CRYPT/KeyId' does not exist}, preserve=false aResultDetail=0
+02:05:00.166972 DCon331  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={7d510820-a678-4730-a862-818dcd3fbed0} aComponent={MediumWrap} aText={Property 'CRYPT/KeyId' does not exist}, preserve=false aResultDetail=0
+02:05:00.167520 DCon331  HostDnsMonitorProxy::GetDomainName: .
+02:05:00.167572 DCon331  HostDnsMonitorProxy::GetNameServers:
+02:05:00.167574 DCon331    name server 1: 127.0.0.53
+02:05:00.167624 DCon331  HostDnsMonitorProxy::GetSearchStrings:
+02:05:00.167626 DCon331    search string 1: .
+02:05:00.411837 DCon318  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:05:00.418612 DCon318  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:05:00.424707 DCon330  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:05:00.430699 DCon330  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Restoring)}, preserve=false aResultDetail=0
+02:05:03.671212 DCon332  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:05:03.678006 DCon332  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:05:03.693436 DCon333  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+02:05:03.729525 DCon333  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:05:03.745823 DCon330  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:05:06.387853 DCon322  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:05:06.389043 DCon330  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+02:05:06.396539 DCon318  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Paused)}, preserve=false aResultDetail=0
+02:05:08.773170 DCon334  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:05:08.797434 DCon334  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:05:08.814879 DCon333  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+02:05:08.817399 DCon335  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={SessionMachine} aText={The machine is not mutable or saved (state is Stopping)}, preserve=false aResultDetail=0
+02:05:08.825509 DCon335  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:05:08.829984 DCon335  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:05:08.831804 DCon333  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:05:08.841392 DCon318  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+02:05:08.845688 DCon318  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:05:08.849391 DCon318  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+02:05:08.919851 DCon318  ERROR [COM]: aRC=NS_ERROR_INVALID_ARG (0x80070057) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={SessionMachine} aText={Properties with TRANSIENT or TRANSRESET flag cannot be set or modified if VM is not running}, preserve=false aResultDetail=0
+02:05:09.848755 DCon318  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:05:09.861724 DCon318  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+02:05:24.744947 DCon336  Platform architecture set to 'x86'
+02:05:24.747037 DCon330  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:05:24.762136 DCon330  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:05:24.769093 DCon330  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:05:25.083554 DCon318  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:05:25.086403 DCon318  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+02:05:45.598311 DCon318  Platform architecture set to 'x86'
+02:05:45.626554 DCon338  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:05:45.633330 DCon338  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:05:45.673980 DCon337  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:05:45.681690 DCon337  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+02:05:49.764288 DCon334  Platform architecture set to 'x86'
+02:05:49.767147 DCon334  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:05:49.780520 DCon334  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:05:49.786957 DCon334  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:05:50.091971 DCon318  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:05:50.095362 DCon318  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+02:07:09.301613 MainPower Host suspending: Paused 0 VMs
+02:07:12.121722 MainPower Host resumed: Resumed 0 VMs
+02:08:20.397731 DCon341  Saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+02:08:20.402286 DCon341  Finished saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml"
+02:08:20.402517 DCon341  Saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+02:08:20.406043 DCon341  Finished saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml"
+02:08:20.406225 DCon341  Saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+02:08:20.410045 DCon341  Finished saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml"
+02:08:20.784272 DCon342  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:08:20.849456 DCon343  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+02:08:31.015215 DCon337  Launched VM: 1342197824 pid: 125394 (0x1e9d2) frontend: GUI/Qt name: arch
+02:08:31.062803 DCon344  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:08:31.083305 DCon337  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+02:08:31.086718 DCon337  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:08:31.105383 DCon337  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+02:08:31.349168 DCon345  Platform architecture set to 'x86'
+02:08:31.386445 DCon348  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:08:31.398639 DCon348  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+02:08:31.697461 DCon346  Load [/usr/lib/virtualbox/ExtensionPacks/Oracle_VirtualBox_Extension_Pack/linux.amd64/VBoxHostWebcam.so] vrc=VINF_SUCCESS
+02:08:31.807538 DCon347  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:08:31.817376 DCon347  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+02:08:31.835795 DCon346  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+02:08:31.871161 DCon346  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:08:31.920073 DCon348  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:08:31.928385 DCon343  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:08:31.930099 DCon348  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Starting)}, preserve=false aResultDetail=0
+02:08:31.938057 DCon345  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+02:08:31.939011 DCon343  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Starting)}, preserve=false aResultDetail=0
+02:08:32.047774 DCon345  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={7d510820-a678-4730-a862-818dcd3fbed0} aComponent={MediumWrap} aText={Property 'CRYPT/KeyId' does not exist}, preserve=false aResultDetail=0
+02:08:32.049318 DCon345  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={7d510820-a678-4730-a862-818dcd3fbed0} aComponent={MediumWrap} aText={Property 'CRYPT/KeyId' does not exist}, preserve=false aResultDetail=0
+02:08:32.049986 DCon345  HostDnsMonitorProxy::GetDomainName: .
+02:08:32.050035 DCon345  HostDnsMonitorProxy::GetNameServers:
+02:08:32.050036 DCon345    name server 1: 127.0.0.53
+02:08:32.050087 DCon345  HostDnsMonitorProxy::GetSearchStrings:
+02:08:32.050088 DCon345    search string 1: .
+02:08:32.103231 DCon342  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+02:08:32.169780 DCon342  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:08:32.176712 DCon342  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:08:32.196083 DCon345  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:08:32.209259 DCon345  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:08:32.385192 DCon345  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:08:32.400144 DCon348  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:08:32.408573 DCon348  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:08:32.489277 DCon348  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:08:32.647756 DCon349  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:08:32.913384 DCon345  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:08:32.920439 DCon345  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:08:32.974013 DCon337  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:08:32.997131 DCon337  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:08:33.005682 DCon337  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:08:33.020741 DCon318  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:08:33.028411 DCon318  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:08:33.084042 DCon318  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:08:33.203132 DCon348  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:08:52.304983 DCon345  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:08:52.311734 DCon345  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:08:52.319454 DCon348  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:08:52.319666 DCon339  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:08:52.337464 DCon337  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:08:52.344425 DCon337  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:08:52.348940 DCon348  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:08:52.402818 DCon337  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:08:52.545613 DCon348  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:04.031502 DCon354  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:09:04.038989 DCon354  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:09:04.055395 DCon359  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:04.057613 DCon359  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:04.071649 DCon345  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:04.078533 DCon359  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:04.087558 DCon337  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:04.310780 DCon345  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:04.519377 DCon359  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:09:04.523943 DCon359  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:09:04.534899 DCon356  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:04.544623 DCon340  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:04.546856 DCon340  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:04.564301 DCon340  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:04.573465 DCon340  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:04.831309 DCon340  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:04.843505 DCon340  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:06.490425 DCon345  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:09:06.495055 DCon345  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:09:06.509278 DCon352  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:06.512171 DCon355  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:06.524204 DCon355  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:06.535689 DCon360  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:06.545140 DCon360  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:06.737950 DCon355  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:07.234713 DCon355  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:08.124884 DCon360  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:09:08.131794 DCon360  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:09:08.144566 DCon340  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:08.146674 DCon340  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:08.160443 DCon345  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:08.167563 DCon340  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:08.178452 DCon340  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:08.374992 DCon345  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:08.505311 DCon357  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:09:08.514199 DCon357  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:09:08.543481 DCon348  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:08.556634 DCon359  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:08.608627 DCon359  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:08.633392 DCon359  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:08.641061 DCon359  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:09.251039 DCon348  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:09.267791 DCon348  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:15.307170 DCon339  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:09:15.331453 DCon339  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:09:15.339265 DCon354  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:15.339963 DCon359  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:15.347746 DCon359  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:15.355090 DCon359  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:15.361764 DCon359  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:15.423398 DCon359  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:15.551046 DCon354  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:28.801514 DCon352  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:09:28.808295 DCon352  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:09:28.815721 DCon347  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:28.816023 DCon347  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:28.824175 DCon347  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:28.830098 DCon365  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:28.837000 DCon365  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:28.943245 DCon365  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:29.166193 DCon365  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:38.511535 DCon365  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:09:38.515929 DCon365  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:09:38.524135 DCon356  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:38.524493 DCon347  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:38.533786 DCon345  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:38.540720 DCon356  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:38.547195 DCon356  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:38.614636 DCon356  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:38.743418 DCon347  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:40.892790 DCon340  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:09:40.916889 DCon340  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:09:40.924840 DCon356  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:40.925308 DCon360  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:40.933332 DCon365  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:40.938131 DCon365  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:40.945489 DCon365  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:41.049578 DCon347  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:41.274384 DCon365  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:41.423957 DCon359  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:09:41.430647 DCon359  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:09:41.437514 DCon368  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:41.437792 DCon368  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:41.445940 DCon365  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:41.450905 DCon365  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:41.458512 DCon365  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:41.501542 DCon340  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:41.608756 DCon340  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:54.318194 DCon359  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:09:54.324998 DCon359  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:09:54.334254 DCon357  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:54.334441 DCon370  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:54.344516 DCon354  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:09:54.350945 DCon370  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:54.357652 DCon370  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+02:09:54.459788 DCon370  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:09:54.558742 DCon359  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:11:13.514587 DCon357  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:11:13.519296 DCon357  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:11:13.524396 DCon352  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:11:13.533760 DCon365  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:11:14.179946 DCon352  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:11:14.186691 DCon352  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:11:14.192367 DCon362  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:11:14.201377 DCon365  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:11:14.515926 DCon372  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:11:14.522729 DCon372  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:11:14.527976 DCon345  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:11:14.536142 DCon372  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:11:16.297100 DCon362  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:11:16.304262 DCon362  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:11:16.309217 DCon374  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:11:16.317103 DCon357  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:20:33.614614 DCon395  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:20:33.619024 DCon395  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:20:33.623816 DCon393  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:20:33.630956 DCon403  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:21:27.412335 DCon404  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:21:27.419379 DCon404  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:21:27.425878 DCon404  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:21:27.434467 DCon404  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:23:14.830123 DCon407  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:23:14.833504 DCon407  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:23:14.838894 DCon391  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:23:14.846239 DCon391  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:23:19.920117 DCon412  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:23:19.926932 DCon412  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:23:19.932697 DCon393  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:23:19.941080 DCon393  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:23:20.988489 DCon405  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:23:20.995268 DCon405  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:23:21.000178 DCon391  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:23:21.008061 DCon391  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:23:22.035616 DCon407  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:23:22.042431 DCon407  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:23:22.048062 DCon412  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:23:22.055688 DCon412  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:23:44.700696 DCon415  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:23:44.708213 DCon415  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:23:44.712947 DCon419  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:23:44.720966 DCon419  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:24:03.644976 DCon411  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:24:03.651809 DCon411  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:24:03.656983 DCon415  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:24:03.667169 DCon415  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:24:04.780052 DCon415  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:24:04.786873 DCon415  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:24:04.791896 DCon422  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:24:04.799064 DCon405  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:24:15.620940 DCon412  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:24:15.625363 DCon412  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:24:15.630353 DCon415  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:24:15.636700 DCon415  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:24:40.115995 DCon412  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:24:40.122859 DCon412  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:24:40.127355 DCon427  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:24:40.135898 DCon427  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:25:14.112068 DCon425  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:25:14.118939 DCon425  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:25:14.124713 DCon405  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:25:14.131371 DCon429  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:27:12.524979 DCon435  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:27:12.531790 DCon435  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:27:12.537135 DCon425  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:27:12.544700 DCon436  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:27:16.111364 DCon426  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:27:16.118912 DCon426  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:27:16.125229 DCon437  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:27:16.133390 DCon437  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:28:28.641818 DCon445  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:28:28.665629 DCon445  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:28:28.672946 DCon428  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:28:28.692937 DCon444  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:28:40.231657 DCon448  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:28:40.238282 DCon448  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:28:40.243707 DCon446  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:28:40.263424 DCon442  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:29:02.813574 DCon448  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:29:02.820343 DCon448  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:29:02.825819 DCon451  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:29:02.833308 DCon451  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:29:04.011696 DCon451  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:29:04.018250 DCon451  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:29:04.023872 DCon444  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:29:04.031437 DCon428  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:29:59.323223 DCon429  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:29:59.330168 DCon429  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:29:59.337370 DCon429  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:29:59.345029 DCon428  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:29:59.712121 DCon429  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:29:59.718781 DCon429  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:29:59.724037 DCon448  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:29:59.732577 DCon448  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:30:00.585470 DCon456  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:30:00.592747 DCon456  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:30:00.597506 DCon448  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:30:00.605908 DCon456  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:30:01.314046 DCon455  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:30:01.320782 DCon455  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:30:01.326013 DCon456  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:30:01.334299 DCon456  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:30:12.911761 DCon456  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:30:12.918577 DCon456  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:30:12.924447 DCon456  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:30:12.932870 DCon456  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:30:16.818277 DCon428  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:30:16.842009 DCon428  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:30:16.849244 DCon455  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:30:16.857434 DCon455  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:33:31.092967 DCon467  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:33:31.099658 DCon467  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:33:31.105373 DCon469  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:33:31.114105 DCon469  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:33:32.421251 DCon429  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:33:32.428029 DCon429  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:33:32.433382 DCon470  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:33:32.441556 DCon470  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:33:34.999869 DCon465  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:33:35.023629 DCon465  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:33:35.030167 DCon472  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:33:35.037704 DCon468  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:33:46.712766 DCon468  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:33:46.717095 DCon468  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:33:46.722542 DCon465  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:33:46.729890 DCon465  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:34:03.624926 DCon472  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:34:03.629367 DCon472  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:34:03.634696 DCon475  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:34:03.642578 DCon475  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:37:13.185055 DCon485  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:37:13.191932 DCon485  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:37:13.197946 DCon482  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:37:13.207116 DCon487  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:37:13.687062 DCon487  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:37:13.693654 DCon487  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:37:13.698843 DCon468  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:37:13.707687 DCon468  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:38:54.496535 DCon490  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:38:54.503344 DCon490  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:38:54.508620 DCon492  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:38:54.518365 DCon492  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:38:55.079949 DCon492  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:38:55.086914 DCon492  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:38:55.091891 DCon494  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:38:55.101596 DCon497  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:38:55.731952 DCon497  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:38:55.738637 DCon497  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:38:55.745011 DCon482  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:38:55.753168 DCon482  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:38:56.732196 DCon493  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:38:56.738957 DCon493  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:38:56.744269 DCon498  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:38:56.752886 DCon493  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:38:57.997268 DCon490  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:38:58.003979 DCon490  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:38:58.008697 DCon488  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:38:58.018262 DCon488  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:40:17.891121 DCon488  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:40:17.895528 DCon488  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:40:17.900621 DCon482  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:40:17.908056 DCon502  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:40:22.911998 DCon501  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:40:22.927703 DCon501  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:40:22.933529 DCon482  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:40:22.941802 DCon482  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:40:25.812843 DCon496  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:40:25.836597 DCon496  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:40:25.842271 DCon502  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:40:25.849035 DCon502  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:40:28.916433 DCon482  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:40:28.923274 DCon482  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:40:28.928000 DCon482  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:40:28.934757 DCon482  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:40:35.118677 DCon503  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:40:35.125354 DCon503  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:40:35.130845 DCon503  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:40:35.138313 DCon503  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:40:35.713483 DCon497  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:40:35.720331 DCon497  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:40:35.725305 DCon496  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:40:35.732927 DCon496  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:40:36.034686 DCon482  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:40:36.041451 DCon482  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:40:36.046614 DCon502  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:40:36.053977 DCon502  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:41:16.799192 DCon490  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:41:16.806102 DCon490  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:41:16.811481 DCon501  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:41:16.820351 DCon501  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:41:17.816280 DCon502  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:41:17.823785 DCon502  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:41:17.828917 DCon508  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:41:17.836613 DCon508  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:41:19.111783 DCon502  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:41:19.118431 DCon502  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:41:19.123577 DCon490  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:41:19.131206 DCon503  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:45:49.713734 DCon520  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:45:49.720373 DCon520  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:45:49.726145 DCon520  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:45:49.734104 DCon522  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:45:50.495019 DCon520  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:45:50.501684 DCon520  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:45:50.506726 DCon522  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:45:50.513541 DCon524  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:45:56.646139 DCon511  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:45:56.652853 DCon511  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:45:56.658845 DCon510  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:45:56.666320 DCon510  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:46:10.845108 DCon522  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:46:10.857801 DCon522  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:46:10.864526 DCon530  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:46:10.872131 DCon526  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:46:18.582271 DCon530  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:46:18.589912 DCon530  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:46:18.596993 DCon531  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:46:18.606372 DCon521  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:46:18.912742 DCon531  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:46:18.920023 DCon531  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:46:18.925898 DCon528  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:46:18.934548 DCon520  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+02:46:21.231027 DCon528  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+02:46:21.237742 DCon528  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+02:46:21.243071 DCon524  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+02:46:21.251727 DCon524  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:02:34.413061 DCon573  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:02:34.419739 DCon573  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:02:34.425691 DCon578  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+03:02:34.434903 DCon578  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:03:02.838046 DCon582  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:03:02.844722 DCon582  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:03:02.849352 DCon543  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+03:03:02.857463 DCon543  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:04:14.612335 DCon578  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:04:14.619187 DCon578  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:04:14.625985 DCon588  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+03:04:14.633667 DCon573  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:04:18.411991 DCon584  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:04:18.436288 DCon584  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:04:18.447591 DCon581  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+03:04:18.456540 DCon573  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:16:40.528991 DCon625  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:16:40.536497 DCon625  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:16:40.554553 DCon615  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+03:16:40.573817 DCon615  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:17:03.112988 DCon628  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:17:03.119605 DCon628  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:17:03.125596 DCon627  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+03:17:03.134913 DCon633  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:17:22.016926 DCon615  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:17:22.023736 DCon615  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:17:22.028990 DCon633  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+03:17:22.038064 DCon633  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:17:40.389503 DCon625  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:17:40.396384 DCon625  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:17:40.402318 DCon637  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+03:17:40.411802 DCon637  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:17:49.793839 DCon633  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:17:49.800673 DCon633  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:17:49.806300 DCon615  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+03:17:49.813592 DCon615  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:17:53.814364 DCon621  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:17:53.821070 DCon621  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:17:53.827085 DCon639  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+03:17:53.835389 DCon639  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:17:59.446754 DCon639  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:17:59.453369 DCon639  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:17:59.459071 DCon638  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+03:17:59.467324 DCon638  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:20:16.796338 DCon638  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:20:16.803167 DCon638  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:20:16.809168 DCon627  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+03:20:16.825291 DCon627  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:20:20.913147 DCon640  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:20:20.919966 DCon640  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:20:20.925801 DCon631  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+03:20:20.934488 DCon631  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:20:24.018020 DCon641  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:20:24.022387 DCon641  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:20:24.027960 DCon641  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+03:20:24.037008 DCon641  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:21:28.633242 DCon650  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={5bfd8965-b81b-469f-8649-f717ce97a5d5} aComponent={NvramStoreWrap} aText={The UEFI NVRAM file is not existing for this machine}, preserve=false aResultDetail=0
+03:21:28.633694 DCon649  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+03:21:28.643083 DCon649  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Paused)}, preserve=false aResultDetail=0
+03:21:30.406888 DCon649  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+03:21:30.408356 DCon649  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={SessionMachine} aText={The machine is not mutable or saved (state is Stopping)}, preserve=false aResultDetail=0
+03:21:30.427676 DCon649  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:21:30.431272 DCon649  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:21:30.432595 DCon649  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+03:21:30.442093 DCon649  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+03:21:30.457748 DCon649  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+03:21:30.524093 DCon647  ERROR [COM]: aRC=NS_ERROR_INVALID_ARG (0x80070057) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={SessionMachine} aText={Properties with TRANSIENT or TRANSRESET flag cannot be set or modified if VM is not running}, preserve=false aResultDetail=0
+03:21:31.467890 DCon652  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+03:21:36.665577 DCon647  Platform architecture set to 'x86'
+03:21:36.682378 DCon647  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+03:21:36.688426 DCon647  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+03:21:37.025500 DCon652  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+03:21:58.877530 DCon654  Platform architecture set to 'x86'
+03:21:58.919199 DCon653  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:21:58.922922 DCon653  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:21:58.969550 DCon653  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+03:22:00.824440 DCon652  Launched VM: 1889040000 pid: 135779 (0x21263) frontend: GUI/Qt name: arch
+03:22:00.861754 DCon654  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+03:22:01.010659 DCon655  Platform architecture set to 'x86'
+03:22:01.023243 DCon659  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+03:22:01.318075 DCon654  Load [/usr/lib/virtualbox/ExtensionPacks/Oracle_VirtualBox_Extension_Pack/linux.amd64/VBoxHostWebcam.so] vrc=VINF_SUCCESS
+03:22:01.443603 DCon652  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+03:22:01.475245 DCon652  NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+03:22:01.528304 DCon647  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+03:22:01.533783 DCon647  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Starting)}, preserve=false aResultDetail=0
+03:22:01.626176 DCon647  ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={7d510820-a678-4730-a862-818dcd3fbed0} aComponent={MediumWrap} aText={Property 'CRYPT/KeyId' does not exist}, preserve=false aResultDetail=0
+03:22:01.627406 DCon655  HostDnsMonitorProxy::GetDomainName: .
+03:22:01.627703 DCon655  HostDnsMonitorProxy::GetNameServers:
+03:22:01.627705 DCon655    name server 1: 127.0.0.53
+03:22:01.627781 DCon655  HostDnsMonitorProxy::GetSearchStrings:
+03:22:01.627782 DCon655    search string 1: .
+03:22:01.671882 DCon652  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+03:22:01.709221 DCon647  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:22:01.739383 DCon652  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:22:01.746022 DCon652  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:22:01.757438 DCon653  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:22:02.313135 DCon655  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:22:02.317933 DCon655  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:22:02.340224 DCon653  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:22:05.998021 DCon658  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:22:06.002388 DCon658  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:22:06.026535 DCon658  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:22:40.005172 DCon659  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:22:40.012036 DCon659  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:22:40.028818 DCon653  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:47:01.637482 DCon732  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:47:01.641009 DCon732  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:47:01.654749 DCon719  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+03:47:26.362378 DCon733  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+03:47:26.372015 DCon725  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Paused)}, preserve=false aResultDetail=0
+03:47:28.543884 DCon719  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+03:47:28.547317 DCon719  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={SessionMachine} aText={The machine is not mutable or saved (state is Stopping)}, preserve=false aResultDetail=0
+03:47:28.563715 DCon730  Saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox" with version "1.19-linux"
+03:47:28.568017 DCon730  Finished saving settings file "/home/shri/VirtualBox VMs/arch/arch.vbox"
+03:47:28.569120 DCon734  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+03:47:28.577073 DCon729  ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+03:47:28.595116 DCon729  ERROR [COM]: aRC=NS_ERROR_INVALID_ARG (0x80070057) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={SessionMachine} aText={Properties with TRANSIENT or TRANSRESET flag cannot be set or modified if VM is not running}, preserve=false aResultDetail=0
+03:47:28.595614 DCon729  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+03:47:30.107334 DCon719  ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+03:47:37.197141 main     VirtualBox: object deletion starts
+03:47:37.197192 main     ERROR [COM]: aRC=VBOX_E_OBJECT_IN_USE (0x80bb000c) aIID={7d510820-a678-4730-a862-818dcd3fbed0} aComponent={MediumWrap} aText={Medium '/home/shri/VirtualBox VMs/ubuntu/ubuntu2.vdi' cannot be closed because it is still attached to 1 virtual machines}, preserve=false aResultDetail=0
+03:47:37.197310 main     ERROR [COM]: aRC=VBOX_E_OBJECT_IN_USE (0x80bb000c) aIID={7d510820-a678-4730-a862-818dcd3fbed0} aComponent={MediumWrap} aText={Medium '/home/shri/VirtualBox VMs/mint-c.vdi' cannot be closed because it is still attached to 1 virtual machines}, preserve=false aResultDetail=0
+03:47:37.197369 main     ERROR [COM]: aRC=VBOX_E_OBJECT_IN_USE (0x80bb000c) aIID={7d510820-a678-4730-a862-818dcd3fbed0} aComponent={MediumWrap} aText={Medium '/home/shri/VirtualBox VMs/arch/arch.vdi' cannot be closed because it is still attached to 1 virtual machines}, preserve=false aResultDetail=0
+03:47:37.197708 main     HostDnsMonitor: shutting down ...
+03:47:37.201594 main     HostDnsMonitor: shut down
+03:47:37.212912 Watcher  ERROR [COM]: aRC=E_ACCESSDENIED (0x80070005) aIID={d644ad1e-c501-4fc7-9ab6-aa6d763bc540} aComponent={VirtualBoxWrap} aText={The object is not ready}, preserve=false aResultDetail=0
+03:47:37.213007 main     VirtualBox: object deleted

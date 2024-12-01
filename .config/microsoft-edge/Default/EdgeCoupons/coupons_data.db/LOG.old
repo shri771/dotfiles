@@ -1,0 +1,6 @@
+2024/12/01-01:34:41.913 1668 Reusing MANIFEST /home/shri/.config/microsoft-edge/Default/EdgeCoupons/coupons_data.db/MANIFEST-000001
+2024/12/01-01:34:41.913 1668 Recovering log #35
+2024/12/01-01:34:41.913 1668 Reusing old log /home/shri/.config/microsoft-edge/Default/EdgeCoupons/coupons_data.db/000035.log 
+2024/12/01-01:34:41.966 1666 Level-0 table #39: started
+2024/12/01-01:34:41.970 1666 Level-0 table #39: 634832 bytes OK
+2024/12/01-01:34:41.974 1666 Delete type=0 #35

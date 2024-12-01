@@ -1,0 +1,29 @@
+2024/11/25-00:15:06.330 7 Reusing MANIFEST /home/as/.config/microsoft-edge-beta/Default/Local Storage/leveldb/MANIFEST-000001
+2024/11/25-00:15:06.337 7 Recovering log #20
+2024/11/25-00:15:06.337 7 Level-0 table #23: started
+2024/11/25-00:15:06.346 7 Level-0 table #23: 25262 bytes OK
+2024/11/25-00:15:06.352 7 Delete type=0 #20
+2024/11/25-01:52:35.461 8 Level-0 table #26: started
+2024/11/25-01:52:35.487 8 Level-0 table #26: 23478 bytes OK
+2024/11/25-01:52:35.493 8 Delete type=0 #24
+2024/11/25-03:22:49.330 8 Level-0 table #28: started
+2024/11/25-03:22:49.336 8 Level-0 table #28: 14414 bytes OK
+2024/11/25-03:22:49.339 8 Delete type=0 #25
+2024/11/25-03:22:49.339 8 Compacting 4@0 + 1@1 files
+2024/11/25-03:22:49.345 8 Generated table #29@0: 259 keys, 212559 bytes
+2024/11/25-03:22:49.345 8 Compacted 4@0 + 1@1 files => 212559 bytes
+2024/11/25-03:22:49.348 8 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/11/25-03:22:49.348 8 Delete type=2 #23
+2024/11/25-03:22:49.348 8 Delete type=2 #28
+2024/11/25-03:22:49.348 8 Delete type=2 #21
+2024/11/25-03:22:49.348 8 Delete type=2 #26
+2024/11/25-03:22:49.348 8 Delete type=2 #19
+2024/11/25-03:46:49.100 8 Level-0 table #31: started
+2024/11/25-03:46:49.110 8 Level-0 table #31: 90397 bytes OK
+2024/11/25-03:46:49.117 8 Delete type=0 #27
+2024/11/25-04:28:22.043 8 Level-0 table #33: started
+2024/11/25-04:28:22.046 8 Level-0 table #33: 22799 bytes OK
+2024/11/25-04:28:22.049 8 Delete type=0 #30
+2024/11/25-04:30:14.840 7 Level-0 table #35: started
+2024/11/25-04:30:14.850 7 Level-0 table #35: 45318 bytes OK
+2024/11/25-04:30:14.858 7 Delete type=0 #32
