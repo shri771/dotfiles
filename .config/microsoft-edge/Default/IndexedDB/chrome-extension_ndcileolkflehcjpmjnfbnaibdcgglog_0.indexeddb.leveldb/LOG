@@ -1,3 +1,3 @@
-2024/12/01-01:59:14.676 cdc Reusing MANIFEST /home/shri/.config/microsoft-edge/Default/IndexedDB/chrome-extension_ndcileolkflehcjpmjnfbnaibdcgglog_0.indexeddb.leveldb/MANIFEST-000001
-2024/12/01-01:59:14.676 cdc Recovering log #3
-2024/12/01-01:59:14.682 cdc Reusing old log /home/shri/.config/microsoft-edge/Default/IndexedDB/chrome-extension_ndcileolkflehcjpmjnfbnaibdcgglog_0.indexeddb.leveldb/000003.log 
+2024/12/04-18:37:51.926 e17 Reusing MANIFEST /home/shri/.config/microsoft-edge/Default/IndexedDB/chrome-extension_ndcileolkflehcjpmjnfbnaibdcgglog_0.indexeddb.leveldb/MANIFEST-000001
+2024/12/04-18:37:51.926 e17 Recovering log #3
+2024/12/04-18:37:51.933 e17 Reusing old log /home/shri/.config/microsoft-edge/Default/IndexedDB/chrome-extension_ndcileolkflehcjpmjnfbnaibdcgglog_0.indexeddb.leveldb/000003.log 

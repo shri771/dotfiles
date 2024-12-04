@@ -1,3 +1,15 @@
-2024/12/01-01:59:14.901 cde Reusing MANIFEST /home/shri/.config/microsoft-edge/Default/IndexedDB/https_ntp.msn.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/12/01-01:59:14.902 cde Recovering log #4
-2024/12/01-01:59:14.903 cde Reusing old log /home/shri/.config/microsoft-edge/Default/IndexedDB/https_ntp.msn.com_0.indexeddb.leveldb/000004.log 
+2024/12/02-19:08:33.351 cba Reusing MANIFEST /home/shri/.config/microsoft-edge/Default/IndexedDB/https_ntp.msn.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/12/02-19:08:33.351 cba Recovering log #4
+2024/12/02-19:08:33.351 cba Reusing old log /home/shri/.config/microsoft-edge/Default/IndexedDB/https_ntp.msn.com_0.indexeddb.leveldb/000004.log 
+2024/12/02-19:09:14.760 cbb Level-0 table #8: started
+2024/12/02-19:09:14.762 cbb Level-0 table #8: 51573 bytes OK
+2024/12/02-19:09:14.765 cbb Delete type=0 #4
+2024/12/02-19:09:14.765 cbb Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2024/12/02-19:09:14.766 cbb Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01 \x03\x00\xf03\x83y8yB\x00\x01H\x00e\x00d\x00g\x00e\x00n\x00e\x00x\x00t\x00-\x00b\x00a\x00s\x00e\x00-\x00V\x001\x00|\x00h\x00t\x00t\x00p\x00s\x00:\x00/\x00/\x00n\x00t\x00p\x00.\x00m\x00s\x00n\x00.\x00c\x00o\x00m\x00/\x00e\x00d\x00g\x00e\x00/\x00n\x00t\x00p\x00?\x00l\x00o\x00c\x00a\x00l\x00e\x00=\x00e\x00n\x00-\x00U\x00S\x00&\x00t\x00i\x00t\x00l\x00e\x00=\x00N\x00e\x00w\x00+\x00t\x00a\x00b' @ 550 : 1
+2024/12/02-19:09:14.766 cbb Compacting 1@1 + 1@2 files
+2024/12/02-19:09:14.769 cbb Generated table #9@1: 52 keys, 16514 bytes
+2024/12/02-19:09:14.769 cbb Compacted 1@1 + 1@2 files => 16514 bytes
+2024/12/02-19:09:14.772 cbb compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/12/02-19:09:14.772 cbb Delete type=2 #8
+2024/12/02-19:09:14.772 cbb Delete type=2 #5
+2024/12/02-19:09:14.772 cbb Manual compaction at level-1 from '\x00\x01\x01 \x03\x00\xf03\x83y8yB\x00\x01H\x00e\x00d\x00g\x00e\x00n\x00e\x00x\x00t\x00-\x00b\x00a\x00s\x00e\x00-\x00V\x001\x00|\x00h\x00t\x00t\x00p\x00s\x00:\x00/\x00/\x00n\x00t\x00p\x00.\x00m\x00s\x00n\x00.\x00c\x00o\x00m\x00/\x00e\x00d\x00g\x00e\x00/\x00n\x00t\x00p\x00?\x00l\x00o\x00c\x00a\x00l\x00e\x00=\x00e\x00n\x00-\x00U\x00S\x00&\x00t\x00i\x00t\x00l\x00e\x00=\x00N\x00e\x00w\x00+\x00t\x00a\x00b' @ 550 : 1 .. (end); will stop at (end)

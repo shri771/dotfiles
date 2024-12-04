@@ -1,8 +1,8 @@
 {
    "edgeWorkspaceCacheVersion": 1,
    "workspaces": [ {
-      "accent": true,
-      "active": true,
+      "accent": false,
+      "active": false,
       "collaboratorsCount": 1,
       "color": 12,
       "connectionUrl": "https://home.microsoftpersonalcontent.com/contentstorage/6CznihN3v0uy1zK5FrRCbwfe952f23f4e808bfworkspaces?driveId=b!hlPlyUy9gkuuue0HdEZIohNRyVkT3tNKo7Di7KPQ-dGgkv615lVkQJThKIg8ebIi&itemId=01FW63HO2JQTXP3YHBRJELS2XDNMUUQM55&path=",
@@ -16,7 +16,7 @@
       "name": "Relax",
       "shared": false,
       "showDisconnectedUI": false,
-      "workspaceFluidStatus": 2
+      "workspaceFluidStatus": 0
    }, {
       "accent": false,
       "active": false,

@@ -1,6 +1,6 @@
 if status is-interactive
 
-    ## Remove welocme message ##
+    #To remove welocme message    
     set -g -x fish_greeting ''
 
 
@@ -14,13 +14,18 @@ if status is-interactive
     alias awcon='nvim /home/shri/.config/awesome/rc.lua'
     alias ..='cd ..'
     alias .='cd'
-    alias cp='cp -i'
+    alias add='git add'
+    alias commit='git commit'
+    alias push='git push'
+    alias pull='git pull'
+
+
 
 
 
 
     ## oh-my-posh  theme ##
-    oh-my-posh init fish --config /home/shri/Terminal-themes/atomic.omp.json | source
+    oh-my-posh init fish --config /home/shri/Terminal-themes/kushal.omp.json | source
 
 
     ## nightly-colors ##
