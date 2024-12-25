@@ -1,6 +1,0 @@
-2024/11/25-00:03:03.334 af4 Creating DB /home/as/.config/microsoft-edge-beta/Default/IndexedDB/https_www.reddit.com_0.indexeddb.leveldb since it was missing.
-2024/11/25-00:03:03.339 af4 Reusing MANIFEST /home/as/.config/microsoft-edge-beta/Default/IndexedDB/https_www.reddit.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/11/25-00:03:35.350 af5 Level-0 table #5: started
-2024/11/25-00:03:35.353 af5 Level-0 table #5: 1419 bytes OK
-2024/11/25-00:03:35.358 af5 Delete type=0 #3
-2024/11/25-00:03:35.358 af5 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

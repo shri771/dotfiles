@@ -1,6 +1,0 @@
-2024/11/25-00:15:09.103 afa Reusing MANIFEST /home/as/.config/microsoft-edge-beta/Default/EdgeCoupons/coupons_data.db/MANIFEST-000001
-2024/11/25-00:15:09.104 afa Recovering log #19
-2024/11/25-00:15:09.104 afa Reusing old log /home/as/.config/microsoft-edge-beta/Default/EdgeCoupons/coupons_data.db/000019.log 
-2024/11/25-00:15:11.951 af8 Level-0 table #24: started
-2024/11/25-00:15:11.954 af8 Level-0 table #24: 634983 bytes OK
-2024/11/25-00:15:11.957 af8 Delete type=0 #19
