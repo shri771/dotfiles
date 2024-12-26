@@ -252,6 +252,13 @@ globalkeys = my_table.join(
 	awful.key({ modkey, "Shift" }, "s", function()
 		awful.spawn("flameshot gui")
 	end, { description = "Take a screenshot with Flameshot", group = "hotkeys" }),
+	awful.key({ altkey }, "m", function()
+		awful.spawn("❯ notion-calendar-electron")
+	end, { description = "Launch calendar", group = "hotkeys" }),
+	awful.key({ altkey }, "n", function()
+		awful.spawn("notion-app")
+	end, { description = "Launch Notion", group = "hotkeys" }),
+
 	awful.key({ modkey }, "b", function()
 		awful.spawn("brave")
 	end, { description = "Launch brave", group = "awesome" }),
@@ -856,15 +863,16 @@ awful.spawn.with_shell(soundplayer .. startupSound)
 awful.spawn.with_shell("lxsession")
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("nm-applet")
---awful.spawn.with_shell("volumeicon")
+awful.spawn.with_shell("volumeicon")
 awful.spawn.with_shell("killall conky && conky -c $HOME/.config/conky/awesome/" .. "doom-one" .. "-01.conkyrc")
-awful.spawn.with_shell("/usr/bin/emacs --daemon")
-awful.spawn.with_shell("brave")
+--awful.spawn.with_shell("/usr/bin/emacs --daemon")
+--awful.spawn.with_shell("brave")
 --awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("variety --set-wallpaper=/home/shri/Pictures/wallpaper/Day/1345491.png")
-awful.spawn.with_shell("setxkbmap -option caps:swapescape") --Interchange escape with caps
---awful.spawn.with_shell("copyq")
+--awful.spawn.with_shell("blueberry") --Interchange escape with caps
+--awful.spawn.with_shell("autokey-qt")
 awful.spawn.with_shell("xmodmap ~/.Xmodmap")
+awful.spawn.with_shell("copyq")
 --awful.spawm.with_shell("blueberry")
 --awful.spawm.with_shell("autokey-qt")
 

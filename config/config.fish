@@ -10,6 +10,7 @@ set fish_greeting # Supresses fish's intro message
 set TERM xterm-256color # Sets the terminal type
 set EDITOR "nvim -t -a ''" # $EDITOR use Emacs in terminal
 set VISUAL "emacsclient -c -a emacs" # $VISUAL use Emacs in GUI mode
+export GTK_THEME="breeze-dark"
 
 ##local
 set -x LANG en_US.UTF-8
