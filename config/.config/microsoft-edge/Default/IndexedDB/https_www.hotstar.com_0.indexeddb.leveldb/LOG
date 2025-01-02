@@ -1,0 +1,32 @@
+2024/12/01-02:09:56.515 cde Reusing MANIFEST /home/shri/.config/microsoft-edge/Default/IndexedDB/https_www.hotstar.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/12/01-02:09:56.515 cde Recovering log #41
+2024/12/01-02:09:56.515 cde Reusing old log /home/shri/.config/microsoft-edge/Default/IndexedDB/https_www.hotstar.com_0.indexeddb.leveldb/000041.log 
+2024/12/01-02:09:56.516 cde Delete type=2 #40
+2024/12/01-02:09:56.524 ce0 Level-0 table #46: started
+2024/12/01-02:09:56.526 ce0 Level-0 table #46: 2061 bytes OK
+2024/12/01-02:09:56.529 ce0 Delete type=0 #41
+2024/12/01-02:09:56.529 cdf Manual compaction at level-0 from '\x00\x11\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x12\x00\x00\x00' @ 0 : 0; will stop at '\x00\x11\x00\x00\x05' @ 980 : 1
+2024/12/01-02:09:56.529 cdf Compacting 1@0 + 1@1 files
+2024/12/01-02:09:56.532 cdf Generated table #47@0: 71 keys, 2164 bytes
+2024/12/01-02:09:56.532 cdf Compacted 1@0 + 1@1 files => 2164 bytes
+2024/12/01-02:09:56.534 cdf compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/12/01-02:09:56.535 cdf Delete type=2 #46
+2024/12/01-02:09:56.535 cdf Manual compaction at level-0 from '\x00\x11\x00\x00\x05' @ 980 : 1 .. '\x00\x12\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/12/01-02:15:11.716 cdc Level-0 table #49: started
+2024/12/01-02:15:11.718 cdc Level-0 table #49: 2068 bytes OK
+2024/12/01-02:15:11.721 cdc Delete type=0 #45
+2024/12/01-02:15:11.721 cdc Delete type=2 #43
+2024/12/01-02:15:11.721 cdc Manual compaction at level-0 from '\x00\x12\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x13\x00\x00\x00' @ 0 : 0; will stop at '\x00\x12\x00\x00\x05' @ 1023 : 1
+2024/12/01-02:15:11.721 cdc Compacting 1@0 + 1@1 files
+2024/12/01-02:15:11.725 cdc Generated table #50@0: 83 keys, 2274 bytes
+2024/12/01-02:15:11.725 cdc Compacted 1@0 + 1@1 files => 2274 bytes
+2024/12/01-02:15:11.728 cdc compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/12/01-02:15:11.729 cdc Delete type=2 #49
+2024/12/01-02:15:11.730 cdc Manual compaction at level-0 from '\x00\x12\x00\x00\x05' @ 1023 : 1 .. '\x00\x13\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/12/01-03:25:11.194 cdc Compacting 1@1 + 1@2 files
+2024/12/01-03:25:11.216 cdc Generated table #51@1: 57 keys, 2056 bytes
+2024/12/01-03:25:11.216 cdc Compacted 1@1 + 1@2 files => 2056 bytes
+2024/12/01-03:25:11.219 cdc compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/12/01-03:25:11.219 cdc Delete type=2 #50
+2024/12/01-03:25:11.219 cdc Delete type=2 #35
+2024/12/01-03:25:11.219 cdc Delete type=2 #47

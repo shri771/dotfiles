@@ -1,0 +1,9 @@
+[FlatpakSources]
+Sources=flathub
+
+[Software]
+UseOfflineUpdates=true
+
+[Window]
+geometry=0,0,988,722
+visibility=2

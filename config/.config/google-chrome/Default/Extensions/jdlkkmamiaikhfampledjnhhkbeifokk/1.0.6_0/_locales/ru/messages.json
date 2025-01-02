@@ -1,0 +1,23 @@
+{
+   "description": {
+      "message": "Отображайте PDF файлы в браузере с помощью PDF.js (от Mozilla Labs). Отправляйте/загружайте PDF файлы в любую программу просмотра PDF-файлов."
+   },
+   "extShortName": {
+      "message": "PDF Viewe"
+   },
+   "name": {
+      "message": "PDF Viewer - инструмент для чтения PDF"
+   },
+   "rateDialogDesc": {
+      "message": "Не могли бы вы оценить нас в Интернет-магазине Chrome? Спасибо!"
+   },
+   "rateDialogNo": {
+      "message": "Возможно, в следующий раз"
+   },
+   "rateDialogTitle": {
+      "message": "Вам полезное наше приложение?"
+   },
+   "rateDialogYes": {
+      "message": "Да конечно"
+   }
+}

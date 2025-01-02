@@ -1,0 +1,21 @@
+2024/11/25-00:15:06.323 af7 Reusing MANIFEST /home/as/.config/microsoft-edge-beta/Default/Sync Data/LevelDB/MANIFEST-000001
+2024/11/25-00:15:06.324 af7 Recovering log #22
+2024/11/25-00:15:06.326 af7 Reusing old log /home/as/.config/microsoft-edge-beta/Default/Sync Data/LevelDB/000022.log 
+2024/11/25-03:17:12.123 af9 Level-0 table #26: started
+2024/11/25-03:17:12.127 af9 Level-0 table #26: 105255 bytes OK
+2024/11/25-03:17:12.134 af9 Delete type=0 #22
+2024/11/25-03:33:25.115 af8 Level-0 table #28: started
+2024/11/25-03:33:25.120 af8 Level-0 table #28: 99851 bytes OK
+2024/11/25-03:33:25.123 af8 Delete type=0 #25
+2024/11/25-04:28:13.694 af7 Level-0 table #30: started
+2024/11/25-04:28:13.700 af7 Level-0 table #30: 110475 bytes OK
+2024/11/25-04:28:13.703 af7 Delete type=0 #27
+2024/11/25-04:28:13.703 af7 Compacting 4@0 + 1@1 files
+2024/11/25-04:28:13.710 af7 Generated table #31@0: 93 keys, 16869 bytes
+2024/11/25-04:28:13.710 af7 Compacted 4@0 + 1@1 files => 16869 bytes
+2024/11/25-04:28:13.713 af7 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/11/25-04:28:13.713 af7 Delete type=2 #30
+2024/11/25-04:28:13.714 af7 Delete type=2 #23
+2024/11/25-04:28:13.714 af7 Delete type=2 #28
+2024/11/25-04:28:13.714 af7 Delete type=2 #21
+2024/11/25-04:28:13.715 af7 Delete type=2 #26

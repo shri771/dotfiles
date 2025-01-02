@@ -1,0 +1,53 @@
+{
+   "edgeWorkspaceCacheVersion": 1,
+   "workspaces": [ {
+      "accent": true,
+      "active": true,
+      "collaboratorsCount": 1,
+      "color": 3,
+      "connectionUrl": "https://home.microsoftpersonalcontent.com/contentstorage/6CznihN3v0uy1zK5FrRCbwfe952f23f4e808bfworkspaces?driveId=b!hlPlyUy9gkuuue0HdEZIohNRyVkT3tNKo7Di7KPQ-dGgkv615lVkQJThKIg8ebIi&itemId=01FW63HO2JQTXP3YHBRJELS2XDNMUUQM55&path=",
+      "count": 16,
+      "edgeWorkspaceVersion": 2,
+      "id": "87c6be66-bd64-4876-8e92-867fb535571d",
+      "isOwner": true,
+      "isolated": false,
+      "last_active_time": 1732473911.786143,
+      "menuSubtitle": "16 tabs",
+      "name": "Relax",
+      "shared": false,
+      "showDisconnectedUI": false,
+      "workspaceFluidStatus": 2
+   }, {
+      "accent": false,
+      "active": false,
+      "collaboratorsCount": 0,
+      "color": 1,
+      "connectionUrl": "https://home.microsoftpersonalcontent.com/contentstorage/6CznihN3v0uy1zK5FrRCbwfe952f23f4e808bfworkspaces?driveId=b!hlPlyUy9gkuuue0HdEZIohNRyVkT3tNKo7Di7KPQ-dGgkv615lVkQJThKIg8ebIi&itemId=01FW63HOYCN4HTWLO4ENCJQPSXYGE63JXX&path=",
+      "count": 2,
+      "edgeWorkspaceVersion": 2,
+      "id": "03253fa2-b6cb-4b3d-bd48-b67522148e50",
+      "isOwner": true,
+      "isolated": false,
+      "menuSubtitle": "2 tabs",
+      "name": "Chemi",
+      "shared": false,
+      "showDisconnectedUI": false,
+      "workspaceFluidStatus": 0
+   }, {
+      "accent": false,
+      "active": false,
+      "collaboratorsCount": 0,
+      "color": 6,
+      "connectionUrl": "https://home.microsoftpersonalcontent.com/contentstorage/6CznihN3v0uy1zK5FrRCbwfe952f23f4e808bfworkspaces?driveId=b!hlPlyUy9gkuuue0HdEZIohNRyVkT3tNKo7Di7KPQ-dGgkv615lVkQJThKIg8ebIi&itemId=01FW63HO42MLEEC7WMRFC2K3Z4LIRUF6NM&path=",
+      "count": 3,
+      "edgeWorkspaceVersion": 2,
+      "id": "b461e25b-14cb-4357-a61e-ed67a0e953d4",
+      "isOwner": true,
+      "isolated": false,
+      "menuSubtitle": "3 tabs",
+      "name": "Phycis",
+      "shared": false,
+      "showDisconnectedUI": false,
+      "workspaceFluidStatus": 0
+   } ]
+}

@@ -1,0 +1,18 @@
+2024/11/25-00:15:15.556 af7 Reusing MANIFEST /home/as/.config/microsoft-edge-beta/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/11/25-00:15:15.556 af7 Recovering log #40
+2024/11/25-00:15:15.557 af7 Reusing old log /home/as/.config/microsoft-edge-beta/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000040.log 
+2024/11/25-01:07:09.933 af8 Compacting 1@1 + 1@2 files
+2024/11/25-01:07:09.937 af8 Generated table #43@1: 594 keys, 69956 bytes
+2024/11/25-01:07:09.937 af8 Compacted 1@1 + 1@2 files => 69956 bytes
+2024/11/25-01:07:09.940 af8 compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/11/25-01:07:09.940 af8 Delete type=2 #41
+2024/11/25-01:07:09.940 af8 Delete type=2 #39
+2024/11/25-03:12:44.874 afa Level-0 table #45: started
+2024/11/25-03:12:44.886 afa Level-0 table #45: 1232210 bytes OK
+2024/11/25-03:12:44.890 afa Delete type=0 #40
+2024/11/25-03:22:09.921 af7 Compacting 1@1 + 1@2 files
+2024/11/25-03:22:09.929 af7 Generated table #46@1: 589 keys, 49219 bytes
+2024/11/25-03:22:09.930 af7 Compacted 1@1 + 1@2 files => 49219 bytes
+2024/11/25-03:22:09.932 af7 compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/11/25-03:22:09.933 af7 Delete type=2 #43
+2024/11/25-03:22:09.933 af7 Delete type=2 #45

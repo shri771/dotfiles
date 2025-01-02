@@ -1,0 +1,8 @@
+{
+   "description": {
+      "message": "Prohlížeč PDF zobrazuje soubory PDF v prohlížeči pomocí souboru PDF.js. Odesílejte soubory PDF do libovolné čtečky PDF. Nástroj PDF Converter a PDF Editor."
+   },
+   "name": {
+      "message": "Prohlížeč PDF – otevřít v čtečce PDF"
+   }
+}

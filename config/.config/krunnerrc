@@ -1,0 +1,6 @@
+[General]
+FreeFloating=true
+historyBehavior=ImmediateCompletion
+
+[PlasmaRunnerManager]
+migrated=true

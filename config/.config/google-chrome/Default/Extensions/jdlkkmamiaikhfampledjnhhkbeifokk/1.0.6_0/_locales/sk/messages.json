@@ -1,0 +1,8 @@
+{
+   "description": {
+      "message": "Download to PDF - display PDF files in the browser with PDF.js (by Mozilla Labs). Send PDFs to any PDF viewer."
+   },
+   "name": {
+      "message": "Save to PDF - Download PDF"
+   }
+}

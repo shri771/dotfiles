@@ -1,0 +1,14 @@
+2024/11/24-18:34:52.429 ddf Reusing MANIFEST /home/as/.config/microsoft-edge-beta/Default/WebStorage/16/IndexedDB/indexeddb.leveldb/MANIFEST-000001
+2024/11/24-18:34:52.429 ddf Recovering log #4
+2024/11/24-18:34:52.429 ddf Reusing old log /home/as/.config/microsoft-edge-beta/Default/WebStorage/16/IndexedDB/indexeddb.leveldb/000004.log 
+2024/11/24-18:34:52.444 ddf Level-0 table #8: started
+2024/11/24-18:34:52.446 ddf Level-0 table #8: 764 bytes OK
+2024/11/24-18:34:52.451 ddf Delete type=0 #4
+2024/11/24-18:34:52.452 ddd Manual compaction at level-0 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/11/24-18:34:52.452 ddd Manual compaction at level-1 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at '\x00\x02\x01\x1f\x04\x03\x01\x03\x00N\x00E\x00W\x03\x00\x00\x00\x00\x00\x00L@\x03\x000*X\xe45yB\x00\x03\x00\x00\x00\x00\x00\x00\x08@' @ 226 : 0
+2024/11/24-18:34:52.452 ddd Compacting 1@1 + 1@2 files
+2024/11/24-18:34:52.455 ddd Generated table #9@1: 23 keys, 773 bytes
+2024/11/24-18:34:52.455 ddd Compacted 1@1 + 1@2 files => 773 bytes
+2024/11/24-18:34:52.457 ddd compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/11/24-18:34:52.457 ddd Delete type=2 #8
+2024/11/24-18:34:52.457 ddd Manual compaction at level-1 from '\x00\x02\x01\x1f\x04\x03\x01\x03\x00N\x00E\x00W\x03\x00\x00\x00\x00\x00\x00L@\x03\x000*X\xe45yB\x00\x03\x00\x00\x00\x00\x00\x00\x08@' @ 226 : 0 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)

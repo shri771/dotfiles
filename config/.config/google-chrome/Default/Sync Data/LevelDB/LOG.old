@@ -1,0 +1,6 @@
+2024/12/25-01:39:10.660 640 Reusing MANIFEST /home/shri/.config/google-chrome/Default/Sync Data/LevelDB/MANIFEST-000001
+2024/12/25-01:39:10.669 640 Recovering log #7
+2024/12/25-01:39:10.677 640 Reusing old log /home/shri/.config/google-chrome/Default/Sync Data/LevelDB/000007.log 
+2024/12/25-01:47:13.578 642 Level-0 table #11: started
+2024/12/25-01:47:13.584 642 Level-0 table #11: 91580 bytes OK
+2024/12/25-01:47:13.587 642 Delete type=0 #7

@@ -1,0 +1,6 @@
+2025/01/01-19:09:55.338 3bc9 Reusing MANIFEST /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/01/01-19:09:55.338 3bc9 Recovering log #42
+2025/01/01-19:09:55.343 3bc9 Reusing old log /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/000042.log 
+2025/01/01-19:10:01.589 3bc9 Level-0 table #47: started
+2025/01/01-19:10:01.607 3bc9 Level-0 table #47: 3137755 bytes OK
+2025/01/01-19:10:01.612 3bc9 Delete type=0 #42

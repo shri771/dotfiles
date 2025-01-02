@@ -1,0 +1,13 @@
+[$Version]
+update_info=kscreenlocker.upd:0.1-autolock
+
+[Daemon]
+LockGrace=0
+
+[Greeter][LnF][General]
+showMediaControls=false
+
+[Greeter][Wallpaper][org.kde.image][General]
+Image=/home/shri/Pictures/wallpaper/1184957.jpg
+PreviewImage=/home/shri/Pictures/wallpaper/1184957.jpg
+SlidePaths=/home/shri/.local/share/wallpapers/,/usr/share/wallpapers/

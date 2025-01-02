@@ -1,0 +1,94 @@
+[2024-12-20 14:15:46.516] [info]  Websocket listening on 36703...
+[2024-12-20 14:15:46.519] [info]  Setting up up server listeners with auth (402602)...
+[2024-12-20 14:15:46.520] [info]              Server up and running
+[2024-12-20 14:15:47.763] [info]              Listening to 1 MessagePort(s) for renderer 5 (https://www.notion.so/quick-search)
+[2024-12-20 14:15:59.689] [info]              Listening to 1 MessagePort(s) for renderer 1 (https://www.notion.so/)
+[2024-12-20 14:16:01.468] [info]              Listening to 1 MessagePort(s) for renderer 7 (https://www.notion.so/blank)
+[2024-12-25 23:21:44.136] [info]  Websocket listening on 46635...
+[2024-12-25 23:21:44.139] [info]  Setting up up server listeners with auth (ba043c)...
+[2024-12-25 23:21:44.140] [info]              Server up and running
+[2024-12-25 23:21:44.684] [info]              Listening to 1 MessagePort(s) for renderer 1 (https://www.notion.so/?pvs=3)
+[2024-12-25 23:21:45.140] [info]              Listening to 1 MessagePort(s) for renderer 5 (https://www.notion.so/quick-search)
+[2024-12-25 23:21:54.634] [info]              Listening to 1 MessagePort(s) for renderer 7 (https://www.notion.so/blank)
+[2024-12-25 23:21:58.242] [info]              Listening to 1 MessagePort(s) for renderer 1 (https://www.notion.so/oauth2callback?state=eyJjYWxsYmFja1R5cGUiOiJuYXRpdmVyZWRpcmVjdCIsImVuY3J5cHRlZFRva2VuIjoidjAyOmxvZ2luX3dpdGhfZ29vZ2xlOl92N1NQZUFsWmxGTmg0bTN6M0w2UXRHZDNBTlg0Nzc3ZkJGelJkTVZHdjIxZTJVaGlXWXZzb05Ea2g0dEVwUUdNdGRuNl9sNElGZ1ItUDN1ajQ5RjY4N3F3MFBJVzdKeWdaVlBydEV3emgtRnlGT083ZzR0dFc4enoyUmlSVEdtOHlrRCJ9&code=4%2F0AanRRrsvRZ6Jz0fwn4DbzfMpJzdYWc9O7RywrUE6VqaB85c1C4JJZnzUVIBKVZa5s963PQ&scope=email%20profile%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none&di=)
+[2024-12-25 23:22:00.427] [info]              Listening to 1 MessagePort(s) for renderer 5 (https://www.notion.so/quick-search)
+[2024-12-25 23:22:32.522] [info]              Listening to 1 MessagePort(s) for renderer 5 (https://www.notion.so/quick-search)
+[2024-12-25 23:22:32.898] [info]              Listening to 1 MessagePort(s) for renderer 1 (https://www.notion.so/Task-Manger-10e56480d76480bf9c76cff8e6adcfa2)
+[2024-12-25 23:22:33.467] [info]              Listening to 1 MessagePort(s) for renderer 7 (https://www.notion.so/blank)
+[2024-12-26 02:13:16.098] [info]  Websocket listening on 44113...
+[2024-12-26 02:13:16.102] [info]  Setting up up server listeners with auth (5221f2)...
+[2024-12-26 02:13:16.102] [info]              Server up and running
+[2024-12-26 02:13:16.970] [info]              Listening to 1 MessagePort(s) for renderer 5 (https://www.notion.so/quick-search)
+[2024-12-26 02:13:16.977] [info]              Listening to 1 MessagePort(s) for renderer 1 (https://www.notion.so/Task-Manger-10e56480d76480bf9c76cff8e6adcfa2?pvs=3)
+[2024-12-26 02:13:26.636] [info]              Listening to 1 MessagePort(s) for renderer 7 (https://www.notion.so/blank)
+[2024-12-26 16:48:49.783] [info]  Websocket listening on 35001...
+[2024-12-26 16:48:49.788] [info]  Setting up up server listeners with auth (1ca450)...
+[2024-12-26 16:48:49.788] [info]              Server up and running
+[2024-12-26 16:48:50.577] [info]              Listening to 1 MessagePort(s) for renderer 5 (https://www.notion.so/quick-search)
+[2024-12-26 16:48:50.584] [info]              Listening to 1 MessagePort(s) for renderer 1 (https://www.notion.so/Dashboard-10e56480d764802c8972f4c2540da098?pvs=3)
+[2024-12-26 16:49:00.702] [info]              Listening to 1 MessagePort(s) for renderer 7 (https://www.notion.so/blank)
+[2024-12-26 23:12:40.734] [info]  Websocket listening on 39641...
+[2024-12-26 23:12:40.741] [info]  Setting up up server listeners with auth (c54076)...
+[2024-12-26 23:12:40.742] [info]              Server up and running
+[2024-12-26 23:12:41.673] [info]              Listening to 1 MessagePort(s) for renderer 1 (https://www.notion.so/Linux-CMD-13c56480d76480b7836ef6591f19b41b?p=16656480d76480d79848db70bca9fe36&pm=s&pvs=3)
+[2024-12-26 23:12:41.673] [info]              Listening to 1 MessagePort(s) for renderer 5 (https://www.notion.so/quick-search)
+[2024-12-26 23:12:51.183] [info]              Listening to 1 MessagePort(s) for renderer 7 (https://www.notion.so/blank)
+[2024-12-27 13:23:00.817] [info]  Websocket listening on 37133...
+[2024-12-27 13:23:00.828] [info]  Setting up up server listeners with auth (c61cda)...
+[2024-12-27 13:23:00.829] [info]              Server up and running
+[2024-12-27 13:23:01.697] [info]              Listening to 1 MessagePort(s) for renderer 5 (https://www.notion.so/quick-search)
+[2024-12-27 13:23:01.865] [info]              Listening to 1 MessagePort(s) for renderer 1 (https://www.notion.so/Linux-CMD-13c56480d76480b7836ef6591f19b41b?p=16656480d76480d79848db70bca9fe36&pm=s&pvs=3)
+[2024-12-27 13:23:11.428] [info]              Listening to 1 MessagePort(s) for renderer 7 (https://www.notion.so/blank)
+[2024-12-27 12:05:17.418] [info]  Websocket listening on 37743...
+[2024-12-27 12:05:17.421] [info]  Setting up up server listeners with auth (efee6c)...
+[2024-12-27 12:05:17.422] [info]              Server up and running
+[2024-12-27 12:05:18.077] [info]              Listening to 1 MessagePort(s) for renderer 1 (https://www.notion.so/Linux-CMD-13c56480d76480b7836ef6591f19b41b?p=16656480d76480d79848db70bca9fe36&pm=s&pvs=3)
+[2024-12-27 12:05:18.122] [info]              Listening to 1 MessagePort(s) for renderer 5 (https://www.notion.so/quick-search)
+[2024-12-27 12:05:27.895] [info]              Listening to 1 MessagePort(s) for renderer 7 (https://www.notion.so/blank)
+[2024-12-27 12:29:04.231] [info]  Websocket listening on 46497...
+[2024-12-27 12:29:04.235] [info]  Setting up up server listeners with auth (e57ac2)...
+[2024-12-27 12:29:04.235] [info]              Server up and running
+[2024-12-27 12:29:07.035] [info]              Listening to 1 MessagePort(s) for renderer 5 (https://www.notion.so/quick-search)
+[2024-12-27 12:29:07.043] [info]              Listening to 1 MessagePort(s) for renderer 1 (https://www.notion.so/Linux-CMD-13c56480d76480b7836ef6591f19b41b?p=16956480d7648085b2bfc47f3db8bafc&pm=s&pvs=3)
+[2024-12-27 12:29:14.816] [info]              Listening to 1 MessagePort(s) for renderer 7 (https://www.notion.so/blank)
+[2024-12-28 08:23:12.925] [info]  Websocket listening on 44731...
+[2024-12-28 08:23:12.929] [info]  Setting up up server listeners with auth (da351f)...
+[2024-12-28 08:23:12.931] [info]              Server up and running
+[2024-12-28 08:23:13.621] [info]              Listening to 1 MessagePort(s) for renderer 5 (https://www.notion.so/quick-search)
+[2024-12-28 08:23:13.739] [info]              Listening to 1 MessagePort(s) for renderer 1 (https://www.notion.so/Linux-CMD-13c56480d76480b7836ef6591f19b41b?pvs=3)
+[2024-12-28 08:23:23.488] [info]              Listening to 1 MessagePort(s) for renderer 7 (https://www.notion.so/blank)
+[2024-12-28 12:46:30.755] [info]  Websocket listening on 38467...
+[2024-12-28 12:46:30.758] [info]  Setting up up server listeners with auth (533674)...
+[2024-12-28 12:46:30.759] [info]              Server up and running
+[2024-12-28 12:46:31.383] [info]              Listening to 1 MessagePort(s) for renderer 5 (https://www.notion.so/quick-search)
+[2024-12-28 12:46:31.459] [info]              Listening to 1 MessagePort(s) for renderer 1 (https://www.notion.so/Linux-CMD-13c56480d76480b7836ef6591f19b41b?p=16956480d7648085b2bfc47f3db8bafc&pm=s&pvs=3)
+[2024-12-28 12:46:41.251] [info]              Listening to 1 MessagePort(s) for renderer 7 (https://www.notion.so/blank)
+[2024-12-28 13:12:41.565] [info]              Responding to SIGTERM and shutting down...
+[2024-12-28 14:15:13.690] [info]  Websocket listening on 36135...
+[2024-12-28 14:15:13.693] [info]  Setting up up server listeners with auth (19e8b9)...
+[2024-12-28 14:15:13.694] [info]              Server up and running
+[2024-12-28 14:15:14.379] [info]              Listening to 1 MessagePort(s) for renderer 1 (https://www.notion.so/16a56480d76480748c2fee112ea05874?showMoveTo=true&saveParent=true&pvs=3)
+[2024-12-28 14:15:14.388] [info]              Listening to 1 MessagePort(s) for renderer 5 (https://www.notion.so/quick-search)
+[2024-12-28 14:15:24.189] [info]              Listening to 1 MessagePort(s) for renderer 7 (https://www.notion.so/blank)
+[2024-12-28 15:21:06.167] [info]              Listening to 1 MessagePort(s) for renderer 8 (https://www.notion.so/blank)
+[2024-12-28 15:21:06.487] [info]              Listening to 1 MessagePort(s) for renderer 9 (https://www.notion.so/To-add-multifunction-16656480d76480d3b282c52b3a8002c8?pvs=25)
+[2024-12-28 15:21:08.587] [info]              Listening to 1 MessagePort(s) for renderer 10 (https://www.notion.so/blank)
+[2024-12-30 17:19:01.081] [info]  Websocket listening on 35695...
+[2024-12-30 17:19:01.085] [info]  Setting up up server listeners with auth (9e84f0)...
+[2024-12-30 17:19:01.086] [info]              Server up and running
+[2024-12-30 17:19:01.902] [info]              Listening to 1 MessagePort(s) for renderer 8 (https://www.notion.so/quick-search)
+[2024-12-30 17:19:01.911] [info]              Listening to 1 MessagePort(s) for renderer 1 (https://www.notion.so/Linux-CMD-13c56480d76480b7836ef6591f19b41b?p=16656480d76480d79848db70bca9fe36&pm=s&pvs=3)
+[2024-12-30 17:19:01.947] [info]              Listening to 1 MessagePort(s) for renderer 4 (https://www.notion.so/Drivers-16956480d7648085b2bfc47f3db8bafc?pvs=3)
+[2024-12-30 17:19:02.306] [info]              Listening to 1 MessagePort(s) for renderer 5 (https://www.notion.so/To-add-multifunction-16656480d76480d3b282c52b3a8002c8?pvs=3)
+[2024-12-30 17:19:04.002] [info]              Listening to 1 MessagePort(s) for renderer 6 (https://www.notion.so/Drivers-16956480d7648085b2bfc47f3db8bafc?pvs=3)
+[2024-12-30 17:19:11.552] [info]              Listening to 1 MessagePort(s) for renderer 10 (https://www.notion.so/blank)
+[2024-12-31 20:52:27.291] [info]  Websocket listening on 39591...
+[2024-12-31 20:52:27.294] [info]  Setting up up server listeners with auth (083baa)...
+[2024-12-31 20:52:27.295] [info]              Server up and running
+[2024-12-31 20:52:31.222] [info]              Listening to 1 MessagePort(s) for renderer 8 (https://www.notion.so/quick-search)
+[2024-12-31 20:52:31.248] [info]              Listening to 1 MessagePort(s) for renderer 1 (https://www.notion.so/Linux-CMD-13c56480d76480b7836ef6591f19b41b?p=16656480d76480d79848db70bca9fe36&pm=s&pvs=3)
+[2024-12-31 20:52:31.319] [info]              Listening to 1 MessagePort(s) for renderer 4 (https://www.notion.so/Drivers-16956480d7648085b2bfc47f3db8bafc?pvs=3)
+[2024-12-31 20:52:31.341] [info]              Listening to 1 MessagePort(s) for renderer 5 (https://www.notion.so/To-add-multifunction-16656480d76480d3b282c52b3a8002c8?pvs=3)
+[2024-12-31 20:52:31.648] [info]              Listening to 1 MessagePort(s) for renderer 6 (https://www.notion.so/Drivers-16956480d7648085b2bfc47f3db8bafc?pvs=3)
+[2024-12-31 20:52:37.781] [info]              Listening to 1 MessagePort(s) for renderer 10 (https://www.notion.so/blank)
+[2024-12-31 20:52:55.330] [info]              Responding to SIGTERM and shutting down...

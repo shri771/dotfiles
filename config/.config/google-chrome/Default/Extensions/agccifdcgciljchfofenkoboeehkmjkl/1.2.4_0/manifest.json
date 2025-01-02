@@ -1,0 +1,37 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "assets/images/icon-128x128.png",
+         "16": "assets/images/icon-16x16.png",
+         "48": "assets/images/icon-48x48.png"
+      },
+      "default_title": "Price History"
+   },
+   "background": {
+      "service_worker": "service-worker.js"
+   },
+   "content_scripts": [ {
+      "js": [ "content_scripts/content.js" ],
+      "matches": [ "https://www.amazon.in/*", "https://www.flipkart.com/*" ]
+   } ],
+   "description": "Price History Extension for Amazon & Flipkart. Amazon and Flipkart Price Tracker. Track Amazon & Flipkart prices, view Price charts",
+   "homepage_url": "https://pricehistory.app/",
+   "host_permissions": [ "https://*.amazon.in/*", "https://*.flipkart.com/*", "https://pricehistory.app/*", "https://www.google-analytics.com/*" ],
+   "icons": {
+      "128": "assets/images/icon-128x128.png",
+      "16": "assets/images/icon-16x16.png",
+      "48": "assets/images/icon-48x48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlbVvCTUIMYkH5KMfhlueJfNA1AKeWr9OdioZR2ElhWCGIks1BUdejQ0LB0WsH1XZzLW19iKoAv061V8cgFmiPAWDxXRFVkPisV2cGj5FlfhfAg2rXnEXIBnsS6TW8mBg+d9QhdCOdMGbJ5G4PjSDuh+VeQzoKiEWblEJ2e/eGtBNCBZTHoZN68DRNin1/Du4mmbJMzhnagkZYOjd5XCjyWLkZthhDuRER4zxLO2FkMlYvLrgaV0XRrKo/jtiGnvPPsYHRNnkqbWu5eh/drEqTxyluVfyjB3Nid3cJQYbVTO3/DOm75klDtHUDh3Nm6L24PvTabO2pvAu8TnKT/FqRwIDAQAB",
+   "manifest_version": 3,
+   "name": "Price History Extension - Price Tracker for Amazon & Flipkart",
+   "options_page": "options/settings.html",
+   "permissions": [ "tabs", "storage" ],
+   "short_name": "Price History Extension",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.2.4",
+   "web_accessible_resources": [ {
+      "matches": [ "https://*.amazon.in/*", "https://*.flipkart.com/*" ],
+      "resources": [ "assets/images/icon-128x128.png" ]
+   } ]
+}

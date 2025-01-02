@@ -1,0 +1,20 @@
+00:00:00.203155 VirtualBox GUI VM Selector Window 7.1.4 r165100 linux.amd64 (Dec 25 2024 18:38:04) release log
+00:00:00.203157 Log opened 2024-12-31T16:09:02.552430000Z
+00:00:00.203157 Build Type: release
+00:00:00.203159 OS Product: Linux
+00:00:00.203159 OS Release: 6.12.7-arch1-1
+00:00:00.203159 OS Version: #1 SMP PREEMPT_DYNAMIC Fri, 27 Dec 2024 14:24:37 +0000
+00:00:00.203179 DMI Product Name: BRN-FXXC
+00:00:00.203182 DMI Product Version: M1060
+00:00:00.203185 Firmware type: UEFI
+00:00:00.203852 Secure Boot: Disabled
+00:00:00.203900 Host RAM: 15717MB (15.3GB) total, 11146MB (10.8GB) available
+00:00:00.203902 Executable: /usr/lib/virtualbox/VirtualBox
+00:00:00.203902 Process ID: 133358
+00:00:00.203902 Package type: LINUX_64BITS_GENERIC (OSE)
+00:00:00.203918 Qt version: 6.8.1
+00:00:00.204696 GUI: UIMediumEnumerator: Initial medium-enumeration finished!
+00:00:00.216529 GUI: UIMediumEnumerator: Medium-enumeration started...
+00:00:00.562740 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:00:00.582058 GUI: UIDesktopWidgetWatchdog::sltHandleHostScreenAvailableGeometryCalculated: Screen 0 work area is actually resized to: 0x20 x 1920x1180
+00:00:19.385840 GUI: UIMediumEnumerator: Medium-enumeration finished!

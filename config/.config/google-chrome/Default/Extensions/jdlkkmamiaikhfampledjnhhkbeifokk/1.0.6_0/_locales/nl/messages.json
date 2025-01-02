@@ -1,0 +1,8 @@
+{
+   "description": {
+      "message": "PDF Viewer - geef PDF-bestanden weer in de browser met PDF.js (van Mozilla Labs). Stuur PDF's naar elke PDF-viewer. PDF-editor, pdf-converter"
+   },
+   "name": {
+      "message": "PDF-viewer en converter"
+   }
+}

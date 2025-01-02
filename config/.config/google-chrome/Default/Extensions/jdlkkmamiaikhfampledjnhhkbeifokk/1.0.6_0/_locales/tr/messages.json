@@ -1,0 +1,8 @@
+{
+   "description": {
+      "message": "PDF görüntüleyici - PDF dosyalarını tarayıcıda PDF.js (Mozilla Labs tarafından) ile görüntüleyin. PDF'leri herhangi bir PDF görüntüleyiciye gönderin. PDF düzenleyici"
+   },
+   "name": {
+      "message": "PDF görüntüleyici ve dönüştürücü"
+   }
+}

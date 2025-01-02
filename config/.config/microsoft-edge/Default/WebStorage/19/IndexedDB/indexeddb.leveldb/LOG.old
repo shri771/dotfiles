@@ -1,0 +1,6 @@
+2024/11/29-06:48:38.427 1dd8 Creating DB /home/shri/.config/microsoft-edge/Default/WebStorage/19/IndexedDB/indexeddb.leveldb since it was missing.
+2024/11/29-06:48:38.432 1dd8 Reusing MANIFEST /home/shri/.config/microsoft-edge/Default/WebStorage/19/IndexedDB/indexeddb.leveldb/MANIFEST-000001
+2024/11/29-07:36:21.938 1dda Level-0 table #5: started
+2024/11/29-07:36:21.940 1dda Level-0 table #5: 28106 bytes OK
+2024/11/29-07:36:21.943 1dda Delete type=0 #3
+2024/11/29-07:36:21.943 1dda Manual compaction at level-0 from (begin) .. (end); will stop at (end)

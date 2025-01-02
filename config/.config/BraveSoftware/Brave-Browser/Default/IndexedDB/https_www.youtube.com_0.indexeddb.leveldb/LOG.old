@@ -1,0 +1,44 @@
+2025/01/01-22:06:10.467 b24 Reusing MANIFEST /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/01/01-22:06:10.467 b24 Recovering log #601
+2025/01/01-22:06:10.471 b24 Reusing old log /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000601.log 
+2025/01/01-22:06:10.472 b24 Delete type=2 #600
+2025/01/01-22:06:10.473 b24 Delete type=2 #602
+2025/01/01-22:46:35.392 b17 Level-0 table #607: started
+2025/01/01-22:46:35.400 b17 Level-0 table #607: 1427438 bytes OK
+2025/01/01-22:46:35.404 b17 Delete type=0 #601
+2025/01/01-22:47:08.297 b17 Compacting 1@1 + 1@2 files
+2025/01/01-22:47:08.302 b17 Generated table #608@1: 1053 keys, 72104 bytes
+2025/01/01-22:47:08.302 b17 Compacted 1@1 + 1@2 files => 72104 bytes
+2025/01/01-22:47:08.305 b17 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/01/01-22:47:08.305 b17 Delete type=2 #604
+2025/01/01-22:47:08.305 b17 Delete type=2 #607
+2025/01/01-22:48:57.786 b17 Level-0 table #610: started
+2025/01/01-22:48:57.795 b17 Level-0 table #610: 1377449 bytes OK
+2025/01/01-22:48:57.798 b17 Delete type=0 #606
+2025/01/01-23:57:45.905 b16 Compacting 1@1 + 1@2 files
+2025/01/01-23:57:45.910 b16 Generated table #611@1: 1060 keys, 60241 bytes
+2025/01/01-23:57:45.910 b16 Compacted 1@1 + 1@2 files => 60241 bytes
+2025/01/01-23:57:45.912 b16 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/01/01-23:57:45.912 b16 Delete type=2 #610
+2025/01/01-23:57:45.913 b16 Delete type=2 #608
+2025/01/02-00:52:53.725 b16 Level-0 table #613: started
+2025/01/02-00:52:53.737 b16 Level-0 table #613: 1141686 bytes OK
+2025/01/02-00:52:53.740 b16 Delete type=0 #609
+2025/01/02-00:53:36.760 b17 Compacting 1@1 + 1@2 files
+2025/01/02-00:53:36.770 b17 Generated table #614@1: 1206 keys, 230782 bytes
+2025/01/02-00:53:36.771 b17 Compacted 1@1 + 1@2 files => 230782 bytes
+2025/01/02-00:53:36.773 b17 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/01/02-00:53:36.773 b17 Delete type=2 #613
+2025/01/02-00:53:36.773 b17 Delete type=2 #611
+2025/01/02-01:33:15.930 b17 Level-0 table #616: started
+2025/01/02-01:33:15.941 b17 Level-0 table #616: 1160429 bytes OK
+2025/01/02-01:33:15.945 b17 Delete type=0 #612
+2025/01/02-01:33:28.100 b17 Compacting 1@1 + 1@2 files
+2025/01/02-01:33:28.110 b17 Generated table #617@1: 1365 keys, 400981 bytes
+2025/01/02-01:33:28.110 b17 Compacted 1@1 + 1@2 files => 400981 bytes
+2025/01/02-01:33:28.113 b17 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/01/02-01:33:28.113 b17 Delete type=2 #616
+2025/01/02-01:33:28.113 b17 Delete type=2 #614
+2025/01/02-01:42:05.071 b17 Level-0 table #619: started
+2025/01/02-01:42:05.080 b17 Level-0 table #619: 1187377 bytes OK
+2025/01/02-01:42:05.083 b17 Delete type=0 #615
