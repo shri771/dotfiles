@@ -869,13 +869,12 @@ awful.spawn.with_shell("killall conky && conky -c $HOME/.config/conky/awesome/" 
 --awful.spawn.with_shell("brave")
 --awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("variety --set-wallpaper=/home/shri/Pictures/wallpaper/Day/1345491.png")
---awful.spawn.with_shell("blueberry") --Interchange escape with caps
---awful.spawn.with_shell("autokey-qt")
+awful.spawn.with_shell("rclone mount Shri77: ~/Shri77/") --Interchange escape with caps
+awful.spawn.with_shell("xdotool key Num_Lock")
 awful.spawn.with_shell("xmodmap ~/.Xmodmap")
-awful.spawn.with_shell("copyq")
---awful.spawm.with_shell("blueberry")
---awful.spawm.with_shell("autokey-qt")
-
+--awful.spawn.with_shell("xautolock -time 5 -locker 'i3lock' &")
+awful.spawn.with_shell("~/scripts/startups/poly_start.sh")
+awful.spawn.with_shell("rclone mount Shri77_Photos: Pictures/g-photos/")
 --awful.spawn.with_shell("xargs xwallpaper --stretch < ~/.cache/wall")
 --awful.spawn.with_shell("~/.fehbg") -- set last saved feh wallpaper
 --awful.spawn.with_shell("feh --randomize --bg-fill /usr/share/backgrounds/dtos-backgrounds/*") -- feh sets random wallpaper
