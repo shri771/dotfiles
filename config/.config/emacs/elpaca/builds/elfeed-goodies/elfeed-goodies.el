@@ -1,0 +1,1 @@
+/home/shri/.config/emacs/elpaca/repos/elfeed-goodies/elfeed-goodies.el

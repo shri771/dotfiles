@@ -92,3 +92,12 @@
 [2024-12-31 20:52:31.648] [info]              Listening to 1 MessagePort(s) for renderer 6 (https://www.notion.so/Drivers-16956480d7648085b2bfc47f3db8bafc?pvs=3)
 [2024-12-31 20:52:37.781] [info]              Listening to 1 MessagePort(s) for renderer 10 (https://www.notion.so/blank)
 [2024-12-31 20:52:55.330] [info]              Responding to SIGTERM and shutting down...
+[2025-01-02 19:39:49.035] [info]  Websocket listening on 33181...
+[2025-01-02 19:39:49.039] [info]  Setting up up server listeners with auth (3c03be)...
+[2025-01-02 19:39:49.039] [info]              Server up and running
+[2025-01-02 19:39:49.745] [info]              Listening to 1 MessagePort(s) for renderer 8 (https://www.notion.so/quick-search)
+[2025-01-02 19:39:49.897] [info]              Listening to 1 MessagePort(s) for renderer 1 (https://www.notion.so/Linux-CMD-13c56480d76480b7836ef6591f19b41b?p=16656480d76480d79848db70bca9fe36&pm=s&pvs=3)
+[2025-01-02 19:39:50.147] [info]              Listening to 1 MessagePort(s) for renderer 5 (https://www.notion.so/To-add-multifunction-16656480d76480d3b282c52b3a8002c8?pvs=3)
+[2025-01-02 19:39:50.247] [info]              Listening to 1 MessagePort(s) for renderer 4 (https://www.notion.so/Drivers-16956480d7648085b2bfc47f3db8bafc?pvs=3)
+[2025-01-02 19:39:50.905] [info]              Listening to 1 MessagePort(s) for renderer 6 (https://www.notion.so/Drivers-16956480d7648085b2bfc47f3db8bafc?pvs=3)
+[2025-01-02 19:39:59.494] [info]              Listening to 1 MessagePort(s) for renderer 10 (https://www.notion.so/blank)

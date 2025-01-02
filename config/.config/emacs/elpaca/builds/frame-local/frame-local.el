@@ -1,0 +1,1 @@
+/home/shri/.config/emacs/elpaca/repos/frame-local/frame-local.el

@@ -1,6 +1,7 @@
-2025/01/01-17:05:50.415 3bca Creating DB /home/shri/.config/BraveSoftware/Brave-Browser/Default/WebStorage/55/IndexedDB/indexeddb.leveldb since it was missing.
-2025/01/01-17:05:50.420 3bca Reusing MANIFEST /home/shri/.config/BraveSoftware/Brave-Browser/Default/WebStorage/55/IndexedDB/indexeddb.leveldb/MANIFEST-000001
-2025/01/01-19:33:41.868 3bc9 Level-0 table #5: started
-2025/01/01-19:33:41.872 3bc9 Level-0 table #5: 261277 bytes OK
-2025/01/01-19:33:41.875 3bc9 Delete type=0 #3
-2025/01/01-19:33:41.875 3bc9 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2025/01/02-22:56:39.802 244b Reusing MANIFEST /home/shri/.config/BraveSoftware/Brave-Browser/Default/WebStorage/55/IndexedDB/indexeddb.leveldb/MANIFEST-000001
+2025/01/02-22:56:39.803 244b Recovering log #7
+2025/01/02-22:56:39.804 244b Reusing old log /home/shri/.config/BraveSoftware/Brave-Browser/Default/WebStorage/55/IndexedDB/indexeddb.leveldb/000007.log 
+2025/01/02-22:56:39.926 2456 Level-0 table #12: started
+2025/01/02-22:56:39.931 2456 Level-0 table #12: 109318 bytes OK
+2025/01/02-22:56:39.935 2456 Delete type=0 #7
+2025/01/02-22:56:39.935 244a Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)

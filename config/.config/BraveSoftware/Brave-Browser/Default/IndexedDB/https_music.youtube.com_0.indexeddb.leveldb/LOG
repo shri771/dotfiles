@@ -1,3 +1,12 @@
-2025/01/02-01:48:21.126 3f003 Reusing MANIFEST /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_music.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/01/02-01:48:21.126 3f003 Recovering log #4
-2025/01/02-01:48:21.130 3f003 Reusing old log /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_music.youtube.com_0.indexeddb.leveldb/000004.log 
+2025/01/02-22:56:49.445 2449 Reusing MANIFEST /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_music.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/01/02-22:56:49.445 2449 Recovering log #4
+2025/01/02-22:56:49.453 2449 Reusing old log /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_music.youtube.com_0.indexeddb.leveldb/000004.log 
+2025/01/02-23:43:51.042 2449 Level-0 table #8: started
+2025/01/02-23:43:51.051 2449 Level-0 table #8: 1408087 bytes OK
+2025/01/02-23:43:51.054 2449 Delete type=0 #4
+2025/01/02-23:44:13.032 244a Compacting 1@1 + 1@2 files
+2025/01/02-23:44:13.041 244a Generated table #9@1: 742 keys, 55750 bytes
+2025/01/02-23:44:13.041 244a Compacted 1@1 + 1@2 files => 55750 bytes
+2025/01/02-23:44:13.044 244a compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/01/02-23:44:13.044 244a Delete type=2 #8
+2025/01/02-23:44:13.044 244a Delete type=2 #5

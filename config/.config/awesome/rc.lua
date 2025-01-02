@@ -286,6 +286,11 @@ globalkeys = my_table.join(
 		awful.util.spawn("dm-run")
 	end, { description = "Run launcher", group = "hotkeys" }),
 
+	-- Rofi launcher
+	awful.key({ altkey }, "space", function()
+		awful.spawn(rofi)
+	end, { description = "launch rofi", group = "launcher" }),
+
 	-- Dmscripts (Super + p followed by KEY)
 	awful.key({ modkey }, "p", function()
 		local grabber
@@ -870,12 +875,12 @@ awful.spawn.with_shell("killall conky && conky -c $HOME/.config/conky/awesome/" 
 --awful.spawn.with_shell("/usr/bin/emacs --daemon")
 awful.spawn.with_shell("xsettingsd &")
 --awful.spawn.with_shell("nitrogen --restore")
---awful.spawn.with_shell("variety --set-wallpaper=/home/shri/Pictures/wallpaper/Day/1345491.png")
+awful.spawn.with_shell("variety --set-wallpaper=/home/shri/Pictures/wallpaper/Day/0258.jpg")
 awful.spawn.with_shell("rclone mount Shri77: ~/Shri77/") --Interchange escape with caps
 awful.spawn.with_shell("xdotool key Num_Lock")
 awful.spawn.with_shell("xmodmap ~/.Xmodmap")
 --awful.spawn.with_shell("xautolock -time 5 -locker 'i3lock' &")
-awful.spawn.with_shell("~/scripts/startups/poly_start.sh")
+--awful.spawn.with_shell("~/scripts/startups/poly_start.sh")
 awful.spawn.with_shell("rclone mount Shri77_Photos: Pictures/g-photos/")
 --awful.spawn.with_shell("xargs xwallpaper --stretch < ~/.cache/wall")
 --awful.spawn.with_shell("~/.fehbg") -- set last saved feh wallpaper

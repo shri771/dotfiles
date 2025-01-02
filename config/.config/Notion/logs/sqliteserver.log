@@ -191,3 +191,21 @@
 
 [2024-12-31 20:52:37.782] [info]  (SqliteServer)         stdout: 20:52:37.781             › Listening to 1 MessagePort(s) for renderer 10 (https://www.notion.so/blank)
 
+[2025-01-02 19:39:48.866] [info]  (SqliteServer) Child process running on 33181
+[2025-01-02 19:39:49.042] [info]  (SqliteServer)         stdout: 19:39:49.035 › Websocket listening on 33181...
+
+[2025-01-02 19:39:49.043] [info]  (SqliteServer)         stdout: 19:39:49.039 › Setting up up server listeners with auth (3c03be)...
+19:39:49.039             › Server up and running
+
+[2025-01-02 19:39:49.746] [info]  (SqliteServer)         stdout: 19:39:49.745             › Listening to 1 MessagePort(s) for renderer 8 (https://www.notion.so/quick-search)
+
+[2025-01-02 19:39:49.898] [info]  (SqliteServer)         stdout: 19:39:49.897             › Listening to 1 MessagePort(s) for renderer 1 (https://www.notion.so/Linux-CMD-13c56480d76480b7836ef6591f19b41b?p=16656480d76480d79848db70bca9fe36&pm=s&pvs=3)
+
+[2025-01-02 19:39:50.147] [info]  (SqliteServer)         stdout: 19:39:50.147             › Listening to 1 MessagePort(s) for renderer 5 (https://www.notion.so/To-add-multifunction-16656480d76480d3b282c52b3a8002c8?pvs=3)
+
+[2025-01-02 19:39:50.248] [info]  (SqliteServer)         stdout: 19:39:50.247             › Listening to 1 MessagePort(s) for renderer 4 (https://www.notion.so/Drivers-16956480d7648085b2bfc47f3db8bafc?pvs=3)
+
+[2025-01-02 19:39:50.906] [info]  (SqliteServer)         stdout: 19:39:50.905             › Listening to 1 MessagePort(s) for renderer 6 (https://www.notion.so/Drivers-16956480d7648085b2bfc47f3db8bafc?pvs=3)
+
+[2025-01-02 19:39:59.495] [info]  (SqliteServer)         stdout: 19:39:59.494             › Listening to 1 MessagePort(s) for renderer 10 (https://www.notion.so/blank)
+

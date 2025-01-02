@@ -1,4 +1,11 @@
 0
+/home/shri/Pictures/wallpaper/Day/0082.jpg
+/home/shri/Pictures/wallpaper/Day/0059.jpg
+/home/shri/Pictures/wallpaper/Day/0218.jpg
+/home/shri/Pictures/wallpaper/Day/0258.jpg
+/home/shri/Pictures/wallpaper/Day/0082.jpg
+/home/shri/Pictures/wallpaper/Day/0105.jpg
+/home/shri/Pictures/wallpaper/Day/0202.jpg
 /home/shri/Pictures/wallpaper/Day/0177.jpg
 /home/shri/Pictures/wallpaper/Day/0072.jpg
 /home/shri/Pictures/wallpaper/Day/0196.jpg
@@ -92,10 +99,3 @@
 /home/shri/Pictures/wallpaper/Night/1062760.jpg
 /home/shri/Pictures/wallpaper/Day/1345491.png
 /home/shri/Pictures/wallpaper/Night/1062760.jpg
-/home/shri/Pictures/wallpaper/Night/1352905.png
-/home/shri/Pictures/wallpaper/Day/1345491.png
-/home/shri/Pictures/wallpaper/Night/1345489.png
-/home/shri/Pictures/wallpaper/Day/1345491.png
-/home/shri/Pictures/wallpaper/Night/1062760.jpg
-/home/shri/Pictures/wallpaper/Day/1345491.png
-/home/shri/Pictures/wallpaper/Night/1345483.png

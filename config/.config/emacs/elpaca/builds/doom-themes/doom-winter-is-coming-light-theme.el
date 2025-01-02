@@ -1,0 +1,1 @@
+/home/shri/.config/emacs/elpaca/repos/themes/themes/doom-winter-is-coming-light-theme.el

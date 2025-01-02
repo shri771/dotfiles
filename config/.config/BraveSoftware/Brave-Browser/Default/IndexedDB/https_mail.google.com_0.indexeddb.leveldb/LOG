@@ -1,21 +1,12 @@
-2025/01/02-03:05:43.076 3f002 Reusing MANIFEST /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/01/02-03:05:43.077 3f002 Recovering log #46
-2025/01/02-03:05:43.080 3f002 Reusing old log /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/000046.log 
-2025/01/02-03:05:45.016 3f002 Compacting 1@1 + 1@2 files
-2025/01/02-03:05:45.028 3f002 Generated table #49@1: 206 keys, 743697 bytes
-2025/01/02-03:05:45.028 3f002 Compacted 1@1 + 1@2 files => 743697 bytes
-2025/01/02-03:05:45.031 3f002 compacted to: files[ 0 0 1 0 0 0 0 ]
-2025/01/02-03:05:45.031 3f002 Delete type=2 #44
-2025/01/02-03:05:45.031 3f002 Delete type=2 #47
-2025/01/02-03:05:57.888 3f003 Level-0 table #51: started
-2025/01/02-03:05:57.905 3f003 Level-0 table #51: 3104445 bytes OK
-2025/01/02-03:05:57.908 3f003 Delete type=0 #46
-2025/01/02-03:06:17.379 3f003 Compacting 1@1 + 1@2 files
-2025/01/02-03:06:17.390 3f003 Generated table #52@1: 193 keys, 695541 bytes
-2025/01/02-03:06:17.390 3f003 Compacted 1@1 + 1@2 files => 695541 bytes
-2025/01/02-03:06:17.394 3f003 compacted to: files[ 0 0 1 0 0 0 0 ]
-2025/01/02-03:06:17.394 3f003 Delete type=2 #49
-2025/01/02-03:06:17.394 3f003 Delete type=2 #51
-2025/01/02-03:06:30.289 3f003 Level-0 table #54: started
-2025/01/02-03:06:30.307 3f003 Level-0 table #54: 3090808 bytes OK
-2025/01/02-03:06:30.310 3f003 Delete type=0 #50
+2025/01/02-22:56:46.380 244a Reusing MANIFEST /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/01/02-22:56:46.380 244a Recovering log #53
+2025/01/02-22:56:46.387 244a Reusing old log /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/000053.log 
+2025/01/02-22:56:47.720 244b Level-0 table #59: started
+2025/01/02-22:56:47.736 244b Level-0 table #59: 3023238 bytes OK
+2025/01/02-22:56:47.742 244b Delete type=0 #53
+2025/01/02-22:56:51.759 244a Compacting 1@1 + 1@2 files
+2025/01/02-22:56:51.765 244a Generated table #60@1: 98 keys, 189091 bytes
+2025/01/02-22:56:51.765 244a Compacted 1@1 + 1@2 files => 189091 bytes
+2025/01/02-22:56:51.768 244a compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/01/02-22:56:51.768 244a Delete type=2 #56
+2025/01/02-22:56:51.768 244a Delete type=2 #59

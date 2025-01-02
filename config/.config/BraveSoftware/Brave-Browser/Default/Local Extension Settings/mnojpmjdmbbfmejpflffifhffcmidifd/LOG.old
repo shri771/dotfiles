@@ -1,80 +1,22 @@
-2025/01/01-22:06:08.385 b23 Reusing MANIFEST /home/shri/.config/BraveSoftware/Brave-Browser/Default/Local Extension Settings/mnojpmjdmbbfmejpflffifhffcmidifd/MANIFEST-000001
-2025/01/01-22:06:08.385 b23 Recovering log #1240
-2025/01/01-22:06:08.393 b23 Reusing old log /home/shri/.config/BraveSoftware/Brave-Browser/Default/Local Extension Settings/mnojpmjdmbbfmejpflffifhffcmidifd/001240.log 
-2025/01/01-22:26:24.947 b16 Level-0 table #1245: started
-2025/01/01-22:26:24.955 b16 Level-0 table #1245: 385139 bytes OK
-2025/01/01-22:26:24.958 b16 Delete type=0 #1240
-2025/01/01-22:43:10.287 b17 Compacting 1@1 + 1@2 files
-2025/01/01-22:43:10.296 b17 Generated table #1246@1: 14 keys, 98086 bytes
-2025/01/01-22:43:10.296 b17 Compacted 1@1 + 1@2 files => 98086 bytes
-2025/01/01-22:43:10.299 b17 compacted to: files[ 0 0 1 0 0 0 0 ]
-2025/01/01-22:43:10.299 b17 Delete type=2 #1242
-2025/01/01-22:43:10.299 b17 Delete type=2 #1245
-2025/01/01-23:57:22.744 b17 Level-0 table #1248: started
-2025/01/01-23:57:22.750 b17 Level-0 table #1248: 387289 bytes OK
-2025/01/01-23:57:22.752 b17 Delete type=0 #1244
-2025/01/01-23:59:23.474 b17 Level-0 table #1250: started
-2025/01/01-23:59:23.483 b17 Level-0 table #1250: 383147 bytes OK
-2025/01/01-23:59:23.486 b17 Delete type=0 #1247
-2025/01/02-00:06:53.620 b16 Level-0 table #1252: started
-2025/01/02-00:06:53.626 b16 Level-0 table #1252: 382834 bytes OK
-2025/01/02-00:06:53.629 b16 Delete type=0 #1249
-2025/01/02-00:18:51.750 b17 Compacting 2@0 + 1@1 files
-2025/01/02-00:18:51.761 b17 Generated table #1253@0: 29 keys, 99202 bytes
-2025/01/02-00:18:51.761 b17 Compacted 2@0 + 1@1 files => 99202 bytes
-2025/01/02-00:18:51.765 b17 compacted to: files[ 0 1 1 0 0 0 0 ]
-2025/01/02-00:18:51.765 b17 Delete type=2 #1252
-2025/01/02-00:18:51.765 b17 Delete type=2 #1250
-2025/01/02-00:18:51.765 b17 Delete type=2 #1248
-2025/01/02-00:48:52.358 b17 Compacting 1@1 + 1@2 files
-2025/01/02-00:48:52.367 b17 Generated table #1254@1: 17 keys, 98738 bytes
-2025/01/02-00:48:52.367 b17 Compacted 1@1 + 1@2 files => 98738 bytes
-2025/01/02-00:48:52.369 b17 compacted to: files[ 0 0 1 0 0 0 0 ]
-2025/01/02-00:48:52.369 b17 Delete type=2 #1253
-2025/01/02-00:48:52.369 b17 Delete type=2 #1246
-2025/01/02-00:57:22.576 b17 Level-0 table #1256: started
-2025/01/02-00:57:22.581 b17 Level-0 table #1256: 389801 bytes OK
-2025/01/02-00:57:22.584 b17 Delete type=0 #1251
-2025/01/02-00:58:52.576 b16 Level-0 table #1258: started
-2025/01/02-00:58:52.585 b16 Level-0 table #1258: 384084 bytes OK
-2025/01/02-00:58:52.588 b16 Delete type=0 #1255
-2025/01/02-00:59:07.611 b16 Level-0 table #1260: started
-2025/01/02-00:59:07.620 b16 Level-0 table #1260: 384657 bytes OK
-2025/01/02-00:59:07.623 b16 Delete type=0 #1257
-2025/01/02-00:59:52.603 b16 Level-0 table #1262: started
-2025/01/02-00:59:52.612 b16 Level-0 table #1262: 385160 bytes OK
-2025/01/02-00:59:52.615 b16 Delete type=0 #1259
-2025/01/02-01:01:27.623 b16 Level-0 table #1264: started
-2025/01/02-01:01:27.633 b16 Level-0 table #1264: 385560 bytes OK
-2025/01/02-01:01:27.636 b16 Delete type=0 #1261
-2025/01/02-01:01:27.637 b16 Compacting 4@0 + 1@1 files
-2025/01/02-01:01:27.649 b16 Generated table #1265@0: 45 keys, 102035 bytes
-2025/01/02-01:01:27.649 b16 Compacted 4@0 + 1@1 files => 102035 bytes
-2025/01/02-01:01:27.652 b16 compacted to: files[ 0 1 1 0 0 0 0 ]
-2025/01/02-01:01:27.652 b16 Delete type=2 #1256
-2025/01/02-01:01:27.652 b16 Delete type=2 #1258
-2025/01/02-01:01:27.652 b16 Delete type=2 #1262
-2025/01/02-01:01:27.652 b16 Delete type=2 #1260
-2025/01/02-01:01:27.652 b16 Delete type=2 #1264
-2025/01/02-01:04:52.701 b16 Level-0 table #1267: started
-2025/01/02-01:04:52.710 b16 Level-0 table #1267: 386186 bytes OK
-2025/01/02-01:04:52.713 b16 Delete type=0 #1263
-2025/01/02-01:17:53.684 b17 Compacting 1@0 + 1@1 files
-2025/01/02-01:17:53.690 b17 Generated table #1268@0: 49 keys, 102240 bytes
-2025/01/02-01:17:53.690 b17 Compacted 1@0 + 1@1 files => 102240 bytes
-2025/01/02-01:17:53.692 b17 compacted to: files[ 0 1 1 0 0 0 0 ]
-2025/01/02-01:17:53.692 b17 Delete type=2 #1267
-2025/01/02-01:17:53.692 b17 Delete type=2 #1265
-2025/01/02-01:32:33.987 b16 Level-0 table #1270: started
-2025/01/02-01:32:33.996 b16 Level-0 table #1270: 386776 bytes OK
-2025/01/02-01:32:34.000 b16 Delete type=0 #1266
-2025/01/02-01:38:54.160 b16 Level-0 table #1272: started
-2025/01/02-01:38:54.168 b16 Level-0 table #1272: 388782 bytes OK
-2025/01/02-01:38:54.171 b16 Delete type=0 #1269
-2025/01/02-01:46:54.266 b17 Compacting 2@0 + 1@1 files
-2025/01/02-01:46:54.275 b17 Generated table #1273@0: 64 keys, 103781 bytes
-2025/01/02-01:46:54.275 b17 Compacted 2@0 + 1@1 files => 103781 bytes
-2025/01/02-01:46:54.278 b17 compacted to: files[ 0 1 1 0 0 0 0 ]
-2025/01/02-01:46:54.278 b17 Delete type=2 #1268
-2025/01/02-01:46:54.278 b17 Delete type=2 #1272
-2025/01/02-01:46:54.278 b17 Delete type=2 #1270
+2025/01/02-22:33:06.274 fc2 Reusing MANIFEST /home/shri/.config/BraveSoftware/Brave-Browser/Default/Local Extension Settings/mnojpmjdmbbfmejpflffifhffcmidifd/MANIFEST-000001
+2025/01/02-22:33:06.274 fc2 Recovering log #1448
+2025/01/02-22:33:06.283 fc2 Level-0 table #1451: started
+2025/01/02-22:33:06.290 fc2 Level-0 table #1451: 415899 bytes OK
+2025/01/02-22:33:06.293 fc2 Delete type=0 #1448
+2025/01/02-22:38:07.366 fc2 Level-0 table #1454: started
+2025/01/02-22:38:07.373 fc2 Level-0 table #1454: 418675 bytes OK
+2025/01/02-22:38:07.377 fc2 Delete type=0 #1452
+2025/01/02-22:44:07.536 fc3 Compacting 3@0 + 1@1 files
+2025/01/02-22:44:07.546 fc3 Generated table #1455@0: 49 keys, 112154 bytes
+2025/01/02-22:44:07.546 fc3 Compacted 3@0 + 1@1 files => 112154 bytes
+2025/01/02-22:44:07.548 fc3 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/01/02-22:44:07.548 fc3 Delete type=2 #1449
+2025/01/02-22:44:07.548 fc3 Delete type=2 #1447
+2025/01/02-22:44:07.548 fc3 Delete type=2 #1451
+2025/01/02-22:44:07.548 fc3 Delete type=2 #1454
+2025/01/02-22:44:42.591 fc3 Level-0 table #1457: started
+2025/01/02-22:44:42.600 fc3 Level-0 table #1457: 420247 bytes OK
+2025/01/02-22:44:42.603 fc3 Delete type=0 #1453
+2025/01/02-22:48:07.652 fc2 Level-0 table #1459: started
+2025/01/02-22:48:07.662 fc2 Level-0 table #1459: 417786 bytes OK
+2025/01/02-22:48:07.665 fc2 Delete type=0 #1456

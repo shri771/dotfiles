@@ -1,0 +1,92 @@
+.d-block {
+    display: block;
+    position: unset;
+}
+
+.ph-dialog {
+
+    background-color: #ffffff33;
+    display: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 9999;
+    display: table;
+    align-content: center;
+    text-align: center;
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    .container{
+        padding: 10px 15px 20px 15px;
+        background: #ffffff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        position: relative;
+        display: unset;
+        position: absolute;
+        top: 30%;
+    }
+
+
+    .traking-amount,
+    .tracker-save,
+    .tracker-frequency,
+    .tracker-list {
+        margin-top: 10px;
+        display: block;
+        padding: 5px 10px;
+        border-radius: 7px;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
+    }
+
+    .manage-tracker-list {
+        padding: 5px 20px;
+        margin-top: 10px;
+    }
+
+    .ph-previous {
+        font-size: .8rem;
+        color: #222222;
+        margin-top: 0.5rem;
+    }
+
+    .ph-previous span {
+        font-size: 1rem;
+        color: #111111;
+    }
+
+    .tracker-save {
+        color: rgb(255, 83, 75);
+        background-color: rgba(0, 0, 0, 0.063);
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .ph-dialog-close {
+        float: right;
+        cursor: pointer;
+        padding: 0.25rem 0.5rem;
+        background-color: lightgrey;
+        border-radius: 0.25rem;
+        margin-top: -.25rem;
+        margin-right: -0.5rem;
+    }
+
+}
+
+.p-0 {
+    padding: 0px;
+}

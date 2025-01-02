@@ -1,0 +1,6 @@
+2025/01/02-20:03:41.040 3f004 Creating DB /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_payment.edx.org_0.indexeddb.leveldb since it was missing.
+2025/01/02-20:03:41.045 3f004 Reusing MANIFEST /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_payment.edx.org_0.indexeddb.leveldb/MANIFEST-000001
+2025/01/02-20:03:59.494 3f004 Level-0 table #5: started
+2025/01/02-20:03:59.496 3f004 Level-0 table #5: 1535 bytes OK
+2025/01/02-20:03:59.526 3f004 Delete type=0 #3
+2025/01/02-20:03:59.526 3f004 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

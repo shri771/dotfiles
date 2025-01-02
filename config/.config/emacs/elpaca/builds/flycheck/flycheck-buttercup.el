@@ -1,0 +1,1 @@
+/home/shri/.config/emacs/elpaca/repos/flycheck/flycheck-buttercup.el
