@@ -1,0 +1,47 @@
+2025/01/04-13:06:37.301 2f9b7 Reusing MANIFEST /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.hotstar.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/01/04-13:06:37.301 2f9b7 Recovering log #43
+2025/01/04-13:06:37.301 2f9b7 Reusing old log /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.hotstar.com_0.indexeddb.leveldb/000043.log 
+2025/01/04-13:06:37.301 2f9b7 Delete type=2 #42
+2025/01/04-13:06:37.563 2f9b7 Level-0 table #48: started
+2025/01/04-13:06:37.565 2f9b7 Level-0 table #48: 2057 bytes OK
+2025/01/04-13:06:37.568 2f9b7 Delete type=0 #43
+2025/01/04-13:06:37.568 2f9b7 Manual compaction at level-0 from '\x00\x10\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x11\x00\x00\x00' @ 0 : 0; will stop at '\x00\x10\x00\x00\x05' @ 867 : 1
+2025/01/04-13:06:37.568 2f9b7 Compacting 1@0 + 1@1 files
+2025/01/04-13:06:37.570 2f9b7 Generated table #49@0: 45 keys, 1784 bytes
+2025/01/04-13:06:37.570 2f9b7 Compacted 1@0 + 1@1 files => 1784 bytes
+2025/01/04-13:06:37.573 2f9b7 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/01/04-13:06:37.573 2f9b7 Delete type=2 #48
+2025/01/04-13:06:37.573 2f9b7 Manual compaction at level-0 from '\x00\x10\x00\x00\x05' @ 867 : 1 .. '\x00\x11\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/01/04-13:06:44.711 2f9c4 Level-0 table #51: started
+2025/01/04-13:06:44.713 2f9c4 Level-0 table #51: 2067 bytes OK
+2025/01/04-13:06:44.716 2f9c4 Delete type=0 #47
+2025/01/04-13:06:44.716 2f9c4 Delete type=2 #45
+2025/01/04-13:06:44.716 2f9b8 Manual compaction at level-0 from '\x00\x11\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x12\x00\x00\x00' @ 0 : 0; will stop at '\x00\x11\x00\x00\x05' @ 910 : 1
+2025/01/04-13:06:44.716 2f9b8 Compacting 1@0 + 1@1 files
+2025/01/04-13:06:44.719 2f9b8 Generated table #52@0: 49 keys, 1836 bytes
+2025/01/04-13:06:44.719 2f9b8 Compacted 1@0 + 1@1 files => 1836 bytes
+2025/01/04-13:06:44.722 2f9b8 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/01/04-13:06:44.722 2f9b8 Delete type=2 #51
+2025/01/04-13:06:44.722 2f9b8 Manual compaction at level-0 from '\x00\x11\x00\x00\x05' @ 910 : 1 .. '\x00\x12\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/01/04-13:06:51.453 2f9c4 Level-0 table #54: started
+2025/01/04-13:06:51.455 2f9c4 Level-0 table #54: 2065 bytes OK
+2025/01/04-13:06:51.457 2f9c4 Delete type=2 #49
+2025/01/04-13:06:51.457 2f9c4 Delete type=0 #50
+2025/01/04-13:06:51.458 2f9b7 Manual compaction at level-0 from '\x00\x12\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x13\x00\x00\x00' @ 0 : 0; will stop at '\x00\x12\x00\x00\x05' @ 953 : 1
+2025/01/04-13:06:51.458 2f9b7 Compacting 1@0 + 1@1 files
+2025/01/04-13:06:51.461 2f9b7 Generated table #55@0: 58 keys, 1900 bytes
+2025/01/04-13:06:51.461 2f9b7 Compacted 1@0 + 1@1 files => 1900 bytes
+2025/01/04-13:06:51.463 2f9b7 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/01/04-13:06:51.463 2f9b7 Delete type=2 #54
+2025/01/04-13:06:51.464 2f9b7 Manual compaction at level-0 from '\x00\x12\x00\x00\x05' @ 953 : 1 .. '\x00\x13\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/01/04-13:06:58.631 2f9c4 Level-0 table #57: started
+2025/01/04-13:06:58.633 2f9c4 Level-0 table #57: 2067 bytes OK
+2025/01/04-13:06:58.636 2f9c4 Delete type=0 #53
+2025/01/04-13:06:58.636 2f9c4 Delete type=2 #52
+2025/01/04-13:06:58.636 2f9b7 Manual compaction at level-0 from '\x00\x13\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x14\x00\x00\x00' @ 0 : 0; will stop at '\x00\x13\x00\x00\x05' @ 996 : 1
+2025/01/04-13:06:58.636 2f9b7 Compacting 1@0 + 1@1 files
+2025/01/04-13:06:58.639 2f9b7 Generated table #58@0: 70 keys, 2054 bytes
+2025/01/04-13:06:58.639 2f9b7 Compacted 1@0 + 1@1 files => 2054 bytes
+2025/01/04-13:06:58.641 2f9b7 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/01/04-13:06:58.641 2f9b7 Delete type=2 #57
+2025/01/04-13:06:58.642 2f9b7 Manual compaction at level-0 from '\x00\x13\x00\x00\x05' @ 996 : 1 .. '\x00\x14\x00\x00\x00' @ 0 : 0; will stop at (end)

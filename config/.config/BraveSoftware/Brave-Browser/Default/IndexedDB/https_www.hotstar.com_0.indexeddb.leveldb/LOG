@@ -1,0 +1,14 @@
+2025/01/04-13:12:19.510 323ba Reusing MANIFEST /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.hotstar.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/01/04-13:12:19.510 323ba Recovering log #56
+2025/01/04-13:12:19.510 323ba Reusing old log /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.hotstar.com_0.indexeddb.leveldb/000056.log 
+2025/01/04-13:12:19.510 323ba Delete type=2 #55
+2025/01/04-13:12:19.592 323b9 Level-0 table #61: started
+2025/01/04-13:12:19.594 323b9 Level-0 table #61: 2055 bytes OK
+2025/01/04-13:12:19.596 323b9 Delete type=0 #56
+2025/01/04-13:12:19.596 323b9 Manual compaction at level-0 from '\x00\x14\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x15\x00\x00\x00' @ 0 : 0; will stop at '\x00\x14\x00\x00\x05' @ 1039 : 1
+2025/01/04-13:12:19.597 323b9 Compacting 1@0 + 1@1 files
+2025/01/04-13:12:19.599 323b9 Generated table #62@0: 78 keys, 2102 bytes
+2025/01/04-13:12:19.599 323b9 Compacted 1@0 + 1@1 files => 2102 bytes
+2025/01/04-13:12:19.602 323b9 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/01/04-13:12:19.602 323b9 Delete type=2 #61
+2025/01/04-13:12:19.602 323b9 Manual compaction at level-0 from '\x00\x14\x00\x00\x05' @ 1039 : 1 .. '\x00\x15\x00\x00\x00' @ 0 : 0; will stop at (end)

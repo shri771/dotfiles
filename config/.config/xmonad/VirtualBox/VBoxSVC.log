@@ -1,0 +1,168 @@
+00:00:00.001233 main     VirtualBox XPCOM Server 7.1.4 r165100 linux.amd64 (Dec 25 2024 18:38:04) release log
+00:00:00.001235 main     Log opened 2024-12-31T16:09:02.411239000Z
+00:00:00.001236 main     Build Type: release
+00:00:00.001238 main     OS Product: Linux
+00:00:00.001238 main     OS Release: 6.12.7-arch1-1
+00:00:00.001239 main     OS Version: #1 SMP PREEMPT_DYNAMIC Fri, 27 Dec 2024 14:24:37 +0000
+00:00:00.001267 main     DMI Product Name: BRN-FXXC
+00:00:00.001274 main     DMI Product Version: M1060
+00:00:00.001279 main     Firmware type: UEFI
+00:00:00.001961 main     Secure Boot: Disabled
+00:00:00.001993 main     Host RAM: 15717MB (15.3GB) total, 11152MB (10.8GB) available
+00:00:00.001995 main     Executable: /usr/lib/virtualbox/VBoxSVC
+00:00:00.001996 main     Process ID: 133445
+00:00:00.001996 main     Package type: LINUX_64BITS_GENERIC (OSE)
+00:00:00.004130 main     IPC socket path: /tmp/.vbox-shri-ipc/ipcd
+00:00:00.021050 DCon01   VirtualBox: object creation starts
+00:00:00.021627 DCon01   Home directory: '/home/shri/.config/VirtualBox'
+00:00:00.022024 DCon01   Loading settings file "/home/shri/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+00:00:00.034179 DCon01   NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+00:00:00.035584 DCon01   HostDnsMonitor: initializing
+00:00:00.036110 DCon01   NAT: resolv.conf: nameserver 192.168.29.1
+00:00:00.036120 DCon01   NAT: resolv.conf: nameserver 2405:201:1059:a811::c0a8:1d01
+00:00:00.036126 DCon01   HostDnsMonitor: updating information
+00:00:00.036139 DCon01   HostDnsMonitor: old information
+00:00:00.036139 DCon01     no server entries
+00:00:00.036140 DCon01     no domain set
+00:00:00.036141 DCon01     no search string entries
+00:00:00.036142 DCon01   HostDnsMonitor: new information
+00:00:00.036143 DCon01     server 1: 192.168.29.1
+00:00:00.036144 DCon01     server 2: 2405:201:1059:a811::c0a8:1d01
+00:00:00.036145 DCon01     no domain set
+00:00:00.036145 DCon01     no search string entries
+00:00:00.038489 DCon01   VD: VDInit finished with VINF_SUCCESS
+00:00:00.038966 DCon01   ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={925084b0-625f-422f-a67d-0ede1880a56c} aComponent={SystemPropertiesWrap} aText={Cannot determine default Guest Additions ISO location. Most likely they are not available}, preserve=false aResultDetail=0
+00:00:00.040284 DCon01   Platform architecture set to 'x86'
+00:00:00.042044 DCon01   Loading settings file "/home/shri/VirtualBox VMs/New group 2/mint-c/mint-c.vbox" with version "1.19-linux"
+00:00:00.042268 DCon01   Platform architecture set to 'x86'
+00:00:00.042508 DCon01   Platform architecture set to 'x86'
+00:00:00.043306 DCon01   Loading settings file "/home/shri/VirtualBox VMs/New group/ubuntu/ubuntu.vbox" with version "1.19-linux"
+00:00:00.043438 DCon01   Platform architecture set to 'x86'
+00:00:00.043561 DCon01   Platform architecture set to 'x86'
+00:00:00.043931 DCon01   Loading settings file "/home/shri/VirtualBox VMs/New group 2/ubunt test/ubunt test.vbox" with version "1.19-linux"
+00:00:00.044030 DCon01   Platform architecture set to 'x86'
+00:00:00.044198 DCon01   Platform architecture set to 'x86'
+00:00:00.045212 DCon01   Loading settings file "/home/shri/VirtualBox VMs/arch-linux/arch-linux.vbox" with version "1.19-linux"
+00:00:00.045359 DCon01   Platform architecture set to 'x86'
+00:00:00.045589 DCon01   Platform architecture set to 'x86'
+00:00:00.046427 DCon01   Loading settings file "/home/shri/VirtualBox VMs/New group/arch-linux Clone/arch-linux Clone.vbox" with version "1.19-linux"
+00:00:00.046541 DCon01   Platform architecture set to 'x86'
+00:00:00.047164 DCon01   VirtualBox: object created
+00:00:00.504032 DCon07   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:00.505216 DCon07   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=false aResultDetail=0
+00:00:00.555573 DCon04   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:00.633091 DCon04   ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+00:00:00.668840 DCon04   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:00.669500 DCon04   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:00.859196 DCon04   Saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml" with version "1.12-linux"
+00:00:00.864097 DCon04   Finished saving settings file "/home/shri/.config/VirtualBox/VirtualBox.xml"
+00:00:15.531143 DCon07   Launched VM: 3623887920 pid: 134006 (0x20b76) frontend: GUI/Qt name: arch-linux Clone
+00:00:15.577323 DCon09   ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+00:00:15.611412 DCon08   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:15.612142 DCon08   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:15.704470 DCon10   Platform architecture set to 'x86'
+00:00:15.720819 DCon11   ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+00:00:15.732755 DCon11   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:15.733526 DCon11   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:16.018886 DCon12   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:16.019485 DCon12   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:16.019634 DCon12   ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={70401eef-c8e9-466b-9660-45cb3e9979e4} aComponent={ExtPackManagerWrap} aText={No extension pack by the name 'Oracle VirtualBox Extension Pack' was found}, preserve=false aResultDetail=0
+00:00:19.290491 DCon08   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:19.290939 DCon08   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:19.293402 DCon08   ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+00:00:19.312195 DCon08   Saving settings file "/home/shri/VirtualBox VMs/New group/arch-linux Clone/arch-linux Clone.vbox" with version "1.19-linux"
+00:00:19.319826 DCon08   Finished saving settings file "/home/shri/VirtualBox VMs/New group/arch-linux Clone/arch-linux Clone.vbox"
+00:00:19.328954 DCon09   ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is PoweredOff)}, preserve=false aResultDetail=0
+00:00:19.330794 DCon10   NetIfAdpCtlOut: VBoxNetAdpCtl: Error while retrieving link speed for wlp0s20f3: VBoxNetAdpCtl: ioctl failed: Operation not supported
+00:00:19.333318 DCon07   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=false aResultDetail=0
+00:00:19.333983 DCon07   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:19.334112 DCon07   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:19.334871 DCon10   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:19.335444 DCon10   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:19.354995 DCon13   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:19.369644 DCon04   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:19.382517 DCon13   ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Starting)}, preserve=false aResultDetail=0
+00:00:19.398800 DCon11   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:19.399348 DCon11   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:19.399908 DCon11   ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+00:00:19.413429 DCon13   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:19.414153 DCon13   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:19.535208 DCon13   ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={7d510820-a678-4730-a862-818dcd3fbed0} aComponent={MediumWrap} aText={Property 'CRYPT/KeyId' does not exist}, preserve=false aResultDetail=0
+00:00:19.535835 DCon13   ERROR [COM]: aRC=VBOX_E_OBJECT_NOT_FOUND (0x80bb0001) aIID={7d510820-a678-4730-a862-818dcd3fbed0} aComponent={MediumWrap} aText={Property 'CRYPT/KeyId' does not exist}, preserve=false aResultDetail=0
+00:00:19.536497 DCon13   HostDnsMonitorProxy::GetDomainName: no domain set
+00:00:19.536551 DCon13   HostDnsMonitorProxy::GetNameServers:
+00:00:19.536552 DCon13     name server 1: 192.168.29.1
+00:00:19.536553 DCon13     name server 2: 2405:201:1059:a811::c0a8:1d01
+00:00:19.536606 DCon13   HostDnsMonitorProxy::GetSearchStrings:
+00:00:19.536607 DCon13     no search string entries
+00:00:19.547412 DCon16   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:19.548108 DCon10   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:19.548943 DCon11   ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+00:00:19.554490 DCon16   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:19.577161 DCon11   ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+00:00:19.599021 DCon11   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:00:19.599590 DCon11   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:01:24.855365 MainPower Host suspending: Paused 1 VMs
+00:01:24.866253 DCon13   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:01:24.867019 DCon13   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:01:24.867698 DCon13   ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+00:01:24.868065 DCon13   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:01:24.878655 DCon13   ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Paused)}, preserve=false aResultDetail=0
+00:01:24.883788 DCon13   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:01:24.884208 DCon13   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:01:25.108350 dns-monitor HostDnsMonitor: updating information
+00:01:25.108408 dns-monitor HostDnsMonitor: old information
+00:01:25.108434 dns-monitor   server 1: 192.168.29.1
+00:01:25.108441 dns-monitor   server 2: 2405:201:1059:a811::c0a8:1d01
+00:01:25.108445 dns-monitor   no domain set
+00:01:25.108448 dns-monitor   no search string entries
+00:01:25.108451 dns-monitor HostDnsMonitor: new information
+00:01:25.108454 dns-monitor   no server entries
+00:01:25.108457 dns-monitor   no domain set
+00:01:25.108459 dns-monitor   no search string entries
+00:01:25.110624 DCon13   HostDnsMonitorProxy::GetDomainName: no domain set
+00:01:25.111082 DCon13   HostDnsMonitorProxy::GetNameServers:
+00:01:25.111103 DCon13     no name server entries
+00:01:25.111560 DCon13   HostDnsMonitorProxy::GetSearchStrings:
+00:01:25.111583 DCon13     no search string entries
+00:01:26.470095 MainPower Host resumed: Resumed 1 VMs
+00:01:26.486953 DCon12   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:01:26.487615 DCon12   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:01:26.488322 DCon10   ERROR [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={bea3ef5c-de2f-4b74-aa3a-15d6249371a0} aComponent={RecordingSettingsWrap} aText={Recording not started}, preserve=false aResultDetail=0
+00:01:26.493371 DCon08   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:01:26.505475 DCon10   ERROR [COM]: aRC=VBOX_E_INVALID_VM_STATE (0x80bb0002) aIID={e36a5081-a82a-40bd-9e4e-42a44d6ce50f} aComponent={MachineWrap} aText={The machine is not mutable, saved or running (state is Running)}, preserve=false aResultDetail=0
+00:01:26.510844 DCon10   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:01:26.511635 DCon10   WARNING [COM]: aRC=NS_ERROR_FAILURE (0x80004005) aIID={d5dcece0-b202-4416-a138-03502784cc07} aComponent={HostWrap} aText={VirtualBox is not currently allowed to access USB devices.  You can change this by adding your user to the 'vboxusers' group.  Please see the user manual for a more detailed explanation}, preserve=true aResultDetail=0
+00:01:33.072427 dns-monitor NAT: resolv.conf: nameserver 192.168.29.1
+00:01:33.072540 dns-monitor HostDnsMonitor: updating information
+00:01:33.072547 dns-monitor HostDnsMonitor: old information
+00:01:33.072551 dns-monitor   no server entries
+00:01:33.072556 dns-monitor   no domain set
+00:01:33.072559 dns-monitor   no search string entries
+00:01:33.072563 dns-monitor HostDnsMonitor: new information
+00:01:33.072567 dns-monitor   server 1: 192.168.29.1
+00:01:33.072572 dns-monitor   no domain set
+00:01:33.072575 dns-monitor   no search string entries
+00:01:33.075318 DCon11   HostDnsMonitorProxy::GetDomainName: no domain set
+00:01:33.075864 DCon11   HostDnsMonitorProxy::GetNameServers:
+00:01:33.075879 DCon11     name server 1: 192.168.29.1
+00:01:33.076459 DCon11   HostDnsMonitorProxy::GetSearchStrings:
+00:01:33.076472 DCon11     no search string entries
+00:01:34.250231 dns-monitor NAT: resolv.conf: nameserver 192.168.29.1
+00:01:34.250267 dns-monitor NAT: resolv.conf: nameserver 2405:201:1059:a811::c0a8:1d01
+00:01:34.250288 dns-monitor HostDnsMonitor: updating information
+00:01:34.250292 dns-monitor HostDnsMonitor: old information
+00:01:34.250295 dns-monitor   server 1: 192.168.29.1
+00:01:34.250300 dns-monitor   no domain set
+00:01:34.250303 dns-monitor   no search string entries
+00:01:34.250305 dns-monitor HostDnsMonitor: new information
+00:01:34.250307 dns-monitor   server 1: 192.168.29.1
+00:01:34.250310 dns-monitor   server 2: 2405:201:1059:a811::c0a8:1d01
+00:01:34.250313 dns-monitor   no domain set
+00:01:34.250315 dns-monitor   no search string entries
+00:01:34.251769 DCon20   HostDnsMonitorProxy::GetDomainName: no domain set
+00:01:34.252261 DCon20   HostDnsMonitorProxy::GetNameServers:
+00:01:34.252270 DCon20     name server 1: 192.168.29.1
+00:01:34.252275 DCon20     name server 2: 2405:201:1059:a811::c0a8:1d01
+00:01:34.252539 DCon20   HostDnsMonitorProxy::GetSearchStrings:
+00:01:34.252550 DCon20     no search string entries
