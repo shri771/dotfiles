@@ -1,25 +1,28 @@
 function gph
-    # Check if at least one file path is provided
+    # Check if at least two arguments are provided
     if test (count $argv) -lt 2
-        echo "Usage: gph <file_path1> [<file_path2> ... <file_pathN>] <commit_message>"
+        echo "Usage: gph <file1> [file2 ...] <commit message>"
         return 1
     end
 
-    # Get the commit message from the last argument
-    set commit_message $argv[-1]
+    # Calculate the index of the last argument
+    set last_index (math (count $argv))
 
-    # Remove the commit message from the list of files
-    set files $argv[1..(count $argv) - 1]
+    # Extract the commit message (last argument)
+    set commit_message $argv[$last_index]
 
-    # Stage the specified files
+    # Extract the list of files (all but the last argument)
+    set files $argv[1..(math $last_index - 1)]
+
+    # Add the specified files
     git add $files
 
-    # Commit the changes with the provided message
+    # Commit with the provided message
     git commit -m "$commit_message"
 
-    # Push the changes to the remote repository
+    # Push the changes
     git push
 
-    # Display the current Git status
+    # Show the git status
     git status
 end

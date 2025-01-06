@@ -155,14 +155,13 @@ alias .5='cd ../../../../..'
 #path for con
 alias awcn='nvim ~/.config/awesome/rc.lua'
 alias fhcn='nvim ~/.config/fish/config.fish'
-alias fhpth='source ~/.config/fish/config.fish'
 alias pycn='nvim .config/polybar/config.ini'
 alias vn='variety --next'
 alias vp='variety'
 alias n='nvim'
 alias tpcn=' sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf'
+
 # vim and emacst
-alias nv='nvim'
 alias emacs="emacsclient -c -a 'emacs'"
 alias em='/usr/bin/emacs -nw'
 alias rem="killall emacs || echo 'Emacs server not running'; /usr/bin/emacs --daemon" # Kill Emacs and restart daemon..
@@ -208,15 +207,15 @@ alias merge='xrdb -merge ~/.Xresources'
 # git
 alias add='git add '
 alias addall='git add .'
-alias branch='git branch'
+alias bh='git branch'
 alias gst='git status'
-alias checkout='git checkout'
-alias clone='git clone'
-alias commit='git commit -m'
+alias ck='git checkout'
+alias cl='git clone'
+alias cm='git commit -m'
 alias alc='git commit -am'
 alias fetch='git fetch'
-alias pull='git pull origin'
-alias push='git push origin'
+alias pl='git pull origin'
+alias ph='git push origin'
 alias tag='git tag'
 alias newtag='git tag -a'
 
