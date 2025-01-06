@@ -1,0 +1,6 @@
+2024/12/30-17:19:00.909 d71d4 Reusing MANIFEST /home/shri/.config/Notion/Partitions/notion/Local Storage/leveldb/MANIFEST-000001
+2024/12/30-17:19:00.912 d71d4 Recovering log #74
+2024/12/30-17:19:00.913 d71d4 Reusing old log /home/shri/.config/Notion/Partitions/notion/Local Storage/leveldb/000074.log 
+2024/12/30-17:20:36.069 d71d5 Level-0 table #78: started
+2024/12/30-17:20:36.082 d71d5 Level-0 table #78: 571532 bytes OK
+2024/12/30-17:20:36.085 d71d5 Delete type=0 #74

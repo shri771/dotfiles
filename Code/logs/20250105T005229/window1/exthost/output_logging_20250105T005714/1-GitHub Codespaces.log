@@ -1,0 +1,1773 @@
+[Client I] GitHub Codespaces version 1.17.3
+[Client I] isRunningInWeb: "false"
+[Client V] Initializing authentication
+[API I] Successfully signed in
+[Client:extension:e46d I] initializing
+[Client:extension:e46d:resolver I] created with protocol "codespaces"
+[RemoteExplorer I] Updating codespace performance info
+[DevContainerJsonSupport I] Initializing devcontainer.json support package
+[DevContainerJsonSupport V] [2025-01-04T19:27:16.282Z] Internal initialization of dev container support package...
+
+[Client I] Jupyter API registered? false
+[Client:extension:e46d:resolver:resolve:1 I] resolve retry #3
+[Client:extension:e46d:resolver:resolve:1 I] resolving "codespaces+reimagined-guide-r44jgjgpvr472xp9x"
+[Client:extension:e46d:resolver:resolve:1 I] codespace: "reimagined-guide-r44jgjgpvr472xp9x", fetching details
+[Client:extension:e46d:resolver:resolve:1:fetch-codespace-info I] fetching codespace details for "reimagined-guide-r44jgjgpvr472xp9x"
+[Client:extension:e46d:resolver:resolve:1:fetch-codespace-info I] signed in, getting the details
+[Client:extension:e46d:resolver:resolve:1:fetch-codespace-info I] fetching codespace "reimagined-guide-r44jgjgpvr472xp9x" (retries left: 2)
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[RemoteExplorer I] Updating codespace performance info
+[Client:extension:e46d:resolver I] successfully fetched codespace details> object #0: {
+  "id": 23319853,
+  "name": "<34:<redacted>>",
+  "environment_id": "a0e2f4f4-2789-4e35-8202-62939ae5cbd7",
+  "owner": "<undefined:<redacted>>",
+  "billable_owner": {
+    "login": "code50",
+    "id": 89367332,
+    "node_id": "MDEyOk9yZ2FuaXphdGlvbjg5MzY3MzMy",
+    "avatar_url": "https://avatars.githubusercontent.com/u/89367332?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/code50",
+    "html_url": "https://github.com/code50",
+    "followers_url": "https://api.github.com/users/code50/followers",
+    "following_url": "https://api.github.com/users/code50/following{/other_user}",
+    "gists_url": "https://api.github.com/users/code50/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/code50/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/code50/subscriptions",
+    "organizations_url": "https://api.github.com/users/code50/orgs",
+    "repos_url": "https://api.github.com/users/code50/repos",
+    "events_url": "https://api.github.com/users/code50/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/code50/received_events",
+    "type": "Organization",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "repository": {
+    "id": 750933493,
+    "node_id": "R_kgDOLMJV9Q",
+    "name": "<9:<redacted>>",
+    "full_name": "code50/158309813",
+    "private": true,
+    "owner": "<undefined:<redacted>>",
+    "html_url": "https://github.com/code50/158309813",
+    "description": null,
+    "fork": false,
+    "url": "https://api.github.com/repos/code50/158309813",
+    "forks_url": "https://api.github.com/repos/code50/158309813/forks",
+    "keys_url": "https://api.github.com/repos/code50/158309813/keys{/key_id}",
+    "collaborators_url": "https://api.github.com/repos/code50/158309813/collaborators{/collaborator}",
+    "teams_url": "https://api.github.com/repos/code50/158309813/teams",
+    "hooks_url": "https://api.github.com/repos/code50/158309813/hooks",
+    "issue_events_url": "https://api.github.com/repos/code50/158309813/issues/events{/number}",
+    "events_url": "https://api.github.com/repos/code50/158309813/events",
+    "assignees_url": "https://api.github.com/repos/code50/158309813/assignees{/user}",
+    "branches_url": "https://api.github.com/repos/code50/158309813/branches{/branch}",
+    "tags_url": "https://api.github.com/repos/code50/158309813/tags",
+    "blobs_url": "https://api.github.com/repos/code50/158309813/git/blobs{/sha}",
+    "git_tags_url": "https://api.github.com/repos/code50/158309813/git/tags{/sha}",
+    "git_refs_url": "https://api.github.com/repos/code50/158309813/git/refs{/sha}",
+    "trees_url": "https://api.github.com/repos/code50/158309813/git/trees{/sha}",
+    "statuses_url": "https://api.github.com/repos/code50/158309813/statuses/{sha}",
+    "languages_url": "https://api.github.com/repos/code50/158309813/languages",
+    "stargazers_url": "https://api.github.com/repos/code50/158309813/stargazers",
+    "contributors_url": "https://api.github.com/repos/code50/158309813/contributors",
+    "subscribers_url": "https://api.github.com/repos/code50/158309813/subscribers",
+    "subscription_url": "https://api.github.com/repos/code50/158309813/subscription",
+    "commits_url": "https://api.github.com/repos/code50/158309813/commits{/sha}",
+    "git_commits_url": "https://api.github.com/repos/code50/158309813/git/commits{/sha}",
+    "comments_url": "https://api.github.com/repos/code50/158309813/comments{/number}",
+    "issue_comment_url": "https://api.github.com/repos/code50/158309813/issues/comments{/number}",
+    "contents_url": "https://api.github.com/repos/code50/158309813/contents/{+path}",
+    "compare_url": "https://api.github.com/repos/code50/158309813/compare/{base}...{head}",
+    "merges_url": "https://api.github.com/repos/code50/158309813/merges",
+    "archive_url": "https://api.github.com/repos/code50/158309813/{archive_format}{/ref}",
+    "downloads_url": "https://api.github.com/repos/code50/158309813/downloads",
+    "issues_url": "https://api.github.com/repos/code50/158309813/issues{/number}",
+    "pulls_url": "https://api.github.com/repos/code50/158309813/pulls{/number}",
+    "milestones_url": "https://api.github.com/repos/code50/158309813/milestones{/number}",
+    "notifications_url": "https://api.github.com/repos/code50/158309813/notifications{?since,all,participating}",
+    "labels_url": "https://api.github.com/repos/code50/158309813/labels{/name}",
+    "releases_url": "https://api.github.com/repos/code50/158309813/releases{/id}",
+    "deployments_url": "https://api.github.com/repos/code50/158309813/deployments"
+  },
+  "machine": {
+    "name": "<14:<redacted>>",
+    "display_name": "2 cores, 8 GB RAM, 32 GB storage",
+    "operating_system": "linux",
+    "storage_in_bytes": 34359738368,
+    "memory_in_bytes": 8589934592,
+    "cpus": 2,
+    "prebuild_availability": null
+  },
+  "prebuild": null,
+  "created_at": "2025-01-05T00:56:47+05:30",
+  "updated_at": "2025-01-05T00:57:30+05:30",
+  "last_used_at": "2025-01-05T00:56:47+05:30",
+  "state": "Provisioning",
+  "url": "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x",
+  "git_status": {
+    "ahead": 0,
+    "behind": 0,
+    "has_unpushed_changes": false,
+    "has_uncommitted_changes": false,
+    "ref": "main"
+  },
+  "location": "CentralIndia",
+  "idle_timeout_minutes": 30,
+  "web_url": "https://reimagined-guide-r44jgjgpvr472xp9x.github.dev",
+  "machines_url": "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x/machines",
+  "start_url": "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x/start",
+  "stop_url": "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x/stop",
+  "pulls_url": null,
+  "recent_folders": [],
+  "runtime_constraints": {
+    "allowed_port_privacy_settings": [
+      "private",
+      "org",
+      "public"
+    ]
+  },
+  "connection": {
+    "tunnelProperties": {
+      "tunnelId": "interesting-mountain-g4d32j8",
+      "clusterId": "inc1",
+      "domain": "app.github.dev",
+      "connectAccessToken": "<401:<redacted>>",
+      "managePortsAccessToken": "<408:<redacted>>",
+      "serviceUri": "https://global.rel.tunnels.api.visualstudio.com/"
+    }
+  },
+  "container_id": "f4e5f6b0706e3f8a407446aa53a35ce0c50f9a82b24cbec4b4b7d864c84c9f23",
+  "display_name": "reimagined guide",
+  "devcontainer_path": ".devcontainer.json",
+  "pending_operation": false,
+  "feature_flags": {
+    "developer": false,
+    "detailedActivityMonitor": false,
+    "vscodeAccountSwitching": false,
+    "enableSmbDiagnosticContinuousMonitoring": false,
+    "enableSmbDiagnosticOnAnomalyMonitoring": false,
+    "useEarlyWorkbenchWebClient": true,
+    "useCoiWebClient": false,
+    "remapUserNamespace": false,
+    "removeConnectRetriesWebClient": true,
+    "storageV2ExhaustiveValidation": false,
+    "forcePushShutdownTelemetry": true,
+    "useNewJupyterApi": true,
+    "improvedWarmupContainerReuse": true,
+    "storageV2ComprehensiveDiagnosticsCollection": false,
+    "usingCopilotWorkspaceConfig": true,
+    "copilotWorkspace": false,
+    "hostnameSpecificGitCredentialHelper": false,
+    "Basis": true,
+    "Skuheapscaling": true,
+    "CacheIde": true,
+    "Developer": false,
+    "Eap": false
+  },
+  "retention_period_minutes": 43200,
+  "retention_expires_at": null,
+  "template": null,
+  "publish_url": null
+}
+[RemoteExplorer I] Updating codespace performance info
+[Client:extension:e46d:resolver:resolve:1:check-codespace-state I] codespace reimagined-guide-r44jgjgpvr472xp9x (id: a0e2f4f4-2789-4e35-8202-62939ae5cbd7) is in the "Creation" state
+[Client:extension:e46d:resolver:resolve:1:check-codespace-state I] codespace reimagined-guide-r44jgjgpvr472xp9x (id: a0e2f4f4-2789-4e35-8202-62939ae5cbd7) is 2 
+[Client:extension:e46d:resolver:resolve:1:check-codespace-state I] polling until ready...
+[EnvironmentPolling I] Polling reimagined-guide-r44jgjgpvr472xp9x...
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[RemoteExplorer I] Updating codespace details
+[Client:extension:e46d:resolver:port-forwarder I] Setting up tunnel provider
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] subscribing to onDispose event
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Tunnel client is unconnected, fetching tunnel and connecting> object #0: {
+  "tunnelId": "interesting-mountain-g4d32j8",
+  "clusterId": "inc1",
+  "domain": "app.github.dev",
+  "accessTokens": {
+    "connect": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkZCM0U2NTMwNjlDQ0I5MUFCQUUxRTNFQjk1RDc5NzdERDQxODM1QjYiLCJ0eXAiOiJKV1QifQ.eyJjbHVzdGVySWQiOiJpbmMxIiwidHVubmVsSWQiOiJpbnRlcmVzdGluZy1tb3VudGFpbi1nNGQzMmo4Iiwic2NwIjoiY29ubmVjdCIsImV4cCI6MTczNjEwNTExMywiaXNzIjoiaHR0cHM6Ly90dW5uZWxzLmFwaS52aXN1YWxzdHVkaW8uY29tLyIsIm5iZiI6MTczNjAxNzgxM30.6Xarxk_Ksuxn0qNRRj-UOjj86aw4rbXIc1x6kg4xEetRpYAOILOy37mwlS2-MMuV5YwbOG9ReYM65NGHBWJpWA",
+    "manage:ports": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkZCM0U2NTMwNjlDQ0I5MUFCQUUxRTNFQjk1RDc5NzdERDQxODM1QjYiLCJ0eXAiOiJKV1QifQ.eyJjbHVzdGVySWQiOiJpbmMxIiwidHVubmVsSWQiOiJpbnRlcmVzdGluZy1tb3VudGFpbi1nNGQzMmo4Iiwic2NwIjoibWFuYWdlOnBvcnRzIiwiZXhwIjoxNzM2MTA1MTEzLCJpc3MiOiJodHRwczovL3R1bm5lbHMuYXBpLnZpc3VhbHN0dWRpby5jb20vIiwibmJmIjoxNzM2MDE3ODEzfQ.9FVBRr_3ccXpkrqTqnfI4IfoULz5ujjtwRx_FhE5nGV69OP4UhtsLHvGjFgDF_oFRTik7ncD3qqlyh9Tm2xFlg"
+  }
+}
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 0: Connecting to client tunnel relay wss://inc1-data.rel.tunnels.api.visualstudio.com/api/v1/Client/Connect/interesting-mountain-g4d32j8
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Sec-WebSocket-Protocol: tunnel-relay-client-v2-dev, tunnel-relay-client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Authorization: tunnel <tunnel=interesting-mountain-g4d32j8.inc1, scopes=[connect], issuer=https://tunnels.api.visualstudio.com/, expiration=Mon Jan 06 2025 00:55:13 GMT+0530 (India Standard Time)>
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Connected with subprotocol 'tunnel-relay-client'
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9114: SshClientSession connecting...
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #0 KeyExchangeInitMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9100: Local version: SSH-2.0-dev-tunnels-ssh_3.11.36, remote version: SSH-2.0-Microsoft.DevTunnels.Ssh_3.11
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #0 KeyExchangeInitMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9170: KeyExchange negotiation: Server (diffie-hellman-group16-sha512, diffie-hellman-group14-sha256, ext-info-s) Client (ecdh-sha2-nistp384, ecdh-sha2-nistp256, diffie-hellman-group14-sha256) => diffie-hellman-group14-sha256
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9170: PublicKey negotiation: Server (ecdsa-sha2-nistp384) Client (rsa-sha2-512, rsa-sha2-256, ecdsa-sha2-nistp384, ecdsa-sha2-nistp256) => ecdsa-sha2-nistp384
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9170: ClientEncryption negotiation: Server (aes256-cbc, aes256-ctr) Client (aes256-gcm@openssh.com, aes256-ctr) => aes256-ctr
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9170: ServerEncryption negotiation: Server (aes256-cbc, aes256-ctr) Client (aes256-gcm@openssh.com, aes256-ctr) => aes256-ctr
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9170: ClientHmac negotiation: Server (hmac-sha2-512-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512, hmac-sha2-256) Client (hmac-sha2-512-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512, hmac-sha2-256) => hmac-sha2-512-etm@openssh.com
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9170: ServerHmac negotiation: Server (hmac-sha2-512-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512, hmac-sha2-256) Client (hmac-sha2-512-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512, hmac-sha2-256) => hmac-sha2-512-etm@openssh.com
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9170: ClientCompression negotiation: Server (none) Client (none) => none
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9170: ServerCompression negotiation: Server (none) Client (none) => none
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #1 KeyExchangeDhInitMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #1 KeyExchangeDhReplyMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9112: Server public key verification succeeded.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #2 NewKeysMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #2 NewKeysMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #3 ExtensionInfoMessage (server-sig-algs=rsa-sha2-512,rsa-sha2-256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp256; open-channel-request@microsoft.com; session-reconnect@microsoft.com)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9110: SshClientSession encrypted.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9111: SshClientSession Authenticating([ecdsa-sha2-nistp384])
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Verified host identity with public key AAAAE2VjZHNhLXNoYTItbmlzdHAzODQAAAAIbmlzdHAzODQAAABhBKlOEaQxBfGtVZ11fnHQ2ycZAtMuw01IgT430ay+aB5f8SP49Uu2M3uA34hCTSYbk31ZO/VEnfdfxLYgM1nKe+UGUhjspz4mOtFlHXBLUtkSVyKtWxRO0XG2kPDBLTec0Q==
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9112: SshClientSession server authenticated.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #4 ServiceRequestMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #5 AuthenticationRequestMessage (Method: none, Username: tunnel)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #3 ExtensionInfoMessage (open-channel-request@microsoft.com; server-sig-algs=rsa-sha2-512,rsa-sha2-256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp256; session-latency@microsoft.com; session-reconnect@microsoft.com)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #6 SessionRequestMessage (requestType=enable-session-reconnect@microsoft.com)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #4 SessionRequestMessage (requestType=enable-session-reconnect@microsoft.com)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #5 ServiceAcceptMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #6 AuthenticationSuccessMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9112: SshClientSession client authenticated.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Tunnel client connected, is reconnect: true
+[Client:extension:e46d:resolver I] Initializing RPC client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Adding forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #7 SessionRequestMessage (requestType=tcpip-forward)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #7 PortForwardSuccessMessage (port=16634)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #8 SessionRequestMessage (requestType=tcpip-forward)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #8 PortForwardSuccessMessage (port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Not opening workspace tunnel for internal port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Added port: 16635
+[Client:extension:e46d:resolver I] Initializing browser-based codespace host service client
+[Client:extension:e46d:resolver I] Initializing browser-based VS Code server host service client
+[Client:extension:e46d:resolver I] Initializing browser-based Jupyter server host service client
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[EnvironmentPolling I] Finished polling reimagined-guide-r44jgjgpvr472xp9x: the predicate is true.
+[RemoteExplorer I] Updating codespace performance info
+[RemoteExplorer I] Updating codespace details
+[Client:extension:e46d:resolver:resolve:1:check-codespace-state I] the codespace is ready> object #0: {
+  "id": 23319853,
+  "name": "<34:<redacted>>",
+  "environment_id": "a0e2f4f4-2789-4e35-8202-62939ae5cbd7",
+  "owner": "<undefined:<redacted>>",
+  "billable_owner": {
+    "login": "code50",
+    "id": 89367332,
+    "node_id": "MDEyOk9yZ2FuaXphdGlvbjg5MzY3MzMy",
+    "avatar_url": "https://avatars.githubusercontent.com/u/89367332?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/code50",
+    "html_url": "https://github.com/code50",
+    "followers_url": "https://api.github.com/users/code50/followers",
+    "following_url": "https://api.github.com/users/code50/following{/other_user}",
+    "gists_url": "https://api.github.com/users/code50/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/code50/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/code50/subscriptions",
+    "organizations_url": "https://api.github.com/users/code50/orgs",
+    "repos_url": "https://api.github.com/users/code50/repos",
+    "events_url": "https://api.github.com/users/code50/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/code50/received_events",
+    "type": "Organization",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "repository": {
+    "id": 750933493,
+    "node_id": "R_kgDOLMJV9Q",
+    "name": "<9:<redacted>>",
+    "full_name": "code50/158309813",
+    "private": true,
+    "owner": "<undefined:<redacted>>",
+    "html_url": "https://github.com/code50/158309813",
+    "description": null,
+    "fork": false,
+    "url": "https://api.github.com/repos/code50/158309813",
+    "forks_url": "https://api.github.com/repos/code50/158309813/forks",
+    "keys_url": "https://api.github.com/repos/code50/158309813/keys{/key_id}",
+    "collaborators_url": "https://api.github.com/repos/code50/158309813/collaborators{/collaborator}",
+    "teams_url": "https://api.github.com/repos/code50/158309813/teams",
+    "hooks_url": "https://api.github.com/repos/code50/158309813/hooks",
+    "issue_events_url": "https://api.github.com/repos/code50/158309813/issues/events{/number}",
+    "events_url": "https://api.github.com/repos/code50/158309813/events",
+    "assignees_url": "https://api.github.com/repos/code50/158309813/assignees{/user}",
+    "branches_url": "https://api.github.com/repos/code50/158309813/branches{/branch}",
+    "tags_url": "https://api.github.com/repos/code50/158309813/tags",
+    "blobs_url": "https://api.github.com/repos/code50/158309813/git/blobs{/sha}",
+    "git_tags_url": "https://api.github.com/repos/code50/158309813/git/tags{/sha}",
+    "git_refs_url": "https://api.github.com/repos/code50/158309813/git/refs{/sha}",
+    "trees_url": "https://api.github.com/repos/code50/158309813/git/trees{/sha}",
+    "statuses_url": "https://api.github.com/repos/code50/158309813/statuses/{sha}",
+    "languages_url": "https://api.github.com/repos/code50/158309813/languages",
+    "stargazers_url": "https://api.github.com/repos/code50/158309813/stargazers",
+    "contributors_url": "https://api.github.com/repos/code50/158309813/contributors",
+    "subscribers_url": "https://api.github.com/repos/code50/158309813/subscribers",
+    "subscription_url": "https://api.github.com/repos/code50/158309813/subscription",
+    "commits_url": "https://api.github.com/repos/code50/158309813/commits{/sha}",
+    "git_commits_url": "https://api.github.com/repos/code50/158309813/git/commits{/sha}",
+    "comments_url": "https://api.github.com/repos/code50/158309813/comments{/number}",
+    "issue_comment_url": "https://api.github.com/repos/code50/158309813/issues/comments{/number}",
+    "contents_url": "https://api.github.com/repos/code50/158309813/contents/{+path}",
+    "compare_url": "https://api.github.com/repos/code50/158309813/compare/{base}...{head}",
+    "merges_url": "https://api.github.com/repos/code50/158309813/merges",
+    "archive_url": "https://api.github.com/repos/code50/158309813/{archive_format}{/ref}",
+    "downloads_url": "https://api.github.com/repos/code50/158309813/downloads",
+    "issues_url": "https://api.github.com/repos/code50/158309813/issues{/number}",
+    "pulls_url": "https://api.github.com/repos/code50/158309813/pulls{/number}",
+    "milestones_url": "https://api.github.com/repos/code50/158309813/milestones{/number}",
+    "notifications_url": "https://api.github.com/repos/code50/158309813/notifications{?since,all,participating}",
+    "labels_url": "https://api.github.com/repos/code50/158309813/labels{/name}",
+    "releases_url": "https://api.github.com/repos/code50/158309813/releases{/id}",
+    "deployments_url": "https://api.github.com/repos/code50/158309813/deployments"
+  },
+  "machine": {
+    "name": "<14:<redacted>>",
+    "display_name": "2 cores, 8 GB RAM, 32 GB storage",
+    "operating_system": "linux",
+    "storage_in_bytes": 34359738368,
+    "memory_in_bytes": 8589934592,
+    "cpus": 2,
+    "prebuild_availability": null
+  },
+  "prebuild": null,
+  "created_at": "2025-01-05T00:56:47+05:30",
+  "updated_at": "2025-01-05T00:59:53+05:30",
+  "last_used_at": "2025-01-05T00:56:47+05:30",
+  "state": "Available",
+  "url": "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x",
+  "git_status": {
+    "ahead": 0,
+    "behind": 0,
+    "has_unpushed_changes": false,
+    "has_uncommitted_changes": false,
+    "ref": "main"
+  },
+  "location": "CentralIndia",
+  "idle_timeout_minutes": 30,
+  "web_url": "https://reimagined-guide-r44jgjgpvr472xp9x.github.dev",
+  "machines_url": "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x/machines",
+  "start_url": "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x/start",
+  "stop_url": "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x/stop",
+  "pulls_url": null,
+  "recent_folders": [],
+  "runtime_constraints": {
+    "allowed_port_privacy_settings": [
+      "private",
+      "org",
+      "public"
+    ]
+  },
+  "connection": {
+    "sessionPath": "/workspaces/158309813",
+    "tunnelProperties": {
+      "tunnelId": "interesting-mountain-g4d32j8",
+      "clusterId": "inc1",
+      "domain": "app.github.dev",
+      "connectAccessToken": "<401:<redacted>>",
+      "managePortsAccessToken": "<408:<redacted>>",
+      "serviceUri": "https://global.rel.tunnels.api.visualstudio.com/"
+    }
+  },
+  "container_id": "0ea8575e30f90b1c48f20c68c5c45cf38bd940852c82dbf6d97d20e7ed7503b1",
+  "display_name": "reimagined guide",
+  "devcontainer_path": ".devcontainer.json",
+  "pending_operation": false,
+  "feature_flags": {
+    "developer": false,
+    "detailedActivityMonitor": false,
+    "vscodeAccountSwitching": false,
+    "enableSmbDiagnosticContinuousMonitoring": false,
+    "enableSmbDiagnosticOnAnomalyMonitoring": false,
+    "useEarlyWorkbenchWebClient": true,
+    "useCoiWebClient": false,
+    "remapUserNamespace": false,
+    "removeConnectRetriesWebClient": true,
+    "storageV2ExhaustiveValidation": false,
+    "forcePushShutdownTelemetry": true,
+    "useNewJupyterApi": true,
+    "improvedWarmupContainerReuse": true,
+    "storageV2ComprehensiveDiagnosticsCollection": false,
+    "usingCopilotWorkspaceConfig": true,
+    "copilotWorkspace": false,
+    "hostnameSpecificGitCredentialHelper": false,
+    "Basis": true,
+    "Skuheapscaling": true,
+    "CacheIde": true,
+    "Developer": false,
+    "Eap": false
+  },
+  "retention_period_minutes": 43200,
+  "retention_expires_at": null,
+  "template": null,
+  "publish_url": null
+}
+[RemoteExplorer I] Updating codespace performance info
+[RemoteExplorer I] Updating codespace details
+[Client:extension:e46d:resolver:resolve:1:check-codespace-state I] vscode connection options: > object #0: {
+  "environmentId": "a0e2f4f4-2789-4e35-8202-62939ae5cbd7",
+  "vsCodeCommit": "fabdb6a30b49f79a7aba0f2ad9df9b399473380f",
+  "vsCodeQuality": "stable",
+  "extensions": [
+    "GitHub.codespaces",
+    "GitHub.vscode-pull-request-github"
+  ],
+  "telemetry": true
+}
+[Client:extension:e46d:resolver:resolve:1 I] Progress: Connecting to codespace...
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for StartRemoteServerAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 111 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #9 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=1) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #9 ChannelOpenConfirmationMessage (recipientChannel=1)(senderChannel=0)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #1 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #11 ChannelCloseMessage (recipientChannel=1)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 1, RemoteId: 0) closed remotely. (S: 384, R: 241)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Client:extension:e46d:resolver I] Executed start-remote-server using gRPC
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Adding forwarded port 41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider E] Failed to get tunnel port> object #0: Tunnel service error: Not Found code:ERR_BAD_REQUEST
+  at settle (/home/shri/.vscode/extensions/node_modules/axios/dist/node/axios.cjs:2019:12)
+  at IncomingMessage.handleStreamEnd (/home/shri/.vscode/extensions/node_modules/axios/dist/node/axios.cjs:3135:11)
+  at IncomingMessage.emit (node:events:530:35)
+  at endReadableNT (node:internal/streams/readable:1698:12)
+  at processTicksAndRejections (node:internal/process/task_queues:82:21)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/41335 with privacy 'private', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #12 SessionRequestMessage (requestType=RefreshPorts)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #12 SessionRequestMessage (requestType=tcpip-forward)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #13 PortForwardSuccessMessage (port=41335)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #13 SessionRequestSuccessMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Created port https/41335 with privacy 'private'
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Forwarding port 41335 locally
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] subscribing to onDispose event
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[41335] V] subscribing to onDispose event
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[41335] I] Starting local TCP server on port 41335 for remote port 41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[41335] I] Attempting to listen to 127.0.0.1:41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[41335] I] Listening on local port 41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[41335] I] Server started on port 41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Using local port 41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Setting main connection reference for remote port 41335 to local port 41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] subscribing to onDispose event
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Reviving ports...
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Not opening workspace tunnel for internal port 16634
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Revived port: 16634
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Not opening workspace tunnel for internal port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Revived port: 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Not opening workspace tunnel for internal port 41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Revived port: 41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] subscribing to onDispose event
+[Client:extension:e46d:resolver:resolve:1 I] vscode server remote port: "41335", local port: "41335"}
+[Client V] connect duration: 146822 ms
+[Client:extension:e46d:resolver:resolve:1 I] Progress: Done
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for EventStream from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver I] Subscribed to event stream
+[Client:extension:e46d:resolver:resolve:1:background-tasks I] launching background configuration tasks
+[Client:extension:e46d:resolver:resolve:1:background-tasks:post-attach-command-manager I] PostAttachCommandManager: addEnvironmentConfiguredEventCallback()
+[Client:extension:e46d:resolver:resolve:1:background-tasks:post-attach-command-manager V] subscribing to onDispose event
+[Client:extension:e46d:resolver:resolve:1:background-tasks I] no max idle timeout notice
+[Client:extension:e46d:resolver:resolve:1:background-tasks V] checking correctness of the codespace session path> object #0: [
+  {
+    "uri": {
+      "$mid": 1,
+      "fsPath": "/workspaces/158309813",
+      "external": "vscode-remote://codespaces%2Breimagined-guide-r44jgjgpvr472xp9x/workspaces/158309813",
+      "path": "/workspaces/158309813",
+      "scheme": "vscode-remote",
+      "authority": "codespaces+reimagined-guide-r44jgjgpvr472xp9x"
+    },
+    "name": "<9:<redacted>>",
+    "index": 0
+  }
+]
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for IsRecoveryContainerAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:resolve:1:background-tasks I] starting activity monitor, isRunningInWeb: "false"
+[Client:extension:e46d:resolver:resolve:1:background-tasks:activity-monitor:vscode-activity-provider I] isRunningInWeb: false
+[Client:extension:e46d:resolver:resolve:1:background-tasks:activity-monitor:vscode-activity-provider I] starting activity monitor
+[Client:extension:e46d:resolver:resolve:1:background-tasks:activity-monitor:vscode-activity-provider V] sending activity heartbeat
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for NotifyCodespaceOfClientActivity from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 44 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for ConfigureEnvironmentAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetContainerPersistedFolderPath from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetContainerPersistedFolderPath from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetContainerPersistedFolderPath from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #14 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=2) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #15 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=3) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #16 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=4) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #17 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=5) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #18 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=6) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #19 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=7) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #20 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=8) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 41335 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/41335 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/41335 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 41335 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #21 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=9) (host=127.0.0.1 port=41335)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #14 ChannelOpenConfirmationMessage (recipientChannel=2)(senderChannel=1)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #2 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #15 ChannelOpenConfirmationMessage (recipientChannel=3)(senderChannel=2)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #3 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #16 ChannelOpenConfirmationMessage (recipientChannel=4)(senderChannel=3)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #4 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #17 ChannelOpenConfirmationMessage (recipientChannel=5)(senderChannel=4)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #5 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #18 ChannelOpenConfirmationMessage (recipientChannel=6)(senderChannel=5)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #6 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #19 ChannelOpenConfirmationMessage (recipientChannel=7)(senderChannel=6)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #7 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #20 ChannelOpenConfirmationMessage (recipientChannel=8)(senderChannel=7)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #8 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #21 ChannelOpenConfirmationMessage (recipientChannel=9)(senderChannel=8)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #9 for 127.0.0.1:41335.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #23 ChannelCloseMessage (recipientChannel=3)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 3, RemoteId: 2) closed remotely. (S: 272, R: 198)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Client:extension:e46d:resolver:resolve:1:background-tasks I] Executed is-recovery-container using gRPC
+[Client:extension:e46d:resolver:resolve:1:background-tasks V] not in recovery container
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #25 ChannelCloseMessage (recipientChannel=6)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 6, RemoteId: 5) closed remotely. (S: 279, R: 240)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Client:extension:e46d:resolver:resolve:1:background-tasks I] Executed get-container-persisted-folder using gRPC
+[Client:extension:e46d:resolver:resolve:1:background-tasks V] container folder path: "/workspaces/.codespaces/.persistedshare"
+[Client:extension:e46d:resolver:resolve:1:background-tasks V] shared folder path: "/workspaces/.codespaces/shared/postCreateOutput.json"
+[Client:extension:e46d:resolver:resolve:1:background-tasks V] shared file path: "vscode-remote:///workspaces/.codespaces/shared/postCreateOutput.json"
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #27 ChannelCloseMessage (recipientChannel=5)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 5, RemoteId: 4) closed remotely. (S: 273, R: 198)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Client:extension:e46d:resolver:resolve:1:background-tasks I] Executed configure-environment using gRPC
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #29 ChannelCloseMessage (recipientChannel=4)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 4, RemoteId: 3) closed remotely. (S: 319, R: 200)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Client:extension:e46d:resolver:resolve:1:background-tasks:activity-monitor:vscode-activity-provider I] Executed notify-codespace-of-client-activity using gRPC
+[Client:extension:e46d:resolver:resolve:1:background-tasks:activity-monitor:vscode-activity-provider I] Activity signal sent with result true
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #32 ChannelCloseMessage (recipientChannel=7)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 7, RemoteId: 6) closed remotely. (S: 279, R: 240)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Performance I] Executed get-container-persisted-folder using gRPC
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 41335 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/41335 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/41335 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 41335 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #38 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=10) (host=127.0.0.1 port=41335)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #36 ChannelCloseMessage (recipientChannel=8)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 8, RemoteId: 7) closed remotely. (S: 279, R: 240)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[ResourceUsage I] Executed get-container-persisted-folder using gRPC
+[ResourceUsage V] container folder path: "/workspaces/.codespaces/.persistedshare"
+[ResourceUsage V] shared folder path: "/workspaces/.codespaces/shared/resource-usage.json"
+[ResourceUsage V] shared file path: "vscode-remote:///workspaces/.codespaces/shared/resource-usage.json"
+[ResourceUsage I] Starting monitor
+[ResourceUsage I] Checking if the codespace connection exists
+[Client:extension:e46d:resolver I] Received event: Subscribed
+[Client:extension:e46d:resolver I] Client 8e95550b-b1fe-4781-b233-77493b3b8037 subscribed to event stream
+[Client:extension:e46d:resolver I] Received event: CreationLogUpdated
+[Client:extension:e46d:resolver I] Event payload: {"text":"Finding image...","type":"inProgress","isStreamingLogs":false}
+[Client:extension:e46d:resolver I] Received event: CreationLogUpdated
+[Client:extension:e46d:resolver I] Event payload: {"text":"Image found.","type":"succeeded","isStreamingLogs":false}
+[Client:extension:e46d:resolver I] Received event: CreationLogUpdated
+[Client:extension:e46d:resolver I] Event payload: {"text":"Building container...","type":"inProgress","isStreamingLogs":true}
+[Client:extension:e46d:resolver I] Received event: CreationLogUpdated
+[Client:extension:e46d:resolver I] Event payload: {"text":"Container built.","type":"succeeded","isStreamingLogs":false}
+[Client:extension:e46d:resolver I] Received event: EnvironmentConfigured
+[Client:extension:e46d:resolver:resolve:1:background-tasks:post-attach-command-manager I] PostAttachCommandManager: handleEnvironmentConfiguredEvent()
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #39 ChannelOpenConfirmationMessage (recipientChannel=10)(senderChannel=9)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #10 for 127.0.0.1:41335.
+[Client:extension:e46d:resolver:resolve:1:background-tasks:openDefaultFiles I] Using the devcontainer at /workspaces/158309813/.devcontainer.json
+[RemoteExplorer I] Updating codespace performance info
+[RemoteExplorer I] Updating codespace details
+[Performance I] Starting monitor
+[Performance I] Checking if the codespace connection exists
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #96 ChannelWindowAdjustMessage (recipientChannel=8) (bytesToAdd=529387)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 41335 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/41335 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/41335 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 41335 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #140 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=11) (host=127.0.0.1 port=41335)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #290 ChannelOpenConfirmationMessage (recipientChannel=11)(senderChannel=10)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #11 for 127.0.0.1:41335.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #145 ChannelWindowAdjustMessage (recipientChannel=8) (bytesToAdd=526021)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetPerformanceDataAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #246 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=12) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #441 ChannelOpenConfirmationMessage (recipientChannel=12)(senderChannel=11)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #12 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #446 ChannelCloseMessage (recipientChannel=12)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 12, RemoteId: 11) closed remotely. (S: 271, R: 222)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Performance I] Executed get-performance-data using gRPC
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Tunnel factory called> object #0: {
+  "remoteAddress": {
+    "host": "127.0.0.1",
+    "port": 41335
+  },
+  "localAddressPort": 41335
+}
+> object #1: {
+  "elevationRequired": false
+}
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider E] failed to create tunnel: > object #0: Forwarding internal port 41335 is not allowed
+  at G.<anonymous> (/home/shri/.vscode/extensions/codespaces-internal/dist/src/connection/tunnelProvider.js:118:31)
+  at Generator.next (<anonymous>)
+  at /home/shri/.vscode/extensions/codespaces-internal/dist/src/connection/tunnelProvider.js:31:71
+  at new Promise (<anonymous>)
+  at i (/home/shri/.vscode/extensions/codespaces-internal/dist/src/connection/tunnelProvider.js:27:12)
+  at G.tunnelFactory (/home/shri/.vscode/extensions/codespaces-internal/dist/src/connection/tunnelProvider.js:100:58)
+  at $a.<anonymous> (/home/shri/.vscode/extensions/github.codespaces-1.17.3/src/resolver/portForwarder.ts:195:50)
+  at Generator.next (<anonymous>)
+  at /home/shri/.vscode/extensions/github.codespaces-1.17.3/out/bundle/extension-node.js:1572:105166
+  at new Promise (<anonymous>)
+  at portForwarder_async (/home/shri/.vscode/extensions/github.codespaces-1.17.3/out/bundle/extension-node.js:1572:104916)
+  at $a.tunnelFactory (/home/shri/.vscode/extensions/github.codespaces-1.17.3/src/resolver/portForwarder.ts:167:113)
+  at rl.<anonymous> (/home/shri/.vscode/extensions/github.codespaces-1.17.3/src/resolver/resolver.ts:694:35)
+  at Generator.next (<anonymous>)
+  at /home/shri/.vscode/extensions/github.codespaces-1.17.3/out/bundle/extension-node.js:1572:111874
+  at new Promise (<anonymous>)
+  at resolver_async (/home/shri/.vscode/extensions/github.codespaces-1.17.3/out/bundle/extension-node.js:1572:111624)
+  at rl.tunnelFactory (/home/shri/.vscode/extensions/github.codespaces-1.17.3/src/resolver/resolver.ts:693:113)
+  at Sy.$forwardPort (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:115:20622)
+  at Dy.S (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:32:115275)
+  at Dy.Q (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:32:115055)
+  at Dy.M (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:32:114144)
+  at Dy.L (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:32:113249)
+  at kh.value (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:32:112046)
+  at P.B (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:746)
+  at P.fire (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:964)
+  at Vn.fire (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:32:9457)
+  at kh.value (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:175:13296)
+  at P.B (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:746)
+  at P.fire (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:964)
+  at Vn.fire (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:32:9457)
+  at MessagePortMain.<anonymous> (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:175:11588)
+  at MessagePortMain.emit (node:events:518:28)
+  at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Tunnel factory called> object #0: {
+  "remoteAddress": {
+    "host": "0:0:0:0:0:0:0:0",
+    "port": 1337
+  },
+  "localAddressPort": 1337
+}
+> object #1: {
+  "elevationRequired": false
+}
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing http/1337 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #284 SessionRequestMessage (requestType=RefreshPorts)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #489 SessionRequestMessage (requestType=tcpip-forward)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Received port added event for port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Adding forwarded port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Forwarded port 1337 already exists
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #285 PortForwardSuccessMessage (port=1337)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #490 SessionRequestSuccessMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Created port http/1337 with privacy 'private'
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Accepting local connections for port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Forwarding port locally
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Forwarding port 1337 locally
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] subscribing to onDispose event
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[1337] V] subscribing to onDispose event
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[1337] I] Starting local TCP server on port 1337 for remote port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[1337] I] Attempting to listen to 127.0.0.1:1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[1337] I] Listening on local port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[1337] I] Server started on port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Using local port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #523 ChannelCloseMessage (recipientChannel=11)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 11, RemoteId: 10) closed remotely. (S: 1322, R: 83826)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[41335] I] Port forwarding stream ended
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetPerformanceDataAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #331 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=13) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #561 ChannelOpenConfirmationMessage (recipientChannel=13)(senderChannel=12)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #13 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #563 ChannelCloseMessage (recipientChannel=13)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 13, RemoteId: 12) closed remotely. (S: 271, R: 215)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Performance I] Executed get-performance-data using gRPC
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #334 ChannelWindowAdjustMessage (recipientChannel=8) (bytesToAdd=525687)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetPerformanceDataAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #341 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=14) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #596 ChannelOpenConfirmationMessage (recipientChannel=14)(senderChannel=13)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #14 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #598 ChannelCloseMessage (recipientChannel=14)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 14, RemoteId: 13) closed remotely. (S: 271, R: 215)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Performance I] Executed get-performance-data using gRPC
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetPerformanceDataAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #350 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=15) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #604 ChannelOpenConfirmationMessage (recipientChannel=15)(senderChannel=14)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #15 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #606 ChannelCloseMessage (recipientChannel=15)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 15, RemoteId: 14) closed remotely. (S: 271, R: 215)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Performance I] Executed get-performance-data using gRPC
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetPerformanceDataAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #357 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=16) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #609 ChannelOpenConfirmationMessage (recipientChannel=16)(senderChannel=15)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #16 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #611 ChannelCloseMessage (recipientChannel=16)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 16, RemoteId: 15) closed remotely. (S: 271, R: 215)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Performance I] Executed get-performance-data using gRPC
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetPerformanceDataAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #362 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=17) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #614 ChannelOpenConfirmationMessage (recipientChannel=17)(senderChannel=16)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #17 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #616 ChannelCloseMessage (recipientChannel=17)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 17, RemoteId: 16) closed remotely. (S: 271, R: 215)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Performance I] Executed get-performance-data using gRPC
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetPerformanceDataAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #367 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=18) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #619 ChannelOpenConfirmationMessage (recipientChannel=18)(senderChannel=17)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #18 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #621 ChannelCloseMessage (recipientChannel=18)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 18, RemoteId: 17) closed remotely. (S: 271, R: 215)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Performance I] Executed get-performance-data using gRPC
+[Client:extension:e46d:resolver:resolve:1:background-tasks:activity-monitor:vscode-activity-provider V] sending activity heartbeat
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for NotifyCodespaceOfClientActivity from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 112 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #370 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=19) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #623 ChannelOpenConfirmationMessage (recipientChannel=19)(senderChannel=18)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #19 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #627 ChannelCloseMessage (recipientChannel=19)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 19, RemoteId: 18) closed remotely. (S: 388, R: 200)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Client:extension:e46d:resolver:resolve:1:background-tasks:activity-monitor:vscode-activity-provider I] Executed notify-codespace-of-client-activity using gRPC
+[Client:extension:e46d:resolver:resolve:1:background-tasks:activity-monitor:vscode-activity-provider I] Activity signal sent with result true
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetPerformanceDataAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #440 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=20) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #683 ChannelOpenConfirmationMessage (recipientChannel=20)(senderChannel=19)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #20 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #685 ChannelCloseMessage (recipientChannel=20)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 20, RemoteId: 19) closed remotely. (S: 271, R: 215)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Performance I] Executed get-performance-data using gRPC
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetPerformanceDataAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #483 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=21) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #720 ChannelOpenConfirmationMessage (recipientChannel=21)(senderChannel=20)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #21 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #722 ChannelCloseMessage (recipientChannel=21)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 21, RemoteId: 20) closed remotely. (S: 271, R: 215)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Performance I] Executed get-performance-data using gRPC
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetPerformanceDataAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #493 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=22) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #729 ChannelOpenConfirmationMessage (recipientChannel=22)(senderChannel=21)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #22 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #731 ChannelCloseMessage (recipientChannel=22)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 22, RemoteId: 21) closed remotely. (S: 271, R: 215)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Performance I] Executed get-performance-data using gRPC
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetPerformanceDataAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #499 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=23) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #767 ChannelOpenConfirmationMessage (recipientChannel=23)(senderChannel=22)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #23 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #771 ChannelCloseMessage (recipientChannel=23)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 23, RemoteId: 22) closed remotely. (S: 271, R: 215)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Performance I] Executed get-performance-data using gRPC
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetPerformanceDataAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #506 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=24) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #775 ChannelOpenConfirmationMessage (recipientChannel=24)(senderChannel=23)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #24 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #777 ChannelCloseMessage (recipientChannel=24)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 24, RemoteId: 23) closed remotely. (S: 271, R: 215)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Performance I] Executed get-performance-data using gRPC
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetPerformanceDataAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #516 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=25) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #783 ChannelOpenConfirmationMessage (recipientChannel=25)(senderChannel=24)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #25 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #787 ChannelCloseMessage (recipientChannel=25)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 25, RemoteId: 24) closed remotely. (S: 271, R: 215)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Performance I] Executed get-performance-data using gRPC
+[Client:extension:e46d:resolver I] Received event: DevContainerConfigChanged
+[Client:extension:e46d:resolver:resolve:1:background-tasks I] asking user if they want to rebuild> object #0: "Rebuild Now"
+[Client:extension:e46d:resolver:resolve:1:background-tasks I] user closed the dialog
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetPerformanceDataAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #530 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=26) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #803 ChannelOpenConfirmationMessage (recipientChannel=26)(senderChannel=25)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #26 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #806 ChannelCloseMessage (recipientChannel=26)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 26, RemoteId: 25) closed remotely. (S: 271, R: 215)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Performance I] Executed get-performance-data using gRPC
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #824 ChannelCloseMessage (recipientChannel=10)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 10, RemoteId: 9) closed remotely. (S: 305560, R: 42379)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[41335] I] Port forwarding stream ended
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[41335] V] disposing reason: 'Port forwarding stream ended', disposing 6 objects
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:delayed-disposable V] Disposing reason:Port forwarding stream ended $0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[41335]:delayed-disposable V] Disposing reason:Port forwarding stream ended $1
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] disposing reason: 'Port forwarding stream ended $2', disposing 10 objects
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] disposing reason: 'n/a', disposing 0 objects
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:delayed-disposable V] Disposing reason:undefined
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[1337] V] disposing reason: 'tunnelProvider disposed', disposing 2 objects
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:delayed-disposable V] Disposing reason:tunnelProvider disposed $0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[1337]:delayed-disposable V] Disposing reason:tunnelProvider disposed $1
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[1337] I] Stopping local TCP server on port 1337 (0 connections)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Stopping forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Stopped forwarding port 16635
+[Client:extension:e46d:resolver I] Dev Tunnels connection is disposed, disposing of RPC client
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Client:extension:e46d:resolver:codespaces-internal-transport E] Request canceled by client
+[Client:extension:e46d:resolver:resolve:1:background-tasks:post-attach-command-manager V] disposing reason: 'Port forwarding stream ended $2 $2', disposing 1 objects
+[Client:extension:e46d:resolver:resolve:1:background-tasks:post-attach-command-manager:delayed-disposable V] Disposing reason:undefined
+[Client:extension:e46d:resolver:resolve:1:background-tasks:activity-monitor:vscode-activity-provider V] disposing reason: 'disposed with connection', disposing 23 objects
+[ResourceUsage I] Connection disposed, stopping monitor
+[ResourceUsage I] Stopping polling
+[Performance I] Connection disposed, stopping monitor
+[Performance I] Stopping polling
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:delayed-disposable V] Disposing reason:undefined
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:delayed-disposable V] Disposing reason:undefined
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[41335] I] Stopping local TCP server on port 41335 (2 connections)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[1337] V] Stopped local server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[41335] V] Stopped local server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Stopping forwarded port 41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Stopping local port forwarder for port 41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Stopped local port forwarder for port 41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Stopped forwarding port 41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Stopping forwarded port 16634
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Stopped forwarding port 16634
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Stopping forwarded port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Stopping local port forwarder for port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Stopped local port forwarder for port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Stopped forwarding port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Tunnel client disconnected, recreating and reconnecting: undefined
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Not connecting tunnel client because the provider is disposed
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #551 ChannelCloseMessage (recipientChannel=1)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9113: SshClientSession Close(byApplication, "")
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9113: SshClientSession disposed.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshClientSession closed.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshClientSession closed.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #552 DisconnectMessage (byApplication: )
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #553 ChannelCloseMessage (recipientChannel=8)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Client:extension:e46d:resolver:resolve:2 I] resolve retry #3
+[Client:extension:e46d:resolver:resolve:2 I] resolving "codespaces+reimagined-guide-r44jgjgpvr472xp9x"
+[Client:extension:e46d:resolver:resolve:2 I] codespace: "reimagined-guide-r44jgjgpvr472xp9x", fetching details
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Stopping forwarded port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Forwarded port 1337 does not exist locally
+[Client:extension:e46d:resolver:resolve:2:fetch-codespace-info I] fetching codespace details for "reimagined-guide-r44jgjgpvr472xp9x"
+[Client:extension:e46d:resolver:resolve:2:fetch-codespace-info I] signed in, getting the details
+[Client:extension:e46d:resolver:resolve:2:fetch-codespace-info I] fetching codespace "reimagined-guide-r44jgjgpvr472xp9x" (retries left: 2)
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[RemoteExplorer I] Updating codespace performance info
+[RemoteExplorer I] Updating codespace details
+[Client:extension:e46d:resolver I] successfully fetched codespace details> object #0: {
+  "id": 23319853,
+  "name": "<34:<redacted>>",
+  "environment_id": "a0e2f4f4-2789-4e35-8202-62939ae5cbd7",
+  "owner": "<undefined:<redacted>>",
+  "billable_owner": {
+    "login": "code50",
+    "id": 89367332,
+    "node_id": "MDEyOk9yZ2FuaXphdGlvbjg5MzY3MzMy",
+    "avatar_url": "https://avatars.githubusercontent.com/u/89367332?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/code50",
+    "html_url": "https://github.com/code50",
+    "followers_url": "https://api.github.com/users/code50/followers",
+    "following_url": "https://api.github.com/users/code50/following{/other_user}",
+    "gists_url": "https://api.github.com/users/code50/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/code50/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/code50/subscriptions",
+    "organizations_url": "https://api.github.com/users/code50/orgs",
+    "repos_url": "https://api.github.com/users/code50/repos",
+    "events_url": "https://api.github.com/users/code50/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/code50/received_events",
+    "type": "Organization",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "repository": {
+    "id": 750933493,
+    "node_id": "R_kgDOLMJV9Q",
+    "name": "<9:<redacted>>",
+    "full_name": "code50/158309813",
+    "private": true,
+    "owner": "<undefined:<redacted>>",
+    "html_url": "https://github.com/code50/158309813",
+    "description": null,
+    "fork": false,
+    "url": "https://api.github.com/repos/code50/158309813",
+    "forks_url": "https://api.github.com/repos/code50/158309813/forks",
+    "keys_url": "https://api.github.com/repos/code50/158309813/keys{/key_id}",
+    "collaborators_url": "https://api.github.com/repos/code50/158309813/collaborators{/collaborator}",
+    "teams_url": "https://api.github.com/repos/code50/158309813/teams",
+    "hooks_url": "https://api.github.com/repos/code50/158309813/hooks",
+    "issue_events_url": "https://api.github.com/repos/code50/158309813/issues/events{/number}",
+    "events_url": "https://api.github.com/repos/code50/158309813/events",
+    "assignees_url": "https://api.github.com/repos/code50/158309813/assignees{/user}",
+    "branches_url": "https://api.github.com/repos/code50/158309813/branches{/branch}",
+    "tags_url": "https://api.github.com/repos/code50/158309813/tags",
+    "blobs_url": "https://api.github.com/repos/code50/158309813/git/blobs{/sha}",
+    "git_tags_url": "https://api.github.com/repos/code50/158309813/git/tags{/sha}",
+    "git_refs_url": "https://api.github.com/repos/code50/158309813/git/refs{/sha}",
+    "trees_url": "https://api.github.com/repos/code50/158309813/git/trees{/sha}",
+    "statuses_url": "https://api.github.com/repos/code50/158309813/statuses/{sha}",
+    "languages_url": "https://api.github.com/repos/code50/158309813/languages",
+    "stargazers_url": "https://api.github.com/repos/code50/158309813/stargazers",
+    "contributors_url": "https://api.github.com/repos/code50/158309813/contributors",
+    "subscribers_url": "https://api.github.com/repos/code50/158309813/subscribers",
+    "subscription_url": "https://api.github.com/repos/code50/158309813/subscription",
+    "commits_url": "https://api.github.com/repos/code50/158309813/commits{/sha}",
+    "git_commits_url": "https://api.github.com/repos/code50/158309813/git/commits{/sha}",
+    "comments_url": "https://api.github.com/repos/code50/158309813/comments{/number}",
+    "issue_comment_url": "https://api.github.com/repos/code50/158309813/issues/comments{/number}",
+    "contents_url": "https://api.github.com/repos/code50/158309813/contents/{+path}",
+    "compare_url": "https://api.github.com/repos/code50/158309813/compare/{base}...{head}",
+    "merges_url": "https://api.github.com/repos/code50/158309813/merges",
+    "archive_url": "https://api.github.com/repos/code50/158309813/{archive_format}{/ref}",
+    "downloads_url": "https://api.github.com/repos/code50/158309813/downloads",
+    "issues_url": "https://api.github.com/repos/code50/158309813/issues{/number}",
+    "pulls_url": "https://api.github.com/repos/code50/158309813/pulls{/number}",
+    "milestones_url": "https://api.github.com/repos/code50/158309813/milestones{/number}",
+    "notifications_url": "https://api.github.com/repos/code50/158309813/notifications{?since,all,participating}",
+    "labels_url": "https://api.github.com/repos/code50/158309813/labels{/name}",
+    "releases_url": "https://api.github.com/repos/code50/158309813/releases{/id}",
+    "deployments_url": "https://api.github.com/repos/code50/158309813/deployments"
+  },
+  "machine": {
+    "name": "<14:<redacted>>",
+    "display_name": "2 cores, 8 GB RAM, 32 GB storage",
+    "operating_system": "linux",
+    "storage_in_bytes": 34359738368,
+    "memory_in_bytes": 8589934592,
+    "cpus": 2,
+    "prebuild_availability": null
+  },
+  "prebuild": null,
+  "created_at": "2025-01-05T00:56:47+05:30",
+  "updated_at": "2025-01-05T01:02:04+05:30",
+  "last_used_at": "2025-01-05T00:56:47+05:30",
+  "state": "Rebuilding",
+  "url": "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x",
+  "git_status": {
+    "ahead": 0,
+    "behind": 0,
+    "has_unpushed_changes": true,
+    "has_uncommitted_changes": true,
+    "ref": "main"
+  },
+  "location": "CentralIndia",
+  "idle_timeout_minutes": 30,
+  "web_url": "https://reimagined-guide-r44jgjgpvr472xp9x.github.dev",
+  "machines_url": "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x/machines",
+  "start_url": "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x/start",
+  "stop_url": "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x/stop",
+  "pulls_url": null,
+  "recent_folders": [],
+  "runtime_constraints": {
+    "allowed_port_privacy_settings": [
+      "private",
+      "org",
+      "public"
+    ]
+  },
+  "connection": {
+    "sessionPath": "/workspaces/158309813",
+    "tunnelProperties": {
+      "tunnelId": "interesting-mountain-g4d32j8",
+      "clusterId": "inc1",
+      "domain": "app.github.dev",
+      "connectAccessToken": "<401:<redacted>>",
+      "managePortsAccessToken": "<408:<redacted>>",
+      "serviceUri": "https://global.rel.tunnels.api.visualstudio.com/"
+    }
+  },
+  "container_id": "0ea8575e30f90b1c48f20c68c5c45cf38bd940852c82dbf6d97d20e7ed7503b1",
+  "display_name": "reimagined guide",
+  "devcontainer_path": ".devcontainer.json",
+  "pending_operation": false,
+  "feature_flags": {
+    "developer": false,
+    "detailedActivityMonitor": false,
+    "vscodeAccountSwitching": false,
+    "enableSmbDiagnosticContinuousMonitoring": false,
+    "enableSmbDiagnosticOnAnomalyMonitoring": false,
+    "useEarlyWorkbenchWebClient": true,
+    "useCoiWebClient": false,
+    "remapUserNamespace": false,
+    "removeConnectRetriesWebClient": true,
+    "storageV2ExhaustiveValidation": false,
+    "forcePushShutdownTelemetry": true,
+    "useNewJupyterApi": true,
+    "improvedWarmupContainerReuse": true,
+    "storageV2ComprehensiveDiagnosticsCollection": false,
+    "usingCopilotWorkspaceConfig": true,
+    "copilotWorkspace": false,
+    "hostnameSpecificGitCredentialHelper": false,
+    "Basis": true,
+    "Skuheapscaling": true,
+    "CacheIde": true,
+    "Developer": false,
+    "Eap": false
+  },
+  "retention_period_minutes": 43200,
+  "retention_expires_at": null,
+  "template": null,
+  "publish_url": null
+}
+[RemoteExplorer I] Updating codespace performance info
+[RemoteExplorer I] Updating codespace details
+[Client:extension:e46d:resolver:resolve:2:check-codespace-state I] codespace reimagined-guide-r44jgjgpvr472xp9x (id: a0e2f4f4-2789-4e35-8202-62939ae5cbd7) is in the "Rebuild" state
+[Client:extension:e46d:resolver:resolve:2:check-codespace-state I] codespace reimagined-guide-r44jgjgpvr472xp9x (id: a0e2f4f4-2789-4e35-8202-62939ae5cbd7) is 4 
+[Client:extension:e46d:resolver:resolve:2:check-codespace-state I] polling until ready...
+[EnvironmentPolling I] Polling reimagined-guide-r44jgjgpvr472xp9x...
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[Client:extension:e46d:resolver:port-forwarder I] Setting up tunnel provider
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] subscribing to onDispose event
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Tunnel client is unconnected, fetching tunnel and connecting> object #0: {
+  "tunnelId": "interesting-mountain-g4d32j8",
+  "clusterId": "inc1",
+  "domain": "app.github.dev",
+  "accessTokens": {
+    "connect": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkZCM0U2NTMwNjlDQ0I5MUFCQUUxRTNFQjk1RDc5NzdERDQxODM1QjYiLCJ0eXAiOiJKV1QifQ.eyJjbHVzdGVySWQiOiJpbmMxIiwidHVubmVsSWQiOiJpbnRlcmVzdGluZy1tb3VudGFpbi1nNGQzMmo4Iiwic2NwIjoiY29ubmVjdCIsImV4cCI6MTczNjEwNTExMywiaXNzIjoiaHR0cHM6Ly90dW5uZWxzLmFwaS52aXN1YWxzdHVkaW8uY29tLyIsIm5iZiI6MTczNjAxNzgxM30.6Xarxk_Ksuxn0qNRRj-UOjj86aw4rbXIc1x6kg4xEetRpYAOILOy37mwlS2-MMuV5YwbOG9ReYM65NGHBWJpWA",
+    "manage:ports": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkZCM0U2NTMwNjlDQ0I5MUFCQUUxRTNFQjk1RDc5NzdERDQxODM1QjYiLCJ0eXAiOiJKV1QifQ.eyJjbHVzdGVySWQiOiJpbmMxIiwidHVubmVsSWQiOiJpbnRlcmVzdGluZy1tb3VudGFpbi1nNGQzMmo4Iiwic2NwIjoibWFuYWdlOnBvcnRzIiwiZXhwIjoxNzM2MTA1MTEzLCJpc3MiOiJodHRwczovL3R1bm5lbHMuYXBpLnZpc3VhbHN0dWRpby5jb20vIiwibmJmIjoxNzM2MDE3ODEzfQ.9FVBRr_3ccXpkrqTqnfI4IfoULz5ujjtwRx_FhE5nGV69OP4UhtsLHvGjFgDF_oFRTik7ncD3qqlyh9Tm2xFlg"
+  }
+}
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 0: Connecting to client tunnel relay wss://inc1-data.rel.tunnels.api.visualstudio.com/api/v1/Client/Connect/interesting-mountain-g4d32j8
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Sec-WebSocket-Protocol: tunnel-relay-client-v2-dev, tunnel-relay-client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Authorization: tunnel <tunnel=interesting-mountain-g4d32j8.inc1, scopes=[connect], issuer=https://tunnels.api.visualstudio.com/, expiration=Mon Jan 06 2025 00:55:13 GMT+0530 (India Standard Time)>
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Connected with subprotocol 'tunnel-relay-client'
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9114: SshClientSession connecting...
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #0 KeyExchangeInitMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9100: Local version: SSH-2.0-dev-tunnels-ssh_3.11.36, remote version: SSH-2.0-Microsoft.DevTunnels.Ssh_3.11
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #0 KeyExchangeInitMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9170: KeyExchange negotiation: Server (diffie-hellman-group16-sha512, diffie-hellman-group14-sha256, ext-info-s) Client (ecdh-sha2-nistp384, ecdh-sha2-nistp256, diffie-hellman-group14-sha256) => diffie-hellman-group14-sha256
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9170: PublicKey negotiation: Server (ecdsa-sha2-nistp384) Client (rsa-sha2-512, rsa-sha2-256, ecdsa-sha2-nistp384, ecdsa-sha2-nistp256) => ecdsa-sha2-nistp384
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9170: ClientEncryption negotiation: Server (aes256-cbc, aes256-ctr) Client (aes256-gcm@openssh.com, aes256-ctr) => aes256-ctr
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9170: ServerEncryption negotiation: Server (aes256-cbc, aes256-ctr) Client (aes256-gcm@openssh.com, aes256-ctr) => aes256-ctr
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9170: ClientHmac negotiation: Server (hmac-sha2-512-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512, hmac-sha2-256) Client (hmac-sha2-512-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512, hmac-sha2-256) => hmac-sha2-512-etm@openssh.com
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9170: ServerHmac negotiation: Server (hmac-sha2-512-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512, hmac-sha2-256) Client (hmac-sha2-512-etm@openssh.com, hmac-sha2-256-etm@openssh.com, hmac-sha2-512, hmac-sha2-256) => hmac-sha2-512-etm@openssh.com
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9170: ClientCompression negotiation: Server (none) Client (none) => none
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9170: ServerCompression negotiation: Server (none) Client (none) => none
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #1 KeyExchangeDhInitMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #1 KeyExchangeDhReplyMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9112: Server public key verification succeeded.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #2 NewKeysMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #2 NewKeysMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #3 ExtensionInfoMessage (server-sig-algs=rsa-sha2-512,rsa-sha2-256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp256; open-channel-request@microsoft.com; session-reconnect@microsoft.com)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9110: SshClientSession encrypted.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9111: SshClientSession Authenticating([ecdsa-sha2-nistp384])
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Verified host identity with public key AAAAE2VjZHNhLXNoYTItbmlzdHAzODQAAAAIbmlzdHAzODQAAABhBKlOEaQxBfGtVZ11fnHQ2ycZAtMuw01IgT430ay+aB5f8SP49Uu2M3uA34hCTSYbk31ZO/VEnfdfxLYgM1nKe+UGUhjspz4mOtFlHXBLUtkSVyKtWxRO0XG2kPDBLTec0Q==
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9112: SshClientSession server authenticated.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #4 ServiceRequestMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #5 AuthenticationRequestMessage (Method: none, Username: tunnel)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #3 ExtensionInfoMessage (open-channel-request@microsoft.com; server-sig-algs=rsa-sha2-512,rsa-sha2-256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp256; session-latency@microsoft.com; session-reconnect@microsoft.com)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #6 SessionRequestMessage (requestType=enable-session-reconnect@microsoft.com)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #4 SessionRequestMessage (requestType=enable-session-reconnect@microsoft.com)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #5 ServiceAcceptMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #6 AuthenticationSuccessMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9112: SshClientSession client authenticated.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Tunnel client connected, is reconnect: true
+[Client:extension:e46d:resolver I] Initializing RPC client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Adding forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #7 SessionRequestMessage (requestType=tcpip-forward)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #7 PortForwardSuccessMessage (port=1337)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #8 SessionRequestMessage (requestType=tcpip-forward)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #8 PortForwardSuccessMessage (port=16634)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #9 SessionRequestMessage (requestType=tcpip-forward)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #9 PortForwardSuccessMessage (port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #10 SessionRequestMessage (requestType=tcpip-forward)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #10 PortForwardSuccessMessage (port=41335)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Not opening workspace tunnel for internal port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Added port: 16635
+[Client:extension:e46d:resolver I] Initializing browser-based codespace host service client
+[Client:extension:e46d:resolver I] Initializing browser-based VS Code server host service client
+[Client:extension:e46d:resolver I] Initializing browser-based Jupyter server host service client
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[EnvironmentPolling I] Finished polling reimagined-guide-r44jgjgpvr472xp9x: the predicate is true.
+[RemoteExplorer I] Updating codespace performance info
+[RemoteExplorer I] Updating codespace details
+[Client:extension:e46d:resolver:resolve:2:check-codespace-state I] the codespace is ready> object #0: {
+  "id": 23319853,
+  "name": "<34:<redacted>>",
+  "environment_id": "a0e2f4f4-2789-4e35-8202-62939ae5cbd7",
+  "owner": "<undefined:<redacted>>",
+  "billable_owner": {
+    "login": "code50",
+    "id": 89367332,
+    "node_id": "MDEyOk9yZ2FuaXphdGlvbjg5MzY3MzMy",
+    "avatar_url": "https://avatars.githubusercontent.com/u/89367332?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/code50",
+    "html_url": "https://github.com/code50",
+    "followers_url": "https://api.github.com/users/code50/followers",
+    "following_url": "https://api.github.com/users/code50/following{/other_user}",
+    "gists_url": "https://api.github.com/users/code50/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/code50/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/code50/subscriptions",
+    "organizations_url": "https://api.github.com/users/code50/orgs",
+    "repos_url": "https://api.github.com/users/code50/repos",
+    "events_url": "https://api.github.com/users/code50/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/code50/received_events",
+    "type": "Organization",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "repository": {
+    "id": 750933493,
+    "node_id": "R_kgDOLMJV9Q",
+    "name": "<9:<redacted>>",
+    "full_name": "code50/158309813",
+    "private": true,
+    "owner": "<undefined:<redacted>>",
+    "html_url": "https://github.com/code50/158309813",
+    "description": null,
+    "fork": false,
+    "url": "https://api.github.com/repos/code50/158309813",
+    "forks_url": "https://api.github.com/repos/code50/158309813/forks",
+    "keys_url": "https://api.github.com/repos/code50/158309813/keys{/key_id}",
+    "collaborators_url": "https://api.github.com/repos/code50/158309813/collaborators{/collaborator}",
+    "teams_url": "https://api.github.com/repos/code50/158309813/teams",
+    "hooks_url": "https://api.github.com/repos/code50/158309813/hooks",
+    "issue_events_url": "https://api.github.com/repos/code50/158309813/issues/events{/number}",
+    "events_url": "https://api.github.com/repos/code50/158309813/events",
+    "assignees_url": "https://api.github.com/repos/code50/158309813/assignees{/user}",
+    "branches_url": "https://api.github.com/repos/code50/158309813/branches{/branch}",
+    "tags_url": "https://api.github.com/repos/code50/158309813/tags",
+    "blobs_url": "https://api.github.com/repos/code50/158309813/git/blobs{/sha}",
+    "git_tags_url": "https://api.github.com/repos/code50/158309813/git/tags{/sha}",
+    "git_refs_url": "https://api.github.com/repos/code50/158309813/git/refs{/sha}",
+    "trees_url": "https://api.github.com/repos/code50/158309813/git/trees{/sha}",
+    "statuses_url": "https://api.github.com/repos/code50/158309813/statuses/{sha}",
+    "languages_url": "https://api.github.com/repos/code50/158309813/languages",
+    "stargazers_url": "https://api.github.com/repos/code50/158309813/stargazers",
+    "contributors_url": "https://api.github.com/repos/code50/158309813/contributors",
+    "subscribers_url": "https://api.github.com/repos/code50/158309813/subscribers",
+    "subscription_url": "https://api.github.com/repos/code50/158309813/subscription",
+    "commits_url": "https://api.github.com/repos/code50/158309813/commits{/sha}",
+    "git_commits_url": "https://api.github.com/repos/code50/158309813/git/commits{/sha}",
+    "comments_url": "https://api.github.com/repos/code50/158309813/comments{/number}",
+    "issue_comment_url": "https://api.github.com/repos/code50/158309813/issues/comments{/number}",
+    "contents_url": "https://api.github.com/repos/code50/158309813/contents/{+path}",
+    "compare_url": "https://api.github.com/repos/code50/158309813/compare/{base}...{head}",
+    "merges_url": "https://api.github.com/repos/code50/158309813/merges",
+    "archive_url": "https://api.github.com/repos/code50/158309813/{archive_format}{/ref}",
+    "downloads_url": "https://api.github.com/repos/code50/158309813/downloads",
+    "issues_url": "https://api.github.com/repos/code50/158309813/issues{/number}",
+    "pulls_url": "https://api.github.com/repos/code50/158309813/pulls{/number}",
+    "milestones_url": "https://api.github.com/repos/code50/158309813/milestones{/number}",
+    "notifications_url": "https://api.github.com/repos/code50/158309813/notifications{?since,all,participating}",
+    "labels_url": "https://api.github.com/repos/code50/158309813/labels{/name}",
+    "releases_url": "https://api.github.com/repos/code50/158309813/releases{/id}",
+    "deployments_url": "https://api.github.com/repos/code50/158309813/deployments"
+  },
+  "machine": {
+    "name": "<14:<redacted>>",
+    "display_name": "2 cores, 8 GB RAM, 32 GB storage",
+    "operating_system": "linux",
+    "storage_in_bytes": 34359738368,
+    "memory_in_bytes": 8589934592,
+    "cpus": 2,
+    "prebuild_availability": null
+  },
+  "prebuild": null,
+  "created_at": "2025-01-05T00:56:47+05:30",
+  "updated_at": "2025-01-05T01:03:33+05:30",
+  "last_used_at": "2025-01-05T00:56:47+05:30",
+  "state": "Available",
+  "url": "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x",
+  "git_status": {
+    "ahead": 0,
+    "behind": 0,
+    "has_unpushed_changes": true,
+    "has_uncommitted_changes": true,
+    "ref": "main"
+  },
+  "location": "CentralIndia",
+  "idle_timeout_minutes": 30,
+  "web_url": "https://reimagined-guide-r44jgjgpvr472xp9x.github.dev",
+  "machines_url": "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x/machines",
+  "start_url": "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x/start",
+  "stop_url": "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x/stop",
+  "pulls_url": null,
+  "recent_folders": [],
+  "runtime_constraints": {
+    "allowed_port_privacy_settings": [
+      "private",
+      "org",
+      "public"
+    ]
+  },
+  "connection": {
+    "sessionPath": "/workspaces/158309813",
+    "tunnelProperties": {
+      "tunnelId": "interesting-mountain-g4d32j8",
+      "clusterId": "inc1",
+      "domain": "app.github.dev",
+      "connectAccessToken": "<401:<redacted>>",
+      "managePortsAccessToken": "<408:<redacted>>",
+      "serviceUri": "https://global.rel.tunnels.api.visualstudio.com/"
+    }
+  },
+  "container_id": "423b77b953d2d67fc2cf2f0835631c2dce7458fb9d157873c7d42aa9214ae59b",
+  "display_name": "reimagined guide",
+  "devcontainer_path": ".devcontainer.json",
+  "pending_operation": false,
+  "feature_flags": {
+    "developer": false,
+    "detailedActivityMonitor": false,
+    "vscodeAccountSwitching": false,
+    "enableSmbDiagnosticContinuousMonitoring": false,
+    "enableSmbDiagnosticOnAnomalyMonitoring": false,
+    "useEarlyWorkbenchWebClient": true,
+    "useCoiWebClient": false,
+    "remapUserNamespace": false,
+    "removeConnectRetriesWebClient": true,
+    "storageV2ExhaustiveValidation": false,
+    "forcePushShutdownTelemetry": true,
+    "useNewJupyterApi": true,
+    "improvedWarmupContainerReuse": true,
+    "storageV2ComprehensiveDiagnosticsCollection": false,
+    "usingCopilotWorkspaceConfig": true,
+    "copilotWorkspace": false,
+    "hostnameSpecificGitCredentialHelper": false,
+    "Basis": true,
+    "Skuheapscaling": true,
+    "CacheIde": true,
+    "Developer": false,
+    "Eap": false
+  },
+  "retention_period_minutes": 43200,
+  "retention_expires_at": null,
+  "template": null,
+  "publish_url": null
+}
+[RemoteExplorer I] Updating codespace performance info
+[RemoteExplorer I] Updating codespace details
+[Client:extension:e46d:resolver:resolve:2:check-codespace-state I] vscode connection options: > object #0: {
+  "environmentId": "a0e2f4f4-2789-4e35-8202-62939ae5cbd7",
+  "vsCodeCommit": "fabdb6a30b49f79a7aba0f2ad9df9b399473380f",
+  "vsCodeQuality": "stable",
+  "extensions": [
+    "GitHub.codespaces",
+    "GitHub.vscode-pull-request-github"
+  ],
+  "telemetry": true
+}
+[Client:extension:e46d:resolver:resolve:2 I] Progress: Connecting to codespace...
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for StartRemoteServerAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 111 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #11 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=1) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #11 ChannelOpenConfirmationMessage (recipientChannel=1)(senderChannel=0)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #1 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #13 ChannelCloseMessage (recipientChannel=1)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 1, RemoteId: 0) closed remotely. (S: 384, R: 241)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Client:extension:e46d:resolver I] Executed start-remote-server using gRPC
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Adding forwarded port 33181
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider E] Failed to get tunnel port> object #0: Tunnel service error: Not Found code:ERR_BAD_REQUEST
+  at settle (/home/shri/.vscode/extensions/node_modules/axios/dist/node/axios.cjs:2019:12)
+  at IncomingMessage.handleStreamEnd (/home/shri/.vscode/extensions/node_modules/axios/dist/node/axios.cjs:3135:11)
+  at IncomingMessage.emit (node:events:530:35)
+  at endReadableNT (node:internal/streams/readable:1698:12)
+  at processTicksAndRejections (node:internal/process/task_queues:82:21)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/33181 with privacy 'private', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #14 SessionRequestMessage (requestType=RefreshPorts)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #14 SessionRequestMessage (requestType=tcpip-forward)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #15 PortForwardSuccessMessage (port=33181)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #15 SessionRequestSuccessMessage
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Created port https/33181 with privacy 'private'
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Forwarding port 33181 locally
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] subscribing to onDispose event
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[33181] V] subscribing to onDispose event
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[33181] I] Starting local TCP server on port 33181 for remote port 33181
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[33181] I] Attempting to listen to 127.0.0.1:33181
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[33181] I] Listening on local port 33181
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[33181] I] Server started on port 33181
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Using local port 33181
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Setting main connection reference for remote port 33181 to local port 33181
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] subscribing to onDispose event
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Reviving ports...
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Revived port: 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Not opening workspace tunnel for internal port 16634
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Revived port: 16634
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Not opening workspace tunnel for internal port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Revived port: 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Not opening workspace tunnel for internal port 33181
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Revived port: 33181
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Not opening workspace tunnel for internal port 41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Revived port: 41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] subscribing to onDispose event
+[Client:extension:e46d:resolver:resolve:2 I] vscode server remote port: "33181", local port: "33181"}
+[Client V] connect duration: 93434 ms
+[Client:extension:e46d:resolver:resolve:2 I] Progress: Done
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for EventStream from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver I] Subscribed to event stream
+[Client:extension:e46d:resolver:resolve:2:background-tasks I] launching background configuration tasks
+[Client:extension:e46d:resolver:resolve:2:background-tasks:post-attach-command-manager I] PostAttachCommandManager: addEnvironmentConfiguredEventCallback()
+[Client:extension:e46d:resolver:resolve:2:background-tasks:post-attach-command-manager V] subscribing to onDispose event
+[Client:extension:e46d:resolver:resolve:2:background-tasks I] no max idle timeout notice
+[Client:extension:e46d:resolver:resolve:2:background-tasks V] checking correctness of the codespace session path> object #0: [
+  {
+    "uri": {
+      "$mid": 1,
+      "fsPath": "/workspaces/158309813",
+      "external": "vscode-remote://codespaces%2Breimagined-guide-r44jgjgpvr472xp9x/workspaces/158309813",
+      "path": "/workspaces/158309813",
+      "scheme": "vscode-remote",
+      "authority": "codespaces+reimagined-guide-r44jgjgpvr472xp9x"
+    },
+    "name": "<9:<redacted>>",
+    "index": 0
+  }
+]
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for IsRecoveryContainerAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:resolve:2:background-tasks I] starting activity monitor, isRunningInWeb: "false"
+[Client:extension:e46d:resolver:resolve:2:background-tasks:activity-monitor:vscode-activity-provider I] isRunningInWeb: false
+[Client:extension:e46d:resolver:resolve:2:background-tasks:activity-monitor:vscode-activity-provider I] starting activity monitor
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for ConfigureEnvironmentAsync from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetContainerPersistedFolderPath from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetContainerPersistedFolderPath from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for GetContainerPersistedFolderPath from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 5 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:resolve:2:background-tasks:activity-monitor:vscode-activity-provider V] sending activity heartbeat
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Received request for NotifyCodespaceOfClientActivity from client
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 16635 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/16635 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/16635 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending message of size 21 bytes to server
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Finished sending request to server
+[Client:extension:e46d:resolver:resolve:2:background-tasks:openDefaultFiles I] Skipping openFiles because it's not the first activation
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 16635 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #16 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=2) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #17 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=3) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #18 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=4) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #19 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=5) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #20 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=6) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #21 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=7) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #22 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=8) (host=127.0.0.1 port=16635)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 33181 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/33181 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/33181 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 33181
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 33181 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #23 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=9) (host=127.0.0.1 port=33181)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Tunnel factory called> object #0: {
+  "remoteAddress": {
+    "host": "localhost",
+    "port": 1337
+  },
+  "localAddressPort": 1337
+}
+> object #1: {
+  "elevationRequired": false
+}
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing http/1337 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] http/1337 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Accepting local connections for port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Forwarding port locally
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Forwarding port 1337 locally
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] subscribing to onDispose event
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[1337] V] subscribing to onDispose event
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[1337] I] Starting local TCP server on port 1337 for remote port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[1337] I] Attempting to listen to 127.0.0.1:1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[1337] I] Listening on local port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[1337] I] Server started on port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Using local port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #16 ChannelOpenConfirmationMessage (recipientChannel=2)(senderChannel=1)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #2 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #17 ChannelOpenConfirmationMessage (recipientChannel=3)(senderChannel=2)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #3 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #18 ChannelOpenConfirmationMessage (recipientChannel=4)(senderChannel=3)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #4 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #19 ChannelOpenConfirmationMessage (recipientChannel=5)(senderChannel=4)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #5 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #20 ChannelOpenConfirmationMessage (recipientChannel=6)(senderChannel=5)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #6 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #21 ChannelOpenConfirmationMessage (recipientChannel=7)(senderChannel=6)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #7 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #22 ChannelOpenConfirmationMessage (recipientChannel=8)(senderChannel=7)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #8 for 127.0.0.1:16635.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #23 ChannelOpenConfirmationMessage (recipientChannel=9)(senderChannel=8)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #9 for 127.0.0.1:33181.
+[Client:extension:e46d:resolver I] Received event: Subscribed
+[Client:extension:e46d:resolver I] Client 04d3b90b-c3b9-47e7-a731-06b165ad33c0 subscribed to event stream
+[Client:extension:e46d:resolver I] Received event: CreationLogUpdated
+[Client:extension:e46d:resolver I] Event payload: {"text":"Finding image...","type":"inProgress","isStreamingLogs":false}
+[Client:extension:e46d:resolver I] Received event: CreationLogUpdated
+[Client:extension:e46d:resolver I] Event payload: {"text":"Image found.","type":"succeeded","isStreamingLogs":false}
+[Client:extension:e46d:resolver I] Received event: CreationLogUpdated
+[Client:extension:e46d:resolver I] Event payload: {"text":"Building container...","type":"inProgress","isStreamingLogs":true}
+[Client:extension:e46d:resolver I] Received event: CreationLogUpdated
+[Client:extension:e46d:resolver I] Event payload: {"text":"Container built.","type":"succeeded","isStreamingLogs":false}
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #27 ChannelCloseMessage (recipientChannel=4)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 4, RemoteId: 3) closed remotely. (S: 273, R: 198)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Client:extension:e46d:resolver:resolve:2:background-tasks I] Executed configure-environment using gRPC
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #28 ChannelCloseMessage (recipientChannel=3)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 3, RemoteId: 2) closed remotely. (S: 272, R: 198)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Client:extension:e46d:resolver:resolve:2:background-tasks I] Executed is-recovery-container using gRPC
+[Client:extension:e46d:resolver:resolve:2:background-tasks V] not in recovery container
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #32 ChannelCloseMessage (recipientChannel=7)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 7, RemoteId: 6) closed remotely. (S: 279, R: 240)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[ResourceUsage I] Executed get-container-persisted-folder using gRPC
+[ResourceUsage V] container folder path: "/workspaces/.codespaces/.persistedshare"
+[ResourceUsage V] shared folder path: "/workspaces/.codespaces/shared/resource-usage.json"
+[ResourceUsage V] shared file path: "vscode-remote:///workspaces/.codespaces/shared/resource-usage.json"
+[ResourceUsage I] Starting monitor
+[ResourceUsage I] Checking if the codespace connection exists
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #33 ChannelCloseMessage (recipientChannel=5)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 5, RemoteId: 4) closed remotely. (S: 279, R: 240)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Client:extension:e46d:resolver:resolve:2:background-tasks I] Executed get-container-persisted-folder using gRPC
+[Client:extension:e46d:resolver:resolve:2:background-tasks V] container folder path: "/workspaces/.codespaces/.persistedshare"
+[Client:extension:e46d:resolver:resolve:2:background-tasks V] shared folder path: "/workspaces/.codespaces/shared/postCreateOutput.json"
+[Client:extension:e46d:resolver:resolve:2:background-tasks V] shared file path: "vscode-remote:///workspaces/.codespaces/shared/postCreateOutput.json"
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #34 ChannelCloseMessage (recipientChannel=6)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 6, RemoteId: 5) closed remotely. (S: 279, R: 240)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Performance I] Executed get-container-persisted-folder using gRPC
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #36 ChannelCloseMessage (recipientChannel=8)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 8, RemoteId: 7) closed remotely. (S: 296, R: 200)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Client:extension:e46d:resolver:resolve:2:background-tasks:activity-monitor:vscode-activity-provider I] Executed notify-codespace-of-client-activity using gRPC
+[Client:extension:e46d:resolver:resolve:2:background-tasks:activity-monitor:vscode-activity-provider I] Activity signal sent with result true
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Getting stream from port 33181 with protocol https
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Creating or reusing https/33181 with privacy 'undefined', attempt 0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] https/33181 already exists with privacy 'private' so reusing the existing port
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Waiting for forwarded port 33181
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 0: Forwarded port 33181 is ready.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #40 PortForwardChannelOpenMessage(channelType=forwarded-tcpip, senderChannel=10) (host=127.0.0.1 port=33181)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #39 ChannelOpenConfirmationMessage (recipientChannel=10)(senderChannel=9)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9154: PortForwardingService opened forwarded-tcpip channel #10 for 127.0.0.1:33181.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9102: Receiving #42 ChannelCloseMessage (recipientChannel=9)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshChannel(Type: forwarded-tcpip, Id: 9, RemoteId: 8) closed remotely. (S: 938, R: 380)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[33181] I] Port forwarding stream ended
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[33181] V] disposing reason: 'Port forwarding stream ended', disposing 5 objects
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:delayed-disposable V] Disposing reason:Port forwarding stream ended $0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[33181]:delayed-disposable V] Disposing reason:Port forwarding stream ended $1
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] disposing reason: 'Port forwarding stream ended $2', disposing 9 objects
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] disposing reason: 'n/a', disposing 0 objects
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:delayed-disposable V] Disposing reason:undefined
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[1337] V] disposing reason: 'tunnelProvider disposed', disposing 2 objects
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:delayed-disposable V] Disposing reason:tunnelProvider disposed $0
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[1337]:delayed-disposable V] Disposing reason:tunnelProvider disposed $1
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[1337] I] Stopping local TCP server on port 1337 (0 connections)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Stopping forwarded port 16635
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Stopped forwarding port 16635
+[Client:extension:e46d:resolver I] Dev Tunnels connection is disposed, disposing of RPC client
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Client:extension:e46d:resolver:codespaces-internal-transport E] Request canceled by client
+[Client:extension:e46d:resolver:resolve:2:background-tasks:post-attach-command-manager V] disposing reason: 'Port forwarding stream ended $2 $2', disposing 1 objects
+[Client:extension:e46d:resolver:resolve:2:background-tasks:post-attach-command-manager:delayed-disposable V] Disposing reason:undefined
+[Client:extension:e46d:resolver:resolve:2:background-tasks:activity-monitor:vscode-activity-provider V] disposing reason: 'disposed with connection', disposing 23 objects
+[ResourceUsage I] Connection disposed, stopping monitor
+[ResourceUsage I] Stopping polling
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:delayed-disposable V] Disposing reason:undefined
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:delayed-disposable V] Disposing reason:undefined
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[33181] I] Stopping local TCP server on port 33181 (2 connections)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[1337] V] Stopped local server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider:local-port-forwarder[33181] V] Stopped local server
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Stopping forwarded port 33181
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Stopping local port forwarder for port 33181
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Stopped local port forwarder for port 33181
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Stopped forwarding port 33181
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Stopping forwarded port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Stopping local port forwarder for port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Stopped local port forwarder for port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Stopped forwarding port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Stopping forwarded port 16634
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Stopped forwarding port 16634
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Stopping forwarded port 41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Stopped forwarding port 41335
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #44 ChannelCloseMessage (recipientChannel=1)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Tunnel client disconnected, recreating and reconnecting: undefined
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider I] Not connecting tunnel client because the provider is disposed
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9113: SshClientSession Close(byApplication, "")
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9113: SshClientSession disposed.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshClientSession closed.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient info 9123: SshClientSession closed.
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #45 DisconnectMessage (byApplication: )
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] tunnelClient verbose 9101: Sending #46 ChannelCloseMessage (recipientChannel=9)
+[Client:extension:e46d:resolver:codespaces-internal-transport V] Sending end event to client
+[Client:extension:e46d:resolver:resolve:2:background-tasks W] update vscode status bar failed> object #0: Unable to read file 'vscode-remote://codespaces+reimagined-guide-r44jgjgpvr472xp9x/workspaces/.codespaces/shared/postCreateOutput.json' (Canceled: Canceled) code:Unknown
+  at Function.e (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:115:9853)
+  at Object.readFile (file:///opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:115:7581)
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Stopping forwarded port 1337
+[Client:extension:e46d:resolver:port-forwarder:tunnel-provider V] Forwarded port 1337 does not exist locally
+[Client:extension:e46d:resolver:resolve:2:background-tasks E] Failed to initialize performance monitor
+[RemoteExplorer I] Updating codespace performance info
+[RemoteExplorer I] Updating codespace details
+[Client:extension:e46d:resolver V] disposing reason: 'vscode disposed the resolver', disposing 1 objects

@@ -1,0 +1,158 @@
+2025-01-05 01:04:03.518 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-vscode.vscode-selfhost-test-provider' wants API proposal 'attributableCoverage' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2025-01-05 01:04:03.518 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.python' wants API proposal 'contribIssueReporter' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2025-01-05 01:04:03.518 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.debugpy' wants API proposal 'contribIssueReporter' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2025-01-05 01:04:04.077 [info] Started local extension host with pid 523464.
+2025-01-05 01:04:05.597 [warning] Authentication provider github was not declared in the Extension Manifest.
+2025-01-05 01:04:06.588 [info] Invoking resolveAuthority(codespaces)...
+2025-01-05 01:04:06.589 [info] [LocalProcess0][resolveAuthority(codespaces,1)][0ms] obtaining proxy...
+2025-01-05 01:04:06.589 [info] [LocalProcess0][resolveAuthority(codespaces,1)][0ms] invoking...
+2025-01-05 01:04:07.590 [info] [LocalProcess0][resolveAuthority(codespaces,1)][1001ms] waiting...
+2025-01-05 01:04:08.589 [info] [LocalProcess0][resolveAuthority(codespaces,1)][2000ms] waiting...
+2025-01-05 01:04:09.589 [info] [LocalProcess0][resolveAuthority(codespaces,1)][3000ms] waiting...
+2025-01-05 01:04:10.590 [info] [LocalProcess0][resolveAuthority(codespaces,1)][4001ms] waiting...
+2025-01-05 01:04:11.590 [info] [LocalProcess0][resolveAuthority(codespaces,1)][5001ms] waiting...
+2025-01-05 01:04:12.590 [info] [LocalProcess0][resolveAuthority(codespaces,1)][6000ms] waiting...
+2025-01-05 01:04:13.590 [info] [LocalProcess0][resolveAuthority(codespaces,1)][7001ms] waiting...
+2025-01-05 01:04:14.590 [info] [LocalProcess0][resolveAuthority(codespaces,1)][8001ms] waiting...
+2025-01-05 01:04:15.590 [info] [LocalProcess0][resolveAuthority(codespaces,1)][9001ms] waiting...
+2025-01-05 01:04:16.590 [info] [LocalProcess0][resolveAuthority(codespaces,1)][10001ms] waiting...
+2025-01-05 01:04:17.589 [info] [LocalProcess0][resolveAuthority(codespaces,1)][11000ms] waiting...
+2025-01-05 01:04:18.590 [info] [LocalProcess0][resolveAuthority(codespaces,1)][12001ms] waiting...
+2025-01-05 01:04:19.589 [info] [LocalProcess0][resolveAuthority(codespaces,1)][13000ms] waiting...
+2025-01-05 01:04:20.589 [info] [LocalProcess0][resolveAuthority(codespaces,1)][14000ms] waiting...
+2025-01-05 01:04:21.589 [info] [LocalProcess0][resolveAuthority(codespaces,1)][15000ms] waiting...
+2025-01-05 01:04:22.590 [info] [LocalProcess0][resolveAuthority(codespaces,1)][16001ms] waiting...
+2025-01-05 01:04:23.590 [info] [LocalProcess0][resolveAuthority(codespaces,1)][17001ms] waiting...
+2025-01-05 01:04:24.589 [info] [LocalProcess0][resolveAuthority(codespaces,1)][18000ms] waiting...
+2025-01-05 01:04:25.597 [info] [LocalProcess0][resolveAuthority(codespaces,1)][19000ms] waiting...
+2025-01-05 01:04:26.589 [info] [LocalProcess0][resolveAuthority(codespaces,1)][20000ms] waiting...
+2025-01-05 01:04:27.589 [info] [LocalProcess0][resolveAuthority(codespaces,1)][21000ms] waiting...
+2025-01-05 01:04:28.194 [info] [LocalProcess0][resolveAuthority(codespaces,1)][21606ms] returned WebSocket(127.0.0.1:33181)
+2025-01-05 01:04:28.195 [info] resolveAuthority(codespaces) returned 'WebSocket(127.0.0.1:33181)' after 21607 ms
+2025-01-05 01:04:28.198 [info] Creating a socket (renderer-Management-c4bdcbc1-e4ff-4c50-8c9c-345ee5a54cf9)...
+2025-01-05 01:04:28.200 [info] Creating a socket (renderer-ExtensionHost-75fb2882-2bfb-4159-b428-4501b1b959dc)...
+2025-01-05 01:04:29.111 [info] Creating a socket (renderer-Management-c4bdcbc1-e4ff-4c50-8c9c-345ee5a54cf9) was successful after 913 ms.
+2025-01-05 01:04:30.215 [info] Creating a socket (renderer-ExtensionHost-75fb2882-2bfb-4159-b428-4501b1b959dc) was successful after 2015 ms.
+2025-01-05 01:04:36.970 [info] [remote-connection][Management   ][c4bdc…][reconnect] received socket close event (wasClean: false, code: 1006, reason: ).
+2025-01-05 01:04:36.971 [error] {"isTrusted":true}
+2025-01-05 01:04:36.972 [info] [remote-connection][Management   ][c4bdc…][reconnect] starting reconnecting loop. You can get more information with the trace log level.
+2025-01-05 01:04:36.978 [info] [remote-connection][Management   ][c4bdc…][reconnect] resolving connection...
+2025-01-05 01:04:36.979 [info] Invoking resolveAuthority(codespaces)...
+2025-01-05 01:04:36.980 [info] [LocalProcess0][resolveAuthority(codespaces,2)][0ms] obtaining proxy...
+2025-01-05 01:04:36.981 [info] [LocalProcess0][resolveAuthority(codespaces,2)][1ms] invoking...
+2025-01-05 01:04:36.981 [info] [remote-connection][ExtensionHost][75fb2…][reconnect] received socket close event (wasClean: false, code: 1006, reason: ).
+2025-01-05 01:04:36.982 [error] {"isTrusted":true}
+2025-01-05 01:04:36.983 [info] [remote-connection][ExtensionHost][75fb2…][reconnect] starting reconnecting loop. You can get more information with the trace log level.
+2025-01-05 01:04:36.983 [info] [remote-connection][ExtensionHost][75fb2…][reconnect] resolving connection...
+2025-01-05 01:35:20.070 [info] [LocalProcess0][resolveAuthority(codespaces,2)][1843077ms] waiting...
+2025-01-05 01:35:20.605 [info] [LocalProcess0][resolveAuthority(codespaces,2)][1843627ms] waiting...
+2025-01-05 01:35:21.605 [info] [LocalProcess0][resolveAuthority(codespaces,2)][1844627ms] waiting...
+2025-01-05 01:35:22.605 [info] [LocalProcess0][resolveAuthority(codespaces,2)][1845627ms] waiting...
+2025-01-05 01:35:23.605 [info] [LocalProcess0][resolveAuthority(codespaces,2)][1846627ms] waiting...
+2025-01-05 01:35:24.605 [info] [LocalProcess0][resolveAuthority(codespaces,2)][1847627ms] waiting...
+2025-01-05 01:35:25.605 [info] [LocalProcess0][resolveAuthority(codespaces,2)][1848627ms] waiting...
+2025-01-05 01:35:26.605 [info] [LocalProcess0][resolveAuthority(codespaces,2)][1849627ms] waiting...
+2025-01-05 01:35:27.605 [info] [LocalProcess0][resolveAuthority(codespaces,2)][1850627ms] waiting...
+2025-01-05 01:35:28.605 [info] [LocalProcess0][resolveAuthority(codespaces,2)][1851627ms] waiting...
+2025-01-05 01:35:28.810 [warning] [lifecycle] onWillShutdown is taking a long time, pending operations: join.disconnectRemote, join.textFiles
+2025-01-05 01:35:29.605 [info] [LocalProcess0][resolveAuthority(codespaces,2)][1852627ms] waiting...
+2025-01-05 01:35:30.475 [error] Canceled: Canceled
+    at p (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:256)
+    at vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:315
+    at Object.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:8:626)
+    at xe (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:750)
+    at CWt.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:1734)
+    at cpi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:2061)
+    at cpi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:9912)
+    at xe (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:750)
+    at Rhi.clear (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:1357)
+    at Rhi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:1286)
+2025-01-05 01:35:30.477 [error] Canceled: Canceled
+    at p (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:256)
+    at vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:315
+    at Object.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:8:626)
+    at xe (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:750)
+    at CWt.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:1734)
+    at cpi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:2061)
+    at cpi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:9912)
+    at xe (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:750)
+    at Rhi.clear (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:1357)
+    at Rhi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:1286)
+2025-01-05 01:35:30.477 [error] Cannot register remote filesystem provider. Error while fetching remote environment. Canceled
+2025-01-05 01:35:30.478 [error] Canceled: Canceled
+    at p (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:256)
+    at vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:315
+    at Object.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:8:626)
+    at xe (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:750)
+    at CWt.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:1734)
+    at cpi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:2061)
+    at cpi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:9912)
+    at xe (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:750)
+    at Rhi.clear (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:1357)
+    at Rhi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:1286)
+2025-01-05 01:35:30.478 [error] Canceled: Canceled
+    at p (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:256)
+    at vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:315
+    at Object.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:8:626)
+    at xe (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:750)
+    at CWt.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:1734)
+    at cpi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:2061)
+    at cpi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:9912)
+    at xe (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:750)
+    at Rhi.clear (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:1357)
+    at Rhi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:1286)
+2025-01-05 01:35:30.479 [error] Canceled: Canceled
+    at p (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:256)
+    at vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:315
+    at Object.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:8:626)
+    at xe (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:750)
+    at CWt.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:1734)
+    at cpi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:2061)
+    at cpi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:9912)
+    at xe (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:750)
+    at Rhi.clear (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:1357)
+    at Rhi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:1286)
+2025-01-05 01:35:30.479 [error] Canceled: Canceled
+    at p (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:256)
+    at vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:315
+    at Object.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:8:626)
+    at xe (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:750)
+    at CWt.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:1734)
+    at cpi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:2061)
+    at cpi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:9912)
+    at xe (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:750)
+    at Rhi.clear (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:1357)
+    at Rhi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:1286)
+2025-01-05 01:35:30.488 [error] Canceled: Canceled
+    at p (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:256)
+    at vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:315
+    at Object.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:8:626)
+    at xe (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:750)
+    at CWt.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:1734)
+    at cpi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:2061)
+    at cpi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:762:9912)
+    at xe (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:750)
+    at Rhi.clear (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:1357)
+    at Rhi.dispose (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:25:1286)
+2025-01-05 01:35:30.489 [error] [LocalProcess0][resolveAuthority(codespaces,2)][1853511ms] returned an error Canceled
+2025-01-05 01:35:30.493 [warning] Ignoring the error while validating workspace folder vscode-remote://codespaces%2Breimagined-guide-r44jgjgpvr472xp9x/workspaces/158309813 - ENOPRO: No file system provider found for resource 'vscode-remote://codespaces%2Breimagined-guide-r44jgjgpvr472xp9x/workspaces/158309813'
+2025-01-05 01:35:30.494 [error] CodeExpectedError
+    at _ot.j (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:3108:59921)
+    at async _ot.bb (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:3108:70208)
+    at async vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:3108:69934
+2025-01-05 01:35:30.494 [error] resolveAuthority(codespaces) returned an error after 1853516 ms Canceled
+2025-01-05 01:35:30.495 [error] [text file model] handleSaveError(0) - exit - resulted in a save error: CodeExpectedError: ENOPRO: No file system provider found for resource 'vscode-remote://codespaces%2Breimagined-guide-r44jgjgpvr472xp9x/workspaces/158309813/credit/credit.c' vscode-remote://codespaces%2Breimagined-guide-r44jgjgpvr472xp9x/workspaces/158309813/credit/credit.c
+2025-01-05 01:35:30.497 [error] ENOPRO: No file system provider found for resource 'vscode-remote://codespaces%2Breimagined-guide-r44jgjgpvr472xp9x/workspaces/158309813/.git/config': CodeExpectedError
+    at _ot.j (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:3108:59921)
+    at async _ot.exists (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:3108:61944)
+    at async Promise.all (index 0)
+2025-01-05 01:35:30.501 [error] [remote-connection][Management   ][c4bdc…][reconnect] A RemoteAuthorityResolverError occurred while trying to reconnect. Will give up now! Error:
+2025-01-05 01:35:30.501 [error] CodeExpectedError: Canceled
+    at Olt.sb (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:3150:16044)
+    at async Olt.rb (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:3150:15410)
+    at async Olt.qb (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:3150:15148)
+2025-01-05 01:35:30.502 [error] [remote-connection][ExtensionHost][75fb2…][reconnect] A RemoteAuthorityResolverError occurred while trying to reconnect. Will give up now! Error:
+2025-01-05 01:35:30.502 [error] CodeExpectedError: Canceled
+    at Olt.sb (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:3150:16044)
+    at async Olt.rb (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:3150:15410)
+    at async Olt.qb (vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/workbench/workbench.desktop.main.js:3150:15148)

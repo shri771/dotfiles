@@ -1,0 +1,35 @@
+[Client I] GitHub Codespaces version 1.17.3
+[Client I] isRunningInWeb: "false"
+[Client V] Initializing authentication
+[Authentication I] Did not find existing login session
+[Authentication I] Did not find existing login session
+[API I] Signing out due to unsuccessful sign in attempt
+[Authentication I] Did not find existing login session
+[API E] featureFlags: listCodespaces error. No response received.
+[Client:extension:ce98 I] initializing
+[Client:extension:ce98:resolver I] created with protocol "codespaces"
+[RemoteExplorer I] Updating codespace performance info
+[DevContainerJsonSupport I] Initializing devcontainer.json support package
+[DevContainerJsonSupport V] [2025-01-04T19:26:52.723Z] Internal initialization of dev container support package...
+
+[ProtocolHandler I] Received connect event: vscode://github.codespaces/connect?name%3Dreimagined-guide-r44jgjgpvr472xp9x
+[ProtocolHandler I] Connecting to codespace reimagined-guide-r44jgjgpvr472xp9x
+[Command:Connect I] Decorator starting: ErrorNotification
+[Command:Connect I] Decorator starting: Telemetry
+[Client I] Jupyter API registered? false
+[Authentication I] Successfully signed in
+[Authentication V] Already signed in
+[Authentication V] Already signed in
+[Authentication V] Already signed in
+[API I] Successfully signed in
+[API:retries-left-2 I] making GET request for "https://api.github.com/user/codespaces/reimagined-guide-r44jgjgpvr472xp9x"
+[RemoteExplorer I] Updating codespace performance info
+[RemoteExplorer I] Updating codespace performance info
+[RemoteExplorer I] Updating codespace performance info
+[RemoteExplorer I] Updating codespace performance info
+[RemoteExplorer I] Updating codespace performance info
+[RemoteExplorer I] Updating codespace performance info
+[Command:Connect I] Command [Connect to Codespace]: Connect to Codespace Success (20383ms)
+[Command:Connect I] Decorator finishing: Telemetry. Duration: 3ms (1 + 2)
+[Command:Connect I] Decorator finishing: ErrorNotification. Duration: 0ms (0 + 0)
+[Client:extension:ce98:resolver V] disposing reason: 'vscode disposed the resolver', disposing 1 objects

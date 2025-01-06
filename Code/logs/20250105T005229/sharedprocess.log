@@ -1,0 +1,52 @@
+2025-01-05 00:55:38.070 [info] Getting Manifest... ms-vscode.remote-server
+2025-01-05 00:55:38.171 [info] Installing extension: ms-vscode.remote-server {"isMachineScoped":false,"donotIncludePackAndDependencies":false,"context":{"skipWalkthrough":true},"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/shri/.vscode/extensions/extensions.json","path":"/home/shri/.vscode/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true,"isApplicationScoped":false,"productVersion":{"version":"1.96.2","date":"2024-12-19T10:22:47.216Z"}}
+2025-01-05 00:55:39.319 [info] Getting Manifest... ms-vscode.remote-explorer
+2025-01-05 00:55:39.377 [info] Installing extension: ms-vscode.remote-explorer {"isMachineScoped":false,"donotIncludePackAndDependencies":false,"context":{"skipWalkthrough":true,"dependecyOrPackExtensionInstall":true},"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/shri/.vscode/extensions/extensions.json","path":"/home/shri/.vscode/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true,"isApplicationScoped":false,"productVersion":{"version":"1.96.2","date":"2024-12-19T10:22:47.216Z"}}
+2025-01-05 00:55:40.069 [info] Extension signature verification result for ms-vscode.remote-server: UnknownError. Executed: true. Duration: 13ms.
+2025-01-05 00:55:40.186 [info] Extracted extension to file:///home/shri/.vscode/extensions/ms-vscode.remote-server-1.5.2: ms-vscode.remote-server
+2025-01-05 00:55:40.198 [info] Renamed to /home/shri/.vscode/extensions/ms-vscode.remote-server-1.5.2
+2025-01-05 00:55:40.273 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/shri/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/shri/.vscode/extensions/extensions.json.vsctmp'
+    at Gm.create (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39624)
+    at xs (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39731)
+    at Vr.ib (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:22778)
+    at Vr.stat (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:16010)
+    at async wh.stat (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:85488)
+    at async fh.Ab (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:67180)
+2025-01-05 00:55:40.336 [info] Extension signature verification result for ms-vscode.remote-explorer: UnknownError. Executed: true. Duration: 10ms.
+2025-01-05 00:55:40.378 [info] Extracted extension to file:///home/shri/.vscode/extensions/ms-vscode.remote-explorer-0.4.3: ms-vscode.remote-explorer
+2025-01-05 00:55:40.385 [info] Renamed to /home/shri/.vscode/extensions/ms-vscode.remote-explorer-0.4.3
+2025-01-05 00:55:40.409 [info] Extension installed successfully: ms-vscode.remote-server vscode-userdata:/home/shri/.vscode/extensions/extensions.json
+2025-01-05 00:55:40.409 [info] Extension installed successfully: ms-vscode.remote-explorer vscode-userdata:/home/shri/.vscode/extensions/extensions.json
+2025-01-05 00:55:40.477 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/shri/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/shri/.vscode/extensions/extensions.json.vsctmp'
+    at Gm.create (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39624)
+    at xs (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39731)
+    at Vr.ib (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:22778)
+    at Vr.stat (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:16010)
+    at async wh.stat (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:85488)
+    at async fh.Ab (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:67180)
+2025-01-05 00:56:48.400 [info] Getting Manifest... github.codespaces
+2025-01-05 00:56:48.496 [info] Installing extension: github.codespaces {"context":{"extensionInstallSource":"command"},"justification":{"reason":"This extension wants to open a URI:\nvscode://github.codespaces/connect?name%3Dreimagined-guide-r44jgjgpvr472xp9x","action":"Open URI"},"enable":true,"isMachineScoped":false,"pinned":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/shri/.vscode/extensions/extensions.json","path":"/home/shri/.vscode/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true,"isApplicationScoped":false,"productVersion":{"version":"1.96.2","date":"2024-12-19T10:22:47.216Z"}}
+2025-01-05 00:56:51.091 [info] Extension signature verification result for github.codespaces: UnknownError. Executed: true. Duration: 13ms.
+2025-01-05 00:56:51.398 [info] Extracted extension to file:///home/shri/.vscode/extensions/github.codespaces-1.17.3: github.codespaces
+2025-01-05 00:56:51.412 [info] Renamed to /home/shri/.vscode/extensions/github.codespaces-1.17.3
+2025-01-05 00:56:51.441 [info] Extension installed successfully: github.codespaces vscode-userdata:/home/shri/.vscode/extensions/extensions.json
+2025-01-05 00:56:51.500 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/shri/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/shri/.vscode/extensions/extensions.json.vsctmp'
+    at Gm.create (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39624)
+    at xs (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39731)
+    at Vr.ib (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:22778)
+    at Vr.stat (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:16010)
+    at async wh.stat (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:85488)
+    at async fh.Ab (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:67180)
+2025-01-05 01:01:44.069 [info] Getting Manifest... vscodevim.vim
+2025-01-05 01:01:44.192 [info] Installing extension: vscodevim.vim {"isMachineScoped":false,"installPreReleaseVersion":false,"pinned":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/shri/.vscode/extensions/extensions.json","path":"/home/shri/.vscode/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true,"isApplicationScoped":false,"productVersion":{"version":"1.96.2","date":"2024-12-19T10:22:47.216Z"}}
+2025-01-05 01:01:44.901 [info] Extension signature verification result for vscodevim.vim: UnknownError. Executed: true. Duration: 14ms.
+2025-01-05 01:01:44.977 [info] Extracted extension to file:///home/shri/.vscode/extensions/vscodevim.vim-1.29.0: vscodevim.vim
+2025-01-05 01:01:44.985 [info] Renamed to /home/shri/.vscode/extensions/vscodevim.vim-1.29.0
+2025-01-05 01:01:45.012 [info] Extension installed successfully: vscodevim.vim vscode-userdata:/home/shri/.vscode/extensions/extensions.json
+2025-01-05 01:01:45.073 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/shri/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/shri/.vscode/extensions/extensions.json.vsctmp'
+    at Gm.create (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39624)
+    at xs (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:35:39731)
+    at Vr.ib (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:22778)
+    at Vr.stat (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:78:16010)
+    at async wh.stat (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:85488)
+    at async fh.Ab (file:///opt/visual-studio-code/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:77:67180)
