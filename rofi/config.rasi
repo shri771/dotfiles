@@ -1,0 +1,9 @@
+configuration {
+ modi: "window,drun,ssh,combi";
+ font: "Hack 10";
+ combi-modi: "window,drun,ssh";
+ show-icons: true;  
+}
+
+@theme "~/.config/rofi/themes/simple-tokyonight.rasi"
+

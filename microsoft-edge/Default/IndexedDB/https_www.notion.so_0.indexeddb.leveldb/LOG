@@ -1,7 +1,13 @@
-2025/01/05-22:20:45.593 aec Reusing MANIFEST /home/shri/.config/microsoft-edge/Default/IndexedDB/https_www.notion.so_0.indexeddb.leveldb/MANIFEST-000001
-2025/01/05-22:20:45.593 aec Recovering log #4
-2025/01/05-22:20:45.594 aec Reusing old log /home/shri/.config/microsoft-edge/Default/IndexedDB/https_www.notion.so_0.indexeddb.leveldb/000004.log 
-2025/01/05-22:20:46.114 afa Level-0 table #8: started
-2025/01/05-22:20:46.117 afa Level-0 table #8: 48468 bytes OK
-2025/01/05-22:20:46.122 afa Delete type=0 #4
-2025/01/05-22:20:46.122 aec Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/01/06-15:16:03.802 cd303 Reusing MANIFEST /home/shri/.config/microsoft-edge/Default/IndexedDB/https_www.notion.so_0.indexeddb.leveldb/MANIFEST-000001
+2025/01/06-15:16:03.802 cd303 Recovering log #7
+2025/01/06-15:16:03.802 cd303 Reusing old log /home/shri/.config/microsoft-edge/Default/IndexedDB/https_www.notion.so_0.indexeddb.leveldb/000007.log 
+2025/01/06-15:16:04.364 cd312 Level-0 table #11: started
+2025/01/06-15:16:04.366 cd312 Level-0 table #11: 535 bytes OK
+2025/01/06-15:16:04.370 cd312 Delete type=0 #7
+2025/01/06-15:16:04.370 cd303 Manual compaction at level-0 from '\x00\x05\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at '\x00\x05\x00\x00\x05' @ 1715 : 1
+2025/01/06-15:16:04.370 cd303 Compacting 1@0 + 1@1 files
+2025/01/06-15:16:04.373 cd303 Generated table #12@0: 750 keys, 9210 bytes
+2025/01/06-15:16:04.373 cd303 Compacted 1@0 + 1@1 files => 9210 bytes
+2025/01/06-15:16:04.376 cd303 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/01/06-15:16:04.377 cd303 Delete type=2 #11
+2025/01/06-15:16:04.377 cd303 Manual compaction at level-0 from '\x00\x05\x00\x00\x05' @ 1715 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at (end)
