@@ -1,7 +1,0 @@
-2025/01/05-22:20:45.593 aec Reusing MANIFEST /home/shri/.config/microsoft-edge/Default/IndexedDB/https_www.notion.so_0.indexeddb.leveldb/MANIFEST-000001
-2025/01/05-22:20:45.593 aec Recovering log #4
-2025/01/05-22:20:45.594 aec Reusing old log /home/shri/.config/microsoft-edge/Default/IndexedDB/https_www.notion.so_0.indexeddb.leveldb/000004.log 
-2025/01/05-22:20:46.114 afa Level-0 table #8: started
-2025/01/05-22:20:46.117 afa Level-0 table #8: 48468 bytes OK
-2025/01/05-22:20:46.122 afa Delete type=0 #4
-2025/01/05-22:20:46.122 aec Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)

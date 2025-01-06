@@ -1,6 +1,0 @@
-2025/01/04-02:37:09.233 2c02 Creating DB /home/shri/.config/microsoft-edge/Default/IndexedDB/https_www.hotstar.com_0.indexeddb.leveldb since it was missing.
-2025/01/04-02:37:09.239 2c02 Reusing MANIFEST /home/shri/.config/microsoft-edge/Default/IndexedDB/https_www.hotstar.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/01/04-02:37:09.349 2c2c Level-0 table #5: started
-2025/01/04-02:37:09.351 2c2c Level-0 table #5: 776 bytes OK
-2025/01/04-02:37:09.357 2c2c Delete type=0 #3
-2025/01/04-02:37:09.357 2c22 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
