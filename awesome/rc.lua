@@ -12,7 +12,7 @@ awful.util.spawn("xprop -root -f _NET_NUMBER_OF_DESKTOPS 32c -set _NET_NUMBER_OF
 
 -- Theme handling library
 local beautiful = require("beautiful")
-
+beautiful.useless_gap = 10
 -- Notification library
 local naughty = require("naughty")
 naughty.config.defaults["icon_size"] = 100
@@ -62,13 +62,13 @@ end
 run_once({ "unclutter -root" }) -- entries must be comma-separated
 
 local themes = {
-  "multicolor", -- 1
+  "powerarrow-dark", -- 1
 }
 
 -- choose your theme here
 local chosen_theme = themes[1]
 local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme)
-beautiful.init("/home/shri/.config/awesome/themes/multicolor/theme.lua")
+--beautiful.init("/home/shri/.config/awesome/themes/powerarrow-dark/theme.lua")
 local modkey = "Mod4"
 local altkey = "Mod1"
 local ctrlkey = "Control"
@@ -265,6 +265,10 @@ globalkeys = my_table.join(
   awful.key({ modkey }, "q", function()
     awful.spawn("rquickshare")
   end, { description = "Launch quickshare", group = "hotkeys" }),
+  awful.key({ modkey }, "v", function()
+    awful.spawn("code")
+  end, { description = "Launch VSCode", group = "hotkeys" }),
+
 
   awful.key({ modkey }, "b", function()
     awful.spawn("brave")
@@ -293,7 +297,7 @@ globalkeys = my_table.join(
 
   -- Rofi launcher
   awful.key({ altkey }, "i", function()
-    awful.spawn(rofi)
+    awful.spawn(rofi -show drun)
   end, { description = "launch rofi", group = "launcher" }),
 
   -- Dmscripts (Super + p followed by KEY)
