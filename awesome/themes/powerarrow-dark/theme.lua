@@ -21,10 +21,10 @@ theme.font                                      = "sans 9"
 
 theme.fg_normal                                 = "#FEFEFE"
 theme.fg_focus                                  = "#32D6FF"
-theme.fg_urgent                                 = "#C83F11"
+theme.fg_urgent                                 = "#C83F"
 theme.bg_normal                                 = "#222222"
 theme.bg_focus                                  = "#1E2320"
-theme.bg_urgent                                 = "#3F3F3F"
+theme.bg_urgent                                 = "#222222"
 theme.taglist_fg_focus                          = "#00CCFF"
 theme.tasklist_bg_focus                         = "#222222"
 theme.tasklist_fg_focus                         = "#00CCFF"
@@ -179,9 +179,12 @@ theme.mpd = lain.widget.mpd({
 local memicon = wibox.widget.imagebox(theme.widget_mem)
 local mem = lain.widget.mem({
   settings = function()
-    widget:set_markup(markup.font(theme.font, " " .. mem_now.used .. "MB "))
+    local used_gb = tonumber(mem_now.used) / 1024
+    widget:set_markup(markup.font(theme.font, string.format(" %.2f GB", used_gb)))
   end
 })
+
+
 
 -- CPU
 local cpuicon = wibox.widget.imagebox(theme.widget_cpu)
@@ -217,9 +220,9 @@ local bat = lain.widget.bat({
     if bat_now.status and bat_now.status ~= "N/A" then
       if bat_now.ac_status == 1 then
         baticon:set_image(theme.widget_ac)
-      elseif not bat_now.perc and tonumber(bat_now.perc) <= 5 then
+      elseif tonumber(bat_now.perc) <= 5 then
         baticon:set_image(theme.widget_battery_empty)
-      elseif not bat_now.perc and tonumber(bat_now.perc) <= 15 then
+      elseif tonumber(bat_now.perc) <= 15 then
         baticon:set_image(theme.widget_battery_low)
       else
         baticon:set_image(theme.widget_battery)
@@ -231,6 +234,7 @@ local bat = lain.widget.bat({
     end
   end
 })
+
 
 -- ALSA volume
 local volicon = wibox.widget.imagebox(theme.widget_vol)
@@ -278,7 +282,7 @@ local arrl_ld = separators.arrow_left("alpha", theme.bg_focus)
 
 function theme.at_screen_connect(s)
   -- Quake application
-
+  --s.quake = lain.util.quake({ app = awful.util.terminal })
 
   -- Tags
   awful.tag(awful.util.tagnames, s, awful.layout.layouts[1])
@@ -304,31 +308,32 @@ function theme.at_screen_connect(s)
   s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(18), bg = theme.bg_normal, fg = theme.fg_normal })
 
   -- Add widgets to the wibox
-  s.mywibox:setup {
-    layout = wibox.layout.align.horizontal,
-    { -- Left widgets
+ -- Add widgets to the wibox
+ s.mywibox:setup {
+  layout = wibox.layout.align.horizontal,
+  { -- Left widgets
       layout = wibox.layout.fixed.horizontal,
-      --spr,
       s.mytaglist,
       s.mypromptbox,
       spr,
-    },
-    s.mytasklist, -- Middle widget
-    {             -- Right widgets
+  },
+  { -- Center widget
+     layout = wibox.container.place,
+      
+  },
+  { -- Right widgets
       layout = wibox.layout.fixed.horizontal,
       wibox.widget.systray(),
-      keyboardlayout,
+      spr,
+      spr,
+      spr,
       spr,
       arrl_ld,
-      wibox.container.background(mpdicon, theme.bg_focus),
       wibox.container.background(theme.mpd.widget, theme.bg_focus),
       arrl_dl,
       volicon,
       theme.volume.widget,
       arrl_ld,
-      wibox.container.background(mailicon, theme.bg_focus),
-      --wibox.container.background(theme.mail.widget, theme.bg_focus),
-      arrl_dl,
       memicon,
       mem.widget,
       arrl_ld,
@@ -338,21 +343,16 @@ function theme.at_screen_connect(s)
       tempicon,
       temp.widget,
       arrl_ld,
-      wibox.container.background(fsicon, theme.bg_focus),
-      --wibox.container.background(theme.fs.widget, theme.bg_focus),
-      arrl_dl,
+      --wibox.container.background(fsicon, theme.bg_focus),
       baticon,
       bat.widget,
       arrl_ld,
-      -- wibox.container.background(neticon, theme.bg_focus),
-      --wibox.container.background(net.widget, theme.bg_focus),
-      arrl_dl,
       clock,
-      spr,
-      arrl_ld,
+      arrl_dl,
       wibox.container.background(s.mylayoutbox, theme.bg_focus),
-    },
-  }
+  },
+}
+
 end
 
 theme.useless_gap = 3

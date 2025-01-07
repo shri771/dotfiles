@@ -161,6 +161,7 @@ alias pycn='nvim .config/polybar/config.ini'
 alias vn='variety --next'
 alias vp='variety'
 alias n='nvim'
+alias imp='kitty +kitten icat'
 alias tpcn=' sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf'
 
 # vim and emacst
