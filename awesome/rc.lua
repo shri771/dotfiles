@@ -72,7 +72,7 @@ local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.ge
 local modkey = "Mod4"
 local altkey = "Mod1"
 local ctrlkey = "Control"
-local terminal = "alacritty"
+local terminal = "kitty"
 local browser = "brave"
 local editor = os.getenv("EDITOR") or "nvim"
 local emacs = "emacsclient -c -a 'emacs' "
@@ -885,7 +885,7 @@ awful.spawn.with_shell("killall conky && conky -c $HOME/.config/conky/awesome/" 
 --awful.spawn.with_shell("xsettingsd &")
 --awful.spawn.lith_shell("kdeconnect-indicator")
 --awful.spawn.with_shell("variety --set-wallpaper=/home/shri/Pictures/wallpaper/Day/0258.jpg")
-awful.spawn.with_shell("variety")
+awful.spawn.with_shell("variety &")
 awful.spawn.with_shell("rclone mount Shri77: ~/Shri77/") --Interchange escape with caps
 awful.spawn.with_shell("xdotool key Num_Lock")
 awful.spawn.with_shell("xmodmap ~/.Xmodmap")
