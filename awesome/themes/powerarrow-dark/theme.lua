@@ -17,7 +17,7 @@ local my_table                                  = awful.util.table or gears.tabl
 local theme                                     = {}
 theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow-dark"
 --theme.wallpaper                                 = theme.dir .. "/wall.png"
-theme.font                                      = "sans 9"
+theme.font                                      = "sans 10"
 
 theme.fg_normal                                 = "#FEFEFE"
 theme.fg_focus                                  = "#32D6FF"
@@ -31,9 +31,9 @@ theme.tasklist_bg_focus                         = "#222222"
 theme.tasklist_fg_focus                         = "#00CCFF"
 
 theme.border_width                              = dpi(1)
-theme.border_normal = "#000000"
-theme.border_focus  = "#ffcd33"
-theme.border_marked = "#91231c"
+theme.border_normal                             = "#000000"
+theme.border_focus                              = "#ffcd33"
+theme.border_marked                             = "#91231c"
 theme.titlebar_bg_focus                         = "#3F3F3F"
 theme.titlebar_bg_normal                        = "#3F3F3F"
 
@@ -102,11 +102,11 @@ local separators                                = lain.util.separators
 local keyboardlayout                            = awful.widget.keyboardlayout:new()
 
 -- Binary clock
-local binclock = require("themes.powerarrow.binclock"){
-    height = dpi(32),
-    show_seconds = true,
-    color_active = theme.fg_normal,
-    color_inactive = theme.bg_focus
+local binclock                                  = require("themes.powerarrow.binclock") {
+  height = dpi(32),
+  show_seconds = true,
+  color_active = theme.fg_normal,
+  color_inactive = theme.bg_focus
 }
 -- Textclock
 local clockicon                                 = wibox.widget.imagebox(theme.widget_clock)
@@ -285,84 +285,82 @@ local net     = lain.widget.net({
 })
 
 -- Separators
-local arrow = separators.arrow_left
+local arrow   = separators.arrow_left
 local spr     = wibox.widget.textbox(' ')
 
 function theme.powerline_rl(cr, width, height)
-    local arrow_depth, offset = height/2, 0
+  local arrow_depth, offset = height / 2, 0
 
-    -- Avoid going out of the (potential) clip area
-    if arrow_depth < 0 then
-        width  =  width + 2*arrow_depth
-        offset = -arrow_depth
-    end
+  -- Avoid going out of the (potential) clip area
+  if arrow_depth < 0 then
+    width  = width + 2 * arrow_depth
+    offset = -arrow_depth
+  end
 
-    cr:move_to(offset + arrow_depth         , 0        )
-    cr:line_to(offset + width               , 0        )
-    cr:line_to(offset + width - arrow_depth , height/2 )
-    cr:line_to(offset + width               , height   )
-    cr:line_to(offset + arrow_depth         , height   )
-    cr:line_to(offset                       , height/2 )
+  cr:move_to(offset + arrow_depth, 0)
+  cr:line_to(offset + width, 0)
+  cr:line_to(offset + width - arrow_depth, height / 2)
+  cr:line_to(offset + width, height)
+  cr:line_to(offset + arrow_depth, height)
+  cr:line_to(offset, height / 2)
 
-    cr:close_path()
+  cr:close_path()
 end
 
 local function pl(widget, bgcolor, padding)
-    return wibox.container.background(wibox.container.margin(widget, dpi(16), dpi(16)), bgcolor, theme.powerline_rl)
+  return wibox.container.background(wibox.container.margin(widget, dpi(16), dpi(16)), bgcolor, theme.powerline_rl)
 end
 
 function theme.at_screen_connect(s)
-    -- Quake application
-    s.quake = lain.util.quake({ app = awful.util.terminal })
+  -- Quake application
+  s.quake = lain.util.quake({ app = awful.util.terminal })
 
 
 
-    -- Tags
-    awful.tag(awful.util.tagnames, s, awful.layout.layouts[1])
+  -- Tags
+  awful.tag(awful.util.tagnames, s, awful.layout.layouts[1])
 
-    -- Create a promptbox for each screen
-    s.mypromptbox = awful.widget.prompt()
-    -- Create an imagebox widget which will contains an icon indicating which layout we're using.
-    -- We need one layoutbox per screen.
-    s.mylayoutbox = awful.widget.layoutbox(s)
-    s.mylayoutbox:buttons(my_table.join(
-                           awful.button({}, 1, function () awful.layout.inc( 1) end),
-                           awful.button({}, 2, function () awful.layout.set( awful.layout.layouts[1] ) end),
-                           awful.button({}, 3, function () awful.layout.inc(-1) end),
-                           awful.button({}, 4, function () awful.layout.inc( 1) end),
-                           awful.button({}, 5, function () awful.layout.inc(-1) end)))
-    -- Create a taglist widget
-    s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, awful.util.taglist_buttons)
+  -- Create a promptbox for each screen
+  s.mypromptbox = awful.widget.prompt()
+  -- Create an imagebox widget which will contains an icon indicating which layout we're using.
+  -- We need one layoutbox per screen.
+  s.mylayoutbox = awful.widget.layoutbox(s)
+  s.mylayoutbox:buttons(my_table.join(
+    awful.button({}, 1, function() awful.layout.inc(1) end),
+    awful.button({}, 2, function() awful.layout.set(awful.layout.layouts[1]) end),
+    awful.button({}, 3, function() awful.layout.inc(-1) end),
+    awful.button({}, 4, function() awful.layout.inc(1) end),
+    awful.button({}, 5, function() awful.layout.inc(-1) end)))
+  -- Create a taglist widget
+  s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, awful.util.taglist_buttons)
 
-    -- Create a tasklist widget
-    --s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
+  -- Create a tasklist widget
+  --s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
 
-    -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(16), bg = theme.bg_normal, fg = theme.fg_normal })
+  -- Create the wibox
+  s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(16), bg = theme.bg_normal, fg = theme.fg_normal })
 
-    -- Add widgets to the wibox
-    s.mywibox:setup {
-        layout = wibox.layout.align.horizontal,
-        { -- Left widgets
-            layout = wibox.layout.fixed.horizontal,
-            --spr,
-            s.mytaglist,
-            s.mypromptbox,
-            spr,
-        },
-        s.mytasklist, -- Middle widget
-        { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
-            wibox.widget.systray(),
-            wibox.container.margin(scissors, dpi(4), dpi(8)),
-            spr,
-            spr,
-            spr,
-            spr,
-            spr,
-            
-        
-            --[[ using shapes
+  -- Add widgets to the wibox
+  s.mywibox:setup {
+    layout = wibox.layout.align.horizontal,
+    { -- Left widgets
+      layout = wibox.layout.fixed.horizontal,
+      --spr,
+      s.mytaglist,
+      s.mypromptbox,
+      spr,
+    },
+    s.mytasklist, -- Middle widget
+    {             -- Right widgets
+      layout = wibox.layout.fixed.horizontal,
+      --wibox.widget.systray(),
+      wibox.container.margin(scissors, dpi(4), dpi(8)),
+      spr,
+      spr,
+
+
+
+      --[[ using shapes
             pl(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, "#343434"),
             pl(task, "#343434"),
             --pl(wibox.widget { mailicon, mail and theme.mail.widget, layout = wibox.layout.align.horizontal }, "#343434"),
@@ -374,32 +372,32 @@ function theme.at_screen_connect(s)
             pl(wibox.widget { neticon, net.widget, layout = wibox.layout.align.horizontal }, "#C0C0A2"),
             pl(binclock.widget, "#777E76"),
             --]]
-            -- using separators
-            arrow(theme.bg_normal, "#4B696D"),
-            --wibox.container.background(wibox.container.margin(wibox.widget { mailicon, theme.mail and theme.mail.widget, layout = wibox.layout.align.horizontal }, dpi(4), dpi(7)), "#343434"),
-            --arrow("#343434", theme.bg_normal),
-            --wibox.container.background(wibox.container.margin(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(6)), theme.bg_focus),
-            --arrow(theme.bg_normal, "#343434"),
-            --wibox.container.background(wibox.container.margin(task, dpi(3), dpi(7)), "#343434"),
-            --arrow("#343434", "#777E76"),
-            --wibox.container.background(wibox.container.margin(wibox.widget {  layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), "#777E76"),
-            --arrow("#777E76", "#4B696D"),
-            wibox.container.background(wibox.container.margin(wibox.widget { volicon, theme.volume.widget,  layout = wibox.layout.align.horizontal }, dpi(3), dpi(4)), "#4B696D"),
-            arrow("#4B696D", "#4B3B51"),
-            wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, dpi(4), dpi(4)), "#4B3B51"),
-            arrow("#4B3B51", "#CB755B"),
-            wibox.container.background(wibox.container.margin(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#CB755B"),
-            arrow("#CB755B", "#8DAA9A"),
-            wibox.container.background(wibox.container.margin(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#8DAA9A"),
-            arrow("#8DAA9A", "#C0C0A2"),
-            wibox.container.background(wibox.container.margin(wibox.widget { tempicon, temp.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#C0C0A2"),
-            arrow("#C0C0A2", "#777E76"),
-            wibox.container.background(wibox.container.margin(wibox.widget { nil, clock, layout = wibox.layout.align.horizontal} , dpi(4), dpi(8)), "#777E76"),
-            arrow("#777E76", "alpha"),
-            --]]
-            s.mylayoutbox,
-        },
-    }
+      -- using separators
+      arrow(theme.bg_normal, "#4B696D"),
+      --wibox.container.background(wibox.container.margin(wibox.widget { mailicon, theme.mail and theme.mail.widget, layout = wibox.layout.align.horizontal }, dpi(4), dpi(7)), "#343434"),
+      --arrow("#343434", theme.bg_normal),
+      --wibox.container.background(wibox.container.margin(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(6)), theme.bg_focus),
+      --arrow(theme.bg_normal, "#343434"),
+      --wibox.container.background(wibox.container.margin(task, dpi(3), dpi(7)), "#343434"),
+      --arrow("#343434", "#777E76"),
+      --wibox.container.background(wibox.container.margin(wibox.widget {  layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), "#777E76"),
+      --arrow("#777E76", "#4B696D"),
+      wibox.container.background(wibox.container.margin(wibox.widget { volicon, theme.volume.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(4)), "#4B696D"),
+      arrow("#4B696D", "#4B3B51"),
+      wibox.container.background(wibox.container.margin(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, dpi(4), dpi(4)), "#4B3B51"),
+      arrow("#4B3B51", "#CB755B"),
+      wibox.container.background(wibox.container.margin(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#CB755B"),
+      arrow("#CB755B", "#8DAA9A"),
+      wibox.container.background(wibox.container.margin(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#8DAA9A"),
+      arrow("#8DAA9A", "#C0C0A2"),
+      wibox.container.background(wibox.container.margin(wibox.widget { tempicon, temp.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#C0C0A2"),
+      arrow("#C0C0A2", "#777E76"),
+      wibox.container.background(wibox.container.margin(wibox.widget { nil, clock, layout = wibox.layout.align.horizontal }, dpi(4), dpi(8)), "#777E76"),
+      arrow("#777E76", "alpha"),
+      --]]
+      s.mylayoutbox,
+    },
+  }
 end
 
 theme.useless_gap = 3
