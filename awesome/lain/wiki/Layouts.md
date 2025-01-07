@@ -2,6 +2,7 @@
     lain/layout
     .
     |-- termfair
+    |-- termfair.stable
     |-- termfair.center
     |-- cascade
     |-- cascade.tile
@@ -51,17 +52,38 @@ another row above it will be created.
 Default number of columns and rows are respectively taken from `nmaster`
 and `ncol` values in `awful.tag`, but you can set your own.
 
-For example, this sets `termfair` to 3 columns and at least 1 row:
+For example, this sets `termfair`, `termfair.center`, and `termfair.stable` to 3 columns and at least 1 row:
 
 ```lua
 lain.layout.termfair.nmaster = 3
 lain.layout.termfair.ncol    = 1
 ```
 
+`termfair.stable`
+-----------------
+Similar to `termfair`, but new rows are created below existing rows.
+
+            (1)                (2)                (3)
+       +---+---+---+      +---+---+---+      +---+---+---+
+       |   |   |   |      |   |   |   |      |   |   |   |
+       | 1 |   |   |  ->  | 1 | 2 |   |  ->  | 1 | 2 | 3 |  ->
+       |   |   |   |      |   |   |   |      |   |   |   |
+       +---+---+---+      +---+---+---+      +---+---+---+
+
+            (4)                (5)                (6)
+       +---+---+---+      +---+---+---+      +---+---+---+
+       | 1 | 2 | 3 |      | 1 | 2 | 3 |      | 1 | 2 | 3 |
+       +---+---+---+  ->  +---+---+---+  ->  +---+---+---+
+       | 4 |   |   |      | 4 | 5 |   |      | 4 | 5 | 6 |
+       +---+---+---+      +---+---+---+      +---+---+---+
+
+Like `termfair`, default number of columns and rows are respectively taken from `nmaster`
+and `ncol` values in `awful.tag`, but you can set your own using the setting noted above for `termfair`.
+
 `termfair.center`
 ----------
 
-Similar to `termfair`, but with fixed number of vertical columns. Cols are centerded until there are `nmaster` columns, then windows are stacked as slaves, with possibly `ncol` clients per column at most.
+Similar to `termfair`, but with fixed number of vertical columns. Cols are centered until there are `nmaster` columns, then windows are stacked as slaves, with possibly `ncol` clients per column at most.
 
             (1)                (2)                (3)
        +---+---+---+      +-+---+---+-+      +---+---+---+
@@ -78,14 +100,7 @@ Similar to `termfair`, but with fixed number of vertical columns. Cols are cente
        +---+---+---+      +---+---+---+
 
 Like `termfair`, default number of columns and rows are respectively taken from `nmaster`
-and `ncol` values in `awful.tag`, but you can set your own.
-
-For example, this sets `termfair.center` to 3 columns and at least 1 row:
-
-```lua
-lain.layout.termfair.center.nmaster = 3
-lain.layout.termfair.center.ncol    = 1
-```
+and `ncol` values in `awful.tag`, but you can set your own using the setting noted above for `termfair`.
 
 `cascade`
 -------

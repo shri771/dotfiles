@@ -62,14 +62,13 @@ end
 run_once({ "unclutter -root" }) -- entries must be comma-separated
 
 local themes = {
-  "powerarrow", -- 1
+  "multicolor", -- 1
 }
 
 -- choose your theme here
 local chosen_theme = themes[1]
 local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme)
-beautiful.init(theme_path)
-
+beautiful.init("/home/shri/.config/awesome/themes/multicolor/theme.lua")
 local modkey = "Mod4"
 local altkey = "Mod1"
 local ctrlkey = "Control"
@@ -294,7 +293,7 @@ globalkeys = my_table.join(
 
   -- Rofi launcher
   awful.key({ altkey }, "i", function()
-    awful.spawn("rofi -show combi -theme ~/rofi-themes-collection/themes/simple-tokyonight.rasi")
+    awful.spawn(rofi)
   end, { description = "launch rofi", group = "launcher" }),
 
   -- Dmscripts (Super + p followed by KEY)

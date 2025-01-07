@@ -16,8 +16,9 @@ Variable | Meaning | Type | Default
 --- | --- | --- | ---
 `timeout` | Refresh timeout (in seconds) | integer | 5
 `devicetype` | PulseAudio device type | string ("sink", "source") | "sink"
-`cmd` | PulseAudio command | string or function | see [here](https://github.com/lcpz/lain/blob/master/widget/pulse.lua#L26)
+`cmd` | PulseAudio command | string or function | see [here](https://github.com/lcpz/lain/blob/master/widget/pulse.lua#L25)
 `settings` | User settings | function | empty function
+`widget` | Widget to render | function | `wibox.widget.textbox`
 
 `cmd` is a terminal command to catch infos from current default device. You can redefine it, being sure that the ouput is something like this:
 
@@ -30,7 +31,7 @@ Variable | Meaning | Type | Default
 
 If your devices change dynamically, you can define it as a function which returns a command string.
 
-If sed doesn't work, you can try with a grep variant:
+If `sed` doesn't work, you can try with `grep`:
 
 ```lua
 cmd = "pacmd list-" .. pulse.devicetype .. "s | grep -e $(pactl info | grep -e 'ink' | cut -d' ' -f3) -e 'volume: front' -e 'muted'"
@@ -68,19 +69,19 @@ volume.widget:buttons(awful.util.table.join(
         awful.spawn("pavucontrol")
     end),
     awful.button({}, 2, function() -- middle click
-        os.execute(string.format("pactl set-sink-volume %d 100%%", volume.device))
+        os.execute(string.format("pactl set-sink-volume %s 100%%", volume.device))
         volume.update()
     end),
     awful.button({}, 3, function() -- right click
-        os.execute(string.format("pactl set-sink-mute %d toggle", volume.device))
+        os.execute(string.format("pactl set-sink-mute %s toggle", volume.device))
         volume.update()
     end),
     awful.button({}, 4, function() -- scroll up
-        os.execute(string.format("pactl set-sink-volume %d +1%%", volume.device))
+        os.execute(string.format("pactl set-sink-volume %s +1%%", volume.device))
         volume.update()
     end),
     awful.button({}, 5, function() -- scroll down
-        os.execute(string.format("pactl set-sink-volume %d -1%%", volume.device))
+        os.execute(string.format("pactl set-sink-volume %s -1%%", volume.device))
         volume.update()
     end)
 ))
@@ -92,27 +93,27 @@ volume.widget:buttons(awful.util.table.join(
 -- PulseAudio volume control
 awful.key({ altkey }, "Up",
     function ()
-        os.execute(string.format("pactl set-sink-volume %d +1%%", volume.device))
+        os.execute(string.format("pactl set-sink-volume %s +1%%", volume.device))
         volume.update()
     end),
 awful.key({ altkey }, "Down",
     function ()
-        os.execute(string.format("pactl set-sink-volume %d -1%%", volume.device))
+        os.execute(string.format("pactl set-sink-volume %s -1%%", volume.device))
         volume.update()
     end),
 awful.key({ altkey }, "m",
     function ()
-        os.execute(string.format("pactl set-sink-mute %d toggle", volume.device))
+        os.execute(string.format("pactl set-sink-mute %s toggle", volume.device))
         volume.update()
     end),
 awful.key({ altkey, "Control" }, "m",
     function ()
-        os.execute(string.format("pactl set-sink-volume %d 100%%", volume.device))
+        os.execute(string.format("pactl set-sink-volume %s 100%%", volume.device))
         volume.update()
     end),
 awful.key({ altkey, "Control" }, "0",
     function ()
-        os.execute(string.format("pactl set-sink-volume %d 0%%", volume.device))
+        os.execute(string.format("pactl set-sink-volume %s 0%%", volume.device))
         volume.update()
     end),
 ```
