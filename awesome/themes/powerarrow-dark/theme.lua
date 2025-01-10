@@ -41,7 +41,7 @@ theme.titlebar_bg_focus                         = theme.bg_focus
 theme.titlebar_bg_normal                        = theme.bg_normal
 theme.titlebar_fg_focus                         = theme.fg_focus
 theme.menu_height                               = dpi(15)
-theme.menu_width                                = dpi(100)
+theme.menu_width                                = dpi(150)
 theme.menu_submenu_icon                         = theme.dir .. "/icons/submenu.png"
 theme.taglist_squares_sel                       = theme.dir .. "/icons/square_sel.png"
 theme.taglist_squares_unsel                     = theme.dir .. "/icons/square_unsel.png"
@@ -204,6 +204,17 @@ local cpu = lain.widget.cpu({
 })
 
 -- Coretemp
+
+--[[ Coretemp (lm_sensors, per core)
+local tempwidget = awful.widget.watch({awful.util.shell, '-c', 'sensors | grep Core'}, 30,
+function(widget, stdout)
+    local temps = ""
+    for line in stdout:gmatch("[^\r\n]+") do
+        temps = temps .. line:match("+(%d+).*°C")  .. "° " -- in Celsius
+    end
+    widget:set_markup(markup.font(theme.font, " " .. temps))
+end)
+--]]
 local tempicon = wibox.widget.imagebox(theme.widget_temp)
 local temp = lain.widget.temp({
   settings = function()
@@ -244,6 +255,15 @@ local bat = lain.widget.bat({
   end
 })
 
+-- Brigtness
+local brighticon = wibox.widget.imagebox(theme.widget_brightness)
+-- If you use xbacklight, comment the line with "light -G" and uncomment the line bellow
+-- local brightwidget = awful.widget.watch('xbacklight -get', 0.1,
+local brightwidget = awful.widget.watch('light -G', 0.1,
+  function(widget, stdout, stderr, exitreason, exitcode)
+    local brightness_level = tonumber(string.format("%.0f", stdout))
+    widget:set_markup(markup.font(theme.font, " " .. brightness_level .. "%"))
+  end)
 
 -- ALSA volume
 local volicon = wibox.widget.imagebox(theme.widget_vol)
@@ -390,7 +410,7 @@ function theme.at_screen_connect(s)
       arrow("#CB755B", "#8DAA9A"),
       wibox.container.background(wibox.container.margin(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#8DAA9A"),
       arrow("#8DAA9A", "#C0C0A2"),
-      wibox.container.background(wibox.container.margin(wibox.widget { tempicon, temp.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#C0C0A2"),
+      wibox.container.background(wibox.container.margin(wibox.widget { brighticon, temp.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(3)), "#C0C0A2"),
       arrow("#C0C0A2", "#777E76"),
       wibox.container.background(wibox.container.margin(wibox.widget { nil, clock, layout = wibox.layout.align.horizontal }, dpi(4), dpi(8)), "#777E76"),
       arrow("#777E76", "alpha"),

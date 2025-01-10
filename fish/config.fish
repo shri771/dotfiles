@@ -77,6 +77,21 @@ function backup --argument filename
     cp $filename $filename.bak
 end
 
+# Function to expand :: to /home/shri/
+function expand_colon
+    # Get the current command line input
+    set cmd (commandline)
+
+    # Replace :: with /home/shri/
+    set cmd (string replace "hm" "/home/shri/" $cmd)
+
+    # Update the command line with the replaced value
+    commandline -r $cmd
+end
+function fish_preexec
+    expand_colon
+end
+
 # Function for copying files and directories, even recursively.
 # ex: copy DIRNAME LOCATIONS
 # result: copies the directory and all of its contents.
@@ -145,14 +160,13 @@ end
 
 ### ALIASES ###
 # navigation
-#
-#
 alias .='cd'
 alias ...='cd ../..'
 alias ..='cd ..'
 alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
+alias cdl='cd && ls'
 
 #path for con
 alias awcn='nvim ~/.config/awesome/rc.lua'
@@ -178,6 +192,7 @@ alias l.='eza -a | egrep "^\."'
 alias l.='eza -al --color=always --group-directories-first ../' # ls on the PARENT directory
 alias l..='eza -al --color=always --group-directories-first ../../' # ls on directory 2 levels up
 alias l...='eza -al --color=always --group-directories-first ../../../' # ls on directory 3 levels up
+alias temp='watch -n 1 sensors'
 
 # pacman and yay
 alias pacins='sudo pacman -Syu' # update only standard pkgs
@@ -221,6 +236,11 @@ alias pl='git pull origin'
 alias ph='git push origin'
 alias tag='git tag'
 alias newtag='git tag -a'
+
+# tmux
+alias tx="tmux"
+alias txa="tmux a"
+alias txawcn="tmux a -t awconfig"
 
 # get error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
