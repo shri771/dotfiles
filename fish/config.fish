@@ -195,8 +195,8 @@ alias l...='eza -al --color=always --group-directories-first ../../../' # ls on 
 alias temp='watch -n 1 sensors'
 
 # pacman and yay
-alias pacins='sudo pacman -Syu' # update only standard pkgs
-alias pacsyyu='sudo pacman -Syyu' # Refresh pkglist & update standard pkgs
+alias pacins='sudo pacman -S' # update only standard pkgs
+alias pacrm='sudo pacman -R' # Refresh pkglist & update standard pkgs
 alias parsua='paru -Sua --noconfirm' # update only AUR pkgs (paru)
 alias parsyu='paru -Syu --noconfirm' # update standard pkgs and AUR pkgs (paru)
 alias unlock='sudo rm /var/lib/pacman/db.lck' # remove pacman lock
