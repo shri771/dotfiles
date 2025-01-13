@@ -16,7 +16,7 @@ function gpha
     echo "=========================================="
     # Push the changes to the remote repository
     git push
-
+    echo "= = = = = = = = = = = = = = = = = = = = = ="
     # Display the current Git status
     git status
 end
