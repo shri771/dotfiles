@@ -82,7 +82,7 @@ local soundplayer = "ffplay -nodisp -autoexit " -- The program that will play sy
 -- awesome variables
 awful.util.terminal = terminal
 --awful.util.tagnames = {  " ", " ", " ", " ", " ", " ", " ", "  ", " ", " "  }
-awful.util.tagnames = { "  ", "   ", "   ", "   ", "  ", "   " }
+awful.util.tagnames = { "  ", "   ", "   ", "  ", "  ", "   " }
 awful.layout.suit.tile.left.mirror = true
 awful.layout.layouts = {
 	awful.layout.suit.tile,
@@ -345,53 +345,12 @@ globalkeys = my_table.join(
 		end)
 	end, { description = "followed by KEY", group = "Dmscripts" }),
 
-	-- Emacs (Super + e followed by KEY)
-	awful.key({ modkey }, "e", function()
-		local grabber
-		grabber = awful.keygrabber.run(function(_, key, event)
-			if event == "release" then
-				return
-			end
-
-			if key == "e" then
-				awful.spawn.with_shell(emacs .. "--eval '(dashboard-refresh-buffer)'")
-			elseif key == "a" then
-				awful.spawn.with_shell(emacs .. "--eval '(emms)' --eval '(emms-play-directory-tree \"~/Music/\")'")
-			elseif key == "b" then
-				awful.spawn.with_shell(emacs .. "--eval '(ibuffer)'")
-			elseif key == "d" then
-				awful.spawn.with_shell(emacs .. "--eval '(dired nil)'")
-			elseif key == "i" then
-				awful.spawn.with_shell(emacs .. "--eval '(erc)'")
-			elseif key == "n" then
-				awful.spawn.with_shell(emacs .. "--eval '(elfeed)'")
-			elseif key == "s" then
-				awful.spawn.with_shell(emacs .. "--eval '(eshell)'")
-			elseif key == "v" then
-				awful.spawn.with_shell(emacs .. "--eval '(+vterm/here nil)'")
-			elseif key == "w" then
-				awful.spawn.with_shell(emacs .. "--eval '(doom/window-maximize-buffer(eww \"distro.tube\"))'")
-			end
-			awful.keygrabber.stop(grabber)
-		end)
-	end, { description = "followed by KEY", group = "Emacs" }),
-
 	-- Tag browsing with modkey
-	awful.key({ modkey }, "Left", awful.tag.viewprev, { description = "view previous", group = "tag" }),
-	awful.key({ modkey }, "Right", awful.tag.viewnext, { description = "view next", group = "tag" }),
 	awful.key({ altkey }, "Escape", awful.tag.history.restore, { description = "go back", group = "tag" }),
 
 	-- Tag browsing ALT+TAB (ALT+SHIFT+TAB)
 	awful.key({ altkey }, "Tab", awful.tag.viewnext, { description = "view next", group = "tag" }),
 	awful.key({ altkey, "Shift" }, "Tab", awful.tag.viewprev, { description = "view previous", group = "tag" }),
-
-	-- Non-empty tag browsing CTRL+TAB (CTRL+SHIFT+TAB)
-	awful.key({ ctrlkey }, "Tab", function()
-		lain.util.tag_view_nonempty(-1)
-	end, { description = "view  previous nonempty", group = "tag" }),
-	awful.key({ ctrlkey, "Shift" }, "Tab", function()
-		lain.util.tag_view_nonempty(1)
-	end, { description = "view  previous nonempty", group = "tag" }),
 
 	-- Default client focus
 	awful.key({ modkey }, "j", function()
@@ -427,32 +386,6 @@ globalkeys = my_table.join(
 		end
 	end, { description = "Focus right", group = "client" }),
 
-	-- By direction client focus with arrows
-	awful.key({ ctrlkey, modkey }, "Down", function()
-		awful.client.focus.global_bydirection("down")
-		if client.focus then
-			client.focus:raise()
-		end
-	end, { description = "Focus down", group = "client" }),
-	awful.key({ ctrlkey, modkey }, "Up", function()
-		awful.client.focus.global_bydirection("up")
-		if client.focus then
-			client.focus:raise()
-		end
-	end, { description = "Focus up", group = "client" }),
-	awful.key({ ctrlkey, modkey }, "Left", function()
-		awful.client.focus.global_bydirection("left")
-		if client.focus then
-			client.focus:raise()
-		end
-	end, { description = "Focus left", group = "client" }),
-	awful.key({ ctrlkey, modkey }, "Right", function()
-		awful.client.focus.global_bydirection("right")
-		if client.focus then
-			client.focus:raise()
-		end
-	end, { description = "Focus right", group = "client" }),
-
 	-- Layout manipulation
 	awful.key({ modkey, "Shift" }, "j", function()
 		awful.client.swap.byidx(1)
@@ -481,23 +414,6 @@ globalkeys = my_table.join(
 	awful.key({ altkey, ctrlkey }, "k", function()
 		lain.util.useless_gaps_resize(-1)
 	end, { description = "decrement useless gaps", group = "tag" }),
-
-	-- Dynamic tagging
-	awful.key({ modkey, "Shift" }, "n", function()
-		lain.util.add_tag()
-	end, { description = "add new tag", group = "tag" }),
-	awful.key({ modkey, ctrlkey }, "r", function()
-		lain.util.rename_tag()
-	end, { description = "rename tag", group = "tag" }),
-	awful.key({ modkey, "Shift" }, "Left", function()
-		lain.util.move_tag(-1)
-	end, { description = "move tag to the left", group = "tag" }),
-	awful.key({ modkey, "Shift" }, "Right", function()
-		lain.util.move_tag(1)
-	end, { description = "move tag to the right", group = "tag" }),
-	awful.key({ modkey, "Shift" }, "d", function()
-		lain.util.delete_tag()
-	end, { description = "delete tag", group = "tag" }),
 
 	awful.key({ modkey }, "l", function()
 		awful.tag.incmwfact(0.05)
@@ -538,33 +454,23 @@ globalkeys = my_table.join(
 		awful.screen.focused().quake:toggle()
 	end, { description = "dropdown application", group = "super" }),
 
-	-- Widgets popups
-	awful.key({ altkey }, "c", function()
-		lain.widget.cal.show(7)
-	end, { description = "show calendar", group = "widgets" }),
-	awful.key({ altkey }, "h", function()
-		if beautiful.fs then
-			beautiful.fs.show(7)
-		end
-	end, { description = "show filesystem", group = "widgets" }),
-
 	-- Brightness
 	awful.key({}, "XF86MonBrightnessUp", function()
-		os.execute("xbacklight -inc 10")
-	end, { description = "+10%", group = "hotkeys" }),
+		awful.spawn("brightnessctl set +10%")
+	end, { description = "Increase brightness", group = "custom" }),
 	awful.key({}, "XF86MonBrightnessDown", function()
-		os.execute("xbacklight -dec 10")
-	end, { description = "-10%", group = "hotkeys" }),
+		awful.spawn("brightnessctl set 10%-")
+	end, { description = "Decrease brightness", group = "custom" }),
 
 	-- ALSA volume control
 	--awful.key({ ctrlkey }, "Up",
 	awful.key({}, "XF86AudioRaiseVolume", function()
-		os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
+		os.execute(string.format("amixer -q set %s 3%%+", beautiful.volume.channel))
 		beautiful.volume.update()
 	end),
 	--awful.key({ ctrlkey }, "Down",
 	awful.key({}, "XF86AudioLowerVolume", function()
-		os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
+		os.execute(string.format("amixer -q set %s 3%%-", beautiful.volume.channel))
 		beautiful.volume.update()
 	end),
 	awful.key({}, "XF86AudioMute", function()
@@ -680,6 +586,7 @@ for i = 1, 9 do
 	)
 end
 
+-- Resize the window by mouse
 clientbuttons = gears.table.join(
 	awful.button({}, 1, function(c)
 		c:emit_signal("request::activate", "mouse_click", { raise = true })
@@ -740,6 +647,16 @@ awful.rules.rules = {
 	-- Set applications to be maximized at startup.
 	-- find class or role via xprop command
 
+	-- Rules to open a app in sepcific tag
+
+	{ rule = { class = "autokey-qt" }, properties = { tag = "  " } },
+	{ rule = { class = "Variety" }, properties = { tag = "  " } },
+	{ rule = { class = "kdeconnect.app" }, properties = { tag = "  " } },
+	{ rule = { class = "Nemo" }, properties = { tag = "  " } },
+
+	{ rule = { class = "Rquickshare" }, properties = { floating = true } },
+	{ rule = { class = "WhatSie" }, properties = { floating = true, width = 950, height = 650, x = 0, y = 17 } },
+
 	{ rule = { class = "Gimp*", role = "gimp-image-window" }, properties = { maximized = true } },
 
 	{ rule = { class = "inkscape" }, properties = { maximized = true } },
@@ -762,25 +679,8 @@ awful.rules.rules = {
 				"copyq", -- Includes session name in class.
 			},
 			class = {
-				"Arandr",
 				"Blueberry",
-				"Galculator",
-				"Gnome-font-viewer",
-				"Gpick",
-				"Imagewriter",
-				"Font-manager",
-				"Kruler",
-				"MessageWin", -- kalarm.
-				"Oblogout",
-				"Peek",
-				"Skype",
-				"System-config-printer.py",
-				"Sxiv",
-				"Unetbootin.elf",
-				"Wpa_gui",
-				"pinentry",
-				"veromix",
-				"xtightvncviewer",
+				"Qalculate-gtk",
 			},
 
 			name = {
@@ -793,7 +693,7 @@ awful.rules.rules = {
 				"setup",
 			},
 		},
-		properties = { floating = true },
+		properties = { floating = true, ontop = true },
 	},
 }
 
@@ -891,7 +791,8 @@ awful.spawn.with_shell("variety &")
 awful.spawn.with_shell("rclone mount Shri77: ~/Shri77/") --Interchange escape with caps
 awful.spawn.with_shell("xdotool key Num_Lock")
 awful.spawn.with_shell("xmodmap ~/.Xmodmap")
---awful.spawn.with_shell("xautolock -time 5 -locker 'i3lock' &")
+awful.spawn.with_shell("nemo")
+--awful.spawn.with_shell("xmodmap ~/.Xmodmap")
 --awful.spawn.with_shell("~/scripts/startups/poly_start.sh")
 awful.spawn.with_shell("rclone mount Shri77_Photos: Pictures/g-photos/")
 --awful.spawn.with_shell("xargs xwallpaper --stretch < ~/.cache/wall")
@@ -899,38 +800,3 @@ awful.spawn.with_shell("rclone mount Shri77_Photos: Pictures/g-photos/")
 --awful.spawn.with_shell("feh --randomize --bg-fill /usr/share/backgrounds/dtos-backgrounds/*") -- feh sets random wallpaper
 --awful.spawn.with_shell("nitrogen --restore") -- if you prefer nitrogen to feh/xwallpaper
 --
-
--- Multimedia keys  &&  Key_Remapping
-
-globalkeys = gears.table.join(
-	globalkeys,
-	-- Multimedia keys
-	awful.key({}, "XF86AudioPlay", function()
-		awful.spawn("playerctl play-pause")
-	end, { description = "Play/Pause", group = "multimedia" }),
-	awful.key({}, "XF86AudioNext", function()
-		awful.spawn("playerctl next")
-	end, { description = "Next Track", group = "multimedia" }),
-	awful.key({}, "XF86AudioPrev", function()
-		awful.spawn("playerctl previous")
-	end, { description = "Previous Track", group = "multimedia" }),
-	awful.key({}, "XF86AudioMute", function()
-		awful.spawn("amixer set Master toggle")
-	end, { description = "Mute/Unmute", group = "multimedia" }),
-	awful.key({}, "XF86AudioRaiseVolume", function()
-		awful.spawn("amixer set Master 5%+")
-	end, { description = "Raise Volume", group = "multimedia" }),
-	awful.key({}, "XF86AudioLowerVolume", function()
-		awful.spawn("amixer set Master 5%-")
-	end, { description = "Lower Volume", group = "multimedia" }),
-
-	-- Brightness keys
-	awful.key({}, "XF86MonBrightnessUp", function()
-		awful.spawn("brightnessctl set +10%")
-	end, { description = "Increase brightness", group = "custom" }),
-	awful.key({}, "XF86MonBrightnessDown", function()
-		awful.spawn("brightnessctl set 10%-")
-	end, { description = "Decrease brightness", group = "custom" })
-)
-
-root.keys(globalkeys)

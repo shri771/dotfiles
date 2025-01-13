@@ -10,6 +10,8 @@ set fish_greeting # Supresses fish's intro message
 set TERM xterm-256color # Sets the terminal type
 set EDITOR "nvim -t -a ''" # $EDITOR use Emacs in terminal
 set VISUAL "emacsclient -c -a emacs" # $VISUAL use Emacs in GUI mode
+set -Ux TERM xterm-256color
+set -Ux COLORTERM truecolor
 
 ##local
 set -x LANG en_US.UTF-8
@@ -170,6 +172,7 @@ alias cdl='cd && ls'
 
 #path for con
 alias awcn='nvim ~/.config/awesome/rc.lua'
+alias nvcn='nvim ~/.config/nvim/init.lua'
 alias fhcn='nvim ~/.config/fish/config.fish'
 alias pycn='nvim .config/polybar/config.ini'
 alias vn='variety --next'
