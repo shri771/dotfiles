@@ -12,7 +12,8 @@ function gpha
 
     # Commit the changes with the provided message
     git commit -m "$commit_message"
-
+    
+    echo "=========================================="
     # Push the changes to the remote repository
     git push
 
