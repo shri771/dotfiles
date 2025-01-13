@@ -1,8 +1,0 @@
-{
-   "description": {
-      "message": "PDF Viewer - zeigt PDF-Dateien im Browser mit PDF.js (von Mozilla Labs) an. Senden Sie PDFs an einen beliebigen PDF-Viewer. PDF-Editor"
-   },
-   "name": {
-      "message": "PDF-Viewer und PDF-Konverter"
-   }
-}

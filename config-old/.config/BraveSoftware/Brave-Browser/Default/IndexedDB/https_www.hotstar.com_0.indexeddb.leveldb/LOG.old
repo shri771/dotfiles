@@ -1,7 +1,0 @@
-2025/01/02-22:33:09.717 fc2 Reusing MANIFEST /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.hotstar.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/01/02-22:33:09.717 fc2 Recovering log #426
-2025/01/02-22:33:09.718 fc2 Reusing old log /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.hotstar.com_0.indexeddb.leveldb/000426.log 
-2025/01/02-22:33:09.729 fc2 Level-0 table #432: started
-2025/01/02-22:33:09.731 fc2 Level-0 table #432: 2070 bytes OK
-2025/01/02-22:33:09.734 fc2 Delete type=0 #426
-2025/01/02-22:33:09.734 fc2 Manual compaction at level-0 from '\x00x\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00y\x00\x00\x00' @ 0 : 0; will stop at (end)

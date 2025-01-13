@@ -1,8 +1,0 @@
-{
-   "description": {
-      "message": "Visor de PDF: muestra archivos PDF en el navegador con PDF.js (de Mozilla Labs). Envía archivos PDF a cualquier visor de PDF. Convertidor de pdf"
-   },
-   "name": {
-      "message": "Visor y convertidor de PDF"
-   }
-}

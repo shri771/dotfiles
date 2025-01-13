@@ -1,7 +1,0 @@
-2025/01/02-21:58:12.147 3f003 Reusing MANIFEST /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.reddit.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/01/02-21:58:12.147 3f003 Recovering log #3
-2025/01/02-21:58:12.147 3f003 Reusing old log /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.reddit.com_0.indexeddb.leveldb/000003.log 
-2025/01/02-21:58:44.156 3f003 Level-0 table #5: started
-2025/01/02-21:58:44.158 3f003 Level-0 table #5: 4705 bytes OK
-2025/01/02-21:58:44.160 3f003 Delete type=0 #3
-2025/01/02-21:58:44.161 3f003 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

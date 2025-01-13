@@ -1,8 +1,0 @@
-{
-   "description": {
-      "message": "Visor de PDF: mostra fitxers PDF al navegador amb PDF.js. Envieu PDF a qualsevol lector de PDF. Convertidor de PDF i eina Editor de PDF."
-   },
-   "name": {
-      "message": "Visualitzador de PDF: obre al lector de PDF"
-   }
-}

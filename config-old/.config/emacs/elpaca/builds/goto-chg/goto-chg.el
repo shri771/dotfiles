@@ -1,1 +1,0 @@
-/home/shri/.config/emacs/elpaca/repos/goto-chg/goto-chg.el

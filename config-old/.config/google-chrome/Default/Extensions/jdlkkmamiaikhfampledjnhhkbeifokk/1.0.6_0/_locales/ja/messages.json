@@ -1,8 +1,0 @@
-{
-   "description": {
-      "message": "PDF ビューアー - PDF.js を使用してブラウザーで PDF ファイルを表示します (Mozilla Labs による)。 PDF を任意の PDF ビューアに送信します。 PDFエディター、PDFコンバーター"
-   },
-   "name": {
-      "message": "PDF ビューアおよびコンバータ"
-   }
-}

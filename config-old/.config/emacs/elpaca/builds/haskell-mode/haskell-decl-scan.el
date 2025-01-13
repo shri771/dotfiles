@@ -1,1 +1,0 @@
-/home/shri/.config/emacs/elpaca/repos/haskell-mode/haskell-decl-scan.el

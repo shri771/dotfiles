@@ -1,8 +1,0 @@
-{
-   "description": {
-      "message": "PDF 뷰어 - PDF.js(Mozilla Labs 제공)를 사용하여 브라우저에 PDF 파일을 표시합니다. PDF 뷰어로 PDF를 보냅니다. PDF 편집기, PDF 변환기"
-   },
-   "name": {
-      "message": "PDF 뷰어 및 변환기"
-   }
-}

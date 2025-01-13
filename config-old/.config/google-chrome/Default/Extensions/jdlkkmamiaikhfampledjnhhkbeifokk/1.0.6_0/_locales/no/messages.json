@@ -1,8 +1,0 @@
-{
-   "description": {
-      "message": "PDF-visning - vis PDF-filer i nettleseren med PDF.js (av Mozilla Labs). Send PDF-er til en hvilken som helst PDF-leser. PDF-editor, pdf-konvertering"
-   },
-   "name": {
-      "message": "PDF-leser og konverterer"
-   }
-}

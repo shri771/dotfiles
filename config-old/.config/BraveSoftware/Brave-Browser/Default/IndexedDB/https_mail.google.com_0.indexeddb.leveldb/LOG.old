@@ -1,9 +1,0 @@
-2025/01/02-22:33:19.198 fc2 Reusing MANIFEST /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/01/02-22:33:19.198 fc2 Recovering log #53
-2025/01/02-22:33:19.200 fc2 Reusing old log /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/000053.log 
-2025/01/02-22:33:21.816 fc2 Compacting 1@1 + 1@2 files
-2025/01/02-22:33:21.823 fc2 Generated table #56@1: 185 keys, 585301 bytes
-2025/01/02-22:33:21.823 fc2 Compacted 1@1 + 1@2 files => 585301 bytes
-2025/01/02-22:33:21.825 fc2 compacted to: files[ 0 0 1 0 0 0 0 ]
-2025/01/02-22:33:21.826 fc2 Delete type=2 #52
-2025/01/02-22:33:21.826 fc2 Delete type=2 #54

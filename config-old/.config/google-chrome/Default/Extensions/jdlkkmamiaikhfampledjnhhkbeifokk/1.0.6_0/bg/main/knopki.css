@@ -1,4 +1,0 @@
-.toolbarButton.copyLink::before {
-  -webkit-mask-image: url(../main/cp.svg);
-  mask-image: url(../main/cp.svg);
-}

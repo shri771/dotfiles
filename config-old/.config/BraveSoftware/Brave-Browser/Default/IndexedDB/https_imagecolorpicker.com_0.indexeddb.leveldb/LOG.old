@@ -1,6 +1,0 @@
-2024/12/25-00:21:15.760 1237ad Creating DB /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_imagecolorpicker.com_0.indexeddb.leveldb since it was missing.
-2024/12/25-00:21:15.767 1237ad Reusing MANIFEST /home/shri/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_imagecolorpicker.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/12/25-00:21:55.599 1237ae Level-0 table #5: started
-2024/12/25-00:21:55.602 1237ae Level-0 table #5: 4967 bytes OK
-2024/12/25-00:21:55.605 1237ae Delete type=0 #3
-2024/12/25-00:21:55.605 1237ae Manual compaction at level-0 from (begin) .. (end); will stop at (end)
