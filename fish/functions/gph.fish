@@ -19,12 +19,11 @@ function gph
 
     # Commit with the provided message
     git commit -m "$commit_message"
-
-    echo "====================================================="
+    echo "============================================================"
 
     # Push the changes
     git push
-    echo "================================================="
+    echo "============================================================"
 
     # Show the git status
     git status
