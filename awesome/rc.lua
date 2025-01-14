@@ -427,6 +427,14 @@ globalkeys = my_table.join(
 	awful.key({ modkey, "Shift" }, "Down", function()
 		awful.tag.incnmaster(-1, nil, true)
 	end, { description = "decrease the number of master clients", group = "layout" }),
+
+	awful.key({ modkey, "Shift" }, "h", function()
+		awful.tag.incnmaster(1, nil, true)
+	end, { description = "increase the number of master clients by ", group = "layout" }),
+	awful.key({ modkey, "Shift" }, "l", function()
+		awful.tag.incnmaster(-1, nil, true)
+	end, { description = "decrease the number of master clients by", group = "layout" }),
+
 	awful.key({ modkey, ctrlkey }, "h", function()
 		awful.tag.incncol(1, nil, true)
 	end, { description = "increase the number of columns", group = "layout" }),
