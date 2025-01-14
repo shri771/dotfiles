@@ -11,10 +11,10 @@ set TERM xterm-256color # Sets the terminal type
 set EDITOR "nvim -t -a ''" # $EDITOR use Emacs in terminal
 set VISUAL "emacsclient -c -a emacs" # $VISUAL use Emacs in GUI mode
 set -Ux TERM xterm-256color
-set -Ux COLORTERM truecolor
+set -U LC_CTYPE en_US.UTF-8
 
 ##local
-set -x LANG en_US.UTF-8
+##set -x LANG en_US.UTF-8
 
 
 ### SET MANPAGER
@@ -26,7 +26,7 @@ set -x MANPAGER "nvim +Man!"
 ### "less" as manpager
 # set -x MANPAGER "less"
 
-### SET EITHER DEFAULT EMACS MODE OR VI MODE ###
+### ENABLE VIM KEYBINDINGS ###
 function fish_user_key_bindings
     # fish_default_key_bindings
     fish_vi_key_bindings

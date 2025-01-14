@@ -254,7 +254,7 @@ globalkeys = my_table.join(
 		awful.spawn("flameshot gui")
 	end, { description = "Take a screenshot with Flameshot", group = "hotkeys" }),
 	awful.key({ altkey }, "m", function()
-		awful.spawn("❯ notion-calendar-electron")
+		awful.spawn("notion-calendar-electron")
 	end, { description = "Launch calendar", group = "hotkeys" }),
 	awful.key({ altkey }, "n", function()
 		awful.spawn("notion-app")
@@ -291,6 +291,11 @@ globalkeys = my_table.join(
 			end
 		end
 	end, { description = "Show/hide wibox (bar)", group = "awesome" }),
+	awful.key({ modkey }, "r", function()
+		awful.spawn.easy_async_with_shell("amixer get Master | grep -o '[0-9]*%' | head -1", function(stdout)
+			naughty.notify({ text = "Volume: " .. stdout, timeout = 3 })
+		end)
+	end, { description = "show volume notification", group = "custom widgets" }),
 
 	-- Run launcher
 	awful.key({ altkey }, "space", function()
@@ -302,6 +307,11 @@ globalkeys = my_table.join(
 		awful.spawn("rofi -show drun")
 	end, { description = "launch rofi", group = "launcher" }),
 
+	awful.key({ modkey }, "Tab", function()
+		awful.client.focus.byidx(1, function(c)
+			return c.floating
+		end)
+	end, { description = "cycle through floating clients", group = "client" }),
 	-- Dmscripts (Super + p followed by KEY)
 	awful.key({ modkey }, "p", function()
 		local grabber
@@ -406,7 +416,6 @@ globalkeys = my_table.join(
 			client.focus:raise()
 		end
 	end, { description = "go back", group = "client" }),
-
 	-- On the fly useless gaps change
 	awful.key({ altkey, ctrlkey }, "j", function()
 		lain.util.useless_gaps_resize(1)
@@ -421,6 +430,12 @@ globalkeys = my_table.join(
 	awful.key({ modkey }, "h", function()
 		awful.tag.incmwfact(-0.05)
 	end, { description = "decrease master width factor", group = "layout" }),
+	awful.key({ modkey }, "i", function()
+		awful.client.incwfact(0.05)
+	end, { description = "increase vertical factor", group = "layout" }),
+	awful.key({ modkey }, "o", function()
+		awful.client.incwfact(-0.05)
+	end, { description = "decrease vertical factor", group = "layout" }),
 	awful.key({ modkey, "Shift" }, "Up", function()
 		awful.tag.incnmaster(1, nil, true)
 	end, { description = "increase the number of master clients", group = "layout" }),
@@ -441,9 +456,6 @@ globalkeys = my_table.join(
 	awful.key({ modkey, ctrlkey }, "l", function()
 		awful.tag.incncol(-1, nil, true)
 	end, { description = "decrease the number of columns", group = "layout" }),
-	awful.key({ modkey }, "Tab", function()
-		awful.layout.inc(1)
-	end, { description = "select next", group = "layout" }),
 	awful.key({ modkey, "Shift" }, "Tab", function()
 		awful.layout.inc(-1)
 	end, { description = "select previous", group = "layout" }),
@@ -471,16 +483,18 @@ globalkeys = my_table.join(
 	end, { description = "Decrease brightness", group = "custom" }),
 
 	-- ALSA volume control
-	--awful.key({ ctrlkey }, "Up",
 	awful.key({}, "XF86AudioRaiseVolume", function()
 		os.execute(string.format("amixer -q set %s 3%%+", beautiful.volume.channel))
-		beautiful.volume.update()
-	end),
-	--awful.key({ ctrlkey }, "Down",
+		awful.spawn.easy_async_with_shell("amixer get Master | grep -o '[0-9]*%' | head -1", function(stdout)
+			naughty.notify({ text = "Volume: " .. stdout, timeout = 1 })
+		end)
+	end, { description = "increase volume and show notification", group = "custom widgets" }),
 	awful.key({}, "XF86AudioLowerVolume", function()
 		os.execute(string.format("amixer -q set %s 3%%-", beautiful.volume.channel))
-		beautiful.volume.update()
-	end),
+		awful.spawn.easy_async_with_shell("amixer get Master | grep -o '[0-9]*%' | head -1", function(stdout)
+			naughty.notify({ text = "Volume: " .. stdout, timeout = 1 })
+		end)
+	end, { description = "decrease volume and show notification", group = "custom widgets" }),
 	awful.key({}, "XF86AudioMute", function()
 		os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
 		beautiful.volume.update()
@@ -689,6 +703,7 @@ awful.rules.rules = {
 			class = {
 				"Blueberry",
 				"Qalculate-gtk",
+				"kcolorchooser",
 			},
 
 			name = {
@@ -783,18 +798,63 @@ client.connect_signal("property::maximized", border_adjust)
 client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
 end)
+--sl
+
+-- Dracula color scheme
+local dracula_colors = {
+	background = "#282a36",
+	foreground = "#f8f8f2",
+	accent = "#ff79c6",
+	purple = "#bd93f9",
+	green = "#50fa7b",
+	orange = "#ffb86c",
+	red = "#ff5555",
+}
+
+-- Set default notification settings
+naughty.config.defaults.timeout = 5 -- Timeout for notifications
+naughty.config.defaults.position = "bottom_right" -- Positioning at the bottom-right corner
+
+-- Set notification theme (background and foreground colors)
+naughty.config.presets.normal = {
+	font = "Monospace 10",
+	bg = dracula_colors.background,
+	fg = dracula_colors.foreground,
+	border_color = dracula_colors.purple,
+	border_width = 1,
+	shape = naughty.config.presets.normal.shape,
+	opacity = 0.9, -- 10% transparency
+}
+
+-- Position notifications with padding
+naughty.config.padding = 40 -- padding for notifications
+
+-- Custom notification appearance with fixed width and dynamic bottom padding
+naughty.config.presets.low = {
+	font = "Monospace 10",
+	bg = dracula_colors.background,
+	fg = dracula_colors.foreground,
+	border_color = dracula_colors.purple,
+	border_width = 1,
+	shape = naughty.config.presets.normal.shape,
+	opacity = 0.9, -- 10% transparency
+	timeout = 2,
+	position = "bottom_right",
+	width = 400, -- Fixed width like GNOME notifications
+	height = nil, -- Dynamic height as per the content
+	maximum_width = 400, -- Maximum width of the notification
+}
 
 --Auto Start
-awful.spawn.with_shell(soundplayer .. startupSound)
+--awful.spawn.with_shell(soundplayer .. startupSound)
 awful.spawn.with_shell("lxsession")
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("volumeicon")
 awful.spawn.with_shell("killall conky && conky -c $HOME/.config/conky/awesome/" .. "doom-one" .. "-01.conkyrc")
---awful.spawn.with_shell("/usr/bin/emacs --daemon")
 --awful.spawn.with_shell("xsettingsd &")
---awful.spawn.lith_shell("kdeconnect-indicator")
---awful.spawn.with_shell("variety --set-wallpaper=/home/shri/Pictures/wallpaper/Day/0258.jpg")
+--awful.spawn.lith_shell("kdeconnect-indicator &")
+awful.spawn("kdeconnect-indicator")
 awful.spawn.with_shell("variety &")
 awful.spawn.with_shell("rclone mount Shri77: ~/Shri77/") --Interchange escape with caps
 awful.spawn.with_shell("xdotool key Num_Lock")
@@ -803,8 +863,3 @@ awful.spawn.with_shell("nemo")
 --awful.spawn.with_shell("xmodmap ~/.Xmodmap")
 --awful.spawn.with_shell("~/scripts/startups/poly_start.sh")
 awful.spawn.with_shell("rclone mount Shri77_Photos: Pictures/g-photos/")
---awful.spawn.with_shell("xargs xwallpaper --stretch < ~/.cache/wall")
---awful.spawn.with_shell("~/.fehbg") -- set last saved feh wallpaper
---awful.spawn.with_shell("feh --randomize --bg-fill /usr/share/backgrounds/dtos-backgrounds/*") -- feh sets random wallpaper
---awful.spawn.with_shell("nitrogen --restore") -- if you prefer nitrogen to feh/xwallpaper
---

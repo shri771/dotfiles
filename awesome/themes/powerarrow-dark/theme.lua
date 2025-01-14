@@ -17,7 +17,7 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 local theme = {}
 theme.dir = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow-dark"
 --theme.wallpaper                                 = theme.dir .. "/wall.png"
-theme.font = "sans 10"
+theme.font = "sans 11"
 
 theme.fg_normal = "#FEFEFE"
 theme.fg_focus = "#32D6FF"
@@ -331,7 +331,8 @@ end
 local function pl(widget, bgcolor, padding)
 	return wibox.container.background(wibox.container.margin(widget, dpi(16), dpi(16)), bgcolor, theme.powerline_rl)
 end
-
+local systray = wibox.widget.systray()
+systray.icon_size = 60
 function theme.at_screen_connect(s)
 	-- Quake application
 	s.quake = lain.util.quake({ app = awful.util.terminal })
@@ -466,7 +467,8 @@ function theme.at_screen_connect(s)
 			),
 			arrow("#777E76", "alpha"),
 			--]]
-			wibox.widget.systray(),
+			systray,
+			--wibox.widget.systray(),
 		},
 	})
 end
