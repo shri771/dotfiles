@@ -332,7 +332,7 @@ local function pl(widget, bgcolor, padding)
 	return wibox.container.background(wibox.container.margin(widget, dpi(16), dpi(16)), bgcolor, theme.powerline_rl)
 end
 local systray = wibox.widget.systray()
-systray.icon_size = 60
+systray.icon_size = 34
 function theme.at_screen_connect(s)
 	-- Quake application
 	s.quake = lain.util.quake({ app = awful.util.terminal })
