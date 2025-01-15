@@ -567,10 +567,17 @@ for i = 1, 9 do
 		descr_move = { description = "move focused client to tag #", group = "tag" }
 		descr_toggle_focus = { description = "toggle focused client on tag #", group = "tag" }
 	end
+
+	-- Adjusting keys for tags 4, 5, and 6 to map to 7, 8, and 9
+	local adjusted_key = i
+	if i >= 4 and i <= 6 then
+		adjusted_key = i + 3
+	end
+
 	globalkeys = my_table.join(
 		globalkeys,
 		-- View tag only.
-		awful.key({ modkey }, "#" .. i + 9, function()
+		awful.key({ modkey }, "#" .. adjusted_key + 9, function()
 			local screen = awful.screen.focused()
 			local tag = screen.tags[i]
 			if tag then
@@ -578,7 +585,7 @@ for i = 1, 9 do
 			end
 		end, descr_view),
 		-- Toggle tag display.
-		awful.key({ modkey, ctrlkey }, "#" .. i + 9, function()
+		awful.key({ modkey, ctrlkey }, "#" .. adjusted_key + 9, function()
 			local screen = awful.screen.focused()
 			local tag = screen.tags[i]
 			if tag then
@@ -586,7 +593,7 @@ for i = 1, 9 do
 			end
 		end, descr_toggle),
 		-- Move client to tag.
-		awful.key({ modkey, "Shift" }, "#" .. i + 9, function()
+		awful.key({ modkey, "Shift" }, "#" .. adjusted_key + 9, function()
 			if client.focus then
 				local tag = client.focus.screen.tags[i]
 				if tag then
@@ -595,7 +602,7 @@ for i = 1, 9 do
 			end
 		end, descr_move),
 		-- Toggle tag on focused client.
-		awful.key({ modkey, ctrlkey, "Shift" }, "#" .. i + 9, function()
+		awful.key({ modkey, ctrlkey, "Shift" }, "#" .. adjusted_key + 9, function()
 			if client.focus then
 				local tag = client.focus.screen.tags[i]
 				if tag then
