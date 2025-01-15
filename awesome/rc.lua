@@ -271,6 +271,9 @@ globalkeys = my_table.join(
 	awful.key({ altkey }, "f", function()
 		awful.spawn("qalculate-gtk")
 	end, { description = "Launch Calculator", group = "hotkeys" }),
+	awful.key({ modkey }, "", function()
+		awful.spawn("qalculate-gtk")
+	end, { description = "Launch Calculator", group = "hotkeys" }),
 
 	awful.key({ modkey }, "b", function()
 		awful.spawn("brave")
@@ -307,11 +310,6 @@ globalkeys = my_table.join(
 		awful.spawn("rofi -show drun")
 	end, { description = "launch rofi", group = "launcher" }),
 
-	awful.key({ modkey }, "Tab", function()
-		awful.client.focus.byidx(1, function(c)
-			return c.floating
-		end)
-	end, { description = "cycle through floating clients", group = "client" }),
 	-- Dmscripts (Super + p followed by KEY)
 	awful.key({ modkey }, "p", function()
 		local grabber
@@ -812,7 +810,7 @@ local dracula_colors = {
 }
 
 -- Set default notification settings
-naughty.config.defaults.timeout = 5 -- Timeout for notifications
+naughty.config.defaults.timeout = 3 -- Timeout for notifications
 naughty.config.defaults.position = "bottom_right" -- Positioning at the bottom-right corner
 
 -- Set notification theme (background and foreground colors)
@@ -824,6 +822,7 @@ naughty.config.presets.normal = {
 	border_width = 1,
 	shape = naughty.config.presets.normal.shape,
 	opacity = 0.9, -- 10% transparency
+	width = 350, -- Fixed width
 }
 
 -- Position notifications with padding
