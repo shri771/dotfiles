@@ -23,11 +23,11 @@ theme.fg_normal = "#FEFEFE"
 theme.fg_focus = "#32D6FF"
 theme.fg_urgent = "#C83F"
 
-theme.bg_normal = "#222222"
-theme.bg_focus = "#1E2320"
-theme.bg_urgent = "#222222"
+theme.bg_normal = "#282a36"
+theme.bg_focus = "#282a36"
+theme.bg_urgent = "#282a36"
 theme.taglist_fg_focus = "#00CCFF"
-theme.tasklist_bg_focus = "#222222"
+theme.tasklist_bg_focus = "#282a36"
 theme.tasklist_fg_focus = "#00CCFF"
 
 theme.border_width = dpi(2)
