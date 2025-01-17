@@ -12,7 +12,7 @@ set EDITOR "nvim -t -a ''" # $EDITOR use Emacs in terminal
 set VISUAL "emacsclient -c -a emacs" # $VISUAL use Emacs in GUI mode
 set -Ux TERM xterm-256color
 set -U LC_CTYPE en_US.UTF-8
-
+eval ($HOME/.config/tmux/plugins/tmuxifier/bin/tmuxifier init - fish)
 ##local
 ##set -x LANG en_US.UTF-8
 
@@ -157,6 +157,42 @@ function org-search -d "send a search string to org-mode"
     printf $output
 end
 
+# Tmux Funcions #
+# Open aw config and thmes
+function txaw
+    # Check if "aw" session exists in Tmux
+    if tmux has-session -t aw ^/dev/null
+        # If the session exists, attach to it
+        tmux attach-session -t aw
+    else
+        # If the session doesn't exist, create it using Tmuxifier
+        if type -q tmuxifier
+            tmuxifier load-session aw
+        else
+            echo "Tmuxifier is not installed or not in your PATH"
+            return 1
+        end
+    end
+end
+
+# Open config files
+function txcon
+    # Check if "aw" session exists in Tmux
+    if tmux has-session -t cn ^/dev/null
+        # If the session exists, attach to it
+        tmux attach-session -t cn
+    else
+        # If the session doesn't exist, create it using Tmuxifier
+        if type -q tmuxifier
+            tmuxifier load-session cn
+        else
+            echo "Tmuxifier is not installed or not in your PATH"
+            return 1
+        end
+    end
+end
+
+
 ### END OF FUNCTIONS ###
 
 
@@ -180,7 +216,8 @@ alias vp='variety'
 alias n='nvim'
 alias imp='kitty +kitten icat'
 alias tpcn=' sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf'
-
+alias txcn='nvim ~/.config/tmux/tmux.conf'
+alias txs='nvim  /home/shri/.config/tmux/plugins/tmuxifier/layouts/'
 # vim and emacst
 alias emacs="emacsclient -c -a 'emacs'"
 alias em='/usr/bin/emacs -nw'
@@ -243,7 +280,6 @@ alias newtag='git tag -a'
 # tmux
 alias tx="tmux"
 alias txa="tmux a"
-alias txawcn="tmux a -t awconfig"
 
 # get error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
