@@ -8,8 +8,8 @@ set -U fish_user_paths $HOME/.bin $HOME/.local/bin $HOME/.config/emacs/bin $HOME
 ### EXPORT ###
 set fish_greeting # Supresses fish's intro message
 set TERM xterm-256color # Sets the terminal type
-set EDITOR "nvim -t -a ''" # $EDITOR use Emacs in terminal
-set VISUAL "emacsclient -c -a emacs" # $VISUAL use Emacs in GUI mode
+set -Ux EDITOR nvim
+set -Ux VISUAL nvim
 set -Ux TERM xterm-256color
 set -U LC_CTYPE en_US.UTF-8
 eval ($HOME/.config/tmux/plugins/tmuxifier/bin/tmuxifier init - fish)
@@ -156,6 +156,64 @@ function org-search -d "send a search string to org-mode"
     \"))")
     printf $output
 end
+
+# Fish Funcions #
+# Pushes git with a arugument
+function gph
+    # Check if at least two arguments are provided
+    if test (count $argv) -lt 2
+        echo "Usage: gph <file1> [file2 ...] <commit message>"
+        return 1
+    end
+
+    # Calculate the index of the last argument
+    set last_index (math (count $argv))
+
+    # Extract the commit message (last argument)
+    set commit_message $argv[$last_index]
+
+    # Extract the list of files (all but the last argument)
+    set files $argv[1..(math $last_index - 1)]
+
+    # Add the specified files
+    git add $files
+
+    # Commit with the provided message
+    git commit -m "$commit_message"
+    echo "============================================================"
+
+    # Push the changes
+    git push
+    echo "============================================================"
+
+    # Show the git status
+    git status
+end
+
+# Pushes all updates# Pushes git with a arugument
+function gpha
+    # Stage all changes
+    git add .
+
+    # Use the provided commit message or prompt if none is provided
+    if test (count $argv) -gt 0
+        set commit_message $argv[1]
+    else
+        echo "Enter commit message:"
+        read commit_message
+    end
+
+    # Commit the changes with the provided message
+    git commit -m "$commit_message"
+    
+    echo "====================================================="
+    # Push the changes to the remote repository
+    git push
+    echo "====================================================="
+    # Display the current Git status
+    git status
+end
+
 
 # Tmux Funcions #
 # Open aw config and thmes
