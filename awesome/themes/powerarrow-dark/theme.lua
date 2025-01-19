@@ -30,9 +30,9 @@ theme.taglist_fg_focus = "#00CCFF"
 theme.tasklist_bg_focus = "#282a36"
 theme.tasklist_fg_focus = "#00CCFF"
 
-theme.border_width = dpi(2)
-theme.border_normal = "#000000"
-theme.border_focus = "#ffcd33"
+theme.border_width = dpi(3)
+theme.border_normal = "#00000088"
+theme.border_focus = "#aaaaff"
 theme.border_marked = "#91231c"
 theme.titlebar_bg_focus = "#3F3F3F"
 theme.titlebar_bg_normal = "#3F3F3F"

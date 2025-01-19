@@ -353,21 +353,6 @@ globalkeys = my_table.join(
 		end)
 	end, { description = "followed by KEY", group = "Dmscripts" }),
 
-	-- Tag browsing with modkey
-	awful.key({ altkey }, "Escape", awful.tag.history.restore, { description = "go back", group = "tag" }),
-
-	-- Tag browsing ALT+TAB (ALT+SHIFT+TAB)
-	awful.key({ altkey }, "Tab", awful.tag.viewnext, { description = "view next", group = "tag" }),
-	awful.key({ altkey, "Shift" }, "Tab", awful.tag.viewprev, { description = "view previous", group = "tag" }),
-
-	-- Default client focus
-	awful.key({ modkey }, "j", function()
-		awful.client.focus.byidx(1)
-	end, { description = "Focus next by index", group = "client" }),
-	awful.key({ modkey }, "k", function()
-		awful.client.focus.byidx(-1)
-	end, { description = "Focus previous by index", group = "client" }),
-
 	-- By direction client focus
 	awful.key({ altkey }, "j", function()
 		awful.client.focus.global_bydirection("down")
@@ -421,17 +406,17 @@ globalkeys = my_table.join(
 	awful.key({ altkey, ctrlkey }, "k", function()
 		lain.util.useless_gaps_resize(-1)
 	end, { description = "decrement useless gaps", group = "tag" }),
-
+	-- Resize window
 	awful.key({ modkey }, "l", function()
 		awful.tag.incmwfact(0.05)
 	end, { description = "increase master width factor", group = "layout" }),
 	awful.key({ modkey }, "h", function()
 		awful.tag.incmwfact(-0.05)
 	end, { description = "decrease master width factor", group = "layout" }),
-	awful.key({ modkey }, "i", function()
+	awful.key({ modkey }, "k", function()
 		awful.client.incwfact(0.05)
 	end, { description = "increase vertical factor", group = "layout" }),
-	awful.key({ modkey }, "o", function()
+	awful.key({ modkey }, "j", function()
 		awful.client.incwfact(-0.05)
 	end, { description = "decrease vertical factor", group = "layout" }),
 	awful.key({ modkey, "Shift" }, "Up", function()

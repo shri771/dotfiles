@@ -37,6 +37,9 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
+-- Disable folding
+vim.opt.foldenable = false
+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
@@ -67,7 +70,12 @@ vim.opt.breakindent = true
 
 -- Save undo history
 vim.opt.undofile = true
-
+vim.opt.undodir = vim.fn.stdpath 'config' .. '/undo'
+vim.o.undolevels = 10000
+-- Make sure the undo directory exists
+if not vim.fn.isdirectory(vim.fn.stdpath 'config' .. '/undo') then
+  vim.fn.mkdir(vim.fn.stdpath 'config' .. '/undo', 'p')
+end
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -101,7 +109,22 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 -- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
+
+-- Unbind Ctrl+C and Ctrl+V
+vim.keymap.set({ 'n', 'v', 'i' }, '<C-c>', '<Nop>')
+vim.keymap.set({ 'n', 'v', 'i' }, '<C-v>', '<Nop>')
+
+-- Bind Ctrl+C to copy to system clipboard
+vim.keymap.set('v', '<C-c>', '"+y', { noremap = true, silent = true }) -- Copy in visual mode
+vim.keymap.set('n', '<C-c>', '"+yy', { noremap = true, silent = true }) -- Copy the current line in normal mode
+vim.keymap.set('i', '<C-c>', '<Esc>"+yy', { noremap = true, silent = true }) -- Copy the current line in insert mode
+
+-- Bind Ctrl+V to paste from system clipboard
+vim.keymap.set({ 'n', 'v' }, '<C-v>', '"+p', { noremap = true, silent = true }) -- Paste clipboard content
+vim.keymap.set('i', '<C-v>', '<C-o>"+p', { noremap = true, silent = true })
+-- Reassign the original Ctrl+V behavior to Ctrl+Shift+V
+vim.keymap.set({ 'n', 'v' }, '<C-S-v>', '<C-v>', { noremap = true, silent = true }) -- In normal/visual mode
+vim.keymap.set('i', '<C-S-v>', '<C-r>+', { noremap = true, silent = true }) -- In insert mode, paste register content
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
@@ -119,10 +142,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- TIP: Disable arrow keys in normal mode
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR')
+vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -148,7 +171,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- Saves the currnet postion in file
+-- Saves the currnet postion of mouse in file
 vim.api.nvim_create_autocmd('BufReadPost', {
   pattern = { '*' },
   callback = function()
@@ -160,7 +183,7 @@ vim.api.nvim_create_autocmd('BufReadPost', {
   end,
 })
 
--- Snc the terminal theme with nvim
+-- Sync the terminal theme with nvim
 vim.api.nvim_create_autocmd({ 'UIEnter', 'ColorScheme' }, {
   callback = function()
     local normal_bg = vim.api.nvim_get_hl_by_name('Normal', true).background
