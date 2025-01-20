@@ -8,7 +8,7 @@ require("awful.autofocus")
 awful.util.spawn("xprop -root -f _NET_NUMBER_OF_DESKTOPS 32c -set _NET_NUMBER_OF_DESKTOPS 5")
 
 -- Widget and layout library
---local wibox = require("wibox")
+local wibox = require("wibox")
 
 -- Theme handling library
 local beautiful = require("beautiful")
@@ -271,9 +271,9 @@ globalkeys = my_table.join(
 	awful.key({ altkey }, "f", function()
 		awful.spawn("qalculate-gtk")
 	end, { description = "Launch Calculator", group = "hotkeys" }),
-	awful.key({ modkey }, "", function()
-		awful.spawn("qalculate-gtk")
-	end, { description = "Launch Calculator", group = "hotkeys" }),
+	awful.key({ modkey }, "e", function()
+		awful.spawn("kcolorchooser")
+	end, { description = "Launch kcolor", group = "hotkeys" }),
 
 	awful.key({ modkey }, "b", function()
 		awful.spawn("brave")
@@ -406,6 +406,7 @@ globalkeys = my_table.join(
 	awful.key({ altkey, ctrlkey }, "k", function()
 		lain.util.useless_gaps_resize(-1)
 	end, { description = "decrement useless gaps", group = "tag" }),
+
 	-- Resize window
 	awful.key({ modkey }, "l", function()
 		awful.tag.incmwfact(0.05)
@@ -788,7 +789,6 @@ client.connect_signal("property::maximized", border_adjust)
 client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
 end)
---sl
 
 -- Dracula color scheme
 local dracula_colors = {
@@ -814,7 +814,7 @@ naughty.config.presets.normal = {
 	border_width = 1,
 	shape = naughty.config.presets.normal.shape,
 	opacity = 0.9, -- 10% transparency
-	width = 350, -- Fixed width
+	width = 400, -- Fixed width
 }
 
 -- Position notifications with padding
@@ -829,7 +829,7 @@ naughty.config.presets.low = {
 	border_width = 1,
 	shape = naughty.config.presets.normal.shape,
 	opacity = 0.9, -- 10% transparency
-	timeout = 2,
+	timeout = 3,
 	position = "bottom_right",
 	width = 400, -- Fixed width like GNOME notifications
 	height = nil, -- Dynamic height as per the content

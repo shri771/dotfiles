@@ -276,6 +276,7 @@ alias imp='kitty +kitten icat'
 alias tpcn=' sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf'
 alias txcn='nvim ~/.config/tmux/tmux.conf'
 alias txs='nvim  /home/shri/.config/tmux/plugins/tmuxifier/layouts/'
+
 # vim and emacst
 alias emacs="emacsclient -c -a 'emacs'"
 alias em='/usr/bin/emacs -nw'
