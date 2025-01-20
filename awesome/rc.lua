@@ -241,9 +241,7 @@ root.buttons(my_table.join(
 
 globalkeys = my_table.join(
 
-	-- {{{ Personal keybindings
-
-	-- Awesome keybindings
+	-- Launcher
 	awful.key({ modkey }, "Return", function()
 		awful.spawn(terminal)
 	end, { description = "Launch terminal", group = "awesome" }),
@@ -274,7 +272,6 @@ globalkeys = my_table.join(
 	awful.key({ modkey }, "e", function()
 		awful.spawn("kcolorchooser")
 	end, { description = "Launch kcolor", group = "hotkeys" }),
-
 	awful.key({ modkey }, "b", function()
 		awful.spawn("brave")
 	end, { description = "Launch brave", group = "awesome" }),
@@ -399,15 +396,13 @@ globalkeys = my_table.join(
 			client.focus:raise()
 		end
 	end, { description = "go back", group = "client" }),
-	-- On the fly useless gaps change
-	awful.key({ altkey, ctrlkey }, "j", function()
-		lain.util.useless_gaps_resize(1)
-	end, { description = "increment useless gaps", group = "tag" }),
+
+	-- On the fly ement useless gaps", group = "tag" }),
 	awful.key({ altkey, ctrlkey }, "k", function()
 		lain.util.useless_gaps_resize(-1)
 	end, { description = "decrement useless gaps", group = "tag" }),
 
-	-- Resize window
+	-- Resize window by vim motion
 	awful.key({ modkey }, "l", function()
 		awful.tag.incmwfact(0.05)
 	end, { description = "increase master width factor", group = "layout" }),
@@ -420,13 +415,14 @@ globalkeys = my_table.join(
 	awful.key({ modkey }, "j", function()
 		awful.client.incwfact(-0.05)
 	end, { description = "decrease vertical factor", group = "layout" }),
+
+	-- Change layout
 	awful.key({ modkey, "Shift" }, "Up", function()
 		awful.tag.incnmaster(1, nil, true)
 	end, { description = "increase the number of master clients", group = "layout" }),
 	awful.key({ modkey, "Shift" }, "Down", function()
 		awful.tag.incnmaster(-1, nil, true)
 	end, { description = "decrease the number of master clients", group = "layout" }),
-
 	awful.key({ modkey, "Shift" }, "h", function()
 		awful.tag.incnmaster(1, nil, true)
 	end, { description = "increase the number of master clients by ", group = "layout" }),
@@ -541,9 +537,7 @@ clientkeys = my_table.join(
 	end, { description = "maximize", group = "client" })
 )
 
--- Bind all key numbers to tags.
--- Be careful: we use keycodes to make it works on any keyboard layout.
--- This should map on the top row of your keyboard, usually 1 to 9.
+-- Bind tags to shortcut's
 for i = 1, 9 do
 	-- Hack to only show tags 1 and 9 in the shortcut window (mod+s)
 	local descr_view, descr_toggle, descr_move, descr_toggle_focus
@@ -617,7 +611,7 @@ clientbuttons = gears.table.join(
 -- Set keys
 root.keys(globalkeys)
 
--- Rules to apply to new clients (through the "manage" signal).
+-- Rules to apply to new clients
 awful.rules.rules = {
 	-- All clients will match this rule.
 	{
