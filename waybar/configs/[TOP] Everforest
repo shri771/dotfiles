@@ -18,7 +18,7 @@
 //"margin-right": 8,
 
 "modules-left": [
-	"hyprland/workspaces#rw",
+	"hyprland/workspaces#cam",
 //	"mpris",
 	"tray",
 	],

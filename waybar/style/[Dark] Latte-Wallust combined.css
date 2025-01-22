@@ -107,7 +107,7 @@ tooltip {
 }
 
 #workspaces button.active {
-    color: #ffd700;
+    color: #00CCFF;
     border-radius: 50%;
     background-color: black;
     border-radius: 15px 15px 15px 15px;
@@ -122,12 +122,12 @@ tooltip {
 }
 
 #workspaces button.urgent {
-    color: #11111b;
+    color: #ffd700;
     border-radius: 10px;
 }
 
 #workspaces button:hover {
-    color: #ffd700;
+    color: #00CCFF;
     border-radius: 10px;
  	padding-left: 2px;
     padding-right: 2px;
