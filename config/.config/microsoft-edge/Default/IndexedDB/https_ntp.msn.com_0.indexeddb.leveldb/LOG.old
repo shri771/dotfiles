@@ -1,6 +1,0 @@
-2025/01/04-02:13:20.884 2c02 Creating DB /home/shri/.config/microsoft-edge/Default/IndexedDB/https_ntp.msn.com_0.indexeddb.leveldb since it was missing.
-2025/01/04-02:13:20.889 2c02 Reusing MANIFEST /home/shri/.config/microsoft-edge/Default/IndexedDB/https_ntp.msn.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/01/04-02:37:15.661 2c04 Level-0 table #5: started
-2025/01/04-02:37:15.663 2c04 Level-0 table #5: 6492 bytes OK
-2025/01/04-02:37:15.667 2c04 Delete type=0 #3
-2025/01/04-02:37:15.667 2c04 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

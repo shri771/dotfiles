@@ -1,6 +1,0 @@
-2024/12/28-06:38:52.656 a20 Reusing MANIFEST /home/shri/.config/notion-calendar-electron/Local Storage/leveldb/MANIFEST-000001
-2024/12/28-06:38:52.661 a20 Recovering log #4
-2024/12/28-06:38:52.662 a20 Reusing old log /home/shri/.config/notion-calendar-electron/Local Storage/leveldb/000004.log 
-2024/12/28-07:18:20.637 a20 Level-0 table #8: started
-2024/12/28-07:18:20.644 a20 Level-0 table #8: 27553 bytes OK
-2024/12/28-07:18:20.649 a20 Delete type=0 #4

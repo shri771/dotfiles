@@ -1,6 +1,0 @@
-2025/01/04-13:04:46.397 29cfc Creating DB /home/shri/.config/BraveSoftware/Brave-Browser/Profile 1/IndexedDB/https_www.hotstar.com_0.indexeddb.leveldb since it was missing.
-2025/01/04-13:04:46.402 29cfc Reusing MANIFEST /home/shri/.config/BraveSoftware/Brave-Browser/Profile 1/IndexedDB/https_www.hotstar.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/01/04-13:04:46.413 29cfe Level-0 table #5: started
-2025/01/04-13:04:46.417 29cfe Level-0 table #5: 1495 bytes OK
-2025/01/04-13:04:46.420 29cfe Delete type=0 #3
-2025/01/04-13:04:46.421 29cfd Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
