@@ -5,5 +5,5 @@ configuration {
  show-icons: true;  
 }
 
-@theme "~/.config/rofi/simple-tokyonight.rasi"
+@theme "~/.config/rofi/themes/simple-tokyonight.rasi"
 
