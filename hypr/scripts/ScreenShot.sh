@@ -1,5 +1,4 @@
 #!/bin/bash
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # Screenshots scripts
 
 iDIR="$HOME/.config/swaync/icons"
@@ -22,8 +21,7 @@ notify_cmd_shot_win="${notify_cmd_base} -i ${iDIR}/picture.png "
 notify_view() {
     if [[ "$1" == "active" ]]; then
         if [[ -e "${active_window_path}" ]]; then
-			"${sDIR}/Sounds.sh" --screenshot        
-            resp=$(timeout 5 ${notify_cmd_shot_win} " Screenshot of:" " ${active_window_class} Saved.")
+            resp=$(timeout 1 ${notify_cmd_shot_win} " Screenshot of:" " ${active_window_class} Saved.")
             case "$resp" in
 				action1)
 					xdg-open "${active_window_path}" &
@@ -34,11 +32,9 @@ notify_view() {
 			esac
         else
             ${notify_cmd_shot} " Screenshot of:" " ${active_window_class} NOT Saved."
-            "${sDIR}/Sounds.sh" --error
         fi
 
     elif [[ "$1" == "swappy" ]]; then
-		"${sDIR}/Sounds.sh" --screenshot
 		resp=$(${notify_cmd_shot} " Screenshot:" " Captured by Swappy")
 		case "$resp" in
 			action1)
@@ -52,8 +48,7 @@ notify_view() {
     else
         local check_file="${dir}/${file}"
         if [[ -e "$check_file" ]]; then
-            "${sDIR}/Sounds.sh" --screenshot
-            resp=$(timeout 5 ${notify_cmd_shot} " Screenshot" " Saved")
+            resp=$(timeout 1 ${notify_cmd_shot} " Screenshot" " Saved")
 			case "$resp" in
 				action1)
 					xdg-open "${check_file}" &
@@ -64,7 +59,6 @@ notify_view() {
 			esac
         else
             ${notify_cmd_shot} " Screenshot" " NOT Saved"
-            "${sDIR}/Sounds.sh" --error
         fi
     fi
 }

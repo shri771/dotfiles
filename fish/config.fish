@@ -1,4 +1,3 @@
-
 ### ADDING TO THE PATH
 # First line removes the path; second line sets it.  Without the first line,
 # your path gets massive and fish becomes very slow.
@@ -13,6 +12,8 @@ set -Ux VISUAL nvim
 set -Ux TERM xterm-256color
 set -U LC_CTYPE en_US.UTF-8
 eval ($HOME/.config/tmux/plugins/tmuxifier/bin/tmuxifier init - fish)
+export XCURSOR_THEME=Bibata-Modern-Classic
+export XCURSOR_SIZE=22
 ##local
 ##set -x LANG en_US.UTF-8
 
@@ -42,6 +43,14 @@ set fish_color_param brcyan
 
 ### FUNCTIONS ###
 
+# Makes the cursor a beam and blinks 
+function set_cursor_style --on-event fish_preexec
+    printf "\e[6 q"  # Set beam cursor before running a command
+end
+
+function restore_cursor_style --on-event fish_postexec
+    printf "\e[5 q"  # Restore blinking cursor after command runs
+end
 # Functions needed for !! and !$
 function __history_previous_command
     switch (commandline -t)
@@ -157,7 +166,24 @@ function org-search -d "send a search string to org-mode"
     printf $output
 end
 
-# Fish Funcions #
+# Copies the file to Backup dir
+function ba
+    if test (count $argv) -eq 0
+        echo "Usage: bak <file>"
+        return 1
+    end
+
+    set backup_dir ~/backups
+
+    # Create the backup directory if it doesn't exist
+    mkdir -p $backup_dir
+
+    # Copy the file or directory forcefully and recursively
+    cp -fr $argv $backup_dir
+
+    echo "Backup of $argv completed to $backup_dir"
+end
+# Git Funcions #
 # Pushes git with a arugument
 function gph
     # Check if at least two arguments are provided

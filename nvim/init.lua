@@ -110,21 +110,20 @@ vim.opt.scrolloff = 10
 
 -- [[ Basic Keymaps ]]
 
--- Unbind Ctrl+C and Ctrl+V
+-- Unbind   Ctrl+V  and Ctrl+C
 vim.keymap.set({ 'n', 'v', 'i' }, '<C-c>', '<Nop>')
 vim.keymap.set({ 'n', 'v', 'i' }, '<C-v>', '<Nop>')
 
--- Bind Ctrl+C to copy to system clipboard
-vim.keymap.set('v', '<C-c>', '"+y', { noremap = true, silent = true }) -- Copy in visual mode
-vim.keymap.set('n', '<C-c>', '"+yy', { noremap = true, silent = true }) -- Copy the current line in normal mode
-vim.keymap.set('i', '<C-c>', '<Esc>"+yy', { noremap = true, silent = true }) -- Copy the current line in insert mode
+-- Bind Ctrl+V to paste from the system clipboard before the cursor (normal and visual mode)
+vim.keymap.set({ 'n', 'v' }, '<C-v>', '"+P', { noremap = true, silent = true }) -- Paste before cursor in normal/visual mode
+vim.keymap.set('i', '<C-v>', '<C-o>"+P', { noremap = true, silent = true }) -- Paste before cursor in insert mode
 
--- Bind Ctrl+V to paste from system clipboard
-vim.keymap.set({ 'n', 'v' }, '<C-v>', '"+p', { noremap = true, silent = true }) -- Paste clipboard content
-vim.keymap.set('i', '<C-v>', '<C-o>"+p', { noremap = true, silent = true })
--- Reassign the original Ctrl+V behavior to Ctrl+Shift+V
-vim.keymap.set({ 'n', 'v' }, '<C-S-v>', '<C-v>', { noremap = true, silent = true }) -- In normal/visual mode
-vim.keymap.set('i', '<C-S-v>', '<C-r>+', { noremap = true, silent = true }) -- In insert mode, paste register content
+-- Bind Ctrl+C to Visual Block mode (what Ctrl+V does by default)
+vim.keymap.set('n', '<C-c>', '<Esc><C-v>', { noremap = true, silent = true }) -- Enter Visual Block mode in Normal mode
+
+-- Preserve default Ctrl+C behavior in insert and command mode
+vim.keymap.set('i', '<C-c>', '<Esc>', { noremap = true, silent = true }) -- Acts as Escape in Insert mode
+vim.keymap.set('c', '<C-c>', '<Esc>', { noremap = true, silent = true }) -- Acts as Escape in Command mode
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
