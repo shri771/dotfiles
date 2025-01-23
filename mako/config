@@ -1,0 +1,9 @@
+# Notification position
+anchor = bottom-right
+
+# Padding from the edges (20px from the right, 50px from the bottom)
+margin = 20,50
+
+# Default timeout for notifications (in milliseconds)
+default-timeout = 2000
+
