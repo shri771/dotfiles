@@ -36,8 +36,8 @@ vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
+-- Disable foiding
 
--- Disable folding
 vim.opt.foldenable = false
 
 -- [[ Setting options ]]
@@ -114,9 +114,12 @@ vim.opt.scrolloff = 10
 vim.keymap.set({ 'n', 'v', 'i' }, '<C-c>', '<Nop>')
 vim.keymap.set({ 'n', 'v', 'i' }, '<C-v>', '<Nop>')
 
+-- Prevent changed text to clipboard
+vim.keymap.set('n', 'c', '"_c', { noremap = true })
+
 -- Bind Ctrl+V to paste from the system clipboard before the cursor (normal and visual mode)
-vim.keymap.set({ 'n', 'v' }, '<C-v>', '"+P', { noremap = true, silent = true }) -- Paste before cursor in normal/visual mode
-vim.keymap.set('i', '<C-v>', '<C-o>"+P', { noremap = true, silent = true }) -- Paste before cursor in insert mode
+vim.keymap.set({ 'n', 'v' }, '<C-v>', '"+P', { noremap = true, silent = true })
+vim.keymap.set('i', '<C-v>', '<C-o>"+P', { noremap = true, silent = true })
 
 -- Bind Ctrl+C to Visual Block mode (what Ctrl+V does by default)
 vim.keymap.set('n', '<C-c>', '<Esc><C-v>', { noremap = true, silent = true }) -- Enter Visual Block mode in Normal mode
