@@ -9,7 +9,7 @@ plugins = [
 animation = "fromTop"
 command = "kitty --class kitty-dropterm"
 class = "kitty-dropterm"
-size = "75% 60%"
+size = "60% 60%"
 
 [scratchpads.whatsie]
 command = "whatsie"
