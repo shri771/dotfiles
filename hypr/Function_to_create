@@ -1,0 +1,15 @@
+function txaw
+    # Check if "aw" session exists in Tmux
+    if tmux has-session -t aw ^/dev/null
+        # If the session exists, attach to it
+        tmux attach-session -t aw
+    else
+        # If the session doesn't exist, create it using Tmuxifier
+        if type -q tmuxifier
+            tmuxifier load-session aw
+        else
+            echo "Tmuxifier is not installed or not in your PATH"
+            return 1
+        end
+    end
+end
