@@ -173,14 +173,17 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- Saves the currnet postion of mouse in file
+-- Saves the current cursor position in a file, including files opened via file search
 vim.api.nvim_create_autocmd('BufReadPost', {
   pattern = { '*' },
   callback = function()
     local ft = vim.bo.filetype
-    local last_known_line = vim.api.nvim_buf_get_mark(0, '"')[1]
-    if not (ft:match 'commit' and ft:match 'rebase') and last_known_line > 1 and last_known_line <= vim.api.nvim_buf_line_count(0) then
-      vim.api.nvim_feedkeys([[g`"]], 'nx', false)
+    local last_known_line, last_known_col = unpack(vim.api.nvim_buf_get_mark(0, '"'))
+
+    -- Check if the file type is not 'commit' or 'rebase' and the last position is valid
+    if not (ft:match 'commit' or ft:match 'rebase') and last_known_line > 0 and last_known_line <= vim.api.nvim_buf_line_count(0) then
+      -- Move the cursor to the last position, preserving both line and column
+      vim.api.nvim_win_set_cursor(0, { last_known_line, last_known_col })
     end
   end,
 })
