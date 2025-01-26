@@ -168,22 +168,30 @@ end
 
 # Copies the file to Backup dir
 function ba
+    # Ensure at least one argument is provided
     if test (count $argv) -eq 0
-        echo "Usage: bak <file>"
+        echo "Usage: ba <file1> [file2 ...]"
         return 1
     end
 
-    set backup_dir ~/backups
+    # Set backup directory
+    set -l backup_dir ~/backups
 
     # Create the backup directory if it doesn't exist
     mkdir -p $backup_dir
 
-    # Copy the file or directory forcefully and recursively
-    cp -fr $argv $backup_dir
-
-    echo "Backup of $argv completed to $backup_dir"
+    # Iterate over arguments to copy each file or directory
+    for file in $argv
+        if test -e $file
+            cp -a $file $backup_dir
+            echo "Backup of $file completed to $backup_dir"
+        else
+            echo "Error: $file does not exist" >&2
+        end
+    end
 end
-# Git Funcions #
+
+## Git Funcions ##
 # Pushes git with a arugument
 function gph
     # Ensure at least two arguments are provided
@@ -238,6 +246,34 @@ function gpha
     echo "============================================================"
     git status
 end
+
+function ups
+    echo "Refreshing Arch Linux mirrors for best performance..."
+    if not reflector --latest 10 --sort rate --protocol https --save ~/mirrorlist
+        echo "Error: Failed to refresh mirrors using reflector" >&2
+        return 1
+    end
+    echo "Mirrors updated successfully. Note: Changes saved to ~/mirrorlist; root privileges are required to apply them."
+
+    echo "Synchronizing package databases (read-only)..."
+    if not pacman -Sy --dbpath ~/.cache/pacman/db
+        echo "Error: Failed to synchronize package databases (read-only)" >&2
+        return 1
+    end
+
+    echo "Checking for security updates (read-only)..."
+    set security_updates (checkupdates | grep -Ei 'linux|kernel|openssl|gpg|glibc|systemd|crypt' | awk '{print $1}')
+    if test (count $security_updates) -eq 0
+        echo "No security updates available."
+        return 0
+    end
+
+    echo "The following security updates are available:"
+    echo $security_updates
+
+    echo "Note: You need root privileges to apply updates. Use 'sudo pacman -S <packages>' to install them."
+end
+
 
 ## Open config in nvim ##
 function open_dotfile
@@ -359,7 +395,6 @@ alias ..='cd ..'
 alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
-alias cdl='cd && ls'
 
 #path for con
 alias tpcn=' sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf'
