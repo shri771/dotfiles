@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
-# Script parses /proc/uptime to get the system uptime
-# and prints it in a human-readable format
-# This is a workaround for system where `uptime` command is taken from coreutils
-# where `uptime -p` is not supported
+# Script to get system uptime in a human-readable format
 
 if [[ -r /proc/uptime ]]; then
     s=$(< /proc/uptime)
@@ -12,22 +9,23 @@ else
     exit 1
 fi
 
-d="$((s / 60 / 60 / 24)) days"
-h="$((s / 60 / 60 % 24)) hours"
-m="$((s / 60 % 60)) minutes"
+d=$((s / 60 / 60 / 24))
+h=$((s / 60 / 60 % 24))
+m=$((s / 60 % 60))
 
-# Remove plural if < 2.
-((${d/ *} == 1)) && d=${d/s}
-((${h/ *} == 1)) && h=${h/s}
-((${m/ *} == 1)) && m=${m/s}
+# Convert to human-readable format
+uptime=""
+if ((d > 0)); then
+    uptime+="$d days"
+    ((h > 0)) && uptime+=", $h hours"
+elif ((h > 0)); then
+    uptime+="$h hours"
+fi
+if ((d == 0 && h == 0)); then
+    uptime+="$m minutes"
+fi
 
-# Hide empty fields.
-((${d/ *} == 0)) && unset d
-((${h/ *} == 0)) && unset h
-((${m/ *} == 0)) && unset m
-
-uptime=${d:+$d, }${h:+$h, }$m
+# Trim trailing comma and space
 uptime=${uptime%', '}
-uptime=${uptime:-$s seconds}
 
 echo "up $uptime"
