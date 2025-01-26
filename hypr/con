@@ -1,0 +1,6 @@
+alias awcn='nvim ~/.config/awesome/rc.lua'
+alias nvcn='nvim ~/.config/nvim/init.lua'
+alias fhcn='nvim ~/.config/fish/config.fish'
+alias pycn='nvim .config/polybar/config.ini'
+alias txcn='nvim ~/.config/tmux/tmux.conf'
+alias txs='nvim  /home/shri/.config/tmux/plugins/tmuxifier/layouts/'

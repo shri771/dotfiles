@@ -186,91 +186,162 @@ end
 # Git Funcions #
 # Pushes git with a arugument
 function gph
-    # Check if at least two arguments are provided
+    # Ensure at least two arguments are provided
     if test (count $argv) -lt 2
         echo "Usage: gph <file1> [file2 ...] <commit message>"
         return 1
     end
 
-    # Calculate the index of the last argument
-    set last_index (math (count $argv))
+    # Extract the commit message (last argument) and files (all but last)
+    set commit_message $argv[-1]
+    set files $argv[1..-2]
 
-    # Extract the commit message (last argument)
-    set commit_message $argv[$last_index]
-
-    # Extract the list of files (all but the last argument)
-    set files $argv[1..(math $last_index - 1)]
-
-    # Add the specified files
+    # Add files, commit, push, and display status
     git add $files
+    if not git commit -m "$commit_message"
+        echo "Failed to commit changes" >&2
+        return 1
+    end
 
-    # Commit with the provided message
-    git commit -m "$commit_message"
     echo "============================================================"
-
-    # Push the changes
-    git push
+    if not git push
+        echo "Failed to push changes" >&2
+        return 1
+    end
     echo "============================================================"
-
-    # Show the git status
     git status
 end
 
-# Pushes all updates# Pushes git with a arugument
 function gpha
     # Stage all changes
     git add .
 
-    # Use the provided commit message or prompt if none is provided
+    # Get the commit message (from arguments or prompt)
     if test (count $argv) -gt 0
         set commit_message $argv[1]
     else
-        echo "Enter commit message:"
+        echo -n "Enter commit message: "
         read commit_message
     end
 
-    # Commit the changes with the provided message
-    git commit -m "$commit_message"
-    
-    echo "====================================================="
-    # Push the changes to the remote repository
-    git push
-    echo "====================================================="
-    # Display the current Git status
+    # Commit and push changes
+    if not git commit -m "$commit_message"
+        echo "Failed to commit changes" >&2
+        return 1
+    end
+
+    echo "============================================================"
+    if not git push
+        echo "Failed to push changes" >&2
+        return 1
+    end
+    echo "============================================================"
     git status
 end
 
+## Open config in nvim ##
+function open_dotfile
+    # Generalized function for handling dotfiles
+    # Arguments: target_directory, target_file
+    # If no file is passed, opens the target directory in Neovim
+    set target_directory $argv[1]
+    set target_file $argv[2]
 
-# Tmux Funcions #
-# Open aw config and thmes
-function txaw
-    # Check if "aw" session exists in Tmux
-    if tmux has-session -t aw ^/dev/null
-        # If the session exists, attach to it
-        tmux attach-session -t aw
-    else
-        # If the session doesn't exist, create it using Tmuxifier
-        if type -q tmuxifier
-            tmuxifier load-session aw
+    if test (pwd) = $target_directory
+        if test -n "$target_file"
+            nvim $target_directory/$target_file
         else
-            echo "Tmuxifier is not installed or not in your PATH"
-            return 1
+            nvim .
+        end
+    else
+        cd $target_directory
+        if test -n "$target_file"
+            nvim $target_file
+        else
+            nvim .
         end
     end
 end
 
+# Aliases for specific dotfile operations using the generalized function
+function hycn
+    open_dotfile ~/dotfiles/hypr
+end
+
+function awcn
+    open_dotfile ~/dotfiles/awesome rc.lua
+end
+
+function nvcn
+    open_dotfile ~/dotfiles/nvim init.lua
+end
+
+function fhcn
+    open_dotfile ~/dotfiles/fish config.fish
+end
+
+function pycn
+    open_dotfile ~/dotfiles/polybar config.ini
+end
+
+function txcn
+    open_dotfile ~/dotfiles/tmux tmux.conf
+end
+
+function txs
+    open_dotfile ~/dotfiles/tmux/plugins/tmuxifier/layouts
+end
+
+## End of Open Config ##
+
+# Tmux Funcions #
+# Open aw config and thmes
+function txaw
+    # Check if the "aw" session exists in tmux
+    if tmux has-session -t aw ^/dev/null
+        tmux attach-session -t aw
+        return 0
+    end
+
+    # Run Neovim immediately
+    nvim +q
+
+    # Check if Tmuxifier is installed and load the session
+    if type -q tmuxifier
+        tmuxifier load-session aw; or begin
+            echo "Failed to load Tmuxifier session 'aw'" >&2
+            return 1
+        end
+    else
+        echo "Tmuxifier is not installed or not in your PATH" >&2
+        return 1
+    end
+end
+
 # Open config files
-function txcon
-    # Check if "aw" session exists in Tmux
+function txc
+    # Check if tmux session "cn" exists
     if tmux has-session -t cn ^/dev/null
-        # If the session exists, attach to it
+        # Attach to the session if it exists
         tmux attach-session -t cn
     else
-        # If the session doesn't exist, create it using Tmuxifier
+        # Run Neovim immediately
+        nvim +q
+
+        # Check if Tmuxifier is installed
         if type -q tmuxifier
-            tmuxifier load-session cn
+            # Load the Tmuxifier session
+            if tmuxifier load-session cn
+                # Success case: Do nothing (optional log can go here if needed)
+                return 0
+            else
+                # Error in loading the session
+                echo "Failed to load Tmuxifier session 'cn'" >&2
+                return 1
+            end
         else
-            echo "Tmuxifier is not installed or not in your PATH"
+            # Tmuxifier not found in PATH
+            echo "Tmuxifier is not installed or not in your PATH" >&2
             return 1
         end
     end
@@ -291,17 +362,11 @@ alias .5='cd ../../../../..'
 alias cdl='cd && ls'
 
 #path for con
-alias awcn='nvim ~/.config/awesome/rc.lua'
-alias nvcn='nvim ~/.config/nvim/init.lua'
-alias fhcn='nvim ~/.config/fish/config.fish'
-alias pycn='nvim .config/polybar/config.ini'
+alias tpcn=' sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf'
 alias vn='variety --next'
 alias vp='variety'
 alias n='nvim'
 alias imp='kitty +kitten icat'
-alias tpcn=' sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf'
-alias txcn='nvim ~/.config/tmux/tmux.conf'
-alias txs='nvim  /home/shri/.config/tmux/plugins/tmuxifier/layouts/'
 
 # vim and emacst
 alias emacs="emacsclient -c -a 'emacs'"
