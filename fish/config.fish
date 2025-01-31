@@ -328,6 +328,10 @@ function txs
     open_dotfile ~/dotfiles/tmux/plugins/tmuxifier/layouts
 end
 
+function ktcn
+    open_dotfile ~/dotfiles/kitty
+end
+
 ## End of Open Config ##
 
 # Tmux Funcions #
@@ -337,20 +341,21 @@ function txaw
     if tmux has-session -t aw ^/dev/null
         tmux attach-session -t aw
         return 0
-    end
+    else
 
-    # Run Neovim immediately
-    nvim +q
+     # Run Neovim immediately
+     nvim +q
 
-    # Check if Tmuxifier is installed and load the session
-    if type -q tmuxifier
+     # Check if Tmuxifier is installed and load the session
+     if type -q tmuxifier
         tmuxifier load-session aw; or begin
             echo "Failed to load Tmuxifier session 'aw'" >&2
             return 1
         end
-    else
+     else
         echo "Tmuxifier is not installed or not in your PATH" >&2
         return 1
+     end
     end
 end
 
@@ -461,7 +466,8 @@ alias pl='git pull origin'
 alias ph='git push origin'
 alias tag='git tag'
 alias newtag='git tag -a'
-
+alias rn='bootdev run f330368c-734c-4708-971b-2ad33b4b7f52'
+alias sb='bootdev run f330368c-734c-4708-971b-2ad33b4b7f52 -s'
 # tmux
 alias tx="tmux"
 alias txa="tmux a"
@@ -499,3 +505,6 @@ alias mocp="bash -c mocp"
 
 ### SETTING THE STARSHIP PROMPT ###
 starship init fish | source
+
+# Generated for envman. Do not edit.
+test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish

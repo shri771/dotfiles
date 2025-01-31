@@ -28,4 +28,4 @@ fi
 # Trim trailing comma and space
 uptime=${uptime%', '}
 
-echo "up $uptime"
+echo "Uptime $uptime"

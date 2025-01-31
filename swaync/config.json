@@ -1,3 +1,4 @@
+
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
   "positionX": "right",
@@ -88,6 +89,33 @@
           "command": "blueman-manager"
         }
       ]
+    },
+    "notifications": {
+      "max-history": 5
     }
-  }
+  },
+  "rules": [
+    {
+      "app-name": "notion-calender",
+      "actions": {
+        "enable": true,
+        "urgency": "critical"
+      }
+    },
+    {
+      "app-name": "Blueman",
+      "actions": {
+        "enable": true,
+        "persistence": false
+      }
+    },
+    {
+      "app-name": "Screenshot",
+      "actions": {
+        "enable": true,
+        "persistence": false
+      }
+    }
+  ]
 }
+
