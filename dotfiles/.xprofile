@@ -1,1 +1,0 @@
-export QT_QPA_PLATFORMTHEME=qt5ct # Or qt6ct for Qt6 apps
