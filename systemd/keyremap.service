@@ -1,0 +1,14 @@
+[Unit]
+Description=Evremap Key Remapping Service
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/evremap remap /home/sh/.config/evremap/evremap.conf
+Restart=always
+User=root
+
+
+[Install]
+WantedBy=multi-user.target
+
+
