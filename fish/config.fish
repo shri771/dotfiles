@@ -360,35 +360,6 @@ function txaw
 end
 
 # Open config files
-function txc
-    # Check if tmux session "cn" exists
-    if tmux has-session -t cn ^/dev/null
-        # Attach to the session if it exists
-        tmux attach-session -t cn
-    else
-        # Run Neovim immediately
-        nvim +q
-
-        # Check if Tmuxifier is installed
-        if type -q tmuxifier
-            # Load the Tmuxifier session
-            if tmuxifier load-session cn
-                # Success case: Do nothing (optional log can go here if needed)
-                return 0
-            else
-                # Error in loading the session
-                echo "Failed to load Tmuxifier session 'cn'" >&2
-                return 1
-            end
-        else
-            # Tmuxifier not found in PATH
-            echo "Tmuxifier is not installed or not in your PATH" >&2
-            return 1
-        end
-    end
-end
-
-
 ### END OF FUNCTIONS ###
 
 
@@ -471,6 +442,7 @@ alias sb='bootdev run f330368c-734c-4708-971b-2ad33b4b7f52 -s'
 # tmux
 alias tx="tmux"
 alias txa="tmux a"
+alias txc="bash ~/scripts/txc.sh"
 
 # get error messages from journalctl
 alias jctl="journalctl -p 3 -xb"

@@ -1,0 +1,14 @@
+for i in /sys/class/hwmon/hwmon*/temp*_input
+    set dir (dirname $i)
+    set name (cat "$dir/name")
+    set label_file "$i[1]_label"
+
+    if test -f $label_file
+        set label (cat $label_file)
+    else
+        set label (basename $i[1]_input)
+    end
+
+    echo "$name: $label (realpath $i)"
+end
+
