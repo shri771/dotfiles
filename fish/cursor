@@ -1,0 +1,7 @@
+function set_cursor_style --on-event fish_preexec
+    printf "\e[6 q"  # Set beam cursor before running a command
+end
+
+function restore_cursor_style --on-event fish_postexec
+    printf "\e[5 q"  # Restore blinking cursor after command runs
+end
