@@ -442,7 +442,8 @@ alias sb='bootdev run f330368c-734c-4708-971b-2ad33b4b7f52 -s'
 # tmux
 alias tx="tmux"
 alias txa="tmux a"
-alias txc="bash ~/scripts/txc.sh"
+#alias txc="bash ~/scripts/txc.sh"
+alias txc="gcc -o ~/scripts/txc ~/scripts/txc.c && ~/scripts/txc"
 
 # get error messages from journalctl
 alias jctl="journalctl -p 3 -xb"

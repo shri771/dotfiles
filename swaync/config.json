@@ -1,8 +1,8 @@
 
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
-  "positionX": "right",
-  "positionY": "bottom",
+  "positionX": "center",
+  "positionY": "top",
   "layer": "overlay",
   "control-center-layer": "top",
   "control-center-position": "center",
@@ -22,7 +22,7 @@
   "timeout-low": 3,
   "timeout-critical": 0,
   "fit-to-screen": false,
-  "control-center-width": 450,
+  "control-center-width": 500,
   "control-center-height": 550,
   "keyboard-shortcuts": true,
   "image-visibility": "when-available",
@@ -31,11 +31,8 @@
   "hide-on-action": true,
   "script-fail-notify": true,
   "widgets": [
-    "dnd",
     "buttons-grid",
     "mpris",
-    "volume",
-    "backlight",
     "title",
     "notifications"
   ],
@@ -91,7 +88,9 @@
       ]
     },
     "notifications": {
-      "max-history": 5
+      "max-history": 5,
+   "inhibited-apps": ["blueman", "blueman-manager"],
+    "inhibit-default-listeners": false                           
     }
   },
   "rules": [
