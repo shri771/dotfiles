@@ -14,6 +14,7 @@ set -U LC_CTYPE en_US.UTF-8
 eval ($HOME/.config/tmux/plugins/tmuxifier/bin/tmuxifier init - fish)
 export XCURSOR_THEME=Bibata-Modern-Classic
 export XCURSOR_SIZE=22
+set -Ux QT_ICON_THEME WhiteSur-dark
 ##local
 ##set -x LANG en_US.UTF-8
 
