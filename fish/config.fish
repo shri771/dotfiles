@@ -299,6 +299,31 @@ function open_dotfile
     end
 end
 
+# Function for restart the service
+function scr
+    if test (count $argv) -ne 1
+        printf "Usage: scr <service_name>\n" >&2
+        return 1
+    end
+
+    set service_name $argv[1]
+
+    sudo systemctl daemon-reload
+    if test $status -ne 0
+        printf "Failed to reload systemd daemon\n" >&2
+        return 1
+    end
+
+    sudo systemctl restart $service_name
+    if test $status -ne 0
+        printf "Failed to restart service: %s\n" $service_name >&2
+        return 1
+    end
+
+    printf "Service %s restarted successfully.\n" $service_name
+end
+
+
 # Aliases for specific dotfile operations using the generalized function
 function hycn
     open_dotfile ~/dotfiles/hypr
