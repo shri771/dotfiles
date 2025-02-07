@@ -1,0 +1,2 @@
+0 12,15,23 * * * nice -n 19 ionice -c2 -n7 rclone bisync -P ~/Documents shri77:Documents --force--conflict-resolve=newer
+0 3 * * * find /home/sh/.cache/rclone/vfs -type f -mtime +30 -delete

@@ -1,0 +1,28 @@
+[Unit]
+Description=Mount Google Drive with rclone
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/rclone mount shri77: /home/sh/shri77 \
+    --vfs-cache-mode full \
+    --cache-dir /home/sh/.cache/rclone \
+    --vfs-cache-max-size 10G \
+    --vfs-cache-max-age 9999h \
+    --vfs-cache-poll-interval 5m \
+    --dir-cache-time 24h \
+    --poll-interval 30s \
+    --vfs-read-chunk-size 128M \
+    --vfs-read-chunk-size-limit off \
+    --drive-chunk-size 256M \
+    --buffer-size 512M \
+    --transfers 8 \
+    --checkers 8 \
+    --tpslimit 10 \
+    --tpslimit-burst 10 \
+    --fast-list 
+User=sh
+WorkingDirectory=/home/sh
+
+[Install]
+WantedBy=default.target
+
