@@ -10,11 +10,11 @@
 	background-image: url("images/bg.png");
 	background-color: #474D59;
 	opacity: 1;
-} 
+}
 
 /** Generic window ***********************************/
 .genwin {
-	background-color: #1e222a;
+	background-color: #2E3440;
 	border-radius: 16px;
 }
 
@@ -28,13 +28,13 @@
 }
 
 .fullname {
-	color: #ef596f;
+	color: #D46389;
 	font-size : 30px;
 	font-weight : bold;
 }
 
 .username {
-	color: #6BB2C0;
+	color: #8FBCBB;
 	font-size : 22px;
 	font-weight : bold;
 	margin : -15px 0px 0px 0px;
@@ -46,21 +46,21 @@
 	font-weight : normal;
 }
 .iconcpu {
-	color: #E06C75;
+	color: #BF616A;
 }
 .iconmem {
-	color: #98C379;
+	color: #A3BE8C;
 }
 .iconbright {
-	color: #EBCB8D;
+	color: #EBCB8B;
 }
 .iconbat {
-	color: #4D78CC;
+	color: #88C0D0;
 }
 
 .cpu_bar, .mem_bar, .bright_bar, .bat_bar, scale trough {
 	all: unset;
-	background-color: #282C34;
+	background-color: #3A404C;
 	border-radius: 16px;
 	min-height: 28px;
 	min-width: 240px;
@@ -72,21 +72,21 @@
 }
 
 .cpu_bar scale trough highlight {
-	background-color: #E06C75;
+	background-color: #BF616A;
 }
 .mem_bar scale trough highlight {
-	background-color: #98C379;
+	background-color: #A3BE8C;
 }
 .bright_bar scale trough highlight {
-	background-color: #EBCB8D;
+	background-color: #EBCB8B;
 }
 .bat_bar scale trough highlight {
-	background-color: #4D78CC;
+	background-color: #88C0D0;
 }
 
 /** Clock ********************************************/
 .time_hour, .time_min {
-	color: #71ABEB;
+	color: #81A1C1;
 	font-size : 70px;
 	font-weight : bold;
 }
@@ -98,14 +98,14 @@
 }
 
 .time_mer {
-	color: #98C379;
+	color: #A3BE8C;
 	font-size : 40px;
 	font-weight : bold;
 	margin : 20px 0px 0px 0px;
 }
 
 .time_day {
-	color: #EBCB8D;
+	color: #EBCB8B;
 	font-size : 30px;
 	font-weight : normal;
 	margin : 0px 0px 20px -20px;
@@ -113,19 +113,19 @@
 
 /** Uptime ********************************************/
 .icontimer {
-	color: #BC7AD9;
+	color: #B48EAD;
 	font-size : 90px;
 	font-weight : normal;
 }
 
 .uphour {
-	color: #EFEFEF;
+	color: #E5E9F0;
 	font-size : 42px;
 	font-weight : bold;
 }
 
 .upmin {
-	color: #c0caf5;
+	color: #E5E9F0;
 	font-size : 32px;
 	font-weight : bold;
 }
@@ -140,14 +140,14 @@
 }
 
 .song {
-	color: #6BB2C0;
+	color: #8FBCBB;
 	font-size : 24px;
 	font-weight : bold;
 	margin : 40px 0px 0px 0px;
 }
 
 .artist {
-	color: #EBCB8D;
+	color: #EBCB8B;
 	font-size : 16px;
 	font-weight : normal;
 	margin : 0px 0px 15px 0px;
@@ -157,29 +157,29 @@
 	font-family: Iosevka Nerd Font;
 }
 .btn_prev {
-	color: #EBCB8D;
+	color: #EBCB8B;
 	font-size : 32px;
 	font-weight : normal;
 }
 .btn_play {
-	color: #98C379;
+	color: #A3BE8C;
 	font-size : 48px;
 	font-weight : bold;
 }
 .btn_next {
-	color: #EBCB8D;
+	color: #EBCB8B;
 	font-size : 32px;
 	font-weight : normal;
 }
 
 .music_bar scale trough highlight {
 	all: unset;
-	background-color: #BC7AD9;
+	background-color: #B48EAD;
 	border-radius: 8px;
 }
 .music_bar scale trough {
 	all: unset;
-	background-color: #282C34;
+	background-color: #3A404C;
 	border-radius: 8px;
 	min-height: 20px;
 	min-width: 310px;
@@ -195,14 +195,14 @@
 }
 
 .label_temp {
-	color : #71ABEB;
+	color : #A6D1DD;
 	font-size : 80px;
 	font-weight : bold;
 	margin : -15px 30px 0px 0px;
 }
 
 .label_stat {
-	color : #E06C75;
+	color : #BF616A;
 	font-size : 38px;
 	font-weight : bold;
 }
@@ -288,39 +288,39 @@
 }
 
 .btn_logout {
-	color: #E06C75;
+	color: #BF616A;
 }
 .btn_sleep {
-	color: #98C379;
+	color: #A3BE8C;
 }
 .btn_reboot {
-	color: #EBCB8D;
+	color: #EBCB8B;
 }
 .btn_poweroff {
-	color: #4D78CC;
+	color: #88C0D0;
 }
 
 /** Home folders ***************************************/
 .hddbox {
-	background-color: #282C34;
+	background-color: #3A404C;
 	border-radius: 10px;
 	margin : 15px;
 }
 .hddicon {
-	color: #71ABEB;
+	color: #81A1C1;
 	font-family: Iosevka Nerd Font;
 	font-size : 70px;
 	font-weight : normal;
 	margin : 25px 20px 25px 40px;
 }
 .hdd_label {
-	color: #EFEFEF;
+	color: #E5E9F0;
 	font-size : 48px;
 	font-weight : bold;
 	margin : 0px 0px 0px 15px;
 }
 .fs_sep {
-	color: #1e222a;
+	color: #2E3440;
 	font-size : 36px;
 	font-weight : bold;
 }
@@ -332,22 +332,22 @@
 	margin : 0px 0px 0px 75px;
 }
 .iconfolder1 {
-	color: #E06C75;
+	color: #BF616A;
 }
 .iconfolder2 {
-	color: #98C379;
+	color: #A3BE8C;
 }
 .iconfolder3 {
-	color: #EBCB8D;
+	color: #EBCB8B;
 }
 .iconfolder4 {
-	color: #71ABEB;
+	color: #81A1C1;
 }
 .iconfolder5 {
-	color: #BC7AD9;
+	color: #B48EAD;
 }
 .iconfolder6 {
-	color: #4D78CC;
+	color: #88C0D0;
 }
 
 .label_folder1, .label_folder2, .label_folder3, .label_folder4, .label_folder5, .label_folder6  {
@@ -356,22 +356,22 @@
 	margin : 0px 0px 0px 30px;
 }
 .label_folder1 {
-	color: #E06C75;
+	color: #BF616A;
 }
 .label_folder2 {
-	color: #98C379;
+	color: #A3BE8C;
 }
 .label_folder3 {
-	color: #EBCB8D;
+	color: #EBCB8B;
 }
 .label_folder4 {
-	color: #71ABEB;
+	color: #81A1C1;
 }
 .label_folder5 {
-	color: #BC7AD9;
+	color: #B48EAD;
 }
 .label_folder6 {
-	color: #4D78CC;
+	color: #88C0D0;
 }
 
 /** EOF *************************************************/
