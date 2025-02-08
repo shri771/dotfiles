@@ -1,0 +1,10 @@
+[Unit]
+Description=Rclone Bisync for Documents
+After=network.target
+
+[Service]
+Nice=19
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7
+ExecStart=/usr/bin/rclone bisync -P /home/sh/Documents shri77:Documents --force --conflict-resolve=newer
+

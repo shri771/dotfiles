@@ -1,0 +1,10 @@
+[Unit]
+Description=Timeshift Snapshot with Tag D
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/timeshift --create --tags D
+Nice=10
+IOSchedulingClass=idle
+Type=oneshot
+

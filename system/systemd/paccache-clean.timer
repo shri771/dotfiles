@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Pacman Cache Cleanup Every Alternate Tuesday
+
+[Timer]
+OnCalendar=Tue *-*-1,15 14:01:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+

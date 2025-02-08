@@ -1,0 +1,11 @@
+[Unit]
+Description=Run journal cleanup every Tuesday at 14:02
+Requires=journal-vacuum.service
+
+[Timer]
+OnCalendar=Tue 14:02
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+

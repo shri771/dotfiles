@@ -1,0 +1,15 @@
+[Unit]
+Description=Rclone Auto Bisync on File Changes
+After=network-online.target
+
+[Service]
+ExecStart=/home/sh/scripts/system/shri77_gdrive_sync.sh
+Restart=always
+User=sh
+Environment="PATH=/usr/bin:/bin:/usr/local/bin"
+WorkingDirectory=/home/sh
+ProtectHome=no
+
+[Install]
+WantedBy=default.target
+

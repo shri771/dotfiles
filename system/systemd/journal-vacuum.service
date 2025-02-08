@@ -1,0 +1,8 @@
+[Unit]
+Description=Vacuum journal logs older than 7 days
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/journalctl --vacuum-time=7d
+Type=oneshot
+

@@ -1,0 +1,8 @@
+[Unit]
+Description=Clean Rclone VFS Cache (Files Older Than 30 Days)
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/find /home/sh/.cache/rclone/vfs -type f -mtime +30 -delete
+

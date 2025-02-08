@@ -1,0 +1,13 @@
+[Unit]
+Description=Timer for Timeshift Daily Snapshots
+Requires=timeshift-daily.service
+
+[Timer]
+OnCalendar=*-*-* 14:03:00
+OnCalendar=*-*-* 17:00:00
+OnCalendar=*-*-* 22:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+

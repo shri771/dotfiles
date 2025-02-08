@@ -1,0 +1,11 @@
+[Unit]
+Description=Timer to Clean Rclone VFS Cache Every Tuesday at 12:05 PM
+Requires=rclone-cache-clean.service
+
+[Timer]
+OnCalendar=Tue 12:05
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+

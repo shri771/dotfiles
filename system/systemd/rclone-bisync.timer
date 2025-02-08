@@ -1,0 +1,13 @@
+[Unit]
+Description=Timer for Rclone Bisync (Runs at 12:04, 15:00, and 23:00)
+Requires=rclone-bisync.service
+
+[Timer]
+OnCalendar=*-*-* 12:04:00
+OnCalendar=*-*-* 15:00:00
+OnCalendar=*-*-* 23:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+

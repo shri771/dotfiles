@@ -1,0 +1,11 @@
+[Unit]
+Description=Adjust screen brightness based on time
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/local/bin/set-brightness.sh
+Type=oneshot
+
+[Install]
+WantedBy=default.target
+
