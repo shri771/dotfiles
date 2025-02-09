@@ -19,13 +19,13 @@ elif [[ "$1" == "--docs" ]]; then
 	close_dash && thunar ~/Documents &
 
 elif [[ "$1" == "--music" ]]; then
-	close_dash && thunar ~/Music &
+	close_dash && thunar ~/Downloads/Music/ &
 
 elif [[ "$1" == "--pics" ]]; then
-	close_dash && thunar ~/Pictures &
+	close_dash && thunar ~/Pictures/Screenshots/ &
 
 elif [[ "$1" == "--cfg" ]]; then
-	close_dash && thunar ~/.config &
+	close_dash && thunar ~/dotfiles/ &
 
 elif [[ "$1" == "--local" ]]; then
 	close_dash && thunar ~/.local/share &

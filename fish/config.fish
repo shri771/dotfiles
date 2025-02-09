@@ -300,14 +300,11 @@ function open_dotfile
     end
 end
 
-# Function for restart the service
 function scr
-    if test (count $argv) -ne 1
-        printf "Usage: scr <service_name>\n" >&2
+    if test (count $argv) -eq 0
+        printf "Usage: scr <service1> [service2 ...]\n" >&2
         return 1
     end
-
-    set service_name $argv[1]
 
     sudo systemctl daemon-reload
     if test $status -ne 0
@@ -315,13 +312,33 @@ function scr
         return 1
     end
 
-    sudo systemctl restart $service_name
-    if test $status -ne 0
-        printf "Failed to restart service: %s\n" $service_name >&2
+    for service in $argv
+        printf "Restarting %s...\n" $service
+        sudo systemctl restart $service
+        if test $status -ne 0
+            printf "Failed to restart service: %s\n" $service >&2
+        else
+            printf "Service %s restarted successfully.\n" $service
+        end
+    end
+end
+
+# Function to Show Status of systemd se or tim
+function scs
+    if test (count $argv) -eq 0
+        printf "Usage: scs <service-or-timer> [more...]\n" >&2
         return 1
     end
 
-    printf "Service %s restarted successfully.\n" $service_name
+    for unit in $argv
+        if not string match -q -- "*.service" "$unit" && not string match -q -- "*.timer" "$unit"
+            printf "Error: '%s' is not a valid .service or .timer\n" "$unit" >&2
+            continue
+        end
+
+        printf "\n--- Status of %s ---\n" "$unit"
+        systemctl status "$unit" --no-pager
+    end
 end
 
 
@@ -403,6 +420,9 @@ alias tpcn=' sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf'
 alias vn='variety --next'
 alias vp='variety'
 alias n='nvim'
+alias sn='sudo  nvim'
+alias tlp-m='tlp-stat -p | grep scaling_governor'
+alias sysdt='systemctl list-timers --all '
 alias imp='kitty +kitten icat'
 
 # vim and emacst

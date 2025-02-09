@@ -144,8 +144,8 @@
 
 ;; youtube
 (defwidget youtube [] 
-	(box :class "youtube" :vexpand "false" :hexpand "false" 
-		(button :class "iconweb" :onclick "scripts/open_links --yt" "")))
+	(box :class "org.gnome.World.PikaBackup" :vexpand "false" :hexpand "false" 
+	(button :style "background-image: url('images/icons/pika-backup.svg');" :class "app_pika" :onclick "scripts/open_apps --pk")))
 
 ;; mail
 (defwidget mail [] 
@@ -171,7 +171,7 @@
 (defwidget apps [] 
 	(box :class "genwin" :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false" 
 		(box :class "appbox" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false" 
-			(button :style "background-image: url('images/icons/firefox.svg');" :class "app_fox" :onclick "scripts/open_apps --ff")
+			(button :style "background-image: url('images/icons/pika-backup.svg');" :class "app_pika" :onclick "scripts/open_apps --pk")
 			(button :style "background-image: url('images/icons/telegram.svg');" :class "app_telegram" :onclick "scripts/open_apps --tg")
 			(button :style "background-image: url('images/icons/discord.svg');" :class "app_discord" :onclick "scripts/open_apps --dc"))
 		(box :class "appbox" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false" 
@@ -207,6 +207,9 @@
 			(box :space-evenly "false" :vexpand "false" :hexpand "false" 
 				(label :class "hdd_label" :wrap "true" :limit-width 25 :text FREE)))
 		(box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false" 
+			(button :class "iconfolder4" :onclick "scripts/open_folders --pics" "")
+			(button :class "label_folder4" :onclick "scripts/open_folders --pics" "Screenshots"))
+		(box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false" 
 			(button :class "iconfolder1" :onclick "scripts/open_folders --docs" "")
 			(button :class "label_folder1" :onclick "scripts/open_folders --docs" "Documents"))
 		(box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false" 
@@ -215,9 +218,6 @@
 		(box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false" 
 			(button :class "iconfolder3" :onclick "scripts/open_folders --music" "")
 			(button :class "label_folder3" :onclick "scripts/open_folders --music" "Music"))
-		(box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false" 
-			(button :class "iconfolder4" :onclick "scripts/open_folders --pics" "")
-			(button :class "label_folder4" :onclick "scripts/open_folders --pics" "Pictures"))
 		(box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false" 
 			(button :class "iconfolder5" :onclick "scripts/open_folders --cfg" "ﮛ")
 			(button :class "label_folder5" :onclick "scripts/open_folders --cfg" "~/.config"))
@@ -228,82 +228,31 @@
 
 ;; ** Windows *************************************************************************
 
-;; Background (No Change)
-(defwindow background :stacking "fg" :focusable "false" :screen 1 
-	    :geometry (geometry :x 0 :y 0 :width "1920px" :height "1080px")
-					(bg))
 
-;; Profile (Shifted to Center)
-(defwindow profile :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 285 :y 150 :width 350 :height 440)
-					(user))
 
-;; System (Shifted to Center)
-(defwindow system :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 285 :y 605 :width 350 :height 325)
-					(system))
-
-;; Clock (Shifted to Center)
-(defwindow clock :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 650 :y 150 :width 350 :height 155)
-					(clock))
-
-;; Uptime (Shifted to Center)
-(defwindow uptime :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 650 :y 320 :width 350 :height 155)
-					(uptime))
 
 ;; Music (Shifted to Center)
 (defwindow music :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 650 :y 490 :width 610 :height 280)
+	    :geometry (geometry :x 650 :y 670 :width 610 :height 280)
 					(music))
-
-;; Apps (Shifted to Center)
-(defwindow apps :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 1010 :y 150 :width 170 :height 325)
-					(apps))
-
-;; GitHub (Shifted to Center)
-(defwindow github :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 650 :y 785 :width 141 :height 145)
-					(github))
-
-;; Reddit (Shifted to Center)
-(defwindow reddit :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 806 :y 785 :width 141 :height 145)
-					(reddit))
-
-;; Twitter (Shifted to Center)
-(defwindow twitter :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 962 :y 785 :width 141 :height 145)
-					(twitter))
-
-;; YouTube (Shifted to Center)
-(defwindow youtube :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 1118 :y 785 :width 142 :height 145)
-					(youtube))
-
-;; Logout (Shifted to Center)
-(defwindow logout :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 1295 :y 150 :width 155 :height 155)
-					(logout))
-
-;; Sleep (Shifted to Center)
-(defwindow sleep :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 1465 :y 150 :width 155 :height 155)
-					(sleep))
 
 ;; Reboot (Shifted to Center)
 (defwindow reboot :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 1295 :y 320 :width 155 :height 155)
+	    :geometry (geometry :x 635 :y 220 :width 141 :height 130)
 					(reboot))
 
-;; Poweroff (Shifted to Center)
-(defwindow poweroff :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 1465 :y 320 :width 155 :height 155)
-					(poweroff))
+;; Sleep (Shifted to Center)
+(defwindow sleep :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
+	    :geometry (geometry :x 785 :y 220 :width 141 :height 130)
+					(sleep))
+
+;; Apps (Shifted to Center)
+(defwindow apps :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
+	    :geometry (geometry :x 650 :y 355 :width 220 :height 305)
+					(apps))
+
 
 ;; Folders (Shifted to Center)
 (defwindow folders :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 1295 :y 490 :width 325 :height 440)
+	    :geometry (geometry :x 940 :y 220 :width 325 :height 440)
 					(folders))

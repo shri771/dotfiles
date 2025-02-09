@@ -5,8 +5,9 @@ set -o nounset
 set -o pipefail
 
 # Brightness levels (adjust as needed)
-DAY_BRIGHTNESS=90
-NIGHT_BRIGHTNESS=40
+MORNING_BRIGHTNESS=90  # 07:00 - 13:00
+AFTERNOON_BRIGHTNESS=100 # 13:00 - 19:00
+NIGHT_BRIGHTNESS=40  # 19:00 - 07:00
 FAST_STEP=6     # Step increase/decrease for fast transition
 SLOW_STEP=6     # Step increase/decrease for slow transition
 FAST_DELAY=0.1  # Delay in seconds for fast transition
@@ -89,8 +90,10 @@ adjust_brightness() {
     local hour; hour=$(date +%H)
     hour=$((10#$hour))  # Force decimal interpretation to prevent octal issues
 
-    if (( hour >= 7 && hour < 19 )); then
-        set_brightness_smoothly "$DAY_BRIGHTNESS" "fast"
+    if (( hour >= 7 && hour < 13 )); then
+        set_brightness_smoothly "$MORNING_BRIGHTNESS" "fast"
+    elif (( hour >= 13 && hour < 19 )); then
+        set_brightness_smoothly "$AFTERNOON_BRIGHTNESS" "fast"
     else
         set_brightness_smoothly "$NIGHT_BRIGHTNESS" "slow"
     fi
