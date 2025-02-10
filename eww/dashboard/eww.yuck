@@ -228,14 +228,6 @@
 
 ;; ** Windows *************************************************************************
 
-
-
-
-
-
-
-
-
 ;; Folders (Shifted to Center)
 (defwindow folders :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
 	    :geometry (geometry :x 750 :y 490 :width 325 :height 440)

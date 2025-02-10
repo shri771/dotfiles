@@ -3,29 +3,22 @@
 
 if [[ -r /proc/uptime ]]; then
     s=$(< /proc/uptime)
-    s=${s/.*}
+    s=${s/.*}  # Get total uptime in seconds
 else
-    echo "Error UptimeNixOS.sh: Uptime could not be determined." >&2
+    echo "Error: Uptime could not be determined." >&2
     exit 1
 fi
 
-d=$((s / 60 / 60 / 24))
-h=$((s / 60 / 60 % 24))
-m=$((s / 60 % 60))
+# Calculate days, hours, and minutes
+d=$((s / 86400))  # Days
+h=$(( (s % 86400) / 3600 ))  # Hours
+m=$(( (s % 3600) / 60 ))  # Minutes
 
-# Convert to human-readable format
-uptime=""
+# Formatting uptime output correctly
 if ((d > 0)); then
-    uptime+="$d days"
-    ((h > 0)) && uptime+=", $h hours"
+    echo "Uptime: $d days, $h hours"
 elif ((h > 0)); then
-    uptime+="$h hours"
+    echo "Uptime: $h hours, $m minutes"
+else
+    echo "Uptime: $m minutes"
 fi
-if ((d == 0 && h == 0)); then
-    uptime+="$m minutes"
-fi
-
-# Trim trailing comma and space
-uptime=${uptime%', '}
-
-echo "Uptime $uptime"
