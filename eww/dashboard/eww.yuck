@@ -231,28 +231,12 @@
 
 
 
-;; Music (Shifted to Center)
-(defwindow music :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 650 :y 670 :width 610 :height 280)
-					(music))
 
-;; Reboot (Shifted to Center)
-(defwindow reboot :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 635 :y 220 :width 141 :height 130)
-					(reboot))
 
-;; Sleep (Shifted to Center)
-(defwindow sleep :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 785 :y 220 :width 141 :height 130)
-					(sleep))
 
-;; Apps (Shifted to Center)
-(defwindow apps :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 650 :y 355 :width 220 :height 305)
-					(apps))
 
 
 ;; Folders (Shifted to Center)
 (defwindow folders :stacking "fg" :focusable "false" :screen 1 :monitor "0x0C5F"
-	    :geometry (geometry :x 940 :y 220 :width 325 :height 440)
+	    :geometry (geometry :x 750 :y 490 :width 325 :height 440)
 					(folders))

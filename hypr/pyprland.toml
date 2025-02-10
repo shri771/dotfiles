@@ -3,8 +3,7 @@
 # Combine all plugins into a single list
 plugins = [
   "scratchpads",
-  "magnify",
-  "window_cycle"
+  "magnify"
 ]
 
 # Scratchpads
@@ -13,31 +12,36 @@ animation = "fromTop"
 command = "kitty --class kitty-dropterm"
 class = "kitty-dropterm"
 size = "60% 60%"
+focus = true  # Always focuses when opened
 
 [scratchpads.whatsie]
 animation = "fromTop"
 command = "whatsie"
 class = "com.ktechpit.whatsie"
 size = "60% 58%"
+focus = true
+lazy = true
 
 [scratchpads.mixer]
 animation = "fromBottom"
 command = "pavucontrol"
 class = "org.pulseaudio.pavucontrol"
 size = "45% 46%"
+focus = true
+lazy = true
 
 [scratchpads.share]
 animation = "fromTop"
 command = "rquickshare"
 class = "rquickshare"
 size = "40% 45%"
+focus = true
+lazy = true
 
 [scratchpads.cal]
 animation = "fromBottom"
-command = "qalculate-gtk --hide-keypad"
+command = "qalculate-gtk "
 class = "qalculate-gtk"
 size = "21% 44%"
+focus = true
 
-# Window Cycling
-[window_cycle]
-cycle_same_class = true

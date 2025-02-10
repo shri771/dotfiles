@@ -13,21 +13,21 @@ close_dash() {
 }
 
 if [[ "$1" == "--dl" ]]; then
-	close_dash && thunar ~/Downloads &
+	close_dash && nemo ~/Downloads &
 
 elif [[ "$1" == "--docs" ]]; then
-	close_dash && thunar ~/Documents &
+	close_dash && nemo ~/Documents &
 
 elif [[ "$1" == "--music" ]]; then
-	close_dash && thunar ~/Downloads/Music/ &
+	close_dash && nemo ~/Downloads/Music/ &
 
 elif [[ "$1" == "--pics" ]]; then
-	close_dash && thunar ~/Pictures/Screenshots/ &
+	close_dash && nemo ~/Pictures/Screenshots/ &
 
 elif [[ "$1" == "--cfg" ]]; then
-	close_dash && thunar ~/dotfiles/ &
+	close_dash && nemo ~/dotfiles/ &
 
 elif [[ "$1" == "--local" ]]; then
-	close_dash && thunar ~/.local/share &
+	close_dash && nemo ~/.local/share &
 
 fi
