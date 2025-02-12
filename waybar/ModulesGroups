@@ -1,4 +1,3 @@
-//* ---- 💫 https://github.com/JaKooLit 💫 ---- *//
 /* Waybar Modules - Groups Modules */
 /* Basically created to reduce the lines in Waybar Modules bank */
 /* NOTE: This is only for Groups */
@@ -24,11 +23,9 @@
 "group/motherboard": {
 	"orientation": "horizontal",
 	"modules": [
-		"cpu",
-		"power-profiles-daemon",
-		"memory",
 		"temperature",
-		"disk",
+		"cpu",
+		"memory",
 	]
 },
 
