@@ -57,7 +57,7 @@ main() {
     if check_git_status; then
         stage_and_commit
         push_changes
-        echo"==================================================="
+        echo "==================================================="
         git status
     fi
 }
