@@ -52,11 +52,20 @@ push_changes() {
     git push origin "$branch"
 }
 
+# Function to display git status with a separator
+show_git_status() {
+    printf "\n-----------------------\n"
+    printf "Current Git Status:\n"
+    printf "-----------------------\n"
+    git status -s
+}
+
 # Main execution
 main() {
     if check_git_status; then
         stage_and_commit
         push_changes
+        show_git_status
     fi
 }
 
