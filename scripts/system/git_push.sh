@@ -29,7 +29,7 @@ stage_and_commit() {
         if [[ "$file" == "nvim/undo/"* ]]; then
             nvim_files+=("$file")
         else
-            commit_messages+=("Updated $(basename "$file")")
+            commit_messages+=("Update $(basename "$file")")
             git add "$file"
         fi
     done < <(git ls-files --modified --others --exclude-standard)
@@ -57,8 +57,6 @@ main() {
     if check_git_status; then
         stage_and_commit
         push_changes
-        echo "====================================================="
-        git status
     fi
 }
 
