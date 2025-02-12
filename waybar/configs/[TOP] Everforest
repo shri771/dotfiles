@@ -21,19 +21,20 @@
 	"hyprland/workspaces#cam",
 //	"mpris",
 	"tray",
-	"temperature"
+	"custom/separator#blank_1",
+	"custom/updater",
 	],
 "modules-center": [
 	"idle_inhibitor",
 	"clock#forest",
 	"custom/swaync",
+	"mpris",
 	],
 "modules-right": [
-	"cpu#forest",
-	"memory#forest",
+	"group/motherboard",
 	"custom/separator#blank_2",
 	"backlight",
-  	"battery#forest",
+  	"battery",
 	"custom/separator#blank_2",
 	"group/audio",
 	],
@@ -87,7 +88,7 @@
 
 "cpu#forest": {
 	"format": "Cpu  󰍛  {usage}%",
-	"interval": 3,
+	"interval": 1,
 	"min-length": 5,
 	"format-alt-click": "click",
 	"format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
@@ -109,7 +110,7 @@
 },
 
 "memory#forest": {
-	"interval": 10,
+	"interval": 5,
 	"format": "Ram  󰾆  {used:0.1f}G",
 	"format-alt": "Ram    {percentage}%    󰾆",
 	"format-alt-click": "click",
@@ -120,11 +121,11 @@
 
 
 "temperature": {
-	"interval": 3,
+	"interval": 1,
 	"tooltip": true,
 	"hwmon-path": [
 
-"/sys/class/hwmon/hwmon6/temp1_input"
+"/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input"
 
 	],
 	//"thermal-zone": 0,
