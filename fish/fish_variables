@@ -3,6 +3,7 @@
 SETUVAR --export COLORTERM:truecolor
 SETUVAR --export EDITOR:nvim
 SETUVAR LC_CTYPE:en_US\x2eUTF\x2d8
+SETUVAR --export PERL5LIB:/usr/share/perl5/vendor_perl
 SETUVAR --export QT_ICON_THEME:WhiteSur\x2ddark
 SETUVAR --export TERM:xterm\x2d256color
 SETUVAR --export VISUAL:nvim
