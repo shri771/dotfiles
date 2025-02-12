@@ -15,6 +15,7 @@ eval ($HOME/.config/tmux/plugins/tmuxifier/bin/tmuxifier init - fish)
 export XCURSOR_THEME=Bibata-Modern-Classic
 export XCURSOR_SIZE=22
 set -Ux QT_ICON_THEME WhiteSur-dark
+set -Ux PERL5LIB /usr/share/perl5/vendor_perl
 ##local
 ##set -x LANG en_US.UTF-8
 
