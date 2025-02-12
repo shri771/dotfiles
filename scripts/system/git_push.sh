@@ -10,7 +10,7 @@ NVIM_COMMIT_MSG="Update nvim undo files"
 check_git_status() {
     local status
     status=$(git status --porcelain)
-    
+
     if [[ -z "$status" ]]; then
         printf "No changes to commit.\n"
         return 1
@@ -18,9 +18,9 @@ check_git_status() {
     return 0
 }
 
-# Function to stage files and commit with specific messages
+# Function to stage files and create a single commit with a detailed message
 stage_and_commit() {
-    local file commit_msg
+    local file commit_msg commit_messages=()
     local nvim_files=()
 
     while IFS= read -r file; do
@@ -29,15 +29,19 @@ stage_and_commit() {
         if [[ "$file" == "nvim/undo/"* ]]; then
             nvim_files+=("$file")
         else
-            commit_msg="Update $(basename "$file")"
+            commit_messages+=("Update $(basename "$file")")
             git add "$file"
-            git commit -m "$commit_msg"
         fi
     done < <(git ls-files --modified --others --exclude-standard)
 
     if [[ ${#nvim_files[@]} -gt 0 ]]; then
         git add "${nvim_files[@]}"
-        git commit -m "$NVIM_COMMIT_MSG"
+        commit_messages+=("$NVIM_COMMIT_MSG")
+    fi
+
+    if [[ ${#commit_messages[@]} -gt 0 ]]; then
+        commit_msg=$(printf "%s\n" "${commit_messages[@]}")
+        git commit -m "$commit_msg"
     fi
 }
 
@@ -57,4 +61,3 @@ main() {
 }
 
 main
-
