@@ -155,11 +155,11 @@
 },
 // NOTE:! This is only for Arch and Arch Based Distros  depend: pacman-contrib
 "custom/updater": {
-	"format": " {}",
-	"exec": "checkupdates | wc -l",
-	"exec-if": "[[ $(checkupdates | wc -l) ]]",
-	"interval": 3000,
-	"on-click": "tmux has-session -t cn 2>/dev/null || tmux new-session -d -s cn; tmux new-window -t cn -n update bash -c 'if command -v paru &> /dev/null; then paru -Syu; else yay -Syu; fi; flatpak update -y; notify-send \"System and Flatpak updates completed\"'"
+    "format": " {}",
+    "exec": "checkupdates | wc -l",
+    "exec-if": "[[ $(checkupdates | wc -l) ]]",
+    "interval": 3000,
+    "on-click": "tmux has-session -t cn 2>/dev/null || tmux new-session -d -s cn; tmux new-window -t cn -n update bash -c 'if command -v paru &> /dev/null; then paru -Syu; else yay -Syu; fi; flatpak update -y; notify-send \"System and Flatpak updates completed\"; sleep 2; pkill -SIGRTMIN+10 waybar'"
 },
 // Separators
 "custom/separator#dot": {

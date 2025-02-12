@@ -275,7 +275,7 @@ function open_dotfile
     end
 end
 
-function scr
+function sysr
     if test (count $argv) -eq 0
         printf "Usage: scr <service1> [service2 ...]\n" >&2
         return 1
@@ -299,7 +299,7 @@ function scr
 end
 
 # Function to Show Status of systemd se or tim
-function scs
+function syss
     if test (count $argv) -eq 0
         printf "Usage: scs <service-or-timer> [more...]\n" >&2
         return 1
@@ -317,9 +317,21 @@ function scs
 end
 
 
-# Aliases for specific dotfile operations using the generalized function
+# Configs path
 function hycn
     open_dotfile ~/dotfiles/hypr
+end
+
+function swcn
+    open_dotfile ~/dotfiles/swaync/
+end
+
+function scr
+    open_dotfile ~/dotfiles/scripts/
+end
+
+function wycn
+    open_dotfile ~/dotfiles/waybar/
 end
 
 function awcn
@@ -449,7 +461,7 @@ alias add='git add '
 alias addall='git add .'
 alias bh='git branch'
 alias gst='git status'
-alias gpha='bash ~/scripts/git/git_push.sh'
+alias gpha='bash ~/scripts/terminal/git_push.sh'
 alias ck='git checkout'
 alias cl='git clone'
 alias cm='git commit -m'
@@ -461,11 +473,13 @@ alias tag='git tag'
 alias newtag='git tag -a'
 alias rn='bootdev run f330368c-734c-4708-971b-2ad33b4b7f52'
 alias sb='bootdev run f330368c-734c-4708-971b-2ad33b4b7f52 -s'
+
 # tmux
 alias tx="tmux"
 alias txa="tmux a"
 #alias txc="bash ~/scripts/txc.sh"
-alias txc="gcc -o ~/scripts/txc ~/scripts/txc.c && ~/scripts/txc"
+alias txc="gcc -o ~/scripts/terminal/txc ~/scripts/terminal/txc.c && ~/scripts/terminal/txc"
+alias txt="gcc -o ~/scripts/terminal/txt ~/scripts/terminal/txt.c && ~/scripts/terminal/txt"
 
 # get error messages from journalctl
 alias jctl="journalctl -p 3 -xb"

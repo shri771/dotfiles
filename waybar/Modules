@@ -77,7 +77,7 @@
 	"full-at": 100,
 	"design-capacity": false,
 	"states": {
-		"good": 95,
+		"good": 70,
 		"warning": 30,
 		"critical": 15
 	},
@@ -92,9 +92,8 @@
 	],
 	"format-time": "{H}h {M}min",
 	"tooltip": true,
-	"tooltip-format": "{timeTo} {power}w",
+	"tooltip-format": "{timeTo} ",
 	"on-click-middle": "$HOME/.config/hypr/scripts/ChangeBlur.sh",
-	"on-click-right": "$HOME/.config/hypr/scripts/Wlogout.sh",
 },
 "bluetooth": {
 	"format": " ",
