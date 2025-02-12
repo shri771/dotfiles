@@ -1,4 +1,3 @@
-
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
   "positionX": "center",
@@ -19,8 +18,8 @@
   "notification-body-image-width": 100,
   "notification-window-width": 300,
   "timeout": 2,
-  "timeout-low": 3,
-  "timeout-critical": 0,
+  "timeout-low": 2,
+  "timeout-critical": 3,
   "fit-to-screen": false,
   "control-center-width": 500,
   "control-center-height": 550,
@@ -89,11 +88,18 @@
     },
     "notifications": {
       "max-history": 5,
-   "inhibited-apps": ["blueman", "blueman-manager"],
-    "inhibit-default-listeners": false                           
+      "inhibited-apps": ["blueman", "blueman-manager"],
+      "inhibit-default-listeners": false                           
     }
   },
   "rules": [
+    {
+      "app-name": "*",
+      "actions": {
+        "enable": true,
+        "timeout": 2
+      }
+    },
     {
       "app-name": "notion-calender",
       "actions": {
@@ -117,4 +123,3 @@
     }
   ]
 }
-
