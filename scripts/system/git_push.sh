@@ -58,7 +58,7 @@ main() {
         stage_and_commit
         push_changes
         echo "====================================================="
-        gst
+        git status
     fi
 }
 
