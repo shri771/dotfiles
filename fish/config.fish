@@ -222,32 +222,6 @@ function gph
     git status
 end
 
-function gpha
-    # Stage all changes
-    git add .
-
-    # Get the commit message (from arguments or prompt)
-    if test (count $argv) -gt 0
-        set commit_message $argv[1]
-    else
-        echo -n "Enter commit message: "
-        read commit_message
-    end
-
-    # Commit and push changes
-    if not git commit -m "$commit_message"
-        echo "Failed to commit changes" >&2
-        return 1
-    end
-
-    echo "============================================================"
-    if not git push
-        echo "Failed to push changes" >&2
-        return 1
-    end
-    echo "============================================================"
-    git status
-end
 
 function ups
     echo "Refreshing Arch Linux mirrors for best performance..."
@@ -475,6 +449,7 @@ alias add='git add '
 alias addall='git add .'
 alias bh='git branch'
 alias gst='git status'
+alias gpha='bash ~/scripts/system/git_push.sh'
 alias ck='git checkout'
 alias cl='git clone'
 alias cm='git commit -m'
