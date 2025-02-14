@@ -1,8 +1,8 @@
 #!/bin/bash
 
-LOCAL_DIR="/home/sh/Documents"
+LOCAL_DIR="/home/sh/Document"
 REMOTE_DIR="/home/sh/shri77/"
-RCLONE_REMOTE="shri77:Documents"
+RCLONE_REMOTE="shri77:Document"
 RCLONE_CMD="/usr/bin/rclone bisync -P"
 SYNC_INTERVAL=10
 

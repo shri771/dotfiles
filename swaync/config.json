@@ -17,7 +17,7 @@
   "notification-body-image-height": 100,
   "notification-body-image-width": 100,
   "notification-window-width": 300,
-  "timeout": 2,
+  "timeout": 3,
   "timeout-low": 2,
   "timeout-critical": 3,
   "fit-to-screen": false,
@@ -88,18 +88,11 @@
     },
     "notifications": {
       "max-history": 5,
-      "inhibited-apps": ["blueman", "blueman-manager"],
-      "inhibit-default-listeners": false                           
+   "inhibited-apps": ["blueman", "blueman-manager"],
+    "inhibit-default-listeners": false                           
     }
   },
   "rules": [
-    {
-      "app-name": "*",
-      "actions": {
-        "enable": true,
-        "timeout": 2
-      }
-    },
     {
       "app-name": "notion-calender",
       "actions": {
@@ -123,3 +116,4 @@
     }
   ]
 }
+

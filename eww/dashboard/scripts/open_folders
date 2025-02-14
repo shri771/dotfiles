@@ -4,6 +4,7 @@
 FILE="$HOME/.cache/eww_launch.dashboard"
 CFG="$HOME/.config/eww/dashboard"
 EWW=`which eww`
+fm='thunar'
 
 close_dash() {
 	${EWW} --config "$CFG" close \
@@ -13,21 +14,21 @@ close_dash() {
 }
 
 if [[ "$1" == "--dl" ]]; then
-	close_dash && nemo ~/Downloads &
+	close_dash && $fm ~/Downloads &
 
 elif [[ "$1" == "--docs" ]]; then
-	close_dash && nemo ~/Documents &
+	close_dash && $fm ~/Documents &
 
 elif [[ "$1" == "--music" ]]; then
-	close_dash && nemo ~/Downloads/Music/ &
+	close_dash && $fm ~/Downloads/Music/ &
 
 elif [[ "$1" == "--pics" ]]; then
-	close_dash && nemo ~/Pictures/Screenshots/ &
+	close_dash && $fm ~/Pictures/Screenshots/ &
 
 elif [[ "$1" == "--cfg" ]]; then
-	close_dash && nemo ~/dotfiles/ &
+	close_dash && $fm ~/dotfiles/ &
 
 elif [[ "$1" == "--local" ]]; then
-	close_dash && nemo ~/.local/share &
+	close_dash && $fm ~/.local/share &
 
 fi

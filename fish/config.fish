@@ -407,10 +407,11 @@ alias tpcn=' sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf'
 alias vn='variety --next'
 alias vp='variety'
 alias n='nvim'
-alias sn='sudo  nvim'
+alias sn='sudo XDG_RUNTIME_DIR=/run/user/$(id -u) DISPLAY=$DISPLAY XDG_CONFIG_HOME=$HOME/.config nvim'
 alias tlp-m='tlp-stat -p | grep scaling_governor'
-alias sysdt='systemctl list-timers --all '
+alias syst='systemctl list-timers --all '
 alias imp='kitty +kitten icat'
+alias syscn='cd /etc/systemd/system/ && sudo XDG_RUNTIME_DIR=/run/user/$(id -u) DISPLAY=$DISPLAY XDG_CONFIG_HOME=$HOME/.config nvim .'
 
 # vim and emacst
 alias emacs="emacsclient -c -a 'emacs'"
@@ -427,6 +428,7 @@ alias l.='eza -al --color=always --group-directories-first ../' # ls on the PARE
 alias l..='eza -al --color=always --group-directories-first ../../' # ls on directory 2 levels up
 alias l...='eza -al --color=always --group-directories-first ../../../' # ls on directory 3 levels up
 alias temp='watch -n 1 sensors'
+alias cmd='command '
 
 # pacman and yay
 alias pacins='sudo pacman -S' # update only standard pkgs
