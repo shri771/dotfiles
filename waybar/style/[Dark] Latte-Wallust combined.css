@@ -192,9 +192,6 @@ tooltip {
 	padding-left: 6px;;
 }
 
-#temperature.critical {
-    background-color: #ff0000;
-}
 
 @keyframes blink {
     to {
@@ -286,13 +283,13 @@ tooltip {
 }
 
 #temperature.critical {
-    background-color: @red;
+   color: #ff1d61;
 }
 
 #battery.critical:not(.charging) {
-	color: #f53c3c;
+	color: #ff1d61;
 	animation-name: blink;
-	animation-duration: 3.0s;
+	animation-duration: 5.0s;
 	animation-timing-function: steps(12);
 	animation-iteration-count: infinite;
 	animation-direction: alternate;

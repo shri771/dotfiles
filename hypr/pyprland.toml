@@ -29,6 +29,7 @@ class = "org.pulseaudio.pavucontrol"
 size = "45% 46%"
 focus = true
 lazy = true
+position = "30% 33%"
 
 [scratchpads.share]
 animation = "fromTop"
@@ -43,5 +44,14 @@ animation = "fromBottom"
 command = "qalculate-gtk "
 class = "qalculate-gtk"
 size = "21% 44%"
-focus = true
+focus = false
+position = "41% 44%"
 
+
+[scratchpads.mission]
+command = "missioncenter"
+class = "io.missioncenter.MissionCenter"
+animation = "fromBottom"
+size = "46% 47%"
+lazy = true
+position = "28% 37%"

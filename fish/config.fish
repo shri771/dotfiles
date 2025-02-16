@@ -407,11 +407,12 @@ alias tpcn=' sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf'
 alias vn='variety --next'
 alias vp='variety'
 alias n='nvim'
-alias sn='sudo XDG_RUNTIME_DIR=/run/user/$(id -u) DISPLAY=$DISPLAY XDG_CONFIG_HOME=$HOME/.config nvim'
+alias sn='sudo -E XDG_RUNTIME_DIR=/run/user/$(id -u) nvim'
 alias tlp-m='tlp-stat -p | grep scaling_governor'
 alias syst='systemctl list-timers --all '
 alias imp='kitty +kitten icat'
-alias syscn='cd /etc/systemd/system/ && sudo XDG_RUNTIME_DIR=/run/user/$(id -u) DISPLAY=$DISPLAY XDG_CONFIG_HOME=$HOME/.config nvim .'
+alias syscn='cd /etc/systemd/system/ && sudo -E XDG_RUNTIME_DIR=/run/user/$(id -u) nvim .'
+alias arch='fastfetch'
 
 # vim and emacst
 alias emacs="emacsclient -c -a 'emacs'"
