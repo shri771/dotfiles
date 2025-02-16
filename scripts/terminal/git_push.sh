@@ -4,7 +4,7 @@ set -euo pipefail
 
 # Global variables
 GIT_ROOT=$(git rev-parse --show-toplevel 2>/dev/null || { printf "Not a git repository\n" >&2; exit 1; })
-NVIM_COMMIT_MSG="Update nvim undo files"
+NVIM_COMMIT_MSG="Updated nvim undo files"
 
 # Function to check if there are any changes
 check_git_status() {
