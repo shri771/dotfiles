@@ -288,11 +288,14 @@ tooltip {
 
 #battery.critical:not(.charging) {
 	color: #ff1d61;
-	animation-name: blink;
 	animation-duration: 5.0s;
 	animation-timing-function: steps(12);
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
+}
+
+#battery.warn:not(.charging) {
+	color: #ff1d61;
 }
 
 #pulseaudio-slider slider {
