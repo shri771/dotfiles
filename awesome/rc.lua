@@ -266,7 +266,7 @@ globalkeys = my_table.join(
 	awful.key({ modkey }, "v", function()
 		awful.spawn("code")
 	end, { description = "Launch VSCode", group = "hotkeys" }),
-	awful.key({ altkey }, "f", function()
+	awful.key({ altkey }, "c", function()
 		awful.spawn("qalculate-gtk")
 	end, { description = "Launch Calculator", group = "hotkeys" }),
 	awful.key({ modkey }, "e", function()
@@ -303,7 +303,7 @@ globalkeys = my_table.join(
 	end, { description = "Run launcher", group = "hotkeys" }),
 
 	-- Rofi launcher
-	awful.key({ altkey }, "i", function()
+	awful.key({ altkey }, "f", function()
 		awful.spawn("rofi -show drun")
 	end, { description = "launch rofi", group = "launcher" }),
 

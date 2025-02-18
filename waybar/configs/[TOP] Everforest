@@ -125,7 +125,7 @@
 	"tooltip": true,
 	"hwmon-path": [
 
-"/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input"
+        "/home/sh/.config/hypr/scripts/temp_sensor"
 
 
 
@@ -137,7 +137,6 @@
 	"format-icons": [
 		"󰈸"
 	],
-	"on-click-right": "kitty --title nvtop sh -c 'nvtop'"
 },
 
 }
