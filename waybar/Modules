@@ -72,7 +72,7 @@
 	//"interval": 1,
 	"align": 0,
 	"rotate": 0,
-	//"bat": "BAT1",
+	//"bat": "BAT0",
 	//"adapter": "ACAD",
 	"full-at": 100,
 	"design-capacity": false,
