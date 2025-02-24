@@ -55,3 +55,13 @@ animation = "fromBottom"
 size = "46% 47%"
 lazy = true
 position = "28% 37%"
+
+
+[scratchpads.file]
+command = "thunar /home/sh/Pictures/Screenshots/ --daemon & thunar /home/sh/Pictures/Screenshots/"
+class = "Thunar"
+animation = "fromBottom"
+size = "46% 47%"
+lazy = true
+position = "28% 37%"
+opacity = 0.9

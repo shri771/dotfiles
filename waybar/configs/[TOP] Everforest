@@ -26,7 +26,10 @@
 	],
 "modules-center": [
 	"idle_inhibitor",
+	"bluetooth",
+	"custom/cycle_wall",
 	"clock#forest",
+	"custom/headphones",
 	"custom/swaync",
 	"mpris",
 	],
@@ -124,11 +127,7 @@
 	"interval": 1,
 	"tooltip": true,
 	"hwmon-path": [
-
-        "/home/sh/.config/hypr/scripts/temp_sensor"
-
-
-
+		"/home/sh/.config/hypr/scripts/temp_sensor"
 	],
 	//"thermal-zone": 0,
 	"critical-threshold": 80,
@@ -137,6 +136,9 @@
 	"format-icons": [
 		"󰈸"
 	],
+	"on-click-right": "corectrl"
 },
+
+
 
 }

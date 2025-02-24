@@ -1,6 +1,7 @@
 sudo du -hxd1 / | sort -hr | head -20 # Check the storage used in /
 
 sudo du -hxd1 /home/sh | sort -hr
+
 systemctl list-timers --all #To check the systemd timers
 
 0 12,15,23 * * * nice -n 19 ionice -c2 -n7 rclone bisync -P ~/Documents shri77:Documents --force--conflict-resolve=newer  # To sync document folder with gdrive
@@ -24,3 +25,9 @@ for i in /sys/class/hwmon/hwmon*/temp*_input
     set full_path (readlink -f $i)
     echo "$name: $label $full_path"
 end
+
+ find ~/.config ~/.local ~/.cache -iname "*whatsie*" -o -iname "*whatsapp*"
+
+# Remove Brave lock
+rm -f SingletonLock SingletonSocket SingletonCookieance
+

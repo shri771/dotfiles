@@ -12,10 +12,10 @@
         "interfaceType": "XRecord",
         "undoUsingBackspace": true,
         "windowDefaultSize": [
-            600,
-            400
+            944,
+            565
         ],
-        "hPanePosition": 260,
+        "hPanePosition": 258,
         "columnWidths": [
             113,
             38,
@@ -28,7 +28,9 @@
         "disabledModifiers": [],
         "scriptGlobals": {},
         "gtkTheme": "classic",
-        "gtkExpandedRows": [],
+        "gtkExpandedRows": [
+            "0"
+        ],
         "pathLastOpen": "0"
     },
     "folders": [],

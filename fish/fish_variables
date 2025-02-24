@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export BORG_PASSCOMMAND:cat\x20/home/sh/\x2eborg_passphrase
 SETUVAR --export COLORTERM:truecolor
 SETUVAR --export EDITOR:nvim
 SETUVAR LC_CTYPE:en_US\x2eUTF\x2d8

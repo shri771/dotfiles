@@ -16,6 +16,7 @@ export XCURSOR_THEME=Bibata-Modern-Classic
 export XCURSOR_SIZE=22
 set -Ux QT_ICON_THEME WhiteSur-dark
 set -Ux PERL5LIB /usr/share/perl5/vendor_perl
+set -Ux BORG_PASSCOMMAND "cat $HOME/.borg_passphrase"
 ##local
 ##set -x LANG en_US.UTF-8
 
@@ -259,6 +260,11 @@ function open_dotfile
     set target_directory $argv[1]
     set target_file $argv[2]
 
+    if string match -q "*-" (status current-command)
+        cd $target_directory
+        return
+    end
+
     if test (pwd) = $target_directory
         if test -n "$target_file"
             nvim $target_directory/$target_file
@@ -274,6 +280,96 @@ function open_dotfile
         end
     end
 end
+
+# Configs path
+function hycn
+    open_dotfile ~/dotfiles/hypr
+end
+
+function hycn-
+    open_dotfile ~/dotfiles/hypr
+end
+
+function swcn
+    open_dotfile ~/dotfiles/swaync/
+end
+
+function swcn-
+    open_dotfile ~/dotfiles/swaync/
+end
+
+function scr
+    open_dotfile ~/dotfiles/scripts/
+end
+
+function scr-
+    open_dotfile ~/dotfiles/scripts/
+end
+
+function wycn
+    open_dotfile ~/dotfiles/waybar/
+end
+
+function wycn-
+    open_dotfile ~/dotfiles/waybar/
+end
+
+function awcn
+    open_dotfile ~/dotfiles/awesome rc.lua
+end
+
+function awcn-
+    open_dotfile ~/dotfiles/awesome
+end
+
+function nvcn
+    open_dotfile ~/dotfiles/nvim init.lua
+end
+
+function nvcn-
+    open_dotfile ~/dotfiles/nvim
+end
+
+function fhcn
+    open_dotfile ~/dotfiles/fish config.fish
+end
+
+function fhcn-
+    open_dotfile ~/dotfiles/fish
+end
+
+function pycn
+    open_dotfile ~/dotfiles/polybar config.ini
+end
+
+function pycn-
+    open_dotfile ~/dotfiles/polybar
+end
+
+function txcn
+    open_dotfile ~/dotfiles/tmux tmux.conf
+end
+
+function txcn-
+    open_dotfile ~/dotfiles/tmux
+end
+
+function txs
+    open_dotfile ~/dotfiles/tmux/plugins/tmuxifier/layouts
+end
+
+function txs-
+    open_dotfile ~/dotfiles/tmux/plugins/tmuxifier/layouts
+end
+
+function ktcn
+    open_dotfile ~/dotfiles/kitty
+end
+
+function ktcn-
+    open_dotfile ~/dotfiles/kitty
+end
+
 
 function sysr
     if test (count $argv) -eq 0
@@ -317,50 +413,6 @@ function syss
 end
 
 
-# Configs path
-function hycn
-    open_dotfile ~/dotfiles/hypr
-end
-
-function swcn
-    open_dotfile ~/dotfiles/swaync/
-end
-
-function scr
-    open_dotfile ~/dotfiles/scripts/
-end
-
-function wycn
-    open_dotfile ~/dotfiles/waybar/
-end
-
-function awcn
-    open_dotfile ~/dotfiles/awesome rc.lua
-end
-
-function nvcn
-    open_dotfile ~/dotfiles/nvim init.lua
-end
-
-function fhcn
-    open_dotfile ~/dotfiles/fish config.fish
-end
-
-function pycn
-    open_dotfile ~/dotfiles/polybar config.ini
-end
-
-function txcn
-    open_dotfile ~/dotfiles/tmux tmux.conf
-end
-
-function txs
-    open_dotfile ~/dotfiles/tmux/plugins/tmuxifier/layouts
-end
-
-function ktcn
-    open_dotfile ~/dotfiles/kitty
-end
 
 ## End of Open Config ##
 
@@ -412,6 +464,7 @@ alias tlp-m='tlp-stat -p | grep scaling_governor'
 alias syst='systemctl list-timers --all '
 alias imp='kitty +kitten icat'
 alias syscn='cd /etc/systemd/system/ && sudo -E XDG_RUNTIME_DIR=/run/user/$(id -u) nvim .'
+alias syscn-='cd /etc/systemd/system/'
 alias arch='fastfetch'
 
 # vim and emacst
@@ -474,8 +527,6 @@ alias pl='git pull origin'
 alias ph='git push origin'
 alias tag='git tag'
 alias newtag='git tag -a'
-alias rn='bootdev run f330368c-734c-4708-971b-2ad33b4b7f52'
-alias sb='bootdev run f330368c-734c-4708-971b-2ad33b4b7f52 -s'
 
 # tmux
 alias tx="tmux"

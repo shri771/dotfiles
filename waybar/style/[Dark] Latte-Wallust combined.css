@@ -106,6 +106,7 @@ tooltip {
     color: #00CCFF;
     border-radius: 50%;
     background-color: black;
+    opacity: 0.7;
     border-radius: 15px 15px 15px 15px;
     padding-left: 8px;
     padding-right: 8px;
@@ -140,7 +141,7 @@ tooltip {
 #battery,
 #bluetooth,
 #clock,
-#cpu,
+#custom-cpu_freq,
 #disk,
 #idle_inhibitor,
 #keyboard-state,
@@ -153,6 +154,7 @@ tooltip {
 #pulseaudio-slider,
 #taskbar,
 #temperature,
+#cpu_freq,
 #tray,
 #window,
 #wireplumber,
@@ -214,6 +216,28 @@ tooltip {
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
+#bluetooth {
+    font-size: 14px;  /* Make the icon bigger */
+    padding: 5px;  /* Add some spacing */
+}
+#custom-cycle_wall{
+     font-size: 13px;
+}
+
+#custom-headphones{
+     font-size: 13px;
+}
+
+#mpris{
+     font-size: 13px;
+    color: @teal;
+}
+
+
+#custom-swaync{
+     font-size: 13px;
+}
+
 #pulseaudio-slider slider {
     min-width: 0px;
     min-height: 0px;
@@ -259,7 +283,7 @@ tooltip {
 }
 #pulseaudio-slider,
 #pulseaudio {
-	color: @color13;
+	color: @color19;
 }
 
 #pulseaudio.muted {
@@ -270,8 +294,23 @@ tooltip {
 	color: @sapphire;
 }
 
+#custom-cpu_freq {
+
+    color: #ffff7f;
+
+
+}
+
+#temperature {
+
+    color: #ffaa7f;
+
+
+}
+
 #cpu {
 	color: @mauve;
+    padding: 5px;  /* Add some spacing */
 }
 
 #battery {
@@ -340,6 +379,7 @@ tooltip {
 #custom-hypridle,
 #custom-lock,
 #idle_inhibitor {
+   font-size: 13px;
     color: @teal;
 }
 

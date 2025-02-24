@@ -67,7 +67,7 @@ textbox {
 
 listview {
   padding      : 4px 0px;
-  lines        : 12;
+  lines        : 13;
   columns      : 1;
   scrollbar    : true;
   fixed-height : false;

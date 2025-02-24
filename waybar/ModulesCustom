@@ -2,8 +2,24 @@
 /* Basically created to reduce the lines in Waybar Modules bank */
 /* NOTE: This is only for Custom Modules */
 /* Custom Modules like weather browser, tty, file manager at the beginning */
-
 {
+"custom/cpu_freq": {
+    "interval": 1,
+    "tooltip": true,
+    "exec": "$HOME/.config/waybar/scripts/cpu_freq.sh",
+    "format": "{}GHz {icon}",
+    "format-icons": [" "],
+	"on-click-right": "pypr toggle mission",
+},
+
+"custom/headphones": {
+    "tooltip": true,
+    "format": "{icon}",
+    "format-icons": [" 󰋋 "],
+    "on-click": "$HOME/scripts/startups/connect_realmebuds.sh",
+    "on-click-right": "$HOME/scripts/startups/disconnect_realmebus.sh"
+},
+
 "custom/weather": {
 	"format": "{}",
 	"format-alt": "{alt}: {}",
