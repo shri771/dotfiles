@@ -58,8 +58,8 @@ position = "28% 37%"
 
 
 [scratchpads.file]
-command = "thunar /home/sh/Pictures/Screenshots/ --daemon & thunar /home/sh/Pictures/Screenshots/"
-class = "Thunar"
+command = "QT_QPA_PLATFORM=xcb dolphin /home/sh/Pictures/Screenshots/"
+class = "dolphin"
 animation = "fromBottom"
 size = "46% 47%"
 lazy = true

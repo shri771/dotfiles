@@ -17,6 +17,7 @@ export XCURSOR_SIZE=22
 set -Ux QT_ICON_THEME WhiteSur-dark
 set -Ux PERL5LIB /usr/share/perl5/vendor_perl
 set -Ux BORG_PASSCOMMAND "cat $HOME/.borg_passphrase"
+set -Ux QT_QPA_PLATFORM xcb
 ##local
 ##set -x LANG en_US.UTF-8
 
