@@ -7,14 +7,13 @@
 # 📂 Paths for SwayNC notifications
 iDIR="$HOME/.config/swaync/icons"
 iDoR="$HOME/.config/swaync/images"
-sDIR="$HOME/.config/hypr/scripts"
 
 # Detect whether using Hyprland or Sway
-if command -v hyprctl &> /dev/null; then
+if command -v hyprctl &>/dev/null; then
     WM="hyprland"
-    INHIBIT_ON="hyprctl dispatch dpms off"   # Turn off screen (Hyprland equivalent)
-    INHIBIT_OFF="hyprctl dispatch dpms on"   # Turn screen back on
-elif command -v swaymsg &> /dev/null; then
+    INHIBIT_ON="hyprctl dispatch idleinhibit always"
+    INHIBIT_OFF="hyprctl dispatch idleinhibit none"
+elif command -v swaymsg &>/dev/null; then
     WM="sway"
     INHIBIT_ON="swaymsg 'seat * idle_inhibit on'"
     INHIBIT_OFF="swaymsg 'seat * idle_inhibit off'"
@@ -24,9 +23,9 @@ else
 fi
 
 # Kill any existing menu instances to prevent duplicates
-if pidof wofi > /dev/null; then
+if pidof wofi >/dev/null; then
     pkill wofi
-elif pidof rofi > /dev/null; then
+elif pidof rofi >/dev/null; then
     pkill rofi
 fi
 
@@ -34,10 +33,10 @@ fi
 options="10 min\n15 min\n30 min\nCustom\nCancel"
 
 # Show menu using wofi or rofi
-if command -v wofi &> /dev/null; then
-    choice=$(echo -e "$options" | wofi --dmenu --width=250 --height=200 --lines=5 --prompt "Idle Inhibitor Time")
-elif command -v rofi &> /dev/null; then
-    choice=$(echo -e "$options" | rofi -i -dmenu -p "Idle Inhibitor Time" -config ~/.config/rofi/config-clipboard.rasi)
+if command -v wofi &>/dev/null; then
+    choice=$(echo -e "$options" | wofi --dmenu --width=250 --height=200 --lines=5 --prompt "Idle Inhibitor Time" 2>/dev/null)
+elif command -v rofi &>/dev/null; then
+    choice=$(echo -e "$options" | rofi -i -dmenu -p "Idle Inhibitor Time" -config ~/.config/rofi/config-clipboard.rasi 2>/dev/null)
 else
     notify-send -u low -i "${iDoR}/error.png" "Error" "Neither wofi nor rofi found. Please install one."
     exit 1
@@ -50,10 +49,10 @@ fi
 
 # Handle custom time input
 if [[ "$choice" == "Custom" ]]; then
-    if command -v wofi &> /dev/null; then
-        custom_time=$(wofi --dmenu --width=200 --height=100 --prompt "Enter minutes" | tr -d '[:alpha:]')
-    elif command -v rofi &> /dev/null; then
-        custom_time=$(rofi -dmenu -p "Enter minutes" -config ~/.config/rofi/config-clipboard.rasi | tr -d '[:alpha:]')
+    if command -v wofi &>/dev/null; then
+        custom_time=$(wofi --dmenu --width=200 --height=100 --prompt "Enter minutes" 2>/dev/null | tr -dc '0-9')
+    elif command -v rofi &>/dev/null; then
+        custom_time=$(rofi -dmenu -p "Enter minutes" -config ~/.config/rofi/config-clipboard.rasi 2>/dev/null | tr -dc '0-9')
     fi
 
     # Validate custom input
