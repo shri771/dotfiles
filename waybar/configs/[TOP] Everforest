@@ -13,9 +13,10 @@
 //"spacing": 6,
 "fixed-center": true,
 "ipc": true,
-//"margin-top": 3,
-//"margin-left": 8,
-//"margin-right": 8,
+"margin-top": 3,
+"margin-left": 5,
+"margin-right": 5,
+"margin-bottom": 3,
 
 "modules-left": [
 	"hyprland/workspaces#cam",
@@ -29,8 +30,9 @@
 	"bluetooth",
 	"custom/cycle_wall",
 	"clock#forest",
-	"custom/headphones",
+	"custom/separator#blank",
 	"custom/swaync",
+	"custom/headphones",
 	"mpris",
 	],
 "modules-right": [
@@ -42,12 +44,6 @@
 	"group/audio",
 	],
 
-// Additional / Edited Waybar Modules //
-"custom/arch": {
-      "format":" ",
-      "tooltip": false,
-      "on-click": "rofi -show drun"
-},
 "clock#forest": {
       "format": "{:%A %d.%m.%Y - %H:%M}",
       "tooltip-format": "<span color='#D3C6AA' size='larger'>{:%Y %B}</span>\n<tt>{calendar}</tt>",
@@ -105,7 +101,7 @@
 	"interval": 30,
 	//"format": "Disk    󰋊",
 	"path": "/",
-	//"format-alt-click": "click",
+	//"format alt-click": "click",
 	"format": "Disk 󰋊  {used}",
   "on-click-right": "baobab",
 //	"tooltip": true,

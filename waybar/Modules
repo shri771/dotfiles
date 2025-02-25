@@ -4,6 +4,21 @@
 
 {
 
+"temperature": {
+	"interval": 1,
+	"tooltip": true,
+	"hwmon-path": [
+		"/home/sh/.config/hypr/scripts/temp_sensor"
+	],
+	//"thermal-zone": 0,
+	"critical-threshold": 80,
+	"format-critical": "{temperatureC}°C {icon}",
+	"format": "{temperatureC}°C {icon}",
+	"format-icons": [
+		"󰈸"
+	],
+	"on-click-right": "corectrl"
+},
 "temperature#vertical": {
 	"interval": 10,
 	"tooltip": true,
@@ -80,14 +95,14 @@
 	"on-click-middle": "$HOME/.config/hypr/scripts/ChangeBlur.sh",
 },
 "bluetooth": { 
-	"format": " ",
-	"format-disabled": "󰂳",
-	"format-connected": "󰂱 󰂄 {device_battery_percentage}%",
-	"tooltip-format": " {device_alias}",
-	"tooltip-format-connected": " {device_enumerate}",
-	"tooltip-format-enumerate-connected": " {device_alias} 󰂄 {device_battery_percentage}%",
-	"tooltip": true,
-	"on-click": "blueman-manager"
+    "format": "<span size='large'></span> ",
+    "format-disabled": "<span size='large'>󰂳</span>",
+    "format-connected": "<span size='large'></span> {device_battery_percentage}%",
+    "tooltip-format": "<span size='large'></span> {device_alias}",
+    "tooltip-format-connected": "<span size='large'></span> {device_enumerate}",
+    "tooltip-format-enumerate-connected": "<span size='large'></span> {device_alias} 󰂄 {device_battery_percentage}%",
+    "tooltip": true,
+    "on-click": "blueman-manager"
 },
 "clock": {
 	"interval": 1,
@@ -228,13 +243,12 @@
 	"smooth-scrolling-threshold": 1,
 	"player-icons": {
 		"chromium": "",
-		"default": "",
 		"firefox": "",
 		"kdeconnect": "",
-		"mopidy": "",
-		"mpv": "󰐹",
+		"mpv": "",
 		"spotify": "",
 		"vlc": "󰕼",
+		"default": "󰗃", 
 	},
 	"status-icons": {
 		"paused": "󰐎",
@@ -443,7 +457,7 @@
 	"scroll-step": 5.0,
 	"on-click": "$HOME/.config/hypr/scripts/Volume.sh --toggle",
 	"on-click-right": "pavucontrol -t 3",
-	"on-scroll-up": "$HOME/.config/hypr/scripts/Volume.sh --inc",
+ "on-scroll-up": "$HOME/.config/hypr/scripts/Volume.sh --inc",
 	"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --dec",
 	"tooltip-format": "{icon} {desc} | {volume}%",
 	"smooth-scrolling-threshold": 1,

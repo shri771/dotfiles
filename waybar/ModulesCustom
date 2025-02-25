@@ -61,7 +61,7 @@
 },
 
 "custom/cycle_wall": {
-	"format": " ",
+	"format": " ",
 	"on-click": "$HOME/.config/hypr/UserScripts/WallpaperSelect.sh",
 	"on-click-right": "$HOME/.config/hypr/UserScripts/WallpaperRandom.sh",
 	"on-click-middle": "$HOME/.config/hypr/scripts/WaybarStyles.sh",
@@ -195,7 +195,7 @@
 	"tooltip": false
 },
 "custom/separator#blank": {
-	"format": "",
+	"format": " ",
 	"interval": "once",
 	"tooltip": false
 },
@@ -205,7 +205,7 @@
 	"tooltip": false
 },
 "custom/separator#blank_3": {
-	"format": "   ",
+	"format": "  ",
 	"interval": "once",
 	"tooltip": false
 },

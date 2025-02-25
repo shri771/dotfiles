@@ -56,7 +56,7 @@ tooltip {
     background-color: @background-module;
     border-radius:15px;
     border-bottom:2px solid @border-color;
-	padding-top: 2px;
+	padding-top: 0px;
 	padding-bottom: 0px;
 	padding-right: 4px;
 	padding-left: 4px;
@@ -66,7 +66,7 @@ tooltip {
     background-color: @background-module;
     border-radius:15px;
     border-bottom:2px solid @border-color;
-	padding-top: 2px;
+	padding-top: 0px;
 	padding-bottom: 0px;
 	padding-right: 4px;
 	padding-left: 4px;
@@ -76,7 +76,7 @@ tooltip {
     background-color: @background-module;
     border-radius:15px;
     border-bottom: 2px solid @border-color;
-	padding-top: 2px;
+	padding-top: 0px;
 	padding-bottom: 0px;
 	padding-right: 4px;
 	padding-left: 4px;
@@ -216,26 +216,38 @@ tooltip {
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
+
 #bluetooth {
-    font-size: 14px;  /* Make the icon bigger */
-    padding: 5px;  /* Add some spacing */
+    font-size: 14px;  /* Keep normal text size */
+    padding: 5px;     /* Add spacing */
+    color: #ffaa7f;
+}
+
+
+
+#bluetooth span {
+    font-size: 16px;  /* Increase icon size */
 }
 #custom-cycle_wall{
-     font-size: 13px;
+     font-size: 14px;
 }
 
 #custom-headphones{
-     font-size: 13px;
+     font-size: 16px;
+    color: #ff557f;
 }
 
 #mpris{
-     font-size: 13px;
+     font-size: 15px;
     color: @teal;
+    padding: 5px;     /* Add spacing */
 }
 
 
 #custom-swaync{
-     font-size: 13px;
+     font-size: 15px;
+    padding: 4px;     /* Add spacing */
+
 }
 
 #pulseaudio-slider slider {
@@ -379,7 +391,7 @@ tooltip {
 #custom-hypridle,
 #custom-lock,
 #idle_inhibitor {
-   font-size: 13px;
+   font-size: 14px;
     color: @teal;
 }
 
