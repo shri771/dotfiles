@@ -95,14 +95,15 @@
 	"on-click-middle": "$HOME/.config/hypr/scripts/ChangeBlur.sh",
 },
 "bluetooth": { 
-    "format": "<span size='large'></span> ",
+    "format": "<span size='large'></span> {device_battery_percentage}%",
     "format-disabled": "<span size='large'>󰂳</span>",
     "format-connected": "<span size='large'></span> {device_battery_percentage}%",
     "tooltip-format": "<span size='large'></span> {device_alias}",
     "tooltip-format-connected": "<span size='large'></span> {device_enumerate}",
     "tooltip-format-enumerate-connected": "<span size='large'></span> {device_alias} 󰂄 {device_battery_percentage}%",
     "tooltip": true,
-    "on-click": "blueman-manager"
+    "on-click": "blueman-manager",
+    "class": "{device_battery_percentage}"  // Assigns class based on battery level
 },
 "clock": {
 	"interval": 1,
