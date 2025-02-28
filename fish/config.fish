@@ -571,3 +571,6 @@ starship init fish | source
 
 # Generated for envman. Do not edit.
 test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
+
+# Created by `pipx` on 2025-02-28 09:09:27
+set PATH $PATH /home/sh/.local/bin

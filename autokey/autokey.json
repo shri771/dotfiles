@@ -12,8 +12,8 @@
         "interfaceType": "XRecord",
         "undoUsingBackspace": true,
         "windowDefaultSize": [
-            944,
-            565
+            945,
+            1142
         ],
         "hPanePosition": 258,
         "columnWidths": [
@@ -31,7 +31,7 @@
         "gtkExpandedRows": [
             "0"
         ],
-        "pathLastOpen": "0"
+        "pathLastOpen": "0:8"
     },
     "folders": [],
     "toggleServiceHotkey": {
