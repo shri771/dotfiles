@@ -17,7 +17,7 @@ focus = true  # Always focuses when opened
 [scratchpads.whatsie]
 animation = "fromTop"
 command = "whatsie"
-class = "com.ktechpit.whatsie"
+class = "WhatSie"
 size = "60% 58%"
 focus = true
 lazy = true

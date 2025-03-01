@@ -102,7 +102,9 @@
     "tooltip-format-connected": "<span size='large'></span> {device_enumerate}",
     "tooltip-format-enumerate-connected": "<span size='large'></span> {device_alias} 󰂄 {device_battery_percentage}%",
     "tooltip": true,
-    "on-click": "blueman-manager",
+    "on-click-middle": "blueman-manager",
+    "on-click": "$HOME/scripts/startups/connect_realmebuds.sh",
+    "on-click-right": "$HOME/scripts/startups/disconnect_realmebus.sh",
     "class": "{device_battery_percentage}"  // Assigns class based on battery level
 },
 "clock": {

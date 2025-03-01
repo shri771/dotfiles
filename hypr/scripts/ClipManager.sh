@@ -1,17 +1,11 @@
 #!/bin/bash
-# Clipboard Manager using cliphist, rofi, wl-copy, and wtype (for auto-paste)
+# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
+# Clipboard Manager using cliphist, rofi, and wl-copy.
 
 # Variables
 rofi_theme="$HOME/.config/rofi/config-clipboard.rasi"
-msg='👀 **note**  CTRL DEL = cliphist del (entry)   or   ALT DEL - cliphist wipe (all)'
 
-# Ensure dependencies are installed
-if ! command -v cliphist &>/dev/null || ! command -v rofi &>/dev/null || ! command -v wl-copy &>/dev/null || ! command -v wtype &>/dev/null; then
-    echo "Error: Required dependencies (cliphist, rofi, wl-copy, wtype) are missing."
-    exit 1
-fi
-
-# Kill existing rofi instance if running
+# Check if rofi is already running
 if pidof rofi > /dev/null; then
   pkill rofi
 fi
@@ -21,24 +15,27 @@ while true; do
         rofi -i -dmenu \
             -kb-custom-1 "Control-Delete" \
             -kb-custom-2 "Alt-Delete" \
-            -config "$rofi_theme" < <(cliphist list) \
-            -mesg "$msg"
+            -config "$rofi_theme" < <(cliphist list)
     )
 
-    case "$?" in
-        1) exit ;;  # User pressed Escape, exit script
-        0)  
-            if [[ -n "$result" ]]; then
-                # Decode selection and copy it to clipboard
-                cliphist decode <<< "$result" | wl-copy
-                sleep 0.1  # Small delay to ensure clipboard is set
-                wtype -M control v -m control  # Simulate Ctrl+V (paste)
-                exit
-            fi
-            ;;
-        10)  
-            cliphist delete <<< "$result" ;;
-        11)  
-            cliphist wipe ;;
-    esac
+    exit_code=$?
+
+    if [[ $exit_code -eq 1 ]]; then
+        exit
+    elif [[ $exit_code -eq 0 && -n "$result" ]]; then
+        decoded_text=$(cliphist decode <<<"$result")
+
+        if [[ -n "$decoded_text" ]]; then
+            printf "%s" "$decoded_text" | wl-copy
+            printf "%s" "$decoded_text" | wl-copy -p
+            sleep 0.2  # Allow clipboard update
+        else
+            printf "Failed to decode clipboard entry\n" >&2
+        fi
+        exit
+    elif [[ $exit_code -eq 10 && -n "$result" ]]; then
+        cliphist delete <<<"$result"
+    elif [[ $exit_code -eq 11 ]]; then
+        cliphist wipe
+    fi
 done

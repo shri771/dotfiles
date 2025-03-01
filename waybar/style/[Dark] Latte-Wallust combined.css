@@ -234,7 +234,11 @@ tooltip {
 
 #custom-headphones{
      font-size: 16px;
+    padding: 5px;     /* Add spacing */
     color: #ff557f;
+}
+#custom-headphones span {
+    font-size: 16px;  /* Increase icon size */
 }
 
 #mpris{

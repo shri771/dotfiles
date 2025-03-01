@@ -5,7 +5,7 @@ set -e fish_user_paths
 set -U fish_user_paths $HOME/.bin $HOME/.local/bin $HOME/.config/emacs/bin $HOME/Applications /var/lib/flatpak/exports/bin/ $fish_user_paths
 
 ### EXPORT ###
-set fish_greeting # Supresses fish's intro message
+set -U fish_greeting ""
 set TERM xterm-256color # Sets the terminal type
 set -Ux EDITOR nvim
 set -Ux VISUAL nvim
@@ -529,6 +529,17 @@ alias ph='git push origin'
 alias tag='git tag'
 alias newtag='git tag -a'
 
+#Snapper
+function snc
+    if test (count $argv) -eq 0
+        echo "Usage: snc <snapshot description>"
+        return 1
+    end
+    sudo snapper -c root create --description "$argv"
+end
+alias snl="sudo snapper -c root list"
+alias sno="nemo /.snapshots/"
+alias snd="bash $HOME/scripts/terminal/del_snapshot.sh"
 # tmux
 alias tx="tmux"
 alias txa="tmux a"
