@@ -459,7 +459,7 @@ alias tpcn=' sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf'
 alias vn='variety --next'
 alias vp='variety'
 alias n='nvim'
-alias sn='sudo -E XDG_RUNTIME_DIR=/run/user/$(id -u) nvim'
+alias sn='sudo -E XDG_RUNTIME_DIR=/run/user/$(id -u) HOME=/home/sh nvim'
 alias tlp-m='tlp-stat -p | grep scaling_governor'
 alias syst='systemctl list-timers --all '
 alias imp='kitty +kitten icat'
@@ -491,6 +491,7 @@ alias parsua='paru -Sua --noconfirm' # update only AUR pkgs (paru)
 alias parsyu='paru -Syu --noconfirm' # update standard pkgs and AUR pkgs (paru)
 alias unlock='sudo rm /var/lib/pacman/db.lck' # remove pacman lock
 alias orphan='sudo pacman -Rns (pacman -Qtdq)' # remove orphaned packages (DANGEROUS!)
+alias pkgin='bash $HOME/scripts/terminal/pkg_search.sh'
 
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
@@ -540,6 +541,7 @@ end
 alias snl="sudo snapper -c root list"
 alias sno="nemo /.snapshots/"
 alias snd="bash $HOME/scripts/terminal/del_snapshot.sh"
+alias snr="bash $HOME/scripts/terminal/res_snapshot.sh"
 # tmux
 alias tx="tmux"
 alias txa="tmux a"

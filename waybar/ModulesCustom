@@ -173,9 +173,9 @@
 // NOTE:! This is only for Arch and Arch Based Distros  depend: pacman-contrib
 "custom/updater": {
     "format": "",
-    "exec": "[[ $(checkupdates 2>/dev/null | wc -l) -gt 0 ]] && echo '' || echo ''",
+    "exec": "set -l zypper_updates (zypper lu | tail -n +3 | wc -l); set -l flatpak_updates (flatpak remote-ls --updates | wc -l); set -l snap_updates (snap refresh --list | grep -c -v 'All snaps up to date.'); if test $zypper_updates -gt 0 -o $flatpak_updates -gt 0 -o $snap_updates -gt 0; echo ''; else; echo ''; end",
     "interval": 3000,
-    "on-click": "tmux has-session -t cn 2>/dev/null || tmux new-session -d -s cn; tmux new-window -t cn -n update bash -c 'if command -v paru &> /dev/null; then paru -Syu; else yay -Syu; fi; flatpak update -y; notify-send \"System and Flatpak updates completed\"; sleep 2; pkill -SIGRTMIN+10 waybar'"
+    "on-click": "tmux has-session -t cn 2>/dev/null || tmux new-session -d -s cn; tmux new-window -t cn -n update fish -c 'sudo zypper ref && sudo zypper up -y; flatpak update -y; snap refresh; notify-send \"System, Flatpak, and Snap updates completed\"; sleep 2; pkill -SIGRTMIN+10 waybar'"
 },
 
 // Separators

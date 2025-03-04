@@ -16,9 +16,9 @@ m=$(( (s % 3600) / 60 ))  # Minutes
 
 # Formatting uptime output correctly
 if ((d > 0)); then
-    echo "Uptime: $d days, $h hours"
+    echo "Uptime: $d days $h hours"
 elif ((h > 0)); then
-    echo "Uptime: $h hours, $m minutes"
+    echo "Uptime: $h hours $m minutes"
 else
     echo "Uptime: $m minutes"
 fi
