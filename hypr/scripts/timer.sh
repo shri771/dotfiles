@@ -1,47 +1,43 @@
 #!/bin/bash
+# Clipboard Manager using cliphist and rofi
 
-# Timer script with Rofi interface
+# Variables
+rofi_theme="$HOME/.config/rofi/config-clipboard.rasi"
 
-# Define the choices
-CHOICES="Start Timer\nStart Stopwatch\nExit"
+if pidof rofi > /dev/null; then
+  pkill rofi
+fi
 
-# Ask the user to choose an option
-ACTION=$(echo -e "$CHOICES" | rofi -dmenu -p "Choose an action:")
-
-case $ACTION in
-    "Start Timer")
-        # Ask for the timer duration (in minutes)
-        TIMER_DURATION=$(rofi -dmenu -p "Enter timer duration (in minutes):")
-        TIMER_DURATION=$((TIMER_DURATION * 60))  # Convert minutes to seconds
-        echo "Timer started for $TIMER_DURATION seconds!"
-        
-        # Start the timer and notify when it finishes
-        sleep $TIMER_DURATION && notify-send "Timer finished!"
-        ;;
-    
-    "Start Stopwatch")
-        # Start a stopwatch
-        START_TIME=$(date +%s)
-        while true; do
-            CURRENT_TIME=$(date +%s)
-            ELAPSED_TIME=$((CURRENT_TIME - START_TIME))
-            ELAPSED_FORMATTED=$(printf "%02d:%02d:%02d" $((ELAPSED_TIME / 3600)) $(( (ELAPSED_TIME % 3600) / 60 )) $((ELAPSED_TIME % 60)))
-            
-            # Display stopwatch time
-            STOPWATCH_TIME=$(echo -e "Stopwatch: $ELAPSED_FORMATTED\nStop\n" | rofi -dmenu -p "Running Stopwatch:")
-            
-            if [[ "$STOPWATCH_TIME" == "Stop" ]]; then
-                notify-send "Stopwatch stopped!"
-                break
+while true; do
+    result=$(
+        rofi -i -dmenu \
+            -kb-custom-1 "Control-Delete" \
+            -kb-custom-2 "Alt-Delete" \
+            -config "$rofi_theme" < <(cliphist list)
+    )
+    exit_code=$?
+    if [ $exit_code -eq 1 ]; then
+        exit
+    elif [ $exit_code -eq 0 ] && [ -n "$result" ]; then
+        decoded_text=$(cliphist decode <<< "$result")
+        if [ -n "$decoded_text" ]; then
+            # Use only cliphist to store the clipboard content
+            printf "%s" "$decoded_text" | cliphist store
+            sleep 0.5
+            # Debug: check with wl-paste to see if clipboard holds the data
+            current=$(wl-paste)
+            if [ "$current" = "$decoded_text" ]; then
+                echo "Clipboard updated successfully."
+            else
+                echo "Clipboard update failed. Current clipboard: $current" >&2
             fi
-        done
-        ;;
-    
-    "Exit")
-        exit 0
-        ;;
-    *)
-        exit 1
-        ;;
-esac
-
+        else
+            echo "Failed to decode clipboard entry" >&2
+        fi
+        exit
+    elif [ $exit_code -eq 10 ] && [ -n "$result" ]; then
+        cliphist delete <<< "$result"
+    elif [ $exit_code -eq 11 ]; then
+        cliphist wipe
+    fi
+done

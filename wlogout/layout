@@ -24,7 +24,7 @@
 }
 {
     "label" : "suspend",
-    "action" : "systemctl suspend",
+    "action" : "systemctl suspend && $HOME/.config/hypr/scripts/LockScreen.sh",
     "text" : "Suspend",
     "keybind" : "s"
 }

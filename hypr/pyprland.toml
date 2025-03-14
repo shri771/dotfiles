@@ -65,3 +65,13 @@ size = "46% 47%"
 lazy = true
 position = "28% 37%"
 opacity = 0.9
+
+
+[scratchpads.kde]
+command = "kdeconnect-app"
+class = "org.kde.kdeconnect.app"
+animation = "fromBottom"
+size = "24% 27%"
+lazy = true
+position = "37% 46%"
+opacity = 0.9

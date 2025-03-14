@@ -412,7 +412,25 @@ function syss
     end
 end
 
+# Function to change CPU governor 
+function cpm --description "Change CPU power mode"
+    if test (count $argv) -eq 0
+        echo "Usage: cpm -p (performance) | -b (battery saver)"
+        return 1
+    end
 
+    switch $argv[1]
+        case -p
+            echo "Setting CPU mode to Performance..."
+            echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+        case -b
+            echo "Setting CPU mode to Battery Saver..."
+            echo powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+        case '*'
+            echo "Invalid option. Use -p for Performance or -b for Battery Saver."
+            return 1
+    end
+end
 
 ## End of Open Config ##
 
@@ -463,9 +481,11 @@ alias sn='sudo -E XDG_RUNTIME_DIR=/run/user/$(id -u) HOME=/home/sh nvim'
 alias tlp-m='tlp-stat -p | grep scaling_governor'
 alias syst='systemctl list-timers --all '
 alias imp='kitty +kitten icat'
-alias syscn='cd /etc/systemd/system/ && sudo -E XDG_RUNTIME_DIR=/run/user/$(id -u) nvim .'
+alias syscn='cd /etc/systemd/system/ && sn .'
 alias syscn-='cd /etc/systemd/system/'
 alias arch='fastfetch'
+alias mke='chmod +x'
+alias vm='source ~/.venvs/pyprland/bin/activate.fish'
 
 # vim and emacst
 alias emacs="emacsclient -c -a 'emacs'"
@@ -539,7 +559,7 @@ function snc
     sudo snapper -c root create --description "$argv"
 end
 alias snl="sudo snapper -c root list"
-alias sno="nemo /.snapshots/"
+alias sno="dolphin /.snapshots/"
 alias snd="bash $HOME/scripts/terminal/del_snapshot.sh"
 alias snr="bash $HOME/scripts/terminal/res_snapshot.sh"
 # tmux

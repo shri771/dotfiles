@@ -20,6 +20,7 @@ run_bisync() {
             echo "$current_time" > "$LAST_RUN_FILE"
         else
             printf "[%s] Rclone Bisync failed.\n" "$(date)" >&2
+            notify-send -u critical "Rclone Bisync Failed" "Failed to sync Documents folder"
         fi
     else
         printf "[%s] Change detected, but skipping sync (too soon).\n" "$(date)"
@@ -41,4 +42,3 @@ main() {
 }
 
 main
-
