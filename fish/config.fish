@@ -459,6 +459,9 @@ function txaw
     end
 end
 
+function git
+    command git $argv | lolcat
+end
 # Open config files
 ### END OF FUNCTIONS ###
 
