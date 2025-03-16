@@ -459,9 +459,42 @@ function txaw
     end
 end
 
+# Adding colors to cmd's
 function git
     command git $argv | lolcat
 end
+
+
+function zypper
+    command zypper $argv | lolcat
+end
+
+function snap
+    command snap $argv | lolcat
+end
+
+function flatpak
+    command flatpak $argv | lolcat
+end
+
+function sudo
+    if test (count $argv) -gt 0
+        switch $argv[1]
+            case zypper
+                command sudo zypper $argv[2..-1] | lolcat
+            case snap
+                command sudo snap $argv[2..-1] | lolcat
+            case flatpak
+                command sudo flatpak $argv[2..-1] | lolcat
+            case '*'
+                command sudo $argv
+        end
+    else
+        command sudo
+    end
+end
+
+
 # Open config files
 ### END OF FUNCTIONS ###
 
