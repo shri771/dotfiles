@@ -1,0 +1,52 @@
+MenuBar=Disabled
+
+[$Version]
+update_info=dolphin_detailsmodesettings.upd:rename-leading-padding,dolphin_detailsmodesettings.upd:move-content-display,dolphin_directorysizemode.upd:convert-directorysizecount-to-directorysizemode
+
+[ContextMenu]
+ShowAddToPlaces=false
+ShowCopyLocation=false
+ShowCopyMoveMenu=true
+ShowDuplicateHere=false
+
+[ExtractDialog]
+1920x1200 screen: Height=1200
+1920x1200 screen: Width=1920
+DirHistory[$e]=$HOME/.themes/
+
+[General]
+BrowseThroughArchives=true
+ConfirmClosingMultipleTabs=false
+DoubleClickViewAction=create_dir
+EditableUrl=false
+ShowFullPath=true
+ShowStatusBar=false
+Version=202
+ViewPropsTimestamp=2025,3,2,19,3,36.721
+
+[IconsMode]
+IconSize=64
+
+[InformationPanel]
+dateFormat=ShortFormat
+previewsAutoPlay=true
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+
+[MainWindow][Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[Notification Messages]
+ConfirmOpenManyTerminals=false
+warnAboutRisksBeforeActingAsAdmin=false
+
+[PreviewSettings]
+Plugins=audiothumbnail,blenderthumbnail,comicbookthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs,ffmpegthumbnailer,gdk-pixbuf-thumbnailer
+
+[ViewPropertiesDialog]
+1920x1200 screen: Window-Maximized=true

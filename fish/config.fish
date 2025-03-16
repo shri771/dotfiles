@@ -559,7 +559,7 @@ function snc
     sudo snapper -c root create --description "$argv"
 end
 alias snl="sudo snapper -c root list"
-alias sno="dolphin /.snapshots/"
+alias sno="  dolphin  /.snapshots/"
 alias snd="bash $HOME/scripts/terminal/del_snapshot.sh"
 alias snr="bash $HOME/scripts/terminal/res_snapshot.sh"
 # tmux

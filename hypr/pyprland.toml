@@ -16,8 +16,8 @@ focus = true  # Always focuses when opened
 
 [scratchpads.whatsie]
 animation = "fromTop"
-command = "whatsie"
-class = "WhatSie"
+command = "zapzap"
+class = "com.rtosta.zapzap"
 size = "60% 58%"
 focus = true
 lazy = true
@@ -49,7 +49,7 @@ position = "41% 44%"
 
 
 [scratchpads.mission]
-command = "mission-center"
+command = "missioncenter"
 class = "io.missioncenter.MissionCenter"
 animation = "fromBottom"
 size = "46% 47%"
@@ -58,8 +58,8 @@ position = "28% 37%"
 
 
 [scratchpads.file]
-command = "QT_QPA_PLATFORM=xcb dolphin /home/sh/Pictures/Screenshots/"
-class = "dolphin"
+command = "dolphin"
+class = "org.kde.dolphin"
 animation = "fromBottom"
 size = "46% 47%"
 lazy = true
