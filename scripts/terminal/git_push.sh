@@ -41,7 +41,9 @@ stage_and_commit() {
 
     if [[ ${#commit_messages[@]} -gt 0 ]]; then
         commit_msg=$(printf "%s\n" "${commit_messages[@]}")
-        git commit -m "$commit_msg"
+        # Capture the commit command output and pipe it through lolcat
+        commit_output=$(git commit -m "$commit_msg")
+        echo "$commit_output" | lolcat
     fi
 }
 
