@@ -12,7 +12,7 @@ check_git_status() {
     status=$(git status --porcelain)
 
     if [[ -z "$status" ]]; then
-        printf "No changes to commit.\n" | lolcat
+        printf "No changes to commit.\n"
         return 1
     fi
     return 0
@@ -41,8 +41,7 @@ stage_and_commit() {
 
     if [[ ${#commit_messages[@]} -gt 0 ]]; then
         commit_msg=$(printf "%s\n" "${commit_messages[@]}")
-        # Pipe both stdout and stderr through lolcat for colorized commit output
-        git commit -m "$commit_msg" 2>&1 | lolcat
+        git commit -m "$commit_msg"
     fi
 }
 
@@ -58,8 +57,8 @@ main() {
     if check_git_status; then
         stage_and_commit
         push_changes
-        echo "===================================================" | lolcat
-        git status | lolcat
+        echo "==================================================="
+        git status
     fi
 }
 
