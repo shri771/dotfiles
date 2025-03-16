@@ -41,7 +41,6 @@ stage_and_commit() {
 
     if [[ ${#commit_messages[@]} -gt 0 ]]; then
         commit_msg=$(printf "%s\n" "${commit_messages[@]}")
-        # Pipe both stdout and stderr through lolcat for colorized commit output
         git commit -m "$commit_msg" 2>&1 | lolcat
     fi
 }
@@ -50,7 +49,7 @@ stage_and_commit() {
 push_changes() {
     local branch
     branch=$(git rev-parse --abbrev-ref HEAD)
-    git push origin "$branch"
+    git push origin "$branch" 2>&1 | lolcat
 }
 
 # Main execution
