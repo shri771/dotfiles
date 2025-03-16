@@ -12,7 +12,7 @@ check_git_status() {
     status=$(git status --porcelain)
 
     if [[ -z "$status" ]]; then
-        printf "No changes to commit.\n"
+        printf "No changes to commit.\n" | lolcat
         return 1
     fi
     return 0
@@ -57,8 +57,8 @@ main() {
     if check_git_status; then
         stage_and_commit
         push_changes
-        echo "==================================================="
-        git status
+        echo "===================================================" | lolcat
+        git status | lolcat
     fi
 }
 
