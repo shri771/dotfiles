@@ -12,7 +12,7 @@ animation = "fromTop"
 command = "kitty --class kitty-dropterm"
 class = "kitty-dropterm"
 size = "60% 60%"
-focus = true  # Always focuses when opened
+focus = true  
 
 [scratchpads.whatsie]
 animation = "fromTop"
@@ -44,7 +44,7 @@ animation = "fromBottom"
 command = "qalculate-gtk "
 class = "qalculate-gtk"
 size = "21% 44%"
-focus = false
+focus = true
 position = "41% 44%"
 
 
@@ -62,9 +62,11 @@ command = "dolphin"
 class = "org.kde.dolphin"
 animation = "fromBottom"
 size = "46% 47%"
-lazy = true
+lazy = false
 position = "28% 37%"
 opacity = 0.9
+ontop = false
+focus = true  
 
 
 [scratchpads.kde]
@@ -72,6 +74,7 @@ command = "kdeconnect-app"
 class = "org.kde.kdeconnect.app"
 animation = "fromBottom"
 size = "24% 27%"
-lazy = true
+lazy = false
 position = "37% 46%"
 opacity = 0.9
+focus = true  

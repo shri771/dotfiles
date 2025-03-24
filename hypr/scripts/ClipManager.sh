@@ -1,37 +1,36 @@
 #!/bin/bash
-# Clipboard Manager using cliphist, rofi, and wl-copy
+# Filtered Clipboard Manager for Wayland
 # 💫 https://github.com/JaKooLit 💫
 
 # Variables
 rofi_theme="$HOME/.config/rofi/config-clipboard.rasi"
 
-# Check if rofi is already running and kill it if necessary
-if pidof rofi >/dev/null; then
-  pkill rofi
-fi
+# Filter out unwanted patterns
+FILTERED_HISTORY=$(
+    cliphist list | \
+    grep -vE '^[0-9]+[[:space:]]+(#!|❯|echo|cliphist|wl-copy|sleep|rofi)'
+)
 
-while true; do
-    result=$(
-        cliphist list | rofi -i -dmenu \
-            -kb-custom-1 "Control-Delete" \
-            -kb-custom-2 "Alt-Delete" \
-            -config "$rofi_theme"
-    )
+# Show selection menu
+SELECTION=$(
+    echo "$FILTERED_HISTORY" | \
+    rofi -dmenu -i -config "$rofi_theme" \
+        -kb-custom-1 "Control-Delete" \
+        -kb-custom-2 "Alt-Delete"
+)
 
-    case "$?" in
-        1) exit ;;  # Exit on cancel
-        0)
-            if [[ -n "$result" ]]; then
-                cliphist decode <<<"$result" | wl-copy
-                wl-paste >/dev/null  # Ensure the clipboard updates correctly
-                exit
-            fi
-            ;;
-        10)
-            [[ -n "$result" ]] && cliphist delete <<<"$result"
-            ;;
-        11)
-            cliphist wipe
-            ;;
-    esac
-done
+# Handle selection
+case $? in
+    0)
+        if [[ -n "$SELECTION" ]]; then
+            CONTENT=$(cliphist decode <<< "$SELECTION")
+            echo -n "$CONTENT" | wl-copy
+        fi
+        ;;
+    10)
+        [[ -n "$SELECTION" ]] && cliphist delete <<< "$SELECTION"
+        ;;
+    11)
+        cliphist wipe
+        ;;
+esac

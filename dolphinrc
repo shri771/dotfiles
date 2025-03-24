@@ -19,7 +19,6 @@ BrowseThroughArchives=true
 ConfirmClosingMultipleTabs=false
 DoubleClickViewAction=create_dir
 EditableUrl=false
-ShowFullPath=true
 ShowStatusBar=false
 Version=202
 ViewPropsTimestamp=2025,3,2,19,3,36.721
@@ -48,5 +47,11 @@ warnAboutRisksBeforeActingAsAdmin=false
 [PreviewSettings]
 Plugins=audiothumbnail,blenderthumbnail,comicbookthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs,ffmpegthumbnailer,gdk-pixbuf-thumbnailer
 
+[Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
 [ViewPropertiesDialog]
 1920x1200 screen: Window-Maximized=true
+
+[kuick-move]
+Paths[$e]=$HOME/Pictures/Photos/

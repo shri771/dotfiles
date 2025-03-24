@@ -459,41 +459,20 @@ function txaw
     end
 end
 
-# Adding colors to cmd's
-function git
-    command git $argv | lolcat
-end
 
-
-function zypper
-    command zypper $argv | lolcat
-end
-
-function snap
-    command snap $argv | lolcat
-end
-
-function flatpak
-    command flatpak $argv | lolcat
-end
-
-function sudo
-    if test (count $argv) -gt 0
-        switch $argv[1]
-            case zypper
-                command sudo zypper $argv[2..-1] | lolcat
-            case snap
-                command sudo snap $argv[2..-1] | lolcat
-            case flatpak
-                command sudo flatpak $argv[2..-1] | lolcat
-            case '*'
-                command sudo $argv
+function shpwd-
+    # List all saved Wi-Fi connections of type "wifi" and process each one
+    nmcli connection show | awk '$3=="wifi" {print $1}' | while read ssid
+        echo "SSID: $ssid"
+        set password (nmcli -s -g 802-11-wireless-security.psk connection show "$ssid")
+        if test -n "$password"
+            qrencode -t UTF8 "WIFI:S:$ssid;T:WPA;P:$password;;"
+        else
+            echo "No password found for $ssid"
         end
-    else
-        command sudo
+        echo ""
     end
 end
-
 
 # Open config files
 ### END OF FUNCTIONS ###
@@ -521,6 +500,8 @@ alias syscn='cd /etc/systemd/system/ && sn .'
 alias syscn-='cd /etc/systemd/system/'
 alias arch='fastfetch'
 alias mke='chmod +x'
+alias cd='z '
+alias shpwd='nmcli -g WIFI-QR device wifi show-password'
 alias vm='source ~/.venvs/pyprland/bin/activate.fish'
 
 # vim and emacst
@@ -644,3 +625,4 @@ test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
 
 # Created by `pipx` on 2025-02-28 09:09:27
 set PATH $PATH /home/sh/.local/bin
+zoxide init fish | source
