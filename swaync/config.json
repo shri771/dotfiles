@@ -31,8 +31,6 @@
   "widgets": [
       "buttons-grid",
       "mpris",
-      "volume", 
-      "backlight",
       "title",
       "notifications"
   ],

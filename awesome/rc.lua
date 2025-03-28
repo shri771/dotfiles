@@ -304,7 +304,7 @@ globalkeys = my_table.join(
 
 	-- Rofi launcher
 	awful.key({ altkey }, "f", function()
-		awful.spawn("rofi -show drun")
+		awful.spawn("pkill rofi || rofi -show drun -modi drun,filebrowser,run,window ")
 	end, { description = "launch rofi", group = "launcher" }),
 
 	-- Dmscripts (Super + p followed by KEY)

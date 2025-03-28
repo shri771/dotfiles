@@ -11,6 +11,7 @@ plugins = [
 animation = "fromTop"
 command = "kitty --class kitty-dropterm"
 class = "kitty-dropterm"
+lazy = true
 size = "60% 60%"
 focus = true  
 
@@ -45,6 +46,7 @@ command = "qalculate-gtk "
 class = "qalculate-gtk"
 size = "21% 44%"
 focus = true
+lazy = true
 position = "41% 44%"
 
 
@@ -62,7 +64,7 @@ command = "dolphin"
 class = "org.kde.dolphin"
 animation = "fromBottom"
 size = "46% 47%"
-lazy = false
+lazy = true
 position = "28% 37%"
 opacity = 0.9
 ontop = false
@@ -74,7 +76,7 @@ command = "kdeconnect-app"
 class = "org.kde.kdeconnect.app"
 animation = "fromBottom"
 size = "24% 27%"
-lazy = false
+lazy = true
 position = "37% 46%"
 opacity = 0.9
 focus = true  

@@ -474,7 +474,61 @@ function shpwd-
     end
 end
 
-# Open config files
+
+
+function en
+    # If only one argument, encrypt the file.
+    if test (count $argv) -eq 1
+        set file $argv[1]
+        echo "Encrypting file: $file"
+        
+        # Determine the output filename:
+        if test (string match -r '.*\.txt$' $file)
+            set outfile (string replace -r '\.txt$' '.gpg' $file)
+        else
+            set outfile "$file.gpg"
+        end
+
+        echo "Output file: $outfile"
+        gpg --symmetric --cipher-algo AES256 -o "$outfile" "$file"
+
+        # Clear cached passphrase
+        gpgconf --kill gpg-agent
+        gpgconf --launch gpg-agent
+
+    else if test (count $argv) -eq 2
+        set encfile $argv[1]
+        set dest $argv[2]
+
+        # If second argument is ".", derive output filename by stripping .gpg
+        if test "$dest" = "."
+            set dest (string replace -r '\.gpg$' '' $encfile)
+        end
+
+        echo "Decrypting file: $encfile to $dest"
+        gpg -o "$dest" -d "$encfile"
+
+        # Clear cached passphrase
+        gpgconf --kill gpg-agent
+        gpgconf --launch gpg-agent
+
+    else
+        echo "Usage:"
+        echo "  en <file>                  # Encrypts <file> and appends .gpg"
+        echo "  en <encrypted_file> <dest> # Decrypts <encrypted_file> to <dest>"
+        echo "     If <dest> is '.' then the original filename is restored"
+        return 1
+    end
+end
+
+function cd
+    z $argv
+end
+
+# 1. Force directory completions for cd
+complete -c cd -x -a '(__fish_complete_directories)'
+
+
 ### END OF FUNCTIONS ###
 
 
@@ -492,15 +546,18 @@ alias tpcn=' sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf'
 alias vn='variety --next'
 alias vp='variety'
 alias n='nvim'
+alias cd='z'
 alias sn='sudo -E XDG_RUNTIME_DIR=/run/user/$(id -u) HOME=/home/sh nvim'
 alias tlp-m='tlp-stat -p | grep scaling_governor'
 alias syst='systemctl list-timers --all '
 alias imp='kitty +kitten icat'
 alias syscn='cd /etc/systemd/system/ && sn .'
 alias syscn-='cd /etc/systemd/system/'
-alias arch='fastfetch'
+alias suse='fastfetch'
+alias speed='speedtest'
 alias mke='chmod +x'
-alias cd='z '
+alias en-='bash $HOME/scripts/system/edit_gpg.sh'
+alias ventoy='cd $HOME/Downloads/ISO/ventoy-1.1.05/ &&  ./VentoyGUI.x86_64'
 alias shpwd='nmcli -g WIFI-QR device wifi show-password'
 alias vm='source ~/.venvs/pyprland/bin/activate.fish'
 

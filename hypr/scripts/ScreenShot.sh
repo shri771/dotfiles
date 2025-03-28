@@ -1,103 +1,99 @@
 #!/bin/bash
-# Screenshots scripts
+# Screenshots scripts with notification actions
 
 # variables
 time=$(date "+%d-%b_%H-%M-%S")
 dir="$(xdg-user-dir)/Pictures/Screenshots"
-file="${time}.png"
+file="Screenshot_${time}_${RANDOM}.png"
 
 iDIR="$HOME/.config/swaync/icons"
-iDoR="$HOME/.config/swaync/images"
 sDIR="$HOME/.config/hypr/scripts"
 
-active_window_class=$(hyprctl -j activewindow | jq -r '(.class)')
-active_window_file="Screenshot_${time}_${active_window_class}.png"
-active_window_path="${dir}/${active_window_file}"
+# Notification config
+notify_cmd="notify-send -t 3000 -i ${iDIR}/picture.png -h string:x-canonical-private-synchronous:shot-notify"
+sound_script="$sDIR/Sounds.sh"
 
-notify_cmd_base="notify-send -t 3000 -A action1=Open -A action2=Delete -h string:x-canonical-private-synchronous:shot-notify"
-notify_cmd_shot="${notify_cmd_base} -i ${iDIR}/picture.png "
-notify_cmd_shot_win="${notify_cmd_base} -i ${iDIR}/picture.png "
-notify_cmd_NOT="notify-send -u low -i ${iDoR}/ja.png "
-
-# notify and view screenshot
-notify_view() {
-    if [[ "$1" == "active" ]]; then
-        if [[ -e "${active_window_path}" ]]; then
-            resp=$(timeout 2 ${notify_cmd_shot_win} " Screenshot of:" " ${active_window_class} Saved.")
-            case "$resp" in
-                action1)
-                    swappy -f "${active_window_path}" &
-                    ;;
-                action2)
-                    rm "${active_window_path}" &
-                    ;;
-            esac
-        else
-            ${notify_cmd_NOT} " Screenshot of:" " ${active_window_class} NOT Saved."
-            "${sDIR}/Sounds.sh" --error
-        fi
+# --- Functions ---
+copy_to_clipboard() {
+    if [[ -e "$1" ]]; then
+        wl-copy -t image/png < "$1"
+        notify-send -t 2000 -i "$iDIR/clipboard.png" "Copied to Clipboard"
+        return 0
     else
-        local check_file="${dir}/${file}"
-        if [[ -e "$check_file" ]]; then
-            "${sDIR}/Sounds.sh" --screenshot
-            resp=$(timeout 2 ${notify_cmd_shot} " Screenshot" " Saved")
-            case "$resp" in
-                action1)
-                    swappy -f "${check_file}" &
-                    ;;
-                action2)
-                    rm "${check_file}" &
-                    ;;
-            esac
-        else
-            ${notify_cmd_NOT} " Screenshot" " NOT Saved"
-            "${sDIR}/Sounds.sh" --error
-        fi
+        notify-send -u critical -i "$iDIR/error.png" "Error" "File not found!"
+        return 1
     fi
 }
-# countdown
-countdown() {
-	for sec in $(seq $1 -1 1); do
-		notify-send -h string:x-canonical-private-synchronous:shot-notify -t 1000 -i "$iDIR"/timer.png  " Taking shot" " in: $sec secs"
-		sleep 1
-	done
+
+open_in_swappy() {
+    if [[ -e "$1" ]]; then
+        swappy -f "$1" & disown
+    else
+        notify-send -u critical -i "$iDIR/error.png" "Error" "File not found!"
+        return 1
+    fi
 }
 
-# take shots
+delete_file() {
+    if [[ -e "$1" ]]; then
+        rm "$1" && \
+        notify-send -t 1000 -i "$iDIR/trash.png" "🗑️ Deleted" "   Screenshot removed"
+    else
+        notify-send -u critical -i "$iDIR/error.png" "Error" "File not found!"
+        return 1
+    fi
+}
+
+# Notification with actions
+notify_view() {
+    local filepath="$1"
+    local message="$2"
+    
+    if [[ -e "$filepath" ]]; then
+        # Play success sound
+        [[ -f $sound_script ]] && "$sound_script" --screenshot
+
+        action=$($notify_cmd "Screenshot Saved" "$message" \
+            --action="EDIT=✏️ Edit" \
+            --action="DELETE=🗑️ Delete")
+
+        case "$action" in
+            "COPY") copy_to_clipboard "$filepath" ;;
+            "EDIT") open_in_swappy "$filepath" ;;
+            "DELETE") delete_file "$filepath" ;;
+        esac
+    else
+        notify-send -u critical -i "$iDIR/error.png" "Error" "Screenshot failed!"
+        [[ -f $sound_script ]] && "$sound_script" --error
+    fi
+}
+
+# --- Screenshot Functions ---
 shotnow() {
-	cd ${dir} && grim - | tee "$file" | wl-copy
-	sleep 2
-	notify_view
-}
-
-shot5() {
-	countdown '5'
-	sleep 1 && cd ${dir} && grim - | tee "$file" | wl-copy
-	sleep 1
-	notify_view
-}
-
-shot10() {
-	countdown '10'
-	sleep 1 && cd ${dir} && grim - | tee "$file" | wl-copy
-	notify_view
-}
-
-shotwin() {
-	w_pos=$(hyprctl activewindow | grep 'at:' | cut -d':' -f2 | tr -d ' ' | tail -n1)
-	w_size=$(hyprctl activewindow | grep 'size:' | cut -d':' -f2 | tr -d ' ' | tail -n1 | sed s/,/x/g)
-	cd ${dir} && grim -g "$w_pos $w_size" - | tee "$file" | wl-copy
-	notify_view
+    cd ${dir} && grim - | tee "$file" | wl-copy -t image/png
+    sleep 1
+    notify_view "${dir}/$file" "Screenshot captured"
 }
 
 shotarea() {
-	tmpfile=$(mktemp)
-	grim -g "$(slurp)" - >"$tmpfile"
-	if [[ -s "$tmpfile" ]]; then
-		wl-copy <"$tmpfile"
-		mv "$tmpfile" "$dir/$file"
-	fi
-	notify_view
+    tmpfile=$(mktemp)
+    grim -g "$(slurp)" - > "$tmpfile"
+
+    if [[ -s "$tmpfile" ]]; then
+        wl-copy -t image/png < "$tmpfile"
+        mv "$tmpfile" "$dir/$file"
+        notify_view "${dir}/$file" "Area capture saved"
+    else
+        notify-send -u critical -i "$iDIR/error.png" "Screenshot cancelled"
+        [[ -f $sound_script ]] && "$sound_script" --error
+    fi
+}
+
+shotwin() {
+    w_pos=$(hyprctl activewindow | grep 'at:' | cut -d':' -f2 | tr -d ' ' | tail -n1)
+    w_size=$(hyprctl activewindow | grep 'size:' | cut -d':' -f2 | tr -d ' ' | tail -n1 | sed s/,/x/g)
+    cd ${dir} && grim -g "$w_pos $w_size" - | tee "$file" | wl-copy -t image/png
+    notify_view "${dir}/$file" "Window capture saved"
 }
 
 shotactive() {
@@ -105,36 +101,27 @@ shotactive() {
     active_window_file="Screenshot_${time}_${active_window_class}.png"
     active_window_path="${dir}/${active_window_file}"
 
-    hyprctl -j activewindow | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' | grim -g - "${active_window_path}"
-	sleep 1
-    notify_view "active"
+    hyprctl -j activewindow | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' | grim -g - "$active_window_path"
+    wl-copy -t image/png < "$active_window_path"
+    notify_view "$active_window_path" "Active window captured"
 }
 
-shotswappy() {
-	tmpfile=$(mktemp)
-	grim -g "$(slurp)" - >"$tmpfile" && notify_view "swappy"
-}
+# --- Main ---
+mkdir -p "$dir"
 
-if [[ ! -d "$dir" ]]; then
-	mkdir -p "$dir"
-fi
-
-if [[ "$1" == "--now" ]]; then
-	shotnow
-elif [[ "$1" == "--in5" ]]; then
-	shot5
-elif [[ "$1" == "--in10" ]]; then
-	shot10
-elif [[ "$1" == "--win" ]]; then
-	shotwin
-elif [[ "$1" == "--area" ]]; then
-	shotarea
-elif [[ "$1" == "--active" ]]; then
-	shotactive
-elif [[ "$1" == "--swappy" ]]; then
-	shotswappy
-else
-	echo -e "Available Options : --now --in5 --in10 --win --area --active --swappy"
-fi
+case "$1" in
+    "--now") shotnow ;;
+    "--win") shotwin ;;
+    "--area") shotarea ;;
+    "--active") shotactive ;;
+    *)
+        echo "Available options:"
+        echo "--now    : Capture immediately"
+        echo "--win    : Capture active window"
+        echo "--area   : Capture selected area"
+        echo "--active : Capture active window (class-specific)"
+        exit 1
+        ;;
+esac
 
 exit 0
