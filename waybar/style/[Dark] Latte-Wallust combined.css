@@ -325,8 +325,8 @@ tooltip {
 }
 
 #cpu {
-	color: @mauve;
-    padding: 5px;  /* Add some spacing */
+    color: #ffff7f;
+    font-size: 12px;  /* Keep normal text size */
 }
 
 #battery {

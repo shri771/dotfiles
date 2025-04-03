@@ -80,3 +80,24 @@ lazy = true
 position = "37% 46%"
 opacity = 0.9
 focus = true  
+
+
+[scratchpads.kclock]
+command = "flatpak run org.kde.kclock"
+class = "org.kde.kclock"
+animation = "fromBottom"
+size = "19% 44%"
+position = "41% 51%"
+lazy = true
+opacity = 0.9
+focus = true  
+
+[scratchpads.clock]
+command = "gnome-clocks"
+class = "org.gnome.clocks"
+animation = "fromBottom"
+size = "19% 44%"
+position = "41% 51%"
+lazy = true
+opacity = 0.9
+focus = true  

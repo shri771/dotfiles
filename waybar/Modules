@@ -159,11 +159,11 @@
 	"tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
 },
 "cpu": {
-	"format": "{usage}% 󰍛",
+	"format": "{usage}%",
 	"interval": 1,
-	"min-length": 5,
+	"min-length": 3,
 	"format-alt-click": "click",
-	"format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
+	"format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}%",
 	"format-icons": [
 		"▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"
 	],

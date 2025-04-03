@@ -32,7 +32,7 @@ run_bisync() {
         return 0
     else
         log "Sync failed!"
-        notify-send -u critical "🔗 Rclone Bisync Failed" "Failed to sync Documents folder"
+        notify-send -u normal "🔗 Rclone Bisync Failed" "Failed to sync Documents folder"
         return 1
     fi
 }

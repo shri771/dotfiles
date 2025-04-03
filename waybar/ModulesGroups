@@ -23,9 +23,9 @@
 "group/motherboard": {
 	"orientation": "horizontal",
 	"modules": [
+		"cpu",
 	"custom/cpu_freq",
 		"temperature",
-		"cpu",
 		"memory",
 	]
 },
