@@ -273,7 +273,7 @@ globalkeys = my_table.join(
 		awful.spawn("kcolorchooser")
 	end, { description = "Launch kcolor", group = "hotkeys" }),
 	awful.key({ modkey }, "b", function()
-		awful.spawn("brave")
+		awful.spawn("brave-browser")
 	end, { description = "Launch brave", group = "awesome" }),
 	awful.key({ modkey, "Shift" }, "r", awesome.restart, { description = "Reload awesome", group = "awesome" }),
 	awful.key({ modkey, "Shift" }, "q", function()
@@ -304,7 +304,7 @@ globalkeys = my_table.join(
 
 	-- Rofi launcher
 	awful.key({ altkey }, "f", function()
-		awful.spawn("pkill rofi || rofi -show drun -modi drun,filebrowser,run,window ")
+		awful.spawn("/usr/bin/rofi -show drun -modi drun,run,window,filebrowser")
 	end, { description = "launch rofi", group = "launcher" }),
 
 	-- Dmscripts (Super + p followed by KEY)
@@ -833,18 +833,18 @@ naughty.config.presets.low = {
 --Auto Start
 --awful.spawn.with_shell(soundplayer .. startupSound)
 awful.spawn.with_shell("lxsession")
-awful.spawn.with_shell("picom")
+awful.spawn.with_shell("picom --config ~/.config/picom/picom.conf")
 awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("volumeicon")
 awful.spawn.with_shell("killall conky && conky -c $HOME/.config/conky/awesome/" .. "doom-one" .. "-01.conkyrc")
 --awful.spawn.with_shell("xsettingsd &")
 --awful.spawn.lith_shell("kdeconnect-indicator &")
-awful.spawn("kdeconnect-indicator")
+awful.spawn.with_shell("nm-applet --indicator &")
+awful.spawn.with_shell("blueman-applet &")
 awful.spawn.with_shell("variety &")
-awful.spawn.with_shell("rclone mount Shri77: ~/Shri77/") --Interchange escape with caps
-awful.spawn.with_shell("xdotool key Num_Lock")
-awful.spawn.with_shell("xmodmap ~/.Xmodmap")
-awful.spawn.with_shell("nemo")
+--awful.spawn.with_shell("rclone mount Shri77: ~/Shri77/") --Interchange escape with caps
+--awful.spawn.with_shell("xdotool key Num_Lock")
+awful.spawn.with_shell(" xset r rate 400 25")
 --awful.spawn.with_shell("xmodmap ~/.Xmodmap")
 --awful.spawn.with_shell("~/scripts/startups/poly_start.sh")
-awful.spawn.with_shell("rclone mount Shri77_Photos: Pictures/g-photos/")
+--awful.spawn.with_shell("rclone mount Shri77_Photos: Pictures/g-photos/")

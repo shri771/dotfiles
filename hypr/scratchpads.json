@@ -1,0 +1,8 @@
+{
+  "clock": {
+    "command": "flatpak run org.kde.kclock",
+    "animation": "fromBottom",
+    "class": "kclock",  
+    "unfocus": "hide"
+  }
+}
