@@ -1,12 +1,12 @@
 /* Clipboard Config - Clipboard */
 
-@import "~/.config/rofi/master-config.rasi"  
+@import "~/.config/rofi/master-config-2.rasi"  
 
 /* ---- Entry ---- */
 entry {
   width: 25%; /* Reduce the width */
   placeholder: " ";
-  font: "monospace 13";  /* Increase the font size of the placeholder */
+  font: "monospace 19";  /* Increase the font size of the placeholder */
   padding: 1px;  /* Reduce extra spacing around the placeholder */
   margin: 0px 0px 0px 0px; /* Adjust margin to bring it closer to the listview */
 }
@@ -30,7 +30,7 @@ window {
 
 /* ---- Reduce Padding ---- */
 element {
-  padding: 2px; /* Remove extra spacing */
+  padding: 1px; /* Remove extra spacing */
 }
 
 /* ---- DPI Configuration ---- */

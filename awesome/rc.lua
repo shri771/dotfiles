@@ -4,6 +4,8 @@ local ipairs, string, os, table, tostring, tonumber, type = ipairs, string, os, 
 -- Standard awesome library
 local gears = require("gears") --Utilities such as color parsing and objects
 local awful = require("awful") --Everything related to window managment
+local lgi = require("lgi")
+local cairo = lgi.cairo
 require("awful.autofocus")
 awful.util.spawn("xprop -root -f _NET_NUMBER_OF_DESKTOPS 32c -set _NET_NUMBER_OF_DESKTOPS 5")
 
@@ -12,7 +14,7 @@ local wibox = require("wibox")
 
 -- Theme handling library
 local beautiful = require("beautiful")
-beautiful.useless_gap = 10
+beautiful.useless_gap = 19
 -- Notification library
 local naughty = require("naughty")
 naughty.config.defaults["icon_size"] = 100
@@ -81,8 +83,8 @@ local soundplayer = "ffplay -nodisp -autoexit " -- The program that will play sy
 
 -- awesome variables
 awful.util.terminal = terminal
---awful.util.tagnames = {  " ", " ", " ", " ", " ", " ", " ", "  ", " ", " "  }
-awful.util.tagnames = { "  ", "   ", "   ", "  ", "  ", "   " }
+--awful.util.tagnames = {  " ", " ", " ", " ", " ", " ", " ", "  ", "  ", " "  }
+awful.util.tagnames = { "  ", "   ", "   ", "   ", "   ", " " }
 awful.layout.suit.tile.left.mirror = true
 awful.layout.layouts = {
 	awful.layout.suit.tile,
@@ -239,14 +241,107 @@ root.buttons(my_table.join(
 	awful.button({}, 5, awful.tag.viewprev)
 ))
 
+-- Volume --
+
+local function get_volume_icon(vol, muted)
+	local iDIR = os.getenv("HOME") .. "/.config/swaync/icons"
+	if muted then
+		return iDIR .. "/volume-mute.png"
+	else
+		local v = tonumber(vol) or 0
+		if v <= 30 then
+			return iDIR .. "/volume-low.png"
+		elseif v <= 60 then
+			return iDIR .. "/volume-mid.png"
+		else
+			return iDIR .. "/volume-high.png"
+		end
+	end
+end
+
+-- Send volume notification as in your shell script, with a wider notification.
+local function notify_volume()
+	awful.spawn.easy_async_with_shell("amixer get Master", function(stdout)
+		local vol = string.match(stdout, "(%d?%d?%d)%%")
+		local status = string.match(stdout, "%[(%a+)%]")
+		local muted = (status and status:lower() == "off")
+		local icon = get_volume_icon(vol, muted)
+
+		if muted then
+			awful.spawn.with_shell(
+				string.format(
+					"notify-send -e -u low -h string:x-canonical-private-synchronous:volume_notif -h string:x-dunst:geometry:400x100 -i '%s' ' Volume:' 'Muted'",
+					icon
+				)
+			)
+		else
+			awful.spawn.with_shell(
+				string.format(
+					"notify-send -e -u low -h int:value:%s -h string:x-canonical-private-synchronous:volume_notif -h string:x-dunst:geometry:400x100 -i '%s' ' Volume Level:' ' %s%%'",
+					vol,
+					icon,
+					vol
+				)
+			)
+			-- Optionally, if you want to play a sound:
+			-- awful.spawn.with_shell(os.getenv("HOME") .. "/.config/hypr/scripts/Sounds.sh --volume")
+		end
+	end)
+end
+
+-- Send mute toggle notification with wider geometry.
+local function notify_mute_toggle()
+	awful.spawn.easy_async_with_shell("amixer get Master", function(stdout)
+		local vol = string.match(stdout, "(%d?%d?%d)%%") or "0"
+		local status = string.match(stdout, "%[(%a+)%]")
+		local muted = (status and status:lower() == "off")
+		local iDIR = os.getenv("HOME") .. "/.config/swaync/icons"
+
+		if muted then
+			awful.spawn.with_shell(
+				string.format(
+					"notify-send -e -u low -h string:x-canonical-private-synchronous:volume_notif -h string:x-dunst:geometry:400x100 -i '%s' ' Volume:' 'Muted'",
+					iDIR .. "/volume-mute.png"
+				)
+			)
+		else
+			notify_volume()
+		end
+	end)
+end
+
+-- AwesomeWM keybindings with fixed 5% steps and wider notifications.
+
 globalkeys = my_table.join(
 
+	awful.key({}, "XF86AudioRaiseVolume", function()
+		os.execute(string.format("amixer -q set %s 5%%+", beautiful.volume.channel or "Master"))
+		notify_volume()
+	end, { description = "increase volume and show notification", group = "custom widgets" }),
+
+	awful.key({}, "XF86AudioLowerVolume", function()
+		os.execute(string.format("amixer -q set %s 5%%-", beautiful.volume.channel or "Master"))
+		notify_volume()
+	end, { description = "decrease volume and show notification", group = "custom widgets" }),
+
+	awful.key({}, "XF86AudioMute", function()
+		os.execute(
+			string.format(
+				"amixer -q set %s toggle",
+				beautiful.volume.togglechannel or beautiful.volume.channel or "Master"
+			)
+		)
+		notify_mute_toggle()
+		if beautiful.volume.update then
+			beautiful.volume.update()
+		end
+	end, { description = "toggle mute and show notification", group = "custom widgets" }),
 	-- Launcher
 	awful.key({ modkey }, "Return", function()
 		awful.spawn(terminal)
 	end, { description = "Launch terminal", group = "awesome" }),
 	awful.key({ modkey }, "f", function()
-		awful.spawn("nemo")
+		awful.spawn("dolphin")
 	end, { description = "Launch fm", group = "awesome" }),
 	awful.key({ modkey, "Shift" }, "s", function()
 		awful.spawn("flameshot gui")
@@ -257,18 +352,12 @@ globalkeys = my_table.join(
 	awful.key({ altkey }, "n", function()
 		awful.spawn("notion-app")
 	end, { description = "Launch Notion", group = "hotkeys" }),
-	awful.key({ modkey }, "w", function()
-		awful.spawn("whatsie")
-	end, { description = "Launch Whatsapp", group = "hotkeys" }),
 	awful.key({ modkey }, "q", function()
 		awful.spawn("rquickshare")
 	end, { description = "Launch quickshare", group = "hotkeys" }),
 	awful.key({ modkey }, "v", function()
 		awful.spawn("code")
 	end, { description = "Launch VSCode", group = "hotkeys" }),
-	awful.key({ altkey }, "c", function()
-		awful.spawn("qalculate-gtk")
-	end, { description = "Launch Calculator", group = "hotkeys" }),
 	awful.key({ modkey }, "e", function()
 		awful.spawn("kcolorchooser")
 	end, { description = "Launch kcolor", group = "hotkeys" }),
@@ -283,29 +372,39 @@ globalkeys = my_table.join(
 	awful.key({ modkey, "Shift" }, "w", function()
 		awful.util.mymainmenu:show()
 	end, { description = "Show main menu", group = "awesome" }),
-	awful.key({ modkey, "Shift" }, "b", function()
-		for s in screen do
-			s.mywibox.visible = not s.mywibox.visible
-			if s.mybottomwibox then
-				s.mybottomwibox.visible = not s.mybottomwibox.visible
-			end
-		end
-	end, { description = "Show/hide wibox (bar)", group = "awesome" }),
-	awful.key({ modkey }, "r", function()
-		awful.spawn.easy_async_with_shell("amixer get Master | grep -o '[0-9]*%' | head -1", function(stdout)
-			naughty.notify({ text = "Volume: " .. stdout, timeout = 3 })
-		end)
-	end, { description = "show volume notification", group = "custom widgets" }),
-
+	awful.key({ altkey }, "e", function() -- Mod1 = Alt key
+		awful.spawn.with_shell("$HOME/.config/awesome/scripts/toggle_polybar.sh")
+	end),
+	awful.key({ modkey }, "r", function() -- Mod1 = Alt key
+		awful.spawn.with_shell("$HOME/.config/polybar/lauch.sh &")
+	end),
+	awful.key({ modkey, "Shift" }, "c", function() -- Mod1 = Alt key
+		awful.spawn.with_shell("$HOME/.config/awesome/scripts/KillActive_process.sh &")
+	end),
+	awful.key({ altkey, "Control" }, "p", function()
+		awful.spawn.with_shell("wlogout")
+	end),
+	awful.key({ altkey, "Control" }, "Delete", function()
+		awful.spawn.with_shell("awesome-client 'awesome.quit()'")
+	end),
 	-- Run launcher
 	awful.key({ altkey }, "space", function()
 		awful.util.spawn("dm-run")
 	end, { description = "Run launcher", group = "hotkeys" }),
 
-	-- Rofi launcher
+	-- Rofi launcher's
 	awful.key({ altkey }, "f", function()
 		awful.spawn("/usr/bin/rofi -show drun -modi drun,run,window,filebrowser")
 	end, { description = "launch rofi", group = "launcher" }),
+	awful.key({ altkey }, "v", function()
+		awful.spawn.with_shell("$HOME/.config/awesome/scripts/ClipManager.sh")
+	end, { description = "launch rofi-clip", group = "launcher" }),
+	awful.key({ modkey }, "x", function()
+		awful.spawn.with_shell("$HOME/.config/awesome/scripts/WallpaperSelect.sh")
+	end, { description = "launch rofi-Wall", group = "launcher" }),
+	awful.key({ modkey, "Shift" }, "m", function()
+		awful.spawn.with_shell("$HOME/.config/awesome/scripts/RofiBeats.sh")
+	end, { description = "launch rofi-beats", group = "launcher" }),
 
 	-- Dmscripts (Super + p followed by KEY)
 	awful.key({ modkey }, "p", function()
@@ -455,43 +554,57 @@ globalkeys = my_table.join(
 	end, { description = "dropdown application", group = "super" }),
 
 	-- Brightness
+	-- Brightness keybindings with notifications
 	awful.key({}, "XF86MonBrightnessUp", function()
-		awful.spawn("brightnessctl set +10%")
+		-- Increase brightness by 5%
+		awful.spawn("brightnessctl set +5%")
+		-- Get current brightness and maximum brightness, then compute percentage
+		awful.spawn.easy_async_with_shell("brightnessctl get", function(current_stdout)
+			local current = tonumber(current_stdout) or 0
+			awful.spawn.easy_async_with_shell("brightnessctl max", function(max_stdout)
+				local max_val = tonumber(max_stdout) or 1
+				local percent = math.floor((current / max_val) * 100 + 0.5)
+				if percent < 5 then
+					percent = 5
+				end
+				local brightness_icon = os.getenv("HOME") .. "/.config/swaync/icons/brightness.png"
+				awful.spawn.with_shell(
+					string.format(
+						"notify-send -e -u low -h int:value:%s -h string:x-dunst:geometry:600x100 -i '%s' 'Brightness:' ' %s%%'",
+						percent,
+						brightness_icon,
+						percent
+					)
+				)
+			end)
+		end)
 	end, { description = "Increase brightness", group = "custom" }),
+
 	awful.key({}, "XF86MonBrightnessDown", function()
-		awful.spawn("brightnessctl set 10%-")
+		-- Decrease brightness by 5%
+		awful.spawn("brightnessctl set 5%-")
+		awful.spawn.easy_async_with_shell("brightnessctl get", function(current_stdout)
+			local current = tonumber(current_stdout) or 0
+			awful.spawn.easy_async_with_shell("brightnessctl max", function(max_stdout)
+				local max_val = tonumber(max_stdout) or 1
+				local percent = math.floor((current / max_val) * 100 + 0.5)
+				if percent < 5 then
+					percent = 5
+				end
+				local brightness_icon = os.getenv("HOME") .. "/.config/swaync/icons/brightness.png"
+				awful.spawn.with_shell(
+					string.format(
+						"notify-send -e -u low -h int:value:%s -h string:x-dunst:geometry:100x100000 -h string:x-canonical-private-synchronous:brightness_notif -i '%s' 'Brightness:' ' %s%%'",
+						percent,
+						brightness_icon,
+						percent
+					)
+				)
+			end)
+		end)
 	end, { description = "Decrease brightness", group = "custom" }),
-
 	-- ALSA volume control
-	awful.key({}, "XF86AudioRaiseVolume", function()
-		os.execute(string.format("amixer -q set %s 3%%+", beautiful.volume.channel))
-		awful.spawn.easy_async_with_shell("amixer get Master | grep -o '[0-9]*%' | head -1", function(stdout)
-			naughty.notify({ text = "Volume: " .. stdout, timeout = 1 })
-		end)
-	end, { description = "increase volume and show notification", group = "custom widgets" }),
-	awful.key({}, "XF86AudioLowerVolume", function()
-		os.execute(string.format("amixer -q set %s 3%%-", beautiful.volume.channel))
-		awful.spawn.easy_async_with_shell("amixer get Master | grep -o '[0-9]*%' | head -1", function(stdout)
-			naughty.notify({ text = "Volume: " .. stdout, timeout = 1 })
-		end)
-	end, { description = "decrease volume and show notification", group = "custom widgets" }),
-	awful.key({}, "XF86AudioMute", function()
-		os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
-		beautiful.volume.update()
-	end),
-	awful.key({ ctrlkey, "Shift" }, "m", function()
-		os.execute(string.format("amixer -q set %s 100%%", beautiful.volume.channel))
-		beautiful.volume.update()
-	end),
-	awful.key({ ctrlkey, "Shift" }, "0", function()
-		os.execute(string.format("amixer -q set %s 0%%", beautiful.volume.channel))
-		beautiful.volume.update()
-	end),
 
-	-- Copy primary to clipboard (terminals to gtk)
-	awful.key({ modkey }, "c", function()
-		awful.spawn.with_shell("xsel | xsel -i -b")
-	end, { description = "copy terminal to gtk", group = "hotkeys" }),
 	-- Copy clipboard to primary (gtk to terminals)
 	awful.key({ modkey }, "v", function()
 		awful.spawn.with_shell("xsel -b | xsel")
@@ -507,13 +620,161 @@ globalkeys = my_table.join(
 	--]]
 )
 
+-- dropdown
+-- Scratchpad
+
+local scratchpads = {}
+
+-- Helper: compute a coordinate given opts.value, total size, window size, start offset, and gap
+local function compute_pos(value, total, size, start, gap)
+	if type(value) == "number" then
+		return start + value
+	elseif value == "left" or value == "top" then
+		return start + gap
+	elseif value == "right" or value == "bottom" then
+		return start + total - size - gap
+	else
+		-- "center" or nil
+		return start + (total - size) / 2
+	end
+end
+
+function make_scratchpad(name, spawn_cmd, opts)
+	opts = opts or {}
+	opts.width = opts.width or 1050
+	opts.height = opts.height or 650
+	opts.class = opts.class or name
+	opts.gap = opts.gap or 20
+
+	-- Toggle function
+	local function toggle()
+		local s = awful.screen.focused()
+		local tag = s.selected_tag
+		local sp = scratchpads[name]
+
+		if sp and sp.valid then
+			if not sp.minimized and sp:isvisible() then
+				sp.minimized = true
+			else
+				sp.minimized = false
+				sp:move_to_tag(tag)
+				sp:raise()
+				client.focus = sp
+			end
+		else
+			awful.spawn(spawn_cmd)
+		end
+	end
+
+	-- When a new client appears, configure it if it matches our scratchpad
+	client.connect_signal("manage", function(c)
+		if c.class == opts.class then
+			scratchpads[name] = c
+			c.floating = true
+			c.ontop = true
+			c.skip_taskbar = true
+			c.width = opts.width
+			c.height = opts.height
+
+			local wa = c.screen.workarea
+			-- figure out x,y
+			local x = compute_pos(opts.x, wa.width, opts.width, wa.x, opts.gap)
+			local y = compute_pos(opts.y, wa.height, opts.height, wa.y, opts.gap)
+
+			c.x = x
+			c.y = y
+
+			if wa.selected_tag then
+				c:move_to_tag(wa.selected_tag)
+			end
+		end
+	end)
+
+	-- Keep it on your current tag
+	tag.connect_signal("property::selected", function(t)
+		local sp = scratchpads[name]
+		if sp and sp.valid and not sp.minimized then
+			sp:move_to_tag(t)
+		end
+	end)
+
+	return toggle
+end
+-- Create toggles
+local toggle_pavcontrol = make_scratchpad("pavucontrol", "pavucontrol", {
+	width = 800,
+	height = 500,
+	class = "pavucontrol",
+	y = "bottom",
+	gap = 230, -- 80px from the top edge
+	-- x=nil → defaults to "center"
+})
+local toggle_resources = make_scratchpad("resources", "flatpak run net.nokyan.Resources", {
+	width = 820,
+	height = 550,
+	class = "resources",
+	y = "bottom",
+	gap = 230,
+	-- x is nil, so it will center horizontally
+})
+local toggle_clock = make_scratchpad("kclock", "kclock", {
+	width = 350,
+	height = 450,
+	class = "kclock",
+	y = "bottom",
+	gap = 230,
+	-- x is nil, so it will center horizontally
+})
+local toggle_kdeconnect = make_scratchpad("kdeconnect.app", "kdeconnect-app", {
+	width = 450,
+	height = 350,
+	class = "kdeconnect.app",
+	y = "bottom",
+	gap = 230,
+	-- x is nil, so it will center horizontally
+})
+local toggle_cal = make_scratchpad("Qalculate-gtk", "qalculate-gtk", {
+	width = 350,
+	height = 520,
+	class = "Qalculate-gtk",
+	y = "bottom",
+	gap = 80,
+	-- x is nil, so it will center horizontally
+})
+local toggle_terminal = make_scratchpad("scratchkitty", "kitty --class scratchkitty", {
+	width = 1050,
+	height = 650,
+	class = "scratchkitty",
+	y = 15, -- gap from top
+	-- x will be centered automatically
+})
+local toggle_whatsie = make_scratchpad("whatsie", "flatpak run com.ktechpit.whatsie", {
+	width = 1050,
+	height = 650,
+	class = "WhatSie",
+	y = 15, -- gap from top
+	-- x will be centered automatically
+})
+
+-- Bind them to keys
+globalkeys = gears.table.join(
+	globalkeys, -- keep previously defined globalkeys
+	awful.key({ "Control" }, "Return", toggle_terminal, { description = "...", group = "scratchpads" }),
+	awful.key({ altkey }, "d", toggle_pavcontrol, { description = "...", group = "scratchpads" }),
+	awful.key({ altkey }, "g", toggle_resources, { description = "...", group = "scratchpads" }),
+	awful.key({ altkey }, "c", toggle_cal, { description = "...", group = "scratchpads" }),
+	awful.key({ altkey }, "w", toggle_clock, { description = "...", group = "scratchpads" }),
+	awful.key({ modkey }, "w", toggle_whatsie, { description = "...", group = "scratchpads" }),
+	awful.key({ altkey }, "p", toggle_kdeconnect, { description = "...", group = "scratchpads" })
+)
+
 clientkeys = my_table.join(
 	awful.key({ altkey, "Shift" }, "m", lain.util.magnify_client, { description = "magnify client", group = "client" }),
 	awful.key({ modkey }, "space", function(c)
 		c.fullscreen = not c.fullscreen
 		c:raise()
 	end, { description = "toggle fullscreen", group = "client" }),
-	awful.key({ modkey, "Shift" }, "c", function(c)
+	awful.key({ modkey }, "c", function(c)
 		c:kill()
 	end, { description = "close", group = "hotkeys" }),
 	awful.key({ modkey }, "t", awful.client.floating.toggle, { description = "toggle floating", group = "client" }),
@@ -538,6 +799,9 @@ clientkeys = my_table.join(
 )
 
 -- Bind tags to shortcut's
+-- Define letter shortcuts for workspaces 1, 2, and 3
+local letterKeys = { "i", "o", "p" }
+
 for i = 1, 9 do
 	-- Hack to only show tags 1 and 9 in the shortcut window (mod+s)
 	local descr_view, descr_toggle, descr_move, descr_toggle_focus
@@ -554,6 +818,7 @@ for i = 1, 9 do
 		adjusted_key = i + 3
 	end
 
+	-- Standard numeric shortcuts for all workspaces (using modkey + number keys)
 	globalkeys = my_table.join(
 		globalkeys,
 		-- View tag only.
@@ -591,6 +856,48 @@ for i = 1, 9 do
 			end
 		end, descr_toggle_focus)
 	)
+
+	-- Additional letter shortcuts for workspaces 1, 2, and 3 (i, o, p)
+	if i <= 3 then
+		local letter_descr = { description = "tag #" .. i, group = "tag" }
+		globalkeys = my_table.join(
+			globalkeys,
+			-- View tag only.
+			awful.key({ modkey }, letterKeys[i], function()
+				local screen = awful.screen.focused()
+				local tag = screen.tags[i]
+				if tag then
+					tag:view_only()
+				end
+			end, letter_descr),
+			-- Toggle tag display.
+			awful.key({ modkey, ctrlkey }, letterKeys[i], function()
+				local screen = awful.screen.focused()
+				local tag = screen.tags[i]
+				if tag then
+					awful.tag.viewtoggle(tag)
+				end
+			end, letter_descr),
+			-- Move client to tag.
+			awful.key({ modkey, "Shift" }, letterKeys[i], function()
+				if client.focus then
+					local tag = client.focus.screen.tags[i]
+					if tag then
+						client.focus:move_to_tag(tag)
+					end
+				end
+			end, letter_descr),
+			-- Toggle tag on focused client.
+			awful.key({ modkey, ctrlkey, "Shift" }, letterKeys[i], function()
+				if client.focus then
+					local tag = client.focus.screen.tags[i]
+					if tag then
+						client.focus:toggle_tag(tag)
+					end
+				end
+			end, letter_descr)
+		)
+	end
 end
 
 -- Resize the window by mouse
@@ -662,8 +969,18 @@ awful.rules.rules = {
 	{ rule = { class = "Nemo" }, properties = { tag = "  " } },
 
 	{ rule = { class = "Rquickshare" }, properties = { floating = true } },
-	{ rule = { class = "WhatSie" }, properties = { floating = true, width = 950, height = 650, x = 0, y = 17 } },
+	--{ rule = { class = "WhatSie" }, properties = { floating = true, width = 950, height = 650, x = 0, y = 17 } },
 
+	-- Brave pop-up dialogs (e.g., file chooser)
+	-- Float and center kdialog popups (used by Brave and other apps)
+	{
+		rule = { class = "kdialog" },
+		properties = {
+			floating = true,
+			ontop = true,
+			placement = awful.placement.centered,
+		},
+	},
 	{ rule = { class = "Gimp*", role = "gimp-image-window" }, properties = { maximized = true } },
 
 	{ rule = { class = "inkscape" }, properties = { maximized = true } },
@@ -672,10 +989,23 @@ awful.rules.rules = {
 
 	{ rule = { class = "Vlc" }, properties = { maximized = true } },
 
-	--{ rule = { class = "VirtualBox Manager" }, properties = { maximized = true } },
+	{ rule = { class = "VirtualBox Manager" }, properties = { maximized = false } },
 
 	--{ rule = { class = "VirtualBox Machine" }, properties = { maximized = true } },
-
+	{
+		rule = { class = "VirtualBox Machine", name = "home ais [Running] - Oracle VirtualBox" },
+		properties = {
+			tag = function(c)
+				for _, t in ipairs(c.screen.tags) do
+					if t.name == " " then
+						return t
+					end
+				end
+				return c.screen.tags[1]
+			end,
+			maximized = false,
+		},
+	},
 	{ rule = { class = "Xfce4-settings-manager" }, properties = { floating = false } },
 
 	-- Floating clients.
@@ -784,6 +1114,9 @@ client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
 end)
 
+-- Gaps --
+awful.screen.padding(awful.screen.focused(), { left = 1, right = 1, top = 2, bottom = 1 })
+
 -- Dracula color scheme
 local dracula_colors = {
 	background = "#282a36",
@@ -797,7 +1130,7 @@ local dracula_colors = {
 
 -- Set default notification settings
 naughty.config.defaults.timeout = 3 -- Timeout for notifications
-naughty.config.defaults.position = "bottom_right" -- Positioning at the bottom-right corner
+naughty.config.defaults.position = "top_right" -- Positioning at the bottom-right corner
 
 -- Set notification theme (background and foreground colors)
 naughty.config.presets.normal = {
@@ -838,10 +1171,20 @@ awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("volumeicon")
 awful.spawn.with_shell("killall conky && conky -c $HOME/.config/conky/awesome/" .. "doom-one" .. "-01.conkyrc")
 --awful.spawn.with_shell("xsettingsd &")
---awful.spawn.lith_shell("kdeconnect-indicator &")
+awful.spawn.with_shell("numlockx on")
 awful.spawn.with_shell("nm-applet --indicator &")
 awful.spawn.with_shell("blueman-applet &")
-awful.spawn.with_shell("variety &")
+awful.spawn.with_shell("greenclip daemon  &")
+awful.spawn.with_shell("autokey-qt &")
+awful.spawn.with_shell("kdeconnectd &")
+--awful.spawn.with_shell("swww-daemon --format xrgb")
+awful.spawn.with_shell("~/.fehbg")
+awful.spawn.with_shell(
+	"pgrep -f pulseaudio_event_listener.sh > /dev/null || && ~/.config/polybar/scripts/pulseaudio_event_listener.sh &"
+)
+awful.spawn.with_shell("~/scripts/startups/connect_realmebuds.sh &")
+awful.spawn.with_shell("~/.config/polybar/lauch.sh &")
+awful.spawn.with_shell("~/.config/awesome/scripts/auto-music-switcher.sh &")
 --awful.spawn.with_shell("rclone mount Shri77: ~/Shri77/") --Interchange escape with caps
 --awful.spawn.with_shell("xdotool key Num_Lock")
 awful.spawn.with_shell(" xset r rate 400 25")

@@ -1,9 +1,10 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Master Config 1440p*/
 
 /* ---- Configuration ---- */
 
 configuration {
-	font:						"JetBrainsMono Nerd Font SemiBold 10";
+	font:						"JetBrainsMono Nerd Font SemiBold 12";
 	modi:                       "drun,run,filebrowser";
     show-icons:                 true;
     display-drun:               "Apps";
@@ -54,7 +55,7 @@ window {
 
 /* ----- Main Box ----- */
 mainbox {
-	padding:					 10px;
+	padding:					 12px;
     enabled:                     true;
     orientation:                 vertical;
     children:                    [ "inputbar", "listbox" ];
@@ -65,12 +66,13 @@ mainbox {
 /* ---- Inputbar ---- */
 inputbar {
     enabled:                     true;
-    padding:                     10px 10px 10px 10px;
+    padding:                     10px 10px 50px 10px;
     margin:                      10px;
     background-color:            transparent;
     border-radius:               20px;
     orientation:                 horizontal;
     children:                    ["entry", "dummy", "mode-switcher" ];
+    background-image:            url("~/.config/rofi/.current_wallpaper", width);
 }
 
 /* ---- Entry input ---- */
@@ -206,7 +208,7 @@ element-icon {
     cursor:                      inherit;
 }
 element-text {
-    font:						"JetBrainsMono Nerd Font SemiBold 10";
+    font:						"JetBrainsMono Nerd Font SemiBold 14";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

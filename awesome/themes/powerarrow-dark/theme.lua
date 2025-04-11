@@ -23,7 +23,7 @@ theme.taglist_fg_focus = "#00CCFF"
 theme.tasklist_bg_focus = "#282a36"
 theme.tasklist_fg_focus = "#00CCFF"
 
-theme.border_width = dpi(3)
+theme.border_width = dpi(1.3)
 theme.border_normal = "#00000088"
 theme.border_focus = "#aaaaff"
 theme.border_marked = "#91231c"
@@ -69,7 +69,7 @@ theme.widget_mail = theme.dir .. "/icons/mail.png"
 theme.widget_mail_on = theme.dir .. "/icons/mail_on.png"
 theme.tasklist_plain_task_name = true
 theme.tasklist_disable_icon = true
-theme.useless_gap = dpi(0)
+theme.useless_gap = dpi(1)
 theme.titlebar_close_button_focus = theme.dir .. "/icons/titlebar/close_focus.png"
 theme.titlebar_close_button_normal = theme.dir .. "/icons/titlebar/close_normal.png"
 theme.titlebar_ontop_button_focus_active = theme.dir .. "/icons/titlebar/ontop_focus_active.png"
@@ -362,110 +362,11 @@ function theme.at_screen_connect(s)
 	--s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
 
 	-- Create the wibox
-	s.mywibox =
-		awful.wibar({ position = "top", screen = s, height = dpi(20), bg = theme.bg_normal, fg = theme.fg_normal })
+	--s.mywibox = awful.wibar({ position = "top", screen = s, height = 25, bg = theme.bg_normal, fg = theme.fg_normal })
 
 	-- Add widgets to the wibox
-	s.mywibox:setup({
-		layout = wibox.layout.align.horizontal,
-		{ -- Left widgets
-			layout = wibox.layout.fixed.horizontal,
-			--spr,
-			s.mytaglist,
-			s.mypromptbox,
-			spr,
-		},
-		s.mytasklist, -- Middle widget
-		{ -- Right widgets
-			layout = wibox.layout.fixed.horizontal,
-			--wibox.widget.systray(),
-			wibox.container.margin(scissors, dpi(4), dpi(8)),
-			spr,
-			spr,
-
-			--[[ using shapes
-            pl(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, "#343434"),
-            pl(task, "#343434"),
-            --pl(wibox.widget { mailicon, mail and theme.mail.widget, layout = wibox.layout.align.horizontal }, "#343434"),
-            pl(wibox.widget { memicon, mem.widget, layout = wibox.layout.align.horizontal }, "#777E76"),
-            pl(wibox.widget { cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }, "#4B696D"),
-            pl(wibox.widget { tempicon, temp.widget, layout = wibox.layout.align.horizontal }, "#4B3B51"),
-            --pl(wibox.widget { fsicon, theme.fs and theme.fs.widget, layout = wibox.layout.align.horizontal }, "#CB755B"),
-            pl(wibox.widget { baticon, bat.widget, layout = wibox.layout.align.horizontal }, "#8DAA9A"),
-            pl(wibox.widget { neticon, net.widget, layout = wibox.layout.align.horizontal }, "#C0C0A2"),
-            pl(binclock.widget, "#777E76"),
-            --]]
-			-- using separators
-			arrow(theme.bg_normal, "#4B696D"),
-			--wibox.container.background(wibox.container.margin(wibox.widget { mailicon, theme.mail and theme.mail.widget, layout = wibox.layout.align.horizontal }, dpi(4), dpi(7)), "#343434"),
-			--arrow("#343434", theme.bg_normal),
-			--wibox.container.background(wibox.container.margin(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, dpi(3), dpi(6)), theme.bg_focus),
-			--arrow(theme.bg_normal, "#343434"),
-			--wibox.container.background(wibox.container.margin(task, dpi(3), dpi(7)), "#343434"),
-			--arrow("#343434", "#777E76"),
-			--wibox.container.background(wibox.container.margin(wibox.widget {  layout = wibox.layout.align.horizontal }, dpi(2), dpi(3)), "#777E76"),
-			--arrow("#777E76", "#4B696D"),
-			wibox.container.background(
-				wibox.container.margin(
-					wibox.widget({ volicon, theme.volume.widget, layout = wibox.layout.align.horizontal }),
-					dpi(3),
-					dpi(4)
-				),
-				"#4B696D"
-			),
-			arrow("#4B696D", "#4B3B51"),
-			wibox.container.background(
-				wibox.container.margin(
-					wibox.widget({ baticon, bat.widget, layout = wibox.layout.align.horizontal }),
-					dpi(4),
-					dpi(4)
-				),
-				"#4B3B51"
-			),
-			arrow("#4B3B51", "#CB755B"),
-			wibox.container.background(
-				wibox.container.margin(
-					wibox.widget({ memicon, mem.widget, layout = wibox.layout.align.horizontal }),
-					dpi(3),
-					dpi(3)
-				),
-				"#CB755B"
-			),
-			arrow("#CB755B", "#8DAA9A"),
-			wibox.container.background(
-				wibox.container.margin(
-					wibox.widget({ cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }),
-					dpi(3),
-					dpi(3)
-				),
-				"#8DAA9A"
-			),
-			arrow("#8DAA9A", "#C0C0A2"),
-			wibox.container.background(
-				wibox.container.margin(
-					wibox.widget({ brighticon, temp.widget, layout = wibox.layout.align.horizontal }),
-					dpi(3),
-					dpi(3)
-				),
-				"#C0C0A2"
-			),
-			arrow("#C0C0A2", "#777E76"),
-			wibox.container.background(
-				wibox.container.margin(
-					wibox.widget({ nil, clock, layout = wibox.layout.align.horizontal }),
-					dpi(4),
-					dpi(8)
-				),
-				"#777E76"
-			),
-			arrow("#777E76", "alpha"),
-			--]]
-			systray,
-			--wibox.widget.systray(),
-		},
-	})
 end
 
-theme.useless_gap = 3
+theme.useless_gap = 2.4
 
 return theme
