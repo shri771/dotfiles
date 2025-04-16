@@ -30,7 +30,7 @@ index=$((capacity / 10))
 icon=${icons[$index]}
 
 # "Rosemery" color variable for Polybar formatting
-COLOR="%{F#c17d7d}"
+COLOR="%{F#ffaa7f}"
 
 # Determine the format based on status and apply the rosemery color
 case "$status" in

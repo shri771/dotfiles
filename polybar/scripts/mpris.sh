@@ -3,13 +3,13 @@
 # Define icons for known players
 get_player_icon() {
     case "$1" in
-        chromium) echo "  " ;;
-        firefox) echo "" ;;
-        kdeconnect) echo "  " ;;
+        chromium) echo "   " ;;
+        firefox) echo " " ;;
+        kdeconnect) echo "   " ;;
         mpv) echo "  " ;;
-        spotify) echo "  " ;;
-        vlc) echo "󰕼  " ;;
-        *) echo "󰗃  " ;;  # default icon
+        spotify) echo "   " ;;
+        vlc) echo " 󰕼  " ;;
+        *) echo " 󰗃  " ;;  # default icon
     esac
 }
 
@@ -25,8 +25,8 @@ get_status_icon() {
 
 # Set color variables (adjust as desired)
 color_playing="#ba5663"  # green for playing
-color_paused="#FFA500"   # orange for paused
-color_stopped="#FF0000"  # red for stopped
+color_paused="#ba5663"  # orange for paused
+color_stopped="#ba5663"  # red for stopped
 
 # Find an active player that is currently playing
 active_player=""

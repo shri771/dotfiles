@@ -21,12 +21,9 @@ notification() {
 # Function to select a folder
 select_music_folder() {
   local folder_choice
-  folder_choice=$(find "$BASE_DIR" -mindepth 1 -maxdepth 1 -type d -printf "%f\n" | \
-    rofi -dmenu -i -config ~/.config/rofi/config-rofi-Beats.rasi -p "Select Music Folder" \
-    -kb-move-up "Control+p" -kb-move-down "Control+n")
-
+  folder_choice=$(find "$BASE_DIR" -mindepth 1 -type d | rofi -dmenu -i -config ~/.config/rofi/config-rofi-Beats.rasi -p "Select Music Folder")
   [[ -z "$folder_choice" ]] && return 1
-  echo "$BASE_DIR/$folder_choice"
+  echo "$folder_choice"
 }
 
 # Function for playing local music (shuffle play selected folder)
@@ -42,8 +39,7 @@ play_local_music() {
 # Function for playing online music
 play_online_music() {
   local choice
-  choice=$(printf "%s\n" "${!ONLINE_MUSIC[@]}" | rofi -i -dmenu -config ~/.config/rofi/config-rofi-Beats.rasi -p "Online Music" \
-    -kb-move-up "Control+p" -kb-move-down "Control+n")
+  choice=$(printf "%s\n" "${!ONLINE_MUSIC[@]}" | rofi -i -dmenu -config ~/.config/rofi/config-rofi-Beats.rasi -p "Online Music")
 
   [[ -z "$choice" ]] && exit 1
 
@@ -58,9 +54,7 @@ pkill mpv && notify-send -u low -i "$ICON_DIR/music.png" "Music stopped" || {
     pkill rofi
   fi
 
-  user_choice=$(printf "Play from Music Folder\nPlay from Online Stations" | \
-    rofi -dmenu -config ~/.config/rofi/config-rofi-Beats-menu.rasi -p "Select Music Source" \
-    -kb-move-up "Control+p" -kb-move-down "Control+n")
+  user_choice=$(printf "Play from Online Stations\nPlay from Music Folder" | rofi -dmenu -config ~/.config/rofi/config-rofi-Beats-menu.rasi -p "Select Music Source")
 
   case "$user_choice" in
     "Play from Music Folder")

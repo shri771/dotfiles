@@ -4,8 +4,6 @@ local ipairs, string, os, table, tostring, tonumber, type = ipairs, string, os, 
 -- Standard awesome library
 local gears = require("gears") --Utilities such as color parsing and objects
 local awful = require("awful") --Everything related to window managment
-local lgi = require("lgi")
-local cairo = lgi.cairo
 require("awful.autofocus")
 awful.util.spawn("xprop -root -f _NET_NUMBER_OF_DESKTOPS 32c -set _NET_NUMBER_OF_DESKTOPS 5")
 
@@ -28,6 +26,7 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 require("awful.hotkeys_popup.keys")
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
+-- Handle runtime errors after startup
 if awesome.startup_errors then
 	naughty.notify({
 		preset = naughty.config.presets.critical,
@@ -36,7 +35,6 @@ if awesome.startup_errors then
 	})
 end
 
--- Handle runtime errors after startup
 do
 	local in_error = false
 	awesome.connect_signal("debug::error", function(err)
@@ -63,23 +61,12 @@ end
 
 run_once({ "unclutter -root" }) -- entries must be comma-separated
 
-local themes = {
-	"powerarrow-dark", -- 1
-}
-
--- choose your theme here
-local chosen_theme = themes[1]
-local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme)
---beautiful.init("/home/shri/.config/awesome/themes/powerarrow-dark/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/theme.lua")
 local modkey = "Mod4"
 local altkey = "Mod1"
 local ctrlkey = "Control"
 local terminal = "kitty"
-local browser = "brave"
-local editor = os.getenv("EDITOR") or "nvim"
-local emacs = "emacsclient -c -a 'emacs' "
 local mediaplayer = "mpv"
-local soundplayer = "ffplay -nodisp -autoexit " -- The program that will play system sounds
 
 -- awesome variables
 awful.util.terminal = terminal
@@ -171,8 +158,6 @@ lain.layout.cascade.tile.offset_y = 32
 lain.layout.cascade.tile.extra_padding = 5
 lain.layout.cascade.tile.nmaster = 5
 lain.layout.cascade.tile.ncol = 2
-
-beautiful.init(string.format(gears.filesystem.get_configuration_dir() .. "/themes/%s/theme.lua", chosen_theme))
 
 local myawesomemenu = {
 	{
@@ -336,6 +321,18 @@ globalkeys = my_table.join(
 			beautiful.volume.update()
 		end
 	end, { description = "toggle mute and show notification", group = "custom widgets" }),
+	-- Multimedia keys
+	awful.key({}, "XF86AudioPlay", function()
+		awful.spawn("playerctl play-pause")
+	end, { description = "toggle play/pause", group = "media" }),
+
+	awful.key({}, "XF86AudioNext", function()
+		awful.spawn("playerctl next")
+	end, { description = "next track", group = "media" }),
+
+	awful.key({}, "XF86AudioPrev", function()
+		awful.spawn("playerctl previous")
+	end, { description = "previous track", group = "media" }),
 	-- Launcher
 	awful.key({ modkey }, "Return", function()
 		awful.spawn(terminal)
@@ -345,6 +342,9 @@ globalkeys = my_table.join(
 	end, { description = "Launch fm", group = "awesome" }),
 	awful.key({ modkey, "Shift" }, "s", function()
 		awful.spawn("flameshot gui")
+	end, { description = "Take a screenshot with Flameshot", group = "hotkeys" }),
+	awful.key({ modkey }, "s", function()
+		awful.spawn("flameshot full")
 	end, { description = "Take a screenshot with Flameshot", group = "hotkeys" }),
 	awful.key({ altkey }, "m", function()
 		awful.spawn("notion-calendar-electron")
@@ -368,7 +368,7 @@ globalkeys = my_table.join(
 	awful.key({ modkey, "Shift" }, "q", function()
 		awful.spawn.with_shell("dm-logout")
 	end, { description = "Quit awesome", group = "awesome" }),
-	awful.key({ modkey }, "s", hotkeys_popup.show_help, { description = "Show help", group = "awesome" }),
+	--awful.key({ modkey }, "s", hotkeys_popup.show_help, { description = "Show help", group = "awesome" }),
 	awful.key({ modkey, "Shift" }, "w", function()
 		awful.util.mymainmenu:show()
 	end, { description = "Show main menu", group = "awesome" }),
@@ -394,10 +394,13 @@ globalkeys = my_table.join(
 
 	-- Rofi launcher's
 	awful.key({ altkey }, "f", function()
-		awful.spawn("/usr/bin/rofi -show drun -modi drun,run,window,filebrowser")
+		awful.spawn("rofi -show drun -modi drun,run,window,filebrowser")
 	end, { description = "launch rofi", group = "launcher" }),
 	awful.key({ altkey }, "v", function()
 		awful.spawn.with_shell("$HOME/.config/awesome/scripts/ClipManager.sh")
+	end, { description = "launch rofi-clip", group = "launcher" }),
+	awful.key({ altkey }, "s", function()
+		awful.spawn.with_shell("$HOME/.config/eww/dashboard/launch_dashboard")
 	end, { description = "launch rofi-clip", group = "launcher" }),
 	awful.key({ modkey }, "x", function()
 		awful.spawn.with_shell("$HOME/.config/awesome/scripts/WallpaperSelect.sh")
@@ -538,15 +541,6 @@ globalkeys = my_table.join(
 	awful.key({ modkey, "Shift" }, "Tab", function()
 		awful.layout.inc(-1)
 	end, { description = "select previous", group = "layout" }),
-
-	awful.key({ modkey, ctrlkey }, "n", function()
-		local c = awful.client.restore()
-		-- Focus restored client
-		if c then
-			client.focus = c
-			c:raise()
-		end
-	end, { description = "restore minimized", group = "client" }),
 
 	-- Dropdown application
 	awful.key({ modkey }, "F12", function()
@@ -765,6 +759,15 @@ globalkeys = gears.table.join(
 	awful.key({ altkey }, "c", toggle_cal, { description = "...", group = "scratchpads" }),
 	awful.key({ altkey }, "w", toggle_clock, { description = "...", group = "scratchpads" }),
 	awful.key({ modkey }, "w", toggle_whatsie, { description = "...", group = "scratchpads" }),
+	awful.key({}, "XF86AudioPlay", function()
+		awful.spawn("playerctl play-pause")
+	end),
+	awful.key({}, "XF86AudioNext", function()
+		awful.spawn("playerctl next")
+	end),
+	awful.key({}, "XF86AudioPrev", function()
+		awful.spawn("playerctl previous")
+	end),
 	awful.key({ altkey }, "p", toggle_kdeconnect, { description = "...", group = "scratchpads" })
 )
 
@@ -787,11 +790,6 @@ clientkeys = my_table.join(
 	awful.key({ modkey }, "o", function(c)
 		c:move_to_screen()
 	end, { description = "move to screen", group = "client" }),
-	awful.key({ modkey }, "n", function(c)
-		-- The client currently has the input focus, so it cannot be
-		-- minimized, since minimized clients can't have the focus.
-		c.minimized = true
-	end, { description = "minimize", group = "client" }),
 	awful.key({ modkey }, "m", function(c)
 		c.maximized = not c.maximized
 		c:raise()
@@ -963,10 +961,8 @@ awful.rules.rules = {
 
 	-- Rules to open a app in sepcific tag
 
-	{ rule = { class = "autokey-qt" }, properties = { tag = "  " } },
-	{ rule = { class = "Variety" }, properties = { tag = "  " } },
-	{ rule = { class = "kdeconnect.app" }, properties = { tag = "  " } },
-	{ rule = { class = "Nemo" }, properties = { tag = "  " } },
+	{ rule = { class = "autokey-qt" }, properties = { tag = "   " } },
+	{ rule = { class = "vlc" }, properties = { tag = "   " } },
 
 	{ rule = { class = "Rquickshare" }, properties = { floating = true } },
 	--{ rule = { class = "WhatSie" }, properties = { floating = true, width = 950, height = 650, x = 0, y = 17 } },
@@ -980,6 +976,17 @@ awful.rules.rules = {
 			ontop = true,
 			placement = awful.placement.centered,
 		},
+	},
+	{
+		rule = { class = "Brave-browser", instance = "crx_nngceckbapebfimnlniiiahkandclblb" },
+		properties = {
+			floating = true,
+			ontop = true,
+		},
+	},
+	{
+		rule = { class = "polybar" }, -- Use the correct WM_CLASS for Polybar
+		properties = { border_width = 9 },
 	},
 	{ rule = { class = "Gimp*", role = "gimp-image-window" }, properties = { maximized = true } },
 
@@ -1013,28 +1020,25 @@ awful.rules.rules = {
 		rule_any = {
 			instance = {
 				"DTA", -- Firefox addon DownThemAll.
+				"blueman-manager",
 				"copyq", -- Includes session name in class.
 			},
 			class = {
 				"Blueberry",
 				"Qalculate-gtk",
 				"kcolorchooser",
-			},
-
-			name = {
-				"Event Tester", -- xev.
-			},
-			role = {
-				"AlarmWindow", -- Thunderbird's calendar.
-				"pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
-				"Preferences",
-				"setup",
+				"Blueman-manager",
 			},
 		},
 		properties = { floating = true, ontop = true },
+		callback = function(c)
+			c:geometry({ width = 550, height = 440 })
+			awful.placement.centered(c, { honor_workarea = true })
+		end,
 	},
 }
 
+table.insert(awful.rules.rules, floating_rule)
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function(c)
 	-- Set the windows at the slave,
@@ -1117,17 +1121,6 @@ end)
 -- Gaps --
 awful.screen.padding(awful.screen.focused(), { left = 1, right = 1, top = 2, bottom = 1 })
 
--- Dracula color scheme
-local dracula_colors = {
-	background = "#282a36",
-	foreground = "#f8f8f2",
-	accent = "#ff79c6",
-	purple = "#bd93f9",
-	green = "#50fa7b",
-	orange = "#ffb86c",
-	red = "#ff5555",
-}
-
 -- Set default notification settings
 naughty.config.defaults.timeout = 3 -- Timeout for notifications
 naughty.config.defaults.position = "top_right" -- Positioning at the bottom-right corner
@@ -1135,33 +1128,14 @@ naughty.config.defaults.position = "top_right" -- Positioning at the bottom-righ
 -- Set notification theme (background and foreground colors)
 naughty.config.presets.normal = {
 	font = "Monospace 10",
-	bg = dracula_colors.background,
-	fg = dracula_colors.foreground,
-	border_color = dracula_colors.purple,
 	border_width = 1,
 	shape = naughty.config.presets.normal.shape,
 	opacity = 0.9, -- 10% transparency
-	width = 400, -- Fixed width
+	width = 330, -- Fixed width
 }
 
 -- Position notifications with padding
-naughty.config.padding = 40 -- padding for notifications
-
--- Custom notification appearance with fixed width and dynamic bottom padding
-naughty.config.presets.low = {
-	font = "Monospace 10",
-	bg = dracula_colors.background,
-	fg = dracula_colors.foreground,
-	border_color = dracula_colors.purple,
-	border_width = 1,
-	shape = naughty.config.presets.normal.shape,
-	opacity = 0.9, -- 10% transparency
-	timeout = 3,
-	position = "bottom_right",
-	width = 400, -- Fixed width like GNOME notifications
-	height = nil, -- Dynamic height as per the content
-	maximum_width = 400, -- Maximum width of the notification
-}
+naughty.config.padding = 30 -- padding for notifications
 
 --Auto Start
 --awful.spawn.with_shell(soundplayer .. startupSound)
@@ -1184,7 +1158,7 @@ awful.spawn.with_shell(
 )
 awful.spawn.with_shell("~/scripts/startups/connect_realmebuds.sh &")
 awful.spawn.with_shell("~/.config/polybar/lauch.sh &")
-awful.spawn.with_shell("~/.config/awesome/scripts/auto-music-switcher.sh &")
+--awful.spawn.with_shell("~/.config/awesome/scripts/auto-music-switcher.sh &")
 --awful.spawn.with_shell("rclone mount Shri77: ~/Shri77/") --Interchange escape with caps
 --awful.spawn.with_shell("xdotool key Num_Lock")
 awful.spawn.with_shell(" xset r rate 400 25")

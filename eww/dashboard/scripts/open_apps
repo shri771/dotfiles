@@ -12,8 +12,8 @@ close_dash() {
 	rm -rf "$FILE"
 }
 
-if [[ "$1" == "--pk" ]]; then
-	close_dash && pika-backup &
+if [[ "$1" == "--ff" ]]; then
+	close_dash && firefox &
 
 elif [[ "$1" == "--tg" ]]; then
 	close_dash && telegram-desktop &

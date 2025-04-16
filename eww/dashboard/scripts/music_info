@@ -1,97 +1,193 @@
 #!/bin/bash
 
-## Get data
-STATUS="$(mpc status)"
 COVER="/tmp/.music_cover.jpg"
-MUSIC_DIR="$HOME/Music"
+FALLBACK_COVER="$HOME/images/music.png"
 
-## Get status
+get_active_player() {
+    local player; local status
+    if ! players=$(playerctl -l 2>/dev/null); then
+        printf "Error: Failed to list players\n" >&2
+        return 1
+    fi
+
+    while read -r player; do
+        [[ "$player" == *"brave"* ]] && continue
+        if ! status=$(playerctl -p "$player" status 2>/dev/null); then
+            continue
+        fi
+        [[ "$status" == "Playing" ]] && printf "%s\n" "$player" && return
+    done <<< "$players"
+
+    while read -r player; do
+        [[ "$player" == *"brave"* ]] && continue
+        printf "%s\n" "$player"
+        return
+    done <<< "$players"
+
+    return 1
+}
+
+is_valid_player() {
+    [[ -n "$ACTIVE_PLAYER" && "$ACTIVE_PLAYER" != *"brave"* ]]
+}
+
 get_status() {
-	if [[ $STATUS == *"[playing]"* ]]; then
-		echo ""
-	else
-		echo "喇"
-	fi
+    is_valid_player || { printf "喇"; return; }
+    local status
+    if ! status=$(playerctl -p "$ACTIVE_PLAYER" status 2>/dev/null); then
+        printf "喇"
+        return
+    fi
+    [[ "$status" == "Playing" ]] && printf "" || printf "喇"
 }
 
-## Get song
 get_song() {
-	song=`mpc -f %title% current`
-	if [[ -z "$song" ]]; then
-		echo "Offline"
-	else
-		echo "$song"
-	fi	
+    is_valid_player || { printf "Offline"; return; }
+    local title
+    if ! title=$(playerctl -p "$ACTIVE_PLAYER" metadata title 2>/dev/null); then
+        printf "Offline"
+        return
+    fi
+    printf "%s" "$title"
 }
 
-## Get artist
 get_artist() {
-	artist=`mpc -f %artist% current`
-	if [[ -z "$artist" ]]; then
-		echo "Offline"
-	else
-		echo "$artist"
-	fi	
+    is_valid_player || { printf "Offline"; return; }
+    local artist
+    if ! artist=$(playerctl -p "$ACTIVE_PLAYER" metadata artist 2>/dev/null); then
+        printf "Offline"
+        return
+    fi
+    printf "%s" "$artist"
 }
 
-## Get time
 get_time() {
-	time=`mpc status | grep "%)" | awk '{print $4}' | tr -d '(%)'`
-	if [[ -z "$time" ]]; then
-		echo "0"
-	else
-		echo "$time"
-	fi	
+    is_valid_player || { printf "0"; return; }
+    local pos; local dur
+    if ! pos=$(playerctl -p "$ACTIVE_PLAYER" position 2>/dev/null); then
+        printf "0"
+        return
+    fi
+    if ! dur=$(playerctl -p "$ACTIVE_PLAYER" metadata mpris:length 2>/dev/null); then
+        printf "0"
+        return
+    fi
+    [[ "$dur" -eq 0 ]] && printf "0" && return
+    printf "%d" $(( pos * 100 / dur ))
 }
+
 get_ctime() {
-	ctime=`mpc status | grep "#" | awk '{print $3}' | sed 's|/.*||g'`
-	if [[ -z "$ctime" ]]; then
-		echo "0:00"
-	else
-		echo "$ctime"
-	fi	
+    is_valid_player || { printf "0:00"; return; }
+    local pos
+    if ! pos=$(playerctl -p "$ACTIVE_PLAYER" position 2>/dev/null); then
+        pos=0
+    fi
+    printf '%d:%02d\n' $((pos / 60)) $((pos % 60))
 }
+
 get_ttime() {
-	ttime=`mpc -f %time% current`
-	if [[ -z "$ttime" ]]; then
-		echo "0:00"
-	else
-		echo "$ttime"
-	fi	
+    is_valid_player || { printf "0:00"; return; }
+    local dur
+    if ! dur=$(playerctl -p "$ACTIVE_PLAYER" metadata mpris:length 2>/dev/null); then
+        printf "0:00"
+        return
+    fi
+    dur=$((dur / 1000000))
+    [[ "$dur" -eq 0 ]] && printf "0:00" && return
+    printf '%d:%02d\n' $((dur / 60)) $((dur % 60))
 }
 
-## Get cover
 get_cover() {
-	ffmpeg -i "${MUSIC_DIR}/$(mpc current -f %file%)" "${COVER}" -y &> /dev/null
-	STATUS=$?
+    if ! is_valid_player; then
+        printf "%s\n" "$FALLBACK_COVER"
+        return
+    fi
 
-	# Check if the file has a embbeded album art
-	if [ "$STATUS" -eq 0 ];then
-		echo "$COVER"
-	else
-		echo "images/music.png"
-	fi
+    local url path
+    if url=$(playerctl -p "$ACTIVE_PLAYER" metadata mpris:artUrl 2>/dev/null); then
+        url="${url#file://}"
+
+        if ! path=$(printf '%b\n' "${url//%/\\x}"); then
+            printf "%s\n" "$FALLBACK_COVER"
+            return
+        fi
+
+        if [[ -f "$path" ]]; then
+            cp "$path" "$COVER"
+            printf "%s\n" "$COVER"
+            return
+        fi
+    fi
+
+    local file_path
+    if ! file_path=$(playerctl -p "$ACTIVE_PLAYER" metadata xesam:url 2>/dev/null); then
+        printf "%s\n" "$FALLBACK_COVER"
+        return
+    fi
+    file_path="${file_path#file://}"
+    if ! file_path=$(printf '%b\n' "${file_path//%/\\x}"); then
+        printf "%s\n" "$FALLBACK_COVER"
+        return
+    fi
+
+    if [[ -z "$file_path" || ! -e "$file_path" ]]; then
+        printf "%s\n" "$FALLBACK_COVER"
+        return
+    fi
+
+    local ext="${file_path##*.}"
+    ext="${ext,,}"
+
+    rm -f "$COVER"
+
+    if [[ "$ext" == "mp3" || "$ext" == "m4a" || "$ext" == "flac" ]]; then
+        ffmpeg -loglevel error -y -i "$file_path" -map 0:v:0 -frames:v 1 "$COVER"
+    else
+        ffmpeg -loglevel error -y -ss 00:00:03 -i "$file_path" -frames:v 1 "$COVER"
+    fi
+
+    if [[ -s "$COVER" ]]; then
+        printf "%s\n" "$COVER"
+        return
+    fi
+
+    printf "%s\n" "$FALLBACK_COVER"
 }
 
-## Execute accordingly
-if [[ "$1" == "--song" ]]; then
-	get_song
-elif [[ "$1" == "--artist" ]]; then
-	get_artist
-elif [[ "$1" == "--status" ]]; then
-	get_status
-elif [[ "$1" == "--time" ]]; then
-	get_time
-elif [[ "$1" == "--ctime" ]]; then
-	get_ctime
-elif [[ "$1" == "--ttime" ]]; then
-	get_ttime
-elif [[ "$1" == "--cover" ]]; then
-	get_cover
-elif [[ "$1" == "--toggle" ]]; then
-	mpc -q toggle
-elif [[ "$1" == "--next" ]]; then
-	{ mpc -q next; get_cover; }
-elif [[ "$1" == "--prev" ]]; then
-	{ mpc -q prev; get_cover; }
-fi
+toggle_play() {
+    is_valid_player || return
+    playerctl -p "$ACTIVE_PLAYER" play-pause
+}
+
+next_track() {
+    is_valid_player || return
+    playerctl -p "$ACTIVE_PLAYER" next
+}
+
+prev_track() {
+    is_valid_player || return
+    playerctl -p "$ACTIVE_PLAYER" previous
+}
+
+main() {
+    if ! ACTIVE_PLAYER=$(get_active_player); then
+        printf "No valid media player found\n" >&2
+        return 1
+    fi
+
+    case "$1" in
+        --song) get_song ;;
+        --artist) get_artist ;;
+        --status) get_status ;;
+        --time) get_time ;;
+        --ctime) get_ctime ;;
+        --ttime) get_ttime ;;
+        --cover) get_cover ;;
+        --toggle) toggle_play ;;
+        --next) next_track ;;
+        --prev) prev_track ;;
+        *) printf "Unknown option: %s\n" "$1" >&2 ;;
+    esac
+}
+
+main "$@"

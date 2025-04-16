@@ -3,8 +3,8 @@
 # Directory local music base folder
 BASE_DIR="$HOME/Downloads/Music"
 
-# Directory for icons (AwesomeWM configuration)
-ICON_DIR="$HOME/.config/awesome/icons"
+# Directory for icons
+ICON_DIR="$HOME/.config/swaync/icons"
 
 # Online Stations. Edit as required
 declare -A ONLINE_MUSIC=(
@@ -15,7 +15,7 @@ declare -A ONLINE_MUSIC=(
 
 # Function for displaying notifications
 notification() {
-  notify-send -u normal -i "$ICON_DIR/music.png" "Now Playing:" "$@"
+  notify-send -u normal -i "$ICON_DIR/music.png" " Now Playing:" " $@"
 }
 
 # Function to select a folder
@@ -36,25 +36,27 @@ play_local_music() {
 
   notification "Shuffle Play from: $(basename "$selected_folder")"
 
-  mpv --shuffle --loop-playlist --vid=no "$selected_folder"
+  # VLC GUI: Random play, loop
+ vlc --meta-title "My Music Player 🎵" --random --loop "$selected_folder"/*
 }
 
 # Function for playing online music
 play_online_music() {
   local choice
-  choice=$(printf "%s\n" "${!ONLINE_MUSIC[@]}" | \
-    rofi -dmenu -i -config ~/.config/rofi/config-rofi-Beats.rasi -p "Online Music" \
+  choice=$(printf "%s\n" "${!ONLINE_MUSIC[@]}" | rofi -i -dmenu -config ~/.config/rofi/config-rofi-Beats.rasi -p "Online Music" \
     -kb-move-up "Control+p" -kb-move-down "Control+n")
 
   [[ -z "$choice" ]] && exit 1
 
   local link="${ONLINE_MUSIC[$choice]}"
   notification "$choice"
-  mpv --shuffle "$link"
+
+  # VLC GUI: Random and loop for online streams
+  vlc --random --loop "$link"
 }
 
-# Stop music if mpv is running, otherwise show menu
-pkill mpv && notify-send -u low -i "$ICON_DIR/music.png" "Music stopped" || {
+# Stop music if VLC is running, otherwise show menu
+pkill vlc && notify-send -u low -i "$ICON_DIR/music.png" "Music stopped" || {
   if pidof rofi >/dev/null; then
     pkill rofi
   fi

@@ -1,8 +1,9 @@
+
 ## Colors ##
 [colors]
-background = #80000000 
+background = #80000000
 background-alt = #373
-foreground     =#F2F2F2 
+foreground     = #C5C8C6
 primary        = #F0C674
 secondary      = #8ABEB7
 alert          = #A54242
@@ -12,25 +13,15 @@ highlight      = #358CA9
 lightgray      = #686868
 darkgray       = #353535
 
-#teal          = #4d9900
 teal           = #017554
+teal-trans     = #01755480
 cyan           = #358CA9
 white          = #F2F2F2
 black          = #000000
 yellow         = #ffff7f
-border         = #00000000 
+border         = #cba6f7
 button         = #F0C674
 button-hover   = #8ABEB7
-
-## Settings ##
-[settings]
-screenchange-reload = true
-pseudo-transparency = true
-compositing-background = source  # over,none
-compositing-foreground = source
-throttle-output = 5
-dpi = 96
-
 
 ## Bars ##
 
@@ -38,13 +29,12 @@ dpi = 96
 [bar/left]
 width = 18%
 offset-x = 0.8%
-offset-y = 0.3%
-height = 25pt
+height = 24pt
 radius = 13
 background = ${colors.background}
 foreground = ${colors.foreground}
 line-size = 3pt
-border-size = 0pt
+border-size = 2pt
 border-color = ${colors.border}
 
 padding-left = 2
@@ -53,57 +43,52 @@ module-margin = 0
 
 separator = "|"
 separator-foreground = ${colors.disabled}
-font-0 = "JetBrainsMono Nerd Font;1"
+font-0 = JetBrainsMono Nerd Font;2
 
 modules-left = xworkspaces separator systray
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 enable-ipc = true
-wm-restack = generic
+wm-restack = genric
 
 
 # Middle #
 [bar/middle]
-width = 20%
+width = 15%
 height = 24pt
-offset-x = 41%
-offset-y = 0.3%
+offset-x = 44%
 radius = 13
-override-redirect = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 line-size = 3pt
-border-size = 0pt
-separator = ""
+border-size = 2pt
+separator = "|"
 border-color = ${colors.border}
 
-padding-left = 10
+padding-left = 8
 padding-right = 8
-module-margin = 2
+module-margin = 6
 separator-foreground = ${colors.disabled}
-font-0 = "JetBrainsMono Nerd Font=5;1"
-font-1 = "JetBrainsMono Nerd Font:size=15;1"
+font-0 = JetBrainsMono Nerd Font;1
 
-modules-center = mpris separator2 date separator1 headphones separator
+modules-center = separator  date mpris
 
 cursor-click = pointer
 cursor-scroll = ns-resize
 enable-ipc = true
-wm-restack = generic
+wm-restack = genric
 
 # Right #
 [bar/right]
 width = 20%
 height = 24pt
 offset-x = 79.5%
-offset-y = 0.3%
-margin-top = 10
 radius = 13
 background = ${colors.background}
 foreground = ${colors.foreground}
 line-size = 3pt
-border-size = 0pt
+border-size = 2pt
 border-color = ${colors.border}
 
 padding-left = 4
@@ -118,37 +103,15 @@ modules-right =  cpu temperature   memory sperator battery volume
 cursor-click = pointer
 cursor-scroll = ns-resize
 enable-ipc = true
-wm-restack = generic
+wm-restack = genric
 
 
 
 ## Moudules ##
-[module/headphones]
-type = custom/script
-exec = ~/.config/polybar/scripts/headphone_status.sh
-interval = 5
-label = %output%
-click-left = $HOME/scripts/startups/connect_realmebuds.sh
-click-middle = $HOME/scripts/startups/disconnect_realmebus.sh
-
-[module/separator1]
-type = custom/text
-content = ")"
-content-foreground = ${colors.disabled}
-
-[module/separator2]
-type = custom/text
-content = "("
-content-foreground = ${colors.disabled}
-
 [module/mpris]
 type = custom/script
-exec = /home/sh/.config/polybar/scripts/mpris.sh
+exec =~/.config/polybar/scripts/mpris.sh
 interval = 3
-label = %output%
-enable-markup = true
-
-; (Optional) user actions
 click-left = playerctl previous
 click-middle = playerctl play-pause
 click-right = playerctl next
@@ -326,12 +289,15 @@ label-connected = %{F#F0C674}%ifname%%{F-} %local_ip%
 [module/date]
 type = internal/date
 interval = 1
-date = %A %d.%m.%Y - %H:%M
-date-alt =%H:%M:%S
-
+date = %H:%M
+date-alt = %Y-%m-%d %H:%M:%S
 label = %date%
 label-foreground = ${colors.primary}
+#label-underline = #ff0000
 
+[settings]
+screenchange-reload = true
+pseudo-transparency = true
 
 [module/temperature]
 type = internal/temperature
@@ -368,5 +334,5 @@ format-perfix-foreground = #ffaa7f
 ; Threshold temperature to display warning label (in degrees celsius)
 ; Default: 80
 warn-temperature = 70
-label-warn = 󰈸 %temperature-c%
+label-warn = 󰈸%temperature-c%
 label-warn-foreground = #ff1d61

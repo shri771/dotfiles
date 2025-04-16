@@ -9,6 +9,8 @@ set -U fish_greeting ""
 set TERM xterm-256color # Sets the terminal type
 set -Ux EDITOR nvim
 set -Ux VISUAL nvim
+set -x XDG_CURRENT_DESKTOP KDE
+set -x XDG_DESKTOP_PORTAL xdg-desktop-portal-kde
 set -Ux TERM xterm-256color
 set -U LC_CTYPE en_US.UTF-8
 eval ($HOME/.config/tmux/plugins/tmuxifier/bin/tmuxifier init - fish)
@@ -310,6 +312,14 @@ function wycn
     open_dotfile ~/dotfiles/waybar/
 end
 
+function plcn
+    open_dotfile ~/dotfiles/polybar/ config.ini
+end
+
+function plcn-
+    open_dotfile ~/dotfiles/polybar/
+end
+
 function wycn-
     open_dotfile ~/dotfiles/waybar/
 end
@@ -562,6 +572,9 @@ alias en-='bash $HOME/scripts/system/edit_gpg.sh'
 alias ventoy='cd $HOME/Downloads/ISO/ventoy-1.1.05/ &&  ./VentoyGUI.x86_64'
 alias shpwd='nmcli -g WIFI-QR device wifi show-password'
 alias vm='source ~/.venvs/pyprland/bin/activate.fish'
+alias rm='trash-put'
+alias nxt='playerctl next'
+alias prs='playerctl previous'
 
 # vim and emacst
 alias emacs="emacsclient -c -a 'emacs'"
