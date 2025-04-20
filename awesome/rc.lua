@@ -167,7 +167,7 @@ local myawesomemenu = {
 		end,
 	},
 	{ "manual", terminal .. " -e 'man awesome'" },
-	{ "edit config", "emacsclient -c -a emacs ~/.config/awesome/rc.lua" },
+	{ "edit config", "nvim ~/.config/awesome/rc.lua" },
 	{ "arandr", "arandr" },
 	{ "restart", awesome.restart },
 }
@@ -189,7 +189,7 @@ awful.util.mymainmenu = freedesktop.menu.build({
 		},
 		{ "Sleep", "systemctl suspend" },
 		{ "Restart", "systemctl reboot" },
-		{ "Exit", "systemctl poweroff" },
+		{ "Reboot", "systemctl poweroff" },
 		-- other triads can be put here
 	},
 })
@@ -376,7 +376,7 @@ globalkeys = my_table.join(
 		awful.spawn.with_shell("$HOME/.config/awesome/scripts/toggle_polybar.sh")
 	end),
 	awful.key({ modkey }, "r", function() -- Mod1 = Alt key
-		awful.spawn.with_shell("$HOME/.config/polybar/lauch.sh &")
+		awful.spawn.with_shell("pkill polybar && $HOME/.config/polybar/lauch.sh &")
 	end),
 	awful.key({ modkey, "Shift" }, "c", function() -- Mod1 = Alt key
 		awful.spawn.with_shell("$HOME/.config/awesome/scripts/KillActive_process.sh &")
@@ -408,49 +408,6 @@ globalkeys = my_table.join(
 	awful.key({ modkey, "Shift" }, "m", function()
 		awful.spawn.with_shell("$HOME/.config/awesome/scripts/RofiBeats.sh")
 	end, { description = "launch rofi-beats", group = "launcher" }),
-
-	-- Dmscripts (Super + p followed by KEY)
-	awful.key({ modkey }, "p", function()
-		local grabber
-		grabber = awful.keygrabber.run(function(_, key, event)
-			if event == "release" then
-				return
-			end
-
-			if key == "h" then
-				awful.spawn.with_shell("dm-hub")
-			elseif key == "a" then
-				awful.spawn.with_shell("dm-sounds")
-			elseif key == "b" then
-				awful.spawn.with_shell("dm-setbg")
-			elseif key == "c" then
-				awful.spawn.with_shell("dtos-colorscheme")
-			elseif key == "e" then
-				awful.spawn.with_shell("dm-confedit")
-			elseif key == "i" then
-				awful.spawn.with_shell("dm-maim")
-			elseif key == "k" then
-				awful.spawn.with_shell("dm-kill")
-			elseif key == "m" then
-				awful.spawn.with_shell("dm-man")
-			elseif key == "n" then
-				awful.spawn.with_shell("dm-note")
-			elseif key == "o" then
-				awful.spawn.with_shell("dm-bookman")
-			elseif key == "p" then
-				awful.spawn.with_shell('passmenu -p "Pass: "')
-			elseif key == "q" then
-				awful.spawn.with_shell("dm-logout")
-			elseif key == "r" then
-				awful.spawn.with_shell("dm-radio")
-			elseif key == "s" then
-				awful.spawn.with_shell("dm-websearch")
-			elseif key == "t" then
-				awful.spawn.with_shell("dm-translate")
-			end
-			awful.keygrabber.stop(grabber)
-		end)
-	end, { description = "followed by KEY", group = "Dmscripts" }),
 
 	-- By direction client focus
 	awful.key({ altkey }, "j", function()

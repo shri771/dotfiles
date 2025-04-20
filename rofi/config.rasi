@@ -1,39 +1,24 @@
-/* Clipboard Config - Clipboard */
+/* ---- ✫ https://github.com/JaKooLit ✫ ---- */
+/* Rofi Beats Config (compact) */
 
-@import "~/.config/rofi/master-config-2.rasi"  
+@import "~/.config/rofi/config-compact.rasi"
 
 /* ---- Entry ---- */
 entry {
-  width: 25%; /* Reduce the width */
-  placeholder: " ";
-  font: "monospace 19";  /* Increase the font size of the placeholder */
-  padding: 1px;  /* Reduce extra spacing around the placeholder */
-  margin: 0px 0px 0px 0px; /* Adjust margin to bring it closer to the listview */
+  placeholder: "                        ";
+  padding: 1;
+  margin: 1;
 }
 
 /* ---- Listview ---- */
 listview {
-  columns: 1; /* Reduce columns to make it more compact */
-  lines: 5;   /* Show fewer lines for a smaller height */
+  lines: 7;
+  fixed-height: false;
+  line-padding: 2;
+  columns: 1;
 }
 
 /* ---- Window ---- */
 window {
-  width: 30%;  /* Adjust overall window width */
-  height: 40%; /* Adjust height */
-}
-
-/* ---- Reduce Font Size for Entries ---- */
-* {
-  font: "JetBrainsMono Nerd Font SemiBold 8"; /* Decrease font size for list items */
-}
-
-/* ---- Reduce Padding ---- */
-element {
-  padding: 1px; /* Remove extra spacing */
-}
-
-/* ---- DPI Configuration ---- */
-configuration {
-    dpi: 96;  /* Adjust this value based on your display's DPI */
+  width: 570px;
 }

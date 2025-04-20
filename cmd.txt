@@ -30,4 +30,11 @@ end
 
 # Remove Brave lock
 rm -f SingletonLock SingletonSocket SingletonCookieance
-
+pactl set-sink-input-volume \
+        $(
+  pactl list sink-inputs \
+        | awk -F'#|:' '
+            /^Sink Input #/           { sub(/^#/,"",$2); id=$2 }
+            $0 ~ /application.name = "PipeWire ALSA \\[vlc\\]"/ { print id; exit }
+          '
+  ) +5%

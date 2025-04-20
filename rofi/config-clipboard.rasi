@@ -1,28 +1,24 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-/* Clipboard Config - Clipboard */
+/* ---- ✫ https://github.com/JaKooLit ✫ ---- */
+/* Rofi Beats Config (compact) */
 
-@import "~/.config/rofi/master-config.rasi"  
+@import "~/.config/rofi/config-compact.rasi"
 
 /* ---- Entry ---- */
 entry {
-  width: 37%;
-  placeholder: "📋 Search ";
+  placeholder: " ";
+  padding: 1;
+  margin: 0;
 }
 
 /* ---- Listview ---- */
 listview {
+  lines: 7;
+  fixed-height: false;
+  line-padding: 2;
   columns: 1;
-  lines: 8;
 }
+
 /* ---- Window ---- */
 window {
-  width: 30%;  /* Adjust overall window width */
-  height: 40%; /* Adjust height */
+  width: 570px;
 }
-
-
-/* ---- Reduce Padding ---- */
-element {
-  padding: 2px; /* Remove extra spacing */
-}
-

@@ -29,21 +29,25 @@ index=$((capacity / 10))
 [ "$index" -gt 10 ] && index=10
 icon=${icons[$index]}
 
-# "Rosemery" color variable for Polybar formatting
-COLOR="%{F#ffaa7f}"
+# Color logic: red if <= 25%, else rosemery
+if [ "$capacity" -le 25 ]; then
+    COLOR="%{F#ff1d61}"  # Red for low battery
+else
+    COLOR="%{F#ffaa7f}"  # Normal rosemery color
+fi
 
-# Determine the format based on status and apply the rosemery color
+# Determine output based on status
 case "$status" in
     "Charging")
-        echo "${COLOR} ${capacity}% ${RESET}"
+        echo "${COLOR} ${capacity}% %{F-}"
         ;;
     "Full")
-        echo "${COLOR}${icon} Full ${RESET}"
+        echo "${COLOR}${icon} Full %{F-}"
         ;;
     "Not charging")
-        echo "${COLOR}󱘖 ${capacity}% ${RESET}"
+        echo "${COLOR}󱘖 ${capacity}% %{F-}"
         ;;
     *)
-        echo "${COLOR}${icon} ${capacity}% ${RESET}"
+        echo "${COLOR}${icon} ${capacity}% %{F-}"
         ;;
 esac

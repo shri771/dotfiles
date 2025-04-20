@@ -52,6 +52,9 @@ What=Content
 [Toolbar mainToolBar]
 ToolButtonStyle=IconOnly
 
+[VersionControl]
+enabledPlugins=Git
+
 [ViewPropertiesDialog]
 1920x1200 screen: Window-Maximized=true
 

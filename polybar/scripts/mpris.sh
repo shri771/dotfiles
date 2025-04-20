@@ -19,7 +19,7 @@ get_status_icon() {
         Playing) echo "" ;;
         Paused) echo "󰐎" ;;
         Stopped) echo "" ;;
-        *) echo "" ;;
+        *) echo "" ;;
     esac
 }
 
