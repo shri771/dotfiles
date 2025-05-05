@@ -935,14 +935,6 @@ awful.rules.rules = {
 		},
 	},
 	{
-		rule = { class = "Code" },
-		properties = {
-			floating = true,
-			ontop = true,
-			placement = awful.placement.centered,
-		},
-	},
-	{
 		rule = { class = "Brave-browser", instance = "crx_nngceckbapebfimnlniiiahkandclblb" },
 		properties = {
 			floating = true,
