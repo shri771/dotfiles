@@ -9,8 +9,7 @@ set -U fish_greeting ""
 set TERM xterm-256color # Sets the terminal type
 set -Ux EDITOR nvim
 set -Ux VISUAL nvim
-set -x XDG_CURRENT_DESKTOP KDE
-set -x XDG_DESKTOP_PORTAL xdg-desktop-portal-kde
+set -gx PATH $HOME/.local/bin $PATH
 set -Ux TERM xterm-256color
 set -U LC_CTYPE en_US.UTF-8
 eval ($HOME/.config/tmux/plugins/tmuxifier/bin/tmuxifier init - fish)
@@ -48,14 +47,6 @@ set fish_color_param brcyan
 
 ### FUNCTIONS ###
 
-# Makes the cursor a beam and blinks 
-function set_cursor_style --on-event fish_preexec
-    printf "\e[6 q"  # Set beam cursor before running a command
-end
-
-function restore_cursor_style --on-event fish_postexec
-    printf "\e[5 q"  # Restore blinking cursor after command runs
-end
 # Functions needed for !! and !$
 function __history_previous_command
     switch (commandline -t)

@@ -1,70 +1,82 @@
-
-#!/bin/bash
-# YouTube Music Downloader using yt-dlp with user-defined directory handling
+#!/usr/bin/env bash
+# YouTube Music → MP3 only
+# — folder named after playlist title, square cover-art, clean workspace
 
 set -euo pipefail
 
-# Ensure yt-dlp is installed
-check_dependencies() {
-    if ! command -v yt-dlp &>/dev/null; then
-        printf "Error: 'yt-dlp' is not installed. Please install it.\n" >&2
-        return 1
-    fi
-}
+# 1) Check for required commands
+for cmd in yt-dlp ffmpeg find; do
+  if ! command -v "$cmd" &>/dev/null; then
+    echo "Error: '$cmd' is not installed." >&2
+    exit 1
+  fi
+done
 
-# Prompt user for folder name
-get_download_path() {
-    local base_path="$HOME/Downloads/Music"
-    local folder_name
+# 2) Ask for the YouTube Music URL
+read -rp "Enter YouTube Music URL: " url
+if [[ -z "$url" ]]; then
+  echo "No URL provided, aborting." >&2
+  exit 1
+fi
 
-    read -r -p "Enter folder name for download (default: 'Feel'): " folder_name
-    folder_name="${folder_name:-Feel}"
-    
-    printf "%s/%s\n" "$base_path" "$folder_name"
-}
+# 3) Derive folder name from playlist title
+playlist_title=$(yt-dlp --no-warnings --skip-download \
+  --print "%(playlist_title)s" "$url" 2>/dev/null | head -n1)
 
-# Prompt user for custom download path
-get_custom_download_path() {
-    local path
-    read -r -p "Enter full download path: " path
-    [[ -z "$path" ]] && return 1
-    printf "%s\n" "$path"
-}
+# fallback if yt-dlp couldn't detect a playlist title
+folder=${playlist_title:-Downloads}
 
-# Prompt user for the YouTube Music link
-get_download_link() {
-    local link
-    read -r -p "Enter the YouTube Music playlist or video link: " link
-    [[ -z "$link" ]] && return 1
-    printf "%s\n" "$link"
-}
+# sanitize: replace any chars except letters, numbers, spaces, hyphens or underscores
+folder=${folder//[^[:alnum:]\ \-_]/_}
 
-# Perform download
-download_music() {
-    local path=$1
-    local link=$2
+outdir="$HOME/Downloads/Music/$folder"
+mkdir -p "$outdir"
 
-    mkdir -p "$path"
+# 4) Download audio + raw thumbnail (no embed yet)
+echo "→ Downloading audio + thumbnail into '$folder'…"
+yt-dlp \
+  -f bestaudio \
+  --extract-audio --audio-format mp3 --audio-quality 0 \
+  --write-thumbnail --no-embed-thumbnail --add-metadata \
+  -o "${outdir}/%(title)s.%(ext)s" \
+  "$url"
 
-    yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 \
-        --embed-thumbnail --embed-metadata --parse-metadata "thumbnail:%(meta_thumbnail)s" \
-        -o "${path}/%(title)s.%(ext)s" "$link"
-}
+# 5) Process each MP3: center-crop & embed, then clean up images
+echo "→ Processing and embedding cover art…"
+shopt -s nullglob
+for mp3 in "$outdir"/*.mp3; do
+  base="${mp3%.mp3}"
+  thumb=""
+  for ext in webp jpg jpeg png; do
+    [[ -f "${base}.${ext}" ]] && thumb="${base}.${ext}" && break
+  done
+  if [[ -z "$thumb" ]]; then
+    echo "⚠️  No thumbnail for '$(basename "$mp3")', skipping."
+    continue
+  fi
 
-main() {
-    check_dependencies || exit 1
+  echo "   • Embedding cover into $(basename "$mp3")"
+  proc="${base}.crop.jpg"
 
-    local download_path link
+  # a) crop to exactly 800×800 (one frame)
+  ffmpeg -y -i "$thumb" \
+    -vf "scale=800:800:force_original_aspect_ratio=increase,crop=800:800" \
+    -frames:v 1 -update 1 \
+    "$proc"
 
-    if [[ $# -gt 0 && $1 == "-n" ]]; then
-        download_path=$(get_custom_download_path) || exit 1
-    else
-        download_path=$(get_download_path)
-    fi
+  # b) embed as ID3v2.3 MJPEG cover into temp MP3
+  tmp="${base}.tmp.mp3"
+  ffmpeg -y \
+    -i "$mp3" -i "$proc" \
+    -map 0:a -map 1:v \
+    -c:a copy -c:v mjpeg \
+    -id3v2_version 3 \
+    "$tmp"
 
-    link=$(get_download_link) || exit 1
+  mv "$tmp" "$mp3"
+done
 
-    download_music "$download_path" "$link"
-}
+# 6) Remove any non-MP3 files
+find "$outdir" -type f ! -iname '*.mp3' -delete
 
-main "$@"
+echo "✅ Done! Your MP3s with square cover art are in: $outdir"

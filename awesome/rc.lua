@@ -71,7 +71,7 @@ local mediaplayer = "mpv"
 -- awesome variables
 awful.util.terminal = terminal
 --awful.util.tagnames = {  " ", " ", " ", " ", " ", " ", " ", "  ", "  ", " "  }
-awful.util.tagnames = { "  ", "   ", "   ", "   ", "   ", " " }
+awful.util.tagnames = { "   ", "   ", "   ", "   ", "   ", "󰗃 " }
 awful.layout.suit.tile.left.mirror = true
 awful.layout.layouts = {
 	awful.layout.suit.tile,
@@ -919,7 +919,7 @@ awful.rules.rules = {
 	-- Rules to open a app in sepcific tag
 
 	{ rule = { class = "autokey-qt" }, properties = { tag = "   " } },
-	{ rule = { class = "vlc" }, properties = { tag = "   " } },
+	{ rule = { class = "vlc" }, properties = { tag = "  " } },
 
 	{ rule = { class = "Rquickshare" }, properties = { floating = true } },
 	--{ rule = { class = "WhatSie" }, properties = { floating = true, width = 950, height = 650, x = 0, y = 17 } },
@@ -928,6 +928,14 @@ awful.rules.rules = {
 	-- Float and center kdialog popups (used by Brave and other apps)
 	{
 		rule = { class = "kdialog" },
+		properties = {
+			floating = true,
+			ontop = true,
+			placement = awful.placement.centered,
+		},
+	},
+	{
+		rule = { class = "Code" },
 		properties = {
 			floating = true,
 			ontop = true,

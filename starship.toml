@@ -1,0 +1,31 @@
+# 1) No leading blank line
+add_newline = false
+
+# 2) Entire prompt:  
+#    - starts with a space  
+#    - directory → git branch → cmd duration → prompt char  
+format = "$directory$git_branch $cmd_duration$character"
+
+palette = 'foo'
+
+# Define custom colors
+[palettes.foo]
+# Overwrite existing color
+blue = '21'
+# Define new color
+mustard = '#ffaa00'
+
+[character]
+format = '$symbol'
+success_symbol = '[❯](bold green) '
+error_symbol = '[❯](bold red) '# ~/.config/starship.toml
+vimcmd_symbol = '[❮](bold mustard)'
+
+[cmd_duration]
+min_time = 500
+format = '[](dimmed yellow) [$duration](dimmed yellow)'
+
+[directory]
+truncation_length = 3
+truncation_symbol = ' '
+home_symbol = '~'
