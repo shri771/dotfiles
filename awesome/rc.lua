@@ -362,7 +362,7 @@ globalkeys = my_table.join(
 		awful.spawn("kcolorchooser")
 	end, { description = "Launch kcolor", group = "hotkeys" }),
 	awful.key({ modkey }, "b", function()
-		awful.spawn("brave-browser")
+		awful.spawn("brave")
 	end, { description = "Launch brave", group = "awesome" }),
 	awful.key({ modkey, "Shift" }, "r", awesome.restart, { description = "Reload awesome", group = "awesome" }),
 	awful.key({ modkey, "Shift" }, "q", function()
@@ -1115,6 +1115,12 @@ awful.spawn.with_shell(
 )
 awful.spawn.with_shell("~/scripts/startups/connect_realmebuds.sh &")
 awful.spawn.with_shell("~/.config/polybar/lauch.sh &")
+-- if you installed polkit-gnome:
+-- Polkit authentication agent
+awful.spawn.with_shell("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+
+-- or if you went with lxqt-policykit:
+awful.spawn.with_shell("lxqt-policykit &")
 --awful.spawn.with_shell("~/.config/awesome/scripts/auto-music-switcher.sh &")
 --awful.spawn.with_shell("rclone mount Shri77: ~/Shri77/") --Interchange escape with caps
 --awful.spawn.with_shell("xdotool key Num_Lock")

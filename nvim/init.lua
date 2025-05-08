@@ -1,53 +1,21 @@
---[[
-    If you don't know anything about Lua, I recommend taking some time to read through
-    a guide. One possible example which will only take 10-15 minutes:
-      - https://learnxinyminutes.com/docs/lua/
-
-    After understanding a bit more about Lua, you can use `:help lua-guide` as a
-    reference for how Neovim integrates Lua.
-    - :help lua-guide
-    - (or HTML version): https://neovim.io/doc/user/lua-guide.html
-
-Kickstart Guide:
-
-  TODO: The very first thing you should do is to run the command `:Tutor` in Neovim.
-
-  Once you've completed that, you can continue working through **AND READING** the rest
-  of the kickstart init.lua.
-
-  I have left several `:help X` comments throughout the init.lua
-    These are hints about where to find more information about the relevant settings,
-    plugins or Neovim features used in Kickstart.
-
-
-If you experience any errors while trying to install kickstart, run `:checkhealth` for more info.
-
-I hope you enjoy your Neovim journey,
-- TJ
-
-P.S. You can delete this when you're done too. It's your config now! :)
---]]
---
--- Set <space> as the leader key
 -- See `:help mapleader`
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+-- to get the default page
+vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
--- Disable foiding
 
+-- Disable foiding
 vim.opt.foldenable = false
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
 
 -- Make line numbers default
 vim.opt.number = true
--- You can also add relative line numbers, to help with jumping.
+
 --  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
 
@@ -59,7 +27,6 @@ vim.opt.showmode = false
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
---  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
@@ -76,14 +43,15 @@ vim.o.undolevels = 10000
 if not vim.fn.isdirectory(vim.fn.stdpath 'config' .. '/undo') then
   vim.fn.mkdir(vim.fn.stdpath 'config' .. '/undo', 'p')
 end
--- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
+
+-- Ignorecase if all is lower cap
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
--- Keep signcolumn on by default
+-- Keep signcolumn on by default (beside the number bar)
 vim.opt.signcolumn = 'yes'
 
--- Decrease update time
+-- Decrease update time (in milliseconds)
 vim.opt.updatetime = 250
 
 -- Decrease mapped sequence wait time
@@ -106,27 +74,22 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 15
 
--- [[ Basic Keymaps ]]
+--  Basic Keymaps --
 
 -- Unbind   Ctrl+V  and Ctrl+C
-vim.keymap.set({ 'n', 'v', 'i' }, '<C-c>', '<Nop>')
-vim.keymap.set({ 'n', 'v', 'i' }, '<C-v>', '<Nop>')
+--vim.keymap.set({ 'n', 'v', 'i' }, '<C-v>', '<Nop>')
 
 -- Prevent changed text to clipboard
 vim.keymap.set('n', 'c', '"_c', { noremap = true })
 
 -- Bind Ctrl+V to paste from the system clipboard before the cursor (normal and visual mode)
-vim.keymap.set({ 'n', 'v' }, '<C-v>', '"+P', { noremap = true, silent = true })
-vim.keymap.set('i', '<C-v>', '<C-o>"+P', { noremap = true, silent = true })
+--vim.keymap.set({ 'n', 'v' }, '<C-v>', '"+P', { noremap = true, silent = true })
+--vim.keymap.set('i', '<C-v>', '<C-o>"+P', { noremap = true, silent = true })
 
 -- Bind Ctrl+C to Visual Block mode (what Ctrl+V does by default)
-vim.keymap.set('n', '<C-c>', '<Esc><C-v>', { noremap = true, silent = true }) -- Enter Visual Block mode in Normal mode
-
--- Preserve default Ctrl+C behavior in insert and command mode
-vim.keymap.set('i', '<C-c>', '<Esc>', { noremap = true, silent = true }) -- Acts as Escape in Insert mode
-vim.keymap.set('c', '<C-c>', '<Esc>', { noremap = true, silent = true }) -- Acts as Escape in Command mode
+--vim.keymap.set('n', '<C-c>', '<Esc><C-v>', { noremap = true, silent = true }) -- Enter Visual Block mode in Normal mode
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
@@ -135,23 +98,10 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
--- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
--- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
--- is not what someone will guess without a bit more experience.
---
--- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
--- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
-
--- TIP: Disable arrow keys in normal mode
-vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR')
-vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
---
 --  See `:help wincmd` for a list of all window commands
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
@@ -172,6 +122,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+vim.highlight.on_yank {
+  higroup = 'IncSearch', -- use a diff color
+  timeout = 100, -- in ms
+}
 
 -- Saves the current cursor position in a file, including files opened via file search
 vim.api.nvim_create_autocmd('BufReadPost', {
@@ -198,6 +152,7 @@ vim.api.nvim_create_autocmd({ 'UIEnter', 'ColorScheme' }, {
     end
   end,
 })
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'

@@ -4,7 +4,7 @@ add_newline = false
 # 2) Entire prompt:  
 #    - starts with a space  
 #    - directory → git branch → cmd duration → prompt char  
-format = "$directory$git_branch$git_metrics$cmd_duration$character"
+format = "$directory$git_branch$character"
 
 palette = 'foo'
 
@@ -16,6 +16,7 @@ blue = '21'
 mustard = '#ffaa00'
 blu = '#ffd5d8'
 skyblue = '#00aaff'
+pink = '#ff55ff'
 
 [character]
 format = '$symbol'
@@ -25,7 +26,7 @@ vimcmd_symbol = '[❮ ](bold mustard)'
 
 [cmd_duration]
 min_time = 500
-format = '[](dimmed yellow) [$duration ](dimmed yellow)'
+format = '[](dimmed yellow) [$duration ](bold yellow)'
 
 [directory]
 format = '[](#ffd5d8) [$path](#1fd6ff) '
@@ -53,7 +54,9 @@ deleted = '🗑'
 
 
 [git_branch]
+format = '[on](#ffd5d8) [$symbol$branch(:$remote_branch)]($style) ' 
 symbol = '🌱 '
+style =  'bold pink'
 truncation_length = 4
 truncation_symbol = ''
 ignore_branches = ['main']
@@ -62,3 +65,194 @@ ignore_branches = ['main']
 [git_metrics]
 added_style = 'bold blue'
 format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol](bold blue) on [$hostname](bold red) '
+trim_at = '.companyname.com'
+disabled = false
+
+
+[sudo]
+format ='[$symbol]($style)' 
+style = 'bold green'
+symbol = '💻 '
+disabled = false
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[bun]
+symbol = " "
+
+[c]
+symbol = " "
+
+
+[cmake]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[deno]
+symbol = " "
+
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[gcloud]
+symbol = "  "
+
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[kotlin]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[ocaml]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = "󱘗 "
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[zig]
+symbol = " "
+
+[gradle]
+symbol = " "
