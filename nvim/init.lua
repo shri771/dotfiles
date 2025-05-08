@@ -108,6 +108,42 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
+
+-- undotree --
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
+
+-- move slected text
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '< -2<CR>gv=gv")
+
+-- allow the cursor to stay at the staring of line when appending text up
+vim.keymap.set('n', 'J', "mzJ'z")
+
+-- keep the cursor in center when moving up and down
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
+-- keep the cursor in center when searching
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'netrw',
+  callback = function(args)
+    local opts = { buffer = args.buf, silent = true, remap = true }
+
+    -- Backspace = go up (same as pressing '-')
+    vim.keymap.set('n', '<BS>', '-', opts)
+
+    -- If you want Backspace to go back in history instead, use:
+    -- vim.keymap.set("n", "<BS>", "u", opts)
+
+    -- Or, map another key (e.g. <leader>- ) to parent:
+    -- vim.keymap.set("n", "<leader>-", "-", opts)
+  end,
+})
 vim.g.python3_host_prog = '/usr/bin/python3'
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -873,6 +909,9 @@ require('lazy').setup({
 
   --vimbegood
   { 'ThePrimeagen/vim-be-good' },
+  { 'ThePrimeagen/harpoon' },
+  { 'mbbill/undotree' },
+  { 'tpope/vim-fugitive' },
 
   --colorizer
   {
@@ -896,7 +935,9 @@ require('lazy').setup({
   require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
-  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'kickstart.plugins.gitsigns',
+  require 'kickstart.plugins.harpoon',
+  --  require 'kickstart.plugins.mbbill/undotree',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
