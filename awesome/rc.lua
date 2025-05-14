@@ -1,7 +1,7 @@
 local awesome, client, mouse, screen, tag = awesome, client, mouse, screen, tag
 local ipairs, string, os, table, tostring, tonumber, type = ipairs, string, os, table, tostring, tonumber, type
 
--- Standard awesome library
+-- Standard awesome libary
 local gears = require("gears") --Utilities such as color parsing and objects
 local awful = require("awful") --Everything related to window managment
 require("awful.autofocus")
@@ -381,6 +381,9 @@ globalkeys = my_table.join(
 	awful.key({ modkey, "Shift" }, "c", function() -- Mod1 = Alt key
 		awful.spawn.with_shell("$HOME/.config/awesome/scripts/KillActive_process.sh &")
 	end),
+	awful.key({ modkey, "Shift" }, "space", function() -- Mod1 = Alt key
+		awful.spawn.with_shell("$HOME/.config/awesome/scripts/toggle_layout.sh ")
+	end),
 	awful.key({ altkey, "Control" }, "p", function()
 		awful.spawn.with_shell("wlogout")
 	end),
@@ -710,7 +713,7 @@ local toggle_whatsie = make_scratchpad("whatsie", "flatpak run com.ktechpit.what
 -- Bind them to keys
 globalkeys = gears.table.join(
 	globalkeys, -- keep previously defined globalkeys
-	awful.key({ "Control" }, "Return", toggle_terminal, { description = "...", group = "scratchpads" }),
+	awful.key({ modkey,  "Control" }, "Return", toggle_terminal, { description = "...", group = "scratchpads" }),
 	awful.key({ altkey }, "d", toggle_pavcontrol, { description = "...", group = "scratchpads" }),
 	awful.key({ altkey }, "g", toggle_resources, { description = "...", group = "scratchpads" }),
 	awful.key({ altkey }, "c", toggle_cal, { description = "...", group = "scratchpads" }),
@@ -727,13 +730,38 @@ globalkeys = gears.table.join(
 	end),
 	awful.key({ altkey }, "p", toggle_kdeconnect, { description = "...", group = "scratchpads" })
 )
+client.connect_signal("property::fullscreen", function(c)
+    if c.class == "kitty" then
+        if c.fullscreen then
+            c.opacity = 0.7  -- Semi-transparent when fullscreen
+        else
+            c.opacity = 1    -- Fully opaque when not fullscreen
+        end
+    end
+end)
+-- Function to set wallpaper by reading the path from the file
+local function set_wallpaper(s)
+    local wallpaper_file = io.open(os.getenv("HOME") .. "/.config/awesome/wallpaper_path", "r")
+    if wallpaper_file then
+        local path = wallpaper_file:read("*all"):gsub("%s+$", "")  -- Read and trim whitespace
+        wallpaper_file:close()
+        if path and path ~= "" then
+            gears.wallpaper.maximized(path, s)
+        end
+    end
+end
 
+-- Set wallpaper for each screen initially
+screen.connect_signal("request::wallpaper", set_wallpaper)
 clientkeys = my_table.join(
 	awful.key({ altkey, "Shift" }, "m", lain.util.magnify_client, { description = "magnify client", group = "client" }),
-	awful.key({ modkey }, "space", function(c)
-		c.fullscreen = not c.fullscreen
-		c:raise()
-	end, { description = "toggle fullscreen", group = "client" }),
+awful.key({ modkey }, "space", function(c)
+    c.fullscreen = not c.fullscreen
+    c:raise()
+    if not c.fullscreen then
+        set_wallpaper(c.screen)
+    end
+end, { description = "toggle fullscreen", group = "client" }),
 	awful.key({ modkey }, "c", function(c)
 		c:kill()
 	end, { description = "close", group = "hotkeys" }),
@@ -893,7 +921,25 @@ awful.rules.rules = {
 
 	-- Titlebars
 	{ rule_any = { type = { "dialog", "normal" } }, properties = { titlebars_enabled = false } },
+    {
+        rule_any = {
+            class = { "Polybar", "Qalculate-gtk", "KClock" },
+        },
+        properties = {
+            border_width     = 0,
+            titlebars_enabled = false,
+        }
+    },
 
+    -- your default rule (catch-all)
+    {
+        rule = { },
+        properties = {
+            border_width = beautiful.border_width,
+            border_color = beautiful.border_normal,
+            -- …any other defaults you have…
+        }
+    },
 	-- Set applications to always map on the tag 1 on screen 1.
 	-- find class or role via xprop command
 	--{ rule = { class = browser1 },
@@ -1094,29 +1140,23 @@ naughty.config.presets.normal = {
 -- Position notifications with padding
 naughty.config.padding = 30 -- padding for notifications
 
---Auto Start
+-- Auto Start --
 --awful.spawn.with_shell(soundplayer .. startupSound)
 awful.spawn.with_shell("lxsession")
 awful.spawn.with_shell("picom --config ~/.config/picom/picom.conf")
 awful.spawn.with_shell("nm-applet")
-awful.spawn.with_shell("volumeicon")
-awful.spawn.with_shell("killall conky && conky -c $HOME/.config/conky/awesome/" .. "doom-one" .. "-01.conkyrc")
+-- awful.spawn.with_shell("volumeicon")
 --awful.spawn.with_shell("xsettingsd &")
 awful.spawn.with_shell("numlockx on")
 awful.spawn.with_shell("nm-applet --indicator &")
 awful.spawn.with_shell("blueman-applet &")
 awful.spawn.with_shell("greenclip daemon  &")
-awful.spawn.with_shell("autokey-qt &")
+awful.spawn.with_shell("autokey-qt -c &")
 awful.spawn.with_shell("kdeconnectd &")
 --awful.spawn.with_shell("swww-daemon --format xrgb")
 awful.spawn.with_shell("~/.fehbg")
-awful.spawn.with_shell(
-	"pgrep -f pulseaudio_event_listener.sh > /dev/null || && ~/.config/polybar/scripts/pulseaudio_event_listener.sh &"
-)
 awful.spawn.with_shell("~/scripts/startups/connect_realmebuds.sh &")
 awful.spawn.with_shell("~/.config/polybar/lauch.sh &")
--- if you installed polkit-gnome:
--- Polkit authentication agent
 awful.spawn.with_shell("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 
 -- or if you went with lxqt-policykit:

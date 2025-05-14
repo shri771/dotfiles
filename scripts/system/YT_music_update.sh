@@ -1,18 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Global Variables
 BASE_DIR="$HOME/Downloads/Music"
-declare -A PLAYLISTS
-PLAYLISTS=(
-    ["Cheerful"]="https://music.youtube.com/playlist?list=PLOlHDApPp3YvM3Ov9rnFCrT5jha8DWVGu&si=hKimloi5pBslW9Q8"
-    ["Feel-Good💖"]="https://music.youtube.com/playlist?list=PLOlHDApPp3YtOYIj_1S_NSBLavu9JsoNY&si=NC7GATEan10SfjU6"
-    ["Remix"]="https://music.youtube.com/playlist?list=PLOlHDApPp3Yu68BquCuanfY5VOF4dFBk7&si=nYNAssUDjcSU2nUY"
+declare -A PLAYLISTS=(
+    ["Cheerful"]="https://music.youtube.com/playlist?list=PLOlHDApPp3YvM3Ov9rnFCrT5jha8DWVGu"
+    ["Feel-Good💖"]="https://music.youtube.com/playlist?list=PLOlHDApPp3YtOYIj_1S_NSBLavu9JsoNY"
+    ["Remix"]="https://music.youtube.com/playlist?list=PLOlHDApPp3Yu68BquCuanfY5VOF4dFBk7"
+    ["Current"]="https://music.youtube.com/playlist?list=PLOlHDApPp3YtW4ZLuuP7cXFKBqAKI4ALP"
 )
 
 # Function to sanitize filenames
 sanitize_filename() {
     local filename="$1"
-    filename=$(printf '%s' "$filename" | sed 's/[\/:*?"<>|]/_/g')
+    filename=$(printf '%s' "$filename" | sed "s|[/:*?\"'<>|]|_|g")
     printf '%s' "$filename"
 }
 
@@ -20,7 +20,7 @@ sanitize_filename() {
 get_playlist_songs() {
     local playlist_url="$1"
     local output
-    if ! output=$(yt-dlp --flat-playlist --print "%(title)s|%(webpage_url)s" "$playlist_url" 2>/dev/null); then
+    if ! output=$(yt-dlp --flat-playlist --print "%(title)s|%(url)s" "$playlist_url" 2>/dev/null); then
         printf "Error retrieving playlist: %s\n" "$playlist_url" >&2
         return 1
     fi
@@ -45,19 +45,55 @@ download_song() {
 
     printf "Downloading: %s\n" "$sanitized_title"
     if ! yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0 \
-        --embed-thumbnail --embed-metadata --parse-metadata "thumbnail:%(meta_thumbnail)s" \
+        --write-thumbnail --no-embed-thumbnail --add-metadata \
         -o "$output_path" "$song_url"; then
         printf "Download failed for: %s\n" "$sanitized_title" >&2
     fi
+}
+
+# Function to process and embed thumbnails
+process_thumbnails() {
+    local download_dir="$1"
+    shopt -s nullglob
+    for mp3 in "$download_dir"/*.mp3; do
+        base="${mp3%.mp3}"
+        thumb=""
+        for ext in webp jpg jpeg png; do
+            [[ -f "${base}.${ext}" ]] && thumb="${base}.${ext}" && break
+        done
+        if [[ -z "$thumb" ]]; then
+            echo "⚠️  No thumbnail for '$(basename "$mp3")', skipping."
+            continue
+        fi
+
+        echo "   • Embedding cover into $(basename "$mp3")"
+        proc="${base}.crop.jpg"
+
+        ffmpeg -y -i "$thumb" \
+            -vf "scale=800:800:force_original_aspect_ratio=increase,crop=800:800" \
+            -frames:v 1 -update 1 \
+            "$proc"
+
+        tmp="${base}.tmp.mp3"
+        ffmpeg -y \
+            -i "$mp3" -i "$proc" \
+            -map 0:a -map 1:v \
+            -c:a copy -c:v mjpeg \
+            -id3v2_version 3 \
+            "$tmp"
+
+        mv "$tmp" "$mp3"
+    done
+
+    find "$download_dir" -type f \( -iname '*.webp' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \) -delete
 }
 
 # Function to remove extra songs that are not in the playlist
 clean_extra_songs() {
     local playlist_titles="$1"
     local download_dir="$2"
-    local filename
     while IFS= read -r file; do
-        filename=$(basename "$file" .mp3)
+        local filename; filename=$(basename "$file" .mp3)
         if ! grep -Fxq "$filename" <<< "$playlist_titles"; then
             printf "Deleting extra song: %s\n" "$file"
             rm -f "$file"
@@ -79,7 +115,7 @@ update_playlist() {
     fi
 
     local playlist_titles=""
-    
+
     while IFS='|' read -r song_title song_url; do
         [[ -z "$song_title" || -z "$song_url" ]] && continue
 
@@ -94,6 +130,8 @@ update_playlist() {
         download_song "$song_url" "$sanitized_title" "$download_dir"
     done <<< "$playlist_data"
 
+    echo "→ Processing and embedding cover art…"
+    process_thumbnails "$download_dir"
     clean_extra_songs "$playlist_titles" "$download_dir"
 }
 

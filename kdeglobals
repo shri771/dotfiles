@@ -2,7 +2,7 @@
 update_info=filepicker.upd:filepicker-remove-old-previews-entry
 
 [ColorEffects:Disabled]
-ChangeSelectionColor=Breeze-Dark
+ChangeSelectionColor=
 Color=56,56,56
 ColorAmount=0
 ColorEffect=0
@@ -24,16 +24,16 @@ IntensityAmount=0
 IntensityEffect=0
 
 [Colors:Button]
-BackgroundAlternate=143,98,171
-BackgroundNormal=49,54,59
+BackgroundAlternate=135,77,198
+BackgroundNormal=54,61,67
 DecorationFocus=170,85,255
 DecorationHover=170,85,255
 ForegroundActive=170,85,255
-ForegroundInactive=161,169,177
-ForegroundLink=223,201,238
+ForegroundInactive=194,194,194
+ForegroundLink=218,193,255
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
-ForegroundNormal=252,252,252
+ForegroundNormal=222,222,222
 ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
@@ -44,7 +44,7 @@ DecorationFocus=170,85,255
 DecorationHover=170,85,255
 ForegroundActive=170,85,255
 ForegroundInactive=161,169,177
-ForegroundLink=223,201,238
+ForegroundLink=218,193,255
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
 ForegroundNormal=252,252,252
@@ -58,7 +58,7 @@ DecorationFocus=170,85,255
 DecorationHover=170,85,255
 ForegroundActive=170,85,255
 ForegroundInactive=161,169,177
-ForegroundLink=223,201,238
+ForegroundLink=218,193,255
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
 ForegroundNormal=252,252,252
@@ -80,58 +80,58 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [Colors:Selection]
-BackgroundAlternate=136,90,163
-BackgroundNormal=136,90,163
+BackgroundAlternate=126,67,187
+BackgroundNormal=126,67,187
 DecorationFocus=170,85,255
 DecorationHover=170,85,255
 ForegroundActive=170,85,255
 ForegroundInactive=255,255,255
-ForegroundLink=150,68,187
-ForegroundNegative=176,55,69
-ForegroundNeutral=198,92,0
+ForegroundLink=218,193,255
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
 ForegroundNormal=255,255,255
-ForegroundPositive=23,104,57
+ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [Colors:Tooltip]
 BackgroundAlternate=42,46,50
-BackgroundNormal=49,54,59
+BackgroundNormal=40,46,51
 DecorationFocus=170,85,255
 DecorationHover=170,85,255
 ForegroundActive=170,85,255
-ForegroundInactive=161,169,177
-ForegroundLink=223,201,238
+ForegroundInactive=194,194,194
+ForegroundLink=218,193,255
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
-ForegroundNormal=252,252,252
+ForegroundNormal=194,194,194
 ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [Colors:View]
 BackgroundAlternate=35,38,41
-BackgroundNormal=27,30,32
+BackgroundNormal=24,25,29
 DecorationFocus=170,85,255
 DecorationHover=170,85,255
 ForegroundActive=170,85,255
-ForegroundInactive=161,169,177
-ForegroundLink=170,85,255
+ForegroundInactive=194,194,194
+ForegroundLink=218,193,255
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
-ForegroundNormal=252,252,252
+ForegroundNormal=222,222,222
 ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [Colors:Window]
 BackgroundAlternate=49,54,59
-BackgroundNormal=42,46,50
+BackgroundNormal=40,46,51
 DecorationFocus=170,85,255
 DecorationHover=170,85,255
 ForegroundActive=170,85,255
-ForegroundInactive=161,169,177
-ForegroundLink=223,201,238
+ForegroundInactive=194,194,194
+ForegroundLink=218,193,255
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
-ForegroundNormal=252,252,252
+ForegroundNormal=222,222,222
 ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
@@ -142,7 +142,7 @@ Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00n\x00
 
 [General]
 AccentColor=170,85,255
-ColorSchemeHash=8d483e98b770fbeba364db371382301dbfc92748
+ColorSchemeHash=1126fb2c0c32955cd1bb2987f48b452b357a9515
 LastUsedCustomAccentColor=170,85,255
 TerminalApplication=kitty
 TerminalService=kitty.desktop
@@ -151,7 +151,7 @@ TerminalService=kitty.desktop
 Theme=WhiteSur
 
 [KDE]
-LookAndFeelPackage=org.kde.breezedark.desktop
+LookAndFeelPackage=org.manjaro.breath-dark.desktop
 ShowDeleteCommand=false
 
 [KFileDialog Settings]
@@ -182,9 +182,9 @@ EnableRemoteFolderThumbnail=false
 MaximumRemoteSize=117440512
 
 [WM]
-activeBackground=49,54,59
-activeBlend=252,252,252
+activeBackground=40,46,51
+activeBlend=40,46,51
 activeForeground=252,252,252
-inactiveBackground=42,46,50
-inactiveBlend=161,169,177
-inactiveForeground=161,169,177
+inactiveBackground=51,57,63
+inactiveBlend=51,57,63
+inactiveForeground=89,89,89

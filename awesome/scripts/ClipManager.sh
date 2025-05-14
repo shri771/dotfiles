@@ -1,39 +1,41 @@
-#!/bin/bash
-# 📋 Clipboard Manager for AwesomeWM (X11)
-# Requires: rofi, xclip or xsel, greenclip (optional for history)
+#!/usr/bin/env bash
+#
+# ClipManager.sh — greenclip + rofi, Ctrl+1/Ctrl+2 actions
 
-# Theme for rofi clipboard menu
-rofi_theme="$HOME/.config/rofi/config-clipboard.rasi"
+# 1) Paths & setup
+HIST_FILE="${XDG_CACHE_HOME:-$HOME/.cache}/greenclip.history"
 
-# Check if rofi is already running
-pidof rofi >/dev/null && pkill rofi
+# Ensure cache dir + history file exist
+mkdir -p "$(dirname "$HIST_FILE")"
+touch    "$HIST_FILE"
 
-# Use greenclip for history (can replace with other source if desired)
-HISTORY=$(greenclip print | grep -vE '^(#!|❯|echo|greenclip|sleep|rofi)')
+# 2) Optional: launch daemon if you want live collecting
+if ! pgrep -x greenclip >/dev/null; then
+  greenclip daemon &
+fi
 
-while true; do
-    result=$(echo "$HISTORY" | rofi -dmenu -i \
-        -kb-custom-1 "Control-Delete" \
-        -kb-custom-2 "Alt-Delete" \
-        -config "$rofi_theme")
+# 3) Show history in rofi, binding Ctrl+1/Ctrl+2
+entry=$(
+  greenclip print |
+  rofi -dmenu -i -p "Greenclip" \
+       -kb-custom-1 "Control+1" \
+       -kb-custom-2 "Control+2"
+)
+code=$?
 
-    case "$?" in
-        0)
-            [[ -n "$result" ]] && echo -n "$result" | xclip -selection clipboard
-            exit
-            ;;
-        1)
-            exit
-            ;;
-        10)
-            # Delete the selected entry from greenclip history if it exists.
-            if [[ -n "$result" ]] && [ -f ~/.local/share/greenclip.history ]; then
-                grep -vxF "$result" ~/.local/share/greenclip.history > ~/.local/share/greenclip.history.tmp && \
-                mv ~/.local/share/greenclip.history.tmp ~/.local/share/greenclip.history
-            fi
-            ;;
-        11)
-            > ~/.local/share/greenclip.history
-            ;;
-    esac
-done
+# 4) Handle the keys
+case $code in
+  10)  # Ctrl+1 → delete this entry
+    greenclip delete "$entry"
+    ;;
+  11)  # Ctrl+2 → stop daemon, clear history, restart
+    pkill greenclip
+    greenclip clear
+    greenclip daemon &
+    ;;
+  0)   # Enter → copy to clipboard
+    printf '%s' "$entry" | xclip -selection clipboard
+    ;;
+  *)   # Esc/timeout/etc → nothing
+    ;;
+esac
