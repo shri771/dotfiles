@@ -730,15 +730,6 @@ globalkeys = gears.table.join(
 	end),
 	awful.key({ altkey }, "p", toggle_kdeconnect, { description = "...", group = "scratchpads" })
 )
-client.connect_signal("property::fullscreen", function(c)
-    if c.class == "kitty" then
-        if c.fullscreen then
-            c.opacity = 0.7  -- Semi-transparent when fullscreen
-        else
-            c.opacity = 1    -- Fully opaque when not fullscreen
-        end
-    end
-end)
 -- Function to set wallpaper by reading the path from the file
 local function set_wallpaper(s)
     local wallpaper_file = io.open(os.getenv("HOME") .. "/.config/awesome/wallpaper_path", "r")

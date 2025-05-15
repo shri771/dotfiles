@@ -11,7 +11,7 @@ if initialize_session "cn"; then
  run_cmd "export TMUXIFIER_DEFAULT_PATH='~/dotfiles'"
  run_cmd "clear"
  
- new_window "Config"
+ new_window "Vim"
  run_cmd "cd ~/dotfiles" 
  run_cmd "clear"
  select_window 2 

@@ -5,22 +5,6 @@ vim.opt.number = true
 vim.opt.shiftwidth = 4        
 --  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
--- disable relativenumber in plugin‐manager floats
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "lazy", "packer" },  -- add other plugin-manager filetypes if needed
-  callback = function()
-    vim.opt_local.relativenumber = false
-  end,
-})
-
--- for netrw: force both absolute + relative
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "netrw",
-  callback = function()
-    vim.opt_local.number       = true
-    vim.opt_local.relativenumber = true
-  end,
-})
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -106,18 +90,17 @@ vim.api.nvim_create_autocmd({ 'UIEnter', 'ColorScheme' }, {
 	end,
 })
 
---  See `:help vim.highlight.on_yank()`
+-- Highlight yanked text
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
   callback = function()
-    vim.highlight.on_yank()
+    vim.hl.on_yank {
+      higroup = 'IncSearch',
+      timeout = 100,
+    }
   end,
 })
-vim.highlight.on_yank {
-  higroup = 'IncSearch', -- use a diff color
-  timeout = 100, -- in ms
-}
 
 
 
@@ -155,3 +138,4 @@ vim.api.nvim_create_autocmd('FileType', {
     -- vim.keymap.set("n", "<leader>-", "-", opts)
   end,
 })
+

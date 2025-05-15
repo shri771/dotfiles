@@ -1,6 +1,6 @@
 vim.g.mapleader = ' '
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
-vim.keymap.set('n', '-', vim.cmd.Oil)
+-- vim.keymap.set('n', '-', vim.cmd.Oil)
 
 -- move slected text
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
@@ -26,3 +26,4 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
