@@ -646,8 +646,9 @@ alias snr="bash $HOME/scripts/terminal/res_snapshot.sh"
 alias tx="tmux"
 alias txa="tmux a"
 #alias txc="bash ~/scripts/txc.sh"
-alias txc="gcc -o ~/scripts/terminal/txc ~/scripts/terminal/txc.c && ~/scripts/terminal/txc"
-alias txt="gcc -o ~/scripts/terminal/txt ~/scripts/terminal/txt.c && ~/scripts/terminal/txt"
+# alias txc="gcc -o ~/scripts/terminal/txc ~/scripts/terminal/txc.c && ~/scripts/terminal/txc"
+# alias txt="gcc -o ~/scripts/terminal/txt ~/scripts/terminal/txt.c && ~/scripts/terminal/txt"
+alias txc="tmuxifier load-session cn"
 
 # get error messages from journalctl
 alias jctl="journalctl -p 3 -xb"

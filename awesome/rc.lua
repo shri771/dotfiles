@@ -6,6 +6,8 @@ local gears = require("gears") --Utilities such as color parsing and objects
 local awful = require("awful") --Everything related to window managment
 require("awful.autofocus")
 awful.util.spawn("xprop -root -f _NET_NUMBER_OF_DESKTOPS 32c -set _NET_NUMBER_OF_DESKTOPS 5")
+require("lua.autostart")
+
 
 -- Widget and layout library
 local wibox = require("wibox")
@@ -67,35 +69,20 @@ local altkey = "Mod1"
 local ctrlkey = "Control"
 local terminal = "kitty"
 local mediaplayer = "mpv"
-
--- awesome variables
 awful.util.terminal = terminal
+
 --awful.util.tagnames = {  " ", " ", " ", " ", " ", " ", " ", "  ", "  ", " "  }
-awful.util.tagnames = { "   ", "   ", "   ", "   ", "   ", "󰗃 " }
+
+-- Tags
+awful.util.tagnames = { "   ", "   ", "   ", "   ", "   ", "󰗃 ", " " }
+
+
 awful.layout.suit.tile.left.mirror = true
 awful.layout.layouts = {
 	awful.layout.suit.tile,
 	awful.layout.suit.floating,
-	--awful.layout.suit.tile.left,
-	--awful.layout.suit.tile.bottom,
-	--awful.layout.suit.tile.top,
-	--awful.layout.suit.fair,
-	--awful.layout.suit.fair.horizontal,
-	--awful.layout.suit.spiral,
-	--awful.layout.suit.spiral.dwindle,
 	awful.layout.suit.max,
-	--awful.layout.suit.max.fullscreen,
 	awful.layout.suit.magnifier,
-	--awful.layout.suit.corner.nw,
-	--awful.layout.suit.corner.ne,
-	--awful.layout.suit.corner.sw,
-	--awful.layout.suit.corner.se,
-	--lain.layout.cascade,
-	--lain.layout.cascade.tile,
-	--lain.layout.centerwork,
-	--lain.layout.centerwork.horizontal,
-	--lain.layout.termfair,
-	--lain.layout.termfair.center,
 }
 
 awful.util.taglist_buttons = my_table.join(
@@ -221,9 +208,9 @@ end)
 root.buttons(my_table.join(
 	awful.button({}, 3, function()
 		awful.util.mymainmenu:toggle()
-	end),
-	awful.button({}, 4, awful.tag.viewnext),
-	awful.button({}, 5, awful.tag.viewprev)
+	end)
+	-- awful.button({}, 4, awful.tag.viewnext),
+	-- awful.button({}, 5, awful.tag.viewprev)
 ))
 
 -- Volume --
@@ -390,6 +377,10 @@ globalkeys = my_table.join(
 	awful.key({ altkey, "Control" }, "Delete", function()
 		awful.spawn.with_shell("awesome-client 'awesome.quit()'")
 	end),
+	awful.key({ altkey }, "Left",  function() awful.tag.viewprev() end,
+		  {description = "view previous workspace", group = "tag"}),
+	awful.key({ altkey            }, "Right", function() awful.tag.viewnext() end,
+          {description = "view next workspace",     group = "tag"}),
 	-- Run launcher
 	awful.key({ altkey }, "space", function()
 		awful.util.spawn("dm-run")
@@ -730,6 +721,7 @@ globalkeys = gears.table.join(
 	end),
 	awful.key({ altkey }, "p", toggle_kdeconnect, { description = "...", group = "scratchpads" })
 )
+
 -- Function to set wallpaper by reading the path from the file
 local function set_wallpaper(s)
     local wallpaper_file = io.open(os.getenv("HOME") .. "/.config/awesome/wallpaper_path", "r")
@@ -774,129 +766,125 @@ end, { description = "toggle fullscreen", group = "client" }),
 
 -- Bind tags to shortcut's
 -- Define letter shortcuts for workspaces 1, 2, and 3
+
 local letterKeys = { "i", "o", "p" }
 
 for i = 1, 9 do
-	-- Hack to only show tags 1 and 9 in the shortcut window (mod+s)
-	local descr_view, descr_toggle, descr_move, descr_toggle_focus
-	if i == 1 or i == 9 then
-		descr_view = { description = "view tag #", group = "tag" }
-		descr_toggle = { description = "toggle tag #", group = "tag" }
-		descr_move = { description = "move focused client to tag #", group = "tag" }
-		descr_toggle_focus = { description = "toggle focused client on tag #", group = "tag" }
-	end
+    -- only show #1 and #9 in the shortcut help
+    local descr_view, descr_toggle, descr_move, descr_toggle_focus
+    if i == 1 or i == 9 then
+        descr_view        = { description = "view tag #",                  group = "tag" }
+        descr_toggle      = { description = "toggle tag #",                group = "tag" }
+        descr_move        = { description = "move focused client to tag #", group = "tag" }
+        descr_toggle_focus= { description = "toggle focused client on tag #", group = "tag" }
+    end
 
-	-- Adjusting keys for tags 4, 5, and 6 to map to 7, 8, and 9
-	local adjusted_key = i
-	if i >= 4 and i <= 6 then
-		adjusted_key = i + 3
-	end
+    -- map number keys to tag indices
+    local adjusted_key = i
+    -- shift tags 4–6 up to 7–9
+    if i >= 4 and i <= 6 then
+        adjusted_key = i + 3
+    end
+    -- special case: make Mod+0 go to tag index 7
+    if i == 7 then
+        adjusted_key = 10  -- maps to keycode #19 → the “0” key
+    end
 
-	-- Standard numeric shortcuts for all workspaces (using modkey + number keys)
-	globalkeys = my_table.join(
-		globalkeys,
-		-- View tag only.
-		awful.key({ modkey }, "#" .. adjusted_key + 9, function()
-			local screen = awful.screen.focused()
-			local tag = screen.tags[i]
-			if tag then
-				tag:view_only()
-			end
-		end, descr_view),
-		-- Toggle tag display.
-		awful.key({ modkey, ctrlkey }, "#" .. adjusted_key + 9, function()
-			local screen = awful.screen.focused()
-			local tag = screen.tags[i]
-			if tag then
-				awful.tag.viewtoggle(tag)
-			end
-		end, descr_toggle),
-		-- Move client to tag.
-		awful.key({ modkey, "Shift" }, "#" .. adjusted_key + 9, function()
-			if client.focus then
-				local tag = client.focus.screen.tags[i]
-				if tag then
-					client.focus:move_to_tag(tag)
-				end
-			end
-		end, descr_move),
-		-- Toggle tag on focused client.
-		awful.key({ modkey, ctrlkey, "Shift" }, "#" .. adjusted_key + 9, function()
-			if client.focus then
-				local tag = client.focus.screen.tags[i]
-				if tag then
-					client.focus:toggle_tag(tag)
-				end
-			end
-		end, descr_toggle_focus)
-	)
+    globalkeys = my_table.join(
+        globalkeys,
+        -- view tag only (number row)
+        awful.key({ modkey }, "#" .. (adjusted_key + 9), function()
+            local tag = awful.screen.focused().tags[i]
+            if tag then tag:view_only() end
+        end, descr_view),
 
-	-- Additional letter shortcuts for workspaces 1, 2, and 3 (i, o, p)
-	if i <= 3 then
-		local letter_descr = { description = "tag #" .. i, group = "tag" }
-		globalkeys = my_table.join(
-			globalkeys,
-			-- View tag only.
-			awful.key({ modkey }, letterKeys[i], function()
-				local screen = awful.screen.focused()
-				local tag = screen.tags[i]
-				if tag then
-					tag:view_only()
-				end
-			end, letter_descr),
-			-- Toggle tag display.
-			awful.key({ modkey, ctrlkey }, letterKeys[i], function()
-				local screen = awful.screen.focused()
-				local tag = screen.tags[i]
-				if tag then
-					awful.tag.viewtoggle(tag)
-				end
-			end, letter_descr),
-			-- Move client to tag.
-			awful.key({ modkey, "Shift" }, letterKeys[i], function()
-				if client.focus then
-					local tag = client.focus.screen.tags[i]
-					if tag then
-						client.focus:move_to_tag(tag)
-					end
-				end
-			end, letter_descr),
-			-- Toggle tag on focused client.
-			awful.key({ modkey, ctrlkey, "Shift" }, letterKeys[i], function()
-				if client.focus then
-					local tag = client.focus.screen.tags[i]
-					if tag then
-						client.focus:toggle_tag(tag)
-					end
-				end
-			end, letter_descr)
-		)
-	end
+        -- toggle tag display
+        awful.key({ modkey, ctrlkey }, "#" .. (adjusted_key + 9), function()
+            local tag = awful.screen.focused().tags[i]
+            if tag then awful.tag.viewtoggle(tag) end
+        end, descr_toggle),
+
+        -- move client to tag
+        awful.key({ modkey, "Shift" }, "#" .. (adjusted_key + 9), function()
+            if client.focus then
+                local tag = client.focus.screen.tags[i]
+                if tag then client.focus:move_to_tag(tag) end
+            end
+        end, descr_move),
+
+        -- toggle focused client on tag
+        awful.key({ modkey, ctrlkey, "Shift" }, "#" .. (adjusted_key + 9), function()
+            if client.focus then
+                local tag = client.focus.screen.tags[i]
+                if tag then client.focus:toggle_tag(tag) end
+            end
+        end, descr_toggle_focus)
+    )
+
+    -- letter-key shortcuts for tags 1–3
+    if i <= 3 then
+        local letter_descr = { description = "tag #" .. i, group = "tag" }
+        globalkeys = my_table.join(
+            globalkeys,
+            awful.key({ modkey }, letterKeys[i], function()
+                local tag = awful.screen.focused().tags[i]
+                if tag then tag:view_only() end
+            end, letter_descr),
+            awful.key({ modkey, ctrlkey }, letterKeys[i], function()
+                local tag = awful.screen.focused().tags[i]
+                if tag then awful.tag.viewtoggle(tag) end
+            end, letter_descr),
+            awful.key({ modkey, "Shift" }, letterKeys[i], function()
+                if client.focus then
+                    local tag = client.focus.screen.tags[i]
+                    if tag then client.focus:move_to_tag(tag) end
+                end
+            end, letter_descr),
+            awful.key({ modkey, ctrlkey, "Shift" }, letterKeys[i], function()
+                if client.focus then
+                    local tag = client.focus.screen.tags[i]
+                    if tag then client.focus:toggle_tag(tag) end
+                end
+            end, letter_descr)
+        )
+    end
 end
 
 -- Resize the window by mouse
-clientbuttons = gears.table.join(
-	awful.button({}, 1, function(c)
-		c:emit_signal("request::activate", "mouse_click", { raise = true })
-	end),
-	awful.button({ modkey }, 1, function(c)
-		c:emit_signal("request::activate", "mouse_click", { raise = true })
-		awful.mouse.client.move(c)
-	end),
-	awful.button({ modkey }, 3, function(c)
-		c:emit_signal("request::activate", "mouse_click", { raise = true })
-		awful.mouse.client.resize(c)
-	end)
+local clientbuttons = gears.table.join(
+    -- left click to focus + raise
+    awful.button({}, 1, function(c)
+        client.focus = c
+        c:raise()
+    end),
+
+    -- Modkey + left‐drag to move
+    awful.button({ modkey }, 1, function(c)
+        awful.mouse.client.move(c)
+    end),
+
+    -- Modkey + right‐drag to resize
+    awful.button({ modkey }, 3, function(c)
+        awful.mouse.client.resize(c)
+    end),
+
+    -- Plain right‐drag to resize (no modifier)
+    awful.button({modkey}, 3, function(c)
+        awful.mouse.client.resize(c)
+    end)
 )
 
 -- Set keys
 root.keys(globalkeys)
 
--- Rules to apply to new clients
+-- Window's Rules
 awful.rules.rules = {
-	-- All clients will match this rule.
+	--Apply border color , width and more
 	{
 		rule = {},
+	    except_any = {  -- <<< changed here
+		class = { "Polybar", "scratchkitty" },
+	    },
 		properties = {
 			border_width = beautiful.border_width,
 			border_color = beautiful.border_normal,
@@ -910,59 +898,80 @@ awful.rules.rules = {
 		},
 	},
 
+-- Open poup's in center of Window
+{
+    rule_any = {
+        type = { "dialog", "utility", "splash" },
+        role = { "pop-up", "GtkFileChooserDialog" },
+        name = { "Preferences", "Options" },
+    },
+    except_any = {  -- <<< changed here
+        class = { "Polkit-gnome-authentication-agent-1","kdialog" },
+    },
+    instance = {
+	"kdialog"
+    },
+    properties = {
+        floating = true,
+        ontop    = true,
+    },
+    callback = function(c)
+        local f = client.focus
+        if f then
+            local fg = f:geometry()
+            local cg = c:geometry()
+
+            local nx = fg.x + math.floor((fg.width  - cg.width ) / 2)
+            local ny = fg.y + math.floor((fg.height - cg.height) / 2)
+
+            c:geometry({
+                x      = nx,
+                y      = ny,
+                width  = cg.width,
+                height = cg.height,
+            })
+        else
+            awful.placement.centered(c, { honor_workarea = true })
+        end
+    end,
+},
+
 	-- Titlebars
-	{ rule_any = { type = { "dialog", "normal" } }, properties = { titlebars_enabled = false } },
     {
-        rule_any = {
-            class = { "Polybar", "Qalculate-gtk", "KClock" },
-        },
-        properties = {
-            border_width     = 0,
-            titlebars_enabled = false,
-        }
+	rule_any = {
+	    class = { "Polybar"},
+	},
+	properties = {
+	    floating = ture,
+	    below = true,
+	}
     },
 
-    -- your default rule (catch-all)
-    {
-        rule = { },
-        properties = {
-            border_width = beautiful.border_width,
-            border_color = beautiful.border_normal,
-            -- …any other defaults you have…
-        }
-    },
-	-- Set applications to always map on the tag 1 on screen 1.
-	-- find class or role via xprop command
-	--{ rule = { class = browser1 },
-	--properties = { screen = 1, tag = awful.util.tagnames[1] } },
+	-- Rules to open a app in sepcific Tag
+	{ rule = { class = "vlc" }, properties = { tag = "   " } },  
+	{rule = { class = "autokey-qt" },
+	properties = {
+	  -- pick the 7th tag on the primary screen
+	  tag = awful.screen.focused().tags[7]
+	}
+	},
+	{
+		rule = { class = "VirtualBox Machine", name = "home ais [Running] - Oracle VirtualBox" },
+		properties = {
+			tag = function(c)
+				for _, t in ipairs(c.screen.tags) do
+					if t.name == " " then
+						return t
+					end
+				end
+				return c.screen.tags[1]
+			end,
+			maximized = false,
+		},
+	},
 
-	--{ rule = { class = editorgui },
-	--properties = { screen = 1, tag = awful.util.tagnames[2] } },
-
-	--{ rule = { class = "Geany" },
-	--properties = { screen = 1, tag = awful.util.tagnames[2] } },
-
-	-- Set applications to always map on the tag 3 on screen 1.
-	--{ rule = { class = "Inkscape" },
-	--properties = { screen = 1, tag = awful.util.tagnames[3] } },
-
-	-- Set applications to always map on the tag 4 on screen 1.
-	--{ rule = { class = "Gimp" },
-	--properties = { screen = 1, tag = awful.util.tagnames[4] } },
-
-	-- Set applications to be maximized at startup.
-	-- find class or role via xprop command
-
-	-- Rules to open a app in sepcific tag
-
-	{ rule = { class = "autokey-qt" }, properties = { tag = "   " } },
-	{ rule = { class = "vlc" }, properties = { tag = "  " } },
-
+	-- Floting Windows
 	{ rule = { class = "Rquickshare" }, properties = { floating = true } },
-	--{ rule = { class = "WhatSie" }, properties = { floating = true, width = 950, height = 650, x = 0, y = 17 } },
-
-	-- Brave pop-up dialogs (e.g., file chooser)
-	-- Float and center kdialog popups (used by Brave and other apps)
 	{
 		rule = { class = "kdialog" },
 		properties = {
@@ -978,38 +987,8 @@ awful.rules.rules = {
 			ontop = true,
 		},
 	},
-	{
-		rule = { class = "polybar" }, -- Use the correct WM_CLASS for Polybar
-		properties = { border_width = 9 },
-	},
-	{ rule = { class = "Gimp*", role = "gimp-image-window" }, properties = { maximized = true } },
 
-	{ rule = { class = "inkscape" }, properties = { maximized = true } },
-
-	{ rule = { class = mediaplayer }, properties = { maximized = true } },
-
-	{ rule = { class = "Vlc" }, properties = { maximized = true } },
-
-	{ rule = { class = "VirtualBox Manager" }, properties = { maximized = false } },
-
-	--{ rule = { class = "VirtualBox Machine" }, properties = { maximized = true } },
-	{
-		rule = { class = "VirtualBox Machine", name = "home ais [Running] - Oracle VirtualBox" },
-		properties = {
-			tag = function(c)
-				for _, t in ipairs(c.screen.tags) do
-					if t.name == " " then
-						return t
-					end
-				end
-				return c.screen.tags[1]
-			end,
-			maximized = false,
-		},
-	},
-	{ rule = { class = "Xfce4-settings-manager" }, properties = { floating = false } },
-
-	-- Floating clients.
+	-- Floating Window's with fixed size
 	{
 		rule_any = {
 			instance = {
@@ -1022,6 +1001,8 @@ awful.rules.rules = {
 				"Qalculate-gtk",
 				"kcolorchooser",
 				"Blueman-manager",
+				"qt5ct",
+				"qt6ct",
 			},
 		},
 		properties = { floating = true, ontop = true },
@@ -1030,6 +1011,14 @@ awful.rules.rules = {
 			awful.placement.centered(c, { honor_workarea = true })
 		end,
 	},
+
+
+
+
+	{ rule = { class = "VirtualBox Manager" }, properties = { maximized = false } },
+
+	{ rule = { class = "Xfce4-settings-manager" }, properties = { floating = false } },
+
 }
 
 table.insert(awful.rules.rules, floating_rule)
@@ -1132,30 +1121,3 @@ naughty.config.presets.normal = {
 naughty.config.padding = 30 -- padding for notifications
 
 -- Auto Start --
---awful.spawn.with_shell(soundplayer .. startupSound)
-awful.spawn.with_shell("lxsession")
-awful.spawn.with_shell("picom --config ~/.config/picom/picom.conf")
-awful.spawn.with_shell("nm-applet")
--- awful.spawn.with_shell("volumeicon")
---awful.spawn.with_shell("xsettingsd &")
-awful.spawn.with_shell("numlockx on")
-awful.spawn.with_shell("nm-applet --indicator &")
-awful.spawn.with_shell("blueman-applet &")
-awful.spawn.with_shell("greenclip daemon  &")
-awful.spawn.with_shell("autokey-qt -c &")
-awful.spawn.with_shell("kdeconnectd &")
---awful.spawn.with_shell("swww-daemon --format xrgb")
-awful.spawn.with_shell("~/.fehbg")
-awful.spawn.with_shell("~/scripts/startups/connect_realmebuds.sh &")
-awful.spawn.with_shell("~/.config/polybar/lauch.sh &")
-awful.spawn.with_shell("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
-
--- or if you went with lxqt-policykit:
-awful.spawn.with_shell("lxqt-policykit &")
---awful.spawn.with_shell("~/.config/awesome/scripts/auto-music-switcher.sh &")
---awful.spawn.with_shell("rclone mount Shri77: ~/Shri77/") --Interchange escape with caps
---awful.spawn.with_shell("xdotool key Num_Lock")
-awful.spawn.with_shell(" xset r rate 400 25")
---awful.spawn.with_shell("xmodmap ~/.Xmodmap")
---awful.spawn.with_shell("~/scripts/startups/poly_start.sh")
---awful.spawn.with_shell("rclone mount Shri77_Photos: Pictures/g-photos/")
