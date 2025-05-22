@@ -1,13 +1,13 @@
 return {
   {
     "folke/tokyonight.nvim",
-    lazy     = false,    -- ← load immediately
-    priority = 1000,     -- still make sure it comes before everything else
+    lazy = false, -- ← load immediately
+    priority = 1000, -- still make sure it comes before everything else
     opts = {
-      style       = "night",
+      style = "night",
       transparent = true,
       styles = {
-        floats   = "transparent",
+        floats = "transparent",
       },
     },
     config = function(_, opts)

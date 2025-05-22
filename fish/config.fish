@@ -7,7 +7,7 @@ set -U fish_user_paths $HOME/.bin $HOME/.local/bin $HOME/.config/emacs/bin $HOME
 ### EXPORT ###
 set -U fish_greeting ""
 set TERM xterm-256color # Sets the terminal type
-set -Ux EDITOR nvim
+ set -Ux EDITOR nvim
 set -Ux VISUAL nvim
 set -gx PATH $HOME/.local/bin $PATH
 set -Ux TERM xterm-256color
@@ -77,48 +77,6 @@ else
     bind '$' __history_previous_command_arguments
 end
 
-# Function for creating a backup file
-# ex: backup file.txt
-# result: copies file as file.txt.bak
-function backup --argument filename
-    cp $filename $filename.bak
-end
-
-# Function to expand :: to /home/shri/
-function expand_colon
-    # Get the current command line input
-    set cmd (commandline)
-
-    # Replace :: with /home/shri/
-    set cmd (string replace "hm" "/home/shri/" $cmd)
-
-    # Update the command line with the replaced value
-    commandline -r $cmd
-end
-function fish_preexec
-    expand_colon
-end
-
-# Function for copying files and directories, even recursively.
-# ex: copy DIRNAME LOCATIONS
-# result: copies the directory and all of its contents.
-function copy
-    set count (count $argv | tr -d \n)
-    if test "$count" = 2; and test -d "$argv[1]"
-        set from (echo $argv[1] | trim-right /)
-        set to (echo $argv[2])
-        command cp -r $from $to
-    else
-        command cp $argv
-    end
-end
-
-function expand_double_colon
-    commandline -r (string replace -a '::' '~/' (commandline -t))
-    commandline -f repaint
-end
-
-
 # Function for printing a column (splits input on whitespace)
 # ex: echo 1 2 3 | coln 3
 # output: 3
@@ -150,17 +108,6 @@ function take --argument number
 end
 
 # Function for org-agenda
-function org-search -d "send a search string to org-mode"
-    set -l output (/usr/bin/emacsclient -a "" -e "(message \"%s\" (mapconcat #'substring-no-properties \
-        (mapcar #'org-link-display-format \
-        (org-ql-query \
-        :select #'org-get-heading \
-        :from  (org-agenda-files) \
-        :where (org-ql--query-string-to-sexp \"$argv\"))) \
-        \"
-    \"))")
-    printf $output
-end
 
 # Copies the file to Backup dir
 function ba
@@ -413,7 +360,7 @@ function syss
     end
 end
 
-# Function to change CPU governor 
+# Function to change CPU governor
 function cpm --description "Change CPU power mode"
     if test (count $argv) -eq 0
         echo "Usage: cpm -p (performance) | -b (battery saver)"
@@ -437,28 +384,6 @@ end
 
 # Tmux Funcions #
 # Open aw config and thmes
-function txaw
-    # Check if the "aw" session exists in tmux
-    if tmux has-session -t aw ^/dev/null
-        tmux attach-session -t aw
-        return 0
-    else
-
-     # Run Neovim immediately
-     nvim +q
-
-     # Check if Tmuxifier is installed and load the session
-     if type -q tmuxifier
-        tmuxifier load-session aw; or begin
-            echo "Failed to load Tmuxifier session 'aw'" >&2
-            return 1
-        end
-     else
-        echo "Tmuxifier is not installed or not in your PATH" >&2
-        return 1
-     end
-    end
-end
 
 
 function shpwd-
@@ -482,7 +407,7 @@ function en
     if test (count $argv) -eq 1
         set file $argv[1]
         echo "Encrypting file: $file"
-        
+
         # Determine the output filename:
         if test (string match -r '.*\.txt$' $file)
             set outfile (string replace -r '\.txt$' '.gpg' $file)
@@ -567,14 +492,10 @@ alias rm='trash-put'
 alias nxt='playerctl next'
 alias prs='playerctl previous'
 
-# vim and emacst
-alias emacs="emacsclient -c -a 'emacs'"
-alias em='/usr/bin/emacs -nw'
-alias rem="killall emacs || echo 'Emacs server not running'; /usr/bin/emacs --daemon" # Kill Emacs and restart daemon..
 
 # Changing "ls" to "eza"
-alias ls='eza -al --color=always --group-directories-first' # my preferred listing
-alias la='eza -a --color=always --group-directories-first' # all files and dirs
+alias la='eza -al --color=always --group-directories-first' # my preferred listing
+ alias ls='eza -a --color=always --group-directories-first' # all files and dirs
 alias ll='eza -l --color=always --group-directories-first' # long format
 alias lt='eza -aT --color=always --group-directories-first' # tree listing
 alias l.='eza -a | egrep "^\."'
@@ -649,6 +570,7 @@ alias txa="tmux a"
 # alias txc="gcc -o ~/scripts/terminal/txc ~/scripts/terminal/txc.c && ~/scripts/terminal/txc"
 # alias txt="gcc -o ~/scripts/terminal/txt ~/scripts/terminal/txt.c && ~/scripts/terminal/txt"
 alias txc="tmuxifier load-session cn"
+alias txdev="tmuxifier load-session dev"
 
 # get error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
@@ -666,20 +588,6 @@ alias tofish="sudo chsh $USER -s /bin/fish && echo 'Log out and log back in for 
 
 # bare git repo alias for dotfiles
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
-
-# termbin
-alias tb="nc termbin.com 9999"
-
-# the terminal rickroll
-alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
-
-# Mocp must be launched with bash instead of Fish!
-alias mocp="bash -c mocp"
-
-### RANDOM COLOR SCRIPT ###
-# Get this script from my GitLab: gitlab.com/dwt1/shell-color-scripts
-# Or install it from the Arch User Repository: shell-color-scripts
-#colorscript random
 
 ### SETTING THE STARSHIP PROMPT ###
 starship init fish | source

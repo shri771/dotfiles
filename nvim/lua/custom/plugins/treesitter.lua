@@ -1,11 +1,18 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",  -- this replaces vim-plug's `do` key
+    build = ":TSUpdate",
 
     opts = {
       ensure_installed = {
-        "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "regex"
+        "c",
+        "lua",
+        "vim",
+        "vimdoc",
+        "query",
+        "markdown",
+        "markdown_inline",
+        "regex",
       },
       sync_install = false,
       auto_install = true,
@@ -13,7 +20,7 @@ return {
 
       highlight = {
         enable = true,
-        disable = { "c", "rust", "noice" },
+        disable = {},
         disable = function(lang, buf)
           local max_filesize = 100 * 1024 -- 100 KB
           local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
@@ -30,8 +37,7 @@ return {
     end,
   },
   {
-	  
-     "nvim-treesitter/playground",
-     },
-}
 
+    "nvim-treesitter/playground",
+  },
+}
