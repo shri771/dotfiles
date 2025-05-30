@@ -378,10 +378,10 @@ globalkeys = my_table.join(
   awful.key({ altkey }, "Right", function()
     awful.tag.viewnext()
   end, { description = "view next workspace", group = "tag" }),
-  -- Run launcher
-  awful.key({ altkey }, "space", function()
-    awful.util.spawn("dm-run")
-  end, { description = "Run launcher", group = "hotkeys" }),
+  -- NormCap screenshot and OCR (Mod + A)
+  awful.key({ modkey }, "a", function()
+    awful.util.spawn("normcap -c '#aa55ff' -t False")
+  end, { description = "OCR screenshot (no text mode)", group = "custom" }),
 
   -- Rofi launcher's
   awful.key({ altkey }, "f", function()
@@ -446,11 +446,6 @@ globalkeys = my_table.join(
       client.focus:raise()
     end
   end, { description = "go back", group = "client" }),
-
-  -- On the fly ement useless gaps", group = "tag" }),
-  awful.key({ altkey, ctrlkey }, "k", function()
-    lain.util.useless_gaps_resize(-1)
-  end, { description = "decrement useless gaps", group = "tag" }),
 
   -- Resize window by vim motion
   awful.key({ modkey }, "l", function()
@@ -734,10 +729,16 @@ end
 -- Set wallpaper for each screen initially
 screen.connect_signal("request::wallpaper", set_wallpaper)
 clientkeys = my_table.join(
-  awful.key({ altkey, "Shift" }, "m", lain.util.magnify_client, { description = "magnify client", group = "client" }),
   awful.key({ modkey }, "space", function(c)
+    -- if it’s maximized, bail out
+    if c.maximized then
+      return
+    end
+
+    -- otherwise, flip fullscreen
     c.fullscreen = not c.fullscreen
     c:raise()
+
     if not c.fullscreen then
       set_wallpaper(c.screen)
     end
@@ -746,7 +747,7 @@ clientkeys = my_table.join(
     c:kill()
   end, { description = "close", group = "hotkeys" }),
   awful.key({ modkey }, "t", awful.client.floating.toggle, { description = "toggle floating", group = "client" }),
-  awful.key({ modkey, ctrlkey }, "Return", function(c)
+  awful.key({ altkey, ctrlkey }, "Return", function(c)
     c:swap(awful.client.getmaster())
   end, { description = "move to master", group = "client" }),
   awful.key({ modkey, "Shift" }, "t", function(c)
@@ -756,6 +757,12 @@ clientkeys = my_table.join(
     c:move_to_screen()
   end, { description = "move to screen", group = "client" }),
   awful.key({ modkey }, "m", function(c)
+    -- if it's fullscreen, do nothing
+    if c.fullscreen then
+      return
+    end
+
+    -- otherwise, flip maximize
     c.maximized = not c.maximized
     c:raise()
   end, { description = "maximize", group = "client" })
@@ -919,7 +926,7 @@ awful.rules.rules = {
       name = { "Preferences", "Options" },
     },
     except_any = { -- <<< changed here
-      class = { "Polkit-gnome-authentication-agent-1", "kdialog" },
+      class = { "Polkit-gnome-authentication-agent-1", "kdialog", "Xdg-desktop-portal-gtk" },
     },
     instance = {
       "kdialog",
@@ -949,7 +956,7 @@ awful.rules.rules = {
     end,
   },
 
-  -- Titlebars
+  -- Polybar
   {
     rule_any = {
       class = { "Polybar" },
@@ -984,12 +991,20 @@ awful.rules.rules = {
   -- Floting Windows
   { rule = { class = "Rquickshare" }, properties = { floating = true } },
   {
-    rule = { class = "kdialog" },
+    rule_any = { class = { "kdialog", "Xdg-desktop-portal-gtk" } },
     properties = {
       floating = true,
       ontop = true,
       placement = awful.placement.centered,
+      width = 550,
+      height = 440,
     },
+    callback = function(c)
+      -- Force geometry before placement
+      c:geometry({ width = 800, height = 570 })
+      -- Recenter after geometry is set
+      awful.placement.centered(c, { honor_workarea = true })
+    end,
   },
   {
     rule = { class = "Brave-browser", instance = "crx_nngceckbapebfimnlniiiahkandclblb" },

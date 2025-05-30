@@ -15,17 +15,12 @@ else
 endif
 badd +1 readability.py
 badd +33 ~/WorkSpace/158309813/readability/readability.c
-badd +40 health://
-badd +0 term://~/WorkSpace/158309813/sentimental-readability//1131291:/usr/bin/fish
 argglobal
 %argdel
 $argadd readability.py
+edit ~/WorkSpace/158309813/readability/readability.c
 argglobal
-if bufexists(fnamemodify("term://~/WorkSpace/158309813/sentimental-readability//1131291:/usr/bin/fish", ":p")) | buffer term://~/WorkSpace/158309813/sentimental-readability//1131291:/usr/bin/fish | else | edit term://~/WorkSpace/158309813/sentimental-readability//1131291:/usr/bin/fish | endif
-if &buftype ==# 'terminal'
-  silent file term://~/WorkSpace/158309813/sentimental-readability//1131291:/usr/bin/fish
-endif
-balt ~/WorkSpace/158309813/readability/readability.c
+balt readability.py
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -34,12 +29,14 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 3 - ((2 * winheight(0) + 9) / 18)
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 23 - ((21 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 3
-normal! 038|
+keepjumps 23
+normal! 09|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -53,7 +50,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

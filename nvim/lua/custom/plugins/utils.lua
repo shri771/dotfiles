@@ -9,23 +9,30 @@ return {
   },
 
   {
+
+    "nvim-treesitter/playground",
+  },
+
+  {
     "lukas-reineke/indent-blankline.nvim",
-    lazy = false, -- ← load immediately
-    priority = 1000, -- still make sure it comes before everything else
+    lazy = false,
     main = "ibl",
     ---@module "ibl"
     ---@type ibl.config
     opts = {},
   },
 
-  { "ThePrimeagen/vim-be-good", enable = true, cmd = "VimBeGood" },
+  { "ThePrimeagen/vim-be-good", lazy = true, cmd = "VimBeGood" },
 
   {
     "norcalli/nvim-colorizer.lua",
+    lazy = false,
     config = function()
       require("colorizer").setup()
     end,
   },
+
+  { "mbbill/undotree", lazy = false },
 
   {
     "folke/todo-comments.nvim",
@@ -36,8 +43,7 @@ return {
 
   { -- Collection of various small independent plugins/modules
     "echasnovski/mini.nvim",
-    lazy = false, -- ← load immediately
-    priority = 1000, -- still make sure it comes before everything else
+    lazy = false,
     config = function()
       local statusline = require("mini.statusline")
       require("mini.ai").setup({ n_lines = 500 })

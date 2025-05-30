@@ -1,9 +1,9 @@
 return {
   {
     "folke/persistence.nvim",
-    event = "BufReadPre",
+    event = "VimEnter",
     opts = {
-      dir = vim.fn.expand("~/dotfiles/sessions/"),
+      dir = vim.fn.expand("$HOME/dotfiles/sessions/"),
       need = 2,
       branch = true,
     },

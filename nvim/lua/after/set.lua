@@ -2,9 +2,10 @@ vim.g.have_nerd_font = true
 vim.opt.foldenable = false
 vim.opt.number = true
 
-vim.opt.shiftwidth = 4
+-- vim.opt.shiftwidth = 4
 --  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
+-- vim.opt.editorconfig = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
@@ -26,6 +27,7 @@ vim.opt.breakindent = true
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.stdpath("config") .. "/undo"
 vim.o.undolevels = 1000000
+
 -- Make sure the undo directory exists
 if not vim.fn.isdirectory(vim.fn.stdpath("config") .. "/undo") then
   vim.fn.mkdir(vim.fn.stdpath("config") .. "/undo", "p")
@@ -75,7 +77,7 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.o.timeout = true
 
 -- time (in ms) Neovim waits after you press <Leader>
-vim.o.timeoutlen = 1500
+vim.o.timeoutlen = 1700
 
 -- -- Sync the terminal theme with nvim
 -- vim.api.nvim_create_autocmd({ "UIEnter", "ColorScheme" }, {
@@ -121,7 +123,9 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 vim.api.nvim_create_autocmd("CmdlineLeave", {
   callback = function()
     vim.defer_fn(function()
-      vim.cmd("echo ''")
+      if vim.fn.mode() ~= "c" then -- Only clear if we're not back in command-line mode
+        vim.cmd("echo ''")
+      end
     end, 2000)
   end,
 })
