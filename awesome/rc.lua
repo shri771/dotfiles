@@ -17,6 +17,7 @@ beautiful.useless_gap = 19
 -- Notification library
 local naughty = require("naughty")
 naughty.config.defaults["icon_size"] = 100
+naughty.config.defaults.replaces_id = 1
 
 local lain = require("lain")
 local freedesktop = require("freedesktop")
@@ -68,9 +69,6 @@ local altkey = "Mod1"
 local ctrlkey = "Control"
 local terminal = "kitty"
 local mediaplayer = "mpv"
-awful.util.terminal = terminal
-
---awful.util.tagnames = {  " ", " ", " ", " ", " ", " ", " ", "  ", "  ", " "  }
 
 -- Tags
 awful.util.tagnames = { "   ", "   ", "   ", "   ", "   ", "󰗃 ", " " }
@@ -211,110 +209,110 @@ root.buttons(my_table.join(
   -- awful.button({}, 5, awful.tag.viewprev)
 ))
 
--- Volume --
-
+-- Volume notification --
+local ICON_DIR = os.getenv("HOME") .. "/.config/swaync/icons"
 local function get_volume_icon(vol, muted)
-  local iDIR = os.getenv("HOME") .. "/.config/swaync/icons"
   if muted then
-    return iDIR .. "/volume-mute.png"
+    return ICON_DIR .. "/volume-mute.png"
+  end
+
+  vol = tonumber(vol) or 0
+  if vol <= 30 then
+    return ICON_DIR .. "/volume-low.png"
+  elseif vol <= 60 then
+    return ICON_DIR .. "/volume-mid.png"
   else
-    local v = tonumber(vol) or 0
-    if v <= 30 then
-      return iDIR .. "/volume-low.png"
-    elseif v <= 60 then
-      return iDIR .. "/volume-mid.png"
-    else
-      return iDIR .. "/volume-high.png"
-    end
+    return ICON_DIR .. "/volume-high.png"
   end
 end
 
--- Send volume notification as in your shell script, with a wider notification.
 local function notify_volume()
-  awful.spawn.easy_async_with_shell("amixer get Master", function(stdout)
-    local vol = string.match(stdout, "(%d?%d?%d)%%")
-    local status = string.match(stdout, "%[(%a+)%]")
-    local muted = (status and status:lower() == "off")
-    local icon = get_volume_icon(vol, muted)
+  local channel = beautiful.volume.channel or "Master"
+  awful.spawn.easy_async_with_shell("amixer get " .. channel, function(stdout)
+    local vol = tonumber(stdout:match("(%d?%d?%d)%%")) or 0
+    local status = stdout:match("%[(%a+)%]") or "on"
+    local muted = status:lower() ~= "on"
 
-    if muted then
-      awful.spawn.with_shell(
-        string.format(
-          "notify-send -e -u low -h string:x-canonical-private-synchronous:volume_notif -h string:x-dunst:geometry:400x100 -i '%s' ' Volume:' 'Muted'",
-          icon
-        )
-      )
-    else
-      awful.spawn.with_shell(
-        string.format(
-          "notify-send -e -u low -h int:value:%s -h string:x-canonical-private-synchronous:volume_notif -h string:x-dunst:geometry:400x100 -i '%s' ' Volume Level:' ' %s%%'",
-          vol,
-          icon,
-          vol
-        )
-      )
-      -- Optionally, if you want to play a sound:
-      -- awful.spawn.with_shell(os.getenv("HOME") .. "/.config/hypr/scripts/Sounds.sh --volume")
-    end
+    local old_margin = naughty.config.defaults.margin or 0
+    naughty.config.defaults.margin = 20
+    -- this is where vol & muted exist!
+    naughty.notify({
+      title = "Volume",
+      text = muted and "Muted" or (vol .. "%"),
+      icon = get_volume_icon(vol, muted),
+      timeout = 1.5,
+      width = 250,
+      position = "top_middle",
+    })
+    naughty.config.defaults.margin = old_margin
+  end)
+end
+local volume_channel = beautiful.volume.channel or "Master"
+local toggle_channel = beautiful.volume.togglechannel or volume_channel
+
+-- Brightness notification
+local brightness_notification
+local icon_dir = os.getenv("HOME") .. "/.config/swaync/icons"
+
+local function notify_brightness()
+  awful.spawn.easy_async_with_shell("brightnessctl get", function(get_out)
+    awful.spawn.easy_async_with_shell("brightnessctl max", function(max_out)
+      local cur = tonumber(get_out:match("%d+")) or 0
+      local max = tonumber(max_out:match("%d+")) or 1
+      local pct = math.floor(cur / max * 100)
+
+      -- Select icon based on percentage
+      local icon = icon_dir .. "/brightness-100.png"
+      if pct < 30 then
+        icon = icon_dir .. "/brightness-30.png"
+      elseif pct < 70 then
+        icon = icon_dir .. "/brightness-60.png"
+      end
+
+      local old_margin = naughty.config.defaults.margin or 0
+      naughty.config.defaults.margin = 20
+      -- Replaces old notification if it exists
+      brightness_notification = naughty.notify({
+        title = "Brightness",
+        text = pct .. "%",
+        icon = icon,
+        timeout = 1.5,
+        replaces_id = brightness_notification and brightness_notification.id or nil,
+        width = 250,
+        position = "top_middle",
+      })
+      naughty.config.defaults.margin = old_margin
+    end)
   end)
 end
 
--- Send mute toggle notification with wider geometry.
-local function notify_mute_toggle()
-  awful.spawn.easy_async_with_shell("amixer get Master", function(stdout)
-    local vol = string.match(stdout, "(%d?%d?%d)%%") or "0"
-    local status = string.match(stdout, "%[(%a+)%]")
-    local muted = (status and status:lower() == "off")
-    local iDIR = os.getenv("HOME") .. "/.config/swaync/icons"
-
-    if muted then
-      awful.spawn.with_shell(
-        string.format(
-          "notify-send -e -u low -h string:x-canonical-private-synchronous:volume_notif -h string:x-dunst:geometry:400x100 -i '%s' ' Volume:' 'Muted'",
-          iDIR .. "/volume-mute.png"
-        )
-      )
-    else
-      notify_volume()
-    end
-  end)
-end
-
--- AwesomeWM keybindings with fixed 5% steps and wider notifications.
-
+-- Keybindings
 globalkeys = my_table.join(
+  -- Brightness
+  awful.key({}, "XF86MonBrightnessUp", function()
+    os.execute("brightnessctl set +10%")
+    notify_brightness()
+  end, { description = "increase brightness + show notification", group = "custom widgets" }),
+  awful.key({}, "XF86MonBrightnessDown", function()
+    os.execute("brightnessctl set 10%-")
+    notify_brightness()
+  end, { description = "decrease brightness + show notification", group = "custom widgets" }),
 
+  -- Volume
   awful.key({}, "XF86AudioRaiseVolume", function()
-    os.execute(string.format("amixer -q set %s 5%%+", beautiful.volume.channel or "Master"))
+    os.execute(string.format("amixer -q set %s unmute", volume_channel))
+    os.execute(string.format("amixer -q set %s 5%%+", volume_channel))
     notify_volume()
-  end, { description = "increase volume and show notification", group = "custom widgets" }),
-
+  end, { description = "volume up (and unmute)", group = "custom widgets" }),
   awful.key({}, "XF86AudioLowerVolume", function()
-    os.execute(string.format("amixer -q set %s 5%%-", beautiful.volume.channel or "Master"))
+    os.execute(string.format("amixer -q set %s 5%%-", volume_channel))
     notify_volume()
-  end, { description = "decrease volume and show notification", group = "custom widgets" }),
-
+  end, { description = "volume down", group = "custom widgets" }),
   awful.key({}, "XF86AudioMute", function()
-    os.execute(
-      string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel or "Master")
-    )
-    notify_mute_toggle()
-    if beautiful.volume.update then
-      beautiful.volume.update()
-    end
-  end, { description = "toggle mute and show notification", group = "custom widgets" }),
-  -- Multimedia keys
-  awful.key({}, "XF86AudioPlay", function()
-    awful.spawn("playerctl play-pause")
-  end, { description = "toggle play/pause", group = "media" }),
+    os.execute(string.format("amixer -q set %s toggle", toggle_channel))
+    notify_volume()
+  end, { description = "toggle mute", group = "custom widgets" }),
 
-  awful.key({}, "XF86AudioNext", function()
-    awful.spawn("playerctl next")
-  end, { description = "next track", group = "media" }),
-
-  awful.key({}, "XF86AudioPrev", function()
-    awful.spawn("playerctl previous")
-  end, { description = "previous track", group = "media" }),
   -- Launcher
   awful.key({ modkey }, "Return", function()
     awful.spawn(terminal)
@@ -382,6 +380,20 @@ globalkeys = my_table.join(
   awful.key({ modkey }, "a", function()
     awful.util.spawn("normcap -c '#aa55ff' -t False")
   end, { description = "OCR screenshot (no text mode)", group = "custom" }),
+  awful.key(
+    {}, -- no modifiers
+    "XF86TouchpadToggle", -- or whatever keysym `xev` showed you
+    function()
+      -- directly call notify-send without shell quoting headaches
+      awful.spawn.with_shell("/usr/bin/notify-send", {
+        "--app-name=System",
+        "--icon=" .. os.getenv("HOME") .. "/.config/awesome/icons/touchpad.svg",
+        "System",
+        "Touchpad Disabled",
+      })
+    end,
+    { description = "notify touchpad disabled", group = "custom" }
+  ),
 
   -- Rofi launcher's
   awful.key({ altkey }, "f", function()
@@ -490,58 +502,6 @@ globalkeys = my_table.join(
     awful.screen.focused().quake:toggle()
   end, { description = "dropdown application", group = "super" }),
 
-  -- Brightness
-  -- Brightness keybindings with notifications
-  awful.key({}, "XF86MonBrightnessUp", function()
-    -- Increase brightness by 5%
-    awful.spawn("brightnessctl set +5%")
-    -- Get current brightness and maximum brightness, then compute percentage
-    awful.spawn.easy_async_with_shell("brightnessctl get", function(current_stdout)
-      local current = tonumber(current_stdout) or 0
-      awful.spawn.easy_async_with_shell("brightnessctl max", function(max_stdout)
-        local max_val = tonumber(max_stdout) or 1
-        local percent = math.floor((current / max_val) * 100 + 0.5)
-        if percent < 5 then
-          percent = 5
-        end
-        local brightness_icon = os.getenv("HOME") .. "/.config/swaync/icons/brightness.png"
-        awful.spawn.with_shell(
-          string.format(
-            "notify-send -e -u low -h int:value:%s -h string:x-dunst:geometry:600x100 -i '%s' 'Brightness:' ' %s%%'",
-            percent,
-            brightness_icon,
-            percent
-          )
-        )
-      end)
-    end)
-  end, { description = "Increase brightness", group = "custom" }),
-
-  awful.key({}, "XF86MonBrightnessDown", function()
-    -- Decrease brightness by 5%
-    awful.spawn("brightnessctl set 5%-")
-    awful.spawn.easy_async_with_shell("brightnessctl get", function(current_stdout)
-      local current = tonumber(current_stdout) or 0
-      awful.spawn.easy_async_with_shell("brightnessctl max", function(max_stdout)
-        local max_val = tonumber(max_stdout) or 1
-        local percent = math.floor((current / max_val) * 100 + 0.5)
-        if percent < 5 then
-          percent = 5
-        end
-        local brightness_icon = os.getenv("HOME") .. "/.config/swaync/icons/brightness.png"
-        awful.spawn.with_shell(
-          string.format(
-            "notify-send -e -u low -h int:value:%s -h string:x-dunst:geometry:100x100000 -h string:x-canonical-private-synchronous:brightness_notif -i '%s' 'Brightness:' ' %s%%'",
-            percent,
-            brightness_icon,
-            percent
-          )
-        )
-      end)
-    end)
-  end, { description = "Decrease brightness", group = "custom" }),
-  -- ALSA volume control
-
   -- Copy clipboard to primary (gtk to terminals)
   awful.key({ modkey }, "v", function()
     awful.spawn.with_shell("xsel -b | xsel")
@@ -610,6 +570,10 @@ function make_scratchpad(name, spawn_cmd, opts)
       c.floating = true
       c.ontop = true
       c.skip_taskbar = true
+
+      -- **Zero out the border so there's no border on the scratchpad**
+      c.border_width = 0
+
       c.width = opts.width
       c.height = opts.height
 
@@ -968,7 +932,7 @@ awful.rules.rules = {
   },
 
   -- Rules to open a app in sepcific Tag
-  { rule = { class = "vlc" }, properties = { tag = awful.screen.focused().tags[5] } },
+  { rule = { class = "mpv" }, properties = { tag = awful.screen.focused().tags[5] } },
   {
     rule = { class = "autokey-qt" },
     properties = { tag = awful.screen.focused().tags[7] },
@@ -1043,6 +1007,50 @@ awful.rules.rules = {
   { rule = { class = "Xfce4-settings-manager" }, properties = { floating = false } },
 }
 
+-- Allow client to switch Workspace
+client.connect_signal("request::activate", function(c, context, hints)
+  -- Only handle Brave-browser
+  if c.class ~= "Brave-browser" then
+    return
+  end
+
+  -- only switch if the client isn't already visible
+  if not c:isvisible() then
+    -- 1) Clear fullscreen on **all** clients
+    local all_clients = client.get()
+    for i = 1, #all_clients do
+      if all_clients[i].fullscreen then
+        all_clients[i].fullscreen = false
+      end
+    end
+
+    -- 2) Switch to this client's first tag
+    local tags = c:tags()
+    if tags and tags[1] then
+      awful.tag.viewonly(tags[1])
+      -- Force layout rearrangement to re-apply rules cleanly
+      awful.layout.arrange(tags[1].screen)
+    end
+  end
+
+  -- 3) Focus & raise
+  client.focus = c
+  c:raise()
+
+  -- 4) Remove border if client is floating
+  if c.floating then
+    c.border_width = 0
+  end
+end)
+
+-- client.connect_signal("property::floating", function(c)
+--   if c.floating then
+--     c.border_width = 0
+--   else
+--     c.border_width = beautiful.border_width
+--   end
+-- end)
+
 table.insert(awful.rules.rules, floating_rule)
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function(c)
@@ -1116,7 +1124,6 @@ function border_adjust(c)
     c.border_color = beautiful.border_focus
   end
 end
-
 client.connect_signal("focus", border_adjust)
 client.connect_signal("property::maximized", border_adjust)
 client.connect_signal("unfocus", function(c)
@@ -1126,18 +1133,50 @@ end)
 -- Gaps --
 awful.screen.padding(awful.screen.focused(), { left = 1, right = 1, top = 2, bottom = 1 })
 
--- Set default notification settings
-naughty.config.defaults.timeout = 3 -- Timeout for notifications
-naughty.config.defaults.position = "top_right" -- Positioning at the bottom-right corner
+-- Notification --
 
--- Set notification theme (background and foreground colors)
-naughty.config.presets.normal = {
-  font = "Monospace 10",
-  border_width = 1,
-  shape = naughty.config.presets.normal.shape,
-  opacity = 0.9, -- 10% transparency
-  width = 330, -- Fixed width
+-- Set default notification settings
+naughty.config.defaults.timeout = 3
+naughty.config.defaults.margin = 8
+naughty.config.defaults.spacing = 6
+naughty.config.defaults.icon_size = 35
+naughty.config.defaults.position = "top_middle"
+naughty.config.defaults.shape = gears.shape.rounded_rect
+naughty.config.defaults.screen = awful.screen.focused()
+naughty.config.padding = 20 -- padding for notifications
+beautiful.notification_opacity = 0.95
+
+-- Wrap naughty.notify so each new notif nukes the last one
+do
+  local orig_notify = naughty.notify
+  local last_id = nil
+
+  naughty.notify = function(opts)
+    -- force replacement of the last notification
+    opts.replaces_id = last_id
+    -- fire off the real notify; it returns the notif object
+    local n = orig_notify(opts)
+    -- stash its ID for next time
+    last_id = n.id
+    return n
+  end
+end
+
+-- block Notification
+local blocked_apps = {
+  ["blueman"] = true,
+  ["networkmanager"] = true, -- example: block any NM notifications
+  -- add more keys here, e.g. ["someapp"] = true,
 }
 
--- Position notifications with padding
-naughty.config.padding = 30 -- padding for notifications
+local orig_notify = naughty.notify
+naughty.notify = function(args)
+  if args.app_name then
+    local app = args.app_name:lower()
+    if blocked_apps[app] then
+      return
+    end
+  end
+
+  return orig_notify(args)
+end

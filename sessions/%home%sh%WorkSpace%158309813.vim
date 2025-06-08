@@ -13,14 +13,12 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +5 hello.c
-badd +1 ~/WorkSpace/158309813/.editorconfig_hidden_message
+badd +71 sentimental-credit/credit.py
 argglobal
 %argdel
-$argadd hello.c
-edit hello.c
+$argadd sentimental-credit/credit.py
+edit sentimental-credit/credit.py
 argglobal
-balt ~/WorkSpace/158309813/.editorconfig_hidden_message
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -31,12 +29,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 5 - ((4 * winheight(0) + 19) / 39)
+let s:l = 58 - ((21 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 5
-normal! 03|
+keepjumps 58
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

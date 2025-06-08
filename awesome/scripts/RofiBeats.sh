@@ -25,16 +25,29 @@ select_music_folder() {
 # Function for playing local music (shuffle play selected folder)
 play_local_music() {
   local selected_folder basename_folder
-  selected_folder=$(select_music_folder) || exit 1
 
+  selected_folder=$(select_music_folder) || return 1
   basename_folder=$(basename "$selected_folder")
   notification "$basename_folder"
 
-  playerctl stop && vlc --meta-title "My Music Player 🎵" --random --loop "$selected_folder"/*
+  # Stop currently playing media if any
+  if command -v playerctl &>/dev/null; then
+    if playerctl status &>/dev/null && [[ $(playerctl status) == "Playing" ]]; then
+      playerctl stop
+    fi
+  fi
+
+  # Launch VLC with metadata and random loop
+  if command -v vlc &>/dev/null; then
+    mpv --title="My Music Player 🎵" --shuffle --loop=inf "$selected_folder"/*
+  else
+    echo "VLC is not installed or not in PATH" >&2
+    return 1
+  fi
 }
 
 # Stop music if VLC is running, otherwise show menu
-pkill vlc && notify-send -u low -i "$ICON_DIR/music.png" "Music stopped" || {
+pkill mpv && notify-send -u low -i "$ICON_DIR/music.png" "Music stopped" || {
   if pidof rofi >/dev/null; then
     pkill rofi
   fi

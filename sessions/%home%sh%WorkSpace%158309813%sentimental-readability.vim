@@ -13,14 +13,12 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 readability.py
-badd +33 ~/WorkSpace/158309813/readability/readability.c
+badd +24 ~/WorkSpace/158309813/sentimental-readability/readability.py
 argglobal
 %argdel
-$argadd readability.py
-edit ~/WorkSpace/158309813/readability/readability.c
+$argadd .
+edit ~/WorkSpace/158309813/sentimental-readability/readability.py
 argglobal
-balt readability.py
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -31,12 +29,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 23 - ((21 * winheight(0) + 20) / 40)
+let s:l = 24 - ((23 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 23
-normal! 09|
+keepjumps 24
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -50,6 +48,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

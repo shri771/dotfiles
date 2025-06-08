@@ -479,7 +479,7 @@ alias syst='systemctl list-timers --all '
 alias imp='kitty +kitten icat'
 alias syscn='cd /etc/systemd/system/ && sn .'
 alias syscn-='cd /etc/systemd/system/'
-alias suse='fastfetch'
+alias arch='fastfetch'
 alias speed='speedtest'
 alias mke='chmod +x'
 alias nm-a='nmcli device wifi list'
@@ -491,6 +491,8 @@ alias vm='source ~/.venvs/pyprland/bin/activate.fish'
 alias rm='trash-put'
 alias nxt='playerctl next'
 alias prs='playerctl previous'
+alias up_mirr='sudo reflector --country India --age 12 --protocol https \
+  --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy && sudo pacman -Syu'
 
 
 # Changing "ls" to "eza"

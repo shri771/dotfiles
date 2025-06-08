@@ -1,5 +1,4 @@
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
--- vim.keymap.set('n', '-', vim.cmd.Oil)
 
 -- move slected text
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -27,3 +26,10 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 
 -- undotree --
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+
+-- Clipborad --
+vim.keymap.set("n", "p", ":put<CR>", { noremap = true, silent = true })
+
+-- Debugger --
+-- make sure dap is required up top:
+local dap = require("dap")
