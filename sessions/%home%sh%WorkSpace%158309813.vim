@@ -13,12 +13,15 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +71 sentimental-credit/credit.py
+badd +11 sentimental-credit/credit.py
 argglobal
 %argdel
-$argadd sentimental-credit/credit.py
-edit sentimental-credit/credit.py
+$argadd .
 argglobal
+if bufexists(fnamemodify("\[dap-terminal]\ Launch\ file\ with\ stdin", ":p")) | buffer \[dap-terminal]\ Launch\ file\ with\ stdin | else | edit \[dap-terminal]\ Launch\ file\ with\ stdin | endif
+if &buftype ==# 'terminal'
+  silent file \[dap-terminal]\ Launch\ file\ with\ stdin
+endif
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -27,13 +30,11 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 58 - ((21 * winheight(0) + 19) / 39)
+let s:l = 40 - ((39 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 58
+keepjumps 40
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
@@ -48,7 +49,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

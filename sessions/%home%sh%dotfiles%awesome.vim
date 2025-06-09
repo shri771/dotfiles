@@ -13,15 +13,14 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1126 rc.lua
-badd +42 scripts/RofiBeats.sh
-badd +0 lua/autostart.lua
+badd +605 rc.lua
+badd +18 lua/autostart.lua
 argglobal
 %argdel
 $argadd rc.lua
-edit lua/autostart.lua
+edit rc.lua
 argglobal
-balt rc.lua
+balt lua/autostart.lua
 setlocal foldmethod=manual
 setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 setlocal foldmarker={{{,}}}
@@ -32,11 +31,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 32 - ((12 * winheight(0) + 9) / 18)
+let s:l = 605 - ((21 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 32
+keepjumps 605
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
