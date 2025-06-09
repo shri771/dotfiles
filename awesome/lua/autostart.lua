@@ -6,6 +6,7 @@ local awful = require("awful")
 -- Apps and scripts autostarted using appropriate spawn method
 awful.spawn.with_shell("lxsession")
 awful.spawn.with_shell("picom --config ~/.config/picom/picom.conf")
+awful.spawn.with_shell("xss-lock --transfer-sleep-lock -- betterlockscreen -l &")
 awful.spawn("nm-applet")
 awful.spawn("nm-applet --indicator")
 awful.spawn("blueman-applet")

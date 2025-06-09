@@ -320,27 +320,21 @@ globalkeys = my_table.join(
   awful.key({ modkey }, "f", function()
     awful.spawn("dolphin")
   end, { description = "Launch fm", group = "awesome" }),
-  awful.key({ modkey, "Shift" }, "s", function()
+  awful.key({ modkey, "Shift" }, "o", function()
     awful.spawn("flameshot gui")
   end, { description = "Take a screenshot with Flameshot", group = "hotkeys" }),
-  awful.key({ modkey }, "s", function()
+  awful.key({ modkey }, "o", function()
     awful.spawn("flameshot full")
   end, { description = "Take a screenshot with Flameshot", group = "hotkeys" }),
-  awful.key({ altkey }, "m", function()
-    awful.spawn("notion-calendar-electron")
-  end, { description = "Launch calendar", group = "hotkeys" }),
   awful.key({ altkey }, "n", function()
     awful.spawn("notion-app")
   end, { description = "Launch Notion", group = "hotkeys" }),
-  awful.key({ modkey }, "q", function()
-    awful.spawn("rquickshare")
-  end, { description = "Launch quickshare", group = "hotkeys" }),
+  -- awful.key({ modkey }, "q", function()
+  --   awful.spawn("rquickshare")
+  -- end, { description = "Launch quickshare", group = "hotkeys" }),
   awful.key({ modkey }, "v", function()
     awful.spawn("code")
   end, { description = "Launch VSCode", group = "hotkeys" }),
-  awful.key({ modkey }, "e", function()
-    awful.spawn("kcolorchooser")
-  end, { description = "Launch kcolor", group = "hotkeys" }),
   awful.key({ modkey }, "b", function()
     awful.spawn("brave")
   end, { description = "Launch brave", group = "awesome" }),
@@ -358,7 +352,7 @@ globalkeys = my_table.join(
   awful.key({ modkey }, "r", function() -- Mod1 = Alt key
     awful.spawn.with_shell("pkill polybar && $HOME/.config/polybar/lauch.sh &")
   end),
-  awful.key({ modkey, "Shift" }, "c", function() -- Mod1 = Alt key
+  awful.key({ modkey, "Shift" }, "q", function() -- Mod1 = Alt key
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/KillActive_process.sh &")
   end),
   awful.key({ modkey, "Shift" }, "space", function() -- Mod1 = Alt key
@@ -439,19 +433,6 @@ globalkeys = my_table.join(
   end, { description = "Focus right", group = "client" }),
 
   -- Layout manipulation
-  awful.key({ modkey, "Shift" }, "j", function()
-    awful.client.swap.byidx(1)
-  end, { description = "swap with next client by index", group = "client" }),
-  awful.key({ modkey, "Shift" }, "k", function()
-    awful.client.swap.byidx(-1)
-  end, { description = "swap with previous client by index", group = "client" }),
-  awful.key({ modkey }, ".", function()
-    awful.screen.focus_relative(1)
-  end, { description = "focus the next screen", group = "screen" }),
-  awful.key({ modkey }, ",", function()
-    awful.screen.focus_relative(-1)
-  end, { description = "focus the previous screen", group = "screen" }),
-  awful.key({ modkey }, "u", awful.client.urgent.jumpto, { description = "jump to urgent client", group = "client" }),
   awful.key({ ctrlkey }, "Tab", function()
     awful.client.focus.history.previous()
     if client.focus then
@@ -500,20 +481,8 @@ globalkeys = my_table.join(
   -- Dropdown application
   awful.key({ modkey }, "F12", function()
     awful.screen.focused().quake:toggle()
-  end, { description = "dropdown application", group = "super" }),
+  end, { description = "dropdown application", group = "super" })
 
-  -- Copy clipboard to primary (gtk to terminals)
-  awful.key({ modkey }, "v", function()
-    awful.spawn.with_shell("xsel -b | xsel")
-  end, { description = "copy gtk to terminal", group = "hotkeys" }),
-  awful.key({ altkey, "Shift" }, "x", function()
-    awful.prompt.run({
-      prompt = "Run Lua code: ",
-      textbox = awful.screen.focused().mypromptbox.widget,
-      exe_callback = awful.util.eval,
-      history_path = awful.util.get_cache_dir() .. "/history_eval",
-    })
-  end, { description = "lua execute prompt", group = "awesome" })
   --]]
 )
 
@@ -707,19 +676,16 @@ clientkeys = my_table.join(
       set_wallpaper(c.screen)
     end
   end, { description = "toggle fullscreen", group = "client" }),
-  awful.key({ modkey }, "c", function(c)
+  awful.key({ modkey }, "q", function(c)
     c:kill()
   end, { description = "close", group = "hotkeys" }),
-  awful.key({ modkey }, "t", awful.client.floating.toggle, { description = "toggle floating", group = "client" }),
+  awful.key({ modkey }, "p", awful.client.floating.toggle, { description = "toggle floating", group = "client" }),
   awful.key({ altkey, ctrlkey }, "Return", function(c)
     c:swap(awful.client.getmaster())
   end, { description = "move to master", group = "client" }),
   awful.key({ modkey, "Shift" }, "t", function(c)
     c.ontop = not c.ontop
   end, { description = "toggle keep on top", group = "client" }),
-  awful.key({ modkey }, "o", function(c)
-    c:move_to_screen()
-  end, { description = "move to screen", group = "client" }),
   awful.key({ modkey }, "m", function(c)
     -- if it's fullscreen, do nothing
     if c.fullscreen then
@@ -735,7 +701,7 @@ clientkeys = my_table.join(
 -- Bind tags to shortcut's
 -- Define letter shortcuts for workspaces 1, 2, and 3
 
-local letterKeys = { "i", "o", "p" }
+local letterKeys = { "t", "n", "s" }
 
 for i = 1, 9 do
   -- only show #1 and #9 in the shortcut help
