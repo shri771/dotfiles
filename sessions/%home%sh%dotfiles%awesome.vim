@@ -13,14 +13,14 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +605 rc.lua
-badd +18 lua/autostart.lua
+badd +1146 rc.lua
+badd +0 lua/autostart.lua
 argglobal
 %argdel
 $argadd rc.lua
-edit rc.lua
+edit lua/autostart.lua
 argglobal
-balt lua/autostart.lua
+balt rc.lua
 setlocal foldmethod=manual
 setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 setlocal foldmarker={{{,}}}
@@ -31,12 +31,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 605 - ((21 * winheight(0) + 19) / 39)
+let s:l = 18 - ((14 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 605
-normal! 0
+keepjumps 18
+normal! 065|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

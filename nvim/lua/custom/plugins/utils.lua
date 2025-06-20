@@ -1,11 +1,30 @@
 return {
 
   {
+    -- Auto-pairs & HTML tag completion
     "windwp/nvim-autopairs",
     event = "InsertEnter",
-    config = true,
-    -- use opts = {} for passing setup options
-    -- this is equivalent to setup({}) function
+    opts = {
+      check_ts = true, -- enable Treesitter integration
+      enable_tag = true, -- auto-close HTML tags (requires nvim-ts-autotag)
+    },
+  },
+  {
+    -- Treesitter-based auto-tagging for HTML/XML
+    "windwp/nvim-ts-autotag",
+    event = "InsertEnter",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      require("nvim-ts-autotag").setup({
+        enable_close = true, -- Auto close tags
+        enable_rename = true, -- Auto rename paired tags
+        enable_close_on_slash = false, -- Auto close on trailing </
+        -- Override per-filetype if needed:
+        per_filetype = {
+          html = { enable_close = false },
+        },
+      })
+    end,
   },
   {
     "editorconfig/editorconfig-vim",

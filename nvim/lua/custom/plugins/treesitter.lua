@@ -17,6 +17,7 @@ return {
         "regex",
         "python",
         "fish",
+        "sql",
       },
       sync_install = false,
       auto_install = true,

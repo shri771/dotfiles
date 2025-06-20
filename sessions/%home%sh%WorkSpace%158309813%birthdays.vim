@@ -3,20 +3,22 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/dotfiles
+cd ~/WorkSpace/158309813/birthdays
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +1 miss/layouts/cn.session.sh
-badd +0 scripts/other/txc.sh
+badd +33 ~/WorkSpace/158309813/birthdays/app.py
+badd +73 templates/index.html
+badd +50 static/styles.css
+badd +12 ~/WorkSpace/158309813/birthdays/templates/error.html
 argglobal
 %argdel
-$argadd miss/layouts/cn.session.sh
-edit scripts/other/txc.sh
+$argadd .
+edit ~/WorkSpace/158309813/birthdays/app.py
 argglobal
-balt miss/layouts/cn.session.sh
+balt templates/index.html
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -27,12 +29,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 27 - ((0 * winheight(0) + 9) / 19)
+let s:l = 22 - ((21 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 27
-normal! 0
+keepjumps 22
+normal! 019|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

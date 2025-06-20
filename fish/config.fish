@@ -493,7 +493,7 @@ alias nxt='playerctl next'
 alias prs='playerctl previous'
 alias up_mirr='sudo reflector --country India --age 12 --protocol https \
   --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy && sudo pacman -Syu'
-
+alias sf='bash $HOME/scripts/terminal/fzf_search.sh'
 
 # Changing "ls" to "eza"
 alias la='eza -al --color=always --group-directories-first' # my preferred listing

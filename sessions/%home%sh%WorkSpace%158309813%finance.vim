@@ -3,20 +3,30 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/dotfiles
+cd ~/WorkSpace/158309813/finance
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +1 miss/layouts/cn.session.sh
-badd +0 scripts/other/txc.sh
+badd +218 ~/WorkSpace/158309813/finance/app.py
+badd +26 templates/layout.html
+badd +1 templates/login.html
+badd +25 ~/WorkSpace/158309813/finance/templates/register.html
+badd +56 helpers.py
+badd +4 templates/quoted.html
+badd +1 templates/quote.html
+badd +17 static/styles.css
+badd +11 ~/WorkSpace/158309813/finance/templates/buy.html
+badd +26 ~/WorkSpace/158309813/finance/templates/index.html
+badd +29 ~/WorkSpace/158309813/finance/templates/sell.html
+badd +28 ~/WorkSpace/158309813/finance/templates/transaction.html
 argglobal
 %argdel
-$argadd miss/layouts/cn.session.sh
-edit scripts/other/txc.sh
+$argadd ./
+edit ~/WorkSpace/158309813/finance/templates/index.html
 argglobal
-balt miss/layouts/cn.session.sh
+balt ~/WorkSpace/158309813/finance/app.py
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -27,12 +37,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 27 - ((0 * winheight(0) + 9) / 19)
+let s:l = 26 - ((25 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 27
-normal! 0
+keepjumps 26
+normal! 014|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

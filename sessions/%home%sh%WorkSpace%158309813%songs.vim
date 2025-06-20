@@ -3,20 +3,31 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/dotfiles
+cd ~/WorkSpace/158309813/songs
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
-set shortmess+=aoO
-badd +1 miss/layouts/cn.session.sh
-badd +0 scripts/other/txc.sh
+if &shortmess =~ 'A'
+  set shortmess=aoOA
+else
+  set shortmess=aoO
+endif
+badd +1 1.sql
+badd +1 2.sql
+badd +1 3.sql
+badd +1 4.sql
+badd +1 5.sql
+badd +1 6.sql
+badd +1 8.sql
+badd +1 7.sql
+badd +1 answers.txt
 argglobal
 %argdel
-$argadd miss/layouts/cn.session.sh
-edit scripts/other/txc.sh
+$argadd 1.sql
+edit 5.sql
 argglobal
-balt miss/layouts/cn.session.sh
+balt 4.sql
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -27,11 +38,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 27 - ((0 * winheight(0) + 9) / 19)
+let s:l = 1 - ((0 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 27
+keepjumps 1
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

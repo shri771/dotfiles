@@ -13,7 +13,7 @@ return {
     vim.keymap.set("n", "<C-n>", function()
       ui.nav_file(2)
     end)
-    vim.keymap.set("n", "<C-s>", function()
+    vim.keymap.set("n", "<C-o>", function()
       ui.nav_file(3)
     end)
   end,

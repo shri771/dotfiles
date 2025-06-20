@@ -15,6 +15,9 @@ SETUVAR --export VISUAL:nvim
 SETUVAR --export XDG_CURRENT_DESKTOP:KDE
 SETUVAR --export XDG_SESSION_TYPE:wayland
 SETUVAR __fish_initialized:3800
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher
+SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:\x237d7d7d
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:brcyan

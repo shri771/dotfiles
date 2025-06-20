@@ -433,12 +433,12 @@ globalkeys = my_table.join(
   end, { description = "Focus right", group = "client" }),
 
   -- Layout manipulation
-  awful.key({ ctrlkey }, "Tab", function()
-    awful.client.focus.history.previous()
-    if client.focus then
-      client.focus:raise()
-    end
-  end, { description = "go back", group = "client" }),
+  -- awful.key({ ctrlkey }, "Tab", function()
+  --   awful.client.focus.history.previous()
+  --   if client.focus then
+  --     client.focus:raise()
+  --   end
+  -- end, { description = "go back", group = "client" }),
 
   -- Resize window by vim motion
   awful.key({ modkey }, "l", function()
@@ -488,6 +488,48 @@ globalkeys = my_table.join(
 
 -- dropdown
 -- Scratchpad
+
+-- 1. your cycle function
+
+local function cycle_maximized_client()
+  local c = client.focus
+  if not c then
+    return
+  end
+
+  if c.maximized then
+    local clients = awful.screen.focused().clients
+    if #clients <= 1 then
+      return
+    end
+
+    -- find index of current
+    local idx
+    for i, cl in ipairs(clients) do
+      if cl == c then
+        idx = i
+        break
+      end
+    end
+
+    local next_idx = (idx % #clients) + 1
+    local nc = clients[next_idx]
+
+    -- un-maximize the old one (keeps it in the tile)
+    c.maximized = false
+    c.floating = false
+
+    -- maximize the new one (still in the tile layout)
+    nc.floating = false
+    nc.maximized = true
+    nc:raise()
+    client.focus = nc
+  else
+    -- if it wasn’t maximized, just maximize it
+    c.maximized = true
+    c:raise()
+  end
+end
 
 local scratchpads = {}
 
@@ -644,7 +686,13 @@ globalkeys = gears.table.join(
   awful.key({}, "XF86AudioPrev", function()
     awful.spawn("playerctl previous")
   end),
-  awful.key({ altkey }, "p", toggle_kdeconnect, { description = "...", group = "scratchpads" })
+  awful.key({ altkey }, "p", toggle_kdeconnect, { description = "...", group = "scratchpads" }),
+  awful.key(
+    { "Control" },
+    "Tab",
+    cycle_maximized_client,
+    { description = "cycle fullscreen clients / toggle fullscreen", group = "client" }
+  )
 )
 
 -- Function to set wallpaper by reading the path from the file
@@ -659,6 +707,17 @@ local function set_wallpaper(s)
   end
 end
 
+-- local wallpaper_path = "~/Pictures/wallpapers/IT_guy.png" -- Replace with the actual path
+--
+-- client.connect_signal("property::maximized", function(c)
+--   if c.class == "kitty" then
+--     if c.maximized then
+--       os.execute("kitten @ set-background-image " .. wallpaper_path .. " --os-window-id " .. c.window)
+--     else
+--       os.execute("kitten @ set-background-image none --os-window-id " .. c.window)
+--     end
+--   end
+-- end)
 -- Set wallpaper for each screen initially
 screen.connect_signal("request::wallpaper", set_wallpaper)
 clientkeys = my_table.join(
@@ -802,7 +861,7 @@ end
 
 -- Resize the window by mouse
 local clientbuttons = gears.table.join(
-  -- left click to focus + raise
+  -- Left click to focus + raise
   awful.button({}, 1, function(c)
     client.focus = c
     c:raise()
@@ -818,7 +877,7 @@ local clientbuttons = gears.table.join(
     awful.mouse.client.resize(c)
   end),
 
-  -- Plain right‐drag to resize (no modifier)
+  -- **Plain right‐drag to resize (no modifier)**
   awful.button({ modkey }, 3, function(c)
     awful.mouse.client.resize(c)
   end)
@@ -833,7 +892,7 @@ awful.rules.rules = {
   {
     rule = {},
     except_any = { -- <<< changed here
-      class = { "Polybar", "scratchkitty" },
+      class = { "Polybar" },
     },
     properties = {
       border_width = beautiful.border_width,
@@ -898,7 +957,7 @@ awful.rules.rules = {
   },
 
   -- Rules to open a app in sepcific Tag
-  { rule = { class = "mpv" }, properties = { tag = awful.screen.focused().tags[5] } },
+  { rule = { class = "vlc" }, properties = { tag = awful.screen.focused().tags[5] } },
   {
     rule = { class = "autokey-qt" },
     properties = { tag = awful.screen.focused().tags[7] },
@@ -973,6 +1032,7 @@ awful.rules.rules = {
   { rule = { class = "Xfce4-settings-manager" }, properties = { floating = false } },
 }
 
+-- bind it: Mod4 + F11
 -- Allow client to switch Workspace
 client.connect_signal("request::activate", function(c, context, hints)
   -- Only handle Brave-browser

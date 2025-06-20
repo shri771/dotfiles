@@ -112,6 +112,7 @@ return {
         gopls = {},
         pyright = {},
         bashls = {}, -- for Bash
+        sqlls = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -152,10 +153,12 @@ return {
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
+        "prettier",
         "stylua", -- Lua formatter
         "black", -- Python formatter
         "isort", -- Python import sorter
         "clang-format",
+        "sql-formatter",
       })
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -197,9 +200,11 @@ return {
       formatters_by_ft = {
         lua = { "stylua" },
         python = { "isort", "black" },
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        html = { "prettier" },
+        javascript = { "prettierd", "prettier" },
         c = { "clang-format" },
         bash = { "shfmt" },
+        sql = { "pg_format" },
       },
       -- Set default options
       default_format_opts = {

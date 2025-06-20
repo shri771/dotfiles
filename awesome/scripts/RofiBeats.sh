@@ -39,7 +39,7 @@ play_local_music() {
 
   # Launch VLC with metadata and random loop
   if command -v vlc &>/dev/null; then
-    mpv --title="My Music Player 🎵" --shuffle --loop=inf "$selected_folder"/*
+    vlc --meta-title "My Music Player 🎵" --random --loop "$selected_folder"/*
   else
     echo "VLC is not installed or not in PATH" >&2
     return 1
@@ -47,7 +47,7 @@ play_local_music() {
 }
 
 # Stop music if VLC is running, otherwise show menu
-pkill mpv && notify-send -u low -i "$ICON_DIR/music.png" "Music stopped" || {
+pkill vlc && notify-send -u low -i "$ICON_DIR/music.png" "Music stopped" || {
   if pidof rofi >/dev/null; then
     pkill rofi
   fi

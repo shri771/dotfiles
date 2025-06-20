@@ -44,7 +44,7 @@ ConfirmOpenManyTerminals=false
 warnAboutRisksBeforeActingAsAdmin=false
 
 [PreviewSettings]
-Plugins=audiothumbnail,blenderthumbnail,comicbookthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs,ffmpegthumbnailer,gdk-pixbuf-thumbnailer
+Plugins=ffmpegthumbnailer,audiothumbnail,comicbookthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail,gdk-pixbuf-thumbnailer
 
 [Search]
 What=Content

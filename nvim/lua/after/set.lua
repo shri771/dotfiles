@@ -23,6 +23,8 @@ end)
 -- Enable break indent
 vim.opt.breakindent = true
 
+vim.g.netrw_browsex_viewer = "brave"
+vim.g.netrw_browsex_browser = "brave"
 -- Save undo history
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.stdpath("config") .. "/undo"
@@ -140,5 +142,12 @@ vim.api.nvim_create_autocmd({ "VimEnter", "FileType" }, {
     -- Remap < and > in Visual mode to reselect after indent
     vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true })
     vim.keymap.set("v", ">", ">gv", { noremap = true, silent = true })
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.sql",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf })
   end,
 })
