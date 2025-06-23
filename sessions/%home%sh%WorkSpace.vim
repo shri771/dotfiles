@@ -3,24 +3,23 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/dotfiles/nvim
+cd ~/WorkSpace
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +4 init.lua
-badd +231 ~/dotfiles/nvim/lua/custom/plugins/lsp.lua
-badd +11 ~/dotfiles/nvim/lua/custom/plugins/utils.lua
-badd +4 ~/dotfiles/nvim/lua/custom/plugins/completion.lua
+badd +11 porjets/credit.go
+badd +24 158309813/credit/credit.c
+badd +16 158309813/sentimental-credit/credit.py
 argglobal
 %argdel
-$argadd init.lua
-edit ~/dotfiles/nvim/lua/custom/plugins/lsp.lua
+$argadd porjets/credit.go
+edit porjets/credit.go
 argglobal
-balt ~/dotfiles/nvim/lua/custom/plugins/completion.lua
+balt 158309813/sentimental-credit/credit.py
 setlocal foldmethod=manual
-setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
+setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
 setlocal foldignore=#
 setlocal foldlevel=0
@@ -29,12 +28,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 231 - ((17 * winheight(0) + 19) / 39)
+let s:l = 11 - ((10 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 231
-normal! 020|
+keepjumps 11
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -48,7 +47,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

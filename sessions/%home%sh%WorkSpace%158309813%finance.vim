@@ -9,24 +9,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +218 ~/WorkSpace/158309813/finance/app.py
-badd +26 templates/layout.html
-badd +1 templates/login.html
-badd +25 ~/WorkSpace/158309813/finance/templates/register.html
-badd +56 helpers.py
-badd +4 templates/quoted.html
-badd +1 templates/quote.html
-badd +17 static/styles.css
-badd +11 ~/WorkSpace/158309813/finance/templates/buy.html
-badd +26 ~/WorkSpace/158309813/finance/templates/index.html
-badd +29 ~/WorkSpace/158309813/finance/templates/sell.html
-badd +28 ~/WorkSpace/158309813/finance/templates/transaction.html
+badd +220 app.py
+badd +7 helpers.py
 argglobal
 %argdel
-$argadd ./
-edit ~/WorkSpace/158309813/finance/templates/index.html
+$argadd app.py
+edit app.py
 argglobal
-balt ~/WorkSpace/158309813/finance/app.py
+balt helpers.py
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -37,12 +27,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 26 - ((25 * winheight(0) + 20) / 40)
+let s:l = 220 - ((20 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 26
-normal! 014|
+keepjumps 220
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -56,7 +46,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

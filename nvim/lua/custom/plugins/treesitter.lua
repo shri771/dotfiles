@@ -18,6 +18,7 @@ return {
         "python",
         "fish",
         "sql",
+        "go",
       },
       sync_install = false,
       auto_install = true,

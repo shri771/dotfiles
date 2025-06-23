@@ -3,24 +3,26 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/dotfiles/nvim
+cd ~/WorkSpace/158309813/zen_taskr
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +4 init.lua
-badd +231 ~/dotfiles/nvim/lua/custom/plugins/lsp.lua
-badd +11 ~/dotfiles/nvim/lua/custom/plugins/utils.lua
-badd +4 ~/dotfiles/nvim/lua/custom/plugins/completion.lua
+badd +109 app.py
+badd +45 helpers.py
+badd +8 templates/apology.html
+badd +1 templates/login.html
+badd +1 requirements.txt
+badd +51 templates/register.html
 argglobal
 %argdel
-$argadd init.lua
-edit ~/dotfiles/nvim/lua/custom/plugins/lsp.lua
+$argadd app.py
+edit app.py
 argglobal
-balt ~/dotfiles/nvim/lua/custom/plugins/completion.lua
+balt templates/register.html
 setlocal foldmethod=manual
-setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
+setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
 setlocal foldignore=#
 setlocal foldlevel=0
@@ -29,12 +31,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 231 - ((17 * winheight(0) + 19) / 39)
+let s:l = 109 - ((36 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 231
-normal! 020|
+keepjumps 109
+normal! 046|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

@@ -8,6 +8,7 @@ require("awful.autofocus")
 awful.util.spawn("xprop -root -f _NET_NUMBER_OF_DESKTOPS 32c -set _NET_NUMBER_OF_DESKTOPS 5")
 require("lua.autostart")
 
+-- at the top:
 -- Widget and layout library
 local wibox = require("wibox")
 
@@ -21,6 +22,7 @@ naughty.config.defaults.replaces_id = 1
 
 local lain = require("lain")
 local freedesktop = require("freedesktop")
+local bling = require("bling")
 
 -- Enable hotkeys help widget for VIM and other apps
 --when client with a matching name is opened:
@@ -68,7 +70,6 @@ local modkey = "Mod4"
 local altkey = "Mod1"
 local ctrlkey = "Control"
 local terminal = "kitty"
-local mediaplayer = "mpv"
 
 -- Tags
 awful.util.tagnames = { "   ", "   ", "   ", "   ", "   ", "󰗃 ", " " }
@@ -79,6 +80,7 @@ awful.layout.layouts = {
   awful.layout.suit.floating,
   awful.layout.suit.max,
   awful.layout.suit.magnifier,
+  bling.layout.mstab,
 }
 
 awful.util.taglist_buttons = my_table.join(
@@ -393,6 +395,9 @@ globalkeys = my_table.join(
   awful.key({ altkey }, "f", function()
     awful.spawn("rofi -show drun -modi drun,run,window,filebrowser")
   end, { description = "launch rofi", group = "launcher" }),
+  awful.key({ altkey }, "u", function()
+    awful.spawn("rofi -show drun -modi drun,run,window,filebrowser")
+  end, { description = "launch rofi", group = "launcher" }),
   awful.key({ altkey }, "v", function()
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/ClipManager.sh")
   end, { description = "launch rofi-clip", group = "launcher" }),
@@ -497,6 +502,11 @@ local function cycle_maximized_client()
     return
   end
 
+  -- Don’t touch fullscreen clients
+  if c.fullscreen then
+    return
+  end
+
   if c.maximized then
     local clients = awful.screen.focused().clients
     if #clients <= 1 then
@@ -515,17 +525,16 @@ local function cycle_maximized_client()
     local next_idx = (idx % #clients) + 1
     local nc = clients[next_idx]
 
-    -- un-maximize the old one (keeps it in the tile)
+    -- un-maximize old, maximize new
     c.maximized = false
     c.floating = false
 
-    -- maximize the new one (still in the tile layout)
     nc.floating = false
     nc.maximized = true
     nc:raise()
     client.focus = nc
   else
-    -- if it wasn’t maximized, just maximize it
+    -- wasn’t maximized → maximize it
     c.maximized = true
     c:raise()
   end
@@ -675,8 +684,9 @@ globalkeys = gears.table.join(
   awful.key({ altkey }, "d", toggle_pavcontrol, { description = "...", group = "scratchpads" }),
   awful.key({ altkey }, "g", toggle_resources, { description = "...", group = "scratchpads" }),
   awful.key({ altkey }, "c", toggle_cal, { description = "...", group = "scratchpads" }),
-  awful.key({ altkey }, "w", toggle_clock, { description = "...", group = "scratchpads" }),
-  awful.key({ modkey }, "w", toggle_whatsie, { description = "...", group = "scratchpads" }),
+  awful.key({ altkey }, "o", toggle_cal, { description = "...", group = "scratchpads" }),
+  awful.key({ altkey }, ",", toggle_clock, { description = "...", group = "scratchpads" }),
+  awful.key({ modkey }, ",", toggle_whatsie, { description = "...", group = "scratchpads" }),
   awful.key({}, "XF86AudioPlay", function()
     awful.spawn("playerctl play-pause")
   end),
