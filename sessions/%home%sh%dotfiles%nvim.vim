@@ -10,15 +10,18 @@ endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
 badd +4 init.lua
-badd +231 ~/dotfiles/nvim/lua/custom/plugins/lsp.lua
-badd +11 ~/dotfiles/nvim/lua/custom/plugins/utils.lua
-badd +4 ~/dotfiles/nvim/lua/custom/plugins/completion.lua
+badd +29 lua/custom/plugins/autocompletion.lua
+badd +108 ~/dotfiles/nvim/lua/custom/plugins/lsp.lua
+badd +41 ~/dotfiles/nvim/lua/custom/plugins/utils.lua
+badd +9 lua/custom/plugins/debugger.lua
+badd +111 lua/custom/plugins/telescope.lua
+badd +39 lua/after/set.lua
+badd +30 lua/after/remap.lua
 argglobal
 %argdel
 $argadd init.lua
-edit ~/dotfiles/nvim/lua/custom/plugins/lsp.lua
+edit lua/custom/plugins/telescope.lua
 argglobal
-balt ~/dotfiles/nvim/lua/custom/plugins/completion.lua
 setlocal foldmethod=manual
 setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 setlocal foldmarker={{{,}}}
@@ -29,12 +32,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 231 - ((17 * winheight(0) + 19) / 39)
+let s:l = 111 - ((30 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 231
-normal! 020|
+keepjumps 111
+normal! 04|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

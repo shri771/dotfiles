@@ -9,6 +9,35 @@ return {
       enable_tag = true, -- auto-close HTML tags (requires nvim-ts-autotag)
     },
   },
+
+  {
+    "nvim-lualine/lualine.nvim",
+    event = "VimEnter",
+    dependencies = "nvim-tree/nvim-web-devicons",
+    config = function()
+      require("lualine").setup({
+        sections = {
+          lualine_a = { "mode" },
+          lualine_b = {
+            "branch",
+            "diff",
+            { "diagnostics", sections = { "error", "warn", "info", "hint" } },
+          },
+          lualine_c = { { "filename", path = 0 } },
+          lualine_x = {
+            "searchcount",
+            {
+              "filetype",
+              icon_only = true,
+            },
+          },
+          lualine_y = { "progress" },
+          lualine_z = { "location" },
+        },
+        tabline = {},
+      })
+    end,
+  },
   {
     -- Treesitter-based auto-tagging for HTML/XML
     "windwp/nvim-ts-autotag",
@@ -80,11 +109,11 @@ return {
     config = function()
       local statusline = require("mini.statusline")
       require("mini.ai").setup({ n_lines = 500 })
-      require("mini.surround").setup()
-      statusline.setup({ use_icons = vim.g.have_nerd_font })
-      statusline.section_location = function()
-        return "%2l:%-2v"
-      end
+      -- require("mini.surround").setup()
+      -- statusline.setup({ use_icons = vim.g.have_nerd_font })
+      -- statusline.section_location = function()
+      --   return "%2l:%-2v"
+      -- end
     end,
   },
   -- adds signs
@@ -98,6 +127,26 @@ return {
         topdelete = { text = "‾" },
         changedelete = { text = "~" },
       },
+    },
+  },
+
+  ui = {
+    -- If you are using a Nerd Font: set icons to an empty table which will use the
+    -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
+    icons = vim.g.have_nerd_font and {} or {
+      cmd = "⌘",
+      config = "🛠",
+      event = "📅",
+      ft = "📂",
+      init = "⚙",
+      keys = "🗝",
+      plugin = "🔌",
+      runtime = "💻",
+      require = "🌙",
+      source = "📄",
+      start = "🚀",
+      task = "📌",
+      lazy = "💤 ",
     },
   },
 }

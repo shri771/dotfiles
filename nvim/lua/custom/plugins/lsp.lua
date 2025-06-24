@@ -16,9 +16,11 @@ return {
           },
         },
       },
-      { "j-hui/fidget.nvim", opts = {} },
-      "hrsh7th/cmp-nvim-lsp",
+      -- { "j-hui/fidget.nvim", opts = {} },
+      "saghen/blink.cmp",
     },
+    lazy = true,
+    ft = { "go", "python", "bash", "c", "cpp", "lua", "sql" },
 
     config = function()
       vim.api.nvim_create_autocmd("LspAttach", {
@@ -40,11 +42,6 @@ return {
           map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
           map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
-          -- The following two autocommands are used to highlight references of the
-          -- word under your cursor when your cursor rests there for a little while.
-          --    See `:help CursorHold` for information about when this is executed
-          --
-          -- When you move your cursor, the highlights will be cleared (the second autocommand).
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
             local highlight_augroup = vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
@@ -69,10 +66,6 @@ return {
             })
           end
 
-          -- The following code creates a keymap to toggle inlay hints in your
-          -- code, if the language server you are using supports them
-          --
-          -- This may be unwanted, since they displace some of your code
           if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
             map("<leader>th", function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
@@ -81,47 +74,45 @@ return {
         end,
       })
 
-      -- Change diagnostic symbols in the sign column (gutter)
-      if vim.g.have_nerd_font then
-        local signs = { ERROR = "", WARN = "", INFO = "", HINT = "" }
-        local diagnostic_signs = {}
-        for type, icon in pairs(signs) do
-          diagnostic_signs[vim.diagnostic.severity[type]] = icon
-        end
-        vim.diagnostic.config({ signs = { text = diagnostic_signs } })
-      end
+      -- Diagnostics (vim.diagnostic.Opts)
+      vim.diagnostic.config({
+        severity_sort = true,
+        float = { border = "rounded", source = "if_many" },
+        underline = { severity = vim.diagnostic.severity.ERROR },
+        signs = vim.g.have_nerd_font and {
+          text = {
+            [vim.diagnostic.severity.ERROR] = "󰅚 ",
+            [vim.diagnostic.severity.WARN] = "󰀪 ",
+            [vim.diagnostic.severity.INFO] = "󰋽 ",
+            [vim.diagnostic.severity.HINT] = "󰌶 ",
+          },
+        } or {},
+        virtual_text = {
+          source = "if_many",
+          spacing = 2,
+          format = function(diagnostic)
+            local diagnostic_message = {
+              [vim.diagnostic.severity.ERROR] = diagnostic.message,
+              [vim.diagnostic.severity.WARN] = diagnostic.message,
+              [vim.diagnostic.severity.INFO] = diagnostic.message,
+              [vim.diagnostic.severity.HINT] = diagnostic.message,
+            }
+            return diagnostic_message[diagnostic.severity]
+          end,
+        },
+      })
 
-      -- LSP servers and clients are able to communicate to each other what features they support.
-      --  By default, Neovim doesn't support everything that is in the LSP specification.
-      --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
-      --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+      -- Blink
+      local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-      -- Enable the following language servers
-      --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-      --
-      --  Add any additional override configuration in the following tables. Available keys are:
-      --  - cmd (table): Override the default command used to start the server
-      --  - filetypes (table): Override the default list of associated filetypes for the server
-      --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
-      --  - settings (table): Override the default settings passed when initializing the server.
-      --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+      -- LSPs to install
       local servers = {
-        clangd = {},
-        gopls = {},
-        pyright = {},
+        clangd = {}, -- C
+        gopls = {}, -- Go
+        pyright = {}, -- python
         bashls = {}, -- for Bash
-        sqlls = {},
-        -- rust_analyzer = {},
-        -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-        --
-        -- Some languages (like typescript) have entire language plugins that can be useful:
-        --
-        -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
-        --
-
+        sqlls = {}, -- SQL
+        glint = {},
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -131,27 +122,13 @@ return {
               completion = {
                 callSnippet = "Replace",
               },
-              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
             },
           },
         },
       }
-
-      -- Ensure the servers and tools above are installed
-      --
-      -- To check the current status of installed tools and/or manually install
-      -- other tools, you can run
-      --    :Mason
-      --
-      -- You can press `g?` for help in this menu.
-      --
-      -- `mason` had to be setup earlier: to configure its options see the
-      -- `dependencies` table for `nvim-lspconfig` above.
-      --
-      -- You can add other tools here that you want Mason to install
-      -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
+
+      -- Ensure these are installed by Mason
       vim.list_extend(ensure_installed, {
         "prettier",
         "stylua", -- Lua formatter
@@ -159,6 +136,7 @@ return {
         "isort", -- Python import sorter
         "clang-format",
         "sql-formatter",
+        "goimports",
       })
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -172,199 +150,6 @@ return {
             server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
             require("lspconfig")[server_name].setup(server)
           end,
-        },
-      })
-    end,
-  },
-
-  {
-    "stevearc/conform.nvim",
-    event = { "BufWritePre" },
-    cmd = { "ConformInfo" },
-    keys = {
-      {
-        -- Customize or remove this keymap to your liking
-        "<leader>f",
-        function()
-          require("conform").format({ async = true })
-        end,
-        mode = "",
-        desc = "Format buffer",
-      },
-    },
-    -- This will provide type hinting with LuaLS
-    ---@module "conform"
-    ---@type conform.setupOpts
-    opts = {
-      -- Define your formatters
-      formatters_by_ft = {
-        lua = { "stylua" },
-        python = { "isort", "black" },
-        html = { "prettier" },
-        javascript = { "prettierd", "prettier" },
-        c = { "clang-format" },
-        bash = { "shfmt" },
-        sql = { "pg_format" },
-      },
-      -- Set default options
-      default_format_opts = {
-        lsp_format = "fallback",
-      },
-      -- Set up format-on-save
-      format_on_save = { timeout_ms = 500 },
-      -- Customize formatters
-      formatters = {
-        shfmt = {
-          prepend_args = { "-i", "2" },
-        },
-      },
-    },
-    init = function()
-      -- If you want the formatexpr, here is the place to set it
-      vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
-    end,
-  },
-
-  { -- Autocompletion
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    dependencies = {
-      {
-        "L3MON4D3/LuaSnip",
-        build = (function()
-          -- Build Step is needed for regex support in snippets.
-          -- This step is not supported in many windows environments.
-          -- Remove the below condition to re-enable on windows.
-          if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
-            return
-          end
-          return "make install_jsregexp"
-        end)(),
-        dependencies = {},
-      },
-      "saadparwaiz1/cmp_luasnip",
-
-      -- Adds other completion capabilities.
-      --  nvim-cmp does not ship with all sources by default. They are split
-      --  into multiple repos for maintenance purposes.
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-cmdline",
-      "neovim/nvim-lspconfig",
-      "onsails/lspkind.nvim",
-    },
-    config = function()
-      -- See `:help cmp`wh
-      local cmp = require("cmp")
-      local luasnip = require("luasnip")
-      luasnip.config.setup({})
-
-      cmp.setup({
-        snippet = {
-          expand = function(args)
-            luasnip.lsp_expand(args.body)
-          end,
-        },
-        completion = {
-          autocomplete = { require("cmp").TriggerEvent.TextChanged }, -- auto pop on typing
-          completeopt = "menu,menuone,noinsert",
-        },
-
-        sources = cmp.config.sources({
-          {
-            name = "lazydev",
-            -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
-            group_index = 0,
-          },
-          { name = "nvim_lsp" },
-          { name = "luasnip" },
-          { name = "buffer" },
-          { name = "path" },
-        }),
-        window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
-          scrollbar = false,
-          documentation = { -- ✅ correct place
-            border = "rounded",
-            max_width = 60,
-            max_height = 5,
-          },
-        },
-        mapping = cmp.mapping.preset.insert({
-          -- Select the [n]ext item
-
-          ["<C-n>"] = cmp.mapping.select_next_item(),
-          -- Select the [p]revious item
-          ["<C-p>"] = cmp.mapping.select_prev_item(),
-          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-f>"] = cmp.mapping.scroll_docs(4),
-          ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-          ["<C-Space>"] = cmp.mapping.complete({}),
-          ["<C-l>"] = cmp.mapping(function()
-            if luasnip.expand_or_locally_jumpable() then
-              luasnip.expand_or_jump()
-            end
-          end, { "i", "s" }),
-          ["<C-h>"] = cmp.mapping(function()
-            if luasnip.locally_jumpable(-1) then
-              luasnip.jump(-1)
-            end
-          end, { "i", "s" }),
-        }),
-        -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-        cmp.setup.cmdline(":", {
-          mapping = cmp.mapping.preset.cmdline(),
-          sources = cmp.config.sources({
-            { name = "path" },
-          }, {
-            { name = "cmdline" },
-          }),
-          matching = { disallow_symbol_nonprefix_matching = false },
-        }),
-      })
-      -- === Add your LSP setup here ===
-      local lspconfig = require("lspconfig")
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      local servers = {
-        "bashls",
-        "clangd",
-        "cssls",
-        "dockerls",
-        "glint",
-        "html",
-        "jsonls",
-        "lua_ls",
-        "marksman",
-        "pyright",
-        "sqlls",
-        "ts_ls",
-        "yamlls",
-      }
-
-      for _, name in ipairs(servers) do
-        lspconfig[name].setup({
-          capabilities = capabilities,
-        })
-      end
-      local lspkind = require("lspkind")
-      cmp.setup({
-        formatting = {
-          format = lspkind.cmp_format({
-            mode = "symbol", -- show only symbol annotations
-            maxwidth = {
-              menu = 50,
-              abbr = 50,
-            },
-            ellipsis_char = "...",
-            show_labelDetails = true,
-
-            before = function(entry, vim_item)
-              -- ...
-              return vim_item
-            end,
-          }),
         },
       })
     end,

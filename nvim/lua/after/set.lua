@@ -5,7 +5,6 @@ vim.opt.number = true
 -- vim.opt.shiftwidth = 4
 --  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
--- vim.opt.editorconfig = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
@@ -41,6 +40,8 @@ vim.opt.smartcase = true
 
 -- Keep signcolumn on by default (beside the number bar)
 vim.opt.signcolumn = "yes"
+-- disable the floating search count (v0.9+)
+vim.opt.shortmess:append("S")
 
 -- Decrease update time (in milliseconds)
 vim.opt.updatetime = 250

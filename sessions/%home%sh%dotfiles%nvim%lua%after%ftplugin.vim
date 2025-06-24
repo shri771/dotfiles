@@ -3,21 +3,23 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/WorkSpace
+cd ~/dotfiles/nvim/lua/after/ftplugin
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +19 go.go
-badd +0 158309813/hello.c
+badd +3 lua.lua
+badd +3 ~/dotfiles/nvim/lua/after/ftplugin/go.lua
+badd +3 py.lua
 argglobal
 %argdel
-$argadd go.go
-edit go.go
+$argadd lua.lua
+edit ~/dotfiles/nvim/lua/after/ftplugin/go.lua
 argglobal
+balt py.lua
 setlocal foldmethod=manual
-setlocal foldexpr=0
+setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 setlocal foldmarker={{{,}}}
 setlocal foldignore=#
 setlocal foldlevel=0
@@ -26,12 +28,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 19 - ((18 * winheight(0) + 20) / 40)
+let s:l = 3 - ((2 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 19
-normal! 05|
+keepjumps 3
+normal! 018|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
