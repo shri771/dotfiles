@@ -31,13 +31,13 @@ return {
         -- Skip the confirmation popup for simple operations (:help oil.skip_confirm_for_simple_edits)
         skip_confirm_for_simple_edits = true,
         -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
-        prompt_save_on_select_new_entry = true,
+        prompt_save_on_select_new_entry = false,
         -- Oil will automatically delete hidden buffers after this delay
         cleanup_delay_ms = 2000,
         lsp_file_methods = {
           enabled = true,
           timeout_ms = 1000,
-          autosave_changes = false,
+          autosave_changes = true,
         },
         -- Constrain the cursor to the editable parts of the oil buffer
         constrain_cursor = "editable",

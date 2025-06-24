@@ -180,12 +180,6 @@ awful.util.mymainmenu = freedesktop.menu.build({
 })
 --menubar.utils.terminal = terminal -- Set the Menubar terminal for applications that require it
 
-local soundDir = "/opt/dtos-sounds/" -- The directory that has the sound files
-
-local startupSound = soundDir .. "startup-01.mp3"
-local shutdownSound = soundDir .. "shutdown-01.mp3"
-local dmenuSound = soundDir .. "menu-01.mp3"
-
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", function(s)
   -- Wallpaper
@@ -436,14 +430,6 @@ globalkeys = my_table.join(
       client.focus:raise()
     end
   end, { description = "Focus right", group = "client" }),
-
-  -- Layout manipulation
-  -- awful.key({ ctrlkey }, "Tab", function()
-  --   awful.client.focus.history.previous()
-  --   if client.focus then
-  --     client.focus:raise()
-  --   end
-  -- end, { description = "go back", group = "client" }),
 
   -- Resize window by vim motion
   awful.key({ modkey }, "l", function()

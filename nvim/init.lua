@@ -1,4 +1,4 @@
 vim.g.mapleader = " "
-require("after.set")
+require("after.opt")
 require("custom.lazy")
 require("after.remap")

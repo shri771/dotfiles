@@ -3,22 +3,22 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/dotfiles/nvim
+cd ~/WorkSpace/158309813/dna.bak
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +2 init.lua
-badd +197 ~/dotfiles/nvim/lua/custom/plugins/utils.lua
+badd +2 dna.py
+badd +67 /usr/lib/python3.13/os.py
 argglobal
 %argdel
-$argadd init.lua
-edit ~/dotfiles/nvim/lua/custom/plugins/utils.lua
+$argadd dna.py
+edit /usr/lib/python3.13/os.py
 argglobal
-balt init.lua
+balt dna.py
 setlocal foldmethod=manual
-setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
+setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
 setlocal foldignore=#
 setlocal foldlevel=0
@@ -27,11 +27,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 197 - ((24 * winheight(0) + 20) / 40)
+let s:l = 67 - ((23 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 197
+keepjumps 67
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
