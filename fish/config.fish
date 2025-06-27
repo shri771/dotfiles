@@ -32,10 +32,10 @@ set -x MANPAGER "nvim +Man!"
 # set -x MANPAGER "less"
 
 ### ENABLE VIM KEYBINDINGS ###
-function fish_user_key_bindings
-    # fish_default_key_bindings
-    fish_vi_key_bindings
-end
+# function fish_user_key_bindings
+#     # fish_default_key_bindings
+#     fish_vi_key_bindings
+# end
 ### END OF VI MODE ###
 
 ### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
@@ -45,6 +45,11 @@ set fish_color_command brcyan
 set fish_color_error '#ff6c6b'
 set fish_color_param brcyan
 
+### FORCE EMACS-STYLE KEYBINDS ###
+# function fish_user_key_bindings
+#     # load the default Emacs-style bindings
+#     fish_default_key_bindings
+# end
 ### FUNCTIONS ###
 
 # Functions needed for !! and !$
@@ -600,3 +605,4 @@ test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
 # Created by `pipx` on 2025-02-28 09:09:27
 set PATH $PATH /home/sh/.local/bin
 zoxide init fish | source
+fish_default_key_bindings
