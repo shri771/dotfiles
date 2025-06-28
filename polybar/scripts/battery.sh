@@ -39,7 +39,7 @@ fi
 # Determine output based on status
 case "$status" in
     "Charging")
-        echo "${COLOR} ${capacity}% %{F-}"
+        echo "${COLOR}⚡ ${capacity}% %{F-}"
         ;;
     "Full")
         echo "${COLOR}${icon} Full %{F-}"

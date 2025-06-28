@@ -32,12 +32,20 @@ set -x MANPAGER "nvim +Man!"
 # set -x MANPAGER "less"
 
 ### ENABLE VIM KEYBINDINGS ###
-# function fish_user_key_bindings
-#     # fish_default_key_bindings
-#     fish_vi_key_bindings
-# end
+set -eU fish_key_bindings
+fish_default_key_bindings
+# 2) Define any extra key-bindings in fish_user_key_bindings
+function fish_user_key_bindings
+    bind \cb backward-word
+    bind \cf forward-word
+end
 ### END OF VI MODE ###
-
+function fish_prompt
+    # 1) Send the DECSCUSR=6 → beam cursor
+    printf '\e[6 q'
+    # 2) Call the normal prompt
+    $__fish_default_prompt
+end
 ### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
 set fish_color_normal brcyan
 set fish_color_autosuggestion '#7d7d7d'
@@ -45,12 +53,6 @@ set fish_color_command brcyan
 set fish_color_error '#ff6c6b'
 set fish_color_param brcyan
 
-### FORCE EMACS-STYLE KEYBINDS ###
-# function fish_user_key_bindings
-#     # load the default Emacs-style bindings
-#     fish_default_key_bindings
-# end
-### FUNCTIONS ###
 
 # Functions needed for !! and !$
 function __history_previous_command
@@ -73,7 +75,7 @@ function __history_previous_command_arguments
     end
 end
 
-# The bindings for !! and !$
+# # The bindings for !! and !$
 if [ "$fish_key_bindings" = fish_vi_key_bindings ]
     bind -Minsert ! __history_previous_command
     bind -Minsert '$' __history_previous_command_arguments
@@ -169,32 +171,6 @@ function gph
 end
 
 
-function ups
-    echo "Refreshing Arch Linux mirrors for best performance..."
-    if not reflector --latest 10 --sort rate --protocol https --save ~/mirrorlist
-        echo "Error: Failed to refresh mirrors using reflector" >&2
-        return 1
-    end
-    echo "Mirrors updated successfully. Note: Changes saved to ~/mirrorlist; root privileges are required to apply them."
-
-    echo "Synchronizing package databases (read-only)..."
-    if not pacman -Sy --dbpath ~/.cache/pacman/db
-        echo "Error: Failed to synchronize package databases (read-only)" >&2
-        return 1
-    end
-
-    echo "Checking for security updates (read-only)..."
-    set security_updates (checkupdates | grep -Ei 'linux|kernel|openssl|gpg|glibc|systemd|crypt' | awk '{print $1}')
-    if test (count $security_updates) -eq 0
-        echo "No security updates available."
-        return 0
-    end
-
-    echo "The following security updates are available:"
-    echo $security_updates
-
-    echo "Note: You need root privileges to apply updates. Use 'sudo pacman -S <packages>' to install them."
-end
 
 
 ## Open config in nvim ##
@@ -324,46 +300,6 @@ function ktcn-
 end
 
 
-function sysr
-    if test (count $argv) -eq 0
-        printf "Usage: scr <service1> [service2 ...]\n" >&2
-        return 1
-    end
-
-    sudo systemctl daemon-reload
-    if test $status -ne 0
-        printf "Failed to reload systemd daemon\n" >&2
-        return 1
-    end
-
-    for service in $argv
-        printf "Restarting %s...\n" $service
-        sudo systemctl restart $service
-        if test $status -ne 0
-            printf "Failed to restart service: %s\n" $service >&2
-        else
-            printf "Service %s restarted successfully.\n" $service
-        end
-    end
-end
-
-# Function to Show Status of systemd se or tim
-function syss
-    if test (count $argv) -eq 0
-        printf "Usage: scs <service-or-timer> [more...]\n" >&2
-        return 1
-    end
-
-    for unit in $argv
-        if not string match -q -- "*.service" "$unit" && not string match -q -- "*.timer" "$unit"
-            printf "Error: '%s' is not a valid .service or .timer\n" "$unit" >&2
-            continue
-        end
-
-        printf "\n--- Status of %s ---\n" "$unit"
-        systemctl status "$unit" --no-pager
-    end
-end
 
 # Function to change CPU governor
 function cpm --description "Change CPU power mode"

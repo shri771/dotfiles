@@ -3,7 +3,7 @@
 
 @define-color foreground #D3DDDB;
 @define-color background rgba(20,21,23,0.25);
-@define-color cursor #757E80;
+@define-color cursor #D3DDDB;
 
 @define-color color0 #3B3D3F;
 @define-color color1 #0B1116;

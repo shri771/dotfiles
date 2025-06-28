@@ -8,19 +8,16 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
-if &shortmess =~ 'A'
-  set shortmess=aoOA
-else
-  set shortmess=aoO
-endif
-badd +17 UserConfigs/Monitors.conf
-badd +0 ~/dotfiles/hypr/check_temp.txt
+set shortmess+=aoO
+badd +1 UserScripts/WallpaperSelect.sh
+badd +11 scripts/Refresh.sh
+badd +35 scripts/WallustSwww.sh
 argglobal
 %argdel
 $argadd .
-edit ~/dotfiles/hypr/check_temp.txt
+edit scripts/WallustSwww.sh
 argglobal
-balt UserConfigs/Monitors.conf
+balt UserScripts/WallpaperSelect.sh
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -31,12 +28,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 8 - ((7 * winheight(0) + 19) / 39)
+let s:l = 35 - ((32 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 8
-normal! 0
+keepjumps 35
+normal! 02|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

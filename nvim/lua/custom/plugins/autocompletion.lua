@@ -2,6 +2,7 @@ return {
   { -- Autocompletion
     "saghen/blink.cmp",
     event = "InsertEnter",
+    version = "1.*",
     build = "make",
     dependencies = {
       -- Snippet Engine
@@ -14,9 +15,6 @@ return {
           return "make install_jsregexp"
         end)(),
         dependencies = {
-          -- `friendly-snippets` contains a variety of premade snippets.
-          --    See the README about individual language/framework/plugin snippets:
-          --    https://github.com/rafamadriz/friendly-snippets
           {
             "rafamadriz/friendly-snippets",
             config = function()
@@ -43,9 +41,12 @@ return {
         enabled = true,
         completion = {
           menu = { auto_show = true },
+          list = {
+            selection = { preselect = true, auto_insert = true },
+          },
         },
       },
-      signature = { enabled = true },
+      signature = { enabled = false },
       appearance = {
         nerd_font_variant = "mono",
       },
@@ -54,13 +55,14 @@ return {
         menu = {
           draw = {
             padding = { 0, 1 }, -- padding only on right side
+            treesitter = { "lsp" },
+            columns = { { "kind_icon", "label", "label_description", gap = 1 }, { "kind" } },
             components = {
               kind_icon = {
                 text = function(ctx)
                   local kind_icon, _, _ = require("mini.icons").get("lsp", ctx.kind)
                   return kind_icon
                 end,
-                -- (optional) use highlights from mini.icons
                 highlight = function(ctx)
                   local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
                   return hl
@@ -80,8 +82,11 @@ return {
       },
 
       sources = {
-        default = { "lsp", "path", "snippets", "lazydev", "buffer" },
+        default = { "snippets", "buffer", "lsp", "lazydev", "path" },
         providers = {
+          buffer = {
+            module = "blink.cmp.sources.buffer",
+          },
           lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
           lsp = {
             name = "LSP",
@@ -106,17 +111,9 @@ return {
 
       snippets = { preset = "luasnip" },
 
-      fuzzy = { implementation = "lua" },
+      fuzzy = { implementation = "rust" },
 
       -- Shows a signature help window while you type arguments for a function
-    },
-    fuzzy = {
-      sorts = {
-        "exact",
-        -- defaults
-        "score",
-        "sort_text",
-      },
     },
   },
 }

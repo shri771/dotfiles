@@ -9,12 +9,12 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +2 init.lua
-badd +197 ~/dotfiles/nvim/lua/custom/plugins/utils.lua
+badd +1 init.lua
+badd +90 lua/custom/plugins/autocompletion.lua
 argglobal
 %argdel
 $argadd init.lua
-edit ~/dotfiles/nvim/lua/custom/plugins/utils.lua
+edit lua/custom/plugins/autocompletion.lua
 argglobal
 balt init.lua
 setlocal foldmethod=manual
@@ -27,12 +27,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 197 - ((24 * winheight(0) + 20) / 40)
+let s:l = 90 - ((16 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 197
-normal! 0
+keepjumps 90
+normal! 078|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

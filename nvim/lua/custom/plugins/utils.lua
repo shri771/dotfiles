@@ -1,7 +1,7 @@
 return {
 
   {
-    -- Auto-pairs & HTML tag completion
+    -- Auto-pairs
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     opts = {
@@ -37,6 +37,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VimEnter",
+    priority = 1000, -- needs to be loaded in first
     dependencies = "nvim-tree/nvim-web-devicons",
     config = function()
       require("lualine").setup({
@@ -132,7 +133,6 @@ return {
     "echasnovski/mini.nvim",
     lazy = false,
     config = function()
-      local statusline = require("mini.statusline")
       require("mini.ai").setup({ n_lines = 500 })
       -- require("mini.surround").setup()
       -- statusline.setup({ use_icons = vim.g.have_nerd_font })

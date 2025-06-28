@@ -4,7 +4,7 @@
 @define-color text #D3DDDB;
 @define-color background rgba(20,21,23,0.25);
 @define-color background-alt #141517;
-@define-color cursor #757E80;
+@define-color cursor #D3DDDB;
 @define-color hovered #3F5D62;
 @define-color button-background #617673;
 @define-color button-active #11171C;
