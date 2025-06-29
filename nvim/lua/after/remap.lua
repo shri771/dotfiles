@@ -1,7 +1,5 @@
--- move slected text in Visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '< -2<CR>gv=gv")
-
 vim.keymap.set("v", "y", "y`>", { noremap = true, silent = true, desc = "Yank and go to end" })
 
 vim.keymap.set("n", "J", "mzJ`z")
@@ -11,12 +9,13 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "=ap", "ma=ap'a")
 vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
-vim.keymap.set("n", "<leader>m", "<cmd>Mason<cr>")
+vim.keymap.set("n", "<leader>ml", "<cmd>Mason<cr>")
 vim.keymap.set("n", "<leader>mm", "<cmd>Lazy<cr>")
 
+vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
+-- Quickfix
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
@@ -24,22 +23,22 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>rg", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>rr", [[:%s/\<<C-r><C-w>\>//gIc<Left><Left><Left><Left>]])
+vim.keymap.set("n", "<leader>-", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- undotree --
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+local opts = { noremap = true, silent = true }
 
--- -- Clipborad --
--- vim.keymap.set("n", "p", ":put<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", ";", ",", opts)
+vim.api.nvim_set_keymap("n", ",", ";", opts)
+-- visual mode
+vim.api.nvim_set_keymap("v", ";", ",", opts)
+vim.api.nvim_set_keymap("v", ",", ";", opts)
 
--- vim.keymap.set("n", "<leader><leader>", function()
---   vim.cmd("so")
--- end)
--- Debugger --
--- make sure dap is required up top:
 local dap = require("dap")
 
--- Formattinp Error
-vim.keymap.set("n", "<leader>-", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("n", "c", '"_c', { noremap = true })
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Map <leader>i in normal mode to :ConformInfo
 vim.keymap.set("n", "<leader>e", function()
