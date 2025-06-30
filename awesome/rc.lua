@@ -260,7 +260,7 @@ local function notify_brightness()
       -- Select icon based on percentage
       local icon = icon_dir .. "/brightness-100.png"
       if pct < 30 then
-        icon = icon_dir .. "/brightness-30.png"
+        icon = icon_dir .. "/brightness-20.png"
       elseif pct < 70 then
         icon = icon_dir .. "/brightness-60.png"
       end
@@ -1157,16 +1157,32 @@ awful.screen.padding(awful.screen.focused(), { left = 1, right = 1, top = 2, bot
 
 -- Notification --
 
--- Set default notification settings
+-- Colors
+-- Tokyo Night palette (you can also pull these from your theme file)
+local bg = "#24283b"
+local fg = "#c0caf5"
+local accent = "#7aa2f7"
+
 naughty.config.defaults.timeout = 3
 naughty.config.defaults.margin = 8
 naughty.config.defaults.spacing = 6
 naughty.config.defaults.icon_size = 35
+naughty.config.defaults.max_height = 100
 naughty.config.defaults.position = "top_middle"
 naughty.config.defaults.shape = gears.shape.rounded_rect
 naughty.config.defaults.screen = awful.screen.focused()
 naughty.config.padding = 20 -- padding for notifications
 beautiful.notification_opacity = 0.95
+naughty.config.presets.normal.bg = bg
+naughty.config.presets.normal.fg = fg
+naughty.config.presets.normal.border_color = accent
+
+-- make sure any built‑in presets also get overridden
+for _, preset in pairs(naughty.config.presets) do
+  preset.bg = bg
+  preset.fg = fg
+  preset.border_color = accent
+end
 
 -- Wrap naughty.notify so each new notif nukes the last one
 do
