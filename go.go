@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 	"testing"
 )
 
@@ -56,6 +57,8 @@ Pass
 		fmt.Printf("%d passed, %d failed, %d skipped\n", passCount, failCount, skipped)
 	} else {
 		fmt.Printf("%d passed, %d failed\n", passCount, failCount)
+		boll := strings.Contains(ethu, what)
+		fmt.Println(boll)
 	}
 
 }

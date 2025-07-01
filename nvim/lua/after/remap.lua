@@ -44,12 +44,7 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<leader>e", function()
   vim.cmd("ConformInfo")
 end, { desc = "Show ConformInfo", silent = true })
-vim.keymap.set("n", "<leader>w", function()
-  vim.cmd("write")
-end, { desc = "Save buffer", silent = true })
-vim.keymap.set("n", "<leader>x", function()
-  vim.cmd("x")
-end, { desc = "Save and exit ", silent = true })
-vim.keymap.set("n", "<leader>!", function()
-  vim.cmd("q!")
-end, { desc = "Save buffer", silent = true })
+vim.keymap.set("n", "<leader>w", "<cmd>write<CR>", {
+  desc = "Save buffer",
+  silent = true,
+})

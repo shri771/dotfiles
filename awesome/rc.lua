@@ -405,6 +405,18 @@ globalkeys = my_table.join(
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/RofiBeats.sh")
   end, { description = "launch rofi-beats", group = "launcher" }),
 
+  awful.key({ modkey }, "e", function()
+    naughty.destroy_all_notifications()
+  end, { description = "clear all notifications", group = "awesome" }),
+
+  awful.key({ modkey }, "$", function()
+    local screen = awful.screen.focused()
+    local tag = screen.tags[4]
+    if tag then
+      tag:view_only()
+    end
+  end, { description = "view tag 4", group = "tag" }),
+
   -- By direction client focus
   awful.key({ altkey }, "j", function()
     awful.client.focus.global_bydirection("down")
