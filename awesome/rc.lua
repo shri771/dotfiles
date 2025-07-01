@@ -1185,22 +1185,6 @@ for _, preset in pairs(naughty.config.presets) do
   preset.border_color = accent
 end
 
--- Wrap naughty.notify so each new notif nukes the last one
-do
-  local orig_notify = naughty.notify
-  local last_id = nil
-
-  naughty.notify = function(opts)
-    -- force replacement of the last notification
-    opts.replaces_id = last_id
-    -- fire off the real notify; it returns the notif object
-    local n = orig_notify(opts)
-    -- stash its ID for next time
-    last_id = n.id
-    return n
-  end
-end
-
 -- block Notification
 local blocked_apps = {
   ["blueman"] = true,
@@ -1209,13 +1193,31 @@ local blocked_apps = {
 }
 
 local orig_notify = naughty.notify
-naughty.notify = function(args)
-  if args.app_name then
-    local app = args.app_name:lower()
-    if blocked_apps[app] then
-      return
-    end
+local notification_timer = nil
+local last_id = nil
+
+naughty.notify = function(opts)
+  -- block notifications from certain apps
+  if opts.app_name and blocked_apps[opts.app_name:lower()] then
+    return
   end
 
-  return orig_notify(args)
+  -- force replacement of the last notification
+  opts.replaces_id = last_id
+  -- fire off the real notify; it returns the notif object
+  local n = orig_notify(opts)
+  -- stash its ID for next time
+  last_id = n.id
+
+  -- Add a timer to clear all notifications after 5 seconds
+  if notification_timer then
+    notification_timer:stop()
+  end
+  notification_timer = gears.timer.start_new(5, function()
+    naughty.destroy_all_notifications()
+    notification_timer = nil
+    return false -- Stop the timer from restarting
+  end)
+
+  return n
 end
