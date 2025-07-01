@@ -5,6 +5,7 @@ return {
     event = "VimEnter",
     branch = "0.1.x",
     dependencies = {
+      "mrloop/telescope-git-branch.nvim",
       "nvim-lua/plenary.nvim",
       {
         "nvim-telescope/telescope-fzf-native.nvim",
@@ -72,6 +73,7 @@ return {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown(),
           },
+          git_branch = {},
         },
       })
 

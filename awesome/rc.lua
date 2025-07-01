@@ -715,17 +715,6 @@ local function set_wallpaper(s)
   end
 end
 
--- local wallpaper_path = "~/Pictures/wallpapers/IT_guy.png" -- Replace with the actual path
---
--- client.connect_signal("property::maximized", function(c)
---   if c.class == "kitty" then
---     if c.maximized then
---       os.execute("kitten @ set-background-image " .. wallpaper_path .. " --os-window-id " .. c.window)
---     else
---       os.execute("kitten @ set-background-image none --os-window-id " .. c.window)
---     end
---   end
--- end)
 -- Set wallpaper for each screen initially
 screen.connect_signal("request::wallpaper", set_wallpaper)
 clientkeys = my_table.join(

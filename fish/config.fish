@@ -2,20 +2,17 @@
 # First line removes the path; second line sets it.  Without the first line,
 # your path gets massive and fish becomes very slow.
 set -e fish_user_paths
-set -U fish_user_paths $HOME/.bin $HOME/.local/bin $HOME/.config/emacs/bin $HOME/Applications /var/lib/flatpak/exports/bin/ $fish_user_paths
+# set -U fish_user_paths $HOME/.bin $HOME/.local/bin $HOME/.config/emacs/bin $HOME/Applications /var/lib/flatpak/exports/bin/ $fish_user_paths
 
 ### EXPORT ###
 set -U fish_greeting ""
 set TERM xterm-256color # Sets the terminal type
- set -Ux EDITOR nvim
+set -Ux EDITOR nvim
 set -Ux VISUAL nvim
 set -gx PATH $HOME/.local/bin $PATH
 set -Ux TERM xterm-256color
 set -U LC_CTYPE en_US.UTF-8
 eval ($HOME/.config/tmux/plugins/tmuxifier/bin/tmuxifier init - fish)
-export XCURSOR_THEME=Bibata-Modern-Classic
-export XCURSOR_SIZE=22
-set -Ux QT_ICON_THEME WhiteSur-dark
 set -Ux PERL5LIB /usr/share/perl5/vendor_perl
 set -Ux BORG_PASSCOMMAND "cat $HOME/.borg_passphrase"
 ##local
