@@ -22,7 +22,6 @@ naughty.config.defaults.replaces_id = 1
 
 local lain = require("lain")
 local freedesktop = require("freedesktop")
-local bling = require("bling")
 
 -- Enable hotkeys help widget for VIM and other apps
 --when client with a matching name is opened:
@@ -80,7 +79,6 @@ awful.layout.layouts = {
   awful.layout.suit.floating,
   awful.layout.suit.max,
   awful.layout.suit.magnifier,
-  bling.layout.mstab,
 }
 
 awful.util.taglist_buttons = my_table.join(

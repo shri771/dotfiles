@@ -48,7 +48,7 @@ return {
         completion = {
           menu = { auto_show = true },
           list = {
-            selection = { preselect = true, auto_insert = true },
+            selection = { preselect = false, auto_insert = true },
           },
         },
       },
@@ -58,6 +58,7 @@ return {
       },
 
       completion = {
+        ghost_text = { enabled = false },
         menu = {
           draw = {
             padding = { 0, 1 }, -- padding only on right side
@@ -66,10 +67,17 @@ return {
             components = {
               kind_icon = {
                 text = function(ctx)
+                  if ctx.item.kind == require("blink.cmp.types").CompletionItemKind.Snippet then
+                    return " "
+                  end
                   local kind_icon, _, _ = require("mini.icons").get("lsp", ctx.kind)
                   return kind_icon
                 end,
                 highlight = function(ctx)
+                  if ctx.item.kind == require("blink.cmp.types").CompletionItemKind.Snippet then
+                    vim.api.nvim_set_hl(0, "BlinkCmpKindSnippet", { fg = "#f4ff21" })
+                    return "BlinkCmpKindSnippet"
+                  end
                   local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
                   return hl
                 end,
