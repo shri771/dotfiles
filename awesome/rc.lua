@@ -326,20 +326,28 @@ globalkeys = my_table.join(
   -- awful.key({ modkey }, "q", function()
   --   awful.spawn("rquickshare")
   -- end, { description = "Launch quickshare", group = "hotkeys" }),
-  awful.key({ modkey }, "v", function()
-    awful.spawn("code")
-  end, { description = "Launch VSCode", group = "hotkeys" }),
   awful.key({ modkey }, "b", function()
     awful.spawn("brave")
   end, { description = "Launch brave", group = "awesome" }),
-  awful.key({ modkey, "Shift" }, "r", awesome.restart, { description = "Reload awesome", group = "awesome" }),
-  awful.key({ modkey, "Shift" }, "q", function()
-    awful.spawn.with_shell("dm-logout")
-  end, { description = "Quit awesome", group = "awesome" }),
-  --awful.key({ modkey }, "s", hotkeys_popup.show_help, { description = "Show help", group = "awesome" }),
-  awful.key({ modkey, "Shift" }, "w", function()
-    awful.util.mymainmenu:show()
-  end, { description = "Show main menu", group = "awesome" }),
+  -- NormCap screenshot and OCR (Mod + A)
+  awful.key({ modkey }, "a", function()
+    awful.util.spawn("normcap -c '#aa55ff' -t False")
+  end, { description = "OCR screenshot (no text mode)", group = "custom" }),
+
+  -- Rofi launcher's
+  awful.key({ altkey }, "f", function()
+    awful.spawn("rofi -show drun -modi drun,run,window,filebrowser")
+  end, { description = "launch rofi", group = "launcher" }),
+  awful.key({ altkey }, "u", function()
+    awful.spawn("rofi -show drun -modi drun,run,window,filebrowser")
+  end, { description = "launch rofi", group = "launcher" }),
+  awful.key({ altkey }, "s", function()
+    awful.spawn.with_shell("$HOME/.config/eww/dashboard/launch_dashboard")
+  end, { description = "launch rofi-clip", group = "launcher" }),
+
+  -------------------------------------------------
+  -- Scripts
+  -------------------------------------------------
   awful.key({ altkey }, "e", function() -- Mod1 = Alt key
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/toggle_polybar.sh")
   end),
@@ -352,49 +360,8 @@ globalkeys = my_table.join(
   awful.key({ modkey, "Shift" }, "space", function() -- Mod1 = Alt key
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/toggle_layout.sh ")
   end),
-  awful.key({ altkey, "Control" }, "p", function()
-    awful.spawn.with_shell("wlogout")
-  end),
-  awful.key({ altkey, "Control" }, "Delete", function()
-    awful.spawn.with_shell("awesome-client 'awesome.quit()'")
-  end),
-  awful.key({ altkey }, "Left", function()
-    awful.tag.viewprev()
-  end, { description = "view previous workspace", group = "tag" }),
-  awful.key({ altkey }, "Right", function()
-    awful.tag.viewnext()
-  end, { description = "view next workspace", group = "tag" }),
-  -- NormCap screenshot and OCR (Mod + A)
-  awful.key({ modkey }, "a", function()
-    awful.util.spawn("normcap -c '#aa55ff' -t False")
-  end, { description = "OCR screenshot (no text mode)", group = "custom" }),
-  awful.key(
-    {}, -- no modifiers
-    "XF86TouchpadToggle", -- or whatever keysym `xev` showed you
-    function()
-      -- directly call notify-send without shell quoting headaches
-      awful.spawn.with_shell("/usr/bin/notify-send", {
-        "--app-name=System",
-        "--icon=" .. os.getenv("HOME") .. "/.config/awesome/icons/touchpad.svg",
-        "System",
-        "Touchpad Disabled",
-      })
-    end,
-    { description = "notify touchpad disabled", group = "custom" }
-  ),
-
-  -- Rofi launcher's
-  awful.key({ altkey }, "f", function()
-    awful.spawn("rofi -show drun -modi drun,run,window,filebrowser")
-  end, { description = "launch rofi", group = "launcher" }),
-  awful.key({ altkey }, "u", function()
-    awful.spawn("rofi -show drun -modi drun,run,window,filebrowser")
-  end, { description = "launch rofi", group = "launcher" }),
   awful.key({ altkey }, "v", function()
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/ClipManager.sh")
-  end, { description = "launch rofi-clip", group = "launcher" }),
-  awful.key({ altkey }, "s", function()
-    awful.spawn.with_shell("$HOME/.config/eww/dashboard/launch_dashboard")
   end, { description = "launch rofi-clip", group = "launcher" }),
   awful.key({ modkey }, "x", function()
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/WallpaperSelect.sh")
@@ -403,10 +370,9 @@ globalkeys = my_table.join(
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/RofiBeats.sh")
   end, { description = "launch rofi-beats", group = "launcher" }),
 
-  awful.key({ modkey }, "e", function()
-    naughty.destroy_all_notifications()
-  end, { description = "clear all notifications", group = "awesome" }),
-
+  -------------------------------------------------
+  -- Workspace
+  -------------------------------------------------
   awful.key({ modkey }, "$", function()
     local screen = awful.screen.focused()
     local tag = screen.tags[4]
@@ -415,83 +381,96 @@ globalkeys = my_table.join(
     end
   end, { description = "view tag 4", group = "tag" }),
 
+  awful.key({ altkey }, "Left", function()
+    awful.tag.viewprev()
+  end, { description = "view previous workspace", group = "workspace" }),
+  awful.key({ altkey }, "Right", function()
+    awful.tag.viewnext()
+  end, { description = "view next workspace", group = "workspace" }),
+
   -- By direction client focus
   awful.key({ altkey }, "j", function()
     awful.client.focus.global_bydirection("down")
     if client.focus then
       client.focus:raise()
     end
-  end, { description = "Focus down", group = "client" }),
+  end, { description = "Focus down", group = "workspace" }),
   awful.key({ altkey }, "k", function()
     awful.client.focus.global_bydirection("up")
     if client.focus then
       client.focus:raise()
     end
-  end, { description = "Focus up", group = "client" }),
+  end, { description = "Focus up", group = "workspace" }),
   awful.key({ altkey }, "h", function()
     awful.client.focus.global_bydirection("left")
     if client.focus then
       client.focus:raise()
     end
-  end, { description = "Focus left", group = "client" }),
+  end, { description = "Focus left", group = "workspace" }),
   awful.key({ altkey }, "l", function()
     awful.client.focus.global_bydirection("right")
     if client.focus then
       client.focus:raise()
     end
-  end, { description = "Focus right", group = "client" }),
+  end, { description = "Focus right", group = "workspace" }),
 
   -- Resize window by vim motion
   awful.key({ modkey }, "l", function()
     awful.tag.incmwfact(0.05)
-  end, { description = "increase master width factor", group = "layout" }),
+  end, { description = "increase master width factor", group = "workspace" }),
   awful.key({ modkey }, "h", function()
     awful.tag.incmwfact(-0.05)
-  end, { description = "decrease master width factor", group = "layout" }),
+  end, { description = "decrease master width factor", group = "workspace" }),
   awful.key({ modkey }, "k", function()
     awful.client.incwfact(0.05)
-  end, { description = "increase vertical factor", group = "layout" }),
+  end, { description = "increase vertical factor", group = "workspace" }),
   awful.key({ modkey }, "j", function()
     awful.client.incwfact(-0.05)
-  end, { description = "decrease vertical factor", group = "layout" }),
+  end, { description = "decrease vertical factor", group = "workspace" }),
 
   -- Change layout
   awful.key({ modkey, "Shift" }, "Up", function()
     awful.tag.incnmaster(1, nil, true)
-  end, { description = "increase the number of master clients", group = "layout" }),
+  end, { description = "increase the number of master clients", group = "workspace" }),
   awful.key({ modkey, "Shift" }, "Down", function()
     awful.tag.incnmaster(-1, nil, true)
-  end, { description = "decrease the number of master clients", group = "layout" }),
+  end, { description = "decrease the number of master clients", group = "workspace" }),
   awful.key({ modkey, "Shift" }, "h", function()
     awful.tag.incnmaster(1, nil, true)
-  end, { description = "increase the number of master clients by ", group = "layout" }),
+  end, { description = "increase the number of master clients by ", group = "workspace" }),
   awful.key({ modkey, "Shift" }, "l", function()
     awful.tag.incnmaster(-1, nil, true)
-  end, { description = "decrease the number of master clients by", group = "layout" }),
+  end, { description = "decrease the number of master clients by", group = "workspace" }),
 
   awful.key({ modkey, ctrlkey }, "h", function()
     awful.tag.incncol(1, nil, true)
-  end, { description = "increase the number of columns", group = "layout" }),
+  end, { description = "increase the number of columns", group = "workspace" }),
   awful.key({ modkey, ctrlkey }, "l", function()
     awful.tag.incncol(-1, nil, true)
-  end, { description = "decrease the number of columns", group = "layout" }),
+  end, { description = "decrease the number of columns", group = "workspace" }),
   awful.key({ modkey, "Shift" }, "Tab", function()
     awful.layout.inc(-1)
-  end, { description = "select previous", group = "layout" }),
+  end, { description = "select previous", group = "workspace" }),
 
-  -- Dropdown application
-  awful.key({ modkey }, "F12", function()
-    awful.screen.focused().quake:toggle()
-  end, { description = "dropdown application", group = "super" })
-
-  --]]
+  -------------------------------------------------
+  -- Awesome
+  -------------------------------------------------
+  awful.key({ modkey, "Shift" }, "r", awesome.restart, { description = "Reload awesome", group = "awesome" }),
+  awful.key({ modkey, "Shift" }, "w", function()
+    awful.util.mymainmenu:show()
+  end, { description = "Show main menu", group = "awesome" }),
+  awful.key({ altkey, "Control" }, "p", function()
+    awful.spawn.with_shell("wlogout")
+  end),
+  awful.key({ altkey, "Control" }, "Delete", function()
+    awful.spawn.with_shell("awesome-client 'awesome.quit()'")
+  end),
+  awful.key({ modkey }, "e", function()
+    naughty.destroy_all_notifications()
+  end, { description = "clear all notifications", group = "awesome" })
 )
 
--- dropdown
--- Scratchpad
-
--- 1. your cycle function
-
+-- Cycle throug maximized
 local function cycle_maximized_client()
   local c = client.focus
   if not c then
@@ -536,8 +515,8 @@ local function cycle_maximized_client()
   end
 end
 
+-- Scratchpad
 local scratchpads = {}
-
 -- Helper: compute a coordinate given opts.value, total size, window size, start offset, and gap
 local function compute_pos(value, total, size, start, gap)
   if type(value) == "number" then
@@ -673,7 +652,7 @@ local toggle_whatsie = make_scratchpad("whatsie", "flatpak run com.ktechpit.what
   -- x will be centered automatically
 })
 
--- Bind them to keys
+-- Scratchpad Keybindings
 globalkeys = gears.table.join(
   globalkeys, -- keep previously defined globalkeys
   awful.key({ modkey, "Control" }, "Return", toggle_terminal, { description = "...", group = "scratchpads" }),
@@ -754,9 +733,7 @@ clientkeys = my_table.join(
 
 -- Bind tags to shortcut's
 -- Define letter shortcuts for workspaces 1, 2, and 3
-
 local letterKeys = { "t", "n", "s" }
-
 for i = 1, 9 do
   -- only show #1 and #9 in the shortcut help
   local descr_view, descr_toggle, descr_move, descr_toggle_focus
@@ -1155,9 +1132,9 @@ end)
 awful.screen.padding(awful.screen.focused(), { left = 1, right = 1, top = 2, bottom = 1 })
 
 -- Notification --
-
 -- Colors
 -- Tokyo Night palette (you can also pull these from your theme file)
+--
 local bg = "#24283b"
 local fg = "#c0caf5"
 local accent = "#7aa2f7"
