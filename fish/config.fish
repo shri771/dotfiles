@@ -1,8 +1,5 @@
 ### ADDING TO THE PAT
-# First line removes the path; second line sets it.  Without the first line,
-# your path gets massive and fish becomes very slow.
 set -e fish_user_paths
-# set -U fish_user_paths $HOME/.bin $HOME/.local/bin $HOME/.config/emacs/bin $HOME/Applications /var/lib/flatpak/exports/bin/ $fish_user_paths
 
 ### EXPORT ###
 set -U fish_greeting ""
@@ -18,7 +15,6 @@ set -Ux BORG_PASSCOMMAND "cat $HOME/.borg_passphrase"
 ##local
 ##set -x LANG en_US.UTF-8
 
-
 ### SET MANPAGER
 ### Uncomment only one of these!
 
@@ -28,21 +24,15 @@ set -x MANPAGER "nvim +Man!"
 ### "less" as manpager
 # set -x MANPAGER "less"
 
-### ENABLE VIM KEYBINDINGS ###
-set -eU fish_key_bindings
-fish_default_key_bindings
+### KEYBINDINGS ###
+# Ensure default (emacs-like) keybindings are used
+set -U fish_key_bindings fish_default_key_bindings
 # 2) Define any extra key-bindings in fish_user_key_bindings
 function fish_user_key_bindings
     bind \cb backward-word
     bind \cf forward-word
 end
-### END OF VI MODE ###
-function fish_prompt
-    # 1) Send the DECSCUSR=6 → beam cursor
-    printf '\e[6 q'
-    # 2) Call the normal prompt
-    $__fish_default_prompt
-end
+
 ### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
 set fish_color_normal brcyan
 set fish_color_autosuggestion '#7d7d7d'
@@ -410,7 +400,7 @@ alias tpcn=' sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf'
 alias vn='variety --next'
 alias vp='variety'
 alias n='nvim'
-alias cd='z'
+
 alias sn='sudo -E XDG_RUNTIME_DIR=/run/user/$(id -u) HOME=/home/sh nvim'
 alias tlp-m='tlp-stat -p | grep scaling_governor'
 alias syst='systemctl list-timers --all '
@@ -438,7 +428,7 @@ alias la='eza -al --color=always --group-directories-first' # my preferred listi
  alias ls='eza -a --color=always --group-directories-first' # all files and dirs
 alias ll='eza -l --color=always --group-directories-first' # long format
 alias lt='eza -aT --color=always --group-directories-first' # tree listing
-alias l.='eza -a | egrep "^\."'
+
 alias l.='eza -al --color=always --group-directories-first ../' # ls on the PARENT directory
 alias l..='eza -al --color=always --group-directories-first ../../' # ls on directory 2 levels up
 alias l...='eza -al --color=always --group-directories-first ../../../' # ls on directory 3 levels up
@@ -473,6 +463,7 @@ alias pscpu='ps auxf | sort -nr -k 3'
 
 # Merge Xresources
 alias merge='xrdb -merge ~/.Xresources'
+ alias cd='z'
 
 # git
 alias add='git add '
@@ -538,4 +529,3 @@ test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
 # Created by `pipx` on 2025-02-28 09:09:27
 set PATH $PATH /home/sh/.local/bin
 zoxide init fish | source
-fish_default_key_bindings
