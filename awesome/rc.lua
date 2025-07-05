@@ -1,6 +1,9 @@
 local awesome, client, mouse, screen, tag = awesome, client, mouse, screen, tag
 local ipairs, string, os, table, tostring, tonumber, type = ipairs, string, os, table, tostring, tonumber, type
 
+local screen_width = 1920
+local screen_height = 1200
+
 -- Standard awesome libary
 local gears = require("gears") --Utilities such as color parsing and objects
 local awful = require("awful") --Everything related to window managment
@@ -860,6 +863,14 @@ root.keys(globalkeys)
 
 -- Window's Rules
 awful.rules.rules = {
+  -- Brave-browser specific rule for fullscreen
+  {
+    rule = { class = "Brave-browser" },
+    properties = {
+      size_hints_honor = true,
+      floating = false, -- Ensure it's tiled by default
+    },
+  },
   --Apply border color , width and more
   {
     rule = {},

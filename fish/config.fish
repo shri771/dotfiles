@@ -1,13 +1,8 @@
-### ADDING TO THE PAT
-set -e fish_user_paths
-
 ### EXPORT ###
 set -U fish_greeting ""
-set TERM xterm-256color # Sets the terminal type
 set -Ux EDITOR nvim
 set -Ux VISUAL nvim
-set -gx PATH $HOME/.local/bin $PATH
-set -Ux TERM xterm-256color
+#set -Ux TERM xterm-256color
 set -U LC_CTYPE en_US.UTF-8
 eval ($HOME/.config/tmux/plugins/tmuxifier/bin/tmuxifier init - fish)
 set -Ux PERL5LIB /usr/share/perl5/vendor_perl
