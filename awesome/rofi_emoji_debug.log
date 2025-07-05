@@ -1,0 +1,645 @@
++ set -euo pipefail
++ set -x
++ main
++ check_dependencies
++ deps=('rofi' 'xsel' 'xdotool' 'awk' 'tr' 'grep')
++ local deps
++ for cmd in "${deps[@]}"
++ command -v rofi
++ for cmd in "${deps[@]}"
++ command -v xsel
++ for cmd in "${deps[@]}"
++ command -v xdotool
++ for cmd in "${deps[@]}"
++ command -v awk
++ for cmd in "${deps[@]}"
++ command -v tr
++ for cmd in "${deps[@]}"
++ command -v grep
++ emoji_picker
++ local emoji_list_raw
+++ sed '1,/^# # DATA # #$/d' /home/sh/dotfiles/awesome/scripts/RofiEmoji.sh
++ emoji_list_raw='😀 faceface | grin | grinning face
+😂 faceface | joy | face with tears of joy
+😊 faceface | smile | smiling face with smiling eyes
+😇 faceface | innocent | smiling face with halo
+🙂 faceface | slightly_smiling_face | slightly smiling face
+🙃 faceface | upside_down_face | upside-down face
+😉 faceface | wink | winking face
+😌 faceface | relaxed | relieved face
+😍 faceface | heart_eyes | smiling face with heart-eyes
+🥰 faceface | smiling_face_with_hearts | smiling face with hearts
+😘 faceface | kiss | kissing face
+😗 faceface | kissing_face | kissing face
+😙 faceface | kissing_face_with_smiling_eyes | kissing face with smiling eyes
+😚 faceface | kissing_face_with_closed_eyes | kissing face with closed eyes
+😋 faceface | yum | face savoring food
+😛 faceface | stuck_out_tongue | face with tongue
+😜 faceface | stuck_out_tongue_winking_eye | winking face with tongue
+🤪 faceface | zany_face | zany face
+😝 faceface | stuck_out_tongue_closed_eyes | squinting face with tongue
+🤑 faceface | money_mouth_face | money-mouth face
+🤗 faceface | hugging_face | hugging face
+🤭 faceface | hand_over_mouth | face with hand over mouth
+🤫 faceface | shushing_face | shushing face
+🤔 faceface | thinking_face | thinking face
+🤐 faceface | zipper_mouth_face | zipper-mouth face
+🤨 faceface | eyebrow | face with raised eyebrow
+😐 faceface | neutral_face | neutral face
+😑 faceface | expressionless | expressionless face
+😶 faceface | no_mouth | face without mouth
+😏 faceface | smirk | smirking face
+😒 faceface | unamused | unamused face
+🙄 faceface | roll_eyes | face with rolling eyes
+😬 faceface | grimacing | grimacing face
+🤥 faceface | lying_face | lying face
+😌 faceface | relieved | relieved face
+😔 faceface | pensive | pensive face
+😪 faceface | sleepy | sleepy face
+🤤 faceface | drooling_face | drooling face
+😴 faceface | sleeping | sleeping face
+😷 faceface | mask | face with medical mask
+🤒 faceface | thermometer_face | face with thermometer
+🤕 faceface | bandage_face | face with head-bandage
+🤢 faceface | nauseated_face | nauseated face
+🤮 faceface | vomiting_face | face vomiting
+🤧 faceface | sneezing_face | sneezing face
+🥵 faceface | hot_face | hot face
+🥶 faceface | cold_face | cold face
+🥴 faceface | woozy_face | woozy face
+😵 faceface | dizzy_face | dizzy face
+🤯 faceface | exploding_head | exploding head
+🤠 faceface | cowboy_hat_face | cowboy hat face
+🥳 faceface | partying_face | partying face
+😎 faceface | sunglasses | smiling face with sunglasses
+🤓 faceface | nerd_face | nerd face
+🧐 faceface | monacle_face | face with monocle
+😕 faceface | confused | confused face
+😟 faceface | worried | worried face
+🙁 faceface | slightly_frowning_face | slightly frowning face
+😮 faceface | open_mouth | face with open mouth
+😯 faceface | astonished | astonished face
+😲 faceface | astonished | astonished face
+😳 faceface | flushed | flushed face
+🥺 faceface | pleading_face | pleading face
+😦 faceface | frowning | frowning face with open mouth
+😧 faceface | anguished | anguished face
+😨 faceface | fearful | fearful face
+😰 faceface | cold_sweat | anxious face with sweat
+😥 faceface | disappointed_relieved | sad but relieved face
+😢 faceface | cry | crying face
+😭 faceface | sob | loudly crying face
+😱 faceface | scream | face screaming in fear
+😖 faceface | confounded | confounded face
+😣 faceface | perseverance | persevering face
+😩 faceface | weary | weary face
+😫 faceface | tired_face | tired face
+🥱 faceface | yawning_face | yawning face
+😤 faceface | triumph | face with steam from nose
+😡 faceface | rage | pouting face
+😠 faceface | angry | angry face
+🤬 faceface | cursing_face | face with symbols over mouth
+😈 faceface | smiling_imp | smiling face with horns
+👿 faceface | imp | angry face with horns
+💀 faceface | skull | skull
+☠️ faceface | skull_and_crossbones | skull and crossbones
+💩 faceface | poop | pile of poo
+🤡 faceface | clown_face | clown face
+👹 faceface | ogre | ogre
+👺 faceface | goblin | goblin
+👻 faceface | ghost | ghost
+👽 faceface | alien | alien
+👾 faceface | space_invader | alien monster
+🤖 faceface | robot | robot face
+😺 faceface | smiley_cat | grinning cat face with smiling eyes
+😸 faceface | smile_cat | grinning cat face
+😹 faceface | joy_cat | cat face with tears of joy
+😻 faceface | heart_eyes_cat | smiling cat face with heart-eyes
+😼 faceface | smirk_cat | cat face with wry smile
+😽 faceface | kiss_cat | kissing cat face
+🙀 faceface | scream_cat | weary cat face
+😿 faceface | crying_cat_face | crying cat face
+😾 faceface | pouting_cat | pouting cat face'
++ [[ 0 -ne 0 ]]
++ local rofi_display_list
+++ awk '-F \| ' '{print $NF}'
+++ printf '%s\n' '😀 faceface | grin | grinning face
+😂 faceface | joy | face with tears of joy
+😊 faceface | smile | smiling face with smiling eyes
+😇 faceface | innocent | smiling face with halo
+🙂 faceface | slightly_smiling_face | slightly smiling face
+🙃 faceface | upside_down_face | upside-down face
+😉 faceface | wink | winking face
+😌 faceface | relaxed | relieved face
+😍 faceface | heart_eyes | smiling face with heart-eyes
+🥰 faceface | smiling_face_with_hearts | smiling face with hearts
+😘 faceface | kiss | kissing face
+😗 faceface | kissing_face | kissing face
+😙 faceface | kissing_face_with_smiling_eyes | kissing face with smiling eyes
+😚 faceface | kissing_face_with_closed_eyes | kissing face with closed eyes
+😋 faceface | yum | face savoring food
+😛 faceface | stuck_out_tongue | face with tongue
+😜 faceface | stuck_out_tongue_winking_eye | winking face with tongue
+🤪 faceface | zany_face | zany face
+😝 faceface | stuck_out_tongue_closed_eyes | squinting face with tongue
+🤑 faceface | money_mouth_face | money-mouth face
+🤗 faceface | hugging_face | hugging face
+🤭 faceface | hand_over_mouth | face with hand over mouth
+🤫 faceface | shushing_face | shushing face
+🤔 faceface | thinking_face | thinking face
+🤐 faceface | zipper_mouth_face | zipper-mouth face
+🤨 faceface | eyebrow | face with raised eyebrow
+😐 faceface | neutral_face | neutral face
+😑 faceface | expressionless | expressionless face
+😶 faceface | no_mouth | face without mouth
+😏 faceface | smirk | smirking face
+😒 faceface | unamused | unamused face
+🙄 faceface | roll_eyes | face with rolling eyes
+😬 faceface | grimacing | grimacing face
+🤥 faceface | lying_face | lying face
+😌 faceface | relieved | relieved face
+😔 faceface | pensive | pensive face
+😪 faceface | sleepy | sleepy face
+🤤 faceface | drooling_face | drooling face
+😴 faceface | sleeping | sleeping face
+😷 faceface | mask | face with medical mask
+🤒 faceface | thermometer_face | face with thermometer
+🤕 faceface | bandage_face | face with head-bandage
+🤢 faceface | nauseated_face | nauseated face
+🤮 faceface | vomiting_face | face vomiting
+🤧 faceface | sneezing_face | sneezing face
+🥵 faceface | hot_face | hot face
+🥶 faceface | cold_face | cold face
+🥴 faceface | woozy_face | woozy face
+😵 faceface | dizzy_face | dizzy face
+🤯 faceface | exploding_head | exploding head
+🤠 faceface | cowboy_hat_face | cowboy hat face
+🥳 faceface | partying_face | partying face
+😎 faceface | sunglasses | smiling face with sunglasses
+🤓 faceface | nerd_face | nerd face
+🧐 faceface | monacle_face | face with monocle
+😕 faceface | confused | confused face
+😟 faceface | worried | worried face
+🙁 faceface | slightly_frowning_face | slightly frowning face
+😮 faceface | open_mouth | face with open mouth
+😯 faceface | astonished | astonished face
+😲 faceface | astonished | astonished face
+😳 faceface | flushed | flushed face
+🥺 faceface | pleading_face | pleading face
+😦 faceface | frowning | frowning face with open mouth
+😧 faceface | anguished | anguished face
+😨 faceface | fearful | fearful face
+😰 faceface | cold_sweat | anxious face with sweat
+😥 faceface | disappointed_relieved | sad but relieved face
+😢 faceface | cry | crying face
+😭 faceface | sob | loudly crying face
+😱 faceface | scream | face screaming in fear
+😖 faceface | confounded | confounded face
+😣 faceface | perseverance | persevering face
+😩 faceface | weary | weary face
+😫 faceface | tired_face | tired face
+🥱 faceface | yawning_face | yawning face
+😤 faceface | triumph | face with steam from nose
+😡 faceface | rage | pouting face
+😠 faceface | angry | angry face
+🤬 faceface | cursing_face | face with symbols over mouth
+😈 faceface | smiling_imp | smiling face with horns
+👿 faceface | imp | angry face with horns
+💀 faceface | skull | skull
+☠️ faceface | skull_and_crossbones | skull and crossbones
+💩 faceface | poop | pile of poo
+🤡 faceface | clown_face | clown face
+👹 faceface | ogre | ogre
+👺 faceface | goblin | goblin
+👻 faceface | ghost | ghost
+👽 faceface | alien | alien
+👾 faceface | space_invader | alien monster
+🤖 faceface | robot | robot face
+😺 faceface | smiley_cat | grinning cat face with smiling eyes
+😸 faceface | smile_cat | grinning cat face
+😹 faceface | joy_cat | cat face with tears of joy
+😻 faceface | heart_eyes_cat | smiling cat face with heart-eyes
+😼 faceface | smirk_cat | cat face with wry smile
+😽 faceface | kiss_cat | kissing cat face
+🙀 faceface | scream_cat | weary cat face
+😿 faceface | crying_cat_face | crying cat face
+😾 faceface | pouting_cat | pouting cat face'
+awk: warning: escape sequence `\|' treated as plain `|'
++ rofi_display_list='face
+joy
+eyes
+halo
+face
+face
+face
+face
+heart-eyes
+hearts
+face
+face
+eyes
+eyes
+food
+tongue
+tongue
+face
+tongue
+face
+face
+mouth
+face
+face
+face
+eyebrow
+face
+face
+mouth
+face
+face
+eyes
+face
+face
+face
+face
+face
+face
+face
+mask
+thermometer
+head-bandage
+face
+vomiting
+face
+face
+face
+face
+face
+head
+face
+face
+sunglasses
+face
+monocle
+face
+face
+face
+mouth
+face
+face
+face
+face
+mouth
+face
+face
+sweat
+face
+face
+face
+fear
+face
+face
+face
+face
+face
+nose
+face
+face
+mouth
+horns
+horns
+skull
+crossbones
+poo
+face
+ogre
+goblin
+ghost
+alien
+monster
+face
+eyes
+face
+joy
+heart-eyes
+smile
+face
+face
+face
+face'
++ [[ -z face
+joy
+eyes
+halo
+face
+face
+face
+face
+heart-eyes
+hearts
+face
+face
+eyes
+eyes
+food
+tongue
+tongue
+face
+tongue
+face
+face
+mouth
+face
+face
+face
+eyebrow
+face
+face
+mouth
+face
+face
+eyes
+face
+face
+face
+face
+face
+face
+face
+mask
+thermometer
+head-bandage
+face
+vomiting
+face
+face
+face
+face
+face
+head
+face
+face
+sunglasses
+face
+monocle
+face
+face
+face
+mouth
+face
+face
+face
+face
+mouth
+face
+face
+sweat
+face
+face
+face
+fear
+face
+face
+face
+face
+face
+nose
+face
+face
+mouth
+horns
+horns
+skull
+crossbones
+poo
+face
+ogre
+goblin
+ghost
+alien
+monster
+face
+eyes
+face
+joy
+heart-eyes
+smile
+face
+face
+face
+face ]]
++ local rofi_config=/home/sh/.config/rofi/config-emoji.rasi
++ [[ ! -f /home/sh/.config/rofi/config-emoji.rasi ]]
++ printf 'Launching Rofi (centered).\n'
+Launching Rofi (centered).
++ local selected_full_name
+++ printf '%s\n' 'face
+joy
+eyes
+halo
+face
+face
+face
+face
+heart-eyes
+hearts
+face
+face
+eyes
+eyes
+food
+tongue
+tongue
+face
+tongue
+face
+face
+mouth
+face
+face
+face
+eyebrow
+face
+face
+mouth
+face
+face
+eyes
+face
+face
+face
+face
+face
+face
+face
+mask
+thermometer
+head-bandage
+face
+vomiting
+face
+face
+face
+face
+face
+head
+face
+face
+sunglasses
+face
+monocle
+face
+face
+face
+mouth
+face
+face
+face
+face
+mouth
+face
+face
+sweat
+face
+face
+face
+fear
+face
+face
+face
+face
+face
+nose
+face
+face
+mouth
+horns
+horns
+skull
+crossbones
+poo
+face
+ogre
+goblin
+ghost
+alien
+monster
+face
+eyes
+face
+joy
+heart-eyes
+smile
+face
+face
+face
+face'
+++ rofi -i -dmenu -config /home/sh/.config/rofi/config-emoji.rasi -theme-str 'window { location: center; }' -kb-move-up Control+p -kb-move-down Control+n -kb-accept-entry Return
+Fontconfig warning: using without calling FcInit()
++ selected_full_name=face
++ [[ -z face ]]
++ local final_emoji
+++ grep -E '^.* \| .* \| face$'
+++ printf '%s\n' '😀 faceface | grin | grinning face
+😂 faceface | joy | face with tears of joy
+😊 faceface | smile | smiling face with smiling eyes
+😇 faceface | innocent | smiling face with halo
+🙂 faceface | slightly_smiling_face | slightly smiling face
+🙃 faceface | upside_down_face | upside-down face
+😉 faceface | wink | winking face
+😌 faceface | relaxed | relieved face
+😍 faceface | heart_eyes | smiling face with heart-eyes
+🥰 faceface | smiling_face_with_hearts | smiling face with hearts
+😘 faceface | kiss | kissing face
+😗 faceface | kissing_face | kissing face
+😙 faceface | kissing_face_with_smiling_eyes | kissing face with smiling eyes
+😚 faceface | kissing_face_with_closed_eyes | kissing face with closed eyes
+😋 faceface | yum | face savoring food
+😛 faceface | stuck_out_tongue | face with tongue
+😜 faceface | stuck_out_tongue_winking_eye | winking face with tongue
+🤪 faceface | zany_face | zany face
+😝 faceface | stuck_out_tongue_closed_eyes | squinting face with tongue
+🤑 faceface | money_mouth_face | money-mouth face
+🤗 faceface | hugging_face | hugging face
+🤭 faceface | hand_over_mouth | face with hand over mouth
+🤫 faceface | shushing_face | shushing face
+🤔 faceface | thinking_face | thinking face
+🤐 faceface | zipper_mouth_face | zipper-mouth face
+🤨 faceface | eyebrow | face with raised eyebrow
+😐 faceface | neutral_face | neutral face
+😑 faceface | expressionless | expressionless face
+😶 faceface | no_mouth | face without mouth
+😏 faceface | smirk | smirking face
+😒 faceface | unamused | unamused face
+🙄 faceface | roll_eyes | face with rolling eyes
+😬 faceface | grimacing | grimacing face
+🤥 faceface | lying_face | lying face
+😌 faceface | relieved | relieved face
+😔 faceface | pensive | pensive face
+😪 faceface | sleepy | sleepy face
+🤤 faceface | drooling_face | drooling face
+😴 faceface | sleeping | sleeping face
+😷 faceface | mask | face with medical mask
+🤒 faceface | thermometer_face | face with thermometer
+🤕 faceface | bandage_face | face with head-bandage
+🤢 faceface | nauseated_face | nauseated face
+🤮 faceface | vomiting_face | face vomiting
+🤧 faceface | sneezing_face | sneezing face
+🥵 faceface | hot_face | hot face
+🥶 faceface | cold_face | cold face
+🥴 faceface | woozy_face | woozy face
+😵 faceface | dizzy_face | dizzy face
+🤯 faceface | exploding_head | exploding head
+🤠 faceface | cowboy_hat_face | cowboy hat face
+🥳 faceface | partying_face | partying face
+😎 faceface | sunglasses | smiling face with sunglasses
+🤓 faceface | nerd_face | nerd face
+🧐 faceface | monacle_face | face with monocle
+😕 faceface | confused | confused face
+😟 faceface | worried | worried face
+🙁 faceface | slightly_frowning_face | slightly frowning face
+😮 faceface | open_mouth | face with open mouth
+😯 faceface | astonished | astonished face
+😲 faceface | astonished | astonished face
+😳 faceface | flushed | flushed face
+🥺 faceface | pleading_face | pleading face
+😦 faceface | frowning | frowning face with open mouth
+😧 faceface | anguished | anguished face
+😨 faceface | fearful | fearful face
+😰 faceface | cold_sweat | anxious face with sweat
+😥 faceface | disappointed_relieved | sad but relieved face
+😢 faceface | cry | crying face
+😭 faceface | sob | loudly crying face
+😱 faceface | scream | face screaming in fear
+😖 faceface | confounded | confounded face
+😣 faceface | perseverance | persevering face
+😩 faceface | weary | weary face
+😫 faceface | tired_face | tired face
+🥱 faceface | yawning_face | yawning face
+😤 faceface | triumph | face with steam from nose
+😡 faceface | rage | pouting face
+😠 faceface | angry | angry face
+🤬 faceface | cursing_face | face with symbols over mouth
+😈 faceface | smiling_imp | smiling face with horns
+👿 faceface | imp | angry face with horns
+💀 faceface | skull | skull
+☠️ faceface | skull_and_crossbones | skull and crossbones
+💩 faceface | poop | pile of poo
+🤡 faceface | clown_face | clown face
+👹 faceface | ogre | ogre
+👺 faceface | goblin | goblin
+👻 faceface | ghost | ghost
+👽 faceface | alien | alien
+👾 faceface | space_invader | alien monster
+🤖 faceface | robot | robot face
+😺 faceface | smiley_cat | grinning cat face with smiling eyes
+😸 faceface | smile_cat | grinning cat face
+😹 faceface | joy_cat | cat face with tears of joy
+++ awk '-F \\| ' '{print $1}'
+😻 faceface | heart_eyes_cat | smiling cat face with heart-eyes
+😼 faceface | smirk_cat | cat face with wry smile
+😽 faceface | kiss_cat | kissing cat face
+🙀 faceface | scream_cat | weary cat face
+😿 faceface | crying_cat_face | crying cat face
+😾 faceface | pouting_cat | pouting cat face'
+++ tr -d '\n'
++ final_emoji=

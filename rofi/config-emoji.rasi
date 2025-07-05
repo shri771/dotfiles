@@ -1,25 +1,26 @@
 /* Clipboard Config - Clipboard */
 
-@import "~/.config/rofi/master-config.rasi"  
+@import "~/.config/rofi/master-config.rasi"
 
 /* ---- Entry ---- */
 entry {
   width: 25%; /* Reduce the width */
-  placeholder: "📋 Search";
-  font: "monospace 13";  /* Increase the font size of the placeholder */
+  height: 15%; /* Adjust height */
+  placeholder: " ";
+  font: "monospace 17";  /* Increase the font size of the placeholder */
   padding: 2px;  /* Reduce extra spacing around the placeholder */
   margin: 0px 0px 0px 0px; /* Adjust margin to bring it closer to the listview */
 }
 
 /* ---- Listview ---- */
 listview {
-  columns: 5; /* Reduce columns to make it more compact */
+  columns: 2; /* Reduce columns to make it more compact */
   lines: 5;   /* Show fewer lines for a smaller height */
 }
 
 /* ---- Window ---- */
 window {
-  width: 25%;  /* Adjust overall window width */
+  width: 40%;  /* Adjust overall window width */
   height: 35%; /* Adjust height */
 }
 

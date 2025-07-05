@@ -104,6 +104,7 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     lazy = false,
+    enabled = false,
     main = "ibl",
     ---@module "ibl"
     ---@type ibl.config

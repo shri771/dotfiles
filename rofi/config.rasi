@@ -1,24 +1,6 @@
-/* ---- ✫ https://github.com/JaKooLit ✫ ---- */
-/* Rofi Beats Config (compact) */
+/*
+ * Default Rofi configuration
+ * Imports the launcher theme to act as the default.
+ */
 
-@import "~/.config/rofi/config-compact.rasi"
-
-/* ---- Entry ---- */
-entry {
-  placeholder: "                        ";
-  padding: 1;
-  margin: 1;
-}
-
-/* ---- Listview ---- */
-listview {
-  lines: 7;
-  fixed-height: false;
-  line-padding: 2;
-  columns: 1;
-}
-
-/* ---- Window ---- */
-window {
-  width: 570px;
-}
+@import "~/.config/rofi/config-launcher.rasi"

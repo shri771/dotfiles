@@ -1,15 +1,12 @@
-/* Master Config 1440p*/
+/* Master Config 1440p - App Launcher*/
 
 /* ---- Configuration ---- */
 
 configuration {
 	font:						"JetBrainsMono Nerd Font SemiBold 10";
-	modi:                       "drun,run,filebrowser";
+	modi:                       "drun";
     show-icons:                 true;
     display-drun:               "        ";
-    display-run:                "Run";
-    display-filebrowser:        "Files";
-    display-window:             "Windows";
 	drun-display-format:        "{name}";
 	hover-select:               true;
 	me-select-entry:            "MouseSecondary";
@@ -48,7 +45,7 @@ window {
     anchor:                     center;
 
     // Style Values
-    width:                      50%;
+    width:                      30%;
     background-color:           @background;
 }
 
@@ -70,20 +67,19 @@ inputbar {
     background-color:            transparent;
     border-radius:               20px;
     orientation:                 horizontal;
-    children:                    ["entry", "dummy", "mode-switcher" ];
+    children:                    [ "entry" ];
 }
 
 /* ---- Entry input ---- */
 entry {
     enabled:                     true;
-    expand:                      false;
-    width:                       20%;
+    expand:                      true;
     padding:                     10px;
     border-radius:               12px;
     background-color:            @selected;
     text-color:                  @text-selected;
     cursor:                      text;
-    placeholder:                 "🖥️ Search "; // << Search symbol
+    placeholder:                 ""; // << Search symbol
     placeholder-color:           inherit;
 }
 
@@ -99,7 +95,7 @@ listbox {
 /* ---- Listview ---- */
 listview {
     enabled:                     true;
-    columns:                     2;
+    columns:                     1;
     lines:                       6;
     cycle:                       true;
     dynamic:                     true;
@@ -107,37 +103,10 @@ listview {
     layout:                      vertical;
     reverse:                     false;
     fixed-height:                false;
-    fixed-columns:               true;    
+    fixed-columns:               true;
     spacing:                     10px;
     background-color:            transparent;
-
-//  Adapt rofi theme
     border:                      0px;
-}
-
-/* ---- Dummy ---- */
-dummy {
-    expand:                      true;
-    background-color:            transparent;
-}
-
-/* ---- Mode Switcher ---- */
-mode-switcher{
-    enabled:                     true;
-    spacing:                     10px;
-    background-color:            transparent;
-}
-button {
-    width:                       5%;
-    padding:                     12px;
-    border-radius:               12px;
-    background-color:            @text-selected;
-    text-color:                  @text-color;
-    cursor:                      pointer;
-}
-button selected {
-    background-color:            @selected;
-    text-color:                  @text-selected;
 }
 
 /* ---- Scrollbar ---- */
@@ -187,7 +156,6 @@ element selected.active {
     background-color:            @urgent;
     text-color:                  @text-selected;
 }
-// Adapt rofi theme
 element alternate.normal {
     background-color:            transparent;
     text-color:                  inherit;
@@ -201,6 +169,7 @@ element alternate.active {
     text-color:                  inherit;
 }
 element-icon {
+    size:                        1.0em;
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

@@ -338,12 +338,6 @@ globalkeys = my_table.join(
   end, { description = "OCR screenshot (no text mode)", group = "custom" }),
 
   -- Rofi launcher's
-  awful.key({ altkey }, "f", function()
-    awful.spawn("rofi -show drun -modi drun,run,window,filebrowser")
-  end, { description = "launch rofi", group = "launcher" }),
-  awful.key({ altkey }, "u", function()
-    awful.spawn("rofi -show drun -modi drun,run,window,filebrowser")
-  end, { description = "launch rofi", group = "launcher" }),
   awful.key({ altkey }, "s", function()
     awful.spawn.with_shell("$HOME/.config/eww/dashboard/launch_dashboard")
   end, { description = "launch rofi-clip", group = "launcher" }),
@@ -354,6 +348,9 @@ globalkeys = my_table.join(
   awful.key({ altkey }, "e", function() -- Mod1 = Alt key
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/toggle_polybar.sh")
   end),
+  awful.key({ altkey, ctrlkey }, "v", function()
+    awful.spawn.with_shell("$HOME/.config/awesome/scripts/RofiEmoji.sh")
+  end, { description = "Launch Rofi Emoji Picker", group = "launcher" }),
   awful.key({ modkey }, "r", function() -- Mod1 = Alt key
     awful.spawn.with_shell("pkill polybar && $HOME/.config/polybar/lauch.sh &")
   end),
@@ -371,6 +368,18 @@ globalkeys = my_table.join(
   end, { description = "launch rofi-Wall", group = "launcher" }),
   awful.key({ modkey, "Shift" }, "m", function()
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/RofiBeats.sh")
+  end, { description = "launch rofi-beats", group = "launcher" }),
+  awful.key({ altkey }, "f", function()
+    awful.spawn.with_shell("$HOME/.config/awesome/scripts/app_launcher.sh")
+  end, { description = "launch rofi-beats", group = "launcher" }),
+  awful.key({ modkey }, "e", function()
+    awful.spawn.with_shell("$HOME/.config/awesome/scripts/RofiEmoji.sh")
+  end, { description = "Launch Rofi Emoji Picker", group = "launcher" }),
+  awful.key({ modkey }, "e", function()
+    awful.spawn.with_shell("$HOME/.config/awesome/scripts/RofiEmoji.sh")
+  end, { description = "Launch Rofi Emoji Picker", group = "launcher" }),
+  awful.key({ altkey }, "u", function()
+    awful.spawn.with_shell("$HOME/.config/awesome/scripts/app_launcher.sh")
   end, { description = "launch rofi-beats", group = "launcher" }),
 
   -------------------------------------------------

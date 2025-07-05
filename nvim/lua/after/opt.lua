@@ -80,16 +80,6 @@ vim.api.nvim_create_autocmd("CmdlineLeave", {
 -- Create an autocmd group to avoid duplicate mappings
 vim.api.nvim_create_augroup("KeepVisualIndent", { clear = true })
 
-vim.api.nvim_create_autocmd({ "VimEnter", "FileType" }, {
-  group = "KeepVisualIndent",
-  pattern = "*",
-  callback = function()
-    -- Remap < and > in Visual mode to reselect after indent
-    vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true })
-    vim.keymap.set("v", ">", ">gv", { noremap = true, silent = true })
-  end,
-})
-
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.sql",
   callback = function(args)

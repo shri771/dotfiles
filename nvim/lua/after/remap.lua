@@ -12,6 +12,9 @@ vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
 vim.keymap.set("n", "<leader>ml", "<cmd>Mason<cr>")
 vim.keymap.set("n", "<leader>mm", "<cmd>Lazy<cr>")
 
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
