@@ -74,7 +74,7 @@ local ctrlkey = "Control"
 local terminal = "kitty"
 
 -- Tags
-awful.util.tagnames = { "   ", "   ", "   ", "   ", "   ", "󰗃 ", " " }
+awful.util.tagnames = { "   ", "   ", "   ", "   ", "   ", "󰗃 ", " " }
 
 awful.layout.suit.tile.left.mirror = true
 awful.layout.layouts = {
@@ -367,7 +367,7 @@ globalkeys = my_table.join(
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/WallpaperSelect.sh")
   end, { description = "launch rofi-Wall", group = "launcher" }),
   awful.key({ modkey, "Shift" }, "m", function()
-    awful.spawn.with_shell("$HOME/.config/awesome/scripts/RofiBeats.sh")
+    awful.spawn.with_shell("$HOME/.config/awesome/scripts/rofi_mpd_launcher.sh")
   end, { description = "launch rofi-beats", group = "launcher" }),
   awful.key({ altkey }, "f", function()
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/app_launcher.sh")
