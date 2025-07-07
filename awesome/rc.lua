@@ -366,7 +366,7 @@ globalkeys = my_table.join(
   awful.key({ modkey }, "x", function()
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/WallpaperSelect.sh")
   end, { description = "launch rofi-Wall", group = "launcher" }),
-  awful.key({ modkey, "Shift" }, "m", function()
+  awful.key({ modkey, ctrlkey }, "m", function()
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/rofi_mpd_launcher.sh")
   end, { description = "launch rofi-beats", group = "launcher" }),
   awful.key({ altkey }, "f", function()
@@ -949,7 +949,9 @@ awful.rules.rules = {
   },
 
   -- Rules to open a app in sepcific Tag
-  { rule = { class = "vlc" }, properties = { tag = awful.screen.focused().tags[5] } },
+  { rule = { class = "cantata" }, properties = { tag = awful.screen.focused().tags[5] } },
+  { rule = { class = "Notion" }, properties = { tag = awful.screen.focused().tags[3] } },
+  { rule = { class = "notion-calendar-electron" }, properties = { tag = awful.screen.focused().tags[4] } },
   {
     rule = { class = "autokey-qt" },
     properties = { tag = awful.screen.focused().tags[7] },
@@ -1164,6 +1166,7 @@ naughty.config.defaults.margin = 8
 naughty.config.defaults.spacing = 6
 naughty.config.defaults.icon_size = 35
 naughty.config.defaults.max_height = 100
+naughty.config.defaults.scrollable = false
 naughty.config.defaults.position = "top_middle"
 naughty.config.defaults.shape = gears.shape.rounded_rect
 naughty.config.defaults.screen = awful.screen.focused()
@@ -1172,6 +1175,9 @@ beautiful.notification_opacity = 0.95
 naughty.config.presets.normal.bg = bg
 naughty.config.presets.normal.fg = fg
 naughty.config.presets.normal.border_color = accent
+naughty.config.presets.normal.timeout = 5
+naughty.config.presets.critical.timeout = 5
+naughty.config.presets.low.timeout = 5
 
 -- make sure any built‑in presets also get overridden
 for _, preset in pairs(naughty.config.presets) do
