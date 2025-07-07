@@ -7,6 +7,7 @@
  **/
 
 configuration {
+    keep-selection: true;
 	/*---------- General setting ----------*/
 	modi: "drun,run,filebrowser,window";
 	case-sensitive: false;

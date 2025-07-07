@@ -6,6 +6,19 @@ ROFI_CONFIG="/home/sh/dotfiles/rofi/config-rofi-Beats.rasi"
 MUSIC_DIR="/home/sh/Downloads/Music"
 ICON_PATH="/home/sh/.icons/Mkos-Big-Sur-Night/128x128@2x/apps/com.googleplaymusicdesktopplayer.GPMDP.svg"
 
+# Function to display a sub-menu for updating YouTube Music playlists
+show_update_menu() {
+    local update_script="/home/sh/dotfiles/scripts/system/YT_music_update_rofi.sh"
+    local update_options="Cheerful\nFeel-Good💖\nRemix\nCurrent\ntest\nall"
+
+    local chosen_update
+    chosen_update=$(echo -e "$update_options" | rofi -dmenu -i -p "Select Playlist to Update" -config "$ROFI_CONFIG")
+
+    if [ -n "$chosen_update" ]; then
+        "$update_script" "$chosen_update"
+    fi
+}
+
 # Function to allow the user to select and play a playlist from a directory
 select_and_play_playlist() {
     local playlist
@@ -46,7 +59,7 @@ show_mpd_controls() {
     fi
 
     local list_col='1'
-    local list_row='5'
+    local list_row='5' # Increased to accommodate the new option
 
     local option_1 option_2 option_3 option_4 option_5 option_6 option_7
     if [[ $status == *"[playing]"* ]]; then
@@ -59,6 +72,7 @@ show_mpd_controls() {
     option_4=" Next"
     option_5=" Repeat"
     option_6=" Playlists"
+    option_7=" Update" # New option
 
     local active=''
     local urgent=''
@@ -73,7 +87,7 @@ show_mpd_controls() {
 
     local chosen
     chosen=$(
-        echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6" | rofi \
+        echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6\n$option_7" | rofi \
             -dmenu \
             -i \
             -p "$prompt" \
@@ -136,6 +150,7 @@ show_mpd_controls() {
         ;;
     "$option_5") mpc -q repeat ;;
     "$option_6") select_and_play_playlist ;;
+    "$option_7") show_update_menu ;; # Handle the new Update option
     esac
 }
 

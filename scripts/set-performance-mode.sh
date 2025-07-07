@@ -7,6 +7,6 @@ ICON_PATH="/home/sh/.icons/WhiteSur/apps/scalable/io.github.nate_xyz.Chromatic.s
 # --- End Configuration ---
 
 echo "Switching to Performance Mode..."
-sudo ${TLP_CMD} ac
-${NOTIFY_CMD} -i "${ICON_PATH}" "Power Profile" "Switched to Performance Mode"
+echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+
 echo "Done."

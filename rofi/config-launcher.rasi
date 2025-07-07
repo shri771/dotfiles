@@ -13,6 +13,8 @@ configuration {
     me-accept-entry:            "MousePrimary";
 	window-format:              "{w} · {c} · {t}";
 	dpi:						1;
+
+
 }
 
 /* ---- Load wallust colors ---- */

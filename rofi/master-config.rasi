@@ -29,6 +29,7 @@ configuration {
     text-selected:               @background;
     text-color:                  @foreground;
     border-color:                @selected;
+    keep-selection: true;
 }
 
 /* ---- Window ---- */
@@ -79,7 +80,7 @@ entry {
     background-color:            @selected;
     text-color:                  @text-selected;
     cursor:                      text;
-    placeholder:                 ""; // << Search symbol
+    placeholder:                 "e"; // << Search symbol
     placeholder-color:           inherit;
 }
 

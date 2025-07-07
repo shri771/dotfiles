@@ -5,7 +5,7 @@
 
 # If rofi is already running, kill it to allow this new instance to launch.
 if pgrep -x rofi >/dev/null; then
-  pkill rofi
+    pkill rofi
 fi
 
 # Launch rofi in application mode (drun)

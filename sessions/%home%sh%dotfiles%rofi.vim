@@ -9,17 +9,15 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +9 config-clipboard.rasi
-badd +204 config-launcher.rasi
-badd +8 config-emoji.rasi
-badd +7 config-rofi-Beats.rasi
-badd +8 config-rofi-Beats-menu.rasi
+badd +1 ~/dotfiles/rofi/master-config.rasi
+badd +73 master-config-2.rasi
+badd +17 config-launcher.rasi
 argglobal
 %argdel
-$argadd config-clipboard.rasi
-edit config-rofi-Beats-menu.rasi
+$argadd .
+edit master-config-2.rasi
 argglobal
-balt config-clipboard.rasi
+balt ~/dotfiles/rofi/master-config.rasi
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -30,11 +28,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 9 - ((8 * winheight(0) + 20) / 40)
+let s:l = 73 - ((19 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 9
+keepjumps 73
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
@@ -49,6 +47,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
