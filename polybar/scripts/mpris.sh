@@ -6,7 +6,7 @@ get_player_icon() {
         chromium) echo "   " ;;
         firefox) echo " " ;;
         kdeconnect) echo "   " ;;
-        mpv) echo "  " ;;
+        mpc) echo "  " ;;
         spotify) echo "   " ;;
         vlc) echo " 󰕼  " ;;
         *) echo " 󰗃  " ;;  # default icon

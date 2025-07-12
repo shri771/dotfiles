@@ -330,7 +330,7 @@ globalkeys = my_table.join(
   --   awful.spawn("rquickshare")
   -- end, { description = "Launch quickshare", group = "hotkeys" }),
   awful.key({ modkey }, "b", function()
-    awful.spawn("brave")
+    awful.spawn("vivaldi")
   end, { description = "Launch brave", group = "awesome" }),
   -- NormCap screenshot and OCR (Mod + A)
   awful.key({ modkey }, "a", function()
@@ -943,7 +943,7 @@ awful.rules.rules = {
       class = { "Polybar" },
     },
     properties = {
-      floating = ture,
+      floating = true,
       below = true,
     },
   },
@@ -973,6 +973,20 @@ awful.rules.rules = {
 
   -- Floting Windows
   { rule = { class = "Rquickshare" }, properties = { floating = true } },
+  {
+    rule = { class = "Vivaldi-stable", name = "Bitwarden - Vivaldi" },
+    properties = {
+      floating = true,
+      ontop = true,
+      placement = awful.placement.centered,
+      width = 400,
+      height = 600,
+    },
+    callback = function(c)
+      -- Recenter after geometry is set
+      awful.placement.centered(c, { honor_workarea = true })
+    end,
+  },
   {
     rule_any = { class = { "kdialog", "Xdg-desktop-portal-gtk" } },
     properties = {
@@ -1030,7 +1044,7 @@ awful.rules.rules = {
 -- Allow client to switch Workspace
 client.connect_signal("request::activate", function(c, context, hints)
   -- Only handle Brave-browser
-  if c.class ~= "Brave-browser" then
+  if c.class ~= "Brave-browser" or c.class ~= "Vivaldi-stable" then
     return
   end
 

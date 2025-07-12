@@ -1,25 +1,23 @@
 #!/usr/bin/env bash
 
-### —— CONFIG —— ###
-# Path to the user’s Xauthority and display
-XAUTHORITY="/home/sh/.Xauthority"
-DISPLAY=":0"
-# Ensure ACPI’s root shell can find everything
-export DISPLAY XAUTHORITY PATH=/usr/local/bin:/usr/bin:/bin
-# Figure out the GUI user from that Xauthority file
-USER="$(stat -c '%U' "$XAUTHORITY")"
-### ———————— ###
+# 1) grab & blur
+scrot /tmp/lock.png
+magick convert /tmp/lock.png -blur 0x6 /tmp/lock_blur.png
 
-sleep 0.5
+# 2) time & date
+TIME="$(date +'%H:%M')"
+DATE="$(date +'%A, %d %B %Y')"
 
-# allow root to talk to your X session
-xhost +SI:localuser:root >/dev/null 2>&1
+# 3) overlay onto blurred image
+magick convert /tmp/lock_blur.png \
+    -font DejaVu-Sans-Bold -fill white \
+    -gravity North -pointsize 90 -annotate +0+120 "$TIME" \
+    -gravity North -pointsize 30 -annotate +0+220 "$DATE" \
+    -fill 'rgba(255,255,255,0.2)' \
+    -draw "roundrectangle 700,900 1180,980 25,25" \
+    /tmp/lock_final.png
 
-# run the lockscreen as your user (inherits DISPLAY & XAUTHORITY)
-sudo -u "$USER" betterlockscreen -l
-
-# revoke that temporary root access
-xhost -SI:localuser:root >/dev/null 2>&1
-
-# finally, suspend
-systemctl suspend
+# 4) call stock i3lock
+i3lock \
+    -n \               # don’t fork
+-i /tmp/lock_final.png # set our image
