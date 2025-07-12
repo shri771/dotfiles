@@ -979,14 +979,29 @@ awful.rules.rules = {
       floating = true,
       ontop = true,
       placement = awful.placement.centered,
-      width = 400,
-      height = 600,
+      width = 466,
+      height = 627,
     },
     callback = function(c)
       -- Recenter after geometry is set
       awful.placement.centered(c, { honor_workarea = true })
     end,
   },
+  {
+    rule = { class = "Vivaldi-stable", name = "Sign in – Google accounts - Vivaldi" },
+    properties = {
+      floating = true,
+      ontop = true,
+      placement = awful.placement.centered,
+      width = 767,
+      height = 535,
+    },
+    callback = function(c)
+      -- Recenter after geometry is set
+      awful.placement.centered(c, { honor_workarea = true })
+    end,
+  },
+
   {
     rule_any = { class = { "kdialog", "Xdg-desktop-portal-gtk" } },
     properties = {
@@ -1003,6 +1018,7 @@ awful.rules.rules = {
       awful.placement.centered(c, { honor_workarea = true })
     end,
   },
+
   {
     rule = { class = "Brave-browser", instance = "crx_nngceckbapebfimnlniiiahkandclblb" },
     properties = {
