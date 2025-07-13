@@ -1059,35 +1059,54 @@ awful.rules.rules = {
 -- bind it: Mod4 + F11
 -- Allow client to switch Workspace
 client.connect_signal("request::activate", function(c, context, hints)
-  -- Only handle Brave-browser
-  if c.class ~= "Brave-browser" or c.class ~= "Vivaldi-stable" then
+  -- Only handle Brave or Vivaldi
+  if c.class ~= "Brave-browser" and c.class ~= "Vivaldi-stable" then
     return
   end
 
-  -- only switch if the client isn't already visible
+  -- Only switch if the client isn't already visible
   if not c:isvisible() then
-    -- 1) Clear fullscreen on **all** clients
-    local all_clients = client.get()
-    for i = 1, #all_clients do
-      if all_clients[i].fullscreen then
-        all_clients[i].fullscreen = false
-      end
-    end
-
-    -- 2) Switch to this client's first tag
+    -- 1) Find the tag we're about to jump to
     local tags = c:tags()
     if tags and tags[1] then
-      awful.tag.viewonly(tags[1])
-      -- Force layout rearrangement to re-apply rules cleanly
-      awful.layout.arrange(tags[1].screen)
+      local target_tag = tags[1]
+
+      -- 2) Check if any client there is fullscreen or maximized
+      --    and stash those flags for c
+      for _, cl in ipairs(client.get()) do
+        -- does cl live on that same tag?
+        for _, t in ipairs(cl:tags()) do
+          if t == target_tag then
+            if cl.fullscreen or cl.maximized then
+              c.fullscreen = cl.fullscreen
+              c.maximized = cl.maximized
+              break
+            end
+          end
+        end
+        if c.fullscreen or c.maximized then
+          break
+        end
+      end
+
+      -- 3) Clear fullscreen on all clients (we’ll re‑apply on c if needed)
+      for _, cl in ipairs(client.get()) do
+        if cl.fullscreen then
+          cl.fullscreen = false
+        end
+      end
+
+      -- 4) Switch to the target tag & re‑arrange
+      awful.tag.viewonly(target_tag)
+      awful.layout.arrange(target_tag.screen)
     end
   end
 
-  -- 3) Focus & raise
+  -- 5) Finally, focus & raise
   client.focus = c
   c:raise()
 
-  -- 4) Remove border if client is floating
+  -- 6) If floating, remove border
   if c.floating then
     c.border_width = 0
   end

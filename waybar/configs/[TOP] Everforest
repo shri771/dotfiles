@@ -20,6 +20,7 @@
 
 "modules-left": [
 	"hyprland/workspaces#cam",
+	"custom/separator#line",
 //	"mpris",
 	"tray",
 	"custom/separator#blank_1",
@@ -29,7 +30,9 @@
 	"idle_inhibitor",
 	"bluetooth",
 	"custom/cycle_wall",
+    "custom/open-paren",
 	"clock#forest",
+    "custom/close-paren",
 	"custom/separator#blank",
 	"custom/swaync",
 	"custom/headphones",
@@ -43,10 +46,22 @@
 	"custom/separator#blank_2",
 	"group/audio",
 	],
+"custom/open-paren": {
+    "format": "(",
+    "tooltip": false
+},
+"custom/close-paren": {
+    "format": ")",
+    "tooltip": false
+},
+"custom/line": {
+    "format": "|",
+    "tooltip": false
+},
 
 "clock#forest": {
     "format": "{:%A %d.%m.%Y - %H:%M}",
-    "format-alt": "{:%A %d.%m.%Y - %H:%M:%S}", 
+    "format-alt": "{:%A %d.%m.%Y - %H:%M:%S}",
     "tooltip-format": "<span color='#D3C6AA' size='larger'>{:%Y %B}</span>\n<tt>{calendar}</tt>",
     "calendar-weeks-pos": "right",
     "today-format": "<span color='#E67E80' weight='ultrabold'>{}</span>",
