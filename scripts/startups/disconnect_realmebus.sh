@@ -28,10 +28,12 @@ disconnect_bluetooth() {
     printf "Disconnecting from Bluetooth device %s...\n" "$BT_DEVICE_MAC"
     if ! bluetoothctl disconnect "$BT_DEVICE_MAC"; then
         printf "Error: Failed to disconnect from Bluetooth device %s.\n" "$BT_DEVICE_MAC" >&2
+        notify-send -i "/home/sh/.icons/WhiteSur-dark/apps@2x/scalable/bluetooth.svg" "Bluetooth Disconnection Failed" "Failed to disconnect from Realme Buds."
         return 1
     fi
 
     printf "Successfully disconnected from %s.\n" "$BT_DEVICE_MAC"
+    notify-send -i "/home/sh/.icons/WhiteSur-dark/apps@2x/scalable/bluetooth.svg" "Bluetooth Disconnected" "Realme Buds disconnected successfully!"
 }
 
 # Main execution flow

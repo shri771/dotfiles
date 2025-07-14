@@ -4,24 +4,22 @@
 local awful = require("awful")
 
 -- Apps and scripts autostarted using appropriate spawn method
-awful.spawn.with_shell("lxsession")
-awful.spawn.with_shell("picom --config ~/.config/picom/picom.conf")
-awful.spawn.with_shell("xss-lock --transfer-sleep-lock -- betterlockscreen -l &")
 awful.spawn("nm-applet")
 awful.spawn("nm-applet --indicator")
 awful.spawn("blueman-applet")
 awful.spawn("greenclip daemon")
 awful.spawn("kdeconnectd")
 awful.spawn("numlockx on")
-awful.spawn("xset r rate 250 50")
-awful.spawn.with_shell("~/.fehbg")
-awful.spawn.with_shell("sleep 3 && ~/scripts/startups/connect_realmebuds.sh")
-awful.spawn.with_shell("sleep 5 && ~/.config/awesome/scripts/AppsAtutostart.sh")
-awful.spawn.with_shell("~/.config/polybar/lauch.sh")
+awful.spawn.with_shell("xset r rate 300 50")
 awful.spawn("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 awful.spawn("lxqt-policykit")
-
--- Special case: run autokey-qt -c only if not already running
+awful.spawn.with_shell("picom --config ~/.config/picom/picom.conf")
+awful.spawn.with_shell("xss-lock --transfer-sleep-lock -- betterlockscreen -l &")
+awful.spawn.with_shell("~/.fehbg")
+awful.spawn.with_shell("~/.config/polybar/lauch.sh")
+awful.spawn.with_shell("sudo systemctl restart bluetooth.service")
+awful.spawn.with_shell("sleep 2 && ~/scripts/startups/connect_realmebuds.sh")
+awful.spawn.with_shell("sleep 3 && ~/.config/awesome/scripts/AppsAtutostart.sh")
 awful.spawn.with_shell("pgrep -x autokey-qt > /dev/null || autokey-qt -c")
 
 -- To load this autostart file, add the following to your rc.lua:

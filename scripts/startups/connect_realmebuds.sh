@@ -28,13 +28,16 @@ connect_bluetooth() {
     printf "Waiting 2 seconds before connecting...\n"
     sleep 2
 
+    notify-send -i "/home/sh/.icons/WhiteSur-dark/apps@2x/scalable/bluetooth.svg" "Bluetooth" "Connecting to Realme Buds..."
     printf "Connecting to Bluetooth device %s...\n" "$BT_DEVICE_MAC"
     if ! bluetoothctl connect "$BT_DEVICE_MAC"; then
         printf "Error: Failed to connect to Bluetooth device %s.\n" "$BT_DEVICE_MAC" >&2
+        notify-send -i "/home/sh/.icons/WhiteSur-dark/apps@2x/scalable/bluetooth.svg" "Bluetooth Connection Failed" "Failed to connect to Realme Buds."
         return 1
     fi
 
     printf "Successfully connected to %s.\n" "$BT_DEVICE_MAC"
+    notify-send -i "/home/sh/.icons/WhiteSur-dark/apps@2x/scalable/bluetooth.svg" "Bluetooth Connected" "Realme Buds connected successfully!"
 }
 
 # Main execution flow
