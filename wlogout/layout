@@ -19,19 +19,13 @@
 {
     "label" : "logout",
 
-    "action" : "awesome-client 'awesome.quit()' && loginctl kill-session $XDG_SESSION_ID",
+    "action" : "loginctl kill-session $XDG_SESSION_ID",
+
     "text" : "Logout",
-    "keybind" : "e"
 }
 {
     "label" : "suspend",
     "action" : "systemctl suspend && $HOME/.config/hypr/scripts/LockScreen.sh",
     "text" : "Suspend",
     "keybind" : "s"
-}
-{
-    "label" : "hibernate",
-    "action" : "systemctl hibernate",
-    "text" : "Hibernate",
-    "keybind" : "h"
 }
