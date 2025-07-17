@@ -385,13 +385,6 @@ globalkeys = my_table.join(
   -------------------------------------------------
   -- Workspace
   -------------------------------------------------
-  awful.key({ modkey }, "$", function()
-    local screen = awful.screen.focused()
-    local tag = screen.tags[4]
-    if tag then
-      tag:view_only()
-    end
-  end, { description = "view tag 4", group = "tag" }),
 
   awful.key({ altkey }, "Left", function()
     awful.tag.viewprev()
@@ -744,15 +737,15 @@ clientkeys = my_table.join(
 )
 
 -- Bind tags to shortcut's
--- Define letter shortcuts for workspaces 1, 2, and 3
-local letterKeys = { "t", "n", "s" }
+-- Define letter shortcuts for workspaces 1, 2, 3 and 4
+local letterKeys = { "t", "n", "s", "$" }
 for i = 1, 9 do
   -- only show #1 and #9 in the shortcut help
-  local descr_view, descr_toggle, descr_move, descr_toggle_focus
+  local descr_view, descr_move_no_switch, descr_move_and_switch, descr_toggle_focus
   if i == 1 or i == 9 then
     descr_view = { description = "view tag #", group = "tag" }
-    descr_toggle = { description = "toggle tag #", group = "tag" }
-    descr_move = { description = "move focused client to tag #", group = "tag" }
+    descr_move_no_switch = { description = "move focused client to tag #", group = "tag" }
+    descr_move_and_switch = { description = "move focused client to tag # and follow", group = "tag" }
     descr_toggle_focus = { description = "toggle focused client on tag #", group = "tag" }
   end
 
@@ -777,23 +770,26 @@ for i = 1, 9 do
       end
     end, descr_view),
 
-    -- toggle tag display
+    -- move client to tag (no switch)
     awful.key({ modkey, ctrlkey }, "#" .. (adjusted_key + 9), function()
-      local tag = awful.screen.focused().tags[i]
-      if tag then
-        awful.tag.viewtoggle(tag)
-      end
-    end, descr_toggle),
-
-    -- move client to tag
-    awful.key({ modkey, "Shift" }, "#" .. (adjusted_key + 9), function()
       if client.focus then
         local tag = client.focus.screen.tags[i]
         if tag then
           client.focus:move_to_tag(tag)
         end
       end
-    end, descr_move),
+    end, descr_move_no_switch),
+
+    -- move client to tag (and switch)
+    awful.key({ modkey, "Shift" }, "#" .. (adjusted_key + 9), function()
+      if client.focus then
+        local tag = client.focus.screen.tags[i]
+        if tag then
+          client.focus:move_to_tag(tag)
+          tag:view_only()
+        end
+      end
+    end, descr_move_and_switch),
 
     -- toggle focused client on tag
     awful.key({ modkey, ctrlkey, "Shift" }, "#" .. (adjusted_key + 9), function()
@@ -806,9 +802,12 @@ for i = 1, 9 do
     end, descr_toggle_focus)
   )
 
-  -- letter-key shortcuts for tags 1–3
-  if i <= 3 then
-    local letter_descr = { description = "tag #" .. i, group = "tag" }
+  -- letter-key shortcuts for tags 1–4
+  if i <= 4 then
+    local letter_descr_view = { description = "view tag #" .. i, group = "tag" }
+    local letter_descr_move_no_switch = { description = "move client to tag #" .. i, group = "tag" }
+    local letter_descr_move_and_switch = { description = "move client to tag #" .. i .. " and follow", group = "tag" }
+    local letter_descr_toggle_focus = { description = "toggle focused client on tag #" .. i, group = "tag" }
     globalkeys = my_table.join(
       globalkeys,
       awful.key({ modkey }, letterKeys[i], function()
@@ -816,21 +815,24 @@ for i = 1, 9 do
         if tag then
           tag:view_only()
         end
-      end, letter_descr),
+      end, letter_descr_view),
       awful.key({ modkey, ctrlkey }, letterKeys[i], function()
-        local tag = awful.screen.focused().tags[i]
-        if tag then
-          awful.tag.viewtoggle(tag)
-        end
-      end, letter_descr),
-      awful.key({ modkey, "Shift" }, letterKeys[i], function()
         if client.focus then
           local tag = client.focus.screen.tags[i]
           if tag then
             client.focus:move_to_tag(tag)
           end
         end
-      end, letter_descr),
+      end, letter_descr_move_no_switch),
+      awful.key({ modkey, "Shift" }, letterKeys[i], function()
+        if client.focus then
+          local tag = client.focus.screen.tags[i]
+          if tag then
+            client.focus:move_to_tag(tag)
+            tag:view_only()
+          end
+        end
+      end, letter_descr_move_and_switch),
       awful.key({ modkey, ctrlkey, "Shift" }, letterKeys[i], function()
         if client.focus then
           local tag = client.focus.screen.tags[i]
@@ -838,7 +840,7 @@ for i = 1, 9 do
             client.focus:toggle_tag(tag)
           end
         end
-      end, letter_descr)
+      end, letter_descr_toggle_focus)
     )
   end
 end
