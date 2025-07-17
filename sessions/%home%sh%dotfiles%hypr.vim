@@ -9,14 +9,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +55 ~/dotfiles/hypr/scripts/BluetoothRofi.sh
-badd +43 UserConfigs/WindowRules.conf
+badd +43 UserConfigs/Startup_Apps.conf
+badd +18 scripts/ClipManager.sh
 argglobal
 %argdel
 $argadd .
-edit UserConfigs/WindowRules.conf
+edit scripts/ClipManager.sh
 argglobal
-balt ~/dotfiles/hypr/scripts/BluetoothRofi.sh
+balt UserConfigs/Startup_Apps.conf
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -27,12 +27,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 106 - ((13 * winheight(0) + 9) / 18)
+let s:l = 43 - ((35 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 106
-normal! 0
+keepjumps 43
+normal! 04|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -46,6 +46,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

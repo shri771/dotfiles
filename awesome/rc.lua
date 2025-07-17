@@ -369,6 +369,9 @@ globalkeys = my_table.join(
   awful.key({ modkey, ctrlkey }, "m", function()
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/rofi_mpd_launcher.sh")
   end, { description = "launch rofi-beats", group = "launcher" }),
+  awful.key({ modkey, ctrlkey }, "b", function()
+    awful.spawn.with_shell("$HOME/.config/awesome/scripts/toggle_realmebuds.sh")
+  end, { description = "toggle realmebuds connection", group = "launcher" }),
   awful.key({ altkey }, "f", function()
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/app_launcher.sh")
   end, { description = "launch rofi-beats", group = "launcher" }),
