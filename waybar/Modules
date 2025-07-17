@@ -11,7 +11,7 @@
 		"/home/sh/.config/hypr/scripts/temp_sensor"
 	],
 	//"thermal-zone": 0,
-	"critical-threshold": 80,
+	"critical-threshold": 10,
 	"format-critical": "{temperatureC}°C {icon}",
 	"format": "{temperatureC}°C {icon}",
 	"format-icons": [
@@ -94,17 +94,16 @@
 	"tooltip-format": "{timeTo} ",
 	"on-click-middle": "$HOME/.config/hypr/scripts/ChangeBlur.sh",
 },
-"bluetooth": { 
+"bluetooth": {
     "format": "<span size='large'></span> {device_battery_percentage}%",
     "format-disabled": "<span size='large'>󰂳</span>",
     "format-connected": "<span size='large'></span> {device_battery_percentage}%",
     "tooltip-format": "<span size='large'></span> {device_alias}",
     "tooltip-format-connected": "<span size='large'></span> {device_enumerate}",
-    "tooltip-format-enumerate-connected": "<span size='large'></span> {device_alias} 󰂄 {device_battery_percentage}%",
-    "tooltip": true,
-    "on-click-middle": "blueman-manager",
+    "tooltip": false,
+    "on-click": "blueman-manager",
     "on-click": "$HOME/scripts/startups/connect_realmebuds.sh",
-    "on-click-right": "$HOME/scripts/startups/disconnect_realmebus.sh",
+    "on-click-middle": "$HOME/scripts/startups/disconnect_realmebus.sh",
     "class": "{device_battery_percentage}"  // Assigns class based on battery level
 },
 "clock": {
@@ -159,7 +158,7 @@
 	"tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
 },
 "cpu": {
-	"format": "{usage}%",
+	"format": "{usage}%   ",
 	"interval": 1,
 	"min-length": 3,
 	"format-alt-click": "click",
@@ -251,7 +250,7 @@
 		"mpv": "",
 		"spotify": "",
 		"vlc": "󰕼",
-		"default": "󰗃", 
+		"default": "󰗃",
 	},
 	"status-icons": {
 		"paused": "󰐎",

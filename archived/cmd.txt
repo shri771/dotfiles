@@ -1,0 +1,40 @@
+sudo du -hxd1 / | sort -hr | head -20 # Check the storage used in /
+
+sudo du -hxd1 /home/sh | sort -hr
+
+systemctl list-timers --all #To check the systemd timers
+
+0 12,15,23 * * * nice -n 19 ionice -c2 -n7 rclone bisync -P ~/Documents shri77:Documents --force--conflict-resolve=newer  # To sync document folder with gdrive
+
+# To check temp path
+for i in /sys/class/hwmon/hwmon*/temp*_input
+    set dir (dirname $i)
+    set name (cat $dir/name)
+
+    # Remove the '_input' suffix to get the prefix
+    set prefix (string replace '_input' '' $i)
+    set label_file $prefix'_label'
+
+    if test -e $label_file
+        set label (cat $label_file 2>/dev/null)
+    else
+        set base_name (basename $prefix)
+        set label $base_name
+    end
+
+    set full_path (readlink -f $i)
+    echo "$name: $label $full_path"
+end
+
+ find ~/.config ~/.local ~/.cache -iname "*whatsie*" -o -iname "*whatsapp*"
+
+# Remove Brave lock
+rm -f SingletonLock SingletonSocket SingletonCookieance
+pactl set-sink-input-volume \
+        $(
+  pactl list sink-inputs \
+        | awk -F'#|:' '
+            /^Sink Input #/           { sub(/^#/,"",$2); id=$2 }
+            $0 ~ /application.name = "PipeWire ALSA \\[vlc\\]"/ { print id; exit }
+          '
+  ) +5%

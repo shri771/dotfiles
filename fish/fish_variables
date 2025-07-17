@@ -19,7 +19,9 @@ SETUVAR --export QT_QPA_PLATFORM:xcb
 SETUVAR --export SDL_VIDEODRIVER:wayland
 SETUVAR --export TERM:xterm\x2d256color
 SETUVAR --export VISUAL:nvim
+SETUVAR --export WAYLAND_DISPLAY:wayland\x2d1
 SETUVAR --export XDG_CURRENT_DESKTOP:KDE
+SETUVAR --export XDG_RUNTIME_DIR:/run/user/1000
 SETUVAR --export XDG_SESSION_TYPE:wayland
 SETUVAR __fish_initialized:3800
 SETUVAR _fisher_jethrokuan_2F_fzf_files:\x7e/\x2econfig/fish/functions/__fzf_cd\x2efish\x1e\x7e/\x2econfig/fish/functions/__fzf_complete\x2efish\x1e\x7e/\x2econfig/fish/functions/__fzf_complete_preview\x2efish\x1e\x7e/\x2econfig/fish/functions/__fzf_find_file\x2efish\x1e\x7e/\x2econfig/fish/functions/__fzf_get_dir\x2efish\x1e\x7e/\x2econfig/fish/functions/__fzf_open\x2efish\x1e\x7e/\x2econfig/fish/functions/__fzf_parse_commandline\x2efish\x1e\x7e/\x2econfig/fish/functions/__fzf_reverse_isearch\x2efish\x1e\x7e/\x2econfig/fish/functions/__fzfcmd\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/fzf\x2efish

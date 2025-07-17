@@ -9,16 +9,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +39 ~/dotfiles/waybar/style/\[Dark]\ Latte-Wallust\ combined.css
-badd +23 ~/dotfiles/waybar/configs/\[TOP]\ Everforest
-badd +1 Modules
-badd +193 ModulesCustom
+badd +22 ~/dotfiles/waybar/configs/\[TOP]\ Everforest
+badd +109 ModulesWorkspaces
 argglobal
 %argdel
 $argadd .
-edit ~/dotfiles/waybar/configs/\[TOP]\ Everforest
+edit ModulesWorkspaces
 argglobal
-balt ModulesCustom
+balt ~/dotfiles/waybar/configs/\[TOP]\ Everforest
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -29,12 +27,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 23 - ((21 * winheight(0) + 19) / 39)
+let s:l = 120 - ((23 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 23
-normal! 024|
+keepjumps 120
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -48,6 +46,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

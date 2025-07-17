@@ -9,30 +9,31 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +1211 rc.lua
-badd +12 lua/autostart.lua
+badd +390 rc.lua
+badd +0 term://~/dotfiles/awesome//209522:/usr/bin/fish
 argglobal
 %argdel
 $argadd rc.lua
-edit lua/autostart.lua
 argglobal
+if bufexists(fnamemodify("term://~/dotfiles/awesome//209522:/usr/bin/fish", ":p")) | buffer term://~/dotfiles/awesome//209522:/usr/bin/fish | else | edit term://~/dotfiles/awesome//209522:/usr/bin/fish | endif
+if &buftype ==# 'terminal'
+  silent file term://~/dotfiles/awesome//209522:/usr/bin/fish
+endif
 balt rc.lua
 setlocal foldmethod=manual
-setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
+setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
 setlocal foldignore=#
 setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 12 - ((11 * winheight(0) + 19) / 39)
+let s:l = 10040 - ((39 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 12
-normal! 024|
+keepjumps 10040
+normal! 013|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

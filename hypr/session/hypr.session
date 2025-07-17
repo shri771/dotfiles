@@ -1,0 +1,6 @@
+[monitor 0;workspace 5 silent;move 8,8;size 1904,1184;;;;] cantata
+[monitor 0;workspace 2 silent;move 8,8;size 1904,1184;;;;] /opt/vivaldi/vivaldi-bin
+[monitor 0;workspace 1 silent;move 965,8;size 947,587;;;;] /opt/vivaldi/vivaldi-bin
+[monitor 0;workspace 1 silent;move 965,605;size 947,587;;;;] kitty
+[monitor 0;workspace 1 silent;move 8,8;size 947,1184;;;;] /opt/vivaldi/vivaldi-bin
+[monitor 0;workspace 1 silent;move 432,60;size 1056,648;pin;float;;] kitty --class kitty-dropterm

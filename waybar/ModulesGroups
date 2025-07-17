@@ -24,7 +24,6 @@
 	"orientation": "horizontal",
 	"modules": [
 		"cpu",
-	"custom/cpu_freq",
 		"temperature",
 		"memory",
 	]
@@ -38,9 +37,9 @@
 		"transition-left-to-right": true
         },
 	"modules": [
-		"temperature",		
+		"temperature",
 		"cpu",
-		"power-profiles-daemon",	
+		"power-profiles-daemon",
 		"memory",
 		"disk",
 	]

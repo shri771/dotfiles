@@ -97,22 +97,19 @@
 	"on-scroll-up": "hyprctl dispatch workspace e+1",
 	"on-scroll-down": "hyprctl dispatch workspace e-1",
     "persistent-workspaces": {
-      "*": 5
+      "*": 6
 	},
 		"format-icons": {
-		"1": "  ",
-		"2": "  ",
+		"1": "  ",
+        "2": "  ",
 		"3": "  ",
-		"4": "  ",
-		"5": "  ",
+		"4": "  ",
+		"5": "  ",
 		"6":"  ",
-		"7":"Sette",
-		"8":"Otto",
-		"9":"Nove",
-		"10":"Dieci"
-	}	
+		"7":"  ",
+	}
   },
-  
+
 //  NUMBERS and ICONS style
 "hyprland/workspaces#4": {
 	"format": "{name}",
@@ -139,7 +136,7 @@
 		"default": "",
 	},
 },
-// NUMBERS and ICONS style with window rewrite 
+// NUMBERS and ICONS style with window rewrite
 "hyprland/workspaces#rw": {
 	"disable-scroll": true,
 	"all-outputs": true,
@@ -185,7 +182,7 @@
 		"class<waterfox|waterfox-bin>": " ",
 		"class<microsoft-edge>": " ",
 		"class<vlc>": "󰕼 "
-		}   
+		}
 	},
 
 }

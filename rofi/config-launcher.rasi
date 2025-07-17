@@ -3,7 +3,7 @@
 /* ---- Configuration ---- */
 
 configuration {
-	font:						"JetBrainsMono Nerd Font SemiBold 10";
+	font:						"JetBrainsMono Nerd Font SemiBold 11";
 	modi:                       "drun";
     show-icons:                 true;
     display-drun:               "        ";
@@ -12,7 +12,7 @@ configuration {
 	me-select-entry:            "MouseSecondary";
     me-accept-entry:            "MousePrimary";
 	window-format:              "{w} · {c} · {t}";
-	dpi:						1;
+	dpi:						96;
 
 
 }
@@ -171,13 +171,13 @@ element alternate.active {
     text-color:                  inherit;
 }
 element-icon {
-    size:                        1.0em;
+    size:                        1.5em;
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
 }
 element-text {
-    font:						"JetBrainsMono Nerd Font SemiBold 10";
+    font:						"JetBrainsMono Nerd Font SemiBold 14";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

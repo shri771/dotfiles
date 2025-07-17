@@ -1,0 +1,14 @@
+2024/12/31-20:52:27.114 1d22 Reusing MANIFEST /home/shri/.config/Notion/Partitions/notion/Local Storage/leveldb/MANIFEST-000001
+2024/12/31-20:52:27.119 1d22 Recovering log #77
+2024/12/31-20:52:27.124 1d22 Level-0 table #80: started
+2024/12/31-20:52:27.130 1d22 Level-0 table #80: 274483 bytes OK
+2024/12/31-20:52:27.134 1d22 Delete type=0 #77
+2024/12/31-20:52:27.134 1d22 Compacting 4@0 + 1@1 files
+2024/12/31-20:52:27.162 1d22 Generated table #82@0: 251 keys, 1388641 bytes
+2024/12/31-20:52:27.162 1d22 Compacted 4@0 + 1@1 files => 1388641 bytes
+2024/12/31-20:52:27.167 1d22 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/12/31-20:52:27.167 1d22 Delete type=2 #78
+2024/12/31-20:52:27.167 1d22 Delete type=2 #75
+2024/12/31-20:52:27.167 1d22 Delete type=2 #80
+2024/12/31-20:52:27.167 1d22 Delete type=2 #71
+2024/12/31-20:52:27.167 1d22 Delete type=2 #73

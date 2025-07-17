@@ -20,37 +20,41 @@
 
 "modules-left": [
 	"hyprland/workspaces#cam",
-	"custom/separator#line",
+	//"custom/separator#line",
 //	"mpris",
 	"tray",
 	"custom/separator#blank_1",
 	"custom/updater",
+	"custom/separator#blank_2",
 	],
 "modules-center": [
+	"custom/separator#blank_3",
+	"custom/separator#blank_2",
 	"idle_inhibitor",
-	"bluetooth",
-	"custom/cycle_wall",
-    "custom/open-paren",
+   // "custom/open-paren",
+	"custom/separator#blank_3",
 	"clock#forest",
-    "custom/close-paren",
+ //   "custom/close_paren",
 	"custom/separator#blank",
 	"custom/swaync",
-	"custom/headphones",
-	"mpris",
+	"bluetooth",
+	"custom/separator#blank_2",
 	],
 "modules-right": [
-	"group/motherboard",
 	"custom/separator#blank_2",
+	"custom/separator#blank_2",
+	"group/motherboard",
 	"backlight",
   	"battery",
 	"custom/separator#blank_2",
 	"group/audio",
+	"custom/separator#blank_2",
 	],
 "custom/open-paren": {
     "format": "(",
     "tooltip": false
 },
-"custom/close-paren": {
+"custom/close_paren": {
     "format": ")",
     "tooltip": false
 },
@@ -141,7 +145,7 @@
 		"/home/sh/.config/hypr/scripts/temp_sensor"
 	],
 	//"thermal-zone": 0,
-	"critical-threshold": 80,
+	"critical-threshold": 75,
 	"format-critical": "{temperatureC}°C {icon}",
 	"format": "{temperatureC}°C {icon}",
 	"format-icons": [

@@ -7,9 +7,10 @@
 @define-color transparent	rgba(1, 1, 1, 0.65);
 @define-color teal-trans	rgba(1, 117, 84, 0.5);
 @define-color cyan			rgba(53, 140, 169, 1);
+@define-color blue			#55ffff;
 
 @define-color background-module     @transparent;
-@define-color border-color          rgba(1, 1, 1, 0.1);
+@define-color border-color          @color12;
 @define-color button-color          @color11;
 @define-color button-hover          @color13;
 
@@ -21,7 +22,7 @@
     font-weight: bold;
 	min-height: 0;
     /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
-    font-size: 100%;
+    font-size: 14px;
     font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 }
 
@@ -55,7 +56,7 @@ tooltip {
 .modules-right {
     background-color: @background-module;
     border-radius:15px;
-    border-bottom:2px solid @border-color;
+    border-bottom:0px solid @border-color;
 	padding-top: 0px;
 	padding-bottom: 0px;
 	padding-right: 4px;
@@ -65,7 +66,7 @@ tooltip {
 .modules-center {
     background-color: @background-module;
     border-radius:15px;
-    border-bottom:2px solid @border-color;
+    border-bottom:0px solid @border-color;
 	padding-top: 0px;
 	padding-bottom: 0px;
 	padding-right: 4px;
@@ -75,7 +76,7 @@ tooltip {
 .modules-left {
     background-color: @background-module;
     border-radius:15px;
-    border-bottom: 2px solid @border-color;
+    border-bottom: 0px solid @border-color;
 	padding-top: 0px;
 	padding-bottom: 0px;
 	padding-right: 4px;
@@ -85,37 +86,41 @@ tooltip {
 #workspaces {
     padding: 0px 1px;
     border-radius: 15px;
-    border:2px solid @border-color;
+    border:1.4px solid @border-color;
     font-weight: bold;
     font-style: normal;
     opacity:0.8;
     color:#FFFFFF;
 }
 #workspaces button {
-    color: #6E6A86;
+    color: @white;
     box-shadow: none;
 	text-shadow: none;
     border-radius: 30px;
     padding-left: 4px;
     padding-right: 4px;
     animation: gradient_f 20s ease-in infinite;
-    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
+    transition: none;
+}
+
+#workspaces button.persistent {
+    color: @white;
 }
 
 #workspaces button.active {
-    color: #00CCFF;
+    color: #55ffff;
     border-radius: 50%;
-    background-color: black;
+    background-color: @background-module;
     opacity: 0.7;
     border-radius: 15px 15px 15px 15px;
     padding-left: 8px;
     padding-right: 8px;
     animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+    transition: none;
 }
 
 #workspaces button.focused {
-    color: #d8dee9;
+    color: @blue;
 }
 
 #workspaces button.urgent {
@@ -129,7 +134,7 @@ tooltip {
  	padding-left: 2px;
     padding-right: 2px;
     animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+    transition: none;
 }
 
 #clock#2 {
@@ -160,6 +165,7 @@ tooltip {
 #wireplumber,
 #workspaces,
 #custom-backlight,
+#custom-close_paren,
 #custom-browser,
 #custom-cava_mviz,
 #custom-cycle_wall,
@@ -249,12 +255,14 @@ tooltip {
 
 
 #custom-swaync{
-     font-size: 15px;
-    padding: 4px;     /* Add spacing */
+     font-size: 17px;
+    padding: 1px;     /* Add spacing */
+    color: #ba5663;
 
 }
 
 #pulseaudio-slider slider {
+    color: #F0C674;
     min-width: 0px;
     min-height: 0px;
     opacity: 0;
@@ -299,7 +307,7 @@ tooltip {
 }
 #pulseaudio-slider,
 #pulseaudio {
-	color: @color19;
+    color: #F0C674;
 }
 
 #pulseaudio.muted {
@@ -326,7 +334,7 @@ tooltip {
 
 #cpu {
     color: #ffff7f;
-    font-size: 12px;  /* Keep normal text size */
+    font-size: 14px;  /* Keep normal text size */
 }
 
 #battery {
@@ -354,6 +362,7 @@ tooltip {
 }
 
 #pulseaudio-slider slider {
+    color: #F0C674;
 	min-width: 0px;
 	min-height: 0px;
 	opacity: 0;
@@ -363,12 +372,14 @@ tooltip {
 }
 
 #pulseaudio-slider trough {
+    color: #F0C674;
 	min-width: 80px;
 	min-height: 5px;
 	border-radius: 5px;
 }
 
 #pulseaudio-slider highlight {
+    color: #F0C674;
 	min-height: 10px;
 	border-radius: 5px;
 }
@@ -395,8 +406,9 @@ tooltip {
 #custom-hypridle,
 #custom-lock,
 #idle_inhibitor {
-   font-size: 14px;
-    color: @teal;
+    padding: 4px;
+   font-size: 15px;
+    color: #ba5663;
 }
 
 /*-----Indicators----*/
@@ -405,10 +417,16 @@ tooltip {
 	color: #39FF14;
 }
 
+#custom.close_paren {
+   font-size: 30px;
+
+}
+
 #clock {
-	color: @sapphire;
+    color: #F0C674;
     border-radius: 15px;
-    border:2px solid @border-color;
+    border:1.4px solid @border-color;
+    font-size: 15px;
 }
 #custom-updates {
     color: @yellow;

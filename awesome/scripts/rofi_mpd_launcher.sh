@@ -12,7 +12,6 @@ show_update_menu() {
     local update_options="Cheerful\nFeel-Good💖\nRemix\nCurrent\ntest\nall"
 
     local chosen_update
-    chosen_update=$(echo -e "$update_options" | rofi -dmenu -i -p "Select Playlist to Update" -config "$ROFI_CONFIG")
 
     if [ -n "$chosen_update" ]; then
         "$update_script" "$chosen_update"
@@ -23,7 +22,7 @@ show_update_menu() {
 select_and_play_playlist() {
     local playlist
     playlist=$(find "$MUSIC_DIR" -mindepth 1 -maxdepth 1 -type d -printf "%f\n" |
-        rofi -dmenu -i -config "$ROFI_CONFIG" -p "Select Playlist")
+        rofi -dmenu -i  -p "Select Playlist")
 
     if [ -n "$playlist" ]; then
         playerctl pause
@@ -94,7 +93,6 @@ show_mpd_controls() {
             -mesg "$mesg" \
             ${active} ${urgent} \
             -markup-rows \
-            -config "$ROFI_CONFIG" \
             -theme-str "listview {columns: $list_col; lines: $list_row;}" \
             -theme-str 'textbox-prompt-colon {str: "";}' \
             -theme-str 'element normal.active { background-color: #A6E3A1; text-color: #1E1E2E; }' \

@@ -13,33 +13,30 @@ if pidof rofi > /dev/null; then
 fi
 
 while true; do
-    result=$(
-        rofi -i -dmenu \
-            -kb-custom-1 "Control-Delete" \
-            -kb-custom-2 "Alt-Delete" \
-             < <(cliphist list) \
-			-mesg "$msg"
-    )
+    result=$(cliphist list | sed 's/^[0-9]\+\s\+//' | rofi -i -dmenu \
+        -kb-custom-1 "Control-Delete" \
+        -kb-custom-2 "Alt-Delete" )
 
-    case "$?" in
-        1)
+    exit_code=$?
+
+    case "$exit_code" in
+        1) # Cancel
             exit
             ;;
-        0)
-            case "$result" in
-                "")
-                    continue
-                    ;;
-                *)
-                    cliphist decode <<<"$result" | wl-copy
-                    exit
-                    ;;
-            esac
+        0) # OK
+            if [ -z "$result" ]; then
+                continue
+            fi
+            cliphist list | grep -F "$result" | head -n 1 | cliphist decode | wl-copy
+            exit
             ;;
-        10)
-            cliphist delete <<<"$result"
+        10) # Custom 1 (Delete)
+            if [ -z "$result" ]; then
+                continue
+            fi
+            cliphist list | grep -F "$result" | head -n 1 | cliphist delete
             ;;
-        11)
+        11) # Custom 2 (Wipe)
             cliphist wipe
             ;;
     esac

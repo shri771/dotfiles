@@ -1,0 +1,128 @@
+{
+	"appState": {
+		"zoomFactor": 1,
+		"theme": {
+			"mode": "light",
+			"usingSystemTheme": true,
+			"colors": {
+				"white": "white",
+				"blue": "#2383E2"
+			},
+			"borderRadius": 4,
+			"textColor": "rgba(55, 53, 47, 1)",
+			"popoverBackgroundColor": "white",
+			"popoverBoxShadow": "\n\t\t\t\t\t 0 0 0 1px rgba(15,15,15,.05),\n\t\t\t\t\t 0 3px 6px rgba(15,15,15,.1),\n\t\t\t\t\t 0 9px 24px rgba(15,15,15,.2)\n\t\t\t\t",
+			"inputBoxShadow": "\n\t\t\t\t\tinset 0 0 0 1px rgba(15,15,15,.1)\n\t\t\t\t",
+			"inputBackgroundColor": "rgba(242,241,238,0.6)",
+			"dividerColor": "rgba(55,53,47,.16)",
+			"shadowOpacity": 0.1
+		},
+		"preferences": {
+			"isAutoUpdaterDisabled": false,
+			"isAutoUpdaterOSSupportBypass": false,
+			"isClosingBrowserTabs": false,
+			"isHardwareAccelerationDisabled": false,
+			"isHideLastWindowOnCloseEnabled": true,
+			"isMenuBarIconEnabled": true,
+			"isNavigationHistoryEnabled": true,
+			"isNewTabSearchEnabled": true,
+			"isOpenAtLoginEnabled": false,
+			"isPinnedTabNewTabEnabled": true,
+			"isQuickSearchEnabled": true,
+			"isTabDragIntoWindowEnabled": true,
+			"isTabPreviewEnabled": true,
+			"isUniversalLinksEnabled": true,
+			"isUsingHttps": true,
+			"isVibrancyEnabled": null,
+			"notionAiShortcut": "shift+ctrl+j",
+			"onStartup": "continue",
+			"quickSearchShortcut": "Shift+CommandOrControl+K",
+			"updaterChannel": null,
+			"ignoreLogMessages": [
+				"Electron Security Warning",
+				"chrome-extension://"
+			],
+			"sqliteConnectionType": "message-ports",
+			"disabledExtensions": [
+				"React Developer Tools"
+			]
+		},
+		"notificationCount": 0,
+		"isTabBarContextMenuOpen": false
+	},
+	"history": {
+		"lastFocusedWindowDisplayState": {
+			"normalBounds": {
+				"x": 10,
+				"y": 34,
+				"width": 944,
+				"height": 1156
+			},
+			"displayBounds": [
+				{
+					"x": 0,
+					"y": 0,
+					"width": 1920,
+					"height": 1200
+				}
+			],
+			"isFullScreen": false,
+			"isHtmlFullScreen": false,
+			"isMaximized": false
+		},
+		"appRestorationState": [
+			{
+				"windowId": "a06b8720-cbc1-41b5-b12b-73438abe9a96",
+				"focusOrder": 1,
+				"displayState": {
+					"normalBounds": {
+						"x": 10,
+						"y": 34,
+						"width": 944,
+						"height": 1156
+					},
+					"displayBounds": [
+						{
+							"x": 0,
+							"y": 0,
+							"width": 1920,
+							"height": 1200
+						}
+					],
+					"isFullScreen": false,
+					"isHtmlFullScreen": false,
+					"isMaximized": false
+				},
+				"tabs": [
+					{
+						"tabId": "7749a657-3ff3-4d2a-9f8d-5cf8d100d602",
+						"url": "https://www.notion.so/Linux-CMD-13c56480d76480b7836ef6591f19b41b?p=16656480d76480d79848db70bca9fe36&pm=s",
+						"index": 0,
+						"isActive": true
+					},
+					{
+						"tabId": "e133c79b-2560-4894-93d5-7a2d0b2de071",
+						"url": "https://www.notion.so/Drivers-16956480d7648085b2bfc47f3db8bafc",
+						"parentTabId": "7749a657-3ff3-4d2a-9f8d-5cf8d100d602",
+						"index": 1,
+						"isActive": false
+					},
+					{
+						"tabId": "582a60d3-55e7-47d0-81f5-b652e1a1d8fa",
+						"url": "https://www.notion.so/To-add-multifunction-16656480d76480d3b282c52b3a8002c8",
+						"parentTabId": "7749a657-3ff3-4d2a-9f8d-5cf8d100d602",
+						"index": 2,
+						"isActive": false
+					},
+					{
+						"tabId": "209b579c-95dd-4d2f-bea6-54f2d4f330f4",
+						"url": "https://www.notion.so/Drivers-16956480d7648085b2bfc47f3db8bafc",
+						"parentTabId": "7749a657-3ff3-4d2a-9f8d-5cf8d100d602",
+						"index": 3,
+						"isActive": false
+					}
+				]
+			}
+		]
+	}
+}

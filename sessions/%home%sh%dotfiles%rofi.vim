@@ -9,15 +9,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +1 ~/dotfiles/rofi/master-config.rasi
-badd +73 master-config-2.rasi
-badd +17 config-launcher.rasi
+badd +6 config-launcher.rasi
+badd +27 wallust/colors-rofi.rasi
 argglobal
 %argdel
-$argadd .
-edit master-config-2.rasi
+$argadd config-launcher.rasi
+edit config-launcher.rasi
 argglobal
-balt ~/dotfiles/rofi/master-config.rasi
+balt wallust/colors-rofi.rasi
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -28,12 +27,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 73 - ((19 * winheight(0) + 20) / 40)
+let s:l = 6 - ((5 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 73
-normal! 0
+keepjumps 6
+normal! 068|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -47,7 +46,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

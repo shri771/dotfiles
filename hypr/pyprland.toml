@@ -12,8 +12,8 @@ animation = "fromTop"
 command = "kitty --class kitty-dropterm"
 class = "kitty-dropterm"
 lazy = true
-size = "60% 60%"
-focus = true  
+size = "55% 54%"
+focus = true
 
 [scratchpads.whatsie]
 animation = "fromTop"
@@ -44,7 +44,7 @@ lazy = true
 animation = "fromBottom"
 command = "qalculate-gtk "
 class = "qalculate-gtk"
-size = "21% 44%"
+size = "20% 46%"
 focus = true
 lazy = true
 position = "41% 44%"
@@ -68,7 +68,7 @@ lazy = true
 position = "28% 37%"
 opacity = 0.9
 ontop = false
-focus = true  
+focus = true
 
 
 [scratchpads.kde]
@@ -79,7 +79,7 @@ size = "24% 27%"
 lazy = true
 position = "37% 46%"
 opacity = 0.9
-focus = true  
+focus = true
 
 
 
@@ -91,4 +91,4 @@ size = "20% 37%"
 position = "41% 51%"
 lazy = true
 opacity = 0.9
-focus = true  
+focus = true

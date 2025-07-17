@@ -28,13 +28,13 @@ button:focus {
 }
 
 button:hover {
-    background-color: @color12; 
+    background-color: @color12;
     color: #1e1e2e;
     background-size: 50%;
     margin: 30px;
     border-radius: 80px;
 	box-shadow: 0 0 30px @color7;
-	
+
 }
 
 /* Adjust the size of the icon or content inside the button */
@@ -78,9 +78,9 @@ button span {
     background-image: image(url("./icons/restart-hover.png"));
 }
 
-#hibernate {
-    background-image: image(url("./icons/hibernate.png"));
-}
-#hibernate:hover {
-    background-image: image(url("./icons/hibernate-hover.png"));
-}
+/* #hibernate { */
+/*     background-image: image(url("./icons/hibernate.png")); */
+/* } */
+/* #hibernate:hover { */
+/*     background-image: image(url("./icons/hibernate-hover.png")); */
+/* } */

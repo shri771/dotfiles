@@ -1,10 +1,5 @@
-### EXPORT ###
-set -U fish_greeting ""
-set -Ux EDITOR nvim
-set -Ux VISUAL nvim
 #set -Ux TERM xterm-256color
 set -U LC_CTYPE en_US.UTF-8
-eval ($HOME/.config/tmux/plugins/tmuxifier/bin/tmuxifier init - fish)
 set -Ux PERL5LIB /usr/share/perl5/vendor_perl
 set -Ux BORG_PASSCOMMAND "cat $HOME/.borg_passphrase"
 ##local
@@ -14,7 +9,6 @@ set -Ux BORG_PASSCOMMAND "cat $HOME/.borg_passphrase"
 ### Uncomment only one of these!
 
 ### "nvim" as manpager
-set -x MANPAGER "nvim +Man!"
 
 ### "less" as manpager
 # set -x MANPAGER "less"
@@ -28,12 +22,6 @@ function fish_user_key_bindings
     bind \cf forward-word
 end
 
-### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
-set fish_color_normal brcyan
-set fish_color_autosuggestion '#7d7d7d'
-set fish_color_command brcyan
-set fish_color_error '#ff6c6b'
-set fish_color_param brcyan
 
 
 # Functions needed for !! and !$

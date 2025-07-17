@@ -3,7 +3,7 @@
 # --- Configuration ---
 COMPOSE_FILE="/home/sh/Docker/Con/homeAssistant/compose.yaml"
 # IMPORTANT: Change this to the actual service name from your compose.yaml file
-CONTAINER_NAME="home-assistant" 
+CONTAINER_NAME="home-assistant"
 URL="http://localhost:8123/lovelace/0"
 ICON_PATH="/home/sh/.icons/WhiteSur/apps@2x/scalable/homebank.svg"
 
@@ -26,4 +26,4 @@ else
 fi
 
 # Open the URL in Brave
-brave "${URL}" &
+vivaldi "${URL}" &

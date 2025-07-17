@@ -1,0 +1,5 @@
+[core]
+screencast = true
+backend = wlroots
+output_name = HDMI-A-1
+

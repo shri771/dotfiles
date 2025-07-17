@@ -1,0 +1,49 @@
+2024/12/30-17:19:01.939 d71d5 Reusing MANIFEST /home/shri/.config/Notion/Partitions/notion/IndexedDB/https_www.notion.so_0.indexeddb.leveldb/MANIFEST-000001
+2024/12/30-17:19:01.940 d71d5 Recovering log #123
+2024/12/30-17:19:01.940 d71d5 Reusing old log /home/shri/.config/Notion/Partitions/notion/IndexedDB/https_www.notion.so_0.indexeddb.leveldb/000123.log 
+2024/12/30-17:19:01.940 d71d5 Delete type=2 #122
+2024/12/30-17:19:03.030 d71eb Level-0 table #128: started
+2024/12/30-17:19:03.033 d71eb Level-0 table #128: 7321 bytes OK
+2024/12/30-17:19:03.039 d71eb Delete type=0 #123
+2024/12/30-17:19:03.039 d71d4 Manual compaction at level-0 from '\x00+\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00,\x00\x00\x00' @ 0 : 0; will stop at '\x00,\x00\x00\x05' @ 10675 : 1
+2024/12/30-17:19:03.039 d71d4 Compacting 1@0 + 1@1 files
+2024/12/30-17:19:03.043 d71d4 Generated table #129@0: 4102 keys, 55871 bytes
+2024/12/30-17:19:03.044 d71d4 Compacted 1@0 + 1@1 files => 55871 bytes
+2024/12/30-17:19:03.046 d71d4 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/12/30-17:19:03.046 d71d4 Delete type=2 #128
+2024/12/30-17:19:03.046 d71d4 Manual compaction at level-0 from '\x00,\x00\x00\x05' @ 10675 : 1 .. '\x00,\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/12/30-17:19:03.047 d71d4 Manual compaction at level-0 from '\x00,\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00-\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/12/30-17:19:03.169 d71d4 Level-0 table #131: started
+2024/12/30-17:19:03.171 d71d4 Level-0 table #131: 698 bytes OK
+2024/12/30-17:19:03.175 d71d4 Delete type=0 #127
+2024/12/30-17:19:03.175 d71d4 Delete type=2 #125
+2024/12/30-17:19:03.175 d71d4 Manual compaction at level-0 from '\x00-\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00.\x00\x00\x00' @ 0 : 0; will stop at '\x00-\x00\x00\x05' @ 10691 : 1
+2024/12/30-17:19:03.175 d71d4 Compacting 1@0 + 1@1 files
+2024/12/30-17:19:03.179 d71d4 Generated table #132@0: 4100 keys, 55845 bytes
+2024/12/30-17:19:03.179 d71d4 Compacted 1@0 + 1@1 files => 55845 bytes
+2024/12/30-17:19:03.182 d71d4 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/12/30-17:19:03.182 d71d4 Delete type=2 #131
+2024/12/30-17:19:03.182 d71d4 Manual compaction at level-0 from '\x00-\x00\x00\x05' @ 10691 : 1 .. '\x00.\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/12/30-17:19:03.732 d71ed Manual compaction at level-0 from '\x00.\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00/\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/12/30-17:19:04.342 d71eb Level-0 table #134: started
+2024/12/30-17:19:04.344 d71eb Level-0 table #134: 1965 bytes OK
+2024/12/30-17:19:04.347 d71eb Delete type=2 #129
+2024/12/30-17:19:04.347 d71eb Delete type=0 #130
+2024/12/30-17:19:04.349 d71d4 Manual compaction at level-0 from '\x00/\x00\x00\x00' @ 72057594037927935 : 1 .. '\x000\x00\x00\x00' @ 0 : 0; will stop at '\x00/\x00\x00\x05' @ 10778 : 1
+2024/12/30-17:19:04.349 d71d4 Compacting 1@0 + 1@1 files
+2024/12/30-17:19:04.355 d71d4 Generated table #135@0: 4130 keys, 56715 bytes
+2024/12/30-17:19:04.355 d71d4 Compacted 1@0 + 1@1 files => 56715 bytes
+2024/12/30-17:19:04.358 d71d4 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/12/30-17:19:04.358 d71d4 Delete type=2 #134
+2024/12/30-17:19:04.358 d71d4 Manual compaction at level-0 from '\x00/\x00\x00\x05' @ 10778 : 1 .. '\x000\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/12/30-17:19:11.956 d71d4 Level-0 table #137: started
+2024/12/30-17:19:11.959 d71d4 Level-0 table #137: 6411 bytes OK
+2024/12/30-17:19:11.962 d71d4 Delete type=2 #132
+2024/12/30-17:19:11.962 d71d4 Delete type=0 #133
+2024/12/30-17:19:11.962 d71d4 Manual compaction at level-0 from '\x000\x00\x00\x00' @ 72057594037927935 : 1 .. '\x001\x00\x00\x00' @ 0 : 0; will stop at '\x000\x00\x00\x05' @ 11022 : 1
+2024/12/30-17:19:11.962 d71d4 Compacting 1@0 + 1@1 files
+2024/12/30-17:19:11.966 d71d4 Generated table #138@0: 4209 keys, 57415 bytes
+2024/12/30-17:19:11.966 d71d4 Compacted 1@0 + 1@1 files => 57415 bytes
+2024/12/30-17:19:11.969 d71d4 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/12/30-17:19:11.969 d71d4 Delete type=2 #137
+2024/12/30-17:19:11.969 d71d4 Manual compaction at level-0 from '\x000\x00\x00\x05' @ 11022 : 1 .. '\x001\x00\x00\x00' @ 0 : 0; will stop at (end)
