@@ -1,0 +1,25 @@
+/* ---- ✫ https://github.com/JaKooLit ✫ ---- */
+/* Rofi Beats Config (compact) */
+
+@import "~/.config/rofi/config-compact.rasi"
+
+/* ---- Entry ---- */
+entry {
+  width: 50%; /* Overriding the width from config-compact.rasi */
+  placeholder: " te";
+  padding: 1;
+  margin: 0;
+}
+
+/* ---- Listview ---- */
+listview {
+  lines: 7;
+  fixed-height: false;
+  line-padding: 2;
+  columns: 1;
+}
+
+/* ---- Window ---- */
+window {
+  width: 30%;
+}

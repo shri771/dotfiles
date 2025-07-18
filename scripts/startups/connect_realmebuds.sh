@@ -1,54 +1,48 @@
 #!/bin/bash
 
-# Bluetooth Device MAC Address (Update this with your device's MAC)
+# Log file for debugging
+LOG_FILE="/tmp/realme_connect_debug.log"
+echo "---" >> "$LOG_FILE"
+echo "$(date): Script started" >> "$LOG_FILE"
+
+# Bluetooth Device MAC Address
 BT_DEVICE_MAC="98:47:44:77:AA:AA"
 
-# Function to check if Bluetooth is enabled
-check_bluetooth() {
-    if ! systemctl is-active --quiet bluetooth; then
-        printf "Error: Bluetooth service is not active.\n" >&2
-        return 1
-    fi
-}
+# 1. Check if the device is paired with the system.
+echo "$(date): Checking if device is paired..." >> "$LOG_FILE"
+device_info=$(bluetoothctl info "$BT_DEVICE_MAC" 2>/dev/null)
+if [ -z "$device_info" ]; then
+    echo "$(date): Device not paired. Exiting." >> "$LOG_FILE"
+    exit 0
+fi
+echo "$(date): Device is paired." >> "$LOG_FILE"
 
-# Function to check if the device is already connected
-is_device_connected() {
-    local status
-    status=$(bluetoothctl info "$BT_DEVICE_MAC" 2>/dev/null | grep -i "Connected" | awk '{print $2}')
-    [[ "$status" == "yes" ]]
-}
+# 2. Check if the device is already connected.
+echo "$(date): Checking if device is connected..." >> "$LOG_FILE"
+if echo "$device_info" | grep -q "Connected: yes"; then
+    echo "$(date): Device already connected. Exiting." >> "$LOG_FILE"
+    exit 0
+fi
+echo "$(date): Device is not connected." >> "$LOG_FILE"
 
-# Function to connect to Bluetooth device
-connect_bluetooth() {
-    if is_device_connected; then
-        printf "Device %s is already connected.\n" "$BT_DEVICE_MAC"
-        return 0
-    fi
+# 3. Check if Bluetooth service is active.
+echo "$(date): Checking if Bluetooth service is active..." >> "$LOG_FILE"
+if ! systemctl is-active --quiet bluetooth; then
+    echo "$(date): Bluetooth service is not active. Exiting." >> "$LOG_FILE"
+    exit 1
+fi
+echo "$(date): Bluetooth service is active." >> "$LOG_FILE"
 
-    printf "Waiting 2 seconds before connecting...\n"
-    sleep 2
-
-    notify-send -i "/home/sh/.icons/WhiteSur-dark/apps@2x/scalable/bluetooth.svg" "Bluetooth" "Connecting to Realme Buds..."
-    printf "Connecting to Bluetooth device %s...\n" "$BT_DEVICE_MAC"
-    if ! bluetoothctl connect "$BT_DEVICE_MAC"; then
-        printf "Error: Failed to connect to Bluetooth device %s.\n" "$BT_DEVICE_MAC" >&2
-        notify-send -i "/home/sh/.icons/WhiteSur-dark/apps@2x/scalable/bluetooth.svg" "Bluetooth Connection Failed" "Failed to connect to Realme Buds."
-        return 1
-    fi
-
-    printf "Successfully connected to %s.\n" "$BT_DEVICE_MAC"
+# 4. Attempt to connect silently.
+echo "$(date): Attempting to connect..." >> "$LOG_FILE"
+if bluetoothctl connect "$BT_DEVICE_MAC" >/dev/null 2>&1; then
+    # 5. If and only if the connection succeeds, send a notification.
+    echo "$(date): Connection successful. Sending notification." >> "$LOG_FILE"
     notify-send -i "/home/sh/.icons/WhiteSur-dark/apps@2x/scalable/bluetooth.svg" "Bluetooth Connected" "Realme Buds connected successfully!"
-}
+    echo "$(date): Notification sent." >> "$LOG_FILE"
+else
+    echo "$(date): Connection failed. Exiting silently." >> "$LOG_FILE"
+fi
 
-# Main execution flow
-main() {
-    if ! check_bluetooth; then
-        return 1
-    fi
-
-    if ! connect_bluetooth; then
-        return 1
-    fi
-}
-
-main
+echo "$(date): Script finished." >> "$LOG_FILE"
+exit 0

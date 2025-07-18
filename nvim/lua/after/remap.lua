@@ -51,3 +51,9 @@ vim.keymap.set("n", "<leader>w", "<cmd>write<CR>", {
   desc = "Save buffer",
   silent = true,
 })
+
+vim.keymap.set("n", "<leader>@", function()
+  local fullpath = vim.fn.expand("%:p") -- get full path
+  vim.fn.setreg("+", fullpath) -- copy to system clipboard
+  vim.notify("Copied: " .. fullpath) -- nice popup (needs Neovim ≥0.5)
+end, { desc = "Copy current file path to clipboard", silent = true })

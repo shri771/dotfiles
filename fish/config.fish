@@ -48,7 +48,7 @@ end
 # # The bindings for !! and !$
 if [ "$fish_key_bindings" = fish_vi_key_bindings ]
     bind -Minsert ! __history_previous_command
-    bind -Minsert '$' __history_previous_command_arguments
+    bind -Minsert '$' __history_previous_previous_command_arguments
 else
     bind ! __history_previous_command
     bind '$' __history_previous_command_arguments
@@ -512,3 +512,4 @@ test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
 # Created by `pipx` on 2025-02-28 09:09:27
 set PATH $PATH /home/sh/.local/bin
 zoxide init fish | source
+

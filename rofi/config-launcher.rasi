@@ -3,7 +3,7 @@
 /* ---- Configuration ---- */
 
 configuration {
-	font:						"JetBrainsMono Nerd Font SemiBold 11";
+	font:						"JetBrainsMono Nerd Font SemiBold 10";
 	modi:                       "drun";
     show-icons:                 true;
     display-drun:               "        ";
@@ -12,7 +12,7 @@ configuration {
 	me-select-entry:            "MouseSecondary";
     me-accept-entry:            "MousePrimary";
 	window-format:              "{w} · {c} · {t}";
-	dpi:						96;
+	dpi:						1;
 
 
 }
@@ -104,7 +104,7 @@ listview {
     scrollbar:                   true;
     layout:                      vertical;
     reverse:                     false;
-    fixed-height:                false;
+    fixed-height:                true;
     fixed-columns:               true;
     spacing:                     10px;
     background-color:            transparent;
@@ -171,13 +171,13 @@ element alternate.active {
     text-color:                  inherit;
 }
 element-icon {
-    size:                        1.5em;
+    size:                        1.3em;
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
 }
 element-text {
-    font:						"JetBrainsMono Nerd Font SemiBold 14";
+    font:						"JetBrainsMono Nerd Font SemiBold 10";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

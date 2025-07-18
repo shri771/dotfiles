@@ -378,12 +378,7 @@ globalkeys = my_table.join(
   awful.key({ modkey }, "e", function()
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/RofiEmoji.sh")
   end, { description = "Launch Rofi Emoji Picker", group = "launcher" }),
-  awful.key({ modkey }, "e", function()
-    awful.spawn.with_shell("$HOME/.config/awesome/scripts/RofiEmoji.sh")
-  end, { description = "Launch Rofi Emoji Picker", group = "launcher" }),
-  awful.key({ altkey }, "u", function()
-    awful.spawn.with_shell("$HOME/.config/awesome/scripts/app_launcher.sh")
-  end, { description = "launch rofi-beats", group = "launcher" }),
+  
 
   -------------------------------------------------
   -- Workspace

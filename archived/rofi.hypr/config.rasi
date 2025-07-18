@@ -1,0 +1,6 @@
+/*
+ * Default Rofi configuration
+ * Imports the launcher theme to act as the default.
+ */
+
+@import "~/.config/rofi/config-launcher.rasi"

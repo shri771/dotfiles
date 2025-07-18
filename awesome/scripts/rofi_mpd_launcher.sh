@@ -12,6 +12,7 @@ show_update_menu() {
     local update_options="Cheerful\nFeel-Good💖\nRemix\nCurrent\ntest\nall"
 
     local chosen_update
+    chosen_update=$(echo -e "$update_options" | rofi -dmenu -i -p "Select Update Option")
 
     if [ -n "$chosen_update" ]; then
         "$update_script" "$chosen_update"
