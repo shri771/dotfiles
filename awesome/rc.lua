@@ -20,7 +20,6 @@ local beautiful = require("beautiful")
 beautiful.useless_gap = 19
 -- Notification library
 local naughty = require("naughty")
-naughty.config.defaults["icon_size"] = 100
 naughty.config.defaults.replaces_id = 1
 
 local lain = require("lain")
@@ -230,20 +229,59 @@ local function notify_volume()
     local status = stdout:match("%[(%a+)%]") or "on"
     local muted = status:lower() ~= "on"
 
-    local old_margin = naughty.config.defaults.margin or 0
-    naughty.config.defaults.margin = 20
-    -- this is where vol & muted exist!
-    naughty.notify({
-      title = "Volume",
-      text = muted and "Muted" or (vol .. "%"),
-      icon = get_volume_icon(vol, muted),
-      timeout = 1.5,
-      width = 250,
-      position = "top_middle",
-    })
-    naughty.config.defaults.margin = old_margin
+    awful.spawn.easy_async_with_shell("pactl list sinks", function(pactl_stdout)
+      local is_headphone = false
+      if pactl_stdout then
+        local in_active_sink = false
+        for line in pactl_stdout:gmatch("([^\n]*)\n?") do
+          if line:match("^Sink #") then
+            in_active_sink = false -- reset for new sink
+          end
+          if line:match("State: RUNNING") or line:match("State: IDLE") then
+            in_active_sink = true
+          end
+          if in_active_sink then
+            if line:match("bluez") or line:match("Active Port: .*-headphones") then
+              is_headphone = true
+              break
+            end
+          end
+        end
+      end
+
+      local icon
+      if muted then
+        icon = ICON_DIR .. "/volume-mute.png"
+      elseif is_headphone then
+        icon = ICON_DIR .. "/headphone.webp"
+      else
+        icon = get_volume_icon(vol, muted)
+      end
+
+      local old_margin = naughty.config.defaults.margin or 0
+      naughty.config.defaults.margin = 20
+
+      local notification_opts = {
+        title = "Volume",
+        text = muted and "Muted" or (vol .. "%"),
+        icon = icon,
+        timeout = 1.5,
+        width = 250,
+        position = "top_middle",
+      }
+
+      if is_headphone then
+        notification_opts.icon_size = 50
+        notification_opts.height = 120
+      end
+
+      naughty.notify(notification_opts)
+
+      naughty.config.defaults.margin = old_margin
+    end)
   end)
 end
+
 local volume_channel = beautiful.volume.channel or "Master"
 local toggle_channel = beautiful.volume.togglechannel or volume_channel
 
@@ -297,14 +335,13 @@ globalkeys = my_table.join(
 
   -- Volume
   awful.key({}, "XF86AudioRaiseVolume", function()
-    os.execute(string.format("amixer -q set %s unmute", volume_channel))
-    os.execute(string.format("amixer -q set %s 5%%+", volume_channel))
+    awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%")
     notify_volume()
-  end, { description = "volume up (and unmute)", group = "custom widgets" }),
+  end),
   awful.key({}, "XF86AudioLowerVolume", function()
-    os.execute(string.format("amixer -q set %s 5%%-", volume_channel))
+    awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")
     notify_volume()
-  end, { description = "volume down", group = "custom widgets" }),
+  end),
   awful.key({}, "XF86AudioMute", function()
     os.execute(string.format("amixer -q set %s toggle", toggle_channel))
     notify_volume()
@@ -378,7 +415,6 @@ globalkeys = my_table.join(
   awful.key({ modkey }, "e", function()
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/RofiEmoji.sh")
   end, { description = "Launch Rofi Emoji Picker", group = "launcher" }),
-  
 
   -------------------------------------------------
   -- Workspace
