@@ -513,3 +513,4 @@ test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
 set PATH $PATH /home/sh/.local/bin
 zoxide init fish | source
 
+set -gx BROWSER "vivaldi"

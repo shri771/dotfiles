@@ -32,11 +32,11 @@ vim.keymap.set("n", "<leader>-", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 local opts = { noremap = true, silent = true }
 
-vim.api.nvim_set_keymap("n", ";", ",", opts)
-vim.api.nvim_set_keymap("n", ",", ";", opts)
--- visual mode
-vim.api.nvim_set_keymap("v", ";", ",", opts)
-vim.api.nvim_set_keymap("v", ",", ";", opts)
+-- vim.api.nvim_set_keymap("n", ";", ",", opts)
+-- vim.api.nvim_set_keymap("n", ",", ";", opts)
+-- -- visual mode
+-- vim.api.nvim_set_keymap("v", ";", ",", opts)
+-- vim.api.nvim_set_keymap("v", ",", ";", opts)
 
 local dap = require("dap")
 
