@@ -21,7 +21,7 @@ return {
     },
     lazy = true,
 
-    ft = { "go", "python", "bash", "c", "cpp", "lua", "sql" },
+    ft = { "go", "python", "bash", "c", "cpp", "lua", "sql", "java" },
 
     config = function()
       vim.api.nvim_create_autocmd("LspAttach", {

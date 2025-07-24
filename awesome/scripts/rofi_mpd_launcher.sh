@@ -23,7 +23,7 @@ show_update_menu() {
 select_and_play_playlist() {
     local playlist
     playlist=$(find "$MUSIC_DIR" -mindepth 1 -maxdepth 1 -type d -printf "%f\n" |
-        rofi -dmenu -i  -p "Select Playlist")
+        rofi -dmenu -i -p "Select Playlist")
 
     if [ -n "$playlist" ]; then
         playerctl pause
@@ -74,32 +74,19 @@ show_mpd_controls() {
     option_6=" Playlists"
     option_7=" Update" # New option
 
-    local active=''
-    local urgent=''
-
-    # No background for repeat entry.
-    # Background for playlist entry is based on random state.
-    if [[ $status == *"random: on"* ]]; then
-        active="-a 6"
-    elif [[ $status == *"random: off"* ]]; then
-        urgent="-u 6"
-    fi
-
-    local chosen
+    local chosen exit_code
     chosen=$(
-        echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6\n$option_7" | rofi \
-            -dmenu \
-            -i \
-            -p "$prompt" \
-            -mesg "$mesg" \
-            ${active} ${urgent} \
-            -markup-rows \
-            -theme-str "listview {columns: $list_col; lines: $list_row;}" \
-            -theme-str 'textbox-prompt-colon {str: "";}' \
-            -theme-str 'element normal.active { background-color: #A6E3A1; text-color: #1E1E2E; }' \
-            -theme-str 'element selected.active { background-color: #A6E3A1; text-color: #1E1E2E; }' \
-            -theme-str 'element normal.urgent { background-color: #F38BA8; text-color: #1E1E2E; }'
+        echo -e "$option_1\n$option_4\n$option_3\n$option_2\n$option_5\n$option_6\n$option_7" |
+            rofi -dmenu -i -p "$prompt" -mesg "$mesg" \
+                -markup-rows \
+                -theme-str "listview {columns: $list_col; lines: $list_row;}"
     )
+    exit_code=$?
+
+    # Exit on any Rofi error or cancel to avoid looping on config issues
+    if [ $exit_code -ne 0 ]; then
+        exit
+    fi
 
     playlist_length=$(mpc playlist | wc -l)
 
