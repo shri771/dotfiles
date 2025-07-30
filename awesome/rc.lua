@@ -335,7 +335,7 @@ globalkeys = my_table.join(
 
   -- Volume
   awful.key({}, "XF86AudioRaiseVolume", function()
-    awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%")
+    awful.spawn.with_shell(" pactl set-sink-mute @DEFAULT_SINK@ 0; pactl set-sink-volume @DEFAULT_SINK@ +5%")
     notify_volume()
   end),
   awful.key({}, "XF86AudioLowerVolume", function()
@@ -407,7 +407,7 @@ globalkeys = my_table.join(
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/rofi_mpd_launcher.sh")
   end, { description = "launch rofi-beats", group = "launcher" }),
   awful.key({ modkey, ctrlkey }, "b", function()
-    awful.spawn.with_shell("$HOME/.config/awesome/scripts/toggle_realmebuds.sh")
+    awful.spawn.with_shell("$HOME/.config/awesome/scripts/toggle_realmebuds_bind.sh")
   end, { description = "toggle realmebuds connection", group = "launcher" }),
   awful.key({ altkey }, "f", function()
     awful.spawn.with_shell("$HOME/.config/awesome/scripts/app_launcher.sh")

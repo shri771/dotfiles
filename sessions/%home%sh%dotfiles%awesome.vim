@@ -9,20 +9,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +214 rc.lua
-badd +57 scripts/ClipManager.sh
-badd +1 icons/keyboard-symbolic.svg
-badd +1 scripts/keyboard-symbolic.svg
-badd +1 scripts/rofi_mpd_launcher.sh
-badd +0 scripts/app_launcher.sh
+badd +410 rc.lua
 argglobal
 %argdel
 $argadd rc.lua
-edit scripts/app_launcher.sh
+edit rc.lua
 argglobal
-balt scripts/rofi_mpd_launcher.sh
 setlocal foldmethod=manual
-setlocal foldexpr=0
+setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 setlocal foldmarker={{{,}}}
 setlocal foldignore=#
 setlocal foldlevel=0
@@ -31,11 +25,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 16 - ((15 * winheight(0) + 9) / 18)
+let s:l = 410 - ((16 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 16
+keepjumps 410
 normal! 084|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
@@ -50,7 +44,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

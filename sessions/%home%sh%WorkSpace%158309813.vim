@@ -9,15 +9,12 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +22 sentimental-credit/credit.py
-badd +82 credit/credit.c
-badd +0 filter-more/filter.c
+badd +5 hello.py
 argglobal
 %argdel
-$argadd .
-edit filter-more/filter.c
+$argadd hello.py
+edit hello.py
 argglobal
-balt sentimental-credit/credit.py
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -28,12 +25,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 31 - ((15 * winheight(0) + 20) / 40)
+let s:l = 5 - ((4 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 31
-normal! 032|
+keepjumps 5
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

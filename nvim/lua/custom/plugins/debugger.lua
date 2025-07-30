@@ -6,37 +6,67 @@ return {
       "mfussenegger/nvim-dap-python",
       "theHamsta/nvim-dap-virtual-text",
       "nvim-neotest/nvim-nio",
+      "mfussenegger/nvim-jdtls",
+      "microsoft/vscode-java-debug",
     },
     config = function()
       local dap = require("dap")
-      local dap_python = require("dap-python")
       local dapui = require("dapui")
+      local dap_python = require("dap-python")
 
-      -- 1) set up the Python adapter (with frozen_modules off if you added that earlier):
+      -- Dynamic Python path
+      local function resolve_python()
+        local venv = os.getenv("VIRTUAL_ENV")
+        if venv then
+          return venv .. "/bin/python"
+        end
+        return vim.fn.exepath("python3") or "python"
+      end
+
+      -- Python DAP Adapter and Configuration
       dap.adapters.python = {
         type = "executable",
-        command = "python3",
+        command = resolve_python(),
         args = { "-Xfrozen_modules=off", "-m", "debugpy.adapter" },
       }
-
-      -- 2) tell DAP to launch your file and send stdin to an "integratedTerminal"
       dap.configurations.python = {
         {
-          type = "python", -- matches the adapter name above
+          type = "python",
           request = "launch",
-          name = "Launch file with stdin",
-          program = "${file}", -- debug the current buffer
-          console = "integratedTerminal", -- ← this is the key!
-          pythonPath = function()
-            return "python3" -- or point to your venv/python
+          name = "Launch Python file",
+          program = "${file}",
+          console = "integratedTerminal",
+          pythonPath = resolve_python,
+        },
+      }
+      dap_python.setup(resolve_python())
+
+      -- Java DAP Adapter (using nvim-jdtls)
+      dap.adapters.java = function(callback)
+        require("jdtls").setup_dap({ hotcodereplace = "auto" })
+        callback({ type = "server", host = "127.0.0.1", port = 5005 })
+      end
+
+      -- Java DAP Configuration (dynamic, python-like)
+      dap.configurations.java = {
+        {
+          type = "java",
+          request = "launch",
+          name = "Launch Java file",
+          -- Prompt main class like 'program' in Python config
+          mainClass = function()
+            return vim.fn.input("Main class (e.g. com.example.Main): ")
           end,
+          projectName = function()
+            return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+          end,
+          cwd = "${workspaceFolder}",
+          console = "integratedTerminal", -- mimic Python's terminal behavior
+          stopOnEntry = false,
         },
       }
 
-      -- 3) (optional) set up dap-python helper if you still want it:
-      dap_python.setup("python3")
-
-      -- 4) dap-ui and listeners:
+      -- DAP UI and Listeners
       dapui.setup()
       dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open()
@@ -48,13 +78,12 @@ return {
         dapui.close()
       end
 
-      -- 5) your keymaps (make sure they’re after you `require("dap")`):
+      -- Global keymaps
       vim.keymap.set("n", "<space>dc", dap.continue, { desc = "DAP: start/continue" })
       vim.keymap.set("n", "<space>b", dap.toggle_breakpoint, { desc = "DAP: toggle breakpoint" })
 
-      -- when a debug session starts
+      -- Dynamic buffer-local keymaps on debug session start (Python AND Java)
       dap.listeners.after.event_initialized["custom_keymaps"] = function(session, body)
-        -- buffer-local keymaps in the current file/buffer
         local opts = { buffer = 0, desc = "DAP debug key" }
         vim.keymap.set("n", "n", dap.step_over, vim.tbl_extend("force", opts, { desc = "DAP: Step Over" }))
         vim.keymap.set("n", "i", dap.step_into, vim.tbl_extend("force", opts, { desc = "DAP: Step Into" }))
@@ -68,8 +97,6 @@ return {
         )
         vim.keymap.set("n", "q", dap.terminate, vim.tbl_extend("force", opts, { desc = "DAP: Terminate" }))
       end
-
-      -- when a debug session ends
       local clear = function()
         for _, key in ipairs({ "n", "i", "o", "c", "b", "q" }) do
           pcall(vim.api.nvim_buf_del_keymap, 0, "n", key)

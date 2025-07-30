@@ -10,11 +10,11 @@ endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
 badd +2 init.lua
-badd +124 lua/custom/plugins/lsp.lua
+badd +33 lua/custom/plugins/debugger.lua
 argglobal
 %argdel
 $argadd init.lua
-edit lua/custom/plugins/lsp.lua
+edit lua/custom/plugins/debugger.lua
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -34,12 +34,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 124 - ((21 * winheight(0) + 19) / 39)
+let s:l = 96 - ((15 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 124
-normal! 011|
+keepjumps 96
+normal! 07|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

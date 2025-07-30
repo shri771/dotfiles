@@ -114,6 +114,7 @@ return {
         bashls = {}, -- for Bash
         sqlls = {}, -- SQL
         glint = {},
+        jdtls = {}, -- Java
         lua_ls = {
           settings = {
             Lua = {

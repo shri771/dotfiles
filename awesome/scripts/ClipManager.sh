@@ -3,7 +3,7 @@
 # Variables
 rofi_theme="$HOME/.config/rofi/config-clipboard.rasi"
 msg='👀 **note**  CTRL+Del = delete entry   |   ALT+Del = wipe all   |   ALT+Enter = send to mobile'
-device_id="4384e464_c86f_47af_8585_8f170f36afea"
+device_id="524a13e93da540f6b16aa293c1858e81"
 
 # Check if rofi is already running
 if pidof rofi >/dev/null; then
