@@ -9,7 +9,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +410 rc.lua
+badd +253 rc.lua
 argglobal
 %argdel
 $argadd rc.lua
@@ -25,12 +25,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 410 - ((16 * winheight(0) + 19) / 39)
+let s:l = 418 - ((16 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 410
-normal! 084|
+keepjumps 418
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -44,6 +44,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

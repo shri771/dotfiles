@@ -9,12 +9,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +5 hello.py
+badd +5 ~/WorkSpace/158309813/Relearn/average.py
+badd +55 dna.bak/dna.py
 argglobal
 %argdel
-$argadd hello.py
-edit hello.py
+$argadd .
+edit ~/WorkSpace/158309813/Relearn/average.py
 argglobal
+balt dna.bak/dna.py
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -25,12 +27,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 5 - ((4 * winheight(0) + 9) / 18)
+let s:l = 6 - ((5 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 5
-normal! 0
+keepjumps 6
+normal! 05|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
