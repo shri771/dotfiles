@@ -10,11 +10,11 @@ endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
 badd +2 init.lua
-badd +57 lua/after/remap.lua
+badd +0 lua/custom/init.lua
 argglobal
 %argdel
 $argadd init.lua
-edit lua/after/remap.lua
+edit lua/custom/init.lua
 argglobal
 balt init.lua
 setlocal foldmethod=manual
@@ -27,11 +27,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 55 - ((29 * winheight(0) + 19) / 39)
+let s:l = 1 - ((0 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 55
+keepjumps 1
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

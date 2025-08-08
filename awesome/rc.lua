@@ -498,7 +498,7 @@ globalkeys = my_table.join(
   awful.key({ modkey, "Shift" }, "w", function()
     awful.util.mymainmenu:show()
   end, { description = "Show main menu", group = "awesome" }),
-  awful.key({ altkey, "Control" }, "p", function()
+  awful.key({ altkey, "Control" }, "l", function()
     awful.spawn.with_shell("wlogout")
   end),
   awful.key({ altkey, "Control" }, "Delete", function()
