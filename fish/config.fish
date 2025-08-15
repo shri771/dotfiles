@@ -2,21 +2,10 @@
 set -U LC_CTYPE en_US.UTF-8
 set -Ux PERL5LIB /usr/share/perl5/vendor_perl
 set -Ux BORG_PASSCOMMAND "cat $HOME/.borg_passphrase"
-##local
-##set -x LANG en_US.UTF-8
-
-### SET MANPAGER
-### Uncomment only one of these!
-
-### "nvim" as manpager
-
-### "less" as manpager
-# set -x MANPAGER "less"
 
 ### KEYBINDINGS ###
 # Ensure default (emacs-like) keybindings are used
 set -U fish_key_bindings fish_default_key_bindings
-# 2) Define any extra key-bindings in fish_user_key_bindings
 function fish_user_key_bindings
     bind \cb backward-word
     bind \cf forward-word
@@ -145,9 +134,6 @@ end
 
 ## Open config in nvim ##
 function open_dotfile
-    # Generalized function for handling dotfiles
-    # Arguments: target_directory, target_file
-    # If no file is passed, opens the target directory in Neovim
     set target_directory $argv[1]
     set target_file $argv[2]
 
@@ -294,9 +280,6 @@ end
 ## End of Open Config ##
 
 # Tmux Funcions #
-# Open aw config and thmes
-
-
 function shpwd-
     # List all saved Wi-Fi connections of type "wifi" and process each one
     nmcli connection show | awk '$3=="wifi" {print $1}' | while read ssid
@@ -407,24 +390,24 @@ alias up_mirr='sudo reflector --country India --age 12 --protocol https \
 alias sf='bash $HOME/scripts/terminal/fzf_search.sh'
 
 # Changing "ls" to "eza"
-alias ls='eza -al --color=always --group-directories-first' # my preferred listing
- alias la='eza -a --color=always --group-directories-first' # all files and dirs
-alias ll='eza -l --color=always --group-directories-first' # long format
-alias lt='eza -aT --color=always --group-directories-first' # tree listing
+alias ls='eza -al --color=always --group-directories-first'
+ alias la='eza -a --color=always --group-directories-first'
+alias ll='eza -l --color=always --group-directories-first'
+alias lt='eza -aT --color=always --group-directories-first'
 
-alias l.='eza -al --color=always --group-directories-first ../' # ls on the PARENT directory
-alias l..='eza -al --color=always --group-directories-first ../../' # ls on directory 2 levels up
-alias l...='eza -al --color=always --group-directories-first ../../../' # ls on directory 3 levels up
+alias l.='eza -al --color=always --group-directories-first ../'
+alias l..='eza -al --color=always --group-directories-first ../../'
+alias l...='eza -al --color=always --group-directories-first ../../../'
 alias temp='watch -n 1 sensors'
 alias cmd='command '
 
 # pacman and yay
-alias pacins='sudo pacman -S' # update only standard pkgs
-alias pacrm='sudo pacman -R' # Refresh pkglist & update standard pkgs
-alias parsua='paru -Sua --noconfirm' # update only AUR pkgs (paru)
-alias parsyu='paru -Syu --noconfirm' # update standard pkgs and AUR pkgs (paru)
-alias unlock='sudo rm /var/lib/pacman/db.lck' # remove pacman lock
-alias orphan='sudo pacman -Rns (pacman -Qtdq)' # remove orphaned packages (DANGEROUS!)
+alias pacins='sudo pacman -S'
+alias pacrm='sudo pacman -R'
+alias parsua='paru -Sua --noconfirm'
+alias parsyu='paru -Syu --noconfirm'
+alias unlock='sudo rm /var/lib/pacman/db.lck'
+alias orphan='sudo pacman -Rns (pacman -Qtdq)'
 alias pkgin='bash $HOME/scripts/terminal/pkg_search.sh'
 
 # get fastest mirrors
@@ -434,9 +417,9 @@ alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/p
 alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
 # adding flags
-alias df='df -h' # human-readable sizes
-alias free='free -m' # show sizes in MB
-alias grep='grep --color=auto' # colorize output (good for log files)
+alias df='df -h'
+alias free='free -m'
+alias grep='grep --color=auto'
 
 # ps
 alias psa="ps auxf"

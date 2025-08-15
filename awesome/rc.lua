@@ -363,18 +363,13 @@ globalkeys = my_table.join(
   awful.key({ altkey }, "n", function()
     awful.spawn("notion-app")
   end, { description = "Launch Notion", group = "hotkeys" }),
-  -- awful.key({ modkey }, "q", function()
-  --   awful.spawn("rquickshare")
-  -- end, { description = "Launch quickshare", group = "hotkeys" }),
   awful.key({ modkey }, "b", function()
     awful.spawn("vivaldi")
   end, { description = "Launch brave", group = "awesome" }),
-  -- NormCap screenshot and OCR (Mod + A)
   awful.key({ modkey }, "a", function()
     awful.util.spawn("normcap -c '#aa55ff' -t False")
   end, { description = "OCR screenshot (no text mode)", group = "custom" }),
 
-  -- Rofi launcher's
   awful.key({ altkey }, "s", function()
     awful.spawn.with_shell("$HOME/.config/eww/dashboard/launch_dashboard")
   end, { description = "launch rofi-clip", group = "launcher" }),
@@ -1148,14 +1143,6 @@ client.connect_signal("request::activate", function(c, context, hints)
   end
 end)
 
--- client.connect_signal("property::floating", function(c)
---   if c.floating then
---     c.border_width = 0
---   else
---     c.border_width = beautiful.border_width
---   end
--- end)
-
 table.insert(awful.rules.rules, floating_rule)
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function(c)
@@ -1255,7 +1242,7 @@ naughty.config.defaults.scrollable = false
 naughty.config.defaults.position = "top_middle"
 naughty.config.defaults.shape = gears.shape.rounded_rect
 naughty.config.defaults.screen = awful.screen.focused()
-naughty.config.padding = 20 -- padding for notifications
+naughty.config.padding = 20
 beautiful.notification_opacity = 0.95
 naughty.config.presets.normal.bg = bg
 naughty.config.presets.normal.fg = fg
