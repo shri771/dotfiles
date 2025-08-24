@@ -3,18 +3,20 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/WorkSpace/Go_boot.dev/practice
+cd ~/WorkSpace/Hackathon/NewsAggregator/web/Templates
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +0 ch.go
+badd +22 layout.html
+badd +2 ~/WorkSpace/Hackathon/NewsAggregator/web/Templates/index.html
 argglobal
 %argdel
-$argadd ch.go
-edit ch.go
+$argadd layout.html
+edit ~/WorkSpace/Hackathon/NewsAggregator/web/Templates/index.html
 argglobal
+balt layout.html
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -25,12 +27,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 24 - ((21 * winheight(0) + 20) / 40)
+let s:l = 2 - ((1 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 24
-normal! 0
+keepjumps 2
+normal! 02|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

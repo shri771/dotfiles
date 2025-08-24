@@ -9,14 +9,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +43 UserConfigs/Startup_Apps.conf
-badd +18 scripts/ClipManager.sh
+badd +1 ~/dotfiles/hypr/UserScripts/RofiBeats.sh
+badd +0 scripts/KeyBinds.sh
 argglobal
 %argdel
 $argadd .
-edit scripts/ClipManager.sh
+edit scripts/KeyBinds.sh
 argglobal
-balt UserConfigs/Startup_Apps.conf
+balt ~/dotfiles/hypr/UserScripts/RofiBeats.sh
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -27,12 +27,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 43 - ((35 * winheight(0) + 19) / 39)
+let s:l = 33 - ((32 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 43
-normal! 04|
+keepjumps 33
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

@@ -97,6 +97,7 @@ return {
 
       sources = {
         default = { "snippets", "buffer", "lsp", "lazydev", "path", "copilot" },
+        -- default = { "buffer", "lazydev", "path" }, -- No LSP
         providers = {
           buffer = {
             module = "blink.cmp.sources.buffer",

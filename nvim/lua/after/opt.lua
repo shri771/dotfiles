@@ -1,5 +1,5 @@
 -- Opt
-vim.opt.mouse = ""
+vim.opt.mouse = "a"
 
 vim.g.have_nerd_font = true
 vim.opt.foldenable = false

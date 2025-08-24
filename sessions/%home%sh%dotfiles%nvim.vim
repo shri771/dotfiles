@@ -9,15 +9,12 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +2 init.lua
-badd +114 ~/dotfiles/nvim/lua/custom/plugins/lsp.lua
-badd +20 lua/custom/plugins/harpoon.lua
-badd +16 lua/after/opt.lua
-badd +3 lua/custom/plugins/theme.lua
+badd +4 init.lua
+badd +100 lua/custom/plugins/autocompletion.lua
 argglobal
 %argdel
 $argadd init.lua
-edit ~/dotfiles/nvim/lua/custom/plugins/lsp.lua
+edit lua/custom/plugins/autocompletion.lua
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -26,7 +23,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt lua/custom/plugins/theme.lua
+balt init.lua
 setlocal foldmethod=manual
 setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 setlocal foldmarker={{{,}}}
@@ -37,12 +34,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 85 - ((16 * winheight(0) + 20) / 40)
+let s:l = 100 - ((15 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 85
-normal! 022|
+keepjumps 100
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

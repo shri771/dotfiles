@@ -135,6 +135,7 @@ return {
         "black", -- Python formatter
         "isort", -- Python import sorter
         "clang-format",
+        "google-java-format",
         "sql-formatter",
         "goimports",
       })

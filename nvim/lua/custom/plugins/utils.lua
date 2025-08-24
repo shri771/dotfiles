@@ -104,7 +104,7 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     lazy = false,
-    enabled = false,
+    enabled = true,
     main = "ibl",
     ---@module "ibl"
     ---@type ibl.config
@@ -160,6 +160,7 @@ return {
   { -- Useful plugin to show you pending keybinds.
     "folke/which-key.nvim",
     event = "VimEnter", -- Sets the loading event to 'VimEnter'
+    enabled = false,
     opts = {
       delay = 0,
       icons = {

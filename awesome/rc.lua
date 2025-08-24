@@ -678,10 +678,10 @@ local toggle_terminal = make_scratchpad("scratchkitty", "kitty --class scratchki
   y = 15, -- gap from top
   -- x will be centered automatically
 })
-local toggle_whatsie = make_scratchpad("whatsie", "flatpak run com.ktechpit.whatsie", {
+local toggle_whatsie = make_scratchpad("ZapZap", "zapzap", {
   width = 1050,
   height = 650,
-  class = "WhatSie",
+  class = "ZapZap",
   y = 15, -- gap from top
   -- x will be centered automatically
 })
