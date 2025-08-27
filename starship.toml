@@ -4,7 +4,7 @@ add_newline = false
 # 2) Entire prompt:
 #    - starts with a space
    # - directory → git branch → cmd duration → prompt char
-format = "$directory$git_branch$git_status$character"
+format = "$directory$git_branch$character"
 
 palette = 'foo'
 
@@ -52,17 +52,21 @@ cherry_pick = '[🍒 PICKING](bold red)'
 # renamed = '👅'
 # deleted = '🗑'
 [git_status]
-conflicted = '🔀'
-ahead     = '⇡'
-behind    = '⇣'
-diverged  = '🔁'
-up_to_date= '✔'
-untracked = '✳'
-stashed   = '📥'
-modified  = '✎'
-staged    = '[+($count)](green)'
-renamed   = '➡'
-deleted   = '✖'
+# spaces between placeholders only — no trailing space at the end
+# format = "$conflicted $ahead $behind $diverged $up_to_date $untracked $stashed $modified $staged $renamed $deleted"
+
+# nerd-font icons (no trailing space inside the quotes)
+conflicted = '[](red bold)'
+ahead      = '[](bright-yellow)'
+behind     = '[](bright-red)'
+diverged   = '[](purple)'
+up_to_date = '[](green)'
+untracked  = '[](cyan)'
+stashed    = '[](blue)'
+modified   = '[](yellow)'
+staged     = '[($count)](green bold)'
+renamed    = '[柳](magenta)'
+deleted    = '[](red)'
 
 
 [git_branch]

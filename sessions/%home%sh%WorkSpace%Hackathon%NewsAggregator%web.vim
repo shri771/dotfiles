@@ -9,14 +9,15 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +6 Templates/layout.html
-badd +13 Templates/index.html
+badd +1 ~/WorkSpace/Hackathon/NewsAggregator/web/Static/style.css
+badd +150 Templates/index.html
+badd +1 Templates/index.html.bak
 argglobal
 %argdel
 $argadd .
-edit Templates/index.html
+edit Templates/index.html.bak
 argglobal
-balt Templates/layout.html
+balt ~/WorkSpace/Hackathon/NewsAggregator/web/Static/style.css
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -27,12 +28,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 14 - ((13 * winheight(0) + 20) / 40)
+let s:l = 1 - ((0 * winheight(0) + 19) / 39)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 14
-normal! 06|
+keepjumps 1
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

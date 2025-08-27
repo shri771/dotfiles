@@ -10,20 +10,14 @@ endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
 badd +4 init.lua
-badd +100 lua/custom/plugins/autocompletion.lua
+badd +5 lua/after/opt.lua
+badd +57 lua/after/remap.lua
 argglobal
 %argdel
 $argadd init.lua
-edit lua/custom/plugins/autocompletion.lua
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
+edit lua/after/remap.lua
 argglobal
-balt init.lua
+balt lua/after/opt.lua
 setlocal foldmethod=manual
 setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 setlocal foldmarker={{{,}}}
@@ -34,11 +28,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 100 - ((15 * winheight(0) + 20) / 40)
+let s:l = 27 - ((15 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 100
+keepjumps 27
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
@@ -47,8 +41,6 @@ endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20
 let &shortmess = s:shortmess_save
-let &winminheight = s:save_winminheight
-let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
