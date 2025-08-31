@@ -24,8 +24,8 @@ IntensityAmount=0
 IntensityEffect=0
 
 [Colors:Button]
-BackgroundAlternate=133,75,196
-BackgroundNormal=49,54,59
+BackgroundAlternate=131,72,192
+BackgroundNormal=41,44,48
 DecorationFocus=170,85,255
 DecorationHover=170,85,255
 ForegroundActive=170,85,255
@@ -39,7 +39,7 @@ ForegroundVisited=155,89,182
 
 [Colors:Complementary]
 BackgroundAlternate=30,87,116
-BackgroundNormal=42,46,50
+BackgroundNormal=32,35,38
 DecorationFocus=170,85,255
 DecorationHover=170,85,255
 ForegroundActive=170,85,255
@@ -52,8 +52,8 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [Colors:Header]
-BackgroundAlternate=42,46,50
-BackgroundNormal=49,54,59
+BackgroundAlternate=32,35,38
+BackgroundNormal=41,44,48
 DecorationFocus=170,85,255
 DecorationHover=170,85,255
 ForegroundActive=170,85,255
@@ -66,8 +66,8 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [Colors:Header][Inactive]
-BackgroundAlternate=49,54,59
-BackgroundNormal=42,46,50
+BackgroundAlternate=41,44,48
+BackgroundNormal=32,35,38
 DecorationFocus=61,174,233
 DecorationHover=61,174,233
 ForegroundActive=61,174,233
@@ -80,8 +80,8 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [Colors:Selection]
-BackgroundAlternate=127,68,188
-BackgroundNormal=127,68,188
+BackgroundAlternate=125,66,185
+BackgroundNormal=125,66,185
 DecorationFocus=170,85,255
 DecorationHover=170,85,255
 ForegroundActive=170,85,255
@@ -94,8 +94,8 @@ ForegroundPositive=23,104,57
 ForegroundVisited=155,89,182
 
 [Colors:Tooltip]
-BackgroundAlternate=42,46,50
-BackgroundNormal=49,54,59
+BackgroundAlternate=32,35,38
+BackgroundNormal=41,44,48
 DecorationFocus=170,85,255
 DecorationHover=170,85,255
 ForegroundActive=170,85,255
@@ -108,13 +108,13 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [Colors:View]
-BackgroundAlternate=35,38,41
-BackgroundNormal=27,30,32
+BackgroundAlternate=29,31,34
+BackgroundNormal=20,22,24
 DecorationFocus=170,85,255
 DecorationHover=170,85,255
 ForegroundActive=170,85,255
 ForegroundInactive=161,169,177
-ForegroundLink=218,193,255
+ForegroundLink=170,85,255
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
 ForegroundNormal=252,252,252
@@ -122,8 +122,8 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [Colors:Window]
-BackgroundAlternate=49,54,59
-BackgroundNormal=42,46,50
+BackgroundAlternate=41,44,48
+BackgroundNormal=32,35,38
 DecorationFocus=170,85,255
 DecorationHover=170,85,255
 ForegroundActive=170,85,255
@@ -142,8 +142,7 @@ Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00n\x00
 
 [General]
 AccentColor=170,85,255
-ColorScheme=BreezeDark
-ColorSchemeHash=98139d0bac64c4e9f97721675584832c7c7a0bf0
+ColorSchemeHash=8ff306d9a93379c74540e00506966df24df1798b
 LastUsedCustomAccentColor=170,85,255
 TerminalApplication=kitty
 TerminalService=kitty.desktop
@@ -183,9 +182,9 @@ EnableRemoteFolderThumbnail=false
 MaximumRemoteSize=117440512
 
 [WM]
-activeBackground=49,54,59
+activeBackground=39,44,49
 activeBlend=252,252,252
 activeForeground=252,252,252
-inactiveBackground=42,46,50
+inactiveBackground=32,36,40
 inactiveBlend=161,169,177
 inactiveForeground=161,169,177

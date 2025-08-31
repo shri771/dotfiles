@@ -2,6 +2,8 @@
 set -U LC_CTYPE en_US.UTF-8
 set -Ux PERL5LIB /usr/share/perl5/vendor_perl
 set -Ux BORG_PASSCOMMAND "cat $HOME/.borg_passphrase"
+fish_add_path ~/.config/tmux/plugins/tmuxifier/bin
+
 
 ### KEYBINDINGS ###
 # Ensure default (emacs-like) keybindings are used
@@ -495,5 +497,4 @@ test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
 # Created by `pipx` on 2025-02-28 09:09:27
 set PATH $PATH /home/sh/.local/bin
 zoxide init fish | source
-
 set -gx BROWSER "vivaldi"

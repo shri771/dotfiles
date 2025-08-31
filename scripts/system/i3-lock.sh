@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Exit if not in an X11 session
+if [ "$XDG_SESSION_TYPE" != "x11" ]; then
+    exit 0
+fi
+
+
 i3lock \
   --force-clock \
   --time-str="%H:%M:%S  %A, %d %b" \

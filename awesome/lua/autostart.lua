@@ -1,6 +1,6 @@
 -- ~/.config/awesome/autostart.lua
 -- Auto-start applications and scripts for AwesomeWM
-
+-- sudo localectl set-x11-keymap us pc105 dvp
 local awful = require("awful")
 
 -- Apps and scripts autostarted using appropriate spawn method

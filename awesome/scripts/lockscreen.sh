@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Exit if not in an X11 session
+if [ "$XDG_SESSION_TYPE" != "x11" ]; then
+    exit 0
+fi
+
+
 # 1) grab & blur
 scrot /tmp/lock.png
 magick convert /tmp/lock.png -blur 0x6 /tmp/lock_blur.png

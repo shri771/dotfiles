@@ -14,6 +14,7 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.signcolumn = "yes"
 vim.opt.shortmess:append("S")
+vim.g.clipboard_provider_blacklist = { "wl-copy" }
 
 vim.opt.list = false
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
