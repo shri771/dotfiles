@@ -25,7 +25,7 @@ return {
         javascript = { "prettierd", "prettier" },
         c = { "clang-format" },
         bash = { "shfmt" },
-        sql = { "pg_format" },
+        sql = { "sql-formatter" },
       },
       -- Set default options
       default_format_opts = {
@@ -35,6 +35,11 @@ return {
       format_on_save = { timeout_ms = 500 },
       -- Customize formatters
       formatters = {
+        ["sql-formatter"] = {
+          command = "sql-formatter",
+          args = { "--language", "postgresql" },
+          stdin = true,
+        },
         shfmt = {
           prepend_args = { "-i", "2" },
         },

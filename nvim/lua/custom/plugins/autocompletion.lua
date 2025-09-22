@@ -2,6 +2,7 @@ return {
   { -- Autocompletion
     "saghen/blink.cmp",
     event = "InsertEnter",
+    enabled = true,
     version = "1.*",
     build = "make",
     dependencies = {
@@ -97,7 +98,7 @@ return {
 
       sources = {
         -- default = { "snippets", "buffer", "lsp", "lazydev", "path", "copilot" },
-        default = { "buffer", "lazydev", "path" }, -- No LSP
+        default = {}, -- No LSP
         providers = {
           buffer = {
             module = "blink.cmp.sources.buffer",

@@ -11,6 +11,7 @@ vim.keymap.set("n", "=ap", "ma=ap'a")
 vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
 vim.keymap.set("n", "<leader>ml", "<cmd>Mason<cr>")
 vim.keymap.set("n", "<leader>mm", "<cmd>Lazy<cr>")
+vim.keymap.set("i", "<C-^>", "<C-o><C-^>")
 
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
@@ -57,3 +58,11 @@ vim.keymap.set("n", "<leader>@", function()
   vim.fn.setreg("+", fullpath) -- copy to system clipboard
   vim.notify("Copied: " .. fullpath) -- nice popup (needs Neovim ≥0.5)
 end, { desc = "Copy current file path to clipboard", silent = true })
+
+-- Define the keys you want to disable
+local keys_to_disable = { "<Up>", "<Down>", "<Left>", "<Right>" }
+
+-- Loop through the keys and disable them in all desired modes
+for _, key in ipairs(keys_to_disable) do
+  vim.keymap.set({ "n", "v", "i" }, key, "<Nop>", { noremap = true, silent = true })
+end

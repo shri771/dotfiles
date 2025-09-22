@@ -3,17 +3,17 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/WorkSpace/scaler/Java
+cd ~/WorkSpace/Go/BlogAggregator
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +3 ~/WorkSpace/scaler/Java/Practice/first_last_no.java
+badd +1 handler_user.go
 argglobal
 %argdel
-$argadd Practice/
-edit ~/WorkSpace/scaler/Java/Practice/first_last_no.java
+$argadd .
+edit handler_user.go
 argglobal
 setlocal foldmethod=manual
 setlocal foldexpr=0
@@ -25,11 +25,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 3 - ((2 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 3
+keepjumps 1
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

@@ -15,7 +15,18 @@ if initialize_session "dev"; then
     run_cmd "cd ~/WorkSpace/"
     run_cmd "export TMUXIFIER_DEFAULT_PATH='~/WorkSpace/158309813/'"
     run_cmd "clear"
-    run_cmd "fzf ."
+
+    new_window "sql"
+    run_cmd "cd ~/WorkSpace/"
+    run_cmd "export TMUXIFIER_DEFAULT_PATH='~/WorkSpace/158309813/'"
+    run_cmd "clear"
+
+    new_window "sql-q"
+    run_cmd "cd ~/WorkSpace/"
+    run_cmd "export TMUXIFIER_DEFAULT_PATH='~/WorkSpace/158309813/'"
+    run_cmd "clear"
+
+
 
 fi
 

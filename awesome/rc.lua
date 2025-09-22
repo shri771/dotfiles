@@ -1034,7 +1034,7 @@ awful.rules.rules = {
   },
 
   {
-    rule_any = { class = { "kdialog", "Xdg-desktop-portal-gtk" } },
+    rule_any = { class = { "kdialog", "Xdg-desktop-portal-gtk", "Gcr-prompter" } },
     properties = {
       floating = true,
       ontop = true,

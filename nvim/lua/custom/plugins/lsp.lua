@@ -21,7 +21,7 @@ return {
     },
     lazy = true,
 
-    ft = { "go", "python", "bash", "c", "cpp", "lua", "sql", "java", "html" },
+    ft = { "go", "python", "bash", "c", "cpp", "lua", "java", "html", "sql", "markdown" },
 
     config = function()
       vim.api.nvim_create_autocmd("LspAttach", {
@@ -35,7 +35,7 @@ return {
           -- Keymaps
           map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
           map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-          map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
+          map("gi", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
           map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
           map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
           -- map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
@@ -109,11 +109,12 @@ return {
       -- LSPs to install
       local servers = {
         clangd = {}, -- C
+        marksman = {},
         gopls = {}, -- Go
         pyright = {}, -- python
         htmlhint = {},
         bashls = {}, -- for Bash
-        sqlls = {}, -- SQL
+        sqls = {},
         glint = {},
         jdtls = {}, -- Java
         lua_ls = {
@@ -136,8 +137,10 @@ return {
         "isort", -- Python import sorter
         "clang-format",
         "google-java-format",
-        "sql-formatter",
         "goimports",
+        "sql-formatter",
+        "sqls",
+        "cbfmt",
       })
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

@@ -1,5 +1,12 @@
 return {
-
+  {
+    "nvim-telescope/telescope-frecency.nvim",
+    -- install the latest stable version
+    version = "*",
+    config = function()
+      require("telescope").load_extension("frecency")
+    end,
+  },
   {
     -- Auto-pairs
     "windwp/nvim-autopairs",
@@ -104,7 +111,7 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     lazy = false,
-    enabled = true,
+    enabled = false,
     main = "ibl",
     ---@module "ibl"
     ---@type ibl.config

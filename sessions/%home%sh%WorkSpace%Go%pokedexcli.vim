@@ -8,28 +8,23 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
-if &shortmess =~ 'A'
-  set shortmess=aoOA
-else
-  set shortmess=aoO
-endif
-badd +13 ~/WorkSpace/Go/pokedexcli/commandMap.go
-badd +68 repl.go
-badd +20 internal/pokeapi/client.go
-badd +39 internal/pokeapi/location_list.go
-badd +5 internal/pokeapi/pokeapi.go
-badd +12 internal/pokeapi/types_locations.go
-badd +6 main.go
-badd +1 repl.log
-badd +1 pokelocation.go
-badd +15 commandHelp.go
-badd +12 ~/WorkSpace/Go/pokedexcli/commandExit.go
+set shortmess+=aoO
+badd +8 commandExit.go
+badd +20 repl.go
+badd +31 ~/WorkSpace/Go/pokedexcli/commandCatch.go
+badd +11 internal/pokeapi/client.go
+badd +9 main.go
+badd +4 internal/pokeapi/pokeapi.go
+badd +25 internal/pokeapi/pokemon_list.go
+badd +9 commandMap.go
+badd +0 oil:///home/sh/WorkSpace/Go/pokedexcli/
+badd +0 internal/pokecache/pokecache.go
 argglobal
 %argdel
-$argadd .
-edit ~/WorkSpace/Go/pokedexcli/commandMap.go
+$argadd oil:///home/sh/WorkSpace/Go/pokedexcli/
+edit internal/pokecache/pokecache.go
 argglobal
-balt main.go
+balt internal/pokeapi/client.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -40,12 +35,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 31 - ((29 * winheight(0) + 19) / 39)
+let s:l = 71 - ((18 * winheight(0) + 17) / 35)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 31
-normal! 0
+keepjumps 71
+normal! 05|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

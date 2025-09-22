@@ -387,9 +387,9 @@ alias vm='source ~/.venvs/pyprland/bin/activate.fish'
 alias rm='trash-put'
 alias nxt='playerctl next'
 alias prs='playerctl previous'
-alias up_mirr='sudo reflector --country India --age 12 --protocol https \
-  --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy && sudo pacman -Syu'
+alias up_mirr='sudo reflector --country India --age 12 --protocol https \ --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy && sudo pacman -Syu'
 alias sf='bash $HOME/scripts/terminal/fzf_search.sh'
+alias hdmiCon ='xrandr --output HDMI-1 --same-as eDP-1 --mode 1920x1080'
 
 # Changing "ls" to "eza"
 alias ls='eza -al --color=always --group-directories-first'
