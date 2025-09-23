@@ -2,6 +2,8 @@
 set -U LC_CTYPE en_US.UTF-8
 set -Ux PERL5LIB /usr/share/perl5/vendor_perl
 set -Ux BORG_PASSCOMMAND "cat $HOME/.borg_passphrase"
+set -x MANPAGER "nvim +Man!"
+
 fish_add_path ~/.config/tmux/plugins/tmuxifier/bin
 
 

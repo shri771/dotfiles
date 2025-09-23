@@ -9,31 +9,37 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +1 index.html
-badd +126 handlerChirps.go
-badd +1 go.sum
-badd +26 json.go
+badd +87 main.go
 badd +3 go.mod
-badd +1 internal/auth/helpers_password_test.go
-badd +54 internal/auth/helpers_password.go
-badd +1 sql/queries/chiprs.sql
-badd +90 main.go
-badd +10 reset.go
-badd +87 handlerUsers.go
-badd +16 sql/queries/users.sql
-badd +118 internal/database/users.sql.go
+badd +45 helpers.go
 badd +5 readiness.go
-badd +29 internal/database/chiprs.sql.go
+badd +10 reset.go
+badd +25 json.go
+badd +1 index.html
+badd +1 go.sum
+badd +59 internal/auth/helpers_password_test.go
+badd +33 internal/auth/helpers_password.go
+badd +1 sql/queries/chiprs.sql
+badd +16 sql/queries/users.sql
+badd +43 internal/database/users.sql.go
+badd +128 internal/database/chiprs.sql.go
 badd +4 handlerLogin.go
-badd +2 internal/database/models.go
+badd +37 internal/database/models.go
 badd +1 all
+badd +44 handler_chiprs_get.go
+badd +41 handler_chiprs_del.go
+badd +17 handler_chiprs_create.go
+badd +20 handler_users_update.go
+badd +14 handler_users_login.go
+badd +21 handler_users_create.go
+badd +32 handler_webhooks.go
 argglobal
 %argdel
 $argadd oil:///home/sh/WorkSpace/Go/WebServer/
 set stal=2
 tabnew +setlocal\ bufhidden=wipe
 tabrewind
-edit internal/database/models.go
+edit internal/database/chiprs.sql.go
 tcd ~/WorkSpace/Go/WebServer/internal/database
 argglobal
 balt ~/WorkSpace/Go/WebServer/internal/database/users.sql.go
@@ -47,16 +53,16 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 2 - ((1 * winheight(0) + 17) / 35)
+let s:l = 120 - ((23 * winheight(0) + 17) / 35)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
-normal! 012|
+keepjumps 120
+normal! 03|
 tabnext
-edit ~/WorkSpace/Go/WebServer/internal/auth/helpers_password.go
+edit ~/WorkSpace/Go/WebServer/json.go
 argglobal
-balt ~/WorkSpace/Go/WebServer/handlerChirps.go
+balt ~/WorkSpace/Go/WebServer/internal/auth/helpers_password_test.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -67,11 +73,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 54 - ((15 * winheight(0) + 17) / 35)
+let s:l = 29 - ((28 * winheight(0) + 17) / 35)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 54
+keepjumps 29
 normal! 0
 tabnext 2
 set stal=1

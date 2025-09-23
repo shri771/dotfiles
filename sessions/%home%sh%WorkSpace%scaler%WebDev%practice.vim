@@ -3,20 +3,19 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/WorkSpace/Go/WebServer/sql
+cd ~/WorkSpace/scaler/WebDev/practice
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +3 ~/WorkSpace/Go/WebServer/sql/schema/005_add-is_chipry_red-users.sql
-badd +40 queries/chiprs.sql
+badd +1 tst.java
+badd +1 health://
 argglobal
 %argdel
-$argadd .
-edit ~/WorkSpace/Go/WebServer/sql/schema/005_add-is_chipry_red-users.sql
+$argadd tst.java
+edit tst.java
 argglobal
-balt queries/chiprs.sql
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -27,11 +26,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 7 - ((6 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 7
+keepjumps 1
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
