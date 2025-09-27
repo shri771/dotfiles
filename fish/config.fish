@@ -471,6 +471,7 @@ alias txa="tmux a"
 # alias txc="gcc -o ~/scripts/terminal/txc ~/scripts/terminal/txc.c && ~/scripts/terminal/txc"
 # alias txt="gcc -o ~/scripts/terminal/txt ~/scripts/terminal/txt.c && ~/scripts/terminal/txt"
 alias txc="tmuxifier load-session cn"
+alias txsc="tmuxifier load-session sc "
 alias txdev="tmuxifier load-session dev"
 
 # get error messages from journalctl

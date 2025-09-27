@@ -10,7 +10,7 @@ endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
 badd +4 init.lua
-badd +22 lua/custom/plugins/lsp.lua
+badd +33 lua/custom/plugins/lsp.lua
 argglobal
 %argdel
 $argadd init.lua
@@ -34,12 +34,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 22 - ((20 * winheight(0) + 18) / 36)
+let s:l = 70 - ((16 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 22
-normal! 012|
+keepjumps 70
+normal! 072|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -55,6 +55,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

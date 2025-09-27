@@ -142,7 +142,7 @@ Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00n\x00
 
 [General]
 AccentColor=170,85,255
-ColorSchemeHash=8ff306d9a93379c74540e00506966df24df1798b
+ColorSchemeHash=2c3f86428c11011a7c64ee1e7f47c274d498ff10
 LastUsedCustomAccentColor=170,85,255
 TerminalApplication=kitty
 TerminalService=kitty.desktop

@@ -9,15 +9,15 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +16 ~/WorkSpace/Hackathon/NewsAggregator/cmd/homepage.go
-badd +22 cmd/helpers.go
-badd +0 cmd/main.go
+badd +8 cmd/main.go
+badd +13 cmd/homepage.go
+badd +0 ~/WorkSpace/Hackathon/NewsAggregator/cmd/helpers.go
 argglobal
 %argdel
-$argadd cmd/
-edit cmd/main.go
+$argadd cmd/main.go
+edit ~/WorkSpace/Hackathon/NewsAggregator/cmd/helpers.go
 argglobal
-balt ~/WorkSpace/Hackathon/NewsAggregator/cmd/homepage.go
+balt cmd/homepage.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -28,12 +28,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 21 - ((20 * winheight(0) + 19) / 39)
+let s:l = 9 - ((8 * winheight(0) + 17) / 35)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 21
-normal! 0
+keepjumps 9
+normal! 054|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

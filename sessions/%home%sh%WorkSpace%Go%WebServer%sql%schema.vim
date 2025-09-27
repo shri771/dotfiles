@@ -10,15 +10,18 @@ endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
 badd +3 schema/005_add-is_chipry_red-users.sql
-badd +3 schema/001_users.sql
-badd +40 queries/users.sql
-badd +42 queries/chiprs.sql
+badd +46 queries/users.sql
+badd +6 schema/004_refresh_tokens.sql
 argglobal
 %argdel
-$argadd ./
-edit queries/chiprs.sql
+$argadd .
+set stal=2
+tabnew +setlocal\ bufhidden=wipe
+tabrewind
+edit schema/004_refresh_tokens.sql
+tcd ~/WorkSpace/Go/WebServer/sql/schema
 argglobal
-balt queries/users.sql
+balt ~/WorkSpace/Go/WebServer/sql/schema/005_add-is_chipry_red-users.sql
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -29,13 +32,35 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 42 - ((35 * winheight(0) + 18) / 36)
+let s:l = 6 - ((5 * winheight(0) + 17) / 35)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 42
+keepjumps 6
 normal! 09|
+tabnext
+edit ~/WorkSpace/Go/WebServer/sql/queries/users.sql
+tcd ~/WorkSpace/Go/WebServer/sql/queries
+argglobal
+balt ~/WorkSpace/Go/WebServer/sql/schema/005_add-is_chipry_red-users.sql
+setlocal foldmethod=manual
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 46 - ((32 * winheight(0) + 17) / 35)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 46
+normal! 03|
 tabnext 1
+set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif

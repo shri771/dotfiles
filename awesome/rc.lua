@@ -980,7 +980,7 @@ awful.rules.rules = {
   },
 
   -- Rules to open a app in sepcific Tag
-  { rule = { class = "cantata" }, properties = { tag = awful.screen.focused().tags[5] } },
+  { rule = { class = "Cantata" }, properties = { tag = awful.screen.focused().tags[7] } },
   { rule = { class = "Notion" }, properties = { tag = awful.screen.focused().tags[3] } },
   { rule = { class = "notion-calendar-electron" }, properties = { tag = awful.screen.focused().tags[4] } },
   {
