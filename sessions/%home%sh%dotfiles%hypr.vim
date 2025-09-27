@@ -3,20 +3,24 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/dotfiles/hypr
+cd /home/sh/dotfiles/hypr
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +1 ~/dotfiles/hypr/UserScripts/RofiBeats.sh
-badd +0 scripts/KeyBinds.sh
+badd +28 configs/Keybinds.conf
+badd +1 scripts/ClipManager.sh
+badd +0 term:///home/sh/dotfiles/hypr//13266:/bin/fish
 argglobal
 %argdel
-$argadd .
-edit scripts/KeyBinds.sh
+$argadd hypr/
 argglobal
-balt ~/dotfiles/hypr/UserScripts/RofiBeats.sh
+if bufexists(fnamemodify("term:///home/sh/dotfiles/hypr//13266:/bin/fish", ":p")) | buffer term:///home/sh/dotfiles/hypr//13266:/bin/fish | else | edit term:///home/sh/dotfiles/hypr//13266:/bin/fish | endif
+if &buftype ==# 'terminal'
+  silent file term:///home/sh/dotfiles/hypr//13266:/bin/fish
+endif
+balt scripts/ClipManager.sh
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -25,9 +29,7 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 33 - ((32 * winheight(0) + 20) / 40)
+let s:l = 33 - ((8 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
