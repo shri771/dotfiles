@@ -4,6 +4,7 @@
 local awful = require("awful")
 
 -- Apps and scripts autostarted using appropriate spawn method
+awful.spawn.with_shell("sudo systemctl restart bluetooth.service")
 awful.spawn("nm-applet")
 awful.spawn("nm-applet --indicator")
 awful.spawn("blueman-applet")
@@ -18,7 +19,6 @@ awful.spawn.with_shell("xss-lock --transfer-sleep-lock -- betterlockscreen -l &"
 awful.spawn.with_shell("~/.fehbg")
 awful.spawn.with_shell("~/.config/polybar/lauch.sh")
 awful.spawn.with_shell("~/.config/awesome/scripts/cliphist-watcher.sh")
-awful.spawn.with_shell("sudo systemctl restart bluetooth.service")
 awful.spawn.with_shell("sleep 2 && ~/scripts/startups/connect_realmebuds.sh")
 awful.spawn.with_shell("sleep 3 && ~/.config/awesome/scripts/AppsAtutostart.sh")
 awful.spawn.with_shell("pgrep -x autokey-qt > /dev/null || autokey-qt -c")

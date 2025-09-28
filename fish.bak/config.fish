@@ -2,7 +2,9 @@
 set -U LC_CTYPE en_US.UTF-8
 set -Ux PERL5LIB /usr/share/perl5/vendor_perl
 set -Ux BORG_PASSCOMMAND "cat $HOME/.borg_passphrase"
-set -gx PATH "~/.tmuxifier/bin" $PATH
+set -x MANPAGER "nvim +Man!"
+
+fish_add_path ~/.config/tmux/plugins/tmuxifier/bin
 
 
 ### KEYBINDINGS ###
@@ -387,9 +389,9 @@ alias vm='source ~/.venvs/pyprland/bin/activate.fish'
 alias rm='trash-put'
 alias nxt='playerctl next'
 alias prs='playerctl previous'
-alias up_mirr='sudo reflector --country India --age 12 --protocol https \
-  --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy && sudo pacman -Syu'
+alias up_mirr='sudo reflector --country India --age 12 --protocol https \ --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy && sudo pacman -Syu'
 alias sf='bash $HOME/scripts/terminal/fzf_search.sh'
+alias hdmiCon ='xrandr --output HDMI-1 --same-as eDP-1 --mode 1920x1080'
 
 # Changing "ls" to "eza"
 alias ls='eza -al --color=always --group-directories-first'
@@ -469,6 +471,7 @@ alias txa="tmux a"
 # alias txc="gcc -o ~/scripts/terminal/txc ~/scripts/terminal/txc.c && ~/scripts/terminal/txc"
 # alias txt="gcc -o ~/scripts/terminal/txt ~/scripts/terminal/txt.c && ~/scripts/terminal/txt"
 alias txc="tmuxifier load-session cn"
+alias txsc="tmuxifier load-session sc "
 alias txdev="tmuxifier load-session dev"
 
 # get error messages from journalctl
@@ -497,5 +500,4 @@ test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
 # Created by `pipx` on 2025-02-28 09:09:27
 set PATH $PATH /home/sh/.local/bin
 zoxide init fish | source
-
 set -gx BROWSER "vivaldi"

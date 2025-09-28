@@ -14,14 +14,15 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.signcolumn = "yes"
 vim.opt.shortmess:append("S")
-vim.g.clipboard_provider_blacklist = { "wl-copy" }
+-- vim.g.clipboard_provider_blacklist = { "wl-copy" }
+vim.g.clipboard_provider_blacklist = { "xclip" }
 
 vim.opt.list = false
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
-vim.opt.scrolloff = 15
+vim.opt.scrolloff = 10
 vim.o.timeout = true
 vim.o.timeoutlen = 1700
 

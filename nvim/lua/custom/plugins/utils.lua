@@ -8,6 +8,13 @@ return {
     end,
   },
   {
+    "Aasim-A/scrollEOF.nvim",
+    event = { "CursorMoved", "WinScrolled" },
+    opts = {
+      insert_mode = true, -- Enable in insert mode for padding while typing
+    },
+  },
+  {
     -- Auto-pairs
     "windwp/nvim-autopairs",
     event = "InsertEnter",

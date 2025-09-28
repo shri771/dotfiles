@@ -1,0 +1,58 @@
+#set -Ux TERM xterm-256color
+set -U LC_CTYPE en_US.UTF-8
+set -Ux PERL5LIB /usr/share/perl5/vendor_perl
+set -Ux BORG_PASSCOMMAND "cat $HOME/.borg_passphrase"
+
+
+
+
+## Git Funcions ##
+# Pushes git with a arugument
+function gph
+    # Ensure at least two arguments are provided
+    if test (count $argv) -lt 2
+        echo "Usage: gph <file1> [file2 ...] <commit message>"
+        return 1
+    end
+
+    # Extract the commit message (last argument) and files (all but last)
+    set commit_message $argv[-1]
+    set files $argv[1..-2]
+
+    # Add files, commit, push, and display status
+    git add $files
+    if not git commit -m "$commit_message"
+        echo "Failed to commit changes" >&2
+        return 1
+    end
+
+    echo "============================================================"
+    if not git push
+        echo "Failed to push changes" >&2
+        return 1
+    end
+    echo "============================================================"
+    git status
+end
+
+
+
+
+
+
+
+
+
+# bare git repo alias for dotfiles
+alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
+
+### SETTING THE STARSHIP PROMPT ###
+starship init fish | source
+
+# Generated for envman. Do not edit.
+test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
+
+# Created by `pipx` on 2025-02-28 09:09:27
+set PATH $PATH /home/sh/.local/bin
+zoxide init fish | source
+set -gx BROWSER "vivaldi"

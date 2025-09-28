@@ -8,15 +8,14 @@ plugins = [
 
 # Scratchpads
 [scratchpads.term]
-animation = "fromTop"
 command = "kitty --class kitty-dropterm"
 class = "kitty-dropterm"
 lazy = true
 size = "55% 54%"
+position =  "24% 5%"
 focus = true
 
 [scratchpads.whatsie]
-animation = "fromTop"
 command = "zapzap"
 class = "com.rtosta.zapzap"
 size = "60% 58%"
@@ -24,7 +23,6 @@ focus = true
 lazy = true
 
 [scratchpads.mixer]
-animation = "fromBottom"
 command = "pavucontrol"
 class = "org.pulseaudio.pavucontrol"
 size = "45% 46%"
@@ -33,7 +31,6 @@ lazy = true
 position = "30% 33%"
 
 [scratchpads.share]
-animation = "fromTop"
 command = "rquickshare"
 class = "rquickshare"
 size = "40% 45%"
@@ -41,7 +38,6 @@ focus = true
 lazy = true
 
 [scratchpads.cal]
-animation = "fromBottom"
 command = "qalculate-gtk "
 class = "qalculate-gtk"
 size = "20% 46%"
@@ -53,7 +49,6 @@ position = "41% 44%"
 [scratchpads.mission]
 command = "missioncenter"
 class = "io.missioncenter.MissionCenter"
-animation = "fromBottom"
 size = "46% 47%"
 lazy = true
 position = "28% 37%"
@@ -62,7 +57,6 @@ position = "28% 37%"
 [scratchpads.file]
 command = "dolphin"
 class = "org.kde.dolphin"
-animation = "fromBottom"
 size = "46% 47%"
 lazy = true
 position = "28% 37%"
@@ -74,7 +68,6 @@ focus = true
 [scratchpads.kde]
 command = "kdeconnect-app"
 class = "org.kde.kdeconnect.app"
-animation = "fromBottom"
 size = "24% 27%"
 lazy = true
 position = "37% 46%"
@@ -86,7 +79,6 @@ focus = true
 [scratchpads.clock]
 command = "kclock"
 class = "org.kde.kclock"
-animation = "fromBottom"
 size = "20% 37%"
 position = "41% 51%"
 lazy = true

@@ -9,14 +9,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +4 hypr/UserConfigs/UserDecorAnimations.conf
-badd +0 hypr/configs/Settings.conf
+badd +0 cd
+badd +0 wlogout/
 argglobal
 %argdel
-$argadd hypr/
-edit hypr/configs/Settings.conf
+$argadd cd
+$argadd wlogout/
+edit cd
 argglobal
-balt hypr/UserConfigs/UserDecorAnimations.conf
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}

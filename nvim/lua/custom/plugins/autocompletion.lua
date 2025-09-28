@@ -4,7 +4,7 @@ return {
     event = "InsertEnter",
     enabled = true,
     version = "1.*",
-    build = "make",
+    -- build = "make",
     dependencies = {
       {
         "fang2hou/blink-copilot",
@@ -97,11 +97,21 @@ return {
       },
 
       sources = {
-        -- default = { "snippets", "buffer", "lsp", "lazydev", "path", "copilot" },
-        default = {}, -- No LSP
+        default = { "snippets", "buffer", "lsp", "lazydev", "path", "copilot" },
+        -- For SQL files, we'll configure this differently using per_filetype
+        per_filetype = {
+          sql = { "dadbod", "buffer", "snippets" },
+          postgresql = { "dadbod", "buffer", "snippets" },
+        },
         providers = {
           buffer = {
             module = "blink.cmp.sources.buffer",
+          },
+          -- Add dadbod provider
+          dadbod = {
+            name = "Dadbod",
+            module = "vim_dadbod_completion.blink",
+            score_offset = 85,
           },
           copilot = {
             name = "copilot",

@@ -22,7 +22,17 @@ return {
     lazy = true,
 
     ft = { "go", "python", "bash", "c", "cpp", "lua", "java", "html", "sql", "markdown", "js" },
-
+    settings = {
+      sqlLanguageServer = {
+        dialect = "postgresql",
+        connections = {
+          {
+            name = "chirpy",
+            connectionString = "postgres://postgres:postgres@localhost:5432/chirpy?sslmode=disable",
+          },
+        },
+      },
+    },
     config = function()
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
