@@ -108,7 +108,7 @@
 .notification-row .notification-background .notification .notification-default-action .notification-content .app-icon {
   -gtk-icon-filter: none;
   -gtk-icon-size: var(--notification-app-icon-size);
-  -gtk-icon-shadow: 0 1px 4px #000000;
+  -gtk-icon-shadow: 0 1px 4px #7aa2f7;
   margin: 6px;
 }
 
@@ -266,7 +266,7 @@
 }
 
 .control-center .control-center-list .notification {
-  box-shadow: 0 0 0 1px #000000, 0 1px 3px 1px #000000, 0 2px 6px 2px #000000;
+  box-shadow: 0 0 0 1px #7aa2f7, 0 1px 3px 1px #7aa2f7, 0 2px 6px 2px #7aa2f7;
   max-width: 300px; /* Apply same width to notifications in control center */
 }
 

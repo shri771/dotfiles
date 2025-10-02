@@ -5,6 +5,10 @@
 set -U fish_greeting ""
 set -x MANPAGER "nvim +Man!"
 
+# Set Neovim as the default editor
+set -x VISUAL nvim
+set -x EDITOR nvim
+
 # ====================================
 # FISH COLORS & SYNTAX HIGHLIGHTING
 # ====================================
@@ -459,3 +463,5 @@ end
 if command -q zoxide
     zoxide init fish | source
 end
+##For go
+fish_add_path $HOME/go/bin

@@ -8,11 +8,13 @@ return {
       "nvim-neotest/nvim-nio",
       "mfussenegger/nvim-jdtls",
       "microsoft/vscode-java-debug",
+      "leoluz/nvim-dap-go", -- Go debugging support
     },
     config = function()
       local dap = require("dap")
       local dapui = require("dapui")
       local dap_python = require("dap-python")
+      local dap_go = require("dap-go")
 
       -- Dynamic Python path
       local function resolve_python()
@@ -40,6 +42,9 @@ return {
         },
       }
       dap_python.setup(resolve_python())
+
+      -- Go DAP Setup (using Delve)
+      dap_go.setup()
 
       -- Java DAP Adapter (using nvim-jdtls)
       dap.adapters.java = function(callback)
@@ -97,6 +102,7 @@ return {
         )
         vim.keymap.set("n", "q", dap.terminate, vim.tbl_extend("force", opts, { desc = "DAP: Terminate" }))
       end
+
       local clear = function()
         for _, key in ipairs({ "n", "i", "o", "c", "b", "q" }) do
           pcall(vim.api.nvim_buf_del_keymap, 0, "n", key)

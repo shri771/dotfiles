@@ -20,7 +20,6 @@ return {
       "saghen/blink.cmp",
     },
     lazy = true,
-
     ft = { "go", "python", "bash", "c", "cpp", "lua", "java", "html", "sql", "markdown", "js" },
     settings = {
       sqlLanguageServer = {

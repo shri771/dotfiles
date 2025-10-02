@@ -9,16 +9,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +39 UserConfigs/UserKeybinds.conf
-badd +45 configs/Keybinds.conf
-badd +51 scripts/Wlogout.sh
-badd +6 scripts/LockScreen.sh
+badd +1 scripts/KeyBinds.sh
+badd +126 configs/Keybinds.conf
 argglobal
 %argdel
 $argadd .
-edit scripts/LockScreen.sh
+edit configs/Keybinds.conf
 argglobal
-balt scripts/Wlogout.sh
+balt scripts/KeyBinds.sh
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -29,11 +27,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 15) / 31)
+let s:l = 65 - ((11 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 65
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
@@ -48,6 +46,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

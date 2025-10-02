@@ -14,7 +14,7 @@ is_device_connected() {
 connect_bluetooth() {
     notify-send -i "/home/sh/.icons/WhiteSur-dark/apps@2x/scalable/bluetooth.svg" "Bluetooth" "Connecting to Realme Buds..."
     sudo systemctl restart bluetooth.service
-    # sleep 0.1
+    sleep 0.5
     if bluetoothctl connect "$BT_DEVICE_MAC"; then
         notify-send -i "/home/sh/.icons/WhiteSur-dark/apps@2x/scalable/bluetooth.svg" "Bluetooth Connected" "Realme Buds connected successfully!"
     else

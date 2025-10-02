@@ -10,7 +10,7 @@ iDIR="$HOME/.config/swaync/icons"
 sDIR="$HOME/.config/hypr/scripts"
 
 # Notification config
-notify_cmd="notify-send -t 3000 -i ${iDIR}/picture.png -h string:x-canonical-private-synchronous:shot-notify"
+notify_cmd="notify-send -t 2000 -i ${iDIR}/picture.png -h string:x-canonical-private-synchronous:shot-notify"
 sound_script="$sDIR/Sounds.sh"
 
 # --- Functions ---
@@ -48,7 +48,7 @@ delete_file() {
 notify_view() {
     local filepath="$1"
     local message="$2"
-    
+
     if [[ -e "$filepath" ]]; then
         # Play success sound
         [[ -f $sound_script ]] && "$sound_script" --screenshot

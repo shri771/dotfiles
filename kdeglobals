@@ -136,8 +136,8 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [DirSelect Dialog]
-DirSelectDialog Size=799,584
-History Items[$e]=file:///,file:$HOME/Downloads/QuickShare,file:$HOME/Downloads/QuickShare,file:$HOME/Downloads/QuickShare,file:$HOME/Pictures/Screenshots
+DirSelectDialog Size=803,609
+History Items[$e]=file:$HOME/Video/OBS,file:///,file:$HOME/Downloads/QuickShare,file:$HOME/Downloads/QuickShare,file:$HOME/Downloads/QuickShare,file:$HOME/Pictures/Screenshots
 Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00n\x00\x00\x02\xa8\x00\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
 
 [General]
