@@ -3,18 +3,23 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/WorkSpace/Go/WebServer
+cd ~/WorkSpace/Go
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +27 json.go
+badd +11 pokedexcli/commandHelp.go
+badd +5 pokedexcli/internal/pokeapi/types_locations.go
+badd +17 pokedexcli/repl_test.go
+badd +1 ~/WorkSpace/Go/.vscode/launch.json
+badd +1 pokedexcli/repl.go
 argglobal
 %argdel
-$argadd json.go
-edit json.go
+$argadd .
+edit pokedexcli/internal/pokeapi/types_locations.go
 argglobal
+balt pokedexcli/repl.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -25,12 +30,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 32 - ((20 * winheight(0) + 16) / 32)
+let s:l = 6 - ((5 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 32
-normal! 0
+keepjumps 6
+normal! 05|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

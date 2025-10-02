@@ -9,13 +9,47 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +0 cd
-badd +0 wlogout/
+badd +23 awesome/scripts/toggle_realmebuds_bind.sh
+badd +0 fish/config.fish
+badd +0 fish/fish_variables
+badd +0 hypr/UserConfigs/UserSettings.conf
+badd +0 hypr/scripts/ScreenShot.sh
+badd +0 kdeglobals
+badd +0 nvim/lazy-lock.json
+badd +0 nvim/lua/custom/plugins/copilot.lua
+badd +0 nvim/lua/custom/plugins/debugger.lua
+badd +0 nvim/lua/custom/plugins/lsp.lua
+badd +0 scripts/system/setup_firewall.sh
+badd +0 sessions/\%home\%sh\%WorkSpace\%Go\%WebServer.vim
+badd +0 sessions/\%home\%sh\%WorkSpace\%Go_boot.dev\%practice.vim
+badd +0 sessions/\%home\%sh\%WorkSpace\%scaler\%Java\%Practice.vim
+badd +0 sessions/\%home\%sh\%WorkSpace\%scaler\%WebDev\%protfolio.vim
+badd +0 sessions/\%home\%sh\%dotfiles\%awesome.vim
+badd +0 sessions/\%home\%sh\%dotfiles\%hypr.vim
+badd +0 sessions/\%home\%sh\%dotfiles\%nvim.vim
+badd +0 swaync/style.css
 argglobal
 %argdel
-$argadd cd
-$argadd wlogout/
-edit cd
+$argadd awesome/scripts/toggle_realmebuds_bind.sh
+$argadd fish/config.fish
+$argadd fish/fish_variables
+$argadd hypr/UserConfigs/UserSettings.conf
+$argadd hypr/scripts/ScreenShot.sh
+$argadd kdeglobals
+$argadd nvim/lazy-lock.json
+$argadd nvim/lua/custom/plugins/copilot.lua
+$argadd nvim/lua/custom/plugins/debugger.lua
+$argadd nvim/lua/custom/plugins/lsp.lua
+$argadd scripts/system/setup_firewall.sh
+$argadd sessions/\%home\%sh\%WorkSpace\%Go\%WebServer.vim
+$argadd sessions/\%home\%sh\%WorkSpace\%Go_boot.dev\%practice.vim
+$argadd sessions/\%home\%sh\%WorkSpace\%scaler\%Java\%Practice.vim
+$argadd sessions/\%home\%sh\%WorkSpace\%scaler\%WebDev\%protfolio.vim
+$argadd sessions/\%home\%sh\%dotfiles\%awesome.vim
+$argadd sessions/\%home\%sh\%dotfiles\%hypr.vim
+$argadd sessions/\%home\%sh\%dotfiles\%nvim.vim
+$argadd swaync/style.css
+edit awesome/scripts/toggle_realmebuds_bind.sh
 argglobal
 setlocal foldmethod=manual
 setlocal foldexpr=0
@@ -27,7 +61,7 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 15) / 31)
+let s:l = 1 - ((0 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt

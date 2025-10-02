@@ -1,18 +1,15 @@
-# 1) No leading blank line
+# Optimized Starship Configuration
+# No leading blank line
 add_newline = false
 
-# 2) Entire prompt:
-#    - starts with a space
-   # - directory → git branch → cmd duration → prompt char
-format = "$directory$git_branch$character"
+# Prompt format: directory → git branch → git status → character
+format = "$directory$git_branch$git_status$character"
 
+# Color palette
 palette = 'foo'
 
-# Define custom colors
 [palettes.foo]
-# Overwrite existing color
 blue = '21'
-# Define new color
 mustard = '#ffaa00'
 blu = '#ffd5d8'
 skyblue = '#00aaff'
@@ -21,15 +18,15 @@ pink = '#ff55ff'
 [character]
 format = '$symbol'
 success_symbol = '[❯](bold green) '
-error_symbol = '[❯](bold red) '# ~/.config/starship.toml
+error_symbol = '[❯](bold red) '
 vimcmd_symbol = '[❮ ](bold mustard)'
 
 [cmd_duration]
 min_time = 500
-format = '[](dimmed yellow) [$duration ](bold yellow)'
+format = '[](dimmed yellow) [$duration ](bold yellow)'
 
 [directory]
-format = '[](#ffd5d8) [$path](#1fd6ff) '
+format = '[](#ffd5d8) [$path](#1fd6ff) '
 truncation_length = 2
 truncation_symbol = ''
 home_symbol = '~'
@@ -38,45 +35,30 @@ home_symbol = '~'
 format = '[\($state( $progress_current of $progress_total)\)]($style) '
 cherry_pick = '[🍒 PICKING](bold red)'
 
-
-# [git_status]
-# conflicted = '🏳'
-# ahead = '🏎💨'
-# behind = '😰'
-# diverged = '😵'
-# up_to_date = '✓'
-# untracked = '🤷'
-# stashed = '📦'
-# modified = '📝'
-# staged = '[++\($count\)](green)'
-# renamed = '👅'
-# deleted = '🗑'
+# Git Status - Using your original symbols with cleaner formatting
 [git_status]
-# spaces between placeholders only — no trailing space at the end
-# format = "$conflicted $ahead $behind $diverged $up_to_date $untracked $stashed $modified $staged $renamed $deleted"
-
-# nerd-font icons (no trailing space inside the quotes)
-conflicted = '[](red bold)'
+format = '([$all_status$ahead_behind]($style) )'
+style = 'bold red'
+conflicted = '[ ](red bold)'
 ahead      = '[](bright-yellow)'
-behind     = '[](bright-red)'
-diverged   = '[](purple)'
-up_to_date = '[](green)'
-untracked  = '[](cyan)'
-stashed    = '[](blue)'
-modified   = '[](yellow)'
-staged     = '[($count)](green bold)'
-renamed    = '[柳](magenta)'
-deleted    = '[](red)'
-
+behind     = '[ ](bright-red)'
+diverged   = '[ ](purple)'
+up_to_date = '[](green)'
+untracked  = '[](cyan)'
+stashed    = '[ ](blue)'
+modified   = '[](yellow)'
+staged     = '[](green bold)'
+renamed    = '[](magenta)'
+# deleted    = '[ ](red)'
+deleted    = '[](red)'
 
 [git_branch]
 format = '[on](#ffd5d8) [$symbol$branch(:$remote_branch)]($style) '
 symbol = '🌱 '
-style =  'bold pink'
+style = 'bold pink'
 truncation_length = 4
 truncation_symbol = ''
 ignore_branches = ['main']
-
 
 [git_metrics]
 added_style = 'bold blue'
@@ -88,88 +70,87 @@ format = '[$ssh_symbol](bold blue) on [$hostname](bold red) '
 trim_at = '.companyname.com'
 disabled = false
 
-
 [sudo]
-format ='[$symbol]($style)'
+format = '[$symbol]($style)'
 style = 'bold green'
 symbol = '💻 '
 disabled = false
 
+# Language and tool symbols
 [aws]
-symbol = "  "
+symbol = "  "
 
 [buf]
-symbol = " "
+symbol = " "
 
 [bun]
-symbol = " "
+symbol = " "
 
 [c]
-symbol = " "
-
+symbol = " "
 
 [cmake]
-symbol = " "
+symbol = " "
 
 [conda]
-symbol = " "
+symbol = " "
 
 [crystal]
-symbol = " "
+symbol = " "
 
 [dart]
-symbol = " "
+symbol = " "
 
 [deno]
-symbol = " "
-
+symbol = " "
 
 [docker_context]
-symbol = " "
+symbol = " "
 
 [elixir]
-symbol = " "
+symbol = " "
 
 [elm]
-symbol = " "
+symbol = " "
 
 [fennel]
-symbol = " "
+symbol = " "
 
 [fossil_branch]
-symbol = " "
+symbol = " "
 
 [gcloud]
-symbol = "  "
-
+symbol = "  "
 
 [golang]
-symbol = " "
+symbol = " "
+
+[gradle]
+symbol = " "
 
 [guix_shell]
-symbol = " "
+symbol = " "
 
 [haskell]
-symbol = " "
+symbol = " "
 
 [haxe]
-symbol = " "
+symbol = " "
 
 [hg_branch]
-symbol = " "
-
+symbol = " "
 
 [java]
-symbol = " "
+symbol = " "
 
 [julia]
-symbol = " "
+symbol = " "
 
 [kotlin]
-symbol = " "
+symbol = " "
 
 [lua]
-symbol = " "
+symbol = " "
 
 [memory_usage]
 symbol = "󰍛 "
@@ -181,94 +162,90 @@ symbol = "󰔷 "
 symbol = "󰆥 "
 
 [nix_shell]
-symbol = " "
+symbol = " "
 
 [nodejs]
-symbol = " "
+symbol = " "
 
 [ocaml]
-symbol = " "
-
-[os.symbols]
-Alpaquita = " "
-Alpine = " "
-AlmaLinux = " "
-Amazon = " "
-Android = " "
-Arch = " "
-Artix = " "
-CachyOS = " "
-CentOS = " "
-Debian = " "
-DragonFly = " "
-Emscripten = " "
-EndeavourOS = " "
-Fedora = " "
-FreeBSD = " "
-Garuda = "󰛓 "
-Gentoo = " "
-HardenedBSD = "󰞌 "
-Illumos = "󰈸 "
-Kali = " "
-Linux = " "
-Mabox = " "
-Macos = " "
-Manjaro = " "
-Mariner = " "
-MidnightBSD = " "
-Mint = " "
-NetBSD = " "
-NixOS = " "
-Nobara = " "
-OpenBSD = "󰈺 "
-openSUSE = " "
-OracleLinux = "󰌷 "
-Pop = " "
-Raspbian = " "
-Redhat = " "
-RedHatEnterprise = " "
-RockyLinux = " "
-Redox = "󰀘 "
-Solus = "󰠳 "
-SUSE = " "
-Ubuntu = " "
-Unknown = " "
-Void = " "
-Windows = "󰍲 "
+symbol = " "
 
 [package]
 symbol = "󰏗 "
 
 [perl]
-symbol = " "
+symbol = " "
 
 [php]
-symbol = " "
+symbol = " "
 
 [pijul_channel]
-symbol = " "
-
+symbol = " "
 
 [python]
-symbol = " "
+symbol = " "
 
 [rlang]
 symbol = "󰟔 "
 
 [ruby]
-symbol = " "
+symbol = " "
 
 [rust]
 symbol = "󱘗 "
 
 [scala]
-symbol = " "
+symbol = " "
 
 [swift]
-symbol = " "
+symbol = " "
 
 [zig]
-symbol = " "
+symbol = " "
 
-[gradle]
-symbol = " "
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
