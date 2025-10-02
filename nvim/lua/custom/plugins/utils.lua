@@ -1,4 +1,13 @@
 return {
+  -- add git status to statusline
+  {
+    "tpope/vim-fugitive",
+    lazy = false,
+    config = function()
+      vim.o.statusline = vim.o.statusline .. " %{FugitiveStatusline()}"
+    end,
+  },
+
   -- extend telescope with frecency sorting
   {
     "nvim-telescope/telescope-frecency.nvim",
