@@ -1,4 +1,5 @@
 return {
+  -- REST client for Neovim
   {
     "rest-nvim/rest.nvim",
     enabled = false,

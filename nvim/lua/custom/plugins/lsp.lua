@@ -1,5 +1,34 @@
 return {
   { "Bilal2453/luvit-meta", enabled = false, lazy = true },
+
+  -- Go.nvim for enhanced Go development
+  {
+    "ray-x/go.nvim",
+    dependencies = {
+      "ray-x/guihua.lua",
+      "neovim/nvim-lspconfig",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("go").setup({
+        lsp_cfg = false, -- Use your LSP config below
+        lsp_keymaps = false,
+        lsp_inlay_hints = {
+          enable = true,
+          style = "eol",
+        },
+        auto_format = true,
+        auto_lint = true,
+        run_in_floaterm = true,
+        dap_debug = true,
+        dap_debug_gui = true,
+      })
+    end,
+    event = { "CmdlineEnter" },
+    ft = { "go", "gomod" },
+    build = ':lua require("go.install").update_all_sync()',
+  },
+
   {
     -- Main LSP Configuration
     "neovim/nvim-lspconfig",
@@ -16,22 +45,9 @@ return {
           },
         },
       },
-      -- { "j-hui/fidget.nvim", opts = {} },
       "saghen/blink.cmp",
     },
-    lazy = true,
-    ft = { "go", "python", "bash", "c", "cpp", "lua", "java", "html", "sql", "markdown", "js" },
-    settings = {
-      sqlLanguageServer = {
-        dialect = "postgresql",
-        connections = {
-          {
-            name = "chirpy",
-            connectionString = "postgres://postgres:postgres@localhost:5432/chirpy?sslmode=disable",
-          },
-        },
-      },
-    },
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
@@ -47,12 +63,13 @@ return {
           map("gi", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
           map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
           map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-          -- map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
-          -- map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
           map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
           map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+          map("K", vim.lsp.buf.hover, "Hover Documentation")
 
           local client = vim.lsp.get_client_by_id(event.data.client_id)
+
+          -- Document highlighting
           if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
             local highlight_augroup = vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
             vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
@@ -76,6 +93,7 @@ return {
             })
           end
 
+          -- Inlay hints
           if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
             map("<leader>th", function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
@@ -84,7 +102,7 @@ return {
         end,
       })
 
-      -- Diagnostics (vim.diagnostic.Opts)
+      -- Diagnostics configuration
       vim.diagnostic.config({
         severity_sort = true,
         float = { border = "rounded", source = "if_many" },
@@ -101,57 +119,110 @@ return {
           source = "if_many",
           spacing = 2,
           format = function(diagnostic)
-            local diagnostic_message = {
-              [vim.diagnostic.severity.ERROR] = diagnostic.message,
-              [vim.diagnostic.severity.WARN] = diagnostic.message,
-              [vim.diagnostic.severity.INFO] = diagnostic.message,
-              [vim.diagnostic.severity.HINT] = diagnostic.message,
-            }
-            return diagnostic_message[diagnostic.severity]
+            return diagnostic.message
           end,
         },
       })
 
-      -- Blink
+      -- Get completion capabilities from Blink
       local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-      -- LSPs to install
+      -- LSP servers configuration
       local servers = {
-        clangd = {}, -- C
+        clangd = {},
         marksman = {},
-        gopls = {}, -- Go
-        pyright = {}, -- python
+
+        -- Enhanced Go configuration
+        gopls = {
+          settings = {
+            gopls = {
+              analyses = {
+                unusedparams = true,
+                shadow = true,
+                unusedwrite = true,
+                useany = true,
+              },
+              staticcheck = true,
+              gofumpt = true,
+              usePlaceholders = true,
+              completeUnimported = true,
+              matcher = "Fuzzy",
+              experimentalPostfixCompletions = true,
+              hints = {
+                assignVariableTypes = true,
+                compositeLiteralFields = true,
+                compositeLiteralTypes = true,
+                constantValues = true,
+                functionTypeParameters = true,
+                parameterNames = true,
+                rangeVariableTypes = true,
+              },
+            },
+          },
+        },
+
+        pyright = {},
         htmlhint = {},
-        bashls = {}, -- for Bash
-        sqls = {},
+        bashls = {},
+
+        -- SQL with proper configuration
+        sqls = {
+          settings = {
+            sqls = {
+              connections = {
+                {
+                  driver = "postgresql",
+                  dataSourceName = "postgres://postgres:postgres@localhost:5432/chirpy?sslmode=disable",
+                },
+              },
+            },
+          },
+        },
+
         glint = {},
-        jdtls = {}, -- Java
+        jdtls = {},
+
         lua_ls = {
           settings = {
             Lua = {
               completion = {
                 callSnippet = "Replace",
               },
+              diagnostics = {
+                globals = { "vim" },
+              },
+              workspace = {
+                checkThirdParty = false,
+              },
+              telemetry = {
+                enable = false,
+              },
             },
           },
         },
       }
+
       local ensure_installed = vim.tbl_keys(servers or {})
 
-      -- Ensure these are installed by Mason
+      -- Formatters and linters (LSP servers auto-installed by mason-lspconfig)
       vim.list_extend(ensure_installed, {
         "prettier",
-        "stylua", -- Lua formatter
-        "black", -- Python formatter
-        "isort", -- Python import sorter
+        "stylua",
+        "black",
+        "isort",
         "clang-format",
         "google-java-format",
         "goimports",
+        "gofumpt", -- Better Go formatting
         "sql-formatter",
-        "sqls",
         "cbfmt",
       })
-      require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+
+      require("mason-tool-installer").setup({
+        ensure_installed = ensure_installed,
+        auto_update = false,
+        run_on_start = true,
+      })
 
       require("mason-lspconfig").setup({
         handlers = {

@@ -1,4 +1,5 @@
 return {
+  -- extend telescope with frecency sorting
   {
     "nvim-telescope/telescope-frecency.nvim",
     -- install the latest stable version
@@ -7,6 +8,8 @@ return {
       require("telescope").load_extension("frecency")
     end,
   },
+
+  -- kep distance when scrolling to the end of file
   {
     "Aasim-A/scrollEOF.nvim",
     event = { "CursorMoved", "WinScrolled" },
@@ -102,6 +105,8 @@ return {
       })
     end,
   },
+
+  -- Editor config support
   {
     "editorconfig/editorconfig-vim",
     event = { "BufReadPre", "BufNewFile" },
