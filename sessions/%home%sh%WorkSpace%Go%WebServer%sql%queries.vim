@@ -3,58 +3,27 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/WorkSpace/Go/WebServer/sql/queries
+cd ~/WorkSpace/Go/WebServer/sql
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +10 auth.sql
-badd +4 /tmp/nvim.sh/qaQ25J/chirpy-query-2025-09-27-18-23-04
+badd +3 schema/001_users.sql
+badd +6 schema/004_refresh_tokens.sql
+badd +1 schema/002_chirps.sql
+badd +1 queries/chiprs.sql
+badd +0 oil:///home/sh/WorkSpace/Go/WebServer/sql/
 argglobal
 %argdel
-$argadd auth.sql
-edit /tmp/nvim.sh/qaQ25J/chirpy-query-2025-09-27-18-23-04
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
-set splitbelow splitright
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-exe '1resize ' . ((&lines * 20 + 17) / 35)
-exe 'vert 1resize ' . ((&columns * 40 + 68) / 137)
-exe '2resize ' . ((&lines * 20 + 17) / 35)
-exe 'vert 2resize ' . ((&columns * 96 + 68) / 137)
-exe '3resize ' . ((&lines * 12 + 17) / 35)
+$argadd oil:///home/sh/WorkSpace/Go/WebServer/sql/
+set stal=2
+tabnew +setlocal\ bufhidden=wipe
+tabrewind
+edit queries/chiprs.sql
+tcd ~/WorkSpace/Go/WebServer/sql/queries
 argglobal
-enew
-file dbui
-balt auth.sql
-setlocal foldmethod=manual
-setlocal foldexpr=0
-setlocal foldmarker={{{,}}}
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal nofoldenable
-wincmd w
-argglobal
-balt auth.sql
+balt ~/WorkSpace/Go/WebServer/sql/schema/001_users.sql
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -65,51 +34,41 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 4 - ((3 * winheight(0) + 10) / 20)
+let s:l = 4 - ((3 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 4
 normal! 0
-wincmd w
+tabnext
+edit ~/WorkSpace/Go/WebServer/sql/schema/002_chirps.sql
+tcd ~/WorkSpace/Go/WebServer/sql/schema
 argglobal
-if bufexists(fnamemodify("/tmp/nvim.sh/qaQ25J/3.dbout", ":p")) | buffer /tmp/nvim.sh/qaQ25J/3.dbout | else | edit /tmp/nvim.sh/qaQ25J/3.dbout | endif
-if &buftype ==# 'terminal'
-  silent file /tmp/nvim.sh/qaQ25J/3.dbout
-endif
-balt /tmp/nvim.sh/qaQ25J/chirpy-query-2025-09-27-18-23-04
-setlocal foldmethod=expr
-setlocal foldexpr=db_ui#dbout#foldexpr(v:lnum)
+balt ~/WorkSpace/Go/WebServer/sql/schema/004_refresh_tokens.sql
+setlocal foldmethod=manual
+setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
 setlocal foldignore=#
 setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-1
-sil! normal! zo
-let s:l = 1 - ((0 * winheight(0) + 6) / 12)
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 7 - ((5 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 04|
-wincmd w
-2wincmd w
-exe '1resize ' . ((&lines * 20 + 17) / 35)
-exe 'vert 1resize ' . ((&columns * 40 + 68) / 137)
-exe '2resize ' . ((&lines * 20 + 17) / 35)
-exe 'vert 2resize ' . ((&columns * 96 + 68) / 137)
-exe '3resize ' . ((&lines * 12 + 17) / 35)
+keepjumps 7
+normal! 017|
 tabnext 1
+set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20
 let &shortmess = s:shortmess_save
-let &winminheight = s:save_winminheight
-let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
