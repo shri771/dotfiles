@@ -3,20 +3,20 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd /home/sh/dotfiles/hypr
+cd ~/dotfiles/hypr
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +1 scripts/KeyBinds.sh
-badd +126 configs/Keybinds.conf
+badd +10 ~/dotfiles/hypr/hyprlock.conf
+badd +1 hyprlock-1080p.conf
 argglobal
 %argdel
 $argadd .
-edit configs/Keybinds.conf
+edit ~/dotfiles/hypr/hyprlock.conf
 argglobal
-balt scripts/KeyBinds.sh
+balt hyprlock-1080p.conf
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -27,12 +27,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 65 - ((11 * winheight(0) + 16) / 32)
+let s:l = 25 - ((20 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 65
-normal! 0
+keepjumps 25
+normal! 06|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

@@ -41,8 +41,22 @@ set -U fish_pager_color_prefix normal --bold --underline
 set -U fish_pager_color_progress brwhite --background=cyan
 set -U fish_pager_color_selected_background -r
 
-# Add paths
-fish_add_path ~/.config/tmux/plugins/tmuxifier/bin
+# Custom fzf color scheme, inheriting the terminal background
+# --- FZF CONFIGURATION (for jethrokuan/fzf plugin) ---
+
+# 1. Set LAYOUT for the history (Ctrl-R) window.
+# This is the specific variable for the plugin and will NOT affect other fzf windows.
+set -g fzf_history_opts "--height 50% --layout=default --border=rounded --margin=1"
+
+# 2. Set default options for COLORS ONLY.
+# By keeping layout settings out of here, we avoid conflicts.
+# This will apply to ALL fzf windows.
+set -x FZF_DEFAULT_OPTS "\
+--color=spinner:#f8f8f2,hl:#bd93f9,fg:#f8f8f2,header:#6272a4 \
+--color=info:#bd93f9,pointer:#ff79c6,marker:#ff79c6,fg+:#f8f8f2 \
+--color=prompt:#50fa7b,hl+:#f8f8f2,border:#6272a4,bg+:reverse"
+
+set -U FZF_TMUX 1
 
 # ====================================
 # KEY BINDINGS
@@ -67,6 +81,16 @@ end
 # UTILITY FUNCTIONS
 # ====================================
 
+# Ctrl+T binding for Workspace FZF launcher
+# This overrides the default fzf Ctrl+T file search
+function workspace_launcher
+    # Run the script
+    /home/sh/dotfiles/scripts/terminal/Workspacefzf.sh
+    commandline -f repaint
+end
+
+# Bind Ctrl+T to the workspace launcher function
+bind \ct workspace_launcher
 # History functions for !! and !$ support
 function __history_previous_command
     switch (commandline -t)
@@ -465,3 +489,13 @@ if command -q zoxide
 end
 ##For go
 fish_add_path $HOME/go/bin
+source $HOME/.tenv.completion.fish
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if test -f '/home/sh/backups/google-cloud-sdk/path.fish.inc'
+    source '/home/sh/backups/google-cloud-sdk/path.fish.inc'
+end
+
+# Initialize Carapace for Fish
+carapace _carapace | source
