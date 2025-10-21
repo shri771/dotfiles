@@ -488,8 +488,8 @@ if command -q zoxide
     zoxide init fish | source
 end
 ##For go
-fish_add_path $HOME/go/bin
-source $HOME/.tenv.completion.fish
+# fish_add_path $HOME/go/bin
+# source $HOME/.tenv.completion.fish
 
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -499,3 +499,4 @@ end
 
 # Initialize Carapace for Fish
 carapace _carapace | source
+##y>yVR#Z<3>R?)*=.$:j)
