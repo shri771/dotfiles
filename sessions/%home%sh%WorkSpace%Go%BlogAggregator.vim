@@ -9,21 +9,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +50 main.go
-badd +24 ~/WorkSpace/Go/BlogAggregator/handler_agg.go
-badd +74 ~/WorkSpace/Go/BlogAggregator/handler_user.go
-badd +29 ~/WorkSpace/Go/BlogAggregator/handler_feed.go
-badd +1 ~/WorkSpace/Go/BlogAggregator/internal/rssapi/rssFeed_types.go
-badd +34 ~/WorkSpace/Go/BlogAggregator/internal/rssapi/rssfeed.go
-badd +19 ~/WorkSpace/Go/BlogAggregator/internal/rssapi/client.go
-badd +14 middleware.go
-badd +889 /usr/lib/go/src/net/http/request.go
-badd +48 ~/WorkSpace/Go/BlogAggregator/handler_follow.go
+badd +16 internal/rssapi/client.go
+badd +0 ~/WorkSpace/Go/BlogAggregator/internal/rssapi/rssfeed.go
 argglobal
 %argdel
 edit ~/WorkSpace/Go/BlogAggregator/internal/rssapi/rssfeed.go
 argglobal
-balt ~/WorkSpace/Go/BlogAggregator/handler_follow.go
+balt internal/rssapi/client.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -34,7 +26,7 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 26 - ((18 * winheight(0) + 16) / 32)
+let s:l = 26 - ((14 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
