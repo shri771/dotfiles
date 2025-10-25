@@ -500,3 +500,6 @@ end
 # Initialize Carapace for Fish
 carapace _carapace | source
 ##y>yVR#Z<3>R?)*=.$:j)
+# Use GPG agent for SSH
+set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+set -x GPG_TTY (tty)

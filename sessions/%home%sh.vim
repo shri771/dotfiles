@@ -9,12 +9,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +1 go.go
+badd +3 .gnupg/gpg-agent.conf
+badd +0 ~/.gnupg/sshcontrol
 argglobal
 %argdel
-$argadd go.go
-edit go.go
+$argadd .gnupg/gpg-agent.conf
+edit ~/.gnupg/sshcontrol
 argglobal
+balt .gnupg/gpg-agent.conf
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -25,12 +27,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 20) / 41)
+let s:l = 11 - ((8 * winheight(0) + 8) / 17)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
+keepjumps 11
+normal! 040|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
