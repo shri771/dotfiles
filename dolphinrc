@@ -23,7 +23,7 @@ Version=202
 ViewPropsTimestamp=2025,3,2,19,3,36.721
 
 [IconsMode]
-IconSize=96
+IconSize=64
 
 [InformationPanel]
 dateFormat=ShortFormat
