@@ -1,0 +1,169 @@
+{ config, pkgs, ... }:
+{
+  home.stateVersion = "24.11";
+  home.username = "shri";
+  home.homeDirectory = "/home/shri";
+  home.enableNixpkgsReleaseCheck = false;
+
+  services.gnome-keyring = {
+      enable = true;
+      components = [ "secrets" "ssh" "pkcs11" ];
+  };
+
+  home.packages = with pkgs; [
+    polkit
+    jq
+    gcc
+    htop
+    rofi
+    bat
+    brightnessctl
+    cantata
+    acpi
+    alacritty
+    arandr
+    bc
+    blueman
+    bluez-tools
+    btop
+    carapace
+    cava
+    cliphist
+    cmake
+    corectrl
+    cowsay
+    docker
+    dosfstools
+    duf
+    encfs
+    eog
+    evtest
+    eza
+    fastfetch
+    fd
+    feh
+    kdePackages.filelight
+    flameshot
+    flatpak
+    flex
+    foliate
+    gh
+    gparted
+    grc
+    grim
+    hashcat
+    hypridle
+    hyprland
+    hyprlock
+    hyprpolkitagent
+    i3blocks
+    inotify-tools
+    jdk
+    john
+    plasma5Packages.kdeconnect-kde
+    kitty
+    krita
+    krusader
+    libsForQt5.qtstyleplugin-kvantum
+    lazydocker
+    less
+    loupe
+    seahorse
+    lsd
+    lsof
+    lxappearance
+    man
+    meson
+    mpc
+    mpd
+    mpv
+    mtools
+    ncmpcpp
+    nemo
+    networkmanagerapplet
+    nginx
+    nitrogen
+    nmap
+    numlockx
+    nvme-cli
+    nwg-displays
+    nwg-look
+    obs-studio
+    os-prober
+    font-awesome
+    noto-fonts
+    fira-code
+    jetbrains-mono
+    pamixer
+    pandoc
+    parcellite
+    uv
+    # notion-app
+    pavucontrol
+    wl-clipboard
+    picom
+    playerctl
+    plocate
+    polkit_gnome
+    polybar
+    postgresql
+    powertop
+    pv
+    pyprland
+    qalculate-gtk
+    libsForQt5.qt5ct
+    qt6ct
+    rclone
+    redshift
+    rsync
+    rustc
+    seahorse
+    shotwell
+    slurp
+    sox
+    speedtest-cli
+    starship
+    stress-ng
+    swappy
+    swaybg
+    swayimg
+    swaynotificationcenter
+    swww
+    sxhkd
+    sxiv
+    sysbench
+    tlp
+    tmux
+    toilet
+    tor
+    translate-shell
+    trash-cli
+    tree
+    fira-code
+    jetbrains-mono
+    victor-mono
+    typescript
+    variety
+    virt-manager
+    virtualbox
+    waybar
+    wget
+    wlogout
+    xclip
+    xdg-desktop-portal-hyprland
+    xdotool
+    xorg.xinit
+    xss-lock
+    yad
+    ydotool
+    zbar
+    zoxide
+    gnupg
+    gpg-tui
+    pipx
+    python3
+    pinentry
+  ];
+
+  programs.home-manager.enable = true;
+}
