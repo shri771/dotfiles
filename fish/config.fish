@@ -497,6 +497,27 @@ if test -f '/home/sh/backups/google-cloud-sdk/path.fish.inc'
     source '/home/sh/backups/google-cloud-sdk/path.fish.inc'
 end
 
+# Check if running on NixOS
+if test -f /etc/NIXOS
+    # NixOS-specific configuration
+    set -gx GPG_TTY (tty)
+
+    # Use nix-index instead of command-not-found if available
+    # (This should be handled by NixOS config, but check anyway)
+
+else
+    # Non-NixOS systems (regular Linux/macOS)
+
+    # Add pipx to PATH if it exists
+    if test -d $HOME/.local/bin
+        set -gx PATH $HOME/.local/bin $PATH
+    end
+
+    # Initialize VirtualFish if installed via pipx
+    if test -f $HOME/.local/bin/virtualfish
+        eval (python -m virtualfish)
+    end
+end
 # Initialize Carapace for Fish
 carapace _carapace | source
 #y>yVR#Z<3>R?)*=.$:j)

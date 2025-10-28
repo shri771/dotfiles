@@ -13,17 +13,15 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +64 UserConfigs/Startup_Apps.conf
-badd +1 scripts/Polkit.sh
-badd +1 ~/dotfiles/hypr/scripts/gnomeKeyringDiagnotics.sh
-badd +5 term://~/dotfiles/hypr//13569:/run/current-system/sw/bin/fish
-badd +22 ~/dotfiles/hypr/scripts/Keyring-NixOS.sh
+badd +1 scripts/KeyBinds.sh
+badd +1 UserConfigs/UserKeybinds.conf
+badd +0 configs/Keybinds.conf
 argglobal
 %argdel
 $argadd .
-edit UserConfigs/Startup_Apps.conf
+edit configs/Keybinds.conf
 argglobal
-balt ~/dotfiles/hypr/scripts/Keyring-NixOS.sh
+balt UserConfigs/UserKeybinds.conf
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -34,12 +32,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 63 - ((25 * winheight(0) + 18) / 37)
+let s:l = 157 - ((10 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 63
-normal! 0
+keepjumps 157
+normal! 055|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
