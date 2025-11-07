@@ -9,12 +9,10 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +3 man://java-openjdk25(1)
-badd +17 ~/WorkSpace/scaler/Java/nums.java
+badd +16 ~/WorkSpace/scaler/Java/classs.java
 argglobal
 %argdel
-$argadd main.java
-edit ~/WorkSpace/scaler/Java/nums.java
+edit ~/WorkSpace/scaler/Java/classs.java
 argglobal
 setlocal foldmethod=manual
 setlocal foldexpr=0
@@ -26,11 +24,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 17 - ((15 * winheight(0) + 16) / 32)
+let s:l = 5 - ((4 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 17
+keepjumps 5
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

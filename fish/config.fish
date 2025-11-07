@@ -353,6 +353,7 @@ alias .5='cd ../../../../..'
 alias tpcn='sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf'
 alias syscn='cd /etc/systemd/system/ && sn .'
 alias syscn-='cd /etc/systemd/system/'
+alias web='cd /home/sh/WorkSpace/scaler/WebDev/2029-Web-dev-2-Group-C'
 
 # Quick commands
 alias n='nvim'

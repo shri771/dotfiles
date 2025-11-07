@@ -3,19 +3,20 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/WorkSpace/scaler/WebDev
+cd ~/WorkSpace/gdrive
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +21 intro/login.html
-badd +0 ~/WorkSpace/scaler/WebDev/js/dom.html
+badd +14 API.md
+badd +150 ~/WorkSpace/gdrive/internal/handlers/auth.go
 argglobal
 %argdel
-edit ~/WorkSpace/scaler/WebDev/js/dom.html
+$argadd API.md
+edit ~/WorkSpace/gdrive/internal/handlers/auth.go
 argglobal
-balt intro/login.html
+balt API.md
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -26,12 +27,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 16) / 32)
+let s:l = 185 - ((21 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 015|
+keepjumps 185
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

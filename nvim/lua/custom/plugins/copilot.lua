@@ -3,6 +3,7 @@ return {
     "folke/sidekick.nvim",
     opts = {
       -- add any options here
+      enabled = false,
       cli = {
         mux = {
           backend = "zellij",

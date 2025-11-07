@@ -10,11 +10,11 @@ endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
 badd +5 init.lua
-badd +162 lua/custom/plugins/utils.lua
+badd +100 lua/custom/plugins/autocompletion.lua
 argglobal
 %argdel
 $argadd init.lua
-edit lua/custom/plugins/utils.lua
+edit lua/custom/plugins/autocompletion.lua
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -34,12 +34,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 158 - ((18 * winheight(0) + 16) / 33)
+let s:l = 102 - ((16 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 158
-normal! 02|
+keepjumps 102
+normal! 09|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -55,6 +55,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
