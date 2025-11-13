@@ -464,6 +464,7 @@ alias txa='tmux a'
 alias txc='tmuxifier load-session cn'
 alias txsc='tmuxifier load-session sc '
 alias txdev='tmuxifier load-session dev'
+alias txmes='tmuxifier load-session mesh'
 
 # Journal
 alias jctl='journalctl -p 3 -xb'
@@ -488,9 +489,12 @@ end
 if command -q zoxide
     zoxide init fish | source
 end
-##For go
-# fish_add_path $HOME/go/bin
-# source $HOME/.tenv.completion.fish
+# This sets GOBIN and exports it for other apps (like Neovim) to see
+set -x GOBIN "$HOME/go/bin"
+
+# This adds the GOBIN directory to your PATH
+fish_add_path "$GOBIN"
+source $HOME/.tenv.completion.fish
 
 
 # The next line updates PATH for the Google Cloud SDK.

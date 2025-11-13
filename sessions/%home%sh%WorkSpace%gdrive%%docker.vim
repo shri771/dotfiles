@@ -10,13 +10,14 @@ endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
 badd +14 API.md
-badd +150 ~/WorkSpace/gdrive/internal/handlers/auth.go
+badd +1 sql/schema/001_users.sql
+badd +14 sql/schema/010_comments.sql
+badd +0 Dockerfile
 argglobal
 %argdel
-$argadd API.md
-edit ~/WorkSpace/gdrive/internal/handlers/auth.go
+edit Dockerfile
 argglobal
-balt API.md
+balt sql/schema/010_comments.sql
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -27,11 +28,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 185 - ((21 * winheight(0) + 16) / 32)
+let s:l = 50 - ((21 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 185
+keepjumps 50
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

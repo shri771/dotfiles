@@ -9,14 +9,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +55 go.go
-badd +13 term://~/WorkSpace/Go/K8s//242726:/bin/fish
+badd +6 api-configmap.yaml
+badd +16 web-deployment.yaml
 argglobal
 %argdel
-$argadd go.go
-edit go.go
+$argadd api-configmap.yaml
+edit api-configmap.yaml
 argglobal
-balt term://~/WorkSpace/Go/K8s//242726:/bin/fish
+balt web-deployment.yaml
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -27,12 +27,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 10 - ((9 * winheight(0) + 16) / 32)
+let s:l = 6 - ((5 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 10
-normal! 029|
+keepjumps 6
+normal! 017|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

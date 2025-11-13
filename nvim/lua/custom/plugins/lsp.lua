@@ -135,6 +135,7 @@ return {
         gopls = {
           settings = {
             gopls = {
+              experimentalWorkspaceModule = true,
               analyses = {
                 unusedparams = true,
                 shadow = true,

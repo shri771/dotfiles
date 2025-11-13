@@ -9,12 +9,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +1 internal/auth/helpers_auth_test.go
+badd +43 helpers.go
+badd +0 internal/auth/helpers_auth.go
 argglobal
 %argdel
-edit internal/auth/helpers_auth_test.go
+edit internal/auth/helpers_auth.go
 argglobal
-balt internal/auth/helpers_auth_test.go
+balt helpers.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -25,11 +26,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 12 - ((10 * winheight(0) + 15) / 31)
+let s:l = 49 - ((17 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 12
+keepjumps 49
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

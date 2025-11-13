@@ -9,10 +9,10 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +38 BlogAggregator/internal/config/config.go
+badd +72 WebServer/main.go
 argglobal
 %argdel
-edit BlogAggregator/internal/config/config.go
+edit WebServer/main.go
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -21,7 +21,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt BlogAggregator/internal/config/config.go
+balt WebServer/main.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -32,11 +32,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 33 - ((10 * winheight(0) + 15) / 31)
+let s:l = 76 - ((10 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 33
+keepjumps 76
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

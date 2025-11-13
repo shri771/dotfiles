@@ -9,16 +9,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +1 file1.txt
-badd +0 file2.txt
+badd +1 miss/layouts/mesh.session.sh
+badd +33 ~/dotfiles/miss/layouts/dev.session.sh
 argglobal
 %argdel
-$argadd file1.txt
-$argadd file2.txt
-edit file2.txt
+$argadd miss/layouts/mesh.session.sh
+edit miss/layouts/mesh.session.sh
 argglobal
-2argu
-balt file1.txt
+balt ~/dotfiles/miss/layouts/dev.session.sh
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -29,11 +27,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 8) / 17)
+let s:l = 21 - ((15 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 21
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
