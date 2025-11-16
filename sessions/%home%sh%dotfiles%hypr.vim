@@ -9,14 +9,15 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +1 ~/dotfiles/hypr/UserConfigs/UserKeybinds.conf
-badd +0 ~/dotfiles/hypr/UserConfigs/UserSettings.conf
+badd +9 scripts/idle_inhibitor.sh
+badd +1 ~/dotfiles/hypr/hyprlock-1080p.conf
+badd +0 ~/dotfiles/hypr/hyprlock.conf
 argglobal
 %argdel
 $argadd .
-edit ~/dotfiles/hypr/UserConfigs/UserSettings.conf
+edit ~/dotfiles/hypr/hyprlock.conf
 argglobal
-balt ~/dotfiles/hypr/UserConfigs/UserKeybinds.conf
+balt ~/dotfiles/hypr/hyprlock-1080p.conf
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -27,12 +28,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 36 - ((22 * winheight(0) + 16) / 33)
+let s:l = 13 - ((9 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 36
-normal! 0
+keepjumps 13
+normal! 052|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
