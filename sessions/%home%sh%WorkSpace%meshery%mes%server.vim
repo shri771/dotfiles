@@ -19,7 +19,7 @@ badd +14 ~/WorkSpace/meshery/mes/server/handlers/middlewares_test.go
 badd +161 ~/WorkSpace/meshery/mes/server/handlers/common_handlers.go
 badd +20 ~/WorkSpace/meshery/mes/server/core/redirects.go
 badd +228 ~/WorkSpace/meshery/mes/server/models/default_local_provider.go
-badd +245 ~/WorkSpace/meshery/mes/server/models/remote_auth.go
+badd +234 ~/WorkSpace/meshery/mes/server/models/remote_auth.go
 badd +431 ~/WorkSpace/meshery/mes/server/models/error.go
 badd +452 /usr/lib/go/src/net/http/request.go
 badd +371 /usr/lib/go/src/net/http/cookie.go
@@ -42,12 +42,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 245 - ((14 * winheight(0) + 15) / 31)
+let s:l = 244 - ((18 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 245
-normal! 0
+keepjumps 244
+normal! 05|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
