@@ -3,20 +3,29 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/dotfiles/awesome
+cd ~/WorkSpace/Go/practice/json-ser
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +918 rc.lua
+badd +21 main.go
+badd +9 ~/WorkSpace/Go/practice/json-ser/assets/index.html
+badd +11 ~/WorkSpace/Go/practice/json-ser/handler_echo.go
+badd +36 /usr/lib/go/src/net/http/status.go
+badd +17 ~/WorkSpace/Go/practice/json-ser/internal/respond/error.go
+badd +7 ~/WorkSpace/Go/practice/json-ser/internal/respond/respoondWithJson.go
+badd +20 ~/WorkSpace/Go/practice/json-ser/handler_json.go
+badd +22 ~/WorkSpace/Go/practice/json-ser/helpers.go
+badd +14 ~/WorkSpace/Go/practice/json/main.go
 argglobal
 %argdel
-$argadd rc.lua
-edit rc.lua
+$argadd main.go
+edit ~/WorkSpace/Go/practice/json-ser/helpers.go
 argglobal
+balt ~/WorkSpace/Go/practice/json-ser/handler_json.go
 setlocal foldmethod=manual
-setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
+setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
 setlocal foldignore=#
 setlocal foldlevel=0
@@ -25,12 +34,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 15 - ((6 * winheight(0) + 7) / 15)
+let s:l = 17 - ((16 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 15
-normal! 028|
+keepjumps 17
+normal! 013|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

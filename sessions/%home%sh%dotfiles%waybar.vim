@@ -9,14 +9,15 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +22 ~/dotfiles/waybar/configs/\[TOP]\ Everforest
-badd +109 ModulesWorkspaces
+badd +226 ~/dotfiles/waybar/Modules
+badd +44 ~/dotfiles/waybar/configs/\[TOP]\ Everforest
+badd +28 ModulesGroups
 argglobal
 %argdel
 $argadd .
-edit ModulesWorkspaces
+edit ~/dotfiles/waybar/Modules
 argglobal
-balt ~/dotfiles/waybar/configs/\[TOP]\ Everforest
+balt ModulesGroups
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -27,11 +28,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 120 - ((23 * winheight(0) + 19) / 39)
+let s:l = 227 - ((16 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 120
+keepjumps 227
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
@@ -46,7 +47,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

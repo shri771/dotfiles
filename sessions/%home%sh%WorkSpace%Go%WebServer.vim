@@ -9,12 +9,25 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +74 internal/auth/helpers_auth.go
+badd +80 main.go
+badd +50 ~/WorkSpace/Go/WebServer/handler_chiprs_get.go
+badd +1 ~/WorkSpace/Go/WebServer/helpers.go
+badd +50 ~/WorkSpace/Go/WebServer/assets/index.html
+badd +20 ~/WorkSpace/Go/WebServer/json.go
+badd +0 internal/auth/helpers_password.go
+badd +34 ~/WorkSpace/Go/WebServer/handler_chiprs_create.go
 argglobal
 %argdel
-edit internal/auth/helpers_auth.go
+edit ~/WorkSpace/Go/WebServer/handler_chiprs_create.go
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
 argglobal
-balt internal/auth/helpers_auth.go
+balt main.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -25,12 +38,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 45 - ((11 * winheight(0) + 16) / 32)
+let s:l = 67 - ((15 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 45
-normal! 011|
+keepjumps 67
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -38,6 +51,8 @@ endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20
 let &shortmess = s:shortmess_save
+let &winminheight = s:save_winminheight
+let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)

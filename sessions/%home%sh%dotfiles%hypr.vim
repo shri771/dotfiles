@@ -9,15 +9,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +9 scripts/idle_inhibitor.sh
-badd +1 ~/dotfiles/hypr/hyprlock-1080p.conf
-badd +0 ~/dotfiles/hypr/hyprlock.conf
+badd +25 UserConfigs/Monitors.conf
+badd +0 UserConfigs/LaptopDisplay.conf
 argglobal
 %argdel
 $argadd .
-edit ~/dotfiles/hypr/hyprlock.conf
+edit UserConfigs/LaptopDisplay.conf
 argglobal
-balt ~/dotfiles/hypr/hyprlock-1080p.conf
+balt UserConfigs/Monitors.conf
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -28,12 +27,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 13 - ((9 * winheight(0) + 15) / 31)
+let s:l = 5 - ((4 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 13
-normal! 052|
+keepjumps 5
+normal! 017|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -47,7 +46,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
