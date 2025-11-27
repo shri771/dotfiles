@@ -3,20 +3,20 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/dotfiles/hypr
+cd ~/WorkSpace/Go/practice
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +16 UserConfigs/Startup_Apps.conf
-badd +0 scripts/auto-monitor.sh
+badd +20 json-ser/main.go
+badd +12 ~/WorkSpace/Go/practice/json-ser/helpers.go
+badd +0 json-ser/internal/respond/respoondWithJson.go
 argglobal
 %argdel
-$argadd .
-edit scripts/auto-monitor.sh
+edit json-ser/internal/respond/respoondWithJson.go
 argglobal
-balt UserConfigs/Startup_Apps.conf
+balt ~/WorkSpace/Go/practice/json-ser/helpers.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -27,12 +27,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 14 - ((13 * winheight(0) + 7) / 15)
+let s:l = 14 - ((13 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 14
-normal! 0
+normal! 08|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

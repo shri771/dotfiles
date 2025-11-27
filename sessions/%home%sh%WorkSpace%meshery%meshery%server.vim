@@ -3,20 +3,20 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/dotfiles/hypr
+cd ~/WorkSpace/meshery/meshery/server
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +16 UserConfigs/Startup_Apps.conf
-badd +0 scripts/auto-monitor.sh
+badd +17 meshes/client.go
+badd +102 ~/go/pkg/mod/google.golang.org/grpc@v1.76.0/dialoptions.go
+badd +39 handlers/middlewares.go
 argglobal
 %argdel
-$argadd .
-edit scripts/auto-monitor.sh
+edit handlers/middlewares.go
 argglobal
-balt UserConfigs/Startup_Apps.conf
+balt meshes/client.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -27,11 +27,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 14 - ((13 * winheight(0) + 7) / 15)
+let s:l = 35 - ((12 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 14
+keepjumps 35
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

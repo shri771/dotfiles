@@ -3,20 +3,26 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/dotfiles/hypr
+cd ~/WorkSpace/learn-file-storage-s3-golang-starter
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +16 UserConfigs/Startup_Apps.conf
-badd +0 scripts/auto-monitor.sh
+badd +118 main.go
+badd +67 ~/WorkSpace/learn-file-storage-s3-golang-starter/handler_upload_thumbnail.go
+badd +25 ~/WorkSpace/learn-file-storage-s3-golang-starter/handler_get_thumbnail.go
+badd +9 ~/WorkSpace/learn-file-storage-s3-golang-starter/json.go
+badd +65 handler_video_meta.go
+badd +124 ~/WorkSpace/learn-file-storage-s3-golang-starter/internal/database/videos.go
+badd +1 ~/WorkSpace/learn-file-storage-s3-golang-starter/internal/database/database.go
+badd +1 ~/WorkSpace/learn-file-storage-s3-golang-starter/internal/database/refresh_tokens.go
+badd +52 ~/WorkSpace/learn-file-storage-s3-golang-starter/internal/database/users.go
 argglobal
 %argdel
-$argadd .
-edit scripts/auto-monitor.sh
+edit ~/WorkSpace/learn-file-storage-s3-golang-starter/internal/database/videos.go
 argglobal
-balt UserConfigs/Startup_Apps.conf
+balt ~/WorkSpace/learn-file-storage-s3-golang-starter/internal/database/users.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -27,12 +33,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 14 - ((13 * winheight(0) + 7) / 15)
+let s:l = 140 - ((26 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 14
-normal! 0
+keepjumps 140
+normal! 016|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
