@@ -99,7 +99,8 @@ return {
 
       sources = {
         -- default = { "snippets", "buffer", "lsp", "lazydev", "path", "copilot" },
-        default = {},
+        default = { "snippets", "buffer", "lsp", "lazydev", "path" },
+        -- default = {},
         -- For SQL files, we'll configure this differently using per_filetype
         per_filetype = {
           sql = { "dadbod", "buffer", "snippets" },

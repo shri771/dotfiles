@@ -1,0 +1,5 @@
+/etc/udev/rules.d/99-hypr-hotplug.rules
+ACTION=="change", SUBSYSTEM=="drm", RUN+="/usr/bin/touch /tmp/hypr-monitor-hotplug"
+
+sudo udevadm control --reload
+
