@@ -13,7 +13,11 @@ badd +3 Class-1(Introduction\ to\ DOM)/4.html
 badd +1 Class-1(Introduction\ to\ DOM)/dom.html
 badd +11 ~/WorkSpace/scaler/WebDev/2029-Web-dev-2-Group-C/Class-1(Introduction\ to\ DOM)/3.html
 badd +55 ~/WorkSpace/scaler/WebDev/2029-Web-dev-2-Group-C/Class-1(Introduction\ to\ DOM)/2.html
-badd +34 ~/WorkSpace/scaler/WebDev/2029-Web-dev-2-Group-C/Class-1(Introduction\ to\ DOM)/1.html
+badd +38 ~/WorkSpace/scaler/WebDev/2029-Web-dev-2-Group-C/Class-1(Introduction\ to\ DOM)/1.html
+badd +109 Class-2(Events\ in\ Detail)/6.html
+badd +58 Class-2(Events\ in\ Detail)/5.html
+badd +6 term://~/WorkSpace/scaler/WebDev/2029-Web-dev-2-Group-C//71089:/bin/fish
+badd +1 Class-3(Kanban\ Board-1)/test.js
 argglobal
 %argdel
 edit ~/WorkSpace/scaler/WebDev/2029-Web-dev-2-Group-C/Class-1(Introduction\ to\ DOM)/1.html
@@ -25,7 +29,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt ~/WorkSpace/scaler/WebDev/2029-Web-dev-2-Group-C/Class-1(Introduction\ to\ DOM)/2.html
+balt Class-3(Kanban\ Board-1)/test.js
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -36,12 +40,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 26 - ((12 * winheight(0) + 16) / 33)
+let s:l = 39 - ((17 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 26
-normal! 018|
+keepjumps 39
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
