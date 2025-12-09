@@ -1,5 +1,12 @@
 { config, pkgs, ... }:
 {
+    gtk = {
+        enable = true;
+        font = {
+            name = "Noto Sans";
+            size = 10;
+        };
+    };
   home.stateVersion = "24.11";
   home.username = "shri";
   home.homeDirectory = "/home/shri";
