@@ -530,3 +530,4 @@ carapace _carapace | source
 # Use GPG agent for SSH
 set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 set -x GPG_TTY (tty)
+zoxide init fish | source

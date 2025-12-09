@@ -11,6 +11,9 @@
   };
 
   home.packages = with pkgs; [
+      ripgrep        # Fixes Telescope error
+    gopls          # Go LSP
+    nodejs         # For npm-based tools
     polkit
     jq
     gcc
@@ -163,7 +166,21 @@
     pipx
     python3
     pinentry
+    libnotify
+    gemini-cli
+     kanshi
   ];
 
   programs.home-manager.enable = true;
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+
+    extraPackages = with pkgs; [
+      # Additional LSP servers and tools
+      nodePackages.typescript-language-server
+      nodePackages.vscode-langservers-extracted
+    ];
+  };
 }
