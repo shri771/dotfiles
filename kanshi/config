@@ -1,0 +1,13 @@
+# Profile 1: Laptop only (Undocked)
+# This triggers when ONLY eDP-1 is found (or defaults to it)
+profile {
+    output eDP-1 enable
+}
+
+# Profile 2: HDMI connected (Docked)
+# This triggers when HDMI-A-1 is detected.
+# It enables HDMI and disables the laptop screen.
+profile {
+    output HDMI-A-1 enable
+    output eDP-1 disable
+}

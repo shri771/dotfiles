@@ -162,8 +162,16 @@ return {
         },
 
         pyright = {},
-        htmlhint = {},
+        html = {}, -- Added HTML LSP (replaces htmlhint)
         bashls = {},
+        
+        -- Added missing industry standard LSPs
+        ts_ls = {}, -- Added TypeScript/JavaScript LSP
+        jsonls = {}, -- Added JSON LSP
+        yamlls = {}, -- Added YAML LSP
+        cssls = {}, -- Added CSS LSP
+        dockerls = {}, -- Added Docker LSP
+        taplo = {}, -- Added TOML LSP
 
         -- SQL with proper configuration
         sqls = {
@@ -180,7 +188,7 @@ return {
         },
 
         glint = {},
-        jdtls = {},
+
 
         lua_ls = {
           settings = {
@@ -216,6 +224,19 @@ return {
         "gofumpt", -- Better Go formatting
         "sql-formatter",
         "cbfmt",
+        
+        -- Added Linters (configured in lint.lua)
+        "ruff", -- Python fast linter
+        "mypy", -- Python type checker
+        "eslint_d", -- JS/TS linter
+        "golangci-lint", -- Go meta-linter
+
+        "shellcheck", -- Shell linter
+        "yamllint", -- YAML linter
+        "hadolint", -- Dockerfile linter
+        "markdownlint", -- Markdown linter
+        "jsonlint", -- JSON linter
+        "stylelint", -- CSS linter
       })
 
       require("mason-tool-installer").setup({

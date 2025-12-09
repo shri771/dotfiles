@@ -67,7 +67,13 @@ return {
           show_hidden = false,
           is_hidden_file = function(name, bufnr)
             local m = name:match("^%.")
-            return m ~= nil
+            if m ~= nil then
+              return true
+            end
+            if name:match("%.class$") then
+              return true
+            end
+            return false
           end,
           is_always_hidden = function(name, bufnr)
             return false

@@ -18,7 +18,7 @@ return {
     ---@type conform.setupOpts
     opts = {
       formatters_by_ft = {
-        go = { "goimports" },
+        go = { "goimports", "gofumpt" }, -- Added gofumpt for stricter formatting
         lua = { "stylua" },
         python = { "isort", "black" },
         html = { "prettier" },

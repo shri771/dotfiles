@@ -9,24 +9,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +42 num.html
-badd +55 ~/WorkSpace/scaler/WebDev/js/ass/higlight.html
-badd +26 active.html
-badd +1 ~/WorkSpace/scaler/WebDev/js/card.html
-badd +1 ~/WorkSpace/scaler/WebDev/js/ass/mouse.html
-badd +52 ~/WorkSpace/scaler/WebDev/js/ass/buttonRecursion.html
+badd +80 ~/WorkSpace/scaler/WebDev/js/kanban/script.js
+badd +18 ~/WorkSpace/scaler/WebDev/js/js/script.js
 argglobal
 %argdel
-edit ~/WorkSpace/scaler/WebDev/js/ass/buttonRecursion.html
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
+edit ~/WorkSpace/scaler/WebDev/js/js/script.js
 argglobal
-balt ~/WorkSpace/scaler/WebDev/js/ass/mouse.html
+balt ~/WorkSpace/scaler/WebDev/js/kanban/script.js
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -37,11 +26,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 52 - ((21 * winheight(0) + 16) / 32)
+let s:l = 11 - ((10 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 52
+keepjumps 11
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
@@ -50,15 +39,12 @@ endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20
 let &shortmess = s:shortmess_save
-let &winminheight = s:save_winminheight
-let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

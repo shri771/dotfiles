@@ -9,11 +9,10 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +1 csv.java
-badd +0 ~/WorkSpace/scaler/Java/car.java
+badd +42 csv.java
 argglobal
 %argdel
-edit ~/WorkSpace/scaler/Java/car.java
+edit csv.java
 argglobal
 balt csv.java
 setlocal foldmethod=manual
@@ -26,11 +25,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 43 - ((10 * winheight(0) + 15) / 31)
+let s:l = 42 - ((18 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 43
+keepjumps 42
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
