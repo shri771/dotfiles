@@ -3,16 +3,20 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/WorkSpace/scaler/Java
+cd /home/sh/WorkSpace/scaler/Java
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
-set shortmess+=aoO
-badd +11 ~/WorkSpace/scaler/Java/ass-java/preffixSum.java
+if &shortmess =~ 'A'
+  set shortmess=aoOA
+else
+  set shortmess=aoO
+endif
+badd +4 /home/sh/WorkSpace/scaler/Java/AG/agPairs.java
 argglobal
 %argdel
-edit ~/WorkSpace/scaler/Java/ass-java/preffixSum.java
+edit /home/sh/WorkSpace/scaler/Java/AG/agPairs.java
 argglobal
 setlocal foldmethod=manual
 setlocal foldexpr=0
@@ -24,12 +28,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 14) / 29)
+let s:l = 17 - ((16 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 023|
+keepjumps 17
+normal! 034|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

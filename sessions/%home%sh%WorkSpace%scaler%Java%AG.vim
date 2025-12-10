@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd /home/sh/WorkSpace/Go
+cd /home/sh/WorkSpace/scaler/Java/AG
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,13 +13,14 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +6 K8s/go.go
-badd +0 /home/sh/WorkSpace/Go/BlogAggregator/handler_agg.go
+badd +4 agPairs.java
+badd +20 /home/sh/WorkSpace/scaler/Java/class/agPairs.java
+badd +13 /home/sh/WorkSpace/scaler/Java/class/subArrays.java
 argglobal
 %argdel
-edit /home/sh/WorkSpace/Go/BlogAggregator/handler_agg.go
+edit /home/sh/WorkSpace/scaler/Java/class/subArrays.java
 argglobal
-balt K8s/go.go
+balt /home/sh/WorkSpace/scaler/Java/class/agPairs.java
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -30,12 +31,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 8 - ((7 * winheight(0) + 17) / 34)
+let s:l = 13 - ((12 * winheight(0) + 17) / 35)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 8
-normal! 053|
+keepjumps 13
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

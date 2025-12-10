@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd /home/sh/WorkSpace/Go
+cd ~/dotfiles/kitty
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,14 +13,15 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +6 K8s/go.go
-badd +0 /home/sh/WorkSpace/Go/BlogAggregator/handler_agg.go
+badd +1 ~/dotfiles/kitty/theme.conf
+badd +0 ~/dotfiles/kitty/kitty.conf
 argglobal
 %argdel
-edit /home/sh/WorkSpace/Go/BlogAggregator/handler_agg.go
+$argadd .
+edit ~/dotfiles/kitty/kitty.conf
 argglobal
-balt K8s/go.go
-setlocal foldmethod=manual
+balt ~/dotfiles/kitty/theme.conf
+setlocal foldmethod=marker
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
 setlocal foldignore=#
@@ -28,14 +29,12 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 8 - ((7 * winheight(0) + 17) / 34)
+let s:l = 2480 - ((12 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 8
-normal! 053|
+keepjumps 2480
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -49,7 +48,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

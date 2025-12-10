@@ -131,40 +131,10 @@ return {
         clangd = {},
         marksman = {},
 
-        -- Enhanced Go configuration
-        gopls = {
-          settings = {
-            gopls = {
-              experimentalWorkspaceModule = true,
-              analyses = {
-                unusedparams = true,
-                shadow = true,
-                unusedwrite = true,
-                useany = true,
-              },
-              staticcheck = true,
-              gofumpt = true,
-              usePlaceholders = true,
-              completeUnimported = true,
-              matcher = "Fuzzy",
-              experimentalPostfixCompletions = true,
-              hints = {
-                assignVariableTypes = true,
-                compositeLiteralFields = true,
-                compositeLiteralTypes = true,
-                constantValues = true,
-                functionTypeParameters = true,
-                parameterNames = true,
-                rangeVariableTypes = true,
-              },
-            },
-          },
-        },
-
         pyright = {},
         html = {}, -- Added HTML LSP (replaces htmlhint)
         bashls = {},
-        
+
         -- Added missing industry standard LSPs
         ts_ls = {}, -- Added TypeScript/JavaScript LSP
         jsonls = {}, -- Added JSON LSP
@@ -174,21 +144,20 @@ return {
         taplo = {}, -- Added TOML LSP
 
         -- SQL with proper configuration
-        sqls = {
-          settings = {
-            sqls = {
-              connections = {
-                {
-                  driver = "postgresql",
-                  dataSourceName = "postgres://postgres:postgres@localhost:5432/chirpy?sslmode=disable",
-                },
-              },
-            },
-          },
-        },
+        -- sqls = {
+        --   settings = {
+        --     sqls = {
+        --       connections = {
+        --         {
+        --           driver = "postgresql",
+        --           dataSourceName = "postgres://postgres:postgres@localhost:5432/chirpy?sslmode=disable",
+        --         },
+        --       },
+        --     },
+        --   },
+        -- },
 
         glint = {},
-
 
         lua_ls = {
           settings = {
@@ -220,16 +189,13 @@ return {
         "isort",
         "clang-format",
         "google-java-format",
-        "goimports",
-        "gofumpt", -- Better Go formatting
         "sql-formatter",
         "cbfmt",
-        
+
         -- Added Linters (configured in lint.lua)
         "ruff", -- Python fast linter
         "mypy", -- Python type checker
         "eslint_d", -- JS/TS linter
-        "golangci-lint", -- Go meta-linter
 
         "shellcheck", -- Shell linter
         "yamllint", -- YAML linter

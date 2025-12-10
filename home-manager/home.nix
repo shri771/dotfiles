@@ -1,11 +1,18 @@
 { config, pkgs, ... }:
 {
+
+ ## Theme
     gtk = {
         enable = true;
         font = {
             name = "Noto Sans";
             size = 10;
         };
+        iconTheme = {
+            package = pkgs.whitesur-icon-theme;
+            name = "WhiteSur";
+    };
+
     };
   home.stateVersion = "24.11";
   home.username = "shri";
@@ -17,9 +24,12 @@
       components = [ "secrets" "ssh" "pkcs11" ];
   };
 
+  home.sessionPath = [
+    "$HOME/go/bin"
+  ];
+
   home.packages = with pkgs; [
       ripgrep        # Fixes Telescope error
-    gopls          # Go LSP
     nodejs         # For npm-based tools
     polkit
     jq
@@ -100,10 +110,13 @@
     nwg-look
     obs-studio
     os-prober
+
+    ## Founts
     font-awesome
     noto-fonts
     fira-code
     jetbrains-mono
+    nerd-fonts.jetbrains-mono
     pamixer
     pandoc
     parcellite
@@ -175,7 +188,18 @@
     pinentry
     libnotify
     gemini-cli
-     kanshi
+    kanshi
+    ddcutil
+    # antigravity
+
+    # LSP
+    go
+    gopls          # The official Go Language Server (LSP)
+    (lib.lowPrio gotools)        # Contains 'goimports', etc.
+    golangci-lint  # Fast linter
+    delve          # Debugger (dlv)
+    sqls
+    gofumpt
   ];
 
   programs.home-manager.enable = true;
@@ -184,10 +208,10 @@
     viAlias = true;
     vimAlias = true;
 
-    extraPackages = with pkgs; [
-      # Additional LSP servers and tools
-      nodePackages.typescript-language-server
-      nodePackages.vscode-langservers-extracted
-    ];
+    # extraPackages = with pkgs; [
+    #   # Additional LSP servers and tools
+    #   nodePackages.typescript-language-server
+    #   nodePackages.vscode-langservers-extracted
+    # ];
   };
 }
