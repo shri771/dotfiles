@@ -13,15 +13,15 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 ~/dotfiles/kitty/theme.conf
-badd +0 ~/dotfiles/kitty/kitty.conf
+badd +23 ~/dotfiles/kitty/theme.conf
+badd +2485 kitty.conf
 argglobal
 %argdel
 $argadd .
-edit ~/dotfiles/kitty/kitty.conf
+edit ~/dotfiles/kitty/theme.conf
 argglobal
-balt ~/dotfiles/kitty/theme.conf
-setlocal foldmethod=marker
+balt kitty.conf
+setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
 setlocal foldignore=#
@@ -29,12 +29,14 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal nofoldenable
-let s:l = 2480 - ((12 * winheight(0) + 15) / 31)
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 23 - ((18 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2480
-normal! 0
+keepjumps 23
+normal! 02|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -48,6 +50,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

@@ -13,14 +13,15 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +8 ~/dotfiles/hypr/scratchpads.json
-badd +17 UserConfigs/Laptops.conf
+badd +6 UserConfigs/Laptops.conf
+badd +17 configs/Keybinds.conf
+badd +1 scripts/Wlogout.sh
 argglobal
 %argdel
 $argadd .
-edit UserConfigs/Laptops.conf
+edit configs/Keybinds.conf
 argglobal
-balt ~/dotfiles/hypr/scratchpads.json
+balt scripts/Wlogout.sh
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -31,7 +32,7 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 17 - ((16 * winheight(0) + 18) / 37)
+let s:l = 17 - ((16 * winheight(0) + 17) / 35)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -50,7 +51,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
