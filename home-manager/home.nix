@@ -1,19 +1,38 @@
 { config, pkgs, ... }:
+let
+  notion-electron = pkgs.appimageTools.wrapType2 {
+    pname = "notion-electron";
+    version = "1.9.3";
+    src = pkgs.fetchurl {
+      url = "https://github.com/anechunaev/notion-electron/releases/download/v1.9.3/Notion_Electron-1.9.3-x86_64.AppImage";
+      # Don't forget to replace this with the hash you got from 'nix-prefetch-url'
+      sha256 = "0pc9rbzij8x7hb1y3w4rf7kvb5xv7jj98nbj2r7978axzdflz2nh";
+    };
+  };
+in
 {
 
  ## Theme
     gtk = {
         enable = true;
+
         font = {
             name = "Noto Sans";
             size = 10;
         };
+
         iconTheme = {
             package = pkgs.whitesur-icon-theme;
             name = "WhiteSur";
+        };
+
+# Add this block to set the theme
+        theme = {
+            name = "Breeze-Dark";
+            package = pkgs.kdePackages.breeze-gtk;
+        };
     };
 
-    };
   home.stateVersion = "23.11";
   home.username = "shri";
   home.homeDirectory = "/home/shri";
@@ -29,6 +48,8 @@
   ];
 
   home.packages = with pkgs; [
+  notion-electron
+  psmisc
       ripgrep        # Fixes Telescope error
     nodejs         # For npm-based tools
     polkit
@@ -121,7 +142,6 @@
     pandoc
     # parcellite
     uv
-    # notion-app
     pavucontrol
     wl-clipboard
     picom
@@ -191,6 +211,10 @@ qt6Packages.qt6ct
     kanshi
     ddcutil
     libinput
+    usbutils
+    ostree
+    gnome-boxes
+    kdePackages.kamoso
         # nodePackages.live-server
 
     # antigravity
