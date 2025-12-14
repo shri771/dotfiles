@@ -14,7 +14,7 @@
     };
 
     };
-  home.stateVersion = "24.11";
+  home.stateVersion = "23.11";
   home.username = "shri";
   home.homeDirectory = "/home/shri";
   home.enableNixpkgsReleaseCheck = false;
@@ -80,7 +80,7 @@
     inotify-tools
     jdk
     john
-    plasma5Packages.kdeconnect-kde
+    # plasma5Packages.kdeconnect-kde
     kitty
     krita
     krusader
@@ -119,7 +119,7 @@
     nerd-fonts.jetbrains-mono
     pamixer
     pandoc
-    parcellite
+    # parcellite
     uv
     # notion-app
     pavucontrol
@@ -135,7 +135,7 @@
     pyprland
     qalculate-gtk
     libsForQt5.qt5ct
-    qt6ct
+qt6Packages.qt6ct
     rclone
     redshift
     rsync
@@ -185,11 +185,14 @@
     gpg-tui
     pipx
     python3
-    pinentry
+    pinentry-gnome3
     libnotify
     gemini-cli
     kanshi
     ddcutil
+    libinput
+        # nodePackages.live-server
+
     # antigravity
 
     # LSP

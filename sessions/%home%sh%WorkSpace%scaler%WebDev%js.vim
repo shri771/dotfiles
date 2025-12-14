@@ -3,19 +3,23 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/WorkSpace/scaler/WebDev/js
+cd /home/sh/WorkSpace/scaler/WebDev/js
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
-set shortmess+=aoO
-badd +80 ~/WorkSpace/scaler/WebDev/js/kanban/script.js
-badd +18 ~/WorkSpace/scaler/WebDev/js/js/script.js
+if &shortmess =~ 'A'
+  set shortmess=aoOA
+else
+  set shortmess=aoO
+endif
+badd +652 ass/scroll.html
+badd +7 /home/sh/WorkSpace/scaler/WebDev/js/ass/script.js
 argglobal
 %argdel
-edit ~/WorkSpace/scaler/WebDev/js/js/script.js
+edit /home/sh/WorkSpace/scaler/WebDev/js/ass/script.js
 argglobal
-balt ~/WorkSpace/scaler/WebDev/js/kanban/script.js
+balt ass/scroll.html
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -26,11 +30,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 11 - ((10 * winheight(0) + 16) / 32)
+let s:l = 9 - ((8 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 11
+keepjumps 9
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
@@ -45,6 +49,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

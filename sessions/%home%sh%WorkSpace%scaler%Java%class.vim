@@ -13,11 +13,10 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +27 subArrays.java
+badd +31 /home/sh/WorkSpace/scaler/Java/class/rainWater.java
 argglobal
 %argdel
-$argadd subArrays.java
-edit subArrays.java
+edit /home/sh/WorkSpace/scaler/Java/class/rainWater.java
 argglobal
 setlocal foldmethod=manual
 setlocal foldexpr=0
@@ -29,12 +28,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 7 - ((6 * winheight(0) + 15) / 31)
+let s:l = 1 - ((0 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 7
-normal! 0
+keepjumps 1
+normal! 024|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

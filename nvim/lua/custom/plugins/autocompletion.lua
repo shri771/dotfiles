@@ -102,7 +102,8 @@ return {
         -- default = { "snippets", "buffer", "lsp", "lazydev", "path", "copilot" },
         -- default = { "snippets", "buffer", "lsp", "lazydev", "path" },
         -- default = { "buffer", "lazydev", "path" },
-        default = { "buffer" },
+        -- default = { "buffer" },
+        default = {},
         -- For SQL files, we'll configure this differently using per_filetype
         per_filetype = {
           sql = { "dadbod", "buffer", "snippets" },
