@@ -389,7 +389,7 @@ alias syst='systemctl list-timers --all '
 # Scripts
 alias en-='bash $HOME/scripts/system/edit_gpg.sh'
 alias sf='bash $HOME/scripts/terminal/fzf_search.sh'
-alias ventoy='cd $HOME/Downloads/ISO/ventoy-1.1.05/ &&  ./VentoyGUI.x86_64'
+# alias ventoy='cd $HOME/Downloads/ISO/ventoy-1.1.05/ &&  ./VentoyGUI.x86_64'
 
 
 # Display

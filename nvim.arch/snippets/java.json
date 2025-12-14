@@ -1,0 +1,29 @@
+{
+  "Public Method": {
+    "prefix": ["func", "pm"],
+    "body": [
+      "public ${1:void} ${2:methodName}(${3:args}) {",
+      "\t${0}",
+      "}"
+    ],
+    "description": "Public method"
+  },
+  "Private Method": {
+    "prefix": "prm",
+    "body": [
+      "private ${1:void} ${2:methodName}(${3:args}) {",
+      "\t${0}",
+      "}"
+    ],
+    "description": "Private method"
+  },
+  "Main Method": {
+    "prefix": "main",
+    "body": [
+      "public static void main(String[] args) {",
+      "\t${0}",
+      "}"
+    ],
+    "description": "Main method"
+  }
+}

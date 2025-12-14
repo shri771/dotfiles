@@ -1,0 +1,318 @@
+{
+  "Error handle and return\" !b": {
+    "prefix": "errh",
+    "body": "if err != nil {\n${1}\nreturn\n}\n${0}\nendsnippet\n# json field tag"
+  },
+  "Error panic\" !b": {
+    "prefix": "errp",
+    "body": "if err != nil {\npanic(${1})\n}\n${0}\nendsnippet\n# error test"
+  },
+  "Error return fmt.Errorf(%w, err)\" !b": {
+    "prefix": "errnfw",
+    "body": "if ${1:${VISUAL:err}} != nil {\nreturn fmt.Errorf(\"${2:message}: %w\", $1)\n}\nendsnippet\n# log printf"
+  },
+  "Error return with two return values\" !b": {
+    "prefix": "errn,",
+    "body": "if err != nil {\nreturn ${1:nil}, ${2:err}\n}\n${0}\nendsnippet"
+  },
+  "Error return wrap with two return values\" !b": {
+    "prefix": "errn,w",
+    "body": "if err != nil {\nreturn nil, errors.Wrap(err, \"${1:message}\")\n}\n${0}\nendsnippet"
+  },
+  "Error return wrap\" !b": {
+    "prefix": "errnw",
+    "body": "if err != nil {\nreturn errors.Wrap(err, \"${1:message}\")\n}\n${0}\nendsnippet"
+  },
+  "Error return wrapf with two return values\" !b": {
+    "prefix": "errn,wf",
+    "body": "if err != nil {\nreturn nil, errors.Wrapf(err, \"${1:message %v}\", ${2:args...})\n}\n${0}\nendsnippet\n# error panic"
+  },
+  "Error return wrapf\" !b": {
+    "prefix": "errnwf",
+    "body": "if err != nil {\nreturn errors.Wrapf(err, \"${1:message %v}\", ${2:args...})\n}\n${0}\nendsnippet\n# error log snippet"
+  },
+  "Error return\" !b": {
+    "prefix": "errn",
+    "body": "if err != nil {\nreturn err\n}\n${0}\nendsnippet"
+  },
+  "Error test fatal \" !b": {
+    "prefix": "errt",
+    "body": "if err != nil {\nt.Fatal(err)\n}\n${0}\nendsnippet\n# error handle"
+  },
+  "Error with log.Fatal(err)\" !b": {
+    "prefix": "errl",
+    "body": "if err != nil {\nlog.Fatal(err)\n}\n${0}\nendsnippet\n# error multiple return"
+  },
+  "If with inline error": {
+    "prefix": "ife",
+    "body": "if err := ${1:condition}; err != nil {\n${0:${VISUAL}}\n}\nendsnippet"
+  },
+  "\\`json:key\\`": {
+    "prefix": "json",
+    "body": "\\`json:\"${1:`!v  go#util#snippetcase(matchstr(getline(\".\"), '\\w\\+'))`}\"\\`\nendsnippet\n# yaml field tag"
+  },
+  "\\`yaml:key\\`": {
+    "prefix": "yaml",
+    "body": "\\`yaml:\"${1:`!v  go#util#snippetcase(matchstr(getline(\".\"), '\\w\\+'))`}\"\\`\nendsnippet\n# fallthrough"
+  },
+  "a = append(a, value)": {
+    "prefix": "ap=",
+    "body": "${1:slice} = append($1, ${0:value})\nendsnippet\n# break"
+  },
+  "append(slice, value)": {
+    "prefix": "ap",
+    "body": "append(${1:slice}, ${0:value})\nendsnippet\n# append assignment"
+  },
+  "break": {
+    "prefix": "br",
+    "body": "break\nendsnippet\n# channel"
+  },
+  "case ...:": {
+    "prefix": "case",
+    "body": "case ${1:value}:\n${0:${VISUAL}}\nendsnippet\n# constant"
+  },
+  "chan Type": {
+    "prefix": "ch",
+    "body": "chan ${0:int}\nendsnippet\n# case"
+  },
+  "const ( ... )": {
+    "prefix": "cons",
+    "body": "const (\n${1:NAME} ${2:Type} = ${3:value}\n${0}\n)\nendsnippet\n# constants with iota"
+  },
+  "const ( ... = iota )": {
+    "prefix": "iota",
+    "body": "const (\n${1:NAME} ${2:Type} = iota\n${0}\n)\nendsnippet\n# continue"
+  },
+  "const XXX Type = ...": {
+    "prefix": "con",
+    "body": "const ${1:NAME} ${2:Type} = ${0:0}\nendsnippet\n# constants"
+  },
+  "continue": {
+    "prefix": "cn",
+    "body": "continue\nendsnippet\n# default case"
+  },
+  "default: ...": {
+    "prefix": "default",
+    "body": "default:\n${0:${VISUAL}}\nendsnippet\n# defer"
+  },
+  "defer func() { ... }": {
+    "prefix": "def",
+    "body": "defer func() {\n${0:${VISUAL}}\n}()\nendsnippet\n# defer recover"
+  },
+  "defer someFunction()": {
+    "prefix": "df",
+    "body": "defer ${1:func}(${2})\n${0}\nendsnippet"
+  },
+  "defr": {
+    "prefix": "defr",
+    "body": "defer func() {\nif err := recover(); err != nil {\n\t${0:${VISUAL}}\n}\n}()\nendsnippet\n# gpl"
+  },
+  "else": {
+    "prefix": "else",
+    "body": "else {\n${0:${VISUAL}}\n}\nendsnippet\n# if inline error"
+  },
+  "equals: test two identifiers with DeepEqual": {
+    "prefix": "eq",
+    "body": "if !reflect.DeepEqual(${1:expected}, ${2:actual}) {\n_, file, line, _ := runtime.Caller(0)\nfmt.Printf(\"%s:%d:\\n\\n\\texp: %#v\\n\\n\\tgot: %#v\\n\\n\", filepath.Base(file), line, $1, $2)\nt.FailNow()\n}\nendsnippet\nglobal !p\nimport re\n# Automatically wrap return types with parentheses\ndef return_values(s):\n# remove everything wrapped in parentheses\ns = re.sub(r\"\\(.*?\\)|\\([^)]*$\", \"\", s)\nreturn len(s.split(\",\"))\ndef opening_par(snip, pos):\nif return_values(t[pos]) > 1 and not t[pos].startswith(\"(\"):\n\tsnip.rv = \"(\"\nelse:\n\tsnip.rv = \"\"\ndef closing_par(snip, pos):\nif return_values(t[pos]) > 1:\n\tsnip.rv = \")\"\nelse:\n\tsnip.rv = \"\"\nendglobal\n# vim:ft=snippets:"
+  },
+  "errors.Wrap": {
+    "prefix": "ew",
+    "body": "errors.Wrap(${1:err}, \"${2:message}\")\nendsnippet"
+  },
+  "errors.Wrapf": {
+    "prefix": "ewf",
+    "body": "errors.Wrapf(${1:err}, \"${2:message %v}\", ${3:args...})\nendsnippet\n# error snippet"
+  },
+  "fallthrough": {
+    "prefix": "ft",
+    "body": "fallthrough\nendsnippet\n# for loop"
+  },
+  "fmt.Errorf(%w, err)": {
+    "prefix": "few",
+    "body": "fmt.Errorf(\"${1:message}: %w\", ${2:${VISUAL:err}})\nendsnippet\n# Fmt Errorf wrap and return"
+  },
+  "fmt.Errorf(...)": {
+    "prefix": "fe",
+    "body": "fmt.Errorf(\"${1:${VISUAL}}\")\nendsnippet\n# Fmt Errorf wrap"
+  },
+  "fmt.Printf(#...) hash": {
+    "prefix": "ffh",
+    "body": "fmt.Printf(\"$1 = %#v\\n\", ${1:${VISUAL}})\nendsnippet\n# Fmt Println debug"
+  },
+  "fmt.Printf(...)": {
+    "prefix": "ff",
+    "body": "fmt.Printf(\"$1 = %+v\\n\", ${1:${VISUAL}})\nendsnippet\n# Fmt Printf debug with hash"
+  },
+  "fmt.Println(...)": {
+    "prefix": "fn",
+    "body": "fmt.Println(\"${1:${VISUAL}}\")\nendsnippet\n# Fmt Errorf debug"
+  },
+  "fmt.Sprintf(...)": {
+    "prefix": "sp",
+    "body": "fmt.Sprintf(\"%${1:s}\", ${2:var})\nendsnippet\n# goroutine named function"
+  },
+  "fn := func() { ... }": {
+    "prefix": "anon",
+    "body": "${1:fn} := func() {\n${2:${VISUAL}}\n}\n${0}\nendsnippet\n# append"
+  },
+  "for ... { ... }": {
+    "prefix": "for",
+    "body": "for ${1} {\n${0:${VISUAL}}\n}\nendsnippet\n# for integer loop"
+  },
+  "for 0..N-1 { ... }": {
+    "prefix": "fori",
+    "body": "for ${1:i} := 0; $1 < ${2:N}; $1++ {\n${0:${VISUAL}}\n}\nendsnippet\n# for range loop"
+  },
+  "for k, v := range items { ... }": {
+    "prefix": "forr",
+    "body": "for ${2:k}, ${3:v} := range ${1} {\n${0:${VISUAL}}\n}\nendsnippet"
+  },
+  "for select": {
+    "prefix": "forsel",
+    "body": "for {\nselect {\n\tcase ${2:${1:result} := }<- ${3:channel}:\n\t\t${0}\n}\n}\nendsnippet"
+  },
+  "func (self Type) Method(...) [error] { ... }": {
+    "prefix": "meth",
+    "body": "func (${1:receiver} ${2:type}) ${3:name}(${4:params})${5/(.+)/ /}`!p opening_par(snip, 5)`$5`!p closing_par(snip, 5)` {\n${0:${VISUAL}}\n}\nendsnippet\n# ok"
+  },
+  "func BenchmarkXYZ(b *testing.B) { ... }": {
+    "prefix": "benchmark",
+    "body": "func Benchmark${1:Method}(b *testing.B) {\nfor i := 0; i < b.N; i++ {\n\t${0:${VISUAL}}\n}\n}\nendsnippet\n# variable declaration"
+  },
+  "func ExampleXYZ() { ... }": {
+    "prefix": "example",
+    "body": "func Example${1:Method}() {\n${0:${VISUAL}}\n// Output:\n}\nendsnippet"
+  },
+  "func Function(...) [error] { ... }": {
+    "prefix": "func",
+    "body": "func ${1:name}(${2:params})${3/(.+)/ /}`!p opening_par(snip, 3)`$3`!p closing_par(snip, 3)` {\n${0:${VISUAL}}\n}\nendsnippet\n# Fmt Printf debug"
+  },
+  "func FuzzXYZ(f *testing.F) { ... }": {
+    "prefix": "fuzz",
+    "body": "func Fuzz${1:Function}(f *testing.F) {\nf.Fuzz(func(t *testing.T, ${2}) {\n\t${0:${VISUAL}}\n})\n}\nendsnippet"
+  },
+  "func TestXYZ(t *testing.T) { ... }": {
+    "prefix": "test",
+    "body": "func Test${1:Function}(t *testing.T) {\n${0:${VISUAL}}\n}\nendsnippet\n# test t.Run"
+  },
+  "func main() { ... }": {
+    "prefix": "main",
+    "body": "func main() {\n${0:${VISUAL}}\n}\nendsnippet\n# method"
+  },
+  "go func() { ... }()": {
+    "prefix": "gof",
+    "body": "go func() {\n${1:${VISUAL}}\n}()\n${0}\nendsnippet\n# test function"
+  },
+  "go someFunc(...)": {
+    "prefix": "go",
+    "body": "go ${1:funcName}(${0})\nendsnippet\n# goroutine anonymous function"
+  },
+  "gpl": {
+    "prefix": "gpl",
+    "body": "/*\n* This program is free software; you can redistribute it and/or modify\n* it under the terms of the GNU General Public License as published by\n* the Free Software Foundation; either version 2 of the License, or\n* (at your option) any later version.\n*\n* This program is distributed in the hope that it will be useful,\n* but WITHOUT ANY WARRANTY; without even the implied warranty of\n* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n* GNU General Public License for more details.\n*\n* You should have received a copy of the GNU General Public License\n* along with this program; if not, see <http://www.gnu.org/licenses/>.\n*\n* Copyright (C) ${1:Author}, `!v strftime(\"%Y\")`\n*/\n${0}\nendsnippet\n# import"
+  },
+  "http.HandlerFunc": {
+    "prefix": "hf",
+    "body": "func ${1:handler}(w http.ResponseWriter, r *http.Request) {\n${0:fmt.Fprintf(w, \"hello world\")}\n}\nendsnippet"
+  },
+  "httptest.NewServer": {
+    "prefix": "tsrv",
+    "body": "ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {\nfmt.Fprintln(w, ${1:`response`})\n}))\ndefer ts.Close()\n${0:someUrl} = ts.URL\nendsnippet\n# test error handling"
+  },
+  "if !ok { ... }": {
+    "prefix": "ok",
+    "body": "if !ok {\n${0:${VISUAL}}\n}\nendsnippet\n# package"
+  },
+  "if ... { ... }": {
+    "prefix": "if",
+    "body": "if ${1:condition} {\n${0:${VISUAL}}\n}\nendsnippet\n# else snippet"
+  },
+  "if err != nil { t.Errorf(...) }": {
+    "prefix": "ter",
+    "body": "if err != nil {\nt.Errorf(\"${0:message}\")\n}\nendsnippet\n# test fatal error"
+  },
+  "if err != nil { t.Fatalf(...) }": {
+    "prefix": "terf",
+    "body": "if err != nil {\nt.Fatalf(\"${0:message}\")\n}\nendsnippet"
+  },
+  "import ( ... )": {
+    "prefix": "import",
+    "body": "import (\n\"${1:package}\"\n)\nendsnippet\n# full interface snippet"
+  },
+  "interface I { ... }": {
+    "prefix": "interface",
+    "body": "type ${1:Interface} interface {\n${2:/* TODO: add methods */}\n}\nendsnippet\n# if condition"
+  },
+  "log.Printf(...)": {
+    "prefix": "lf",
+    "body": "log.Printf(\"${1:${VISUAL}} = %+v\\n\", $1)\nendsnippet\n# log println"
+  },
+  "log.Println(...)": {
+    "prefix": "ln",
+    "body": "log.Println(\"${1:${VISUAL}}\")\nendsnippet\n# make"
+  },
+  "make(Type, size)": {
+    "prefix": "make",
+    "body": "make(${1:[]string}, ${2:0})${0}\nendsnippet\n# map"
+  },
+  "map[Type]Type": {
+    "prefix": "map",
+    "body": "map[${1:string}]${0:int}\nendsnippet\n# main()"
+  },
+  "mux.HandleFunc\" !b": {
+    "prefix": "hhf",
+    "body": "${1:http}.HandleFunc(\"${2:/}\", func(w http.ResponseWriter, r *http.Request) {\n${0:fmt.Fprintf(w, \"hello world\")}\n})\nendsnippet\n# quick test server"
+  },
+  "package ...": {
+    "prefix": "package",
+    "body": "// Package $1 provides ${2:...}\npackage ${1:main}\n${0}\nendsnippet\n# panic"
+  },
+  "panic()": {
+    "prefix": "pn",
+    "body": "panic(\"${0:msg}\")\nendsnippet\n# return"
+  },
+  "return": {
+    "prefix": "rt",
+    "body": "return ${0:${VISUAL}}\nendsnippet\n# select"
+  },
+  "select case\" !b": {
+    "prefix": "selc",
+    "body": "case ${1:${2:var} := }<-${3:channel}:\n${0}\nendsnippet\n# function"
+  },
+  "select { case a := <-chan: ... }": {
+    "prefix": "select",
+    "body": "select {\ncase ${1:v1} := <-${2:chan1}:\n${0}\n}\nendsnippet\n# struct"
+  },
+  "switch x { ... }": {
+    "prefix": "switch",
+    "body": "switch ${1:var} {\ncase ${2:value1}:\n${0}\n}\nendsnippet"
+  },
+  "t.Run(XYZ, func(t *testing.T){ ... })": {
+    "prefix": "tr",
+    "body": "t.Run(\"${0}\", func(t *testing.T){\n})\nendsnippet\n# test table snippet"
+  },
+  "tt": {
+    "prefix": "tt",
+    "body": "var tests = []struct {\nname string\nexpected string\ngiven string\n}{\n{\"${1}\", \"${2}\", \"${3}\",},\n}\nfor _, tt := range tests {\ntt := tt\nt.Run(tt.name, func(t *testing.T){\n\tactual := ${0:${VISUAL}}(tt.given)\n\tif actual != tt.expected {\n\t\t\tt.Errorf(\"$0(%s): expected %s, actual %s\", tt.given, tt.expected, actual)\n\t}\n})\n}\nendsnippet\n# fuzz function"
+  },
+  "type T struct { ... }": {
+    "prefix": "st",
+    "body": "type ${1:Type} struct {\n${0}\n}\nendsnippet\n# switch"
+  },
+  "type switch x { ... }": {
+    "prefix": "tswitch",
+    "body": "switch ${2:$1 := }${1:v}.(type) {\n${0}\n}\nendsnippet\n# sprintf"
+  },
+  "v := value": {
+    "prefix": ":",
+    "body": "${1} := ${0}\nendsnippet\n# anonymous function"
+  },
+  "var ( ... )": {
+    "prefix": "vars",
+    "body": "var (\n${1:x} ${2:Type}${3: = ${0:value}}\n)\nendsnippet\n# equals fails the test if exp is not equal to act."
+  },
+  "var x Type [= ...]": {
+    "prefix": "var",
+    "body": "var ${1:x} ${2:Type}${3: = ${0:value}}\nendsnippet\n# variables declaration"
+  }
+}
