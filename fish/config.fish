@@ -358,7 +358,7 @@ alias web='cd /home/sh/WorkSpace/scaler/WebDev/2029-Web-dev-2-Group-C'
 # Quick commands
 alias n='nvim'
 alias sn='sudo -E XDG_RUNTIME_DIR=/run/user/$(id -u) HOME=/home/sh nvim'
-alias arch='fastfetch'
+alias sys='fastfetch'
 alias speed='speedtest'
 alias mke='chmod +x'
 

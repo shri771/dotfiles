@@ -46,6 +46,8 @@ in
   home.sessionPath = [
     "$HOME/go/bin"
   ];
+# Allow proprietary/unfree packages globally
+  nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
   notion-electron
@@ -215,6 +217,9 @@ qt6Packages.qt6ct
     ostree
     gnome-boxes
     kdePackages.kamoso
+    easyeffects
+    treemd
+    antigravity
         # nodePackages.live-server
 
     # antigravity
