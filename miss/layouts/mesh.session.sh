@@ -12,19 +12,21 @@ if initialize_session "mesh"; then
     run_cmd "clear"
 
     new_window "Vim"
-    run_cmd "cd ~/WorkSpace/meshery/mes/"
+    run_cmd "cd ~/Workspace/meshery/meshery/"
     run_cmd "export TMUXIFIER_DEFAULT_PATH='~/WorkSpace/meshery/mes/'"
     run_cmd "clear"
 
-    new_window "sql"
-    run_cmd "cd ~/WorkSpace/meshery/mes/"
-    run_cmd "export TMUXIFIER_DEFAULT_PATH='~/WorkSpace/meshery/mes/'"
+    new_window "server"
+    run_cmd "cd ~/Workspace/meshery/meshery/"
+    run_cmd "export TMUXIFIER_DEFAULT_PATH='~/Workspace/meshery/meshery/'"
     run_cmd "clear"
 
-    # new_window "Vim"
-    # run_cmd "cd ~/WorkSpace/"
-    # run_cmd "export TMUXIFIER_DEFAULT_PATH='~/WorkSpace/158309813/'"
-    # run_cmd "clear"
+    new_window "Vim"
+    run_cmd "cd ~/Workspace/meshery/meshery"
+    run_cmd "export TMUXIFIER_DEFAULT_PATH='~/WorkSpace/meshery/meshery'"
+    run_cmd "clear"
+     select_window 2
+
 
 fi
 

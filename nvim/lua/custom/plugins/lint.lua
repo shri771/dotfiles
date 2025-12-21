@@ -13,7 +13,7 @@ return {
         typescript = { "eslint_d" }, -- Added eslint_d
         javascriptreact = { "eslint_d" },
         typescriptreact = { "eslint_d" },
-        go = { "golangcilint" }, -- Added golangci-lint (industry standard)
+        -- go = { "golangcilint" }, -- Added golangci-lint (industry standard)
 
         sh = { "shellcheck" }, -- Added shellcheck
         bash = { "shellcheck" },

@@ -3,20 +3,40 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/WorkSpace/meshery/meshery/server
+cd /home/sh/WorkSpace/meshery/meshery/server
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
-set shortmess+=aoO
-badd +17 meshes/client.go
-badd +102 ~/go/pkg/mod/google.golang.org/grpc@v1.76.0/dialoptions.go
-badd +39 handlers/middlewares.go
+if &shortmess =~ 'A'
+  set shortmess=aoOA
+else
+  set shortmess=aoO
+endif
+badd +182 handlers/mesh_ops_handlers.go
+badd +63 /home/sh/WorkSpace/meshery/meshery/server/models/preference.go
+badd +26 /home/sh/WorkSpace/meshery/meshery/server/models/adapter.go
+badd +49 ~/go/pkg/mod/github.com/meshery/meshkit@v0.8.53/models/events/build.go
+badd +1 models/connections/connections.go
+badd +695 handlers/connections_handlers.go
+badd +318 /home/sh/WorkSpace/meshery/meshery/server/handlers/error.go
+badd +272 /nix/store/0a3dyfq09dnkw28ap2i450wjimvdmv6s-go-1.25.4/share/go/src/builtin/builtin.go
+badd +45 ~/go/pkg/mod/github.com/meshery/schemas@v0.8.93/models/v1beta1/connection/connection.go
 argglobal
 %argdel
-edit handlers/middlewares.go
+set stal=2
+tabnew +setlocal\ bufhidden=wipe
+tabrewind
+edit handlers/mesh_ops_handlers.go
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
 argglobal
-balt meshes/client.go
+balt /nix/store/0a3dyfq09dnkw28ap2i450wjimvdmv6s-go-1.25.4/share/go/src/builtin/builtin.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -27,13 +47,34 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 35 - ((12 * winheight(0) + 14) / 29)
+let s:l = 182 - ((11 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 35
-normal! 0
+keepjumps 182
+normal! 051|
+tabnext
+edit handlers/connections_handlers.go
+argglobal
+balt ~/go/pkg/mod/github.com/meshery/schemas@v0.8.93/models/v1beta1/connection/connection.go
+setlocal foldmethod=manual
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 695 - ((15 * winheight(0) + 15) / 31)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 695
+normal! 099|
 tabnext 1
+set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif

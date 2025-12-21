@@ -39,13 +39,29 @@ return {
   {
     -- Show diagnostic message for current line Only
     "rachartier/tiny-inline-diagnostic.nvim",
-    event = "VeryLazy", -- Or `LspAttach`
-    priority = 1000, -- needs to be loaded in first
+    enabled = true,
+    event = "VeryLazy",
+    priority = 1000,
     config = function()
       require("tiny-inline-diagnostic").setup({
         preset = "modern",
+        options = {
+          multilines = {
+            enabled = false,
+          },
+          show_all_diags_on_cursorline = false,
+          show_related = {
+            enabled = false, -- Disable related diagnostics that might cause duplicates
+          },
+          enable_on_insert = false,
+          add_messages = {
+            messages = true,
+            display_count = false,
+            show_multiple_glyphs = false, -- Only show one icon
+          },
+        },
       })
-      vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
+      vim.diagnostic.config({ virtual_text = false })
     end,
   },
 

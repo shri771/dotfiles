@@ -1,37 +1,30 @@
 return {
-  "neovim/nvim-lspconfig",
-  opts = function(_, opts)
-    -- This function runs and adds gopls to your setup
-    local lspconfig = require("lspconfig")
-
-    lspconfig.gopls.setup({
-      cmd = { "gopls" }, -- Use Nix-installed gopls
-      settings = {
-        gopls = {
-          -- experimentalWorkspaceModule = true,
-          analyses = {
-            unusedparams = true,
-            shadow = true,
-            unusedwrite = true,
-            useany = true,
-          },
-          staticcheck = true,
-          gofumpt = true,
-          usePlaceholders = true,
-          completeUnimported = true,
-          matcher = "Fuzzy",
-          experimentalPostfixCompletions = true,
-          hints = {
-            assignVariableTypes = true,
-            compositeLiteralFields = true,
-            compositeLiteralTypes = true,
-            constantValues = true,
-            functionTypeParameters = true,
-            parameterNames = true,
-            rangeVariableTypes = true,
-          },
+  {
+    "ray-x/go.nvim",
+    dependencies = {
+      "ray-x/guihua.lua",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      -- Setup go.nvim WITHOUT any LSP features - gopls is configured in lsp.lua
+      require("go").setup({
+        lsp_cfg = false,
+        lsp_keymaps = false,
+        lsp_codelens = false,
+        lsp_on_attach = false,
+        lsp_inlay_hints = {
+          enable = false,
         },
-      },
-    })
-  end,
+        diagnostic = false,
+        auto_format = false,
+        auto_lint = false,
+        run_in_floaterm = true,
+        dap_debug = true,
+        dap_debug_gui = true,
+      })
+    end,
+    event = { "CmdlineEnter" },
+    ft = { "go", "gomod" },
+    build = ':lua require("go.install").update_all_sync()',
+  },
 }

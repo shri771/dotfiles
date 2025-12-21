@@ -220,6 +220,14 @@ qt6Packages.qt6ct
     easyeffects
     treemd
     antigravity
+    curl
+    direnv
+    dysk
+    minikube
+    kubectl
+    sqlite
+    steam-run
+    kdePackages.kpmcore
         # nodePackages.live-server
 
     # antigravity

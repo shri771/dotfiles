@@ -1,33 +1,6 @@
 return {
   { "Bilal2453/luvit-meta", enabled = false, lazy = true },
 
-  -- Go.nvim for enhanced Go development
-  {
-    "ray-x/go.nvim",
-    dependencies = {
-      "ray-x/guihua.lua",
-      "nvim-treesitter/nvim-treesitter",
-    },
-    config = function()
-      require("go").setup({
-        lsp_cfg = false, -- Use your LSP config below
-        lsp_keymaps = false,
-        lsp_inlay_hints = {
-          enable = true,
-          style = "eol",
-        },
-        auto_format = true,
-        auto_lint = true,
-        run_in_floaterm = true,
-        dap_debug = true,
-        dap_debug_gui = true,
-      })
-    end,
-    event = { "CmdlineEnter" },
-    ft = { "go", "gomod" },
-    build = ':lua require("go.install").update_all_sync()',
-  },
-
   {
     -- Main LSP Configuration
     "neovim/nvim-lspconfig",
@@ -114,13 +87,7 @@ return {
             [vim.diagnostic.severity.HINT] = "󰌶 ",
           },
         } or {},
-        virtual_text = {
-          source = "if_many",
-          spacing = 2,
-          format = function(diagnostic)
-            return diagnostic.message
-          end,
-        },
+        virtual_text = false,
       })
 
       -- Get completion capabilities from Blink
@@ -158,6 +125,24 @@ return {
         -- },
 
         glint = {},
+
+        gopls = {
+          cmd = { "gopls" },
+          settings = {
+            gopls = {
+              analyses = {
+                unusedparams = true,
+                shadow = true,
+                unusedwrite = true,
+                useany = true,
+              },
+              staticcheck = false,
+              gofumpt = true,
+              usePlaceholders = true,
+              completeUnimported = true,
+            },
+          },
+        },
 
         lua_ls = {
           settings = {
