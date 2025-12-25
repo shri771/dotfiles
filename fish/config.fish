@@ -81,16 +81,9 @@ end
 # UTILITY FUNCTIONS
 # ====================================
 
-# Ctrl+T binding for Workspace FZF launcher
-# This overrides the default fzf Ctrl+T file search
-function workspace_launcher
-    # Run the script
-    /home/sh/dotfiles/scripts/terminal/Workspacefzf.sh
-    commandline -f repaint
-end
-
-# Bind Ctrl+T to the workspace launcher function
-bind \ct workspace_launcher
+# Ctrl+T binding for Git Worktree Switcher
+# Calls the gw function (defined in ~/.config/fish/functions/gw.fish)
+bind \ct 'gw; commandline -f repaint'
 # History functions for !! and !$ support
 function __history_previous_command
     switch (commandline -t)

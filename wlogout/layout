@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : " $HOME/.config/hypr/scripts/LockScreen.sh",
+    "action" : "bash $HOME/.config/hypr/scripts/LockScreen.sh",
     "text" : "Lock",
     "keybind" : "l"
 }
@@ -25,7 +25,7 @@
 }
 {
     "label" : "suspend",
-    "action" : "systemctl suspend && $HOME/.config/hypr/scripts/LockScreen.sh",
+    "action" : "systemctl suspend && bash $HOME/.config/hypr/scripts/LockScreen.sh",
     "text" : "Suspend",
     "keybind" : "s"
 }

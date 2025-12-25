@@ -228,6 +228,8 @@ qt6Packages.qt6ct
     sqlite
     steam-run
     kdePackages.kpmcore
+    curl
+    gh
         # nodePackages.live-server
 
     # antigravity

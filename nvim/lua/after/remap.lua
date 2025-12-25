@@ -66,3 +66,16 @@ local keys_to_disable = { "<Up>", "<Down>", "<Left>", "<Right>" }
 for _, key in ipairs(keys_to_disable) do
   vim.keymap.set({ "n", "v", "i" }, key, "<Nop>", { noremap = true, silent = true })
 end
+
+-- For Git Worktree
+local Telescope = require("telescope")
+
+-- <leader>gw : Git Worktree (Switch/Delete)
+vim.keymap.set("n", "<leader>gw", function()
+  Telescope.extensions.git_worktree.git_worktrees()
+end, { desc = "Switch Git Worktree" })
+
+-- <leader>gc : Git Create (Create New Worktree)
+vim.keymap.set("n", "<leader>gc", function()
+  Telescope.extensions.git_worktree.create_git_worktree()
+end, { desc = "Create Git Worktree" })

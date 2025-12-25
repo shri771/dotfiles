@@ -79,10 +79,23 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VimEnter",
-    priority = 1000, -- needs to be loaded in first
+    priority = 1000,
     dependencies = "nvim-tree/nvim-web-devicons",
     config = function()
+      -- Function to get the current worktree folder name
+      local function get_worktree_name()
+        -- This finds the directory name where Neovim is currently focused
+        local cwd = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+        -- If you are inside a sub-folder of a worktree (like fix/tests),
+        -- you might want the parent name too. This shows the last part of the path.
+        return "󰙅 " .. cwd
+      end
+
       require("lualine").setup({
+        options = {
+          component_separators = { left = "", right = "" },
+          section_separators = { left = "", right = "" },
+        },
         sections = {
           lualine_a = { "mode" },
           lualine_b = {
@@ -90,7 +103,6 @@ return {
             "diff",
             { "diagnostics", sections = { "error", "warn", "info", "hint" } },
           },
-          lualine_c = { { "filename", path = 0 } },
           lualine_x = {
             "searchcount",
             {
@@ -101,8 +113,48 @@ return {
           lualine_y = { "progress" },
           lualine_z = { "location" },
         },
+        -- Don't use lualine's tabline - let Neovim handle it natively
+        -- so that showtabline setting works properly
         tabline = {},
       })
+
+      -- Only show tabline when there are 2+ tabs
+      vim.o.showtabline = 1
+
+      -- Custom tabline format to show file names (not just numbers)
+      vim.o.tabline = "%!v:lua.MyTabLine()"
+
+      -- Define the custom tabline function
+      function _G.MyTabLine()
+        local s = ""
+        for i = 1, vim.fn.tabpagenr("$") do
+          -- Get the buffer for this tab
+          local buflist = vim.fn.tabpagebuflist(i)
+          local winnr = vim.fn.tabpagewinnr(i)
+          local bufnr = buflist[winnr]
+          local bufname = vim.fn.bufname(bufnr)
+          local filename = vim.fn.fnamemodify(bufname, ":t")
+
+          -- Fallback for unnamed buffers
+          if filename == "" then
+            filename = "[No Name]"
+          end
+
+          -- Highlight current tab
+          if i == vim.fn.tabpagenr() then
+            s = s .. "%#TabLineSel#"
+          else
+            s = s .. "%#TabLine#"
+          end
+
+          -- Tab number + filename
+          s = s .. " " .. i .. " " .. filename .. " "
+        end
+
+        -- Fill the rest with TabLineFill
+        s = s .. "%#TabLineFill#"
+        return s
+      end
     end,
   },
 
@@ -148,7 +200,7 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     lazy = false,
-    enabled = false,
+    enabled = true,
     main = "ibl",
     ---@module "ibl"
     ---@type ibl.config
