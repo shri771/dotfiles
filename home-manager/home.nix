@@ -230,6 +230,8 @@ qt6Packages.qt6ct
     kdePackages.kpmcore
     curl
     gh
+    conntrack-tools
+     kubernetes-helm
         # nodePackages.live-server
 
     # antigravity

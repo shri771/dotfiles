@@ -1,60 +1,39 @@
 function gw --description "Switch Git Worktree"
-    # 1. Check if we are in a git repo
-    if not git rev-parse --is-inside-work-tree >/dev/null 2>&1; and not git rev-parse --is-bare-repository >/dev/null 2>&1
+    # Check if we're in a git repo
+    if not git rev-parse --git-dir >/dev/null 2>&1
         echo "Error: Not a git repository"
         return 1
     end
 
-    # 2. Check dependencies
-    for cmd in fzf git eza
-        if not command -q $cmd
-            echo "Error: $cmd is not installed"
-            return 1
-        end
-    end
+    # Get current worktree root and relative path within it
+    set -l current_worktree (git rev-parse --show-toplevel 2>/dev/null)
+    set -l current_dir (pwd)
+    set -l relative_path (string replace "$current_worktree" "" "$current_dir")
 
-    # 3. Get the list of worktrees
-    # Format: branch-name<TAB>/full/path/to/worktree
-    set worktree_list (git worktree list --porcelain | awk '
-        /^worktree/ {wp=$2}
-        /^branch/ {
-            split(wp, parts, "/");
-            folder=parts[length(parts)];
-            # Skip the .bare directory
-            if (folder != ".bare") {
-                # Show only the branch name (strip refs/heads/)
-                print substr($2, 12) "\t" wp
-            }
-        }')
-
-    # 4. Show nothing if no worktrees found
-    if test -z "$worktree_list"
-        echo "No worktrees found"
-        return 1
-    end
-
-    # 5. Fuzzy search with tree preview
-    set selected (printf "%s\n" $worktree_list | fzf \
-        --ansi \
+    # Pipe directly: git → awk → fzf
+    set -l selected (git worktree list --porcelain | awk '
+        /^worktree/ { wp = $2 }
+        /^branch/ { if (wp !~ /\.bare$/) print substr($2, 12) "\t" wp }
+    ' | fzf \
         --delimiter='\t' \
         --with-nth=1 \
-        --prompt="Switch Worktree > " \
-        --height=60% \
+        --prompt="Worktree > " \
+        --height=40% \
         --layout=reverse \
         --border \
-        --header="ENTER: Switch | ESC: Cancel" \
-        --preview="eza --tree --level=1 --color=always --icons {2}" \
-        --preview-window=right:50%:wrap)
+        --preview="ls -la --color=always {2} 2>/dev/null | head -20" \
+        --preview-window=right:40%)
 
-    # 6. If a selection was made, extract path and switch
+    # Switch if selected
     if test -n "$selected"
-        set target_dir (echo "$selected" | awk -F '\t' '{print $2}')
+        set -l target_worktree (echo $selected | cut -f2)
+        set -l target_dir "$target_worktree$relative_path"
 
+        # Try to cd to same relative path, fallback to worktree root
         if test -d "$target_dir"
             cd "$target_dir"
         else
-            echo "Error: Directory not found: $target_dir"
-            return 1
+            cd "$target_worktree"
         end
     end
 end

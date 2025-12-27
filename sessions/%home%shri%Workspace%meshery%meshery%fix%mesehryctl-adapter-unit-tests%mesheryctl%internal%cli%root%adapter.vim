@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/dotfiles/nvim
+cd ~/Workspace/meshery/meshery/fix/mesehryctl-adapter-unit-tests/mesheryctl/internal/cli/root/adapter
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,16 +13,14 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 init.lua
-badd +1 lua/custom/plugins/lsp.lua
-badd +11 ~/dotfiles/nvim/lua/custom/plugins/worktree.lua
-badd +126 ~/dotfiles/nvim/lua/custom/plugins/utils.lua
-badd +81 ~/dotfiles/nvim/lua/after/remap.lua
-badd +0 lazy-lock.json
+badd +45 deploy_test.go
+badd +1 remove.go
+badd +95 remove_test.go
+badd +29 term://~/Workspace/meshery/meshery/fix/mesehryctl-adapter-unit-tests/mesheryctl/internal/cli/root/adapter//73751:/run/current-system/sw/bin/fish
+badd +1 ~/Workspace/meshery/meshery/fix/mesehryctl-adapter-unit-tests/mesheryctl/internal/cli/root/adapter/fixtures/deploy.golden
 argglobal
 %argdel
-$argadd init.lua
-edit ~/dotfiles/nvim/lua/custom/plugins/utils.lua
+edit remove_test.go
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -31,9 +29,9 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt ~/dotfiles/nvim/lua/after/remap.lua
+balt ~/Workspace/meshery/meshery/fix/mesehryctl-adapter-unit-tests/mesheryctl/internal/cli/root/adapter/fixtures/deploy.golden
 setlocal foldmethod=manual
-setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
+setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
 setlocal foldignore=#
 setlocal foldlevel=0
@@ -42,11 +40,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 126 - ((19 * winheight(0) + 15) / 30)
+let s:l = 138 - ((19 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 126
+keepjumps 138
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
@@ -63,6 +61,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

@@ -3,7 +3,7 @@
 add_newline = false
 
 # Prompt format: directory → git branch → git status → character
-format = "$directory$git_branch$git_status$character"
+format = "$directory$git_status$git_branch$character"
 
 # Color palette
 palette = 'foo'
@@ -41,26 +41,26 @@ format = '([$all_status$ahead_behind]($style) )'
 style = 'bold red'
 conflicted = '[ ](red bold)'
 # ahead      = '[🌽](bright-yellow)'
-staged     = '[🍂 ](bright-red)'
+staged = '[🍂 ](bright-red)'
 # staged     = '[ ](bright-green)'
-diverged   = '[](purple)'
+diverged = '[](purple)'
 behind = '[⇣](bold bright-red)'
 ahead = '[⇡](bold bright-yellow)'
 up_to_date = '[](green)'
-untracked  = '[](cyan)'
+untracked = '[](cyan)'
 # stashed    = '[  ](blue)'
-modified   = '[](yellow)'
+modified = '[](yellow)'
 stashed = '[ ](#ff00ff)'
-renamed    = '[](magenta)'
+renamed = '[](magenta)'
 # deleted    = '[ ](red)'
-deleted    = '[](red)'
+deleted = '[](red)'
 
 [git_branch]
-format = '[on](#ffd5d8) [$symbol$branch(:$remote_branch)]($style) '
+format = '[$symbol](<bold purple>)[\($branch\)]($style) '
 # symbol = '🌱 '
 symbol = ' '
-style = 'pink'
-truncation_length = 4
+style = '#e0536d'
+# truncation_length = 15
 truncation_symbol = ''
 ignore_branches = ['main']
 
