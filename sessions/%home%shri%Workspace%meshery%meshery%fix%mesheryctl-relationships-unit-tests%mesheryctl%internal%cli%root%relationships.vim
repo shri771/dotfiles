@@ -13,19 +13,20 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +23 relationship.go
-badd +30 relationship_test.go
-badd +17 ~/Workspace/meshery/meshery/fix/mesheryctl-relationships-unit-tests/mesheryctl/internal/cli/pkg/api/meshery.go
+badd +69 relationship.go
 badd +4 ~/Workspace/meshery/meshery/fix/mesheryctl-relationships-unit-tests/mesheryctl/internal/cli/root/relationships/erros.go
-badd +416 ~/Workspace/meshery/meshery/fix/mesheryctl-relationships-unit-tests/mesheryctl/pkg/utils/testing.go
 argglobal
 %argdel
-set stal=2
-tabnew +setlocal\ bufhidden=wipe
-tabrewind
-edit relationship_test.go
+edit relationship.go
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
 argglobal
-balt relationship.go
+balt ~/Workspace/meshery/meshery/fix/mesheryctl-relationships-unit-tests/mesheryctl/internal/cli/root/relationships/erros.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -36,40 +37,21 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 11 - ((10 * winheight(0) + 15) / 30)
+let s:l = 69 - ((20 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 11
+keepjumps 69
 normal! 0
-tabnext
-edit ~/Workspace/meshery/meshery/fix/mesheryctl-relationships-unit-tests/mesheryctl/pkg/utils/testing.go
-argglobal
-balt relationship_test.go
-setlocal foldmethod=manual
-setlocal foldexpr=0
-setlocal foldmarker={{{,}}}
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal nofoldenable
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 13 - ((12 * winheight(0) + 15) / 30)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 13
-normal! 08|
 tabnext 1
-set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20
 let &shortmess = s:shortmess_save
+let &winminheight = s:save_winminheight
+let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)

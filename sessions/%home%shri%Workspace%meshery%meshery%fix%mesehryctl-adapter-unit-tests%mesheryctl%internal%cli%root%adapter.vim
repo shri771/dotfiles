@@ -13,14 +13,11 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +45 deploy_test.go
-badd +1 remove.go
-badd +95 remove_test.go
-badd +29 term://~/Workspace/meshery/meshery/fix/mesehryctl-adapter-unit-tests/mesheryctl/internal/cli/root/adapter//73751:/run/current-system/sw/bin/fish
-badd +1 ~/Workspace/meshery/meshery/fix/mesehryctl-adapter-unit-tests/mesheryctl/internal/cli/root/adapter/fixtures/deploy.golden
+badd +109 deploy_test.go
+badd +76 deploy.go
 argglobal
 %argdel
-edit remove_test.go
+edit deploy_test.go
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -29,7 +26,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt ~/Workspace/meshery/meshery/fix/mesehryctl-adapter-unit-tests/mesheryctl/internal/cli/root/adapter/fixtures/deploy.golden
+balt deploy.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -40,11 +37,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 138 - ((19 * winheight(0) + 15) / 30)
+let s:l = 164 - ((19 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 138
+keepjumps 164
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

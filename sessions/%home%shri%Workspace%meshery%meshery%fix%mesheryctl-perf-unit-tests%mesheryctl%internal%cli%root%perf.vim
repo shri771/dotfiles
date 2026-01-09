@@ -14,16 +14,12 @@ else
   set shortmess=aoO
 endif
 badd +113 apply.go
-badd +28 ~/go/pkg/mod/github.com/meshery/meshkit@v0.8.59/logger/logger.go
-badd +37 result.go
-badd +63 ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/internal/cli/root/adapter/deploy.go
-badd +62 ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/internal/cli/root/perf/profile.go
-badd +70 ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/internal/cli/root/perf/perf.go
+badd +30 error.go
 argglobal
 %argdel
-edit result.go
+edit error.go
 argglobal
-balt ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/internal/cli/root/perf/perf.go
+balt apply.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -34,12 +30,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 37 - ((20 * winheight(0) + 15) / 31)
+let s:l = 149 - ((10 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 37
-normal! 019|
+keepjumps 149
+normal! 049|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

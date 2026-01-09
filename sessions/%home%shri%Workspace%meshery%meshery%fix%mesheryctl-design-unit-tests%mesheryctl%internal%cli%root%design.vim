@@ -13,11 +13,17 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +81 apply_test.go
-badd +192 ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/internal/cli/root/design/import.go
-badd +219 ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/internal/cli/root/design/error.go
+badd +43 export.go
+badd +171 ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/internal/cli/root/design/import.go
+badd +66 ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/internal/cli/root/config/config.go
+badd +40 error.go
+badd +455 ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/pkg/utils/error.go
+badd +36 ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/pkg/utils/auth.go
 argglobal
 %argdel
+set stal=2
+tabnew +setlocal\ bufhidden=wipe
+tabrewind
 edit ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/internal/cli/root/design/import.go
 wincmd t
 let s:save_winminheight = &winminheight
@@ -27,7 +33,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/internal/cli/root/design/error.go
+balt ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/pkg/utils/auth.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -38,21 +44,40 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 162 - ((15 * winheight(0) + 15) / 31)
+let s:l = 171 - ((14 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 162
-normal! 029|
+keepjumps 171
+normal! 0
+tabnext
+edit error.go
+argglobal
+balt ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/internal/cli/root/design/import.go
+setlocal foldmethod=manual
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 174 - ((12 * winheight(0) + 14) / 29)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 174
+normal! 06|
 tabnext 1
+set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20
 let &shortmess = s:shortmess_save
-let &winminheight = s:save_winminheight
-let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)

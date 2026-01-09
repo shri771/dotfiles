@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests
+cd ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/registry
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,15 +13,13 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +156 mesheryctl/helpers/errorutil_analyze_errors.json
-badd +1365 ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/helpers/errorutil_errors_export.json
-badd +1 ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/helpers/component_info.json
+badd +1 publish_test.go
+badd +0 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/registry/registry_test.go
 argglobal
 %argdel
-$argadd mesheryctl/helpers/errorutil_analyze_errors.json
-edit ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/helpers/component_info.json
+edit ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/registry/registry_test.go
 argglobal
-balt ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/helpers/errorutil_errors_export.json
+balt publish_test.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
