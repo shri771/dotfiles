@@ -13,23 +13,25 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +13 ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/internal/cli/root/perf/perf_test.go
-badd +70 ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/internal/cli/root/perf/profile_test.go
-badd +156 ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/internal/cli/root/perf/profile.go
-badd +81 ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/internal/cli/root/perf/result_test.go
-badd +1 ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/internal/cli/root/perf/apply_test.go
-badd +86 ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/internal/cli/root/perf/error.go
-badd +1 ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/internal/cli/root/perf/testdata/profile/1011.golden
-badd +147 profile_test.go
-badd +17 perf_test.go
+badd +144 result_test.go
+badd +583 ~/Workspace/meshery/meshery/master/mesheryctl/pkg/utils/testing.go
+badd +56 apply_test.go
+badd +153 profile_test.go
+badd +259 ~/Workspace/meshery/meshery/master/mesheryctl/pkg/utils/helpers.go
+badd +58 perf.go
+badd +11 perf_test.go
 argglobal
 %argdel
-set stal=2
-tabnew +setlocal\ bufhidden=wipe
-tabrewind
-edit profile_test.go
+edit result_test.go
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
 argglobal
-balt perf_test.go
+balt apply_test.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -40,47 +42,27 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 74 - ((14 * winheight(0) + 15) / 30)
+let s:l = 104 - ((12 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 74
-normal! 032|
-tabnext
-edit ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/internal/cli/root/perf/testdata/profile/1011.golden
-argglobal
-balt ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/internal/cli/root/perf/result_test.go
-setlocal foldmethod=manual
-setlocal foldexpr=0
-setlocal foldmarker={{{,}}}
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal nofoldenable
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 15) / 30)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-tabnext 2
-set stal=1
+keepjumps 104
+normal! 016|
+tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20
 let &shortmess = s:shortmess_save
+let &winminheight = s:save_winminheight
+let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

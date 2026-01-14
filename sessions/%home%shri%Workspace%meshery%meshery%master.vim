@@ -13,12 +13,41 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +17 mesheryctl/internal/cli/root/registry/error.go
+badd +65 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/delete_test.go
+badd +46 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/delete.go
+badd +85 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/list.go
+badd +365 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/pkg/utils/testing.go
+badd +28 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/pkg/utils/formatter.go
+badd +69 ~/go/pkg/mod/github.com/meshery/meshkit@v0.8.63/logger/logger.go
+badd +10 ~/go/pkg/mod/github.com/meshery/meshkit@v0.8.63/logger/types.go
+badd +98 ~/go/pkg/mod/github.com/sirupsen/logrus@v1.9.4-0.20230606125235-dd1b4c2e81af/logger.go
+badd +640 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/pkg/utils/error.go
+badd +117 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/error.go
+badd +69 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/pkg/utils/helpers.go
+badd +123 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/view.go
+badd +27 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/filter.go
+badd +111 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/config/config.go
+badd +59 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/import.go
+badd +14 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/list_test.go
+badd +53 mesheryctl/internal/cli/root/filter/list_test.go
+badd +5 mesheryctl/internal/cli/root/filter/fixtures/list.filter.api.response.golden
+badd +84 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/filter_test.go
+badd +1 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/testdata/filter.invalidID.view.output.golden
 argglobal
 %argdel
-$argadd mesheryctl/internal/cli/root/registry/error.go
-edit mesheryctl/internal/cli/root/registry/error.go
+set stal=2
+tabnew +setlocal\ bufhidden=wipe
+tabrewind
+edit ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/filter/view.go
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
 argglobal
+balt ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/view.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -29,13 +58,34 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 17 - ((16 * winheight(0) + 15) / 31)
+let s:l = 76 - ((14 * winheight(0) + 13) / 27)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 17
-normal! 046|
+keepjumps 76
+normal! 0
+tabnext
+edit ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/list.go
+argglobal
+balt ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/pkg/utils/error.go
+setlocal foldmethod=manual
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 85 - ((12 * winheight(0) + 13) / 26)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 85
+normal! 027|
 tabnext 1
+set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif

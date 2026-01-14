@@ -13,14 +13,14 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +5 UserConfigs/UserKeybinds.conf
-badd +31 UserConfigs/UserSettings.conf
+badd +4 UserConfigs/LaptopDisplay.conf
+badd +27 UserConfigs/Startup_Apps.conf
 argglobal
 %argdel
 $argadd .
-edit UserConfigs/UserSettings.conf
+edit UserConfigs/Startup_Apps.conf
 argglobal
-balt UserConfigs/UserKeybinds.conf
+balt UserConfigs/LaptopDisplay.conf
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -31,12 +31,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 31 - ((14 * winheight(0) + 15) / 31)
+let s:l = 27 - ((11 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 31
-normal! 033|
+keepjumps 27
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

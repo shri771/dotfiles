@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl
+cd ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/internal/cli/root/design
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,12 +13,20 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +25 pkg/utils/testing.go
+badd +21 error.go
+badd +63 view.go
+badd +58 design.go
+badd +77 ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/pkg/utils/error.go
+badd +253 apply.go
+badd +147 offboard.go
+badd +55 delete.go
+badd +259 export.go
+badd +152 onboard.go
 argglobal
 %argdel
-edit pkg/utils/testing.go
+edit ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/pkg/utils/error.go
 argglobal
-balt pkg/utils/testing.go
+balt error.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -29,12 +37,13 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 102 - ((19 * winheight(0) + 15) / 30)
+let s:l = 77 - ((20 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 102
+keepjumps 77
 normal! 0
+lcd ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

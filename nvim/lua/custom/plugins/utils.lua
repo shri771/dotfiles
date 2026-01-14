@@ -35,7 +35,25 @@ return {
       enable_tag = true, -- auto-close HTML tags (requires nvim-ts-autotag)
     },
   },
+  -- Git Diff
+  {
+    "NeogitOrg/neogit",
+    lazy = true,
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- required
+      "sindrets/diffview.nvim", -- optional - Diff integration
 
+      -- Only one of these is needed.
+      "nvim-telescope/telescope.nvim", -- optional
+      "ibhagwan/fzf-lua", -- optional
+      "nvim-mini/mini.pick", -- optional
+      "folke/snacks.nvim", -- optional
+    },
+    cmd = "Neogit",
+    keys = {
+      { "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
+    },
+  },
   {
     -- Show diagnostic message for current line Only
     "rachartier/tiny-inline-diagnostic.nvim",

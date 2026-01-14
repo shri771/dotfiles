@@ -13,47 +13,12 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +43 export.go
-badd +171 ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/internal/cli/root/design/import.go
-badd +66 ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/internal/cli/root/config/config.go
-badd +40 error.go
-badd +455 ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/pkg/utils/error.go
-badd +36 ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/pkg/utils/auth.go
+badd +25 error.go
 argglobal
 %argdel
-set stal=2
-tabnew +setlocal\ bufhidden=wipe
-tabrewind
-edit ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/internal/cli/root/design/import.go
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
-balt ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/pkg/utils/auth.go
-setlocal foldmethod=manual
-setlocal foldexpr=0
-setlocal foldmarker={{{,}}}
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal nofoldenable
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 171 - ((14 * winheight(0) + 15) / 30)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 171
-normal! 0
-tabnext
 edit error.go
 argglobal
-balt ~/Workspace/meshery/meshery/fix/mesheryctl-design-unit-tests/mesheryctl/internal/cli/root/design/import.go
+balt error.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -64,14 +29,13 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 174 - ((12 * winheight(0) + 14) / 29)
+let s:l = 103 - ((16 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 174
-normal! 06|
+keepjumps 103
+normal! 0
 tabnext 1
-set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif

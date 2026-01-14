@@ -13,15 +13,21 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +156 mesheryctl/helpers/errorutil_analyze_errors.json
-badd +1365 ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/helpers/errorutil_errors_export.json
-badd +1 ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/helpers/component_info.json
+badd +744 mesheryctl/pkg/utils/testing.go
+badd +125 mesheryctl/internal/cli/root/perf/apply.go
+badd +39 ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/internal/cli/root/perf/profile_test.go
 argglobal
 %argdel
-$argadd mesheryctl/helpers/errorutil_analyze_errors.json
-edit ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/helpers/component_info.json
+edit ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/internal/cli/root/perf/profile_test.go
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
 argglobal
-balt ~/Workspace/meshery/meshery/fix/mesheryctl-perf-unit-tests/mesheryctl/helpers/errorutil_errors_export.json
+balt mesheryctl/internal/cli/root/perf/apply.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -32,11 +38,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 15) / 31)
+let s:l = 153 - ((13 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 153
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
@@ -45,6 +51,8 @@ endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20
 let &shortmess = s:shortmess_save
+let &winminheight = s:save_winminheight
+let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)

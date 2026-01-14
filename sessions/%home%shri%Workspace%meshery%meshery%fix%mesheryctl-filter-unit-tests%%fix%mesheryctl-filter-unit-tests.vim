@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Workspace/meshery/meshery/fix/mesheryctl-relationships-unit-tests
+cd ~/Workspace/meshery/meshery/master
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -29,8 +29,8 @@ badd +27 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl
 badd +111 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/config/config.go
 badd +59 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/import.go
 badd +14 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/list_test.go
-badd +53 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/filter/list_test.go
-badd +5 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/filter/fixtures/list.filter.api.response.golden
+badd +53 mesheryctl/internal/cli/root/filter/list_test.go
+badd +5 mesheryctl/internal/cli/root/filter/fixtures/list.filter.api.response.golden
 badd +84 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/filter_test.go
 badd +1 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/testdata/filter.invalidID.view.output.golden
 argglobal
@@ -39,6 +39,13 @@ set stal=2
 tabnew +setlocal\ bufhidden=wipe
 tabrewind
 edit mesheryctl/internal/cli/root/filter/view.go
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
 argglobal
 balt ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/view.go
 setlocal foldmethod=manual
@@ -51,13 +58,13 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 13) / 27)
+let s:l = 76 - ((12 * winheight(0) + 13) / 27)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 76
 normal! 0
-lcd ~
+lcd ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests
 tabnext
 edit ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/list.go
 argglobal

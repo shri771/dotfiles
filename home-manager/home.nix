@@ -55,6 +55,7 @@ in
       ripgrep        # Fixes Telescope error
     nodejs         # For npm-based tools
     polkit
+    qrencode
     jq
     gcc
     htop

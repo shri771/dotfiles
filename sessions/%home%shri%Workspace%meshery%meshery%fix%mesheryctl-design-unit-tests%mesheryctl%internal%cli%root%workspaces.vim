@@ -13,10 +13,11 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +0 list_test.go
+badd +7 list_test.go
+badd +14 workspace_test.go
 argglobal
 %argdel
-edit list_test.go
+edit workspace_test.go
 argglobal
 balt list_test.go
 setlocal foldmethod=manual
@@ -29,12 +30,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 21 - ((17 * winheight(0) + 15) / 30)
+let s:l = 14 - ((13 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 21
-normal! 0
+keepjumps 14
+normal! 02|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

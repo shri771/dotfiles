@@ -14,15 +14,11 @@ else
   set shortmess=aoO
 endif
 badd +1 init.lua
-badd +1 lua/custom/plugins/lsp.lua
-badd +11 ~/dotfiles/nvim/lua/custom/plugins/worktree.lua
-badd +126 ~/dotfiles/nvim/lua/custom/plugins/utils.lua
-badd +81 ~/dotfiles/nvim/lua/after/remap.lua
-badd +0 lazy-lock.json
+badd +18 lua/custom/plugins/utils.lua
 argglobal
 %argdel
 $argadd init.lua
-edit ~/dotfiles/nvim/lua/custom/plugins/utils.lua
+edit lua/custom/plugins/utils.lua
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -31,7 +27,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt ~/dotfiles/nvim/lua/after/remap.lua
+balt init.lua
 setlocal foldmethod=manual
 setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
 setlocal foldmarker={{{,}}}
@@ -42,12 +38,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 126 - ((19 * winheight(0) + 15) / 30)
+let s:l = 60 - ((16 * winheight(0) + 13) / 27)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 126
-normal! 0
+keepjumps 60
+normal! 02|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -63,6 +59,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
