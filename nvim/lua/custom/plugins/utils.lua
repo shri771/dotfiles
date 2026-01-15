@@ -35,6 +35,16 @@ return {
       enable_tag = true, -- auto-close HTML tags (requires nvim-ts-autotag)
     },
   },
+  -- Git Diff View
+  {
+    "sindrets/diffview.nvim",
+    lazy = true,
+    cmd = { "DiffviewOpen", "DiffviewFileHistory", "DiffviewClose" },
+    config = function()
+      require("diffview").setup({})
+    end,
+  },
+
   -- Git Diff
   {
     "NeogitOrg/neogit",

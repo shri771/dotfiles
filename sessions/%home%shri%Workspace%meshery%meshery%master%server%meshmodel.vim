@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Workspace/meshery/meshery/fix/mesheryctl-relationships-unit-tests/mesheryctl/internal/cli/root/relationships
+cd ~/Workspace/meshery/meshery/master/server/meshmodel
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,11 +13,13 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +507 ../../../../pkg/utils/testing.go
+badd +1 ~/Workspace/meshery/meshery/master/server/meshmodel/kubearmor/v1.6.6/v1.0.0/model.json
+badd +176 ~/Workspace/meshery/meshery/master/server/meshmodel/kubearmor/v1.6.6/v1.0.0/components/KubeArmorClusterPolicy.json
+badd +10 kubernetes/model_template.json
 argglobal
 %argdel
-$argadd ../../../../pkg/utils/testing.go
-edit ../../../../pkg/utils/testing.go
+$argadd kubearmor/
+edit kubernetes/model_template.json
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -26,6 +28,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
+balt ~/Workspace/meshery/meshery/master/server/meshmodel/kubearmor/v1.6.6/v1.0.0/components/KubeArmorClusterPolicy.json
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -36,12 +39,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 507 - ((14 * winheight(0) + 15) / 31)
+let s:l = 29 - ((19 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 507
-normal! 032|
+keepjumps 29
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

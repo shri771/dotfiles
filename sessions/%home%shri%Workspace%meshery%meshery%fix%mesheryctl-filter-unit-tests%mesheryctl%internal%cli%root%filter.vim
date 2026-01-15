@@ -24,7 +24,7 @@ badd +98 ~/go/pkg/mod/github.com/sirupsen/logrus@v1.9.4-0.20230606125235-dd1b4c2
 badd +455 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/pkg/utils/error.go
 badd +46 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/error.go
 badd +1259 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/pkg/utils/helpers.go
-badd +70 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/view.go
+badd +117 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/view.go
 badd +25 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/filter.go
 badd +111 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/config/config.go
 badd +137 ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/import.go
@@ -41,27 +41,6 @@ argglobal
 set stal=2
 tabnew +setlocal\ bufhidden=wipe
 tabrewind
-edit ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/view.go
-argglobal
-balt mesheryctl/internal/cli/root/filter/view.go
-setlocal foldmethod=manual
-setlocal foldexpr=0
-setlocal foldmarker={{{,}}}
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal nofoldenable
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 117 - ((11 * winheight(0) + 13) / 27)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 117
-normal! 048|
-lcd ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter
-tabnext
 edit ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter/list.go
 wincmd t
 let s:save_winminheight = &winminheight
@@ -82,14 +61,72 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 160 - ((16 * winheight(0) + 13) / 27)
+let s:l = 160 - ((17 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 160
-normal! 036|
+normal! 06|
 lcd ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter
-tabnext 2
+tabnext
+edit diffview:///home/shri/Workspace/meshery/meshery/.bare/worktrees/mesheryctl-filter-unit-tests/861f9a4a2f8/mesheryctl/internal/cli/pkg/display/display.go
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+wincmd =
+argglobal
+setlocal foldmethod=diff
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldenable
+let s:l = 52 - ((51 * winheight(0) + 14) / 29)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 52
+normal! 0
+lcd ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter
+wincmd w
+argglobal
+if bufexists(fnamemodify("diffview:///home/shri/Workspace/meshery/meshery/.bare/worktrees/mesheryctl-filter-unit-tests/ff941134e04/mesheryctl/internal/cli/pkg/display/display.go", ":p")) | buffer diffview:///home/shri/Workspace/meshery/meshery/.bare/worktrees/mesheryctl-filter-unit-tests/ff941134e04/mesheryctl/internal/cli/pkg/display/display.go | else | edit diffview:///home/shri/Workspace/meshery/meshery/.bare/worktrees/mesheryctl-filter-unit-tests/ff941134e04/mesheryctl/internal/cli/pkg/display/display.go | endif
+if &buftype ==# 'terminal'
+  silent file diffview:///home/shri/Workspace/meshery/meshery/.bare/worktrees/mesheryctl-filter-unit-tests/ff941134e04/mesheryctl/internal/cli/pkg/display/display.go
+endif
+setlocal foldmethod=diff
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldenable
+let s:l = 52 - ((51 * winheight(0) + 14) / 29)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 52
+normal! 0
+lcd ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl/internal/cli/root/filter
+wincmd w
+wincmd =
+tabnext 1
 set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

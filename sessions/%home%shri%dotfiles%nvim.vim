@@ -14,7 +14,7 @@ else
   set shortmess=aoO
 endif
 badd +1 init.lua
-badd +18 lua/custom/plugins/utils.lua
+badd +40 lua/custom/plugins/utils.lua
 argglobal
 %argdel
 $argadd init.lua
@@ -38,12 +38,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 60 - ((16 * winheight(0) + 13) / 27)
+let s:l = 40 - ((13 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 60
-normal! 02|
+keepjumps 40
+normal! 06|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
