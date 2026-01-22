@@ -13,16 +13,12 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +144 result_test.go
-badd +583 ~/Workspace/meshery/meshery/master/mesheryctl/pkg/utils/testing.go
-badd +56 apply_test.go
-badd +153 profile_test.go
-badd +259 ~/Workspace/meshery/meshery/master/mesheryctl/pkg/utils/helpers.go
-badd +58 perf.go
-badd +11 perf_test.go
+badd +73 perf.go
+badd +241 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/perf/profile.go
+badd +137 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/perf/result.go
 argglobal
 %argdel
-edit result_test.go
+edit ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/perf/result.go
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -31,7 +27,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt apply_test.go
+balt perf.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -42,12 +38,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 104 - ((12 * winheight(0) + 15) / 31)
+let s:l = 137 - ((11 * winheight(0) + 13) / 27)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 104
-normal! 016|
+keepjumps 137
+normal! 054|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -63,6 +59,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

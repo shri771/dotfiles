@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Workspace/meshery/meshery/fix/mesheryctl-filter-unit-tests/mesheryctl
+cd ~/Workspace/meshery/meshery/master/mesheryctl/cmd/mesheryctl
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,12 +13,20 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +60 pkg/utils/error.go
+badd +26 main.go
+badd +87 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/root.go
+badd +24 ~/Workspace/meshery/meshery/master/mesheryctl/pkg/utils/formatter.go
+badd +1095 ~/go/pkg/mod/github.com/spf13/cobra@v1.10.2/command.go
+badd +209 ~/Workspace/meshery/meshery/master/mesheryctl/pkg/utils/helpers.go
+badd +47 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/environments/environment.go
+badd +99 ~/go/pkg/mod/github.com/spf13/cobra@v1.10.2/cobra.go
+badd +67 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/completion.go
 argglobal
 %argdel
-$argadd pkg/utils/error.go
-edit pkg/utils/error.go
+$argadd main.go
+edit ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/root.go
 argglobal
+balt ~/go/pkg/mod/github.com/spf13/cobra@v1.10.2/command.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -29,12 +37,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 764 - ((14 * winheight(0) + 15) / 31)
+let s:l = 88 - ((14 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 764
-normal! 016|
+keepjumps 88
+normal! 014|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -48,7 +56,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

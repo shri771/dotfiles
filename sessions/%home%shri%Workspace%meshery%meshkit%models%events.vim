@@ -13,13 +13,15 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +125 events.go
-badd +68 ~/Workspace/meshery/meshkit/models/events/build.go
+badd +1 constants.go
+badd +1 ~/Workspace/meshery/meshkit/models/events/database.go
+badd +102 ~/Workspace/meshery/meshkit/models/events/events.go
+badd +1 ~/Workspace/meshery/meshkit/models/events/build.go
 argglobal
 %argdel
-edit ~/Workspace/meshery/meshkit/models/events/build.go
+edit ~/Workspace/meshery/meshkit/models/events/events.go
 argglobal
-balt events.go
+balt ~/Workspace/meshery/meshkit/models/events/build.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -30,12 +32,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 71 - ((20 * winheight(0) + 15) / 31)
+let s:l = 1 - ((0 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 71
-normal! 012|
+keepjumps 1
+normal! 039|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

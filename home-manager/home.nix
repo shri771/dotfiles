@@ -62,6 +62,7 @@ in
     rofi
     bat
     brightnessctl
+    opencode
     cantata
     acpi
     alacritty

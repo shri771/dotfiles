@@ -13,15 +13,18 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +24 delete_test.go
-badd +13 create_test.go
-badd +52 list_test.go
-badd +61 list.go
+badd +25 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/environments/create.go
+badd +1 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/environments/environment.go
+badd +40 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/environments/delete.go
+badd +46 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/environments/create_test.go
+badd +47 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/environments/delete_test.go
+badd +12 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/environments/environment_test.go
+badd +36 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/environments/list_test.go
 argglobal
 %argdel
-edit list_test.go
+edit ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/environments/list_test.go
 argglobal
-balt list.go
+balt ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/environments/environment_test.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -32,12 +35,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 15) / 31)
+let s:l = 8 - ((7 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 020|
+keepjumps 8
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
