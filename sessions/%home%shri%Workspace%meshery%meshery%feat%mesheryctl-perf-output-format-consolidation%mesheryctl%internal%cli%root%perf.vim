@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/perf
+cd ~/Workspace/meshery/meshery/feat/mesheryctl-perf-output-format-consolidation/mesheryctl/internal/cli/root/perf
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,22 +13,19 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +80 result_test.go
-badd +78 result.go
-badd +55 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/connections/connection.go
-badd +375 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/connections/create.go
-badd +90 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/connections/list.go
-badd +38 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/connections/view.go
-badd +39 profile.go
-badd +55 perf.go
+badd +71 profile.go
+badd +147 ~/Workspace/meshery/meshery/feat/mesheryctl-perf-output-format-consolidation/mesheryctl/internal/cli/root/perf/result.go
+badd +111 ~/Workspace/meshery/meshery/feat/mesheryctl-perf-output-format-consolidation/mesheryctl/internal/cli/root/perf/apply.go
+badd +226 ~/Workspace/meshery/meshery/feat/mesheryctl-perf-output-format-consolidation/mesheryctl/internal/cli/root/root.go
+badd +29 ~/Workspace/meshery/meshery/feat/mesheryctl-perf-output-format-consolidation/mesheryctl/pkg/utils/helpers.go
 argglobal
 %argdel
 set stal=2
 tabnew +setlocal\ bufhidden=wipe
 tabrewind
-edit result.go
+edit ~/Workspace/meshery/meshery/feat/mesheryctl-perf-output-format-consolidation/mesheryctl/internal/cli/root/root.go
 argglobal
-balt result_test.go
+balt profile.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -39,16 +36,15 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 92 - ((18 * winheight(0) + 14) / 29)
+let s:l = 226 - ((18 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 92
-normal! 09|
+keepjumps 226
+normal! 019|
 tabnext
-edit ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/connections/view.go
+edit ~/Workspace/meshery/meshery/feat/mesheryctl-perf-output-format-consolidation/mesheryctl/pkg/utils/helpers.go
 argglobal
-balt ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/connections/list.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -59,13 +55,13 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 38 - ((14 * winheight(0) + 15) / 30)
+let s:l = 29 - ((14 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 38
-normal! 06|
-tabnext 2
+keepjumps 29
+normal! 033|
+tabnext 1
 set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -79,6 +75,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

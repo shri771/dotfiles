@@ -2,7 +2,7 @@
 # No leading blank line
 add_newline = false
 
-format = "$directory$git_status${custom.git_branch_truncated}$character"
+format = "$directory$git_status${custom.git_branch_truncated}\n$character"
 
 # Color palette
 palette = 'foo'
