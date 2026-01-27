@@ -186,6 +186,7 @@ qt6Packages.qt6ct
     translate-shell
     trash-cli
     tree
+    ffmpeg
     fira-code
     jetbrains-mono
     victor-mono

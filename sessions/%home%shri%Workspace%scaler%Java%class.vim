@@ -13,8 +13,8 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +19 contributing.java
-badd +4 ~/Workspace/scaler/Java/class/twoPointer.java
+badd +59 ~/Workspace/scaler/Java/class/twoPointer.java
+badd +1 ~/Workspace/scaler/WebDev/2029-Web-dev-2-Group-C/Class-1(Introduction\ to\ DOM)/1.html
 argglobal
 %argdel
 $argadd contributing.java
@@ -27,7 +27,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt contributing.java
+balt ~/Workspace/scaler/WebDev/2029-Web-dev-2-Group-C/Class-1(Introduction\ to\ DOM)/1.html
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -38,11 +38,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 4 - ((3 * winheight(0) + 15) / 31)
+let s:l = 59 - ((12 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 4
+keepjumps 59
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

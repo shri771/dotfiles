@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/dotfiles/nvim
+cd ~/Workspace/meshery/meshery/pr-review/mesheryctl/internal/cli/root/connections
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,13 +13,14 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 init.lua
-badd +1 lua/custom/plugins/completion.lua
-badd +104 lua/custom/plugins/autocompletion.lua
+badd +56 connection.go
+badd +95 list.go
+badd +38 ~/Workspace/meshery/meshery/pr-review/mesheryctl/internal/cli/pkg/display/display.go
+badd +1202 ~/Workspace/meshery/meshery/pr-review/mesheryctl/pkg/utils/helpers.go
+badd +48 ~/Workspace/meshery/meshery/pr-review/mesheryctl/internal/cli/pkg/display/pagination.go
 argglobal
 %argdel
-$argadd init.lua
-edit lua/custom/plugins/autocompletion.lua
+edit list.go
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -28,9 +29,9 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt lua/custom/plugins/completion.lua
+balt connection.go
 setlocal foldmethod=manual
-setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
+setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
 setlocal foldignore=#
 setlocal foldlevel=0
@@ -39,11 +40,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 104 - ((18 * winheight(0) + 15) / 31)
+let s:l = 62 - ((13 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 104
+keepjumps 62
 normal! 09|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
@@ -60,6 +61,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

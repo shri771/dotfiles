@@ -13,14 +13,12 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +12 scripts/KillActiveProcess.sh
-badd +1 UserConfigs/UserKeybinds.conf
-badd +13 configs/Keybinds.conf
 badd +80 UserConfigs/WindowRules.conf
+badd +0 UserConfigs/LaptopDisplay.conf
 argglobal
 %argdel
 $argadd .
-edit UserConfigs/UserKeybinds.conf
+edit UserConfigs/LaptopDisplay.conf
 argglobal
 balt UserConfigs/WindowRules.conf
 setlocal foldmethod=manual
@@ -33,11 +31,11 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 15) / 31)
+let s:l = 6 - ((5 * winheight(0) + 13) / 27)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 6
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
