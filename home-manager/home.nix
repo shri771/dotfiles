@@ -187,6 +187,7 @@ qt6Packages.qt6ct
     trash-cli
     tree
     ffmpeg
+    libreoffice-qt
     fira-code
     jetbrains-mono
     victor-mono
