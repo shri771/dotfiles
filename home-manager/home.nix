@@ -59,6 +59,8 @@ in
     jq
     gcc
     htop
+    foliate
+    calibre
     rofi
     bat
     brightnessctl
@@ -236,7 +238,7 @@ qt6Packages.qt6ct
     gh
     conntrack-tools
      kubernetes-helm
-        # nodePackages.live-server
+    temporal-cli
 
     # antigravity
 

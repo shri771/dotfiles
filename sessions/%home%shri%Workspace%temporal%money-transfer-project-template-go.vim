@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Workspace/Go/New
+cd ~/Workspace/temporal/money-transfer-project-template-go
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,12 +13,18 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +0 main.go
+badd +30 workflow.go
+badd +22 ~/go/pkg/mod/go.temporal.io/sdk@v1.37.0/workflow/activity_options.go
+badd +2409 ~/go/pkg/mod/go.temporal.io/sdk@v1.37.0/internal/workflow.go
+badd +43 ~/Workspace/temporal/money-transfer-project-template-go/activity.go
+badd +31 ~/Workspace/temporal/money-transfer-project-template-go/banking-client.go
+badd +48 start/main.go
+badd +4 ~/Workspace/temporal/money-transfer-project-template-go/shared.go
 argglobal
 %argdel
-edit main.go
+edit workflow.go
 argglobal
-balt main.go
+balt ~/Workspace/temporal/money-transfer-project-template-go/activity.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -29,12 +35,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 26 - ((17 * winheight(0) + 14) / 28)
+let s:l = 21 - ((10 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 26
-normal! 014|
+keepjumps 21
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
