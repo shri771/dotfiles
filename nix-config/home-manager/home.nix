@@ -48,13 +48,6 @@
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
-
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
     ];
     # Configure your nixpkgs instance
     config = {
@@ -72,7 +65,6 @@
 
 
   # Enable home-manager and git
-  programs.home-manager.enable = true;
   programs.git.enable = true;
 
   # Nicely reload system units when changing configs
@@ -86,10 +78,14 @@
   home.sessionPath = [
     "$HOME/go/bin"
   ];
-# Allow proprietary/unfree packages globally
-  nixpkgs.config.allowUnfree = true;
 
-  home.packages = with pkgs; [
+  # This pulls in the bleeding-edge packages for the tools that aren't in stable yet
+  home.packages = let
+    unstable = import inputs.nixpkgs-unstable {
+      system = pkgs.system;
+      config.allowUnfree = true;
+    };
+  in with pkgs; [
     psmisc
     ripgrep        # Fixes Telescope error
     nodejs         # For npm-based tools
@@ -104,7 +100,7 @@
     rofi
     bat
     brightnessctl
-    opencode
+    unstable.opencode  # <-- Pulling from unstable
     cantata
     acpi
     alacritty
@@ -255,17 +251,17 @@
     python3
     pinentry-gnome3
     libnotify
-    gemini-cli
+    unstable.gemini-cli  # <-- Pulling from unstable
     kanshi
     ddcutil
     libinput
     usbutils
     ostree
     gnome-boxes
-    kdePackages.kamoso
+    # kdePackages.kamoso
     easyeffects
-    treemd
-    antigravity
+    # treemd
+    unstable.antigravity # <-- Pulling from unstable
     curl
     direnv
     dysk
@@ -304,7 +300,6 @@
     #   nodePackages.vscode-langservers-extracted
     # ];
   };
-
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
 }

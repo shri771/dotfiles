@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Workspace/meshery/meshery/master/mesheryctl/pkg/utils
+cd ~/Workspace/meshery/meshery/master
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,11 +13,13 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +7 auth_test.go
-badd +192 helpers_test.go
+badd +73 ~/Workspace/meshery/meshery/pr-review/mesheryctl/internal/cli/root/design/view.go
+badd +102 ~/Workspace/meshery/meshery/pr-review/mesheryctl/internal/cli/root/design/view_test.go
+badd +449 ~/Workspace/meshery/meshery/pr-review/mesheryctl/pkg/utils/testing.go
+badd +597 mesheryctl/pkg/utils/testing.go
 argglobal
 %argdel
-edit helpers_test.go
+edit ~/Workspace/meshery/meshery/pr-review/mesheryctl/pkg/utils/testing.go
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -26,7 +28,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt auth_test.go
+balt ~/Workspace/meshery/meshery/pr-review/mesheryctl/internal/cli/root/design/view.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -37,12 +39,13 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 192 - ((20 * winheight(0) + 15) / 31)
+let s:l = 382 - ((10 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 192
-normal! 013|
+keepjumps 382
+normal! 0
+lcd ~/Workspace/meshery/meshery/pr-review/mesheryctl/internal/cli/root/design
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -58,7 +61,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

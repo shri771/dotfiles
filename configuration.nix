@@ -12,7 +12,9 @@
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 4;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.timeout = 1;
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -32,7 +34,14 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-  
+
+  # Enable Bluetooth
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
+  # Enable Blueman (this adds the package AND the service)
+  services.blueman.enable = true;
+
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_IN";
     LC_IDENTIFICATION = "en_IN";
@@ -62,6 +71,13 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+## Gonme boxes
+virtualisation.libvirtd.enable = true;
+
+
+## Enable Dcoker
+virtualisation.docker.enable = true;
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -79,7 +95,7 @@
   };
    # Enable all firmware (recommended)
   hardware.enableAllFirmware = true;
-  
+
   # Allow non-free packages (needed for some firmware)
   nixpkgs.config.allowUnfree = true;
 
@@ -99,11 +115,9 @@
   users.users.shri = {
     isNormalUser = true;
     description = "shri";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "kvm" ];
     shell = pkgs.fish;
     packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
 	git
 	pkgs.gnome-keyring
 	pkgs.seahorse
@@ -115,7 +129,6 @@
 	brave
 	vivaldi
 	jq
-	notion-app-enhanced
 	zoxide
 	eza
 	kitty
@@ -128,13 +141,53 @@
 	awesome
 	hyprland
 	polkit
+	trash-cli
+	kdePackages.kate
+	noto-fonts
+	noto-fonts-color-emoji
+	openrgb-with-all-plugins
 
     ];
   };
 
-  systemd.services.evremap = {
-    description = "Evremap Key Remapping Service";
-    
+  ## Enable faltpak
+  services.flatpak.enable = true;
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
+
+  ## For prevent crashes
+  services.earlyoom = {
+    enable = true;
+    # Start killing processes when free RAM drops below 5%
+    freeMemThreshold = 5;
+    # Optional: Prefer killing specific heavy processes (regex)
+    extraArgs = [ "--prefer" "(^|/)(antigravity|language_server|node)$" ];
+  };
+
+
+ ## Enable Zram
+zramSwap = {
+    enable = true;
+    memoryPercent = 80; 
+  };
+
+## Setup TLP 
+services.tlp = {
+      enable = true;
+      settings = {
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      };
+  };
+  services.power-profiles-daemon.enable = false;
+
+## For openrgb
+services.hardware.openrgb.enable = true;
+boot.kernelModules = [ "i2c-dev" "i2c-piix4" "kvm-intel" ];
+
+  systemd.services.evremap-main = {
+    description = "Evremap Main";
+
     # Start after the multi-user target is reached
     after = [ "multi-user.target" ];
     wantedBy = [ "multi-user.target" ];
@@ -144,12 +197,33 @@
       # In NixOS, we don't use /usr/bin. We reference the package directly.
       ExecStart = "${pkgs.evremap}/bin/evremap remap /home/shri/.config/evremap/evremap.conf";
       Restart = "always";
-      
+
       # Evremap usually requires root to grab input devices (/dev/input)
       # even if it is reading a user's config file.
       User = "root";
     };
   };
+
+  ## for Kero keyboard
+    systemd.services.evremap-kreo = {
+    description = "Evremap Kreo";
+
+    # Start after the multi-user target is reached
+    after = [ "multi-user.target" ];
+    wantedBy = [ "multi-user.target" ];
+
+    # Service configuration
+    serviceConfig = {
+      # In NixOS, we don't use /usr/bin. We reference the package directly.
+      ExecStart = "${pkgs.evremap}/bin/evremap remap /home/shri/dotfiles/evremap/evremap-kero.conf";
+      Restart = "always";
+
+      # Evremap usually requires root to grab input devices (/dev/input)
+      # even if it is reading a user's config file.
+      User = "root";
+    };
+  };
+
 
   # Enable Hyprland and Awesome
   programs.hyprland.enable = true;
@@ -159,7 +233,7 @@
   # Enable Gonme keyring
   # services.gnome.gnome-keyring.enable = true;
   # security.pam.services.sddm.enableGnomeKeyring = true;
-  security.pam.services.login.enableGnomeKeyring = false;
+  security.pam.services.login.enableGnomeKeyring = true;
 
 
 
@@ -171,6 +245,19 @@
   programs.firefox.enable = true;
 
 
+## For QT apps
+environment.variables = {
+    # Force the style to Breeze (safe, standard KDE look)
+    QT_STYLE_OVERRIDE = "breeze";
+    
+    # Tell Qt Quick apps (like Kamoso) to use the desktop style, not Hyprland's
+    QT_QUICK_CONTROLS_STYLE = "org.kde.desktop";
+    
+    # Use the KDE platform theme (since you have Plasma installed)
+    # If this causes issues in Hyprland, change "kde" to "qtct"
+    QT_QPA_PLATFORMTHEME = "kde";
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -178,6 +265,8 @@
    wget
   neovim
   libnotify
+
+   # pkgs.antigravity
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

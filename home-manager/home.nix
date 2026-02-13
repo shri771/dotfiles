@@ -61,6 +61,7 @@ in
     htop
     foliate
     calibre
+    wireshark
     rofi
     bat
     brightnessctl

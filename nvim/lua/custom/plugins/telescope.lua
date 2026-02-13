@@ -100,10 +100,9 @@ return {
 
       vim.keymap.set("n", "<leader>s/", function()
         builtin.live_grep({
-          grep_open_files = true,
-          prompt_title = "Live Grep in Open Files",
+          prompt_title = "Live Grep in CWD",
         })
-      end, { desc = "[S]earch [/] in Open Files" })
+      end, { desc = "[S]earch [/] in CWD" })
 
       -- shortcut for nix config
       vim.keymap.set("n", "<leader>sn", function()

@@ -13,15 +13,13 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +37 list.go
-badd +15 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/pkg/api/meshery.go
-badd +110 view.go
-badd +12 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/pkg/display/output.go
+badd +59 list.go
+badd +31 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/connections/connection.go
 argglobal
 %argdel
-edit ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/pkg/display/output.go
+edit list.go
 argglobal
-balt view.go
+balt ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/connections/connection.go
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -32,12 +30,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 18 - ((12 * winheight(0) + 14) / 28)
+let s:l = 111 - ((19 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 18
-normal! 0
+keepjumps 111
+normal! 036|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

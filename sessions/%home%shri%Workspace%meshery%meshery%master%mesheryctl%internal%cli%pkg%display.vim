@@ -13,10 +13,16 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 display.go
+badd +62 display.go
+badd +239 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/pkg/display/output.go
+badd +69 ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/filter/view.go
 argglobal
 %argdel
-edit display.go
+$argadd display.go
+set stal=2
+tabnew +setlocal\ bufhidden=wipe
+tabrewind
+edit ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/pkg/display/output.go
 argglobal
 balt display.go
 setlocal foldmethod=manual
@@ -29,13 +35,33 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 15) / 31)
+let s:l = 239 - ((15 * winheight(0) + 13) / 27)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 02|
+keepjumps 239
+normal! 053|
+tabnext
+edit ~/Workspace/meshery/meshery/master/mesheryctl/internal/cli/root/filter/view.go
+argglobal
+setlocal foldmethod=manual
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal nofoldenable
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 43 - ((11 * winheight(0) + 13) / 27)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 43
+normal! 08|
 tabnext 1
+set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif

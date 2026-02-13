@@ -8,6 +8,11 @@ return {
     end,
   },
 
+  --ghosty
+  {
+    "subnut/nvim-ghost.nvim",
+    lazy = true,
+  },
   -- extend telescope with frecency sorting
   {
     "nvim-telescope/telescope-frecency.nvim",
