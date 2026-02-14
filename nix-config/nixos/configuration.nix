@@ -290,13 +290,12 @@
   };
 
   # SSH
-  services.openssh.enable = true;
   services.openssh = {
   enable = true;
   settings = {
-    PermitRootLogin = "no";
-    PasswordAuthentication = true;
-    KbdInteractiveAuthentication = true;
+      PermitRootLogin = "no";
+      PasswordAuthentication = true;
+      KbdInteractiveAuthentication = true;
   };
   ports = [ 22 ];
   };
@@ -320,9 +319,6 @@
       User = "root";
     };
   };
-
-
-
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.05";

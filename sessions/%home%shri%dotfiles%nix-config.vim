@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Workspace/meshery/meshery/master/server
+cd ~/dotfiles/nix-config
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,16 +13,21 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +358 policies/rego_test.go
-badd +25 health://
-badd +455 ~/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.25.5.linux-amd64/src/path/filepath/path.go
-badd +149 ~/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.25.5.linux-amd64/src/builtin/builtin.go
-badd +163 ~/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.25.5.linux-amd64/src/io/fs/fs.go
+badd +3 ~/dotfiles/nix-config/nixos/hardware-configuration.nix
+badd +299 nixos/configuration.nix
 argglobal
 %argdel
-edit policies/rego_test.go
+$argadd nixos/
+edit nixos/configuration.nix
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
 argglobal
-balt ~/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.25.5.linux-amd64/src/io/fs/fs.go
+balt ~/dotfiles/nix-config/nixos/hardware-configuration.nix
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -33,12 +38,12 @@ setlocal foldnestmax=20
 setlocal nofoldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 358 - ((14 * winheight(0) + 15) / 31)
+let s:l = 294 - ((12 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 358
-normal! 017|
+keepjumps 294
+normal! 022|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -46,13 +51,14 @@ endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20
 let &shortmess = s:shortmess_save
+let &winminheight = s:save_winminheight
+let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

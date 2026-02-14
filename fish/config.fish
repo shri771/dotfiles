@@ -5,8 +5,8 @@
 set -U fish_greeting ""
 set -x MANPAGER "nvim +Man!"
 
-## For meshery
-set -x TERM xterm
+## For meshery !! Caution caussing problem in tmux
+# set -x TERM xterm
 
 # Set Neovim as the default editor
 set -x VISUAL nvim

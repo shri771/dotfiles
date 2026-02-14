@@ -1,1 +1,0 @@
-fish_default_key_bindings
