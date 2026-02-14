@@ -1,2 +1,3 @@
 nvim/undo
-tmux/plugins/
+tmux/plugins
+sessions/*
