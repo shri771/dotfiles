@@ -289,8 +289,17 @@
     enableSSHSupport = true;
   };
 
-  # Enable the OpenSSH daemon.
+  # SSH
   services.openssh.enable = true;
+  services.openssh = {
+  enable = true;
+  settings = {
+    PermitRootLogin = "no";
+    PasswordAuthentication = true;
+    KbdInteractiveAuthentication = true;
+  };
+  ports = [ 22 ];
+  };
 
   # Kero keyboard
     systemd.services.evremap-kreo = {
