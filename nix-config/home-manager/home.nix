@@ -86,6 +86,7 @@
       config.allowUnfree = true;
     };
   in with pkgs; [
+    gnumake
     psmisc
     ripgrep        # Fixes Telescope error
     nodejs         # For npm-based tools

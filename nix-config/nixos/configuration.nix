@@ -75,6 +75,9 @@
   # Use latest version
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # Load kernel Mdoules
+  boot.kernelModules = [ "i2c-dev" ];
+
   # Netowrk
   networking.hostName = "shri-nix";
   networking.networkmanager.enable = true;
@@ -139,7 +142,7 @@
   users.users.shri = {
       isNormalUser = true;
       description = "Honor Desktop";
-      extraGroups = [ "networkmanager" "wheel" "docker" "kvm""wireshark" ];
+      extraGroups = [ "networkmanager" "wheel" "docker" "kvm" "wireshark" "i2c" ];
       initialPassword = "as";
       openssh.authorizedKeys.keys = [
           "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDPchxx8m1n/DJ2qGd5egSbEET7RvhKhG5p1jBhrb7o4GYYqmQLIRS9NEA3DybcNl5wKcbx1ROveHN7RhX29f3Me2DQRtcsmFfcEaOlULgeMY03dqJ596u5DvMw3dwclgGnCF2aybiDh2b+51DJeNevvIl3RzKbnnIpWhfX7hnK2Z0llk1A80v6+jV2PJJcUTGOhoetsTNuceUDs2b5HSs/m55htq1txu7h9imapMcEruVskg5t2glVKWvBUFRk+p0DQRU8iasD/exkmSQHCCicvmCYOjQqPPAOB61CSfPbIJvc4VZDKCRRgty5RkROVpAAhxrRU+MzVxb153ww+h8L shrikantshingare77@gmail.com"
@@ -279,6 +282,8 @@
    wget
    neovim
    libnotify
+   ddcutil ## For monitor brigthness control
+   nix-index
   ];
 
   # GPG
@@ -299,6 +304,9 @@
   };
   ports = [ 22 ];
   };
+
+  # ddcutil
+  hardware.i2c.enable = true;
 
   # Kero keyboard
     systemd.services.evremap-kreo = {
