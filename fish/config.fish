@@ -6,7 +6,7 @@ set -U fish_greeting ""
 set -x MANPAGER "nvim +Man!"
 
 ## For meshery !! Caution caussing problem in tmux
-# set -x TERM xterm
+set -x TERM xterm
 
 # Set Neovim as the default editor
 set -x VISUAL nvim
@@ -527,3 +527,5 @@ carapace _carapace | source
 set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 set -x GPG_TTY (tty)
 zoxide init fish | source
+set -gx TMUXIFIER ~/.config/tmux/plugins/tmuxifier
+source $TMUXIFIER/init.fish

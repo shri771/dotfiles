@@ -183,6 +183,9 @@
     nerd-fonts.jetbrains-mono
     pamixer
     pandoc
+    marksman
+    glow
+    languagetool
     # parcellite
     uv
     pavucontrol

@@ -1,5 +1,29 @@
 # fish completion for mesheryctl                           -*- shell-script -*-
 
+function mesheryctl
+    # If project-local binary exists, run it (preserve argv)
+    if test -x ./mesheryctl
+        ./mesheryctl $argv
+        return $status
+    end
+
+    # support alternate spelling if you build as "mesherctl"
+    if test -x ./mesherctl
+        ./mesherctl $argv
+        return $status
+    end
+
+    # else fall back to system binary if available
+    if command -v mesheryctl > /dev/null
+        command mesheryctl $argv
+        return $status
+    end
+
+    # not found: helpful message
+    printf 'mesheryctl: command not found (no ./mesheryctl or mesheryctl in PATH)\n' >&2
+    return 127
+end
+
 function __mesheryctl_debug
     set -l file "$BASH_COMP_DEBUG_FILE"
     if test -n "$file"
