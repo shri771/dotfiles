@@ -284,6 +284,7 @@
    libnotify
    ddcutil ## For monitor brigthness control
    nix-index
+   # ciscoPacketTracer8
   ];
 
   # GPG
@@ -307,6 +308,19 @@
 
   # ddcutil
   hardware.i2c.enable = true;
+
+  # Nfs Server
+  services.nfs.server.enable = false;
+
+  # Specific range for GNOME Boxes NAT
+services.nfs.server.exports = ''
+    /home/shri/downloads 10.0.2.0/24(rw,nohide,insecure,no_subtree_check,async,no_root_squash)
+  '';
+
+  # Open the necessary Firewall ports
+  # NFS needs 2049, but often mountd and statd need ports too
+  networking.firewall.allowedTCPPorts = [ 2049 ];
+  networking.firewall.allowedUDPPorts = [ 2049 ];
 
   # Kero keyboard
     systemd.services.evremap-kreo = {

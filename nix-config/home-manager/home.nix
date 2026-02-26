@@ -86,6 +86,8 @@
       config.allowUnfree = true;
     };
   in with pkgs; [
+    wf-recorder
+    losslesscut-bin
     gnumake
     psmisc
     ripgrep        # Fixes Telescope error
@@ -236,8 +238,8 @@
     typescript
     variety
     virt-manager
-    virtualbox
     waybar
+    postman
     wget
     wlogout
     xclip
