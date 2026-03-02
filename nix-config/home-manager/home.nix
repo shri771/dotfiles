@@ -1,12 +1,6 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ inputs, lib, config, pkgs, ... }: {
   # You can import other home-manager modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
@@ -21,21 +15,21 @@
 
   # Theme
   gtk = {
-      enable = true;
+    enable = true;
 
-      font = {
-          name = "Noto Sans";
-          size = 10;
-      };
+    font = {
+      name = "Noto Sans";
+      size = 10;
+    };
 
-      iconTheme = {
-          package = pkgs.whitesur-icon-theme;
-          name = "WhiteSur";
-      };
-      theme = {
-          name = "Breeze-Dark";
-          package = pkgs.kdePackages.breeze-gtk;
-      };
+    iconTheme = {
+      package = pkgs.whitesur-icon-theme;
+      name = "WhiteSur";
+    };
+    theme = {
+      name = "Breeze-Dark";
+      package = pkgs.kdePackages.breeze-gtk;
+    };
   };
 
   nixpkgs = {
@@ -63,21 +57,18 @@
     homeDirectory = "/home/shri";
   };
 
-
   # Enable home-manager and git
   programs.git.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
-    services.gnome-keyring = {
-      enable = true;
-      components = [ "secrets" "ssh" "pkcs11" ];
+  services.gnome-keyring = {
+    enable = true;
+    components = [ "secrets" "ssh" "pkcs11" ];
   };
 
-  home.sessionPath = [
-    "$HOME/go/bin"
-  ];
+  home.sessionPath = [ "$HOME/go/bin" ];
 
   # This pulls in the bleeding-edge packages for the tools that aren't in stable yet
   home.packages = let
@@ -90,8 +81,8 @@
     losslesscut-bin
     gnumake
     psmisc
-    ripgrep        # Fixes Telescope error
-    nodejs         # For npm-based tools
+    ripgrep # Fixes Telescope error
+    nodejs # For npm-based tools
     polkit
     qrencode
     jq
@@ -103,7 +94,7 @@
     rofi
     bat
     brightnessctl
-    unstable.opencode  # <-- Pulling from unstable
+    unstable.opencode # <-- Pulling from unstable
     cantata
     acpi
     alacritty
@@ -132,7 +123,6 @@
     flameshot
     flatpak
     flex
-    foliate
     gh
     gparted
     grc
@@ -154,7 +144,6 @@
     lazydocker
     less
     loupe
-    seahorse
     lsd
     lsof
     lxappearance
@@ -181,7 +170,6 @@
     font-awesome
     noto-fonts
     fira-code
-    jetbrains-mono
     nerd-fonts.jetbrains-mono
     pamixer
     pandoc
@@ -232,7 +220,6 @@
     tree
     ffmpeg
     libreoffice-qt
-    fira-code
     jetbrains-mono
     victor-mono
     typescript
@@ -257,7 +244,7 @@
     python3
     pinentry-gnome3
     libnotify
-    unstable.gemini-cli  # <-- Pulling from unstable
+    unstable.gemini-cli # <-- Pulling from unstable
     kanshi
     ddcutil
     libinput
@@ -268,7 +255,6 @@
     easyeffects
     # treemd
     unstable.antigravity # <-- Pulling from unstable
-    curl
     direnv
     dysk
     minikube
@@ -282,16 +268,17 @@
     kubernetes-helm
     temporal-cli
 
-    # antigravity
-
     # LSP
     go
-    gopls          # The official Go Language Server (LSP)
-    (lib.lowPrio gotools)        # Contains 'goimports', etc.
-    golangci-lint  # Fast linter
-    delve          # Debugger (dlv)
+    gopls # The official Go Language Server (LSP)
+    (lib.lowPrio gotools) # Contains 'goimports', etc.
+    golangci-lint # Fast linter
+    delve # Debugger (dlv)
     sqls
     gofumpt
+    batsignal
+    nixfmt
+
   ];
 
   programs.home-manager.enable = true;
@@ -307,5 +294,10 @@
     # ];
   };
 
+  # Low battery waring
+  services.batsignal = {
+    enable = true;
+    extraArgs = [ "-w" "20" "-c" "10" "-d" "5" ];
+  };
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
 }

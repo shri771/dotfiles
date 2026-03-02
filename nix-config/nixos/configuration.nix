@@ -1,12 +1,6 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ inputs, lib, config, pkgs, ... }: {
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
@@ -47,8 +41,7 @@
     };
   };
 
-  nix = let
-    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+  nix = let flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
   in {
     settings = {
       # Enable flakes and new 'nix' command
@@ -62,7 +55,7 @@
     # Disable channels
     channel.enable = false;
     # Opinionated: make flake registry and nix path match flake inputs
-    registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
+    registry = lib.mapAttrs (_: flake: { inherit flake; }) flakeInputs;
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 
@@ -82,7 +75,7 @@
   networking.hostName = "shri-nix";
   networking.networkmanager.enable = true;
 
-    # Set your time zone.
+  # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 
   # Select internationalisation properties.
@@ -94,7 +87,7 @@
   services.blueman.enable = true;
 
   # Locale
-    i18n.extraLocaleSettings = {
+  i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_IN";
     LC_IDENTIFICATION = "en_IN";
     LC_MEASUREMENT = "en_IN";
@@ -108,10 +101,10 @@
 
   # Keyboard
   console.keyMap = "dvorak-programmer";
-   # For x11
+  # For x11
   services.xserver.xkb = {
-      layout = "us";
-      variant = "dvp";
+    layout = "us";
+    variant = "dvp";
   };
 
   # x11
@@ -134,74 +127,74 @@
   # Touchpad
   services.libinput.enable = true;
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # libglib glibc
-  ];
+  programs.nix-ld.libraries = with pkgs;
+    [
+      # libglib glibc
+    ];
 
   # User
   users.users.shri = {
-      isNormalUser = true;
-      description = "Honor Desktop";
-      extraGroups = [ "networkmanager" "wheel" "docker" "kvm" "wireshark" "i2c" ];
-      initialPassword = "as";
-      openssh.authorizedKeys.keys = [
-          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDPchxx8m1n/DJ2qGd5egSbEET7RvhKhG5p1jBhrb7o4GYYqmQLIRS9NEA3DybcNl5wKcbx1ROveHN7RhX29f3Me2DQRtcsmFfcEaOlULgeMY03dqJ596u5DvMw3dwclgGnCF2aybiDh2b+51DJeNevvIl3RzKbnnIpWhfX7hnK2Z0llk1A80v6+jV2PJJcUTGOhoetsTNuceUDs2b5HSs/m55htq1txu7h9imapMcEruVskg5t2glVKWvBUFRk+p0DQRU8iasD/exkmSQHCCicvmCYOjQqPPAOB61CSfPbIJvc4VZDKCRRgty5RkROVpAAhxrRU+MzVxb153ww+h8L shrikantshingare77@gmail.com"
-      ];
+    isNormalUser = true;
+    description = "Honor Desktop";
+    extraGroups = [ "networkmanager" "wheel" "docker" "kvm" "wireshark" "i2c" ];
+    initialPassword = "as";
+    openssh.authorizedKeys.keys = [
+      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDPchxx8m1n/DJ2qGd5egSbEET7RvhKhG5p1jBhrb7o4GYYqmQLIRS9NEA3DybcNl5wKcbx1ROveHN7RhX29f3Me2DQRtcsmFfcEaOlULgeMY03dqJ596u5DvMw3dwclgGnCF2aybiDh2b+51DJeNevvIl3RzKbnnIpWhfX7hnK2Z0llk1A80v6+jV2PJJcUTGOhoetsTNuceUDs2b5HSs/m55htq1txu7h9imapMcEruVskg5t2glVKWvBUFRk+p0DQRU8iasD/exkmSQHCCicvmCYOjQqPPAOB61CSfPbIJvc4VZDKCRRgty5RkROVpAAhxrRU+MzVxb153ww+h8L shrikantshingare77@gmail.com"
+    ];
 
-      shell = pkgs.fish;
-      packages = with pkgs; [
-          git
-              pkgs.gnome-keyring
-              pkgs.seahorse
-              libsecret       # Required by some apps
-              neovim
-              curl
-              fish
-              starship
-              brave
-              vivaldi
-              jq
-              zoxide
-              eza
-              kitty
-              carapace
-              fzf
-              home-manager
-              unzip
-              tmux
-              evremap
-              awesome
-              hyprland
-              polkit
-              trash-cli
-              kdePackages.kate
-              noto-fonts
-              noto-fonts-color-emoji
-              openrgb-with-all-plugins
+    shell = pkgs.fish;
+    packages = with pkgs; [
+      git
+      pkgs.gnome-keyring
+      pkgs.seahorse
+      libsecret # Required by some apps
+      neovim
+      curl
+      fish
+      starship
+      brave
+      vivaldi
+      jq
+      zoxide
+      eza
+      kitty
+      carapace
+      fzf
+      home-manager
+      unzip
+      tmux
+      evremap
+      awesome
+      hyprland
+      polkit
+      trash-cli
+      kdePackages.kate
+      noto-fonts
+      noto-fonts-color-emoji
+      openrgb-with-all-plugins
 
-              ];
+    ];
   };
 
   # Enable Zram
   zramSwap = {
-      enable = true;
-      memoryPercent = 80;
+    enable = true;
+    memoryPercent = 80;
   };
 
   # Setup TLP
   services.tlp = {
-      enable = true;
-      settings = {
-          CPU_SCALING_GOVERNOR_ON_AC = "performance";
-          CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-      };
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+    };
   };
   services.power-profiles-daemon.enable = false;
 
   # Enable Hyprland and Awesome
   programs.hyprland.enable = true;
   services.xserver.windowManager.awesome.enable = true;
-
 
   # Gonme keyring
   services.gnome.gnome-keyring.enable = true;
@@ -256,7 +249,8 @@
     # Service configuration
     serviceConfig = {
       # In NixOS, we don't use /usr/bin. We reference the package directly.
-      ExecStart = "${pkgs.evremap}/bin/evremap remap /home/shri/.config/evremap/evremap.conf";
+      ExecStart =
+        "${pkgs.evremap}/bin/evremap remap /home/shri/.config/evremap/evremap.conf";
       Restart = "always";
 
       # Evremap usually requires root to grab input devices (/dev/input)
@@ -278,32 +272,34 @@
     QT_QPA_PLATFORMTHEME = "kde";
   };
 
+  # System pkgs
   environment.systemPackages = with pkgs; [
-   wget
-   neovim
-   libnotify
-   ddcutil ## For monitor brigthness control
-   nix-index
-   # ciscoPacketTracer8
+    wget
+    neovim
+    libnotify
+    ddcutil # # For monitor brigthness control
+    nix-index
+    # ciscoPacketTracer8
   ];
 
   # GPG
   programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
-    pinentryPackage = pkgs.pinentry-curses;  # or pinentry-gtk2, pinentry-qt, pinentry-gnome3
+    pinentryPackage =
+      pkgs.pinentry-curses; # or pinentry-gtk2, pinentry-qt, pinentry-gnome3
     enableSSHSupport = true;
   };
 
   # SSH
   services.openssh = {
-  enable = true;
-  settings = {
+    enable = true;
+    settings = {
       PermitRootLogin = "no";
       PasswordAuthentication = true;
       KbdInteractiveAuthentication = true;
-  };
-  ports = [ 22 ];
+    };
+    ports = [ 22 ];
   };
 
   # ddcutil
@@ -313,17 +309,17 @@
   services.nfs.server.enable = false;
 
   # Specific range for GNOME Boxes NAT
-services.nfs.server.exports = ''
+  services.nfs.server.exports = ''
     /home/shri/downloads 10.0.2.0/24(rw,nohide,insecure,no_subtree_check,async,no_root_squash)
   '';
 
   # Open the necessary Firewall ports
   # NFS needs 2049, but often mountd and statd need ports too
-  networking.firewall.allowedTCPPorts = [ 2049 ];
-  networking.firewall.allowedUDPPorts = [ 2049 ];
+  # networking.firewall.allowedTCPPorts = [ 2049 ];
+  # networking.firewall.allowedUDPPorts = [ 2049 ];
 
   # Kero keyboard
-    systemd.services.evremap-kreo = {
+  systemd.services.evremap-kreo = {
     description = "Evremap Kreo";
 
     # Start after the multi-user target is reached
@@ -333,7 +329,8 @@ services.nfs.server.exports = ''
     # Service configuration
     serviceConfig = {
       # In NixOS, we don't use /usr/bin. We reference the package directly.
-      ExecStart = "${pkgs.evremap}/bin/evremap remap /home/shri/dotfiles/evremap/evremap-kero.conf";
+      ExecStart =
+        "${pkgs.evremap}/bin/evremap remap /home/shri/dotfiles/evremap/evremap-kero.conf";
       Restart = "always";
 
       # Evremap usually requires root to grab input devices (/dev/input)

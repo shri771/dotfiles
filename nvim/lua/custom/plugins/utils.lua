@@ -12,6 +12,19 @@ return {
   {
     "subnut/nvim-ghost.nvim",
     lazy = true,
+    cmd = "GhostTextStart",
+    init = function()
+      vim.g.nvim_ghost_autostart = 0
+    end,
+    config = function()
+      vim.api.nvim_create_autocmd("User", {
+        group = vim.api.nvim_create_augroup("nvim_ghost_user_autocommands", { clear = true }),
+        pattern = "*",
+        callback = function()
+          vim.bo.filetype = "java"
+        end,
+      })
+    end,
   },
   -- extend telescope with frecency sorting
   {
