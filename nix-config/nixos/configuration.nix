@@ -144,7 +144,7 @@
 
     shell = pkgs.fish;
     packages = with pkgs; [
-      git
+      gitFull
       pkgs.gnome-keyring
       pkgs.seahorse
       libsecret # Required by some apps
@@ -281,7 +281,7 @@
   programs.gnupg.agent = {
     enable = true;
     pinentryPackage =
-      pkgs.pinentry-curses; # or pinentry-gtk2, pinentry-qt, pinentry-gnome3
+      pkgs.pinentry-gnome3; # or pinentry-gtk2, pinentry-qt, pinentry-gnome3
     enableSSHSupport = true;
   };
 
@@ -296,7 +296,7 @@
     ports = [ 22 ];
   };
 
-  # ddcutil
+  # For ddcutil
   hardware.i2c.enable = true;
 
   # Nfs Server
