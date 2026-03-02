@@ -261,14 +261,8 @@
 
   # For QT apps
   environment.variables = {
-    # Force the style to Breeze (safe, standard KDE look)
     QT_STYLE_OVERRIDE = "breeze";
-
-    # Tell Qt Quick apps (like Kamoso) to use the desktop style, not Hyprland's
     QT_QUICK_CONTROLS_STYLE = "org.kde.desktop";
-
-    # Use the KDE platform theme (since you have Plasma installed)
-    # If this causes issues in Hyprland, change "kde" to "qtct"
     QT_QPA_PLATFORMTHEME = "kde";
   };
 
@@ -328,13 +322,10 @@
 
     # Service configuration
     serviceConfig = {
-      # In NixOS, we don't use /usr/bin. We reference the package directly.
       ExecStart =
         "${pkgs.evremap}/bin/evremap remap /home/shri/dotfiles/evremap/evremap-kero.conf";
       Restart = "always";
 
-      # Evremap usually requires root to grab input devices (/dev/input)
-      # even if it is reading a user's config file.
       User = "root";
     };
   };
