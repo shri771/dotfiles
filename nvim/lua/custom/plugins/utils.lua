@@ -59,7 +59,13 @@ return {
     lazy = true,
     cmd = { "DiffviewOpen", "DiffviewFileHistory", "DiffviewClose" },
     config = function()
-      require("diffview").setup({})
+      require("diffview").setup({
+        view = {
+          default = {
+            layout = "diff1_plain", -- Forces the GitHub-style single panel layout
+          },
+        },
+      })
     end,
   },
 
