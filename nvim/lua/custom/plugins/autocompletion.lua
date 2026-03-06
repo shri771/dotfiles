@@ -7,9 +7,18 @@ return {
     -- build = "make",
     dependencies = {
       {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        opts = {
+          suggestion = { enabled = false }, -- blink.cmp handles the UI
+          panel = { enabled = false },
+        },
+      },
+      {
         "fang2hou/blink-copilot",
         opts = {
-          enabled = false,
+          enabled = true,
           max_completions = 1, -- Global default for max completions
           max_attempts = 2, -- Global default for max attempts
         },
@@ -99,8 +108,8 @@ return {
       },
 
       sources = {
-        -- default = { "snippets", "buffer", "lsp", "lazydev", "path", "copilot" },
-        default = { "snippets", "buffer", "lsp", "lazydev", "path" },
+        default = { "snippets", "buffer", "lsp", "lazydev", "path", "copilot" },
+        -- default = { "snippets", "buffer", "lsp", "lazydev", "path" },
         -- default = { "buffer", "lazydev", "path" },
         -- default = { "buffer" },
         -- default = {},

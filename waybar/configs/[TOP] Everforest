@@ -140,7 +140,7 @@
 	"interval": 1,
 	"tooltip": true,
 	"hwmon-path": [
-		"/home/sh/.config/hypr/scripts/temp_sensor"
+		"~/.config/hypr/scripts/temp_sensor"
 	],
 	//"thermal-zone": 0,
 	"critical-threshold": 75,

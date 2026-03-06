@@ -102,6 +102,8 @@
     arandr
     bc
     blueman
+    procps
+    psmisc
     bluez-tools
     btop
     carapace

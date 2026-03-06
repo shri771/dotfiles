@@ -2,7 +2,7 @@
 
 for i in {5..6}; do
     temp=$(cat /sys/devices/platform/coretemp.0/hwmon/hwmon$i/temp1_input 2>/dev/null)
-    
+
     if [ -n "$temp" ] && [ "$temp" -eq "$temp" ] 2>/dev/null; then
         if [ "$temp" -eq 28000 ]; then
             continue

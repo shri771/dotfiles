@@ -53,6 +53,8 @@ then
     else
         echo "tpm is already present at $TMUX_PLUGIN_DIR. Skipping cloning."
     fi
+    echo "Setting up tmuxifier"
+    ln -s ~/dotfiles/scripts/tmuxifier/* ~/dotfiles/tmux/plugins/tmuxifier/layouts/
 else
     echo "Skipping tmux setup."
 fi
