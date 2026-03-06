@@ -307,6 +307,9 @@
     /home/shri/downloads 10.0.2.0/24(rw,nohide,insecure,no_subtree_check,async,no_root_squash)
   '';
 
+  # Termbox
+  environment.enableAllTerminfo = true;
+
   # Open the necessary Firewall ports
   # NFS needs 2049, but often mountd and statd need ports too
   # networking.firewall.allowedTCPPorts = [ 2049 ];
