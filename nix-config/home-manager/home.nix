@@ -15,9 +15,11 @@
     ../modules/home-manager/git-config.nix
   ];
 
-  # UserNmae
-  home = {
-    stateVersion = "23.11";
-    username = "shri";
-    homeDirectory = "/home/shri";
-  };}
+  config = {
+    home = {
+      stateVersion = "23.11";
+      username = "shri";
+      homeDirectory = "/home/shri";
+    };
+  };
+}
