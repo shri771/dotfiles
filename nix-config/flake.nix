@@ -72,6 +72,15 @@
             ./home-manager/home.nix
           ];
         };
+        "tst@shri-nix" = home-manager.lib.homeManagerConfiguration {
+          # Home-manager requires 'pkgs' instance
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit inputs; };
+          modules = [
+            # > Our main home-manager configuration file <
+            ./home-manager/tst-home.nix
+          ];
+        };
       };
     };
 }

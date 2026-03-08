@@ -3,11 +3,9 @@
 { inputs, lib, config, pkgs, ... }: {
   # You can import other home-manager modules here
   imports = [
-
     # pkg
     ../modules/home-manager/base-pkg.nix
-    ../modules/home-manager/extra-pkg.nix
-
+    # ../modules/home-manager/extra-pkg.nix
     # Base config
     ../modules/home-manager/base-config.nix
     ../modules/home-manager/theme.nix
@@ -18,6 +16,6 @@
   # UserNmae
   home = {
     stateVersion = "23.11";
-    username = "shri";
-    homeDirectory = "/home/shri";
+    username = "tst";
+    homeDirectory = "/home/tst";
   };}

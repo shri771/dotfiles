@@ -1,7 +1,7 @@
 { config, lib, pkgs, inputs, ... }:
 
 let
-  # Initialize the unstable channel exactly as you had it
+  # Initialize the unstable channel
   unstable = import inputs.nixpkgs-unstable {
     system = pkgs.system;
     config.allowUnfree = true;
@@ -12,14 +12,10 @@ in
     # --- Media & Video ---
     wf-recorder
     losslesscut-bin
-    ffmpeg
-    obs-studio
     mpv
     cava
     mpc
-    mpd
     ncmpcpp
-    cantata
 
     # --- CLI & Core Utilities ---
     gnumake
@@ -28,7 +24,6 @@ in
     jq
     gcc
     htop
-    btop
     bat
     acpi
     bc
@@ -39,9 +34,7 @@ in
     tree
     wget
     curl
-    zoxide
     plocate
-    powertop
     pv
     stress-ng
     sysbench
@@ -65,13 +58,6 @@ in
     nvme-cli
     libinput
 
-    # --- Reading & Documents ---
-    foliate
-    calibre
-    pandoc
-    marksman
-    glow
-    libreoffice-qt
 
     # --- UI & Desktop Environment (Hyprland/Wayland) ---
     rofi
@@ -114,26 +100,16 @@ in
 
     # --- Apps & GUI Tools ---
     qrencode
-    wireshark
-    eog
-    feh
-    sxiv
     flameshot
     shotwell
     loupe
     qalculate-gtk
-    krita
-    krusader
     nemo
     kdePackages.filelight
-    gnome-boxes
-    virt-manager
-    easyeffects
 
     # --- Development & Containers ---
     nodejs
     docker
-    lazydocker
     minikube
     kubectl
     kubernetes-helm
@@ -143,10 +119,8 @@ in
     flex
     sqlite
     postgresql
-    postman
     direnv
     dysk
-    temporal-cli
 
     # --- Go Language & LSP ---
     go
@@ -168,7 +142,6 @@ in
     john
     encfs
     gnupg
-    gpg-tui
     pinentry-gnome3
     seahorse
     conntrack-tools
@@ -188,11 +161,9 @@ in
     qt6Packages.qt6ct
 
     # --- Miscellaneous ---
-    cowsay
     duf
     evtest
     eza
-    flatpak
     grc
     grim
     inotify-tools
@@ -200,25 +171,18 @@ in
     less
     man
     mtools
-    nginx
     redshift
-    rustc
     slurp
-    sox
     speedtest-cli
     starship
     tmux
     toilet
-    translate-shell
-    typescript
-    variety
     yad
     libnotify
-    ostree
     steam-run
     kdePackages.kpmcore
     languagetool
-    nixfmt-rfc-style # <-- Updated to fix the yellow warning!
+    nixfmt-rfc-style
 
     # --- Unstable Packages ---
     unstable.opencode
