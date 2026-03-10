@@ -5,14 +5,14 @@
   imports = [
 
     # pkg
-    ../modules/home-manager/base-pkg.nix
-    ../modules/home-manager/extra-pkg.nix
+    ../modules/home-manager/pkgs/base.nix
+    ../modules/home-manager/pkgs/extra.nix
 
     # Base config
-    ../modules/home-manager/base-config.nix
+    ../modules/home-manager/core.nix
     ../modules/home-manager/theme.nix
-    ../modules/home-manager/setup-symlink.nix
-    ../modules/home-manager/git-config.nix
+    ../modules/home-manager/links.nix
+    ../modules/home-manager/git.nix
   ];
 
   config = {
