@@ -233,9 +233,6 @@
 
   # System pkgs
   environment.systemPackages = with pkgs; [
-    wget
-    neovim
-    libnotify
     ddcutil # # For monitor brigthness control
     nix-index
     # ciscoPacketTracer8

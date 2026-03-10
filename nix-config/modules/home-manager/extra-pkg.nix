@@ -62,10 +62,5 @@ in
     typescript
     variety
     ostree
-
-    # --- Unstable Packages ---
-    unstable.opencode
-    unstable.gemini-cli
-    unstable.antigravity
   ];
 }

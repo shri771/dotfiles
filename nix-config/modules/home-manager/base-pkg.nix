@@ -26,7 +26,6 @@ in
     wallust
     wtype
     ydotool
-    jq
     bc
     acpi
     brightnessctl
@@ -45,17 +44,13 @@ in
     fd
     tree
     wget
-    curl
     lsd
-    eza
     duf
     ripgrep
-    fzf
     rclone
     rsync
 
     # --- 2. Hyprland / Wayland Stack ---
-    hyprland
     hypridle
     hyprlock
     hyprpolkitagent
@@ -116,7 +111,6 @@ in
     loupe
 
     # --- 6. System, Hardware & Networking ---
-    polkit
     polkit_gnome
     blueman
     bluez-tools
@@ -132,7 +126,6 @@ in
     encfs
     gnupg
     pinentry-gnome3
-    seahorse
     conntrack-tools
     tor
     usbutils
@@ -145,7 +138,6 @@ in
     kdePackages.filelight
     kdePackages.kpmcore
     alacritty
-    kitty
     normcap
 
     # --- 8. Development & Languages ---
@@ -186,7 +178,6 @@ in
 
     # --- 9. Fonts & Theming ---
     font-awesome
-    noto-fonts
     fira-code
     nerd-fonts.jetbrains-mono
     jetbrains-mono
@@ -196,7 +187,6 @@ in
     qt6Packages.qt6ct
 
     # --- 10. Miscellaneous & Tools ---
-    trash-cli
     plocate
     pv
     stress-ng
@@ -207,11 +197,13 @@ in
     less
     man
     speedtest-cli
-    starship
-    tmux
     toilet
     steam-run
     redshift
 
+    # --- 11. Unstable Packages ---
+    unstable.opencode
+    unstable.gemini-cli
+    unstable.antigravity
   ];
 }
