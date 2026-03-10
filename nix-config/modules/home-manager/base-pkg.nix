@@ -33,7 +33,7 @@ in
     pamixer
     pavucontrol
     alsa-utils
-    libpulseaudio
+    pulseaudio
     libnotify
     inotify-tools
     psmisc
@@ -86,7 +86,7 @@ in
     xdotool
     xclip
     wmctrl
-    xprop
+    xorg.xprop
     xdo
     sxhkd
     xorg.xinit
@@ -100,7 +100,6 @@ in
 
     # --- 4. Hardware Specific (ASUS & Laptop) ---
     asusctl
-    rog-control-center
     tlp
     corectrl
     libinput
@@ -214,9 +213,5 @@ in
     steam-run
     redshift
 
-    # --- 11. Unstable Packages ---
-    unstable.opencode
-    unstable.gemini-cli
-    unstable.antigravity
   ];
 }

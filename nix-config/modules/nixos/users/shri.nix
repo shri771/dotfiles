@@ -12,36 +12,6 @@
     ];
 
     shell = pkgs.fish;
-    packages = with pkgs; [
-      gitFull
-      gnome-keyring
-      seahorse
-      libsecret
-      neovim
-      trash-cli
-      curl
-      fish
-      starship
-      brave
-      vivaldi
-      jq
-      zoxide
-      eza
-      kitty
-      carapace
-      fzf
-      home-manager
-      unzip
-      tmux
-      evremap
-      awesome
-      hyprland
-      polkit
-      kdePackages.kate
-      noto-fonts
-      noto-fonts-color-emoji
-      openrgb-with-all-plugins
-    ];
   };
 
   # Define the guest user (with the same permissions but fewer pkgs)

@@ -16,6 +16,9 @@
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
 
+    # Packages
+    ../modules/nixos/user-packages.nix
+
     # Users
     ../modules/nixos/users/shri.nix
     # ../modules/nixos/users/tst.nix
