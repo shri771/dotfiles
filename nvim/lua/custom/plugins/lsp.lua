@@ -109,6 +109,7 @@ return {
         cssls = {}, -- Added CSS LSP
         dockerls = {}, -- Added Docker LSP
         taplo = {}, -- Added TOML LSP
+        nil_ls = {}, -- Nix LSP
 
         -- SQL with proper configuration
         -- sqls = {
@@ -188,6 +189,7 @@ return {
         "markdownlint", -- Markdown linter
         "jsonlint", -- JSON linter
         "stylelint", -- CSS linter
+        "nixfmt", -- Nix formatter (RFC style)
       })
 
       require("mason-tool-installer").setup({

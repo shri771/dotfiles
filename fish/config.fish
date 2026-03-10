@@ -349,11 +349,11 @@ alias .5='cd ../../../../..'
 alias tpcn='sudo nvim /etc/X11/xorg.conf.d/40-libinput.conf'
 alias syscn='cd /etc/systemd/system/ && sn .'
 alias syscn-='cd /etc/systemd/system/'
-alias web='cd /home/sh/WorkSpace/scaler/WebDev/2029-Web-dev-2-Group-C'
+alias web='cd $HOME/WorkSpace/scaler/WebDev/2029-Web-dev-2-Group-C'
 
 # Quick commands
 alias n='nvim'
-alias sn='sudo -E XDG_RUNTIME_DIR=/run/user/$(id -u) HOME=/home/sh nvim'
+alias sn='sudo -E XDG_RUNTIME_DIR=/run/user/$(id -u) HOME=$HOME nvim'
 alias sys='fastfetch'
 alias speed='speedtest'
 alias mke='chmod +x'
@@ -495,8 +495,8 @@ source $HOME/.tenv.completion.fish
 
 
 # The next line updates PATH for the Google Cloud SDK.
-if test -f '/home/sh/backups/google-cloud-sdk/path.fish.inc'
-    source '/home/sh/backups/google-cloud-sdk/path.fish.inc'
+if test -f "$HOME/backups/google-cloud-sdk/path.fish.inc"
+    source "$HOME/backups/google-cloud-sdk/path.fish.inc"
 end
 
 # Check if running on NixOS

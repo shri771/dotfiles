@@ -25,6 +25,7 @@ return {
         javascript = { "prettierd", "prettier" },
         c = { "clang-format" },
         bash = { "shfmt" },
+        nix = { "nixfmt" },
         sql = { "sql-formatter" },
       },
       -- Set default options

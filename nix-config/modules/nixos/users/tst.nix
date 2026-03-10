@@ -12,19 +12,4 @@
 
     shell = pkgs.fish;
   };
-
-  # Define the guest user (with the same permissions but fewer pkgs)
-  users.users.guest = {
-    isNormalUser = true;
-    description = "Guest User";
-    extraGroups = [ "networkmanager" "wheel" "docker" "video" "audio" ];
-    initialPassword = "guest"; # Change this after first login
-    shell = pkgs.fish;
-    packages = with pkgs; [
-      firefox
-      git
-      curl
-      kitty
-    ];
-  };
 }

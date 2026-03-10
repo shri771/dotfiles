@@ -19,6 +19,7 @@ return {
         "fish",
         "sql",
         "go",
+        "nix",
       },
       sync_install = false,
       auto_install = true,

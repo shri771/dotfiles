@@ -3,7 +3,7 @@
 
 # variables
 time=$(date "+%d-%b_%H-%M-%S")
-dir="$(xdg-user-dir)/Pictures/Screenshots"
+dir="${HOME}/Pictures/Screenshots"
 file="Screenshot_${time}_${RANDOM}.png"
 
 iDIR="$HOME/.config/swaync/icons"

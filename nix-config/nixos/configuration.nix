@@ -1,6 +1,13 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{ inputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
@@ -21,7 +28,7 @@
 
     # Users
     ../modules/nixos/users/shri.nix
-    # ../modules/nixos/users/tst.nix
+    ../modules/nixos/users/tst.nix
 
   ];
 
@@ -49,23 +56,26 @@
     };
   };
 
-  nix = let flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
-  in {
-    settings = {
-      # Enable flakes and new 'nix' command
-      experimental-features = "nix-command flakes";
-      # Disable global registry
-      flake-registry = "";
-      # Workaround for https://github.com/NixOS/nix/issues/9574
-      nix-path = config.nix.nixPath;
-    };
+  nix =
+    let
+      flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+    in
+    {
+      settings = {
+        # Enable flakes and new 'nix' command
+        experimental-features = "nix-command flakes";
+        # Disable global registry
+        flake-registry = "";
+        # Workaround for https://github.com/NixOS/nix/issues/9574
+        nix-path = config.nix.nixPath;
+      };
 
-    # Disable channels
-    channel.enable = false;
-    # Opinionated: make flake registry and nix path match flake inputs
-    registry = lib.mapAttrs (_: flake: { inherit flake; }) flakeInputs;
-    nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
-  };
+      # Disable channels
+      channel.enable = false;
+      # Opinionated: make flake registry and nix path match flake inputs
+      registry = lib.mapAttrs (_: flake: { inherit flake; }) flakeInputs;
+      nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
+    };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -135,11 +145,9 @@
   # Touchpad
   services.libinput.enable = true;
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs;
-    [
-      # libglib glibc
-    ];
-
+  programs.nix-ld.libraries = with pkgs; [
+    # libglib glibc
+  ];
 
   # Enable Zram
   zramSwap = {
@@ -168,6 +176,9 @@
   # Fish
   programs.fish.enable = true;
 
+  # Disable legacy command-not-found
+  programs.command-not-found.enable = false;
+
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = false;
@@ -195,7 +206,10 @@
     # Start killing processes when free RAM drops below 5%
     freeMemThreshold = 5;
     # Optional: Prefer killing specific heavy processes (regex)
-    extraArgs = [ "--prefer" "(^|/)(antigravity|language_server|node)$" ];
+    extraArgs = [
+      "--prefer"
+      "(^|/)(antigravity|language_server|node)$"
+    ];
   };
 
   # Install firefox.
@@ -214,8 +228,7 @@
     # Service configuration
     serviceConfig = {
       # In NixOS, we don't use /usr/bin. We reference the package directly.
-      ExecStart =
-        "${pkgs.evremap}/bin/evremap remap /home/shri/.config/evremap/evremap.conf";
+      ExecStart = "${pkgs.evremap}/bin/evremap remap /home/shri/.config/evremap/evremap.conf";
       Restart = "always";
 
       # Evremap usually requires root to grab input devices (/dev/input)
@@ -242,8 +255,7 @@
   programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
-    pinentryPackage =
-      pkgs.pinentry-gnome3; # or pinentry-gtk2, pinentry-qt, pinentry-gnome3
+    pinentryPackage = pkgs.pinentry-gnome3; # or pinentry-gtk2, pinentry-qt, pinentry-gnome3
     enableSSHSupport = true;
   };
 
@@ -287,8 +299,7 @@
 
     # Service configuration
     serviceConfig = {
-      ExecStart =
-        "${pkgs.evremap}/bin/evremap remap /home/shri/dotfiles/evremap/evremap-kero.conf";
+      ExecStart = "${pkgs.evremap}/bin/evremap remap /home/shri/dotfiles/evremap/evremap-kero.conf";
       Restart = "always";
 
       User = "root";
