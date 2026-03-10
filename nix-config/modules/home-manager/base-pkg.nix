@@ -1,4 +1,10 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 let
   # Initialize the unstable channel
@@ -9,62 +15,48 @@ let
 in
 {
   home.packages = with pkgs; [
-    # --- Media & Video ---
-    wf-recorder
-    losslesscut-bin
-    mpv
-    cava
-    mpc
-    ncmpcpp
-
-    # --- CLI & Core Utilities ---
-    gnumake
-    psmisc
-    ripgrep # Fixes Telescope error
+    # --- 1. Common Logic & Utility Packages (Used in both Hypr/Awesome) ---
+    rofi
+    yad
+    cliphist
+    copyq
+    playerctl
+    imagemagick
+    socat
+    wallust
+    wtype
+    ydotool
     jq
-    gcc
-    htop
-    bat
-    acpi
     bc
-    corectrl
-    fastfetch
-    fd
-    lsof
-    tree
-    wget
-    curl
-    plocate
-    pv
-    stress-ng
-    sysbench
-    tlp
-    trash-cli
-    usbutils
-    zbar
-
-    # --- System & Hardware ---
+    acpi
     brightnessctl
     pamixer
     pavucontrol
-    polkit
-    polkit_gnome
-    blueman
-    bluez-tools
-    networkmanagerapplet
-    os-prober
-    gparted
-    dosfstools
-    nvme-cli
-    libinput
+    alsa-utils
+    libpulseaudio
+    libnotify
+    inotify-tools
+    psmisc
+    gnumake
+    gcc
+    htop
+    bat
+    fastfetch
+    fd
+    tree
+    wget
+    curl
+    lsd
+    eza
+    duf
+    ripgrep
+    fzf
+    rclone
+    rsync
 
-
-    # --- UI & Desktop Environment (Hyprland/Wayland) ---
-    rofi
-    alacritty
-    kitty
-    hypridle
+    # --- 2. Hyprland / Wayland Stack ---
     hyprland
+    hypridle
     hyprlock
     hyprpolkitagent
     pyprland
@@ -79,64 +71,62 @@ in
     kanshi
     nwg-displays
     nwg-look
-    cliphist
     wl-clipboard
+    grim
+    slurp
+    wf-recorder
     batsignal
 
-    # --- X11 Utilities (Fallback/Tools) ---
-    arandr
-    i3blocks
+    # --- 3. AwesomeWM / X11 Stack ---
+    polybar
+    picom
     lxappearance
     nitrogen
-    numlockx
-    picom
-    polybar
-    sxhkd
-    xclip
+    arandr
     xdotool
+    xclip
+    wmctrl
+    xprop
+    xdo
+    sxhkd
     xorg.xinit
     xss-lock
-    ydotool
+    numlockx
+    scrot
+    i3lock-color
+    clipnotify
+    i3blocks
+    eww
 
-    # --- Apps & GUI Tools ---
-    qrencode
-    flameshot
+    # --- 4. Hardware Specific (ASUS & Laptop) ---
+    asusctl
+    rog-control-center
+    tlp
+    corectrl
+    libinput
+    bibata-cursors
+
+    # --- 5. Media & Video ---
+    vlc
+    mpv
+    cava
+    mpc
+    ncmpcpp
+    losslesscut-bin
     shotwell
     loupe
-    qalculate-gtk
-    nemo
-    kdePackages.filelight
 
-    # --- Development & Containers ---
-    nodejs
-    docker
-    minikube
-    kubectl
-    kubernetes-helm
-    gh
-    cmake
-    meson
-    flex
-    sqlite
-    postgresql
-    direnv
-    dysk
-
-    # --- Go Language & LSP ---
-    go
-    gopls
-    (lib.lowPrio gotools)
-    golangci-lint
-    delve
-    sqls
-    gofumpt
-
-    # --- Python ---
-    python3
-    pipx
-    uv
-
-    # --- Networking & Security ---
+    # --- 6. System, Hardware & Networking ---
+    polkit
+    polkit_gnome
+    blueman
+    bluez-tools
+    networkmanagerapplet
+    os-prober
+    gparted
+    dosfstools
+    nvme-cli
+    kdePackages.dolphin
     nmap
     hashcat
     john
@@ -146,10 +136,56 @@ in
     seahorse
     conntrack-tools
     tor
-    rclone
-    rsync
+    usbutils
+    mtools
 
-    # --- Fonts & Theming ---
+    # --- 7. Apps & GUI Tools ---
+    qrencode
+    qalculate-gtk
+    nemo
+    kdePackages.filelight
+    kdePackages.kpmcore
+    alacritty
+    kitty
+    normcap
+
+    # --- 8. Development & Languages ---
+    # Containers & Cloud
+    docker
+    minikube
+    kubectl
+    kubernetes-helm
+    gh
+    # C/C++ & General Dev
+    cmake
+    meson
+    flex
+    sqlite
+    postgresql
+    direnv
+    dysk
+    # Go Language
+    go
+    gopls
+    (lib.lowPrio gotools)
+    golangci-lint
+    delve
+    sqls
+    gofumpt
+    # Python
+    pipx
+    uv
+    (pkgs.python3.withPackages (python-pkgs: [
+      python-pkgs.numpy
+      python-pkgs.pip
+    ]))
+    # Misc Dev
+    nodejs
+    jdk
+    nixfmt-rfc-style
+    languagetool
+
+    # --- 9. Fonts & Theming ---
     font-awesome
     noto-fonts
     fira-code
@@ -160,31 +196,25 @@ in
     libsForQt5.qt5ct
     qt6Packages.qt6ct
 
-    # --- Miscellaneous ---
-    duf
+    # --- 10. Miscellaneous & Tools ---
+    trash-cli
+    plocate
+    pv
+    stress-ng
+    sysbench
+    zbar
     evtest
-    eza
     grc
-    grim
-    inotify-tools
-    jdk
     less
     man
-    mtools
-    redshift
-    slurp
     speedtest-cli
     starship
     tmux
     toilet
-    yad
-    libnotify
     steam-run
-    kdePackages.kpmcore
-    languagetool
-    nixfmt-rfc-style
+    redshift
 
-    # --- Unstable Packages ---
+    # --- 11. Unstable Packages ---
     unstable.opencode
     unstable.gemini-cli
     unstable.antigravity
