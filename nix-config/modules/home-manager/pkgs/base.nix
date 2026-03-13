@@ -171,7 +171,7 @@ in
       python-pkgs.pip
     ]))
     # Misc Dev
-    nodejs
+    unstable.nodejs
     jdk
     nixfmt-rfc-style
     languagetool

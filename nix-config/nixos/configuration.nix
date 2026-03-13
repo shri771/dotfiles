@@ -25,6 +25,7 @@
 
     # Packages
     ../modules/nixos/user-packages.nix
+    ../modules/nixos/sddm.nix
 
     # Users
     ../modules/nixos/users/shri.nix
@@ -180,7 +181,6 @@
   programs.command-not-found.enable = false;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = false;
 
   # WireShrak
