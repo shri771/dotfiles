@@ -78,17 +78,30 @@
       nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
     };
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 4;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.timeout = 1;
+  # Boot
+  boot = {
+    # Bootloader configuration
+    loader = {
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 4;
+      };
 
-  # Use latest version
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+      efi.canTouchEfiVariables = true;
+      timeout = 1;
+    };
 
-  # Load kernel Mdoules
-  boot.kernelModules = [ "i2c-dev" ];
+    # Use the latest Linux kernel package set
+    kernelPackages = pkgs.linuxPackages_latest;
+
+    # Disable USB autosuspend.
+    kernelParams = [ "usbcore.autosuspend=-1" ];
+
+    # Kernel modules that should be loaded during boot
+    kernelModules = [
+      "i2c-dev"
+    ];
+  };
 
   # Netowrk
   networking.hostName = "shri-nix";

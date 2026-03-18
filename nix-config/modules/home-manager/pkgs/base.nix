@@ -49,6 +49,7 @@ in
     ripgrep
     rclone
     rsync
+    rquickshare
 
     # --- 2. Hyprland / Wayland Stack ---
     hypridle

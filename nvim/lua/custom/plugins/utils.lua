@@ -356,6 +356,38 @@ return {
       },
     },
   },
+  {
+    "rmagatti/goto-preview",
+    event = "LspAttach",
+    opts = {
+      width = 120,
+      height = 25,
+      border = { "↖", "─", "╮", "│", "╯", "─", "╰", "│" },
+      default_mappings = false, -- we'll set our own
+      resizing_mappings = false,
+      post_open_hook = nil,
+    },
+    config = function(_, opts)
+      local gtp = require("goto-preview")
+      gtp.setup(opts)
+      vim.keymap.set("n", "gpd", function()
+        gtp.goto_preview_definition()
+      end, { desc = "Preview Definition" })
+      vim.keymap.set("n", "gpt", function()
+        gtp.goto_preview_type_definition()
+      end, { desc = "Preview Type Definition" })
+      vim.keymap.set("n", "gpi", function()
+        gtp.goto_preview_implementation()
+      end, { desc = "Preview Implementation" })
+      vim.keymap.set("n", "gpr", function()
+        gtp.goto_preview_references()
+      end, { desc = "Preview References" })
+      vim.keymap.set("n", "gpd", function()
+        gtp.close_all_win()
+      end, { desc = "Close All Previews" })
+    end,
+  },
+
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
