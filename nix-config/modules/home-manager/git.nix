@@ -3,8 +3,6 @@
 {
   programs.git = {
     enable = true;
-    userName = "Shrikant Shingare";
-    userEmail = "shrikantshingare77@gmail.com";
 
     # This single line handles all your filter.lfs.* settings automatically!
     lfs.enable = true;
@@ -14,7 +12,12 @@
       signByDefault = true;
     };
 
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Shrikant Shingare";
+        email = "shrikantshingare77@gmail.com";
+      };
+
       init = { defaultBranch = "master"; };
       pull = { rebase = true; };
 

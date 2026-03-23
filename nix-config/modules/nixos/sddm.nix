@@ -14,8 +14,12 @@ let
     };
 
     installPhase = ''
-      mkdir -p $out/share/sddm/themes
-      cp -r ittu $out/share/sddm/themes/ittu
+      mkdir -p $out/share/sddm/themes/ittu
+      if [ -d "ittu" ]; then
+        cp -aR ittu/* $out/share/sddm/themes/ittu/
+      else
+        cp -aR * $out/share/sddm/themes/ittu/
+      fi
     '';
   };
 in
@@ -26,19 +30,22 @@ in
     # but let's try to keep it for performance first.
     wayland.enable = false; 
     theme = "ittu";
-    package = pkgs.libsForQt5.sddm;
+    package = pkgs.kdePackages.sddm;
     
-    # Use only the theme here first. SDDM will try to use its default Qt version.
+    # Add theme and dependencies to SDDM's environment
     extraPackages = [
       ittu-sddm-theme
+      pkgs.kdePackages.qt5compat
+      pkgs.kdePackages.qtdeclarative
+      pkgs.kdePackages.qtsvg
     ];
   };
 
   environment.systemPackages = [
     ittu-sddm-theme
-    pkgs.libsForQt5.qtgraphicaleffects
-    pkgs.libsForQt5.qtquickcontrols2
-    pkgs.libsForQt5.qtsvg
+    pkgs.kdePackages.qt5compat
+    pkgs.kdePackages.qtdeclarative
+    pkgs.kdePackages.qtsvg
   ];
 
   # Extra SDDM Tweaks

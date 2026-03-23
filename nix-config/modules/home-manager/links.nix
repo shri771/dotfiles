@@ -1,8 +1,13 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   dotfiles = "${config.home.homeDirectory}/dotfiles";
-  
+
   # Helper to create out-of-store symlinks
   mkLink = name: {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/${name}";
@@ -23,7 +28,6 @@ let
     "alacritty"
     "polybar"
     "fish"
-    "btop"
     "wlogout"
     "swappy"
     "awesome"
@@ -53,5 +57,6 @@ in
   ];
 
   # --- 3. TMUXIFIER LAYOUTS ---
-  home.file.".tmuxifier/layouts".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/scripts/tmuxifier";
+  home.file.".tmuxifier/layouts".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/scripts/tmuxifier";
 }
