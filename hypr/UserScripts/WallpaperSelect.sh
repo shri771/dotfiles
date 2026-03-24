@@ -1,10 +1,15 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 # This script for selecting wallpapers (SUPER W)
 
 # WALLPAPERS PATH
 wallDIR="$HOME/Pictures/wallpapers"
-SCRIPTSDIR="$HOME/.config/hypr/scripts"
+fallbackDIR="$HOME/dotfiles/Wallpaper"
+# Use script location to find other scripts
+SCRIPTSDIR="$(dirname "$(realpath "$0")")"
+# If we know where the main scripts are relative to this script:
+# e.g., if this is in hypr/UserScripts and other scripts are in hypr/scripts:
+MAIN_SCRIPTSDIR="$(dirname "$(dirname "$(realpath "$0")")")/scripts"
 
 # variables
 focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
@@ -20,8 +25,24 @@ if pidof swaybg > /dev/null; then
   pkill swaybg
 fi
 
+# Check which directories exist and add them to find command
+searchDIRS=()
+[[ -d "$wallDIR" ]] && searchDIRS+=("$wallDIR")
+[[ -d "$fallbackDIR" ]] && searchDIRS+=("$fallbackDIR")
+
+if [[ ${#searchDIRS[@]} -eq 0 ]]; then
+  echo "No wallpaper directories found. Please check your configuration."
+  exit 1
+fi
+
 # Retrieve image files using null delimiter to handle spaces in filenames
-mapfile -d '' PICS < <(find "${wallDIR}" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) -print0)
+mapfile -d '' PICS < <(find "${searchDIRS[@]}" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) -print0)
+
+# Check if any images were found
+if [[ ${#PICS[@]} -eq 0 ]]; then
+    echo "No images found in ${searchDIRS[*]}"
+    exit 1
+fi
 
 RANDOM_PIC="${PICS[$((RANDOM % ${#PICS[@]}))]}"
 RANDOM_PIC_NAME=". random"
@@ -31,8 +52,8 @@ rofi_command="rofi -i -show -dmenu -config ~/.config/rofi/config-wallpaper.rasi"
 
 # Sorting Wallpapers
 menu() {
-  # Sort the PICS array
-  IFS=$'\n' sorted_options=($(sort <<<"${PICS[*]}"))
+  # Sort the PICS array properly
+  mapfile -t sorted_options < <(printf "%s\n" "${PICS[@]}" | sort)
 
   # Place ". random" at the beginning with the random picture as an icon
   printf "%s\x00icon\x1f%s\n" "$RANDOM_PIC_NAME" "$RANDOM_PIC"
@@ -70,9 +91,9 @@ main() {
   if [[ "$choice" == "$RANDOM_PIC_NAME" ]]; then
 	swww img -o "$focused_monitor" "$RANDOM_PIC" $SWWW_PARAMS;
     sleep 2
-    "$SCRIPTSDIR/WallustSwww.sh"
+    "$MAIN_SCRIPTSDIR/WallustSwww.sh"
     sleep 0.5
-    "$SCRIPTSDIR/Refresh.sh"
+    "$MAIN_SCRIPTSDIR/Refresh.sh"
     exit 0
   fi
 
@@ -102,9 +123,9 @@ fi
 main
 
 wait $!
-"$SCRIPTSDIR/WallustSwww.sh" &&
+"$MAIN_SCRIPTSDIR/WallustSwww.sh" &&
 
 wait $!
 sleep 2
-"$SCRIPTSDIR/Refresh.sh"
+"$MAIN_SCRIPTSDIR/Refresh.sh"
 
