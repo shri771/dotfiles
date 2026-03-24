@@ -12,11 +12,11 @@ configuration {
 	me-select-entry:            "MouseSecondary";
     me-accept-entry:            "MousePrimary";
 	window-format:              "{w} · {c} · {t}";
-	dpi:						1;
+	dpi:						0;
 }
 
 /* ---- Load wallust colors ---- */
-@theme "~/.config/rofi/wallust/colors-rofi.rasi"
+@theme "wallust/colors-rofi.rasi"
 
 /* ---- Global Properties ---- */
 * {

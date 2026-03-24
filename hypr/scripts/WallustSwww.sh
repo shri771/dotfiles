@@ -21,13 +21,23 @@ echo $cache_file
 if [ -f "$cache_file" ]; then
     # Get the wallpaper path from the cache file
     wallpaper_path=$(grep -v 'Lanczos3' "$cache_file" | head -n 1)
-    echo $wallpaper_path
+    
+    if [[ -z "$wallpaper_path" ]]; then
+        echo "Error: wallpaper_path is empty."
+        exit 1
+    fi
+    echo "Found wallpaper: $wallpaper_path"
+
+    # Ensure target directories exist
+    mkdir -p "$HOME/.config/rofi"
+    mkdir -p "$HOME/.config/hypr/wallpaper_effects"
+
     # symlink the wallpaper to the location Rofi can access
     if ln -sf "$wallpaper_path" "$HOME/.config/rofi/.current_wallpaper"; then
         ln_success=true  # Set the flag to true upon successful execution
     fi
     # copy the wallpaper for wallpaper effects
-	cp -r "$wallpaper_path" "$HOME/.config/hypr/wallpaper_effects/.wallpaper_current"
+	cp -f "$wallpaper_path" "$HOME/.config/hypr/wallpaper_effects/.wallpaper_current"
 fi
 
 # Check the flag before executing further commands

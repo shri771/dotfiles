@@ -1,6 +1,6 @@
 /* Main Config (wallpaper) */
 
-@import "~/.config/rofi/master-config.rasi"  
+@import "master-config.rasi"  
 
 /* ---- Configuration ---- */ 
 configuration {
