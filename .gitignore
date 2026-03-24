@@ -1,3 +1,4 @@
 nvim/undo
 tmux/plugins
 sessions/*
+fish/fish_variables
