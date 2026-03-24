@@ -320,8 +320,8 @@
   };
 
   ## If running in VM
-  services.qemuGuest.enable = true;
-  services.spice-vdagentd.enable = true;
+  # services.qemuGuest.enable = true;
+  # services.spice-vdagentd.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.11";
