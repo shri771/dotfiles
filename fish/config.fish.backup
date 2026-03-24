@@ -465,5 +465,7 @@ if command -q zoxide
 end
 ##For go
 fish_add_path $HOME/go/bin
-source $HOME/.tenv.completion.fish
+if test -f "$HOME/.tenv.completion.fish"
+    source "$HOME/.tenv.completion.fish"
+end
 

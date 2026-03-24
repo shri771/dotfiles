@@ -1,48 +1,48 @@
-# set -Ux PERL5LIB /usr/share/perl5/vendor_perl
+# set -gx PERL5LIB /usr/share/perl5/vendor_perl
 # ====================================
 # ENVIRONMENT VARIABLES & INITIAL SETUP
 # ====================================
-set -U fish_greeting ""
-set -x MANPAGER "nvim +Man!"
+set -g fish_greeting ""
+set -gx MANPAGER "nvim +Man!"
 
 ## For meshery !! Caution caussing problem in tmux
 # set -x TERM xterm
 
 # Set Neovim as the default editor
-set -x VISUAL nvim
-set -x EDITOR nvim
+set -gx VISUAL nvim
+set -gx EDITOR nvim
 
 # ====================================
 # FISH COLORS & SYNTAX HIGHLIGHTING
 # ====================================
 # Use your existing color scheme
-set -U fish_color_autosuggestion 7d7d7d
-set -U fish_color_cancel -r
-set -U fish_color_command brcyan
-set -U fish_color_comment brmagenta
-set -U fish_color_cwd green
-set -U fish_color_cwd_root red
-set -U fish_color_end green
-set -U fish_color_error ff6c6b
-set -U fish_color_escape brcyan
-set -U fish_color_history_current --bold
-set -U fish_color_host normal
-set -U fish_color_host_remote yellow
-set -U fish_color_normal brcyan
-set -U fish_color_operator brcyan
-set -U fish_color_param brcyan
-set -U fish_color_quote yellow
-set -U fish_color_redirection cyan --bold
-set -U fish_color_search_match white --background=brblack
-set -U fish_color_selection white --bold --background=brblack
-set -U fish_color_status red
-set -U fish_color_user brgreen
-set -U fish_color_valid_path --underline
-set -U fish_pager_color_completion normal
-set -U fish_pager_color_description yellow -i
-set -U fish_pager_color_prefix normal --bold --underline
-set -U fish_pager_color_progress brwhite --background=cyan
-set -U fish_pager_color_selected_background -r
+set -g fish_color_autosuggestion 7d7d7d
+set -g fish_color_cancel -r
+set -g fish_color_command brcyan
+set -g fish_color_comment brmagenta
+set -g fish_color_cwd green
+set -g fish_color_cwd_root red
+set -g fish_color_end green
+set -g fish_color_error ff6c6b
+set -g fish_color_escape brcyan
+set -g fish_color_history_current --bold
+set -g fish_color_host normal
+set -g fish_color_host_remote yellow
+set -g fish_color_normal brcyan
+set -g fish_color_operator brcyan
+set -g fish_color_param brcyan
+set -g fish_color_quote yellow
+set -g fish_color_redirection cyan --bold
+set -g fish_color_search_match white --background=brblack
+set -g fish_color_selection white --bold --background=brblack
+set -g fish_color_status red
+set -g fish_color_user brgreen
+set -g fish_color_valid_path --underline
+set -g fish_pager_color_completion normal
+set -g fish_pager_color_description yellow -i
+set -g fish_pager_color_prefix normal --bold --underline
+set -g fish_pager_color_progress brwhite --background=cyan
+set -g fish_pager_color_selected_background -r
 
 # Custom fzf color scheme, inheriting the terminal background
 # --- FZF CONFIGURATION (for jethrokuan/fzf plugin) ---
@@ -59,12 +59,12 @@ set -x FZF_DEFAULT_OPTS "\
 --color=info:#bd93f9,pointer:#ff79c6,marker:#ff79c6,fg+:#f8f8f2 \
 --color=prompt:#50fa7b,hl+:#f8f8f2,border:#6272a4,bg+:reverse"
 
-set -U FZF_TMUX 1
+set -g FZF_TMUX 1
 
 # ====================================
 # KEY BINDINGS
 # ====================================
-set -U fish_key_bindings fish_default_key_bindings
+set -g fish_key_bindings fish_default_key_bindings
 
 function fish_user_key_bindings
     bind \cb backward-word
@@ -487,11 +487,14 @@ if command -q zoxide
     zoxide init fish | source
 end
 # This sets GOBIN and exports it for other apps (like Neovim) to see
-set -x GOBIN "$HOME/go/bin"
+set -gx GOBIN "$HOME/go/bin"
 
 # This adds the GOBIN directory to your PATH
 fish_add_path "$GOBIN"
-source $HOME/.tenv.completion.fish
+
+if test -f "$HOME/.tenv.completion.fish"
+    source "$HOME/.tenv.completion.fish"
+end
 
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -524,8 +527,9 @@ end
 carapace _carapace | source
 #y>yVR#Z<3>R?)*=.$:j)
 # Use GPG agent for SSH
-set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
-set -x GPG_TTY (tty)
-zoxide init fish | source
+set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+set -gx GPG_TTY (tty)
 set -gx TMUXIFIER ~/.config/tmux/plugins/tmuxifier
-source $TMUXIFIER/init.fish
+if test -f "$TMUXIFIER/init.fish"
+    source "$TMUXIFIER/init.fish"
+end
