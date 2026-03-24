@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Start the GNOME Keyring daemon and export its environment variables
 eval $(gnome-keyring-daemon --start)

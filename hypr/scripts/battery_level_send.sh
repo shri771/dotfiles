@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Configuration
 BATTERY_PATH="/sys/class/power_supply/BAT0"

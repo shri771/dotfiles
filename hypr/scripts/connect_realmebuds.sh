@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Bluetooth Device MAC Address (Update this with your device's MAC)
 BT_DEVICE_MAC="98:47:44:77:AA:AA"

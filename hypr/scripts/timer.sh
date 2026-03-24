@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Clipboard Manager using cliphist and rofi
 
 # Variables

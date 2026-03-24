@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # Idle Inhibitor Timer Script for Sway/Hyprland
 # Uses wofi/rofi for menu selection and hyprctl/swaymsg for idle inhibition.

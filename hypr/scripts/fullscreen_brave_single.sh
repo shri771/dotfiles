@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Ensure XDG_RUNTIME_DIR is set correctly
 export XDG_RUNTIME_DIR="/run/user/$(id -u)"

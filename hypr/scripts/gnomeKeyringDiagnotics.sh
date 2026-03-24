@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # GNOME Keyring Diagnostic and Status Check Script
 
 echo "╔════════════════════════════════════════════════════════════════╗"

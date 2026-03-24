@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # GNOME Keyring startup for NixOS/Hyprland
 
 # Find gnome-keyring-daemon in the Nix store

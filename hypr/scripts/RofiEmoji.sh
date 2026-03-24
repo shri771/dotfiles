@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Rofi Emoticons. Not my own. Cant remember the source
 
 set -euo pipefail

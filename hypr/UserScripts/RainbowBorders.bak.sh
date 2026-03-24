@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # for rainbow borders animation
 
 function random_hex() {

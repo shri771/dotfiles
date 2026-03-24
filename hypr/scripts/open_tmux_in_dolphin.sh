@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Check if running inside Hyprland
 if [[ -z "$HYPRLAND_INSTANCE_SIGNATURE" ]]; then
