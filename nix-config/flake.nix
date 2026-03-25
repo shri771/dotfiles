@@ -57,7 +57,7 @@
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
         shri-nix = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs; primaryUser = "shri"; };
           modules = [
             # > Our main nixos configuration file <
             ./nixos/configuration.nix

@@ -5,8 +5,12 @@
   lib,
   config,
   pkgs,
+  primaryUser,
   ...
 }:
+let
+  home = config.users.users.${primaryUser}.home;
+in
 {
   # You can import other NixOS modules here
   imports = [
@@ -241,7 +245,7 @@
     # Service configuration
     serviceConfig = {
       # In NixOS, we don't use /usr/bin. We reference the package directly.
-      ExecStart = "${pkgs.evremap}/bin/evremap remap /home/shri/.config/evremap/evremap.conf";
+      ExecStart = "${pkgs.evremap}/bin/evremap remap ${home}/dotfiles/evremap/evremap.conf";
       Restart = "always";
 
       # Evremap usually requires root to grab input devices (/dev/input)
