@@ -61,6 +61,16 @@
           modules = [
             # > Our main nixos configuration file <
             ./nixos/configuration.nix
+            ./nixos/hardware-configuration.nix
+          ];
+        };
+
+        # Custom live ISO: Hyprland + SDDM + dotfiles + offline install
+        iso = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; primaryUser = "shri"; };
+          modules = [
+            ./nixos/configuration.nix
+            ./nixos/iso.nix
           ];
         };
       };

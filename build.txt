@@ -1,0 +1,1 @@
+nix build /home/shri/dotfiles/nix-config#nixosConfigurations.iso.config.system.build.isoImage --out-link /home/shri/Downloads/ISO --log-format bar-with-logs

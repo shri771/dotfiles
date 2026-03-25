@@ -24,8 +24,8 @@ in
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
 
-    # Import your generated (nixos-generate-config) hardware configuration
-    ./hardware-configuration.nix
+    # NOTE: hardware-configuration.nix is imported from flake.nix (not here)
+    # so the ISO build doesn't inherit machine-specific disk mounts.
 
     # Packages
     ../modules/nixos/user-packages.nix
