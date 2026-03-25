@@ -4,39 +4,48 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
+  imports =
+    [ (modulesPath + "/installer/scan/not-detected.nix")
+    ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "uas" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/7e132162-2941-4c89-b80d-92032e646103";
-    fsType = "btrfs";
-    options = [ "subvol=@" ];
-  };
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/c245730d-0316-4293-8272-d83db5de4151";
+      fsType = "btrfs";
+      options = [ "subvol=@" ];
+    };
 
-  fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/7e132162-2941-4c89-b80d-92032e646103";
-    fsType = "btrfs";
-    options = [ "subvol=@nix" ];
-  };
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/c245730d-0316-4293-8272-d83db5de4151";
+      fsType = "btrfs";
+      options = [ "subvol=@nix" ];
+    };
 
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/c8230590-a9fd-40d1-a58a-f387cd0f31c6";
-    fsType = "ext4";
-  };
+  fileSystems."/var/log" =
+    { device = "/dev/disk/by-uuid/c245730d-0316-4293-8272-d83db5de4151";
+      fsType = "btrfs";
+      options = [ "subvol=@log" ];
+    };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/115D-836B";
-    fsType = "vfat";
-    options = [ "fmask=0022" "dmask=0022" ];
-  };
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/c8230590-a9fd-40d1-a58a-f387cd0f31c6";
+      fsType = "ext4";
+    };
 
-  swapDevices = [ ];
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/7684-3AAF";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
+    };
+
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/aa8293b5-4a1a-492a-9ad9-e6d63fd91aaa"; }
+    ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode =
-    lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
