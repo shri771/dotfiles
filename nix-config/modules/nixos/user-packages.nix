@@ -12,6 +12,7 @@
     evremap
     trash-cli
     home-manager
+    exfatprogs
 
     # Shell & Terminal
     fish
@@ -38,7 +39,7 @@
     openrgb-with-all-plugins
     noto-fonts
     noto-fonts-color-emoji
-    
+
     # Window Managers (Binaries)
     awesome
     hyprland

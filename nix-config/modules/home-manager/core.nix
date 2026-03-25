@@ -1,10 +1,13 @@
-{ inputs, lib, config, pkgs, ... }:
+{ inputs, lib, config, pkgs, osConfig ? null, ... }:
 
 {
   config = {
     # home-manager.backupFileExtension = "backup"; # Removed from here
 
-    nixpkgs = {
+    # Only set nixpkgs options in standalone mode.
+    # When used as a NixOS module with useGlobalPkgs, the system's
+    # nixpkgs config (overlays, allowUnfree) is inherited automatically.
+    nixpkgs = lib.mkIf (osConfig == null) {
       # You can add overlays here
       overlays = [
         # Add overlays your own flake exports (from overlays and pkgs dir):
