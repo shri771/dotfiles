@@ -26,7 +26,7 @@ in
   boot.loader.timeout = lib.mkForce 10;
 
   # --- ISO naming ---
-  isoImage.isoName = "shri-nix-${config.system.nixos.release}-live.iso";
+  image.fileName = "shri-nix-${config.system.nixos.release}-live.iso";
   isoImage.volumeID = "SHRI_NIX_LIVE";
 
   # --- Faster SquashFS compression (huge build-time win over default xz) ---
@@ -47,6 +47,7 @@ in
   # --- Passwordless sudo for live use ---
   security.sudo.wheelNeedsPassword = lib.mkForce false;
 
+
   # --- Live-only packages ---
   environment.systemPackages = with pkgs; [
     disko    # auto-partitioning (community gold standard)
@@ -58,6 +59,58 @@ in
   systemd.services.evremap-main.enable = lib.mkForce false;
   systemd.services.evremap-kreo.enable = lib.mkForce false;
 
+  # --- Prepare writable home directories with XDG structure ---
+  # Creates standard XDG dirs + app-specific data dirs needed by:
+  # fish, zoxide, gnupg, cliphist, mpd, go, starship, direnv, gtk
+  system.activationScripts.prepareUserHomes =
+    let
+      normalUsers = builtins.filter (u: config.users.users.${u}.isNormalUser) (
+        builtins.attrNames config.users.users
+      );
+    in
+    lib.stringAfter [ "users" "groups" ] ''
+      ${builtins.concatStringsSep "\n" (
+        map (
+          u:
+          let
+            userHome = config.users.users.${u}.home;
+          in
+          ''
+            echo "Preparing home for ${u}..."
+
+            # --- Standard XDG directories ---
+            mkdir -p ${userHome}/.config
+            mkdir -p ${userHome}/.local/share
+            mkdir -p ${userHome}/.local/state
+            mkdir -p ${userHome}/.cache
+
+            # --- App-specific data directories ---
+            # Fish shell (history, completions, functions)
+            mkdir -p ${userHome}/.local/share/fish
+            # Zoxide (database)
+            mkdir -p ${userHome}/.local/share/zoxide
+            # GnuPG (keys and config)
+            mkdir -p ${userHome}/.gnupg
+            chmod 700 ${userHome}/.gnupg
+            # Cliphist (clipboard history)
+            mkdir -p ${userHome}/.cache/cliphist
+            # MPD (music player daemon)
+            mkdir -p ${userHome}/.local/share/mpd
+            mkdir -p ${userHome}/.config/mpd
+            # Go (GOPATH)
+            mkdir -p ${userHome}/go/bin
+            # Direnv (allow files)
+            mkdir -p ${userHome}/.local/share/direnv
+            # GTK theming
+            mkdir -p ${userHome}/.config/gtk-3.0
+            mkdir -p ${userHome}/.config/gtk-4.0
+
+            chown -R ${u}:users ${userHome}
+          ''
+        ) normalUsers
+      )}
+    '';
+
   # --- Copy dotfiles into each normal user's home directory ---
   system.activationScripts.copyDotfiles =
     let
@@ -65,7 +118,7 @@ in
         builtins.attrNames config.users.users
       );
     in
-    ''
+    lib.stringAfter [ "prepareUserHomes" ] ''
       ${builtins.concatStringsSep "\n" (
         map (
           u:
