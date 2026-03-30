@@ -109,8 +109,6 @@ return {
         cssls = {}, -- Added CSS LSP
         dockerls = {}, -- Added Docker LSP
         taplo = {}, -- Added TOML LSP
-        nil_ls = {}, -- Nix LSP
-
         -- SQL with proper configuration
         -- sqls = {
         --   settings = {
@@ -206,6 +204,11 @@ return {
             require("lspconfig")[server_name].setup(server)
           end,
         },
+      })
+
+      -- Manually setup servers that aren't managed by Mason
+      require("lspconfig").nil_ls.setup({
+        capabilities = capabilities,
       })
     end,
   },

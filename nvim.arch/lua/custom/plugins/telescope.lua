@@ -1,9 +1,7 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.8",
     event = "VimEnter",
-    branch = "0.1.x",
     dependencies = {
       "mrloop/telescope-git-branch.nvim",
       "nvim-lua/plenary.nvim",

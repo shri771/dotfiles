@@ -6,7 +6,7 @@ declare -A PLAYLISTS=(
     ["Cheerful"]="https://music.youtube.com/playlist?list=PLOlHDApPp3YvM3Ov9rnFCrT5jha8DWVGu"
     ["Feel-Good💖"]="https://music.youtube.com/playlist?list=PLOlHDApPp3YtOYIj_1S_NSBLavu9JsoNY"
     ["Remix"]="https://music.youtube.com/playlist?list=PLOlHDApPp3Yu68BquCuanfY5VOF4dFBk7"
-    ["Current"]="https://music.youtube.com/playlist?list=PLOlHDApPp3YtW4ZLuuP7cXFKBqAKI4ALP"
+    ["Current"]="https://music.youtube.com/playlist?list=PLOlHDApPp3YuSjQw10fSiRpjdAFfs8VkG&si=KbOgKpnlcz6uuqD6"
 )
 
 # Function to sanitize filenames

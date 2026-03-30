@@ -35,6 +35,10 @@ in
     ../modules/nixos/users/shri.nix
     ../modules/nixos/users/tst.nix
 
+    # Docker-Container
+    ../modules/nixos/Docker-Container/vaultwarden.nix
+    ../modules/nixos/Docker-Container/linkwarden.nix
+
   ];
 
   nixpkgs = {
@@ -326,6 +330,9 @@ in
   ## If running in VM
   # services.qemuGuest.enable = true;
   # services.spice-vdagentd.enable = true;
+
+  # Docker-Container
+  services.my-vaultwarden.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.11";

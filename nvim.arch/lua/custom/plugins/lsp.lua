@@ -254,6 +254,11 @@ return {
           end,
         },
       })
+
+      -- Manually setup servers that aren't managed by Mason
+      require("lspconfig").nil_ls.setup({
+        capabilities = capabilities,
+      })
     end,
   },
 }

@@ -174,6 +174,7 @@ in
     # Misc Dev
     unstable.nodejs
     jdk
+    nil
     nixfmt-rfc-style
     languagetool
 
