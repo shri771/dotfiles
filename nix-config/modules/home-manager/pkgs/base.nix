@@ -9,7 +9,7 @@
 let
   # Initialize the unstable channel
   unstable = import inputs.nixpkgs-unstable {
-    system = pkgs.system;
+    system = pkgs.stdenv.hostPlatform.system;
     config.allowUnfree = true;
   };
 in
@@ -120,7 +120,6 @@ in
     gparted
     dosfstools
     nvme-cli
-    kdePackages.dolphin
     nmap
     hashcat
     john
@@ -131,6 +130,22 @@ in
     tor
     usbutils
     mtools
+
+    ## Dolphin
+    kdePackages.dolphin
+    kdePackages.solid # Hardware/USB detection
+    kdePackages.kio-extras # Core KIO protocols + basic previews
+    kdePackages.kdegraphics-thumbnailers # Image thumbnails
+    kdePackages.ffmpegthumbs # Video thumbnails
+    kdePackages.kimageformats # Extra image formats
+    kdePackages.dolphin-plugins # Git, checksum plugins
+    kdePackages.ark # Archive support
+    kdePackages.konsole
+    # Add these for phone/MTP support
+    libmtp # Core MTP protocol library
+    mtpfs # FUSE MTP filesystem
+    jmtpfs # Better MTP support
+    gvfs # Virtual filesystem (handles MTP mounting)
 
     # --- 7. Apps & GUI Tools ---
     qrencode
@@ -202,6 +217,7 @@ in
     toilet
     steam-run
     redshift
+    yt-dlp
 
     # --- 11. Unstable Packages ---
     unstable.opencode

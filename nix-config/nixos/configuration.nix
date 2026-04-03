@@ -331,8 +331,16 @@ in
   # services.qemuGuest.enable = true;
   # services.spice-vdagentd.enable = true;
 
+  # USB
+  services.udisks2.enable = true;
+  services.udev.extraRules = ''
+    SUBSYSTEMS=="usb", ENV{UDISKS_SYSTEM}="0", ENV{UDISKS_IGNORE}="0"
+  '';
+  services.gvfs.enable = true; # For mtp
+
   # Docker-Container
   services.my-vaultwarden.enable = true;
+  services.my-linkwarden.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.11";
