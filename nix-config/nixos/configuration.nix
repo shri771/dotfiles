@@ -260,7 +260,7 @@ in
 
   # For QT apps
   environment.variables = {
-    QT_STYLE_OVERRIDE = "breeze";
+    QT_STYLE_OVERRIDE = "adwaita-dark";
     QT_QUICK_CONTROLS_STYLE = "org.kde.desktop";
     QT_QPA_PLATFORMTHEME = "kde";
   };

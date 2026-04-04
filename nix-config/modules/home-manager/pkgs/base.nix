@@ -147,6 +147,8 @@ in
     jmtpfs # Better MTP support
     gvfs # Virtual filesystem (handles MTP mounting)
 
+    android-tools
+
     # --- 7. Apps & GUI Tools ---
     qrencode
     qalculate-gtk

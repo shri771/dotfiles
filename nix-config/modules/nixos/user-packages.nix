@@ -43,5 +43,7 @@
     # Window Managers (Binaries)
     awesome
     hyprland
+    kdePackages.adwaita-qt6 # dark style for Qt6 (Dolphin)
+    adwaita-qt # dark style for Qt5
   ];
 }
