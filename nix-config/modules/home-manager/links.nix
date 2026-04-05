@@ -34,8 +34,6 @@ let
     "swaync"
     "nvim"
     "kanshi"
-    "dolphinrc"
-    "assets"
     "fastfetch"
     "ags"
     "eww"
