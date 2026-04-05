@@ -22,25 +22,29 @@
     };
   };
 
+  # 1. Set the style to Breeze (which supports QML properly)
   qt = {
     enable = true;
-    platformTheme.name = "gtk3"; # mirrors your GTK theme automatically
+    platformTheme.name = "gtk3";
     style = {
-      name = "adwaita-dark";
-      package = pkgs.adwaita-qt;
+      name = "breeze";
+      package = pkgs.kdePackages.breeze;
     };
   };
 
-  # Qt6 icon + adwaita support
+  # 2. Add the necessary KDE/Qt QML dependencies
   home.packages = with pkgs; [
-    adwaita-qt # Qt5 dark style
-    adwaita-qt6 # Qt6 dark style
-    whitesur-icon-theme # same icons as GTK
+    whitesur-icon-theme
+    kdePackages.qqc2-desktop-style # Needed for QML apps like EasyEffects
+    kdePackages.kirigami # Needed for QML apps like EasyEffects
   ];
 
-  # Force icon theme for Qt apps
+  # 3. Force Qt apps to use WhiteSur icons AND the dark color scheme
   xdg.configFile."kdeglobals".text = ''
     [Icons]
     Theme=WhiteSur
+
+    [General]
+    ColorScheme=BreezeDark
   '';
 }

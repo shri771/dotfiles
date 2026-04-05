@@ -258,13 +258,6 @@ in
     };
   };
 
-  # For QT apps
-  environment.variables = {
-    QT_STYLE_OVERRIDE = "adwaita-dark";
-    QT_QUICK_CONTROLS_STYLE = "org.kde.desktop";
-    QT_QPA_PLATFORMTHEME = "kde";
-  };
-
   # System pkgs
   environment.systemPackages = with pkgs; [
     ddcutil # # For monitor brigthness control
