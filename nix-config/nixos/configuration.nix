@@ -191,6 +191,15 @@ in
   programs.hyprland.enable = true;
   services.xserver.windowManager.awesome.enable = true;
 
+  # XDG Desktop Portal (needed for file dialogs, screen sharing, etc.)
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.kdePackages.xdg-desktop-portal-kde
+    ];
+  };
+
   # Gonme keyring
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.login.enableGnomeKeyring = true;
