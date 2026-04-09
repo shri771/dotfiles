@@ -4,7 +4,6 @@
 # Bluetooth Device MAC Address
 BT_DEVICE_MAC="98:47:44:77:AA:AA"
 
-sudo systemctl restart bluetooth.service
 sleep 0.1
 # 1. Check if the device is paired with the system.
 device_info=$(bluetoothctl info "$BT_DEVICE_MAC" 2>/dev/null)

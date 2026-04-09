@@ -72,6 +72,7 @@ in
     slurp
     wf-recorder
     batsignal
+    hyprland-qt-support
 
     # --- 3. AwesomeWM / X11 Stack ---
     polybar

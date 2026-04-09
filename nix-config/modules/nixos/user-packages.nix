@@ -25,7 +25,7 @@
 
     # Desktop Applications
     brave
-    vivaldi
+    unstable.vivaldi
     kdePackages.kate
     neovim # Also in configuration.nix, but listed here for completeness
 
