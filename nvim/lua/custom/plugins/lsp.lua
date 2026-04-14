@@ -196,20 +196,24 @@ return {
         run_on_start = true,
       })
 
-      require("mason-lspconfig").setup({
-        handlers = {
-          function(server_name)
-            local server = servers[server_name] or {}
-            server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-            require("lspconfig")[server_name].setup(server)
-          end,
-        },
-      })
+      require("mason-lspconfig").setup()
 
-      -- Manually setup servers that aren't managed by Mason
-      require("lspconfig").nil_ls.setup({
+      -- Configure each server using the new vim.lsp.config API
+      for server_name, server_opts in pairs(servers) do
+        local config = vim.tbl_deep_extend("force", {}, server_opts)
+        config.capabilities = vim.tbl_deep_extend("force", {}, capabilities, config.capabilities or {})
+        vim.lsp.config(server_name, config)
+      end
+
+      -- Manually configure servers not managed by Mason
+      vim.lsp.config("nil_ls", {
         capabilities = capabilities,
       })
+
+      -- Enable all configured servers
+      local all_servers = vim.tbl_keys(servers)
+      table.insert(all_servers, "nil_ls")
+      vim.lsp.enable(all_servers)
     end,
   },
 }

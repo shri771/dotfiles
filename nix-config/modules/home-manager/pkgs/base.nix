@@ -220,6 +220,7 @@ in
     toilet
     steam-run
     redshift
+    cryptsetup
     yt-dlp
 
     # --- 11. Unstable Packages ---
