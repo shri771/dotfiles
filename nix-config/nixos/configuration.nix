@@ -86,8 +86,17 @@ in
       nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
     };
 
+  # Disable Plymouth splash screen during shutdown and reboot
+  systemd.services."plymouth-poweroff".enable = false;
+  systemd.services."plymouth-reboot".enable = false;
+  systemd.services."plymouth-halt".enable = false;
+  systemd.services."plymouth-kexec".enable = false;
+
   # Boot
   boot = {
+    # THE ONE REQUIRED ADDITION: Forces systemd to handle the LUKS prompt graphically
+    initrd.systemd.enable = true;
+
     # Bootloader configuration
     loader = {
       systemd-boot = {
@@ -102,13 +111,41 @@ in
     # Use the latest Linux kernel package set
     kernelPackages = pkgs.linuxPackages_latest;
 
-    # Disable USB autosuspend.
-    kernelParams = [ "usbcore.autosuspend=-1" ];
+    # --- PLYMOUTH & GUI BOOT SETTINGS ---
+
+    # Enable Plymouth for the graphical LUKS prompt
+    plymouth = {
+      enable = true;
+      theme = "spinner";
+    };
+
+    # Early KMS specifically for INTEL GPUs (loads before LUKS prompt)
+    initrd.kernelModules = [ "i915" ];
+
+    # Silence the scrolling text for a clean visual boot
+    consoleLogLevel = 0;
+
+    # --- END PLYMOUTH SETTINGS ---
+
+    # Combined Kernel parameters (Your autosuspend + Quiet Boot params)
+    kernelParams = [
+      "usbcore.autosuspend=-1"
+    ];
 
     # Kernel modules that should be loaded during boot
     kernelModules = [
       "i2c-dev"
     ];
+  };
+
+  # Encrpction
+  boot.initrd.luks.devices."tst" = {
+    device = "/dev/disk/by-uuid/9bcf1ead-1b24-4967-bf8d-662b93bfd8ce";
+  };
+
+  fileSystems."/mnt/usb" = {
+    device = "/dev/mapper/tst";
+    fsType = "ext4";
   };
 
   # Netowrk
