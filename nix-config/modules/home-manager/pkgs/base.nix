@@ -222,6 +222,7 @@ in
     redshift
     cryptsetup
     yt-dlp
+    krusader
 
     # --- 11. Unstable Packages ---
     unstable.opencode
