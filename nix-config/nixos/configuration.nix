@@ -267,18 +267,6 @@ in
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
 
-  ## For prevent crashes of antigravity
-  services.earlyoom = {
-    enable = true;
-    # Start killing processes when free RAM drops below 5%
-    freeMemThreshold = 5;
-    # Optional: Prefer killing specific heavy processes (regex)
-    extraArgs = [
-      "--prefer"
-      "(^|/)(antigravity|language_server|node)$"
-    ];
-  };
-
   # Install firefox.
   programs.firefox.enable = true;
 
