@@ -462,6 +462,7 @@ alias txc='tmuxifier load-session cn'
 alias txsc='tmuxifier load-session sc '
 alias txdev='tmuxifier load-session dev'
 alias txmes='tmuxifier load-session mesh'
+alias txfib='tmuxifier load-session fib'
 
 # Journal
 alias jctl='journalctl -p 3 -xb'

@@ -138,6 +138,18 @@ in
     ];
   };
 
+  # Hyperledeger Fabric
+  environment.variables = {
+    # only set this if you need Fabric config files later
+    # FABRIC_CFG_PATH = "/home/shri/Workspace/fabric/fabric/fabric-samples/config";
+  };
+
+  environment.sessionVariables = {
+    PATH = [
+      "/home/shri/Workspace/fabric/fabric/fabric-samples/bin"
+    ];
+  };
+
   # Encrpction
   boot.initrd.luks.devices."tst" = {
     device = "/dev/disk/by-uuid/9bcf1ead-1b24-4967-bf8d-662b93bfd8ce";
