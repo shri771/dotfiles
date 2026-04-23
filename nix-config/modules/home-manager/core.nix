@@ -1,4 +1,11 @@
-{ inputs, lib, config, pkgs, osConfig ? null, ... }:
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  osConfig ? null,
+  ...
+}:
 
 {
   config = {
@@ -31,7 +38,11 @@
 
     services.gnome-keyring = {
       enable = true;
-      components = [ "secrets" "ssh" "pkcs11" ];
+      components = [
+        "secrets"
+        "ssh"
+        "pkcs11"
+      ];
     };
 
     home.sessionPath = [ "$HOME/go/bin" ];
@@ -54,10 +65,24 @@
     # Low battery waring
     services.batsignal = {
       enable = true;
-      extraArgs = [ "-w" "20" "-c" "10" "-d" "5" ];
+      extraArgs = [
+        "-w"
+        "20"
+        "-c"
+        "10"
+        "-d"
+        "5"
+      ];
     };
-    systemd.user.services.batsignal.Install.WantedBy = lib.mkForce [ "default.target" ]; ## forcefully start
+    systemd.user.services.batsignal.Install.WantedBy = lib.mkForce [ "default.target" ]; # # forcefully start
+
+    # KDE
+    services.kdeconnect = {
+      enable = true;
+      indicator = true; # shows the tray icon on non-Plasma desktops
+    };
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   };
 }
+
