@@ -37,7 +37,7 @@ in
 
     # Docker-Container
     ../modules/nixos/Docker-Container/vaultwarden.nix
-    ../modules/nixos/Docker-Container/linkwarden.nix
+    # ../modules/nixos/Docker-Container/linkwarden.nix
 
   ];
 
@@ -383,6 +383,24 @@ in
 
   # KDE
   programs.kdeconnect.enable = true;
+
+  # Firwall
+  networking.firewall = rec {
+    allowedTCPPortRanges = [
+      {
+        # For kde connect
+        from = 1714;
+        to = 1764;
+      }
+    ];
+    allowedUDPPortRanges = allowedTCPPortRanges;
+  };
+
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true; # IPv4 mDNS
+    openFirewall = true;
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.11";

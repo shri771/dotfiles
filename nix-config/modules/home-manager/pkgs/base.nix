@@ -16,6 +16,7 @@ in
 {
   home.packages = with pkgs; [
     # --- 1. Common Logic & Utility Packages (Used in both Hypr/Awesome) ---
+    openssl
     rofi
     yad
     cliphist
