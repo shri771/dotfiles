@@ -366,6 +366,12 @@ in
     };
   };
 
+  # MySQL
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb;
+  };
+
   ## If running in VM
   # services.qemuGuest.enable = true;
   # services.spice-vdagentd.enable = true;

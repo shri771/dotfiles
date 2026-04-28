@@ -182,6 +182,7 @@ in
     golangci-lint
     delve
     sqls
+    mysql84
     gofumpt
     # Python
     pipx
