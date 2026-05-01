@@ -168,6 +168,7 @@ in
     kubernetes-helm
     gh
     # C/C++ & General Dev
+    unstable.kind
     cmake
     meson
     flex

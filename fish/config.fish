@@ -333,6 +333,31 @@ end
 # Add directory completion for cd
 complete -c cd -x -a '(__fish_complete_directories)'
 
+# ======================
+# Karmada Member Cluster Switchers
+# ======================
+
+function member1 --description "Switch to Karmada member1 cluster"
+    set -x KUBECONFIG ~/.kube/members.config
+    kubectl config use-context member1
+    echo "✅ Switched to member1"
+    echo "   Context : "(kubectl config current-context)
+end
+
+function member2 --description "Switch to Karmada member2 cluster"
+    set -x KUBECONFIG ~/.kube/members.config
+    kubectl config use-context member2
+    echo "✅ Switched to member2"
+    echo "   Context : "(kubectl config current-context)
+end
+
+function member3 --description "Switch to Karmada member3 cluster"
+    set -x KUBECONFIG ~/.kube/members.config
+    kubectl config use-context member3
+    echo "✅ Switched to member3"
+    echo "   Context : "(kubectl config current-context)
+end
+
 # ====================================
 # ALIASES
 # ====================================
@@ -462,7 +487,7 @@ alias txc='tmuxifier load-session cn'
 alias txsc='tmuxifier load-session sc '
 alias txdev='tmuxifier load-session dev'
 alias txmes='tmuxifier load-session mesh'
-alias txfib='tmuxifier load-session fib'
+alias txkr='tmuxifier load-session karmada'
 
 # Journal
 alias jctl='journalctl -p 3 -xb'

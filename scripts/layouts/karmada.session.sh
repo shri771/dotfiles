@@ -1,21 +1,21 @@
 # Default session
-session_root "~/Workspace/fabric/"
+session_root "~/Workspace/karmada/"
 
-if initialize_session "fib"; then
+if initialize_session "karmada"; then
 
-  window_root "~/Workspace/fabric/"
+  window_root "~/Workspace/karmada/"
   new_window "term"
   run_cmd "clear"
 
-  window_root "~/Workspace/fabric/"
+  window_root "~/Workspace/karmada/"
   new_window "vim"
   run_cmd "clear"
 
-  window_root "~/Workspace/fabric/"
+  window_root "~/Workspace/karmada/"
   new_window "vim-2"
   run_cmd "clear"
 
-  window_root "~/Workspace/fabric/"
+  window_root "~/Workspace/karmada/"
   new_window "server"
   run_cmd "clear"
 
