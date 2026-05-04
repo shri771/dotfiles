@@ -151,14 +151,14 @@ in
   };
 
   # Encrpction
-  boot.initrd.luks.devices."tst" = {
-    device = "/dev/disk/by-uuid/9bcf1ead-1b24-4967-bf8d-662b93bfd8ce";
-  };
+#  boot.initrd.luks.devices."home-cr" = {
+#    device = "/dev/disk/by-uuid/59327e9c-f538-4093-a2cd-89f49e65e337";
+#  };
 
-  fileSystems."/mnt/usb" = {
-    device = "/dev/mapper/tst";
-    fsType = "ext4";
-  };
+#  fileSystems."/mnt/usb" = {
+#    device = "/dev/mapper/tst";
+#    fsType = "ext4";
+#  };
 
   # Netowrk
   networking.hostName = "shri-nix";
