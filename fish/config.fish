@@ -549,6 +549,19 @@ else
         eval (python -m virtualfish)
     end
 end
+
+# Export Pass keys
+set -x BORG_PASSPHRASE (pass borg/passphrase)
+set -x ANTHROPIC_API_KEY (pass api/anthropic)
+
+
+## Borg
+function borg
+    set -l passphrase (pass borg/passphrase)
+    sudo BORG_PASSPHRASE="$passphrase" BORG_REPO="$BORG_REPO" (command -s borg) $argv
+end
+
+
 # Initialize Carapace for Fish
 carapace _carapace | source
 #y>yVR#Z<3>R?)*=.$:j)

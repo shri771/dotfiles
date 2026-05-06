@@ -229,6 +229,7 @@ in
     stdenv
     hdparm
     borgbackup
+    pass
 
     # --- 11. Unstable Packages ---
     unstable.opencode
