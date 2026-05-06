@@ -226,8 +226,9 @@ in
     cryptsetup
     yt-dlp
     krusader
+    stdenv
     hdparm
-    hdparm
+    borgbackup
 
     # --- 11. Unstable Packages ---
     unstable.opencode
