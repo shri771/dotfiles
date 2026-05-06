@@ -229,6 +229,7 @@ in
     stdenv
     hdparm
     borgbackup
+    nvme-cli
     pass
 
     # --- 11. Unstable Packages ---

@@ -240,6 +240,10 @@ in
   programs.hyprland.enable = true;
   services.xserver.windowManager.awesome.enable = true;
 
+  # XDG Desktop Menu (needed for KDE apps like Dolphin to discover installed applications)
+  xdg.menus.enable = true;
+  environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
+
   # XDG Desktop Portal (needed for file dialogs, screen sharing, etc.)
   xdg.portal = {
     enable = true;

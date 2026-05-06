@@ -82,6 +82,64 @@
       indicator = true; # shows the tray icon on non-Plasma desktops
     };
 
+    # Default applications for file types
+    xdg.mimeApps = {
+      enable = true;
+      defaultApplications = {
+        # Images
+        "image/png" = "org.gnome.Loupe.desktop";
+        "image/jpeg" = "org.gnome.Loupe.desktop";
+        "image/gif" = "org.gnome.Loupe.desktop";
+        "image/webp" = "org.gnome.Loupe.desktop";
+        "image/bmp" = "org.gnome.Loupe.desktop";
+        "image/tiff" = "org.gnome.Loupe.desktop";
+        "image/svg+xml" = "org.gnome.Loupe.desktop";
+
+        # Video
+        "video/mp4" = "vlc.desktop";
+        "video/x-matroska" = "vlc.desktop";
+        "video/webm" = "vlc.desktop";
+        "video/avi" = "vlc.desktop";
+        "video/x-msvideo" = "vlc.desktop";
+
+        # Audio
+        "audio/mpeg" = "vlc.desktop";
+        "audio/flac" = "vlc.desktop";
+        "audio/ogg" = "vlc.desktop";
+        "audio/x-wav" = "vlc.desktop";
+        "audio/mp4" = "vlc.desktop";
+
+        # Browser
+        "text/html" = "vivaldi-stable.desktop";
+        "x-scheme-handler/http" = "vivaldi-stable.desktop";
+        "x-scheme-handler/https" = "vivaldi-stable.desktop";
+        "x-scheme-handler/about" = "vivaldi-stable.desktop";
+        "x-scheme-handler/unknown" = "vivaldi-stable.desktop";
+
+        # PDF
+        "application/pdf" = "vivaldi-stable.desktop";
+
+        # Documents (LibreOffice)
+        "application/vnd.oasis.opendocument.text" = "writer.desktop";
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = "writer.desktop";
+        "application/vnd.oasis.opendocument.spreadsheet" = "calc.desktop";
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = "calc.desktop";
+
+        # Archives
+        "application/zip" = "org.kde.ark.desktop";
+        "application/x-tar" = "org.kde.ark.desktop";
+        "application/gzip" = "org.kde.ark.desktop";
+        "application/x-7z-compressed" = "org.kde.ark.desktop";
+        "application/x-rar" = "org.kde.ark.desktop";
+
+        # Text
+        "text/plain" = "nvim.desktop";
+
+        # File manager
+        "inode/directory" = "org.kde.dolphin.desktop";
+      };
+    };
+
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   };
 }
