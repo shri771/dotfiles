@@ -120,7 +120,7 @@ in
     };
 
     # Early KMS specifically for INTEL GPUs (loads before LUKS prompt)
-    initrd.kernelModules = [ "i915" ];
+    initrd.kernelModules = [ "i915" "dm-mod" ];
 
     # Silence the scrolling text for a clean visual boot
     consoleLogLevel = 0;
@@ -150,17 +150,7 @@ in
     ];
   };
 
-  # Encrpction
-#  boot.initrd.luks.devices."home-cr" = {
-#    device = "/dev/disk/by-uuid/59327e9c-f538-4093-a2cd-89f49e65e337";
-#  };
-
-#  fileSystems."/mnt/usb" = {
-#    device = "/dev/mapper/tst";
-#    fsType = "ext4";
-#  };
-
-  # Netowrk
+  # Network
   networking.hostName = "shri-nix";
   networking.networkmanager.enable = true;
 

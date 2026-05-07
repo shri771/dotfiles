@@ -13,6 +13,9 @@
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
+
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
@@ -59,9 +62,10 @@
         shri-nix = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; primaryUser = "shri"; };
           modules = [
-            # > Our main nixos configuration file <
+            inputs.disko.nixosModules.disko
             ./nixos/configuration.nix
-            ./nixos/hardware-configuration.nix
+            ./nixos/hardware.nix
+            ./nixos/disk-config.nix
           ];
         };
 
