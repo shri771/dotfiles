@@ -1,0 +1,27 @@
+# Format: R = root path, + = include, - = exclude, ! = exclude (no recurse)
+
+# Root paths to back up
+# R /home/username
+
+# Exclude cache and junk
+- /home/shri/.cache
+- /home/shri/.local/share/Trash
+- /home/shri/.thumbnails
+- /home/shri/Downloads
+- /home/shri/.local/share/Steam
+
+
+# Exclude virtual machine disks (large, recoverable)
+- /home/shri/VirtualBox VMs/**
+
+# Exclude node_modules / build artifacts
+
+- /home/shri/**/node_modules
+- /home/shri/**/__pycache__
+- /home/shri/**/*.pyc
+- /home/shri/**/.venv
+
+- /home/shri/dotfiles/
+
+# Include everything else in /home
++ /home/shri/**
