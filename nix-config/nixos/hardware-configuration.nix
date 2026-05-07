@@ -8,39 +8,10 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "uas" "sd_mod" ];
+  boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/c245730d-0316-4293-8272-d83db5de4151";
-      fsType = "btrfs";
-      options = [ "subvol=@" ];
-    };
-
-  fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/c245730d-0316-4293-8272-d83db5de4151";
-      fsType = "btrfs";
-      options = [ "subvol=@nix" ];
-    };
-
-  fileSystems."/var/log" =
-    { device = "/dev/disk/by-uuid/c245730d-0316-4293-8272-d83db5de4151";
-      fsType = "btrfs";
-      options = [ "subvol=@log" ];
-    };
-
-  fileSystems."/home" =
-    { device = "/dev/mapper/home-cr";
-      fsType = "ext4";
-    };
-
-  boot.initrd.luks.devices."home-cr".device = "/dev/disk/by-uuid/59327e9c-f538-4093-a2cd-89f49e65e337";
-
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/aa8293b5-4a1a-492a-9ad9-e6d63fd91aaa"; }
-    ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
