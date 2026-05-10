@@ -20,16 +20,16 @@ in
 
     # --- CADDY & FIREWALL CONFIGURATION ---
     networking.firewall.allowedTCPPorts = [
-      80
-      443
+      8880
+      8843
     ];
     services.caddy = {
       enable = true;
       # IMPORTANT: Change this to the IP address of your NixOS machine
-      virtualHosts."shri-nix, shri-nix.local" = {
+      virtualHosts."shri-nix:8880, shri-nix.local:8843" = {
         extraConfig = ''
           tls internal
-          reverse_proxy 127.0.0.1:8080
+          reverse_proxy 127.0.0.1:8881
         '';
       };
     };
@@ -43,7 +43,7 @@ in
         autoStart = true;
 
         ports = [
-          "127.0.0.1:8080:80"
+          "127.0.0.1:8881:80"
         ];
 
         environment = {

@@ -164,9 +164,12 @@ in
     # Containers & Cloud
     docker
     minikube
+    pkgs.go-task
+    pkgs.bun
     kubectl
     kubernetes-helm
     gh
+    lsof
     # C/C++ & General Dev
     unstable.kind
     cmake
@@ -236,5 +239,6 @@ in
     unstable.opencode
     unstable.gemini-cli
     unstable.antigravity
+    unstable.claude-code
   ];
 }

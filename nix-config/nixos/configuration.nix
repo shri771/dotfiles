@@ -120,7 +120,10 @@ in
     };
 
     # Early KMS specifically for INTEL GPUs (loads before LUKS prompt)
-    initrd.kernelModules = [ "i915" "dm-mod" ];
+    initrd.kernelModules = [
+      "i915"
+      "dm-mod"
+    ];
 
     # Silence the scrolling text for a clean visual boot
     consoleLogLevel = 0;
@@ -232,7 +235,8 @@ in
 
   # XDG Desktop Menu (needed for KDE apps like Dolphin to discover installed applications)
   xdg.menus.enable = true;
-  environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
+  environment.etc."xdg/menus/applications.menu".source =
+    "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
 
   # XDG Desktop Portal (needed for file dialogs, screen sharing, etc.)
   xdg.portal = {
@@ -266,8 +270,13 @@ in
   # Gonme boxes
   virtualisation.libvirtd.enable = true;
 
-  # Enable Dcoker
-  virtualisation.docker.enable = true;
+  # Dcoker
+  virtualisation.docker = {
+    enable = true;
+    daemon.settings = {
+      insecure-registries = [ "localhost:8080" ];
+    };
+  };
 
   # Enable faltpak
   services.flatpak.enable = true;
