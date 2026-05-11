@@ -552,12 +552,13 @@ end
 
 # Export Pass keys
 set -x BORG_PASSPHRASE (pass borg/passphrase)
-set -x ANTHROPIC_API_KEY (pass api/anthropic)
+set -x CLAUDE_CODE_OAUTH_TOKEN (pass api/anthropic)
 
 
 ## Borg
 function borg
     set -l passphrase (pass borg/passphrase)
+    set -l BORG_REPO /mnt/home-backup/nix-backup/
     sudo BORG_PASSPHRASE="$passphrase" BORG_REPO="$BORG_REPO" (command -s borg) $argv
 end
 

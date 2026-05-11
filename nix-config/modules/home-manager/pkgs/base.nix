@@ -195,6 +195,11 @@ in
       python-pkgs.numpy
       python-pkgs.pip
     ]))
+    # OpenAPI
+    oapi-codegen
+    swagger-cli
+    go-swagger
+    openapi-generator-cli
     # Misc Dev
     unstable.nodejs
     jdk
