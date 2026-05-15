@@ -108,7 +108,7 @@ return {
       },
 
       sources = {
-        default = { "snippets", "buffer", "lsp", "lazydev", "path", "copilot" },
+        default = { "snippets", "buffer", "lsp", "lazydev", "path" },
         -- default = { "snippets", "buffer", "lsp", "lazydev", "path" },
         -- default = { "buffer", "lazydev", "path" },
         -- default = { "buffer" },

@@ -17,6 +17,15 @@ in
   home.packages = with pkgs; [
     # --- 1. Common Logic & Utility Packages (Used in both Hypr/Awesome) ---
     openssl
+    p7zip
+    zip
+    clamav
+    bubblewrap
+    binwalk
+    binutils
+    hexyl
+    yara-x
+    file
     rofi
     yad
     cliphist
@@ -143,6 +152,7 @@ in
     kdePackages.dolphin-plugins # Git, checksum plugins
     kdePackages.ark # Archive support
     kdePackages.konsole
+    kdePackages.purpose
     # Add these for phone/MTP support
     libmtp # Core MTP protocol library
     mtpfs # FUSE MTP filesystem
@@ -206,6 +216,8 @@ in
     nil
     nixfmt-rfc-style
     languagetool
+    unstable.codex
+    pkgs.telegram-desktop
 
     # --- 9. Fonts & Theming ---
     font-awesome

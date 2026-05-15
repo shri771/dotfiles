@@ -3,7 +3,7 @@
 # Variables
 rofi_theme="$HOME/.config/rofi/config-clipboard.rasi"
 msg='👀 **note**  CTRL+Del = delete entry   |   ALT+Del = wipe all   |   ALT+Enter = send to mobile'
-device_id="524a13e93da540f6b16aa293c1858e81"
+device_id="97a53fe1de984c6782388e683e17439f"
 
 # Check if rofi is already running
 if pidof rofi >/dev/null; then
@@ -13,9 +13,9 @@ fi
 while true; do
     result=$(
         cliphist list -max-items 500 | sed 's/^[0-9]\+\s\+//' | rofi -i -dmenu \
-            -kb-custom-1 "Control-Delete" \
-            -kb-custom-2 "Alt-Delete" \
-            -kb-custom-3 "Alt-Return"
+            -kb-custom-1 "Control+Delete" \
+            -kb-custom-2 "Alt+Delete" \
+            -kb-custom-3 "Alt+Return"
     )
 
     exit_code=$?

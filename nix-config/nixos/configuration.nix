@@ -282,6 +282,21 @@ in
   services.flatpak.enable = true;
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
+  services.tailscale.enable = true;
+
+  # Fix Tailscale DNS and Bluetooth breaking after suspend/resume
+  systemd.services.resume-fixes = {
+    description = "Restart Tailscale and Bluetooth after resume";
+    after = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
+    wantedBy = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.writeShellScript "resume-fixes" ''
+        ${pkgs.systemd}/bin/systemctl restart tailscaled
+        ${pkgs.systemd}/bin/systemctl restart bluetooth
+      ''}";
+    };
+  };
 
   # Install firefox.
   programs.firefox.enable = true;
