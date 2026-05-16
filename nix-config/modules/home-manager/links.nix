@@ -41,6 +41,7 @@ let
     "greenclip.toml"
     "mpd"
     "kitty"
+    "ranger"
   ];
 in
 {

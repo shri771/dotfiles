@@ -158,6 +158,11 @@ in
     mtpfs # FUSE MTP filesystem
     jmtpfs # Better MTP support
     gvfs # Virtual filesystem (handles MTP mounting)
+    krusader
+
+    # Ranger
+    ranger
+    udisks2
 
     android-tools
 

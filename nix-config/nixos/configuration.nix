@@ -195,6 +195,18 @@ in
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
+
+  # Passwordless sudo for borg backup (tmux session has no TTY for password input)
+  security.sudo.extraRules = [
+    {
+      users = [ "${primaryUser}" ];
+      commands = [
+        { command = "/run/wrappers/bin/borg *"; options = [ "NOPASSWD" "SETENV" ]; }
+        { command = "/home/${primaryUser}/.nix-profile/bin/borg *"; options = [ "NOPASSWD" "SETENV" ]; }
+        { command = "/run/current-system/sw/bin/borg *"; options = [ "NOPASSWD" "SETENV" ]; }
+      ];
+    }
+  ];
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -406,7 +418,20 @@ in
   services.udisks2.enable = true;
   services.udev.extraRules = ''
     SUBSYSTEMS=="usb", ENV{UDISKS_SYSTEM}="0", ENV{UDISKS_IGNORE}="0"
+
+    # SanDisk 3.2Gen1 (0781:55a9) — trigger borg home backup on plug-in
+    ACTION=="add", SUBSYSTEM=="block", ENV{ID_FS_UUID}=="beda374d-ea22-4a53-a7e2-a685f598c3a1", TAG+="systemd", ENV{SYSTEMD_WANTS}="home-backup.service"
   '';
+
+  # Systemd service triggered by udev when backup drive is plugged in
+  systemd.services.home-backup = {
+    description = "Home Borg Backup Trigger";
+    path = with pkgs; [ bash coreutils util-linux gnupg pass tmux borgbackup ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "/run/current-system/sw/bin/bash ${home}/dotfiles/scripts/HomeBackup.sh --udev";
+    };
+  };
   services.gvfs.enable = true; # For mtp
 
   # Docker-Container
