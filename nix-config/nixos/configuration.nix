@@ -245,6 +245,13 @@ in
       pkgs.xdg-desktop-portal-hyprland
       pkgs.kdePackages.xdg-desktop-portal-kde
     ];
+    config = {
+      hyprland = {
+        default = [ "hyprland" "kde" ];
+        # Let KDE portal handle file dialogs (better for Dolphin/KDE apps)
+        "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
+      };
+    };
   };
 
   # Gonme keyring

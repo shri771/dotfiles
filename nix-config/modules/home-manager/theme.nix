@@ -5,44 +5,9 @@
   inputs,
   ...
 }:
-{
-  gtk = {
-    enable = true;
-    font = {
-      name = "Noto Sans";
-      size = 10;
-    };
-    iconTheme = {
-      package = pkgs.whitesur-icon-theme;
-      name = "WhiteSur";
-    };
-    theme = {
-      name = "Breeze-Dark";
-      package = pkgs.kdePackages.breeze-gtk;
-    };
-  };
-
-  # 1. Use KDE platform theme so native KDE apps (Dolphin, etc.) read kdeglobals
-  qt = {
-    enable = true;
-    platformTheme.name = "kde";
-    style = {
-      name = "breeze";
-      package = pkgs.kdePackages.breeze;
-    };
-  };
-
-  # 2. Add the necessary KDE/Qt QML dependencies
-  home.packages = with pkgs; [
-    whitesur-icon-theme
-    kdePackages.qqc2-desktop-style # Needed for QML apps like EasyEffects
-    kdePackages.kirigami # Needed for QML apps like EasyEffects
-    kdePackages.breeze # Color schemes + Breeze theme files
-  ];
-
-  # 3. Force Qt/KDE apps to use WhiteSur icons AND the BreezeDark color scheme
-  #    Full color values are inlined so KDE apps work outside of a Plasma session.
-  xdg.configFile."kdeglobals".text = ''
+let
+  # Define kdeglobals content once, used by the activation script below
+  kdeglobalsContent = ''
     [General]
     ColorScheme=BreezeDark
     Name=Breeze Dark
@@ -159,5 +124,49 @@
     activeForeground=252,252,252
     inactiveBackground=42,46,50
     inactiveForeground=161,169,177
+  '';
+in
+{
+  gtk = {
+    enable = true;
+    font = {
+      name = "Noto Sans";
+      size = 10;
+    };
+    iconTheme = {
+      package = pkgs.whitesur-icon-theme;
+      name = "WhiteSur";
+    };
+    theme = {
+      name = "Breeze-Dark";
+      package = pkgs.kdePackages.breeze-gtk;
+    };
+  };
+
+  # 1. Use KDE platform theme so native KDE apps (Dolphin, etc.) read kdeglobals
+  qt = {
+    enable = true;
+    platformTheme.name = "kde";
+    style = {
+      name = "breeze";
+      package = pkgs.kdePackages.breeze;
+    };
+  };
+
+  # 2. Add the necessary KDE/Qt QML dependencies
+  home.packages = with pkgs; [
+    whitesur-icon-theme
+    kdePackages.qqc2-desktop-style # Needed for QML apps like EasyEffects
+    kdePackages.kirigami # Needed for QML apps like EasyEffects
+    kdePackages.breeze # Color schemes + Breeze theme files
+  ];
+
+  # 3. Write kdeglobals as a REGULAR WRITABLE FILE (not a symlink).
+  #    xdg.configFile creates a read-only nix-store symlink which prevents
+  #    KDE apps (Dolphin, etc.) from saving any settings back to kdeglobals.
+  #    This activation script copies the theme content as a writable file,
+  #    so KDE apps can both read the theme AND write their own settings.
+  home.activation.writeKdeglobals = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    $DRY_RUN_CMD install -Dm644 ${pkgs.writeText "kdeglobals" kdeglobalsContent} $HOME/.config/kdeglobals
   '';
 }

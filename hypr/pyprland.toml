@@ -55,7 +55,7 @@ position = "28% 37%"
 
 
 [scratchpads.file]
-command = "dolphin"
+command = "dolphin ~"
 class = "org.kde.dolphin"
 size = "46% 47%"
 lazy = true
