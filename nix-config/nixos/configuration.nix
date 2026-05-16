@@ -164,9 +164,23 @@ in
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Bluetooth
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true;
+        FastConnectable = true;
+      };
+    };
+  };
   services.blueman.enable = true;
+
+  # Power Management
+  powerManagement.resumeCommands = ''
+    ${pkgs.systemd}/bin/systemctl restart tailscaled
+    ${pkgs.systemd}/bin/systemctl restart bluetooth
+  '';
 
   # Locale
   i18n.extraLocaleSettings = {
@@ -303,20 +317,6 @@ in
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
   services.tailscale.enable = true;
-
-  # Fix Tailscale DNS and Bluetooth breaking after suspend/resume
-  systemd.services.resume-fixes = {
-    description = "Restart Tailscale and Bluetooth after resume";
-    after = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
-    wantedBy = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" ];
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = "${pkgs.writeShellScript "resume-fixes" ''
-        ${pkgs.systemd}/bin/systemctl restart tailscaled
-        ${pkgs.systemd}/bin/systemctl restart bluetooth
-      ''}";
-    };
-  };
 
   # Install firefox.
   programs.firefox.enable = true;

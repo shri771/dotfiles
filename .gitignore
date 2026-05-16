@@ -1,5 +1,8 @@
-nvim/undo
-tmux/plugins
-sessions/*
-fish/fish_variables
-ranger/plugins/ranger_udisk_menu
+**/nvim/undo
+**/tmux/plugins
+**/sessions/*
+**/fish/fish_variables
+**/ranger/plugins/ranger_udisk_menu
+**/*.log
+**/*.backup
+**/*.tmp.*

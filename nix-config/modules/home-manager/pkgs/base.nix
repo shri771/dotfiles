@@ -7,6 +7,23 @@
 }:
 
 let
+  wlctl = pkgs.rustPlatform.buildRustPackage rec {
+    pname = "wlctl";
+    version = "0.1.3";
+    src = pkgs.fetchFromGitHub {
+      owner = "aashish-thapa";
+      repo = "wlctl";
+      rev = "v${version}";
+      hash = "sha256-SYOpb0XlvdLGhrMaxmc6aiAxRvPKFjuQCOrXZVgTr0U="; # updated
+    };
+    cargoHash = "sha256-bmsv1Dl5WJ8o7KLvsMLk/7EQKD3jMPvUAgXq8SC70tM=";
+    meta = {
+      description = "TUI for managing wifi/ethernet on Linux with NetworkManager";
+      homepage = "https://github.com/aashish-thapa/wlctl";
+      license = lib.licenses.gpl3Only;
+    };
+  };
+
   # Initialize the unstable channel
   unstable = import inputs.nixpkgs-unstable {
     system = pkgs.stdenv.hostPlatform.system;
@@ -141,6 +158,7 @@ in
     tor
     usbutils
     mtools
+    wlctl
 
     ## Dolphin
     kdePackages.dolphin
@@ -166,6 +184,7 @@ in
     ffmpegthumbnailer
     ffmpeg
     ncdu
+    cargo
 
     android-tools
 
@@ -259,6 +278,7 @@ in
     borgbackup
     nvme-cli
     pass
+    poppler-utils
 
     # --- 11. Unstable Packages ---
     unstable.opencode

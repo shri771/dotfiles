@@ -140,6 +140,10 @@
       };
     };
 
+    # Required for xdg.desktopEntries to actually write files into
+    # ~/.local/share/applications/ — without this the option is a silent no-op.
+    xdg.enable = true;
+
     # Ranger as the default file manager — desktop entry to launch it in kitty
     xdg.desktopEntries.ranger = {
       name = "Ranger";

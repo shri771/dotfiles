@@ -1,10 +1,7 @@
 [pyprland]
 
 # Combine all plugins into a single list
-plugins = [
-  "scratchpads",
-  "magnify"
-]
+plugins = ["scratchpads", "magnify"]
 
 # Scratchpads
 [scratchpads.term]
@@ -12,7 +9,7 @@ command = "kitty --class kitty-dropterm"
 class = "kitty-dropterm"
 lazy = true
 size = "55% 54%"
-position =  "24% 5%"
+position = "24% 5%"
 focus = true
 
 [scratchpads.whatsie]
@@ -75,12 +72,11 @@ opacity = 0.9
 focus = true
 
 
-
-[scratchpads.clock]
-command = "kclock"
-class = "org.kde.kclock"
-size = "20% 37%"
-position = "41% 51%"
+[scratchpads.kitty]
+command = "kitty --class kitty-wlctl wlctl"
+class = "kitty-wlctl"
+size = "48% 63%"
+position = "24% 24%"
 lazy = true
-opacity = 0.9
+# opacity = 0.9
 focus = true
