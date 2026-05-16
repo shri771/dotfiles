@@ -136,9 +136,39 @@
         "text/plain" = "nvim.desktop";
 
         # File manager
-        "inode/directory" = "org.kde.dolphin.desktop";
+        "inode/directory" = "ranger.desktop";
       };
     };
+
+    # Ranger as the default file manager — desktop entry to launch it in kitty
+    xdg.desktopEntries.ranger = {
+      name = "Ranger";
+      genericName = "File Manager";
+      comment = "Terminal file manager";
+      icon = "utilities-terminal";
+      exec = "kitty --class ranger -e ranger %f";
+      terminal = false; # kitty is the terminal; don't double-wrap
+      categories = [ "System" "FileTools" "FileManager" "Utility" ];
+      mimeType = [ "inode/directory" ];
+    };
+
+    # Hint apps that ask via env var which file manager to use
+    home.sessionVariables = {
+      FILE_MANAGER = "ranger";
+      DEFAULT_FILE_MANAGER = "ranger";
+    };
+
+    # Configure xdg-desktop-portal-termfilechooser to use ranger.
+    # The package ships a ready-made ranger-wrapper.sh that invokes
+    # `kitty --title 'termfilechooser' -e ranger ...` with the right flags
+    # for open / open-multiple / save / pick-directory.
+    xdg.configFile."xdg-desktop-portal-termfilechooser/config".text = ''
+      [filechooser]
+      cmd=${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/ranger-wrapper.sh
+      default_dir=$HOME
+      open_mode=suggested
+      save_mode=suggested
+    '';
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   };

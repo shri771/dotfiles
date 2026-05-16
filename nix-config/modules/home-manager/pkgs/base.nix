@@ -163,6 +163,9 @@ in
     # Ranger
     ranger
     udisks2
+    ffmpegthumbnailer
+    ffmpeg
+    ncdu
 
     android-tools
 

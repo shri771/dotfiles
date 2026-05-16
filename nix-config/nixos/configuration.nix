@@ -256,12 +256,13 @@ in
     extraPortals = [
       pkgs.xdg-desktop-portal-hyprland
       pkgs.kdePackages.xdg-desktop-portal-kde
+      pkgs.xdg-desktop-portal-termfilechooser
     ];
     config = {
       hyprland = {
         default = [ "hyprland" "kde" ];
-        # Let KDE portal handle file dialogs (better for Dolphin/KDE apps)
-        "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
+        # Route file open/save dialogs (browsers, GTK/Qt apps) through ranger
+        "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
       };
     };
   };
