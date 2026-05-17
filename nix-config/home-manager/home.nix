@@ -20,6 +20,7 @@
     ../modules/home-manager/theme.nix
     ../modules/home-manager/links.nix
     ../modules/home-manager/git.nix
+    ../modules/home-manager/rclone-gdrive.nix
   ];
 
   config = {

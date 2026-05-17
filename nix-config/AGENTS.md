@@ -18,7 +18,9 @@ This repo is a NixOS + home-manager flake deployed at `/etc/nixos` (system) and 
 - `modules/home-manager/pkgs/extra.nix`: optional/extra user packages.
 - `modules/nixos/users/shri.nix` / `tst.nix`: user accounts, groups, shell.
 - `modules/nixos/sddm.nix`: login manager.
+- `modules/home-manager/rclone-gdrive.nix`: `shri`-specific Home Manager user units for Google Drive via rclone (`shri77:`, `/home/shri/Documents`, mount at `/home/shri/Drive/Shri77`).
 - `modules/nixos/Docker-Container/{vaultwarden,linkwarden}.nix`: containerised services.
+- `docs/rclone-gdrive.md`: operator guide for `rclone config`, first `--resync`, mount, timer, script locations, and verification commands.
 - `modules/nixos/user-packages.nix`: defined but **not currently imported** from `configuration.nix` — verify imports before relying on it.
 - `overlays/default.nix`: three overlays — `additions` (everything in `pkgs/`), `modifications` (currently empty), `unstable-packages` (exposes `pkgs.unstable`).
 - `pkgs/default.nix`: custom `callPackage` entries (currently empty scaffold).
@@ -34,7 +36,6 @@ Examples:
 - `services.tailscale.enable = true;` (top level of `configuration.nix`)
 - `programs.steam.enable = true;`
 - New module: `modules/nixos/my-service.nix`, then `../modules/nixos/my-service.nix` in the `imports` list.
-
 Rules:
 
 - System-only options (`services.*`, `programs.*` outside HM, `boot.*`, `networking.*`, `hardware.*`) belong here. HM has its own `services.*` namespace — do not confuse the two.
@@ -59,6 +60,7 @@ Rules:
 - `xdg.mimeApps` works without `xdg.enable`.
 - `links.nix` uses `config.lib.file.mkOutOfStoreSymlink` — those entries point at the live `~/dotfiles/<name>` directory and are writable; do not migrate them to `home.file.<x>.source` (which would make them read-only nix-store symlinks).
 - The two HM users (`shri`, `tst`) are configured independently via `home-manager/home.nix` and `home-manager/tst-home.nix`. Changes meant for both go in a shared module under `modules/home-manager/` and get imported from both entry files.
+- If a user service should apply only to `shri`, import that module only from `home-manager/home.nix`, not `tst-home.nix`.
 
 ### Add a custom package
 
@@ -111,6 +113,30 @@ Referenced but not vendored in this repo:
 Optional runtime helpers:
 
 - `dolphin` (and `dolphin-plugins`) — installed via `modules/home-manager/pkgs/base.nix`, no longer the default `inode/directory` handler.
+- `rclone` remote config at `~/.config/rclone/rclone.conf` — required for `modules/home-manager/rclone-gdrive.nix`; secrets/OAuth tokens are **not** stored in Nix.
+- `~/dotfiles/scripts/rclone-gdrive/` — external helper scripts for mount and Documents sync; not vendored in this repo and must be kept in sync manually.
+
+## Rclone / Google Drive Plan
+
+Target layout:
+
+- local working tree: `/home/shri/Documents`
+- Google Drive remote path: `shri77:Document`
+- browse mount: `/home/shri/Drive/Shri77`
+
+Execution path:
+
+1. Configure the `shri77` remote with `rclone config` outside Nix.
+2. Run `home-manager switch --flake .#shri@shri-nix` so `modules/home-manager/rclone-gdrive.nix` installs the `shri` user units.
+3. Run `systemctl --user start rclone-documents-resync.service` once to establish bisync state.
+4. Enable `rclone-gdrive-mount.service` for continuous browsing access.
+5. Enable `rclone-documents-sync.timer` for recurring two-way sync.
+
+Why it is split this way:
+
+- `rclone mount` is good for browsing but should not be treated as the sync source of truth.
+- `rclone bisync` should target the remote path directly (`shri77:Document`), not the mounted FUSE path.
+- keeping `rclone.conf` out of Nix avoids leaking OAuth credentials into the store.
 
 ## Precise Debug Flow
 
@@ -207,6 +233,29 @@ Interpretation:
 
 - `hyprland-portals.conf` matches the nix config but the wrong picker still opens → portal daemon is stale; restart it.
 - `XDG_CURRENT_DESKTOP=Hyprland` but the file is `hyprland-portals.conf` — fine, the portal lowercases the desktop name when looking up the conf.
+
+### Rclone mount or sync failed
+
+Check `modules/home-manager/rclone-gdrive.nix`, `~/.config/rclone/rclone.conf`, and `~/dotfiles/scripts/rclone-gdrive/`.
+
+Run:
+
+```bash
+home-manager switch --flake .#shri@shri-nix
+systemctl --user status rclone-gdrive-mount.service
+systemctl --user status rclone-documents-sync.service
+systemctl --user status rclone-documents-sync.timer
+journalctl --user -u rclone-gdrive-mount.service -n 100 --no-pager
+journalctl --user -u rclone-documents-sync.service -n 100 --no-pager
+rclone lsd shri77:
+```
+
+Interpretation:
+
+- `config file not found` / auth errors → `rclone config` has not been completed for user `shri`.
+- mount service active but `/home/shri/Drive/Shri77` is empty → the remote is reachable but the expected Drive path may differ from `shri77:Document`.
+- `bisync` asks for `--resync` or reports missing listings → run `systemctl --user start rclone-documents-resync.service` once after initial setup or after state corruption.
+- timer is active but sync never runs → confirm `systemctl --user list-timers | rg rclone-documents-sync` and that the user session or linger is active.
 
 ## Issue Tracking Format
 

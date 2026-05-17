@@ -50,6 +50,43 @@ OPENSCAD_COLORSCHEME="${RNGR_OPENSCAD_COLORSCHEME:-Tomorrow Night}"
 SQLITE_TABLE_LIMIT=20  # Display only the top <limit> tables in database, set to 0 for no exhaustive preview (only the sqlite_master table is displayed).
 SQLITE_ROW_LIMIT=5     # Display only the first and the last (<limit> - 1) records in each table, set to 0 for no limits.
 
+render_image_frame() {
+    local source="${1}"
+    if command -v magick >/dev/null 2>&1; then
+        magick -- "${source}[0]" "${IMAGE_CACHE_PATH}"
+        return
+    fi
+
+    if command -v convert >/dev/null 2>&1; then
+        convert -- "${source}[0]" "${IMAGE_CACHE_PATH}"
+        return
+    fi
+
+    return 1
+}
+
+render_svg_preview() {
+    local width="${1}"
+
+    if command -v rsvg-convert >/dev/null 2>&1; then
+        rsvg-convert --keep-aspect-ratio --width "${width}" "${FILE_PATH}" -o "${IMAGE_CACHE_PATH}.png" \
+            && mv "${IMAGE_CACHE_PATH}.png" "${IMAGE_CACHE_PATH}"
+        return
+    fi
+
+    if command -v magick >/dev/null 2>&1; then
+        magick -- "${FILE_PATH}[0]" -thumbnail "${width}x" "${IMAGE_CACHE_PATH}"
+        return
+    fi
+
+    if command -v convert >/dev/null 2>&1; then
+        convert -- "${FILE_PATH}[0]" -thumbnail "${width}x" "${IMAGE_CACHE_PATH}"
+        return
+    fi
+
+    return 1
+}
+
 handle_extension() {
     case "${FILE_EXTENSION_LOWER}" in
         ## Archive
@@ -144,9 +181,12 @@ handle_image() {
     case "${mimetype}" in
         ## SVG
         image/svg+xml|image/svg)
-            rsvg-convert --keep-aspect-ratio --width "${DEFAULT_SIZE%x*}" "${FILE_PATH}" -o "${IMAGE_CACHE_PATH}.png" \
-                && mv "${IMAGE_CACHE_PATH}.png" "${IMAGE_CACHE_PATH}" \
-                && exit 6
+            render_svg_preview "${DEFAULT_SIZE%x*}" && exit 6
+            exit 1;;
+
+        ## Common formats that are safer when normalized into the cache first.
+        image/avif|image/heic|image/heif|image/jxl|image/tiff|image/bmp|image/x-ms-bmp|image/vnd.microsoft.icon|image/x-icon)
+            render_image_frame "${FILE_PATH}" && exit 6
             exit 1;;
 
         ## DjVu

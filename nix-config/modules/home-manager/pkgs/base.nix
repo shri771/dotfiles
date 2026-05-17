@@ -279,6 +279,8 @@ in
     nvme-cli
     pass
     poppler-utils
+    dragon-drop
+    rclone
 
     # --- 11. Unstable Packages ---
     unstable.opencode

@@ -47,6 +47,7 @@ Use:
 - `handle_image` when the preview should render an image and return `6` or `7`.
 - `handle_extension` when handling depends on file extension.
 - `handle_mime` when handling depends on MIME type.
+- Put special image conversions before the generic `image/*)` branch, otherwise ranger will fall through to direct display.
 
 Exit codes used here:
 
@@ -72,6 +73,7 @@ Rules:
 - Use `self.fm.notify(..., bad=True)` for user-facing failures.
 - Handle empty selection/current file explicitly.
 - Resolve external binaries with `shutil.which()`.
+- `commands.py` currently overrides ranger's built-in `:yank` so Wayland prefers `wl-copy` over `xclip`.
 
 ### Add a helper script
 
@@ -87,8 +89,11 @@ Rules:
 
 Required by current config:
 
+- `trash-put`: used by ranger's built-in `:trash` command, now bound to `dD`.
+- `wl-copy`: preferred clipboard backend on Wayland for `yank` bindings like `yp`, `yd`, `yn`, `yb`.
 - `kitten`: for kitty image previews.
 - `poppler`: provides `pdftoppm` and `pdftotext` for PDF preview.
+- `magick` or `convert`: used to normalize SVG and image formats that should render through the preview cache.
 - `sxiv`: for `scripts/sxiv-current-dir`.
 - `fzf`: for `scripts/sxiv-fzf`.
 - `file`: used by `scope.sh` and `scripts/sxiv-fzf`.
@@ -131,6 +136,9 @@ Then verify:
 file --dereference --brief --mime-type -- /path/to/file
 bash -n scope.sh
 command -v kitten
+command -v magick
+command -v convert
+command -v rsvg-convert
 command -v pdftoppm
 command -v pdftotext
 ```

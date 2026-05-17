@@ -11,7 +11,7 @@ set -euo pipefail
 # --- Configuration ---
 BACKUP_USER="shri"
 BACKUP_UID=$(id -u "$BACKUP_USER" 2>/dev/null || echo "1000")
-ICON="/home/shri/Pictures/icons/backup.svg"
+ICON="/home/shri/Pictures/icons/preferences-system-backup.svg"
 UUID="beda374d-ea22-4a53-a7e2-a685f598c3a1"
 MOUNT_POINT="/mnt/home-backup"
 SESSION_NAME="home-backup"

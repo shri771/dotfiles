@@ -30,7 +30,6 @@ in
     # Packages
     ../modules/nixos/user-packages.nix
     ../modules/nixos/sddm.nix
-
     # Users
     ../modules/nixos/users/shri.nix
     ../modules/nixos/users/tst.nix
@@ -215,9 +214,27 @@ in
     {
       users = [ "${primaryUser}" ];
       commands = [
-        { command = "/run/wrappers/bin/borg *"; options = [ "NOPASSWD" "SETENV" ]; }
-        { command = "/home/${primaryUser}/.nix-profile/bin/borg *"; options = [ "NOPASSWD" "SETENV" ]; }
-        { command = "/run/current-system/sw/bin/borg *"; options = [ "NOPASSWD" "SETENV" ]; }
+        {
+          command = "/run/wrappers/bin/borg *";
+          options = [
+            "NOPASSWD"
+            "SETENV"
+          ];
+        }
+        {
+          command = "/home/${primaryUser}/.nix-profile/bin/borg *";
+          options = [
+            "NOPASSWD"
+            "SETENV"
+          ];
+        }
+        {
+          command = "/run/current-system/sw/bin/borg *";
+          options = [
+            "NOPASSWD"
+            "SETENV"
+          ];
+        }
       ];
     }
   ];
@@ -274,7 +291,10 @@ in
     ];
     config = {
       hyprland = {
-        default = [ "hyprland" "kde" ];
+        default = [
+          "hyprland"
+          "kde"
+        ];
         # Route file open/save dialogs (browsers, GTK/Qt apps) through ranger
         "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
       };
@@ -418,16 +438,27 @@ in
   # USB
   services.udisks2.enable = true;
   services.udev.extraRules = ''
-    SUBSYSTEMS=="usb", ENV{UDISKS_SYSTEM}="0", ENV{UDISKS_IGNORE}="0"
+    # Make all USB block devices non-system and visible to udisks
+    SUBSYSTEMS=="usb", SUBSYSTEM=="block", ENV{UDISKS_SYSTEM}="0"
 
     # SanDisk 3.2Gen1 (0781:55a9) — trigger borg home backup on plug-in
-    ACTION=="add", SUBSYSTEM=="block", ENV{ID_FS_UUID}=="beda374d-ea22-4a53-a7e2-a685f598c3a1", TAG+="systemd", ENV{SYSTEMD_WANTS}="home-backup.service"
+    ACTION=="add", SUBSYSTEM=="block", SUBSYSTEMS=="usb", \
+      ENV{ID_FS_UUID}=="beda374d-ea22-4a53-a7e2-a685f598c3a1", \
+      TAG+="systemd", ENV{SYSTEMD_WANTS}="home-backup.service"
   '';
 
   # Systemd service triggered by udev when backup drive is plugged in
   systemd.services.home-backup = {
     description = "Home Borg Backup Trigger";
-    path = with pkgs; [ bash coreutils util-linux gnupg pass tmux borgbackup ];
+    path = with pkgs; [
+      bash
+      coreutils
+      util-linux
+      gnupg
+      pass
+      tmux
+      borgbackup
+    ];
     serviceConfig = {
       Type = "oneshot";
       ExecStart = "/run/current-system/sw/bin/bash ${home}/dotfiles/scripts/HomeBackup.sh --udev";
