@@ -7,6 +7,62 @@
   ...
 }:
 
+let
+  # Custom wrapper for xdg-desktop-portal-termfilechooser.
+  # The bundled ranger-wrapper.sh works but ranger's UX is opaque — there's
+  # no on-screen hint that you rename a save target with `cw` or confirm a
+  # directory by pressing `q` inside it. This wrapper prints an explicit
+  # status-line message for each mode using ranger's --cmd flag.
+  #
+  # Portal arg contract (from xdg-desktop-portal-termfilechooser(5)):
+  #   $1 multiple   $2 directory   $3 save   $4 path   $5 out   $6 verbosity
+  rangerPortalWrapper = pkgs.writeShellScript "ranger-portal-wrapper" ''
+    set -euo pipefail
+
+    multiple="''${1:-0}"
+    directory="''${2:-0}"
+    save="''${3:-0}"
+    path="''${4:-$HOME}"
+    out="''${5:?missing out path}"
+
+    if [ "''${6:-0}" -ge 4 ]; then set -x; fi
+
+    # TERMCMD lets you swap kitty for foot/wezterm/etc. without rebuilding.
+    # Default pinned to the kitty in this user profile.
+    termcmd=(''${TERMCMD:-${pkgs.kitty}/bin/kitty --class ranger --title termfilechooser})
+    ranger=${pkgs.ranger}/bin/ranger
+
+    if [ "$save" = "1" ]; then
+      # SAVE — termfilechooser pre-creates a placeholder at $path
+      # (controlled by create_help_file=1 in the portal config, default on).
+      #   - keep suggested name: navigate, Enter on the placeholder
+      #   - rename:              cw   (or :rename <name>) then Enter
+      #   - new name from scratch: :touch <name> then Enter on it
+      #   - cancel:              q
+      "''${termcmd[@]}" -e "$ranger" \
+        --choosefile="$out" \
+        --selectfile="$path" \
+        --cmd='echo SAVE — cw renames, :touch NAME makes a new file, Enter confirms, q cancels'
+    elif [ "$directory" = "1" ]; then
+      # PICK DIRECTORY — --choosedir writes the dir ranger is INSIDE when it quits.
+      "''${termcmd[@]}" -e "$ranger" \
+        --choosedir="$out" \
+        --show-only-dirs \
+        --cmd='echo PICK DIR — open the target directory, then press q to confirm' \
+        "$path"
+    elif [ "$multiple" = "1" ]; then
+      "''${termcmd[@]}" -e "$ranger" \
+        --choosefiles="$out" \
+        --cmd='echo MULTI — Space marks files, Enter confirms, q cancels' \
+        "$path"
+    else
+      "''${termcmd[@]}" -e "$ranger" \
+        --choosefile="$out" \
+        --cmd='echo PICK FILE — Enter confirms, q cancels' \
+        "$path"
+    fi
+  '';
+in
 {
   config = {
     # home-manager.backupFileExtension = "backup"; # Removed from here
@@ -162,13 +218,14 @@
       DEFAULT_FILE_MANAGER = "ranger";
     };
 
-    # Configure xdg-desktop-portal-termfilechooser to use ranger.
-    # The package ships a ready-made ranger-wrapper.sh that invokes
-    # `kitty --title 'termfilechooser' -e ranger ...` with the right flags
-    # for open / open-multiple / save / pick-directory.
+    # Configure xdg-desktop-portal-termfilechooser to use ranger via our
+    # custom wrapper (rangerPortalWrapper in the let block above), which adds
+    # on-screen key hints the bundled wrapper lacks.
+    # create_help_file=1 (the default, left implicit) is required so the SAVE
+    # mode has a placeholder file the user can rename with `cw`.
     xdg.configFile."xdg-desktop-portal-termfilechooser/config".text = ''
       [filechooser]
-      cmd=${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/ranger-wrapper.sh
+      cmd=${rangerPortalWrapper}
       default_dir=$HOME
       open_mode=suggested
       save_mode=suggested

@@ -12,13 +12,14 @@ return {
         event = "InsertEnter",
         opts = {
           suggestion = { enabled = false }, -- blink.cmp handles the UI
+          enabled = false,
           panel = { enabled = false },
         },
       },
       {
         "fang2hou/blink-copilot",
         opts = {
-          enabled = true,
+          enabled = false,
           max_completions = 1, -- Global default for max completions
           max_attempts = 2, -- Global default for max attempts
         },

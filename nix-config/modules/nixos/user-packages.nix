@@ -5,7 +5,6 @@
   environment.systemPackages = with pkgs; [
     # Core Utilities
     gitFull
-    github-copilot-cli
     curl
     jq
     unzip

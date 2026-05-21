@@ -284,6 +284,7 @@ in
 
     # --- 11. Unstable Packages ---
     unstable.opencode
+    unstable.github-copilot-cli
     unstable.gemini-cli
     unstable.antigravity
     unstable.claude-code
