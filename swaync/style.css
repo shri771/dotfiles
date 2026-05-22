@@ -378,6 +378,12 @@
   border-radius: 12px;
 }
 
+.widget-buttons-grid > flowbox > flowboxchild > button > label {
+  color: var(--text-color);
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 1.5rem;
+}
+
 .widget-menubar > .menu-button-bar > .start {
   margin-left: 8px;
 }

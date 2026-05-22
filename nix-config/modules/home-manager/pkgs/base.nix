@@ -248,6 +248,7 @@ in
 
     # --- 9. Fonts & Theming ---
     font-awesome
+    icomoon-feather
     fira-code
     nerd-fonts.jetbrains-mono
     jetbrains-mono
