@@ -156,6 +156,7 @@ in
   # 2. Add the necessary KDE/Qt QML dependencies
   home.packages = with pkgs; [
     whitesur-icon-theme
+    kdePackages.breeze-icons # WhiteSur inherits the Breeze icon fallback
     kdePackages.qqc2-desktop-style # Needed for QML apps like EasyEffects
     kdePackages.kirigami # Needed for QML apps like EasyEffects
     kdePackages.breeze # Color schemes + Breeze theme files

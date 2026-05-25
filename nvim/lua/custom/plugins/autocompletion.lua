@@ -7,24 +7,6 @@ return {
     -- build = "make",
     dependencies = {
       {
-        "zbirenbaum/copilot.lua",
-        cmd = "Copilot",
-        event = "InsertEnter",
-        opts = {
-          suggestion = { enabled = false }, -- blink.cmp handles the UI
-          enabled = false,
-          panel = { enabled = false },
-        },
-      },
-      {
-        "fang2hou/blink-copilot",
-        opts = {
-          enabled = false,
-          max_completions = 1, -- Global default for max completions
-          max_attempts = 2, -- Global default for max attempts
-        },
-      },
-      {
         "L3MON4D3/LuaSnip",
         build = (function()
           if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
@@ -133,21 +115,6 @@ return {
             name = "Dadbod",
             module = "vim_dadbod_completion.blink",
             score_offset = 85,
-          },
-          copilot = {
-            name = "copilot",
-            module = "blink-copilot",
-            score_offset = 100,
-            async = true,
-            opts = {
-              -- Local options override global ones
-              max_completions = 3, -- Override global max_completions
-
-              -- Final settings:
-              -- * max_completions = 3
-              -- * max_attempts = 2
-              -- * all other options are default
-            },
           },
           lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
           lsp = {

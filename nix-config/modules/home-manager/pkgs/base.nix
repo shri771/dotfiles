@@ -4,9 +4,7 @@
   pkgs,
   inputs,
   ...
-}:
-
-let
+}: let
   wlctl = pkgs.rustPlatform.buildRustPackage rec {
     pname = "wlctl";
     version = "0.1.3";
@@ -29,8 +27,11 @@ let
     system = pkgs.stdenv.hostPlatform.system;
     config.allowUnfree = true;
   };
-in
-{
+
+  gdk = pkgs.google-cloud-sdk.withExtraComponents (with pkgs.google-cloud-sdk.components; [
+    gke-gcloud-auth-plugin
+  ]);
+in {
   home.packages = with pkgs; [
     # --- 1. Common Logic & Utility Packages (Used in both Hypr/Awesome) ---
     openssl
@@ -196,10 +197,12 @@ in
     kdePackages.kpmcore
     alacritty
     normcap
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     # --- 8. Development & Languages ---
     # Containers & Cloud
     docker
+    gdk
     minikube
     pkgs.go-task
     pkgs.bun
