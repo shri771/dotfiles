@@ -93,6 +93,7 @@ Rules:
 
 - Match the style of the existing `vaultwarden.nix` / `linkwarden.nix`.
 - Containers go through `virtualisation.oci-containers` — verify `virtualisation.docker.enable` (or podman) is on in `configuration.nix` before adding the first container.
+- Docker bridge networking is handled in `nixos/configuration.nix` under `networking.firewall`: `docker0` is listed in `trustedInterfaces`, and `extraCommands` installs an iptables wildcard rule for custom Docker bridges named `br-<id>`.
 
 ## Current External Dependencies
 

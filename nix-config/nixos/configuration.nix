@@ -338,8 +338,8 @@ in
   programs.direnv.nix-direnv.enable = true;
   services.tailscale.enable = true;
 
-  # Install firefox.
-  programs.firefox.enable = true;
+  # # Install firefox.
+  # programs.firefox.enable = true;
 
   ### Systemd Services ###
 
@@ -473,8 +473,17 @@ in
   # KDE
   programs.kdeconnect.enable = true;
 
-  # Firwall
+  # Firewall
   networking.firewall = rec {
+    # Trust Docker bridges so containers on bridge networks can talk through the host firewall.
+    trustedInterfaces = [ "docker0" ];
+    extraCommands = ''
+      iptables -I nixos-fw -i br-+ -j nixos-fw-accept
+    '';
+    extraStopCommands = ''
+      iptables -D nixos-fw -i br-+ -j nixos-fw-accept 2>/dev/null || true
+    '';
+
     allowedTCPPortRanges = [
       {
         # For kde connect

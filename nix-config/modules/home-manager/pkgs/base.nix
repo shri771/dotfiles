@@ -4,7 +4,8 @@
   pkgs,
   inputs,
   ...
-}: let
+}:
+let
   wlctl = pkgs.rustPlatform.buildRustPackage rec {
     pname = "wlctl";
     version = "0.1.3";
@@ -28,10 +29,14 @@
     config.allowUnfree = true;
   };
 
-  gdk = pkgs.google-cloud-sdk.withExtraComponents (with pkgs.google-cloud-sdk.components; [
-    gke-gcloud-auth-plugin
-  ]);
-in {
+  gdk = pkgs.google-cloud-sdk.withExtraComponents (
+    with pkgs.google-cloud-sdk.components;
+    [
+      gke-gcloud-auth-plugin
+    ]
+  );
+in
+{
   home.packages = with pkgs; [
     # --- 1. Common Logic & Utility Packages (Used in both Hypr/Awesome) ---
     openssl
@@ -47,7 +52,6 @@ in {
     rofi
     yad
     cliphist
-    copyq
     playerctl
     imagemagick
     socat
