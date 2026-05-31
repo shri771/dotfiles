@@ -13,11 +13,8 @@
 
 # Exclude virtual machine disks (large, recoverable)
 - /home/shri/VirtualBox VMs/**
-
-# Exclude large video directories
-- /home/shri/Videos/Web-cam/**
 - /home/shri/Videos/Webseries/**
-- /home/shri/Videos/Screan-Recording/**
+- /home/shri/Drive
 
 # Exclude node_modules / build artifacts
 
