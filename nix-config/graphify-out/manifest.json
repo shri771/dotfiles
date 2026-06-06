@@ -1,0 +1,1942 @@
+{
+  "/home/shri/dotfiles/nix-config/.claude/settings.local.json": {
+    "mtime": 1779014531.108183,
+    "ast_hash": "353479406fa483b5f1b14831294e2c1c",
+    "semantic_hash": "353479406fa483b5f1b14831294e2c1c"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-click-copy/scripts/helpers.sh": {
+    "mtime": 1778952820.292852,
+    "ast_hash": "20b1936ff3aa5991718d2dbe4df207a3",
+    "semantic_hash": "20b1936ff3aa5991718d2dbe4df207a3"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-click-copy/scripts/tmux_click_copy.sh": {
+    "mtime": 1778952820.2929127,
+    "ast_hash": "413fb0de1caea07ff0bb1479144f0f9e",
+    "semantic_hash": "413fb0de1caea07ff0bb1479144f0f9e"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/scripts/check_tmux_version.sh": {
+    "mtime": 1778952820.3030906,
+    "ast_hash": "ee9b22a5085239a4e49b1c965ef0dd50",
+    "semantic_hash": "ee9b22a5085239a4e49b1c965ef0dd50"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/scripts/continuum_restore.sh": {
+    "mtime": 1778952820.3031726,
+    "ast_hash": "1e4a83e537f6cfc8333646df0e7abe76",
+    "semantic_hash": "1e4a83e537f6cfc8333646df0e7abe76"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/scripts/continuum_save.sh": {
+    "mtime": 1778952820.303228,
+    "ast_hash": "2071b9a0ae3bab1a2f99be630c3200bf",
+    "semantic_hash": "2071b9a0ae3bab1a2f99be630c3200bf"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/scripts/continuum_status.sh": {
+    "mtime": 1778952820.3032835,
+    "ast_hash": "e851cc1841f4c09d415565939fdd024f",
+    "semantic_hash": "e851cc1841f4c09d415565939fdd024f"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/scripts/handle_tmux_automatic_start.sh": {
+    "mtime": 1778952820.3033392,
+    "ast_hash": "96ad54456fdb1a8d7d86d4c2341722c9",
+    "semantic_hash": "96ad54456fdb1a8d7d86d4c2341722c9"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/scripts/handle_tmux_automatic_start/osx_alacritty_start_tmux.sh": {
+    "mtime": 1778952820.3025956,
+    "ast_hash": "e5389e227ecf7004cc695e31aba984ca",
+    "semantic_hash": "e5389e227ecf7004cc695e31aba984ca"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/scripts/handle_tmux_automatic_start/osx_disable.sh": {
+    "mtime": 1778952820.3026557,
+    "ast_hash": "9e03456b03aa7b7c7cfee5324da95e2c",
+    "semantic_hash": "9e03456b03aa7b7c7cfee5324da95e2c"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/scripts/handle_tmux_automatic_start/osx_enable.sh": {
+    "mtime": 1778952820.302712,
+    "ast_hash": "6a0235c48d1d4b9e71faa5f1a1f74d42",
+    "semantic_hash": "6a0235c48d1d4b9e71faa5f1a1f74d42"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/scripts/handle_tmux_automatic_start/osx_iterm_start_tmux.sh": {
+    "mtime": 1778952820.302797,
+    "ast_hash": "345e3c41884b902c634938841e53fa54",
+    "semantic_hash": "345e3c41884b902c634938841e53fa54"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/scripts/handle_tmux_automatic_start/osx_kitty_start_tmux.sh": {
+    "mtime": 1778952820.3028579,
+    "ast_hash": "cb4b4355b869db983d5ca03cd8c909ed",
+    "semantic_hash": "cb4b4355b869db983d5ca03cd8c909ed"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/scripts/handle_tmux_automatic_start/osx_terminal_start_tmux.sh": {
+    "mtime": 1778952820.3029153,
+    "ast_hash": "2b949375ed72becce034e080f59dfe90",
+    "semantic_hash": "2b949375ed72becce034e080f59dfe90"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/scripts/handle_tmux_automatic_start/systemd_disable.sh": {
+    "mtime": 1778952820.3029737,
+    "ast_hash": "519108db24cdaab84278b26380a6ec89",
+    "semantic_hash": "519108db24cdaab84278b26380a6ec89"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/scripts/handle_tmux_automatic_start/systemd_enable.sh": {
+    "mtime": 1778952820.3030324,
+    "ast_hash": "c3da82b9b5b5eb8891928d2841de8c6b",
+    "semantic_hash": "c3da82b9b5b5eb8891928d2841de8c6b"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/scripts/helpers.sh": {
+    "mtime": 1778952820.3034067,
+    "ast_hash": "9338ac62ebb10cb89056a533ebf8e226",
+    "semantic_hash": "9338ac62ebb10cb89056a533ebf8e226"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/scripts/shared.sh": {
+    "mtime": 1778952820.3034666,
+    "ast_hash": "38a5a2acb19696db19f6b9610e637f91",
+    "semantic_hash": "38a5a2acb19696db19f6b9610e637f91"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/scripts/variables.sh": {
+    "mtime": 1778952820.3035276,
+    "ast_hash": "542fe7d4466fea32ebbad03cdf011473",
+    "semantic_hash": "542fe7d4466fea32ebbad03cdf011473"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/run-tests": {
+    "mtime": 1778952820.3137784,
+    "ast_hash": "b5a67705211057a41b944f4c5825aeec",
+    "semantic_hash": "b5a67705211057a41b944f4c5825aeec"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/scripts/check_tmux_version.sh": {
+    "mtime": 1778952820.3122334,
+    "ast_hash": "d2e1dceb1a96663e4a23f3c57c3d17a9",
+    "semantic_hash": "d2e1dceb1a96663e4a23f3c57c3d17a9"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/scripts/copycat_generate_results.sh": {
+    "mtime": 1778952820.3122709,
+    "ast_hash": "d0ccb1d3901bb1c445cbef696d197043",
+    "semantic_hash": "d0ccb1d3901bb1c445cbef696d197043"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/scripts/copycat_git_special.sh": {
+    "mtime": 1778952820.312299,
+    "ast_hash": "fcbd8bd55901914b5eeea1eff23cf4c9",
+    "semantic_hash": "fcbd8bd55901914b5eeea1eff23cf4c9"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/scripts/copycat_jump.sh": {
+    "mtime": 1778952820.312333,
+    "ast_hash": "3c2d30b57fa331ae9c9485f02d926244",
+    "semantic_hash": "3c2d30b57fa331ae9c9485f02d926244"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/scripts/copycat_mode_bindings.sh": {
+    "mtime": 1778952820.312371,
+    "ast_hash": "b5c9cf86d1ea36cd35dd9ca2c26095e3",
+    "semantic_hash": "b5c9cf86d1ea36cd35dd9ca2c26095e3"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/scripts/copycat_mode_quit.sh": {
+    "mtime": 1778952820.3123994,
+    "ast_hash": "b8a45f7956b64f00341a10854c2b20ca",
+    "semantic_hash": "b8a45f7956b64f00341a10854c2b20ca"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/scripts/copycat_mode_start.sh": {
+    "mtime": 1778952820.312429,
+    "ast_hash": "7cfb9b3fd2de98589072174493497295",
+    "semantic_hash": "7cfb9b3fd2de98589072174493497295"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/scripts/copycat_search.sh": {
+    "mtime": 1778952820.3124568,
+    "ast_hash": "1136496e2dfaa385bd9d34a735a60b5a",
+    "semantic_hash": "1136496e2dfaa385bd9d34a735a60b5a"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/scripts/helpers.sh": {
+    "mtime": 1778952820.3124871,
+    "ast_hash": "e80586a014b31a55d1aad32bfe8815bc",
+    "semantic_hash": "e80586a014b31a55d1aad32bfe8815bc"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/scripts/stored_search_helpers.sh": {
+    "mtime": 1778952820.3125217,
+    "ast_hash": "02f4c4d1026c1bf320e59bbaff44c0a1",
+    "semantic_hash": "02f4c4d1026c1bf320e59bbaff44c0a1"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/scripts/variables.sh": {
+    "mtime": 1778952820.3125496,
+    "ast_hash": "1b45cbbc53bfb0f41454e8ba7efffa04",
+    "semantic_hash": "1b45cbbc53bfb0f41454e8ba7efffa04"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/test/helpers/setup_tmux_conf.sh": {
+    "mtime": 1778952820.3128266,
+    "ast_hash": "676580521246a7c930c2649f864fa0fa",
+    "semantic_hash": "676580521246a7c930c2649f864fa0fa"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/test/helpers/setup_tmux_conf_with_custom_searches.sh": {
+    "mtime": 1778952820.312854,
+    "ast_hash": "391ca22ac19f772fa32926fcec0d1668",
+    "semantic_hash": "391ca22ac19f772fa32926fcec0d1668"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/test/run-tests-within-vm": {
+    "mtime": 1778952820.3129656,
+    "ast_hash": "5cf6c3edb02ebad61eced53ed9f9e121",
+    "semantic_hash": "5cf6c3edb02ebad61eced53ed9f9e121"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/vagrant_ubuntu_provisioning_two_five.sh": {
+    "mtime": 1778952820.3138056,
+    "ast_hash": "33b3eb68a6ecf3e79d2788787c53e53d",
+    "semantic_hash": "33b3eb68a6ecf3e79d2788787c53e53d"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/.markdownlint.json": {
+    "mtime": 1778952820.3261788,
+    "ast_hash": "63e6237a0c549bffc3045a98331bf60d",
+    "semantic_hash": "63e6237a0c549bffc3045a98331bf60d"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/.vscode/launch.json": {
+    "mtime": 1778952820.3222024,
+    "ast_hash": "3cf8b065c409da433334c52d68418d9c",
+    "semantic_hash": "3cf8b065c409da433334c52d68418d9c"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/.vscode/settings.json": {
+    "mtime": 1778952820.3223948,
+    "ast_hash": "979a694b69e941f449ed7315216d4738",
+    "semantic_hash": "979a694b69e941f449ed7315216d4738"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/cache/known_tmux_versions": {
+    "mtime": 1778952820.3224587,
+    "ast_hash": "cc0dc6fe49ec78829fb45410b07c0c49",
+    "semantic_hash": "cc0dc6fe49ec78829fb45410b07c0c49"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/cache/plugin_params": {
+    "mtime": 1778952820.3225713,
+    "ast_hash": "5bc76d2d62badfcc3a4e33b606617550",
+    "semantic_hash": "5bc76d2d62badfcc3a4e33b606617550"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/advanced.sh": {
+    "mtime": 1778952820.3242803,
+    "ast_hash": "08cf2fca053f5d387cf2d9f2f50ca711",
+    "semantic_hash": "08cf2fca053f5d387cf2d9f2f50ca711"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/external_tools/dropbox.sh": {
+    "mtime": 1778952820.3231544,
+    "ast_hash": "cb3f03c89351ee92fc64e6e6786b3bbd",
+    "semantic_hash": "cb3f03c89351ee92fc64e6e6786b3bbd"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/external_tools/mullvad.sh": {
+    "mtime": 1778952820.3231857,
+    "ast_hash": "337a0a322c026c1bdba7c79fd45f812e",
+    "semantic_hash": "337a0a322c026c1bdba7c79fd45f812e"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/external_tools/spotify.sh": {
+    "mtime": 1778952820.3232224,
+    "ast_hash": "c183b9406ea8ef28c760a5d4e35db5a1",
+    "semantic_hash": "c183b9406ea8ef28c760a5d4e35db5a1"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/extras.sh": {
+    "mtime": 1778952820.3243058,
+    "ast_hash": "ff0ce33202f7c9aae5f88324f8748a31",
+    "semantic_hash": "ff0ce33202f7c9aae5f88324f8748a31"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/help/help_currencies.sh": {
+    "mtime": 1778952820.3232875,
+    "ast_hash": "63789189d8cf4b78f28115abb2340527",
+    "semantic_hash": "63789189d8cf4b78f28115abb2340527"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/help/help_extras.sh": {
+    "mtime": 1778952820.32332,
+    "ast_hash": "c24ee3976b0527ec1a0fc2f4950beecb",
+    "semantic_hash": "c24ee3976b0527ec1a0fc2f4950beecb"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/help/help_missing_keys.sh": {
+    "mtime": 1778952820.3233454,
+    "ast_hash": "28ab01023a48a7b07328a12cbc6093a5",
+    "semantic_hash": "28ab01023a48a7b07328a12cbc6093a5"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/help/help_pane_history.sh": {
+    "mtime": 1778952820.3233716,
+    "ast_hash": "42784df34d201694fa661cd07c814ba0",
+    "semantic_hash": "42784df34d201694fa661cd07c814ba0"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/help/help_pane_move.sh": {
+    "mtime": 1778952820.3233984,
+    "ast_hash": "92867ba16a2ffba1cbcb4ad82f8f4f2f",
+    "semantic_hash": "92867ba16a2ffba1cbcb4ad82f8f4f2f"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/help/help_paste_buffers.sh": {
+    "mtime": 1778952820.3234231,
+    "ast_hash": "ab213b2f4dd6493855d0935386d78e2e",
+    "semantic_hash": "ab213b2f4dd6493855d0935386d78e2e"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/help/help_summary.sh": {
+    "mtime": 1778952820.3234499,
+    "ast_hash": "85f5c2f124b8f89681d7d1b4d8b05a8f",
+    "semantic_hash": "85f5c2f124b8f89681d7d1b4d8b05a8f"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/help/help_window_move.sh": {
+    "mtime": 1778952820.3234754,
+    "ast_hash": "28145e6d7eb9b3e9fccb9f66b02b462f",
+    "semantic_hash": "28145e6d7eb9b3e9fccb9f66b02b462f"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/hints/choose-buffer.sh": {
+    "mtime": 1778952820.323531,
+    "ast_hash": "0228ebae225888db4ce634990d967a00",
+    "semantic_hash": "0228ebae225888db4ce634990d967a00"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/hints/choose-client.sh": {
+    "mtime": 1778952820.3235638,
+    "ast_hash": "cb5e68c12012ae7c5eb3e017195b3286",
+    "semantic_hash": "cb5e68c12012ae7c5eb3e017195b3286"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/hints/choose-tree.sh": {
+    "mtime": 1778952820.3235898,
+    "ast_hash": "ca01d0278f04cd865db77d87eb5e98c6",
+    "semantic_hash": "ca01d0278f04cd865db77d87eb5e98c6"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/hints/customize-mode.sh": {
+    "mtime": 1778952820.3236163,
+    "ast_hash": "c4ee97f74aead9858eea3d76a918d5db",
+    "semantic_hash": "c4ee97f74aead9858eea3d76a918d5db"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/layouts.sh": {
+    "mtime": 1778952820.3243303,
+    "ast_hash": "cdef1c93d987afc3dbef66522afc0979",
+    "semantic_hash": "cdef1c93d987afc3dbef66522afc0979"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/layouts_indicators.sh": {
+    "mtime": 1778952820.3243601,
+    "ast_hash": "5b0ee4083cceef53c7b68c2a574be524",
+    "semantic_hash": "5b0ee4083cceef53c7b68c2a574be524"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/layouts_lines.sh": {
+    "mtime": 1778952820.324386,
+    "ast_hash": "ba1b5e7a820885db95a5ad34246c70b4",
+    "semantic_hash": "ba1b5e7a820885db95a5ad34246c70b4"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/layouts_scrollbars.sh": {
+    "mtime": 1778952820.324416,
+    "ast_hash": "82bed5ac57c56d1e68620473171eb627",
+    "semantic_hash": "82bed5ac57c56d1e68620473171eb627"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/main.sh": {
+    "mtime": 1778952820.3244417,
+    "ast_hash": "9dae5c3f4811d05301104fee657c42fe",
+    "semantic_hash": "9dae5c3f4811d05301104fee657c42fe"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/nav_search.sh": {
+    "mtime": 1778952820.324467,
+    "ast_hash": "72a6548f8f7c2d6a76d5ff0a563e3f1e",
+    "semantic_hash": "72a6548f8f7c2d6a76d5ff0a563e3f1e"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/currencies.sh": {
+    "mtime": 1778952820.323687,
+    "ast_hash": "de712060fd9b486c8ee85597a367bc52",
+    "semantic_hash": "de712060fd9b486c8ee85597a367bc52"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/diacritics.sh": {
+    "mtime": 1778952820.323718,
+    "ast_hash": "395b1db024013f5855e47d636f668208",
+    "semantic_hash": "395b1db024013f5855e47d636f668208"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/diacritics_a.sh": {
+    "mtime": 1778952820.3237453,
+    "ast_hash": "b326bff6b8a8481a4135c2d924090eb3",
+    "semantic_hash": "b326bff6b8a8481a4135c2d924090eb3"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/diacritics_c.sh": {
+    "mtime": 1778952820.3237705,
+    "ast_hash": "ed6799ef9bd64a6bdb07f37ddddad5cb",
+    "semantic_hash": "ed6799ef9bd64a6bdb07f37ddddad5cb"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/diacritics_d.sh": {
+    "mtime": 1778952820.3237953,
+    "ast_hash": "a2e6f81486dca7a3f6a457ee7f97a975",
+    "semantic_hash": "a2e6f81486dca7a3f6a457ee7f97a975"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/diacritics_e.sh": {
+    "mtime": 1778952820.3238213,
+    "ast_hash": "104c475bafdebf8c943969ef88e523e4",
+    "semantic_hash": "104c475bafdebf8c943969ef88e523e4"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/diacritics_g.sh": {
+    "mtime": 1778952820.3238466,
+    "ast_hash": "556c26f40ccf675ac9fad44d6f9708e4",
+    "semantic_hash": "556c26f40ccf675ac9fad44d6f9708e4"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/diacritics_h.sh": {
+    "mtime": 1778952820.3238726,
+    "ast_hash": "c045d459c2cd6e0cc51646ed9a81252f",
+    "semantic_hash": "c045d459c2cd6e0cc51646ed9a81252f"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/diacritics_i.sh": {
+    "mtime": 1778952820.3239074,
+    "ast_hash": "2385a5d2c022ffa9dd094b93bf91c324",
+    "semantic_hash": "2385a5d2c022ffa9dd094b93bf91c324"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/diacritics_k.sh": {
+    "mtime": 1778952820.3239398,
+    "ast_hash": "5b70e8e7a9b14f374e81a88eff726ff8",
+    "semantic_hash": "5b70e8e7a9b14f374e81a88eff726ff8"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/diacritics_l.sh": {
+    "mtime": 1778952820.3239658,
+    "ast_hash": "9bf96fcfc883c4c2127997d5c2df3fcd",
+    "semantic_hash": "9bf96fcfc883c4c2127997d5c2df3fcd"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/diacritics_n.sh": {
+    "mtime": 1778952820.3239913,
+    "ast_hash": "1fa9e0de502c0aa11ed7b2c5337f3885",
+    "semantic_hash": "1fa9e0de502c0aa11ed7b2c5337f3885"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/diacritics_o.sh": {
+    "mtime": 1778952820.324017,
+    "ast_hash": "f03f66bb20f091a3095de31eab2e2b36",
+    "semantic_hash": "f03f66bb20f091a3095de31eab2e2b36"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/diacritics_r.sh": {
+    "mtime": 1778952820.324043,
+    "ast_hash": "735c1b5ba38fca7d6bb21496dd4c9bcd",
+    "semantic_hash": "735c1b5ba38fca7d6bb21496dd4c9bcd"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/diacritics_s.sh": {
+    "mtime": 1778952820.3240712,
+    "ast_hash": "a0bf1125b2dc9422401b60b41a981730",
+    "semantic_hash": "a0bf1125b2dc9422401b60b41a981730"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/diacritics_t.sh": {
+    "mtime": 1778952820.3240986,
+    "ast_hash": "13a0feee1624b2676923745bb9802659",
+    "semantic_hash": "13a0feee1624b2676923745bb9802659"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/diacritics_u.sh": {
+    "mtime": 1778952820.3241386,
+    "ast_hash": "f6218411bc7faa617030bdb43658aa14",
+    "semantic_hash": "f6218411bc7faa617030bdb43658aa14"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/diacritics_w.sh": {
+    "mtime": 1778952820.3241663,
+    "ast_hash": "c530869b97f50b0679a5b24e6267c238",
+    "semantic_hash": "c530869b97f50b0679a5b24e6267c238"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/diacritics_y.sh": {
+    "mtime": 1778952820.3241963,
+    "ast_hash": "a002c24f086080058c329074d2e8b3ba",
+    "semantic_hash": "a002c24f086080058c329074d2e8b3ba"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/diacritics_z.sh": {
+    "mtime": 1778952820.3242247,
+    "ast_hash": "f8cf163c46e757d4bc7adad6d49ba4da",
+    "semantic_hash": "f8cf163c46e757d4bc7adad6d49ba4da"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/odd_chars/missing_keys.sh": {
+    "mtime": 1778952820.3242533,
+    "ast_hash": "fd28e633a0c179b8497342afb6ca770d",
+    "semantic_hash": "fd28e633a0c179b8497342afb6ca770d"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/pane_history.sh": {
+    "mtime": 1778952820.3244936,
+    "ast_hash": "0d11a8ef8e52ac01624b275cc6b3acc6",
+    "semantic_hash": "0d11a8ef8e52ac01624b275cc6b3acc6"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/pane_move.sh": {
+    "mtime": 1778952820.324519,
+    "ast_hash": "353d0c405d26d0c5b980962723b78555",
+    "semantic_hash": "353d0c405d26d0c5b980962723b78555"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/pane_resize.sh": {
+    "mtime": 1778952820.3245447,
+    "ast_hash": "ae78ff78af5dd1b5b1917852551dc480",
+    "semantic_hash": "ae78ff78af5dd1b5b1917852551dc480"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/pane_split.sh": {
+    "mtime": 1778952820.3245814,
+    "ast_hash": "b462e665a94b56501777cae8afa095c2",
+    "semantic_hash": "b462e665a94b56501777cae8afa095c2"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/panes.sh": {
+    "mtime": 1778952820.324608,
+    "ast_hash": "e92cfdc0e8e7b0ede3abe3786b7fae3d",
+    "semantic_hash": "e92cfdc0e8e7b0ede3abe3786b7fae3d"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/paste_buffers.sh": {
+    "mtime": 1778952820.324635,
+    "ast_hash": "7bb0ec6842bf755b101d8f496a10663e",
+    "semantic_hash": "7bb0ec6842bf755b101d8f496a10663e"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/sessions.sh": {
+    "mtime": 1778952820.3246691,
+    "ast_hash": "a3e51eff515623c8d3e4060b3c801b12",
+    "semantic_hash": "a3e51eff515623c8d3e4060b3c801b12"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/window_move.sh": {
+    "mtime": 1778952820.3246965,
+    "ast_hash": "308ea3a995ce13dd1760bac05dc68d9c",
+    "semantic_hash": "308ea3a995ce13dd1760bac05dc68d9c"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/window_split.sh": {
+    "mtime": 1778952820.3247242,
+    "ast_hash": "024fb3880ece3d705e3e2c0f0aaa221c",
+    "semantic_hash": "024fb3880ece3d705e3e2c0f0aaa221c"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/items/windows.sh": {
+    "mtime": 1778952820.3247516,
+    "ast_hash": "674d260b76429bbccff615fc3f7c31f8",
+    "semantic_hash": "674d260b76429bbccff615fc3f7c31f8"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/act_choose_tree.sh": {
+    "mtime": 1778952820.3252215,
+    "ast_hash": "509f15a924cbbd2817c06a86b643a8f1",
+    "semantic_hash": "509f15a924cbbd2817c06a86b643a8f1"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/act_clear_screen.sh": {
+    "mtime": 1778952820.3252485,
+    "ast_hash": "a91cbc03b7743d095df4f97d7ef8fa65",
+    "semantic_hash": "a91cbc03b7743d095df4f97d7ef8fa65"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/act_display_char.sh": {
+    "mtime": 1778952820.3252738,
+    "ast_hash": "fc5044eca4ca16e253cd59a365868e85",
+    "semantic_hash": "fc5044eca4ca16e253cd59a365868e85"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/break_pane.sh": {
+    "mtime": 1778952820.3252995,
+    "ast_hash": "be3af8dd68dea30cef31b4d969c6f12d",
+    "semantic_hash": "be3af8dd68dea30cef31b4d969c6f12d"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/change_prefix.sh": {
+    "mtime": 1778952820.325324,
+    "ast_hash": "b6af93a60990f16a0216817ed0e90d4c",
+    "semantic_hash": "b6af93a60990f16a0216817ed0e90d4c"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/dead_code/_mullvad_country.sh": {
+    "mtime": 1778952820.324882,
+    "ast_hash": "30c3dc77494aa2410339ba7e2d3ca389",
+    "semantic_hash": "30c3dc77494aa2410339ba7e2d3ca389"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/dead_code/act_unlink_and_jump_to.sh": {
+    "mtime": 1778952820.324911,
+    "ast_hash": "b97e3cae9698b0faeb8e527412914cdb",
+    "semantic_hash": "b97e3cae9698b0faeb8e527412914cdb"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/dead_code/config.sh": {
+    "mtime": 1778952820.3249378,
+    "ast_hash": "4944eed7bd1c74a9584f0ebcd96ac05b",
+    "semantic_hash": "4944eed7bd1c74a9584f0ebcd96ac05b"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/dead_code/move_menu.sh": {
+    "mtime": 1778952820.3249633,
+    "ast_hash": "ae73f76cdd4294507faac80e5defc3e2",
+    "semantic_hash": "ae73f76cdd4294507faac80e5defc3e2"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/dialog_handling.sh": {
+    "mtime": 1778952820.3253524,
+    "ast_hash": "4594b29bdc1636b538533e7051806933",
+    "semantic_hash": "4594b29bdc1636b538533e7051806933"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/external_dialog_handle.sh": {
+    "mtime": 1778952820.3253999,
+    "ast_hash": "583098d1ac2fa3b2039597abb18afeb4",
+    "semantic_hash": "583098d1ac2fa3b2039597abb18afeb4"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/external_dialog_trigger.sh": {
+    "mtime": 1778952820.3254275,
+    "ast_hash": "7ca38c36c20c55c7fff5a0f6fe2da6ea",
+    "semantic_hash": "7ca38c36c20c55c7fff5a0f6fe2da6ea"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/helpers.sh": {
+    "mtime": 1778952820.3254526,
+    "ast_hash": "9d3a71cdd5aaa8203c86dd29e5fc4a98",
+    "semantic_hash": "9d3a71cdd5aaa8203c86dd29e5fc4a98"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/helpers_minimal.sh": {
+    "mtime": 1778952820.3254795,
+    "ast_hash": "7c05810e5d2c972ccdb7444d7477e20a",
+    "semantic_hash": "7c05810e5d2c972ccdb7444d7477e20a"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/kill_other_windows.sh": {
+    "mtime": 1778952820.3255162,
+    "ast_hash": "5bdb7a52a6ddad2db7d316e00fdaa66e",
+    "semantic_hash": "5bdb7a52a6ddad2db7d316e00fdaa66e"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/list-sessions.sh": {
+    "mtime": 1778952820.325542,
+    "ast_hash": "3b2c03f85d21c1a260b2b38f20d8ecff",
+    "semantic_hash": "3b2c03f85d21c1a260b2b38f20d8ecff"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/plugin_init.sh": {
+    "mtime": 1778952820.3255687,
+    "ast_hash": "05e92bbd04456239d80d511e6c7da369",
+    "semantic_hash": "05e92bbd04456239d80d511e6c7da369"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/reload_conf.sh": {
+    "mtime": 1778952820.3256,
+    "ast_hash": "8c28abe833d0912eae65bf127e727205",
+    "semantic_hash": "8c28abe833d0912eae65bf127e727205"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/relocate_pane.sh": {
+    "mtime": 1778952820.3256264,
+    "ast_hash": "7c3bce8ce0b981db187a5968c6cf73e6",
+    "semantic_hash": "7c3bce8ce0b981db187a5968c6cf73e6"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/relocate_window.sh": {
+    "mtime": 1778952820.3256629,
+    "ast_hash": "a43384db3edc9bfbb11027dc5204ec0d",
+    "semantic_hash": "a43384db3edc9bfbb11027dc5204ec0d"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/show_cmd.sh": {
+    "mtime": 1778952820.3256903,
+    "ast_hash": "037476806461fbe1de1a3a7eaa3355e1",
+    "semantic_hash": "037476806461fbe1de1a3a7eaa3355e1"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/update_custom_inventory.sh": {
+    "mtime": 1778952820.3257341,
+    "ast_hash": "d63dafdc258b28df06cfe908dc310f0c",
+    "semantic_hash": "d63dafdc258b28df06cfe908dc310f0c"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/utils/cache.sh": {
+    "mtime": 1778952820.3250196,
+    "ast_hash": "f5a85d89c652d63f3dacfe51f1a8dbf6",
+    "semantic_hash": "f5a85d89c652d63f3dacfe51f1a8dbf6"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/utils/dbg_profiling.sh": {
+    "mtime": 1778952820.325064,
+    "ast_hash": "1dffa6820024f983bab79127c987104f",
+    "semantic_hash": "1dffa6820024f983bab79127c987104f"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/utils/helpers_full.sh": {
+    "mtime": 1778952820.3250964,
+    "ast_hash": "1d22e8d32bc99aac3f94babc97b54b99",
+    "semantic_hash": "1d22e8d32bc99aac3f94babc97b54b99"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/utils/std_alone_log.sh": {
+    "mtime": 1778952820.325146,
+    "ast_hash": "97e2745144a53d69c44ff7c0a2a8a584",
+    "semantic_hash": "97e2745144a53d69c44ff7c0a2a8a584"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/scripts/utils/tmux.sh": {
+    "mtime": 1778952820.3251808,
+    "ast_hash": "6593e1638608990307bccbcc36b0dfba",
+    "semantic_hash": "6593e1638608990307bccbcc36b0dfba"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/templates/custom_index_template.sh": {
+    "mtime": 1778952820.3258133,
+    "ast_hash": "935712f65c0a3d305a560369c606284e",
+    "semantic_hash": "935712f65c0a3d305a560369c606284e"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/templates/custom_item_template.sh": {
+    "mtime": 1778952820.3258455,
+    "ast_hash": "05e4182bdf64a144594ebc6f1198f687",
+    "semantic_hash": "05e4182bdf64a144594ebc6f1198f687"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/tools/dbg_vars.sh": {
+    "mtime": 1778952820.3259017,
+    "ast_hash": "3d2e8a2d9e11a7af86c36379fda692d4",
+    "semantic_hash": "3d2e8a2d9e11a7af86c36379fda692d4"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/tools/plugins.sh": {
+    "mtime": 1778952820.3259377,
+    "ast_hash": "ccd099d0dfb854593c222cf65ea85d60",
+    "semantic_hash": "ccd099d0dfb854593c222cf65ea85d60"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/tools/profiling-test.sh": {
+    "mtime": 1778952820.3259666,
+    "ast_hash": "0f020c06abed844d01290c13300008f8",
+    "semantic_hash": "0f020c06abed844d01290c13300008f8"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/tools/public_ip.sh": {
+    "mtime": 1778952820.3259914,
+    "ast_hash": "5b0db8f8fa5059c2b2a34dfcc287094a",
+    "semantic_hash": "5b0db8f8fa5059c2b2a34dfcc287094a"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/tools/show_config.sh": {
+    "mtime": 1778952820.3260176,
+    "ast_hash": "7dddf8d8755781db26a6ed37eb359a4e",
+    "semantic_hash": "7dddf8d8755781db26a6ed37eb359a4e"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-open/scripts/helpers.sh": {
+    "mtime": 1778952820.3317227,
+    "ast_hash": "efa3adabbdf09c6292201a93304d9f56",
+    "semantic_hash": "efa3adabbdf09c6292201a93304d9f56"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-open/scripts/tmux_open_error_message.sh": {
+    "mtime": 1778952820.3317554,
+    "ast_hash": "65778e257b5ecce8ddad33cf3075bcff",
+    "semantic_hash": "65778e257b5ecce8ddad33cf3075bcff"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/lib/tmux-test/run_framework_tests": {
+    "mtime": 1778952820.3471484,
+    "ast_hash": "2a17fe4b921110319d1f66811b8ea7e0",
+    "semantic_hash": "2a17fe4b921110319d1f66811b8ea7e0"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/lib/tmux-test/run_tests": {
+    "mtime": 1778952820.3471737,
+    "ast_hash": "515a319cedf4569f93da0f235bcca5ce",
+    "semantic_hash": "515a319cedf4569f93da0f235bcca5ce"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/lib/tmux-test/setup": {
+    "mtime": 1778952820.347198,
+    "ast_hash": "f508f702eb328be0a16f3bc67ab68680",
+    "semantic_hash": "f508f702eb328be0a16f3bc67ab68680"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/lib/tmux-test/tests/helpers/helpers.sh": {
+    "mtime": 1778952820.3467636,
+    "ast_hash": "e928735f92f531fc0f90db9e8f85906b",
+    "semantic_hash": "e928735f92f531fc0f90db9e8f85906b"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/lib/tmux-test/tests/run_tests_in_isolation": {
+    "mtime": 1778952820.3467882,
+    "ast_hash": "5bb83d6df8a3cd91adf7d157ec85520b",
+    "semantic_hash": "5bb83d6df8a3cd91adf7d157ec85520b"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/lib/tmux-test/tests/test_basic_script_execution.sh": {
+    "mtime": 1778952820.3468108,
+    "ast_hash": "c997461e5f0f14963126b986c2dc613e",
+    "semantic_hash": "c997461e5f0f14963126b986c2dc613e"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/lib/tmux-test/tests/test_default_session_name.sh": {
+    "mtime": 1778952820.3468337,
+    "ast_hash": "42a3dc51c142c547385387bf3f13b09b",
+    "semantic_hash": "42a3dc51c142c547385387bf3f13b09b"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/lib/tmux-test/tests/test_tmux_scripting.sh": {
+    "mtime": 1778952820.3468573,
+    "ast_hash": "19dde00555a781cc79cb52d267ef05e8",
+    "semantic_hash": "19dde00555a781cc79cb52d267ef05e8"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/lib/tmux-test/vagrant_centos_provisioning.sh": {
+    "mtime": 1778952820.347227,
+    "ast_hash": "d2d1d947a6c85931005725099a3bbd38",
+    "semantic_hash": "d2d1d947a6c85931005725099a3bbd38"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/lib/tmux-test/vagrant_ubuntu_provisioning.sh": {
+    "mtime": 1778952820.3472521,
+    "ast_hash": "24b2b213ff162477986143909827c4ce",
+    "semantic_hash": "24b2b213ff162477986143909827c4ce"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/run_tests": {
+    "mtime": 1778952820.3471737,
+    "ast_hash": "515a319cedf4569f93da0f235bcca5ce",
+    "semantic_hash": "515a319cedf4569f93da0f235bcca5ce"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/save_command_strategies/gdb.sh": {
+    "mtime": 1778952820.347307,
+    "ast_hash": "f0564e1ab5e90f617d0a1f2756a1317f",
+    "semantic_hash": "f0564e1ab5e90f617d0a1f2756a1317f"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/save_command_strategies/linux_procfs.sh": {
+    "mtime": 1778952820.347336,
+    "ast_hash": "bbd810af519f2c57ed321ed6559aa837",
+    "semantic_hash": "bbd810af519f2c57ed321ed6559aa837"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/save_command_strategies/pgrep.sh": {
+    "mtime": 1778952820.3473608,
+    "ast_hash": "591793f96b56b1b3efb6548d933c3ccd",
+    "semantic_hash": "591793f96b56b1b3efb6548d933c3ccd"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/save_command_strategies/ps.sh": {
+    "mtime": 1778952820.3473847,
+    "ast_hash": "447d79fb83c296086394c6de302f9600",
+    "semantic_hash": "447d79fb83c296086394c6de302f9600"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/scripts/check_tmux_version.sh": {
+    "mtime": 1778952820.347451,
+    "ast_hash": "d2e1dceb1a96663e4a23f3c57c3d17a9",
+    "semantic_hash": "d2e1dceb1a96663e4a23f3c57c3d17a9"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/scripts/helpers.sh": {
+    "mtime": 1778952820.3474796,
+    "ast_hash": "166ce0f06c799559b684cd83ed09a104",
+    "semantic_hash": "166ce0f06c799559b684cd83ed09a104"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/scripts/process_restore_helpers.sh": {
+    "mtime": 1778952820.347504,
+    "ast_hash": "6c59ebb2e9dc873b0130c36437451772",
+    "semantic_hash": "6c59ebb2e9dc873b0130c36437451772"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/scripts/restore.sh": {
+    "mtime": 1778952820.3475559,
+    "ast_hash": "92142f83915bff39a27be628e9f9f600",
+    "semantic_hash": "92142f83915bff39a27be628e9f9f600"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/scripts/save.sh": {
+    "mtime": 1778952820.3475883,
+    "ast_hash": "5bae8ac04d78eb102fbbf46502d87083",
+    "semantic_hash": "5bae8ac04d78eb102fbbf46502d87083"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/scripts/spinner_helpers.sh": {
+    "mtime": 1778952820.3476183,
+    "ast_hash": "55980322d6c1ab441270e7de7ef0b731",
+    "semantic_hash": "55980322d6c1ab441270e7de7ef0b731"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/scripts/tmux_spinner.sh": {
+    "mtime": 1778952820.3476412,
+    "ast_hash": "83e32740b6c2d304899a12f7da2dac75",
+    "semantic_hash": "83e32740b6c2d304899a12f7da2dac75"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/scripts/variables.sh": {
+    "mtime": 1778952820.347668,
+    "ast_hash": "21aed797a96aaf538b9631c6f221a80d",
+    "semantic_hash": "21aed797a96aaf538b9631c6f221a80d"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/strategies/irb_default_strategy.sh": {
+    "mtime": 1778952820.3477263,
+    "ast_hash": "1a2c3e41d94256770697c5e7d551ca11",
+    "semantic_hash": "1a2c3e41d94256770697c5e7d551ca11"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/strategies/mosh-client_default_strategy.sh": {
+    "mtime": 1778952820.3477573,
+    "ast_hash": "f6557329a9109b406d4cdb81996612a4",
+    "semantic_hash": "f6557329a9109b406d4cdb81996612a4"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/strategies/nvim_session.sh": {
+    "mtime": 1778952820.3477807,
+    "ast_hash": "76dfc6d63a8ccc6b32d5e77b74498bba",
+    "semantic_hash": "76dfc6d63a8ccc6b32d5e77b74498bba"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/strategies/vim_session.sh": {
+    "mtime": 1778952820.3478038,
+    "ast_hash": "ccf1e07c3f1b66ed3ed4a92415f5d703",
+    "semantic_hash": "ccf1e07c3f1b66ed3ed4a92415f5d703"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/tests/helpers/helpers.sh": {
+    "mtime": 1778952820.3467636,
+    "ast_hash": "e928735f92f531fc0f90db9e8f85906b",
+    "semantic_hash": "e928735f92f531fc0f90db9e8f85906b"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/tests/helpers/resurrect_helpers.sh": {
+    "mtime": 1778952820.3481174,
+    "ast_hash": "6270af73180b675c8b0cd66c1163ae41",
+    "semantic_hash": "6270af73180b675c8b0cd66c1163ae41"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/tests/run_tests_in_isolation": {
+    "mtime": 1778952820.3467882,
+    "ast_hash": "5bb83d6df8a3cd91adf7d157ec85520b",
+    "semantic_hash": "5bb83d6df8a3cd91adf7d157ec85520b"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/tests/test_resurrect_restore.sh": {
+    "mtime": 1778952820.3481417,
+    "ast_hash": "340fa3735e56f02f14e634df863c7bd7",
+    "semantic_hash": "340fa3735e56f02f14e634df863c7bd7"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/tests/test_resurrect_save.sh": {
+    "mtime": 1778952820.3481646,
+    "ast_hash": "424b90a983f78a290efbff760d8a9e2b",
+    "semantic_hash": "424b90a983f78a290efbff760d8a9e2b"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-yank/citest": {
+    "mtime": 1778952820.3544488,
+    "ast_hash": "f38c5847136f8ff971fa05b5b1822bcc",
+    "semantic_hash": "f38c5847136f8ff971fa05b5b1822bcc"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-yank/scripts/copy_line.sh": {
+    "mtime": 1778952820.3537605,
+    "ast_hash": "7d7bdc4dd2cfced5f1721a8c642a040a",
+    "semantic_hash": "7d7bdc4dd2cfced5f1721a8c642a040a"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-yank/scripts/copy_pane_pwd.sh": {
+    "mtime": 1778952820.3537893,
+    "ast_hash": "2e90b15485635efcb40a07cdc6e2ee21",
+    "semantic_hash": "2e90b15485635efcb40a07cdc6e2ee21"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-yank/scripts/helpers.sh": {
+    "mtime": 1778952820.3538136,
+    "ast_hash": "80fe0e152b2a99628fe797bcc1948f61",
+    "semantic_hash": "80fe0e152b2a99628fe797bcc1948f61"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-yank/vagrant_provisioning.sh": {
+    "mtime": 1778952820.3544726,
+    "ast_hash": "c224ac9f66ea873ca2664c80ed2a4165",
+    "semantic_hash": "c224ac9f66ea873ca2664c80ed2a4165"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/attached_clients.sh": {
+    "mtime": 1778952820.361338,
+    "ast_hash": "15e57c582252bafee66c2f3b00ffdac5",
+    "semantic_hash": "15e57c582252bafee66c2f3b00ffdac5"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/battery.sh": {
+    "mtime": 1778952820.361372,
+    "ast_hash": "f3467619d8edd1296358940ab9e5fe52",
+    "semantic_hash": "f3467619d8edd1296358940ab9e5fe52"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/compact_alt.sh": {
+    "mtime": 1778952820.3614,
+    "ast_hash": "4b1d4a6ccc6c3e39b1e9694a419301a4",
+    "semantic_hash": "4b1d4a6ccc6c3e39b1e9694a419301a4"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/continuum.sh": {
+    "mtime": 1778952820.3614242,
+    "ast_hash": "05d3d5020e3dc2962556326c5f694135",
+    "semantic_hash": "05d3d5020e3dc2962556326c5f694135"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/cpu_arch.sh": {
+    "mtime": 1778952820.361482,
+    "ast_hash": "955dae0a6f066c7dc9c76a6410105537",
+    "semantic_hash": "955dae0a6f066c7dc9c76a6410105537"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/cpu_info.sh": {
+    "mtime": 1778952820.3615077,
+    "ast_hash": "d99b079ebc75df53abac69a244dbc983",
+    "semantic_hash": "d99b079ebc75df53abac69a244dbc983"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/cwd.sh": {
+    "mtime": 1778952820.3615305,
+    "ast_hash": "a5fcb62ae67b102d891bd4287d0a3328",
+    "semantic_hash": "a5fcb62ae67b102d891bd4287d0a3328"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/dracula.sh": {
+    "mtime": 1778952820.361557,
+    "ast_hash": "e9e67b65554c7da4c1e5cd104b19b00e",
+    "semantic_hash": "e9e67b65554c7da4c1e5cd104b19b00e"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/fossil.sh": {
+    "mtime": 1778952820.3615947,
+    "ast_hash": "26b6e2cae91cacb5df81f0eacc2ec419",
+    "semantic_hash": "26b6e2cae91cacb5df81f0eacc2ec419"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/git.sh": {
+    "mtime": 1778952820.3616276,
+    "ast_hash": "edffd64fbd6b5aeae23574fd9403b4db",
+    "semantic_hash": "edffd64fbd6b5aeae23574fd9403b4db"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/gpu_power.sh": {
+    "mtime": 1778952820.361655,
+    "ast_hash": "85b0de6b03041e43461354e2e97b8916",
+    "semantic_hash": "85b0de6b03041e43461354e2e97b8916"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/gpu_ram_info.sh": {
+    "mtime": 1778952820.3616786,
+    "ast_hash": "d3030eaf9f8613ec61ffd0491e006df6",
+    "semantic_hash": "d3030eaf9f8613ec61ffd0491e006df6"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/gpu_usage.sh": {
+    "mtime": 1778952820.3617027,
+    "ast_hash": "3fcbdcf74b2c797fbe32b8c8355cb641",
+    "semantic_hash": "3fcbdcf74b2c797fbe32b8c8355cb641"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/hg.sh": {
+    "mtime": 1778952820.3617263,
+    "ast_hash": "f1e3d5bbc9f07e57efc62f40de041bdf",
+    "semantic_hash": "f1e3d5bbc9f07e57efc62f40de041bdf"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/krbtgt.sh": {
+    "mtime": 1778952820.3617501,
+    "ast_hash": "50b9b843b2974e5ef78d07a9064aabc8",
+    "semantic_hash": "50b9b843b2974e5ef78d07a9064aabc8"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/kubernetes_context.sh": {
+    "mtime": 1778952820.3617818,
+    "ast_hash": "683fe499f70fe8bfb7ef71286dfdf386",
+    "semantic_hash": "683fe499f70fe8bfb7ef71286dfdf386"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/libre.sh": {
+    "mtime": 1778952820.3618062,
+    "ast_hash": "3737c0a21ee34a4d87d0828d28749636",
+    "semantic_hash": "3737c0a21ee34a4d87d0828d28749636"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/mac-player.sh": {
+    "mtime": 1778952820.361841,
+    "ast_hash": "52f1cff7a10ed70d6acf44fb6c200b69",
+    "semantic_hash": "52f1cff7a10ed70d6acf44fb6c200b69"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/mpc.sh": {
+    "mtime": 1778952820.36187,
+    "ast_hash": "9bbdb42ff4f35193b39aa68adffc4b36",
+    "semantic_hash": "9bbdb42ff4f35193b39aa68adffc4b36"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/network-public-ip.sh": {
+    "mtime": 1778952820.3618944,
+    "ast_hash": "fe1714e88024ec6e0b7c26b48a97916a",
+    "semantic_hash": "fe1714e88024ec6e0b7c26b48a97916a"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/network.sh": {
+    "mtime": 1778952820.3619182,
+    "ast_hash": "f31dd143a7afd45b5f4d69f56c3e3095",
+    "semantic_hash": "f31dd143a7afd45b5f4d69f56c3e3095"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/network_bandwidth.sh": {
+    "mtime": 1778952820.3619437,
+    "ast_hash": "4360e23569e44c9ff5d04eaf5a163340",
+    "semantic_hash": "4360e23569e44c9ff5d04eaf5a163340"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/network_ping.sh": {
+    "mtime": 1778952820.3619688,
+    "ast_hash": "d1202d61d92afa51c6c1248beb207ba8",
+    "semantic_hash": "d1202d61d92afa51c6c1248beb207ba8"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/network_vpn.sh": {
+    "mtime": 1778952820.361993,
+    "ast_hash": "372f0825a8bac3baf9bfb5903f1569c4",
+    "semantic_hash": "372f0825a8bac3baf9bfb5903f1569c4"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/playerctl.sh": {
+    "mtime": 1778952820.3620176,
+    "ast_hash": "908ffbfb4e67739a7029599971d5bb2f",
+    "semantic_hash": "908ffbfb4e67739a7029599971d5bb2f"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/ram_info.sh": {
+    "mtime": 1778952820.3620455,
+    "ast_hash": "a8dcbf223cc3a35a7d33bf3f999ec9e6",
+    "semantic_hash": "a8dcbf223cc3a35a7d33bf3f999ec9e6"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/spotify-tui.sh": {
+    "mtime": 1778952820.3620715,
+    "ast_hash": "60ba210e187466e6d6445dadc4043f72",
+    "semantic_hash": "60ba210e187466e6d6445dadc4043f72"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/spr.sh": {
+    "mtime": 1778952820.3620968,
+    "ast_hash": "ce58ccea08cecc1167a7323a04767d7b",
+    "semantic_hash": "ce58ccea08cecc1167a7323a04767d7b"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/ssh_session.sh": {
+    "mtime": 1778952820.3621376,
+    "ast_hash": "e8683b18906407b1a3a29666c39d0a87",
+    "semantic_hash": "e8683b18906407b1a3a29666c39d0a87"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/synchronize_panes.sh": {
+    "mtime": 1778952820.3621657,
+    "ast_hash": "b2776083d208958eaf709c46faa27cde",
+    "semantic_hash": "b2776083d208958eaf709c46faa27cde"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/sys_temp.sh": {
+    "mtime": 1778952820.3621912,
+    "ast_hash": "753512f309602b961aabe4b88c6d1615",
+    "semantic_hash": "753512f309602b961aabe4b88c6d1615"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/terraform.sh": {
+    "mtime": 1778952820.3622165,
+    "ast_hash": "aeb1bd9bb84ca6d188baced7b739594c",
+    "semantic_hash": "aeb1bd9bb84ca6d188baced7b739594c"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/tmux_ram_info.sh": {
+    "mtime": 1778952820.362242,
+    "ast_hash": "72da5c1871041dff58a6e01dd8931bdb",
+    "semantic_hash": "72da5c1871041dff58a6e01dd8931bdb"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/uptime.sh": {
+    "mtime": 1778952820.362272,
+    "ast_hash": "1f15fac4d9719dffa4f46d8adb702061",
+    "semantic_hash": "1f15fac4d9719dffa4f46d8adb702061"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/utils.sh": {
+    "mtime": 1778952820.3622973,
+    "ast_hash": "191ce395b869c26c8dd1b56cd3335fc4",
+    "semantic_hash": "191ce395b869c26c8dd1b56cd3335fc4"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/weather.sh": {
+    "mtime": 1778952820.362329,
+    "ast_hash": "3d35ca796826ec84ade8b29b42d7f249",
+    "semantic_hash": "3d35ca796826ec84ade8b29b42d7f249"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/scripts/weather_wrapper.sh": {
+    "mtime": 1778952820.3623579,
+    "ast_hash": "ae0b12feaceb9f97d142164f66d1a6a9",
+    "semantic_hash": "ae0b12feaceb9f97d142164f66d1a6a9"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/bin/tmuxifier": {
+    "mtime": 1778952820.3698647,
+    "ast_hash": "a411919c61d335146aba742fd996aea0",
+    "semantic_hash": "a411919c61d335146aba742fd996aea0"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/completion/tmuxifier.bash": {
+    "mtime": 1778952820.3699236,
+    "ast_hash": "484a6163f4017c90261beea093a8984d",
+    "semantic_hash": "484a6163f4017c90261beea093a8984d"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/examples/example.session.sh": {
+    "mtime": 1778952820.3701365,
+    "ast_hash": "192dc3520c9b570f6a5151782d6a37bd",
+    "semantic_hash": "192dc3520c9b570f6a5151782d6a37bd"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/examples/example.window.sh": {
+    "mtime": 1778952820.3702133,
+    "ast_hash": "52c5c9def57a733ddb961f02250d9f1a",
+    "semantic_hash": "52c5c9def57a733ddb961f02250d9f1a"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/init.sh": {
+    "mtime": 1778952820.3717453,
+    "ast_hash": "00d1a65952e48178d303a694038c4de5",
+    "semantic_hash": "00d1a65952e48178d303a694038c4de5"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/lib/env.sh": {
+    "mtime": 1778952820.370282,
+    "ast_hash": "50beebd8cadaf648e1e814b67b9afef5",
+    "semantic_hash": "50beebd8cadaf648e1e814b67b9afef5"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/lib/layout-helpers.sh": {
+    "mtime": 1778952820.3703132,
+    "ast_hash": "a5450782d3802321a41a9b63b713d2a6",
+    "semantic_hash": "a5450782d3802321a41a9b63b713d2a6"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/lib/runtime.sh": {
+    "mtime": 1778952820.3703427,
+    "ast_hash": "bab7b321d1384af20382266d6a9f13f4",
+    "semantic_hash": "bab7b321d1384af20382266d6a9f13f4"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/lib/util.sh": {
+    "mtime": 1778952820.3703659,
+    "ast_hash": "08d3f5acfb61067fc0f8003a27d288d8",
+    "semantic_hash": "08d3f5acfb61067fc0f8003a27d288d8"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/libexec/tmuxifier-alias": {
+    "mtime": 1778952820.3704393,
+    "ast_hash": "bfd4173b2cc2c3878609894ddff84cfe",
+    "semantic_hash": "bfd4173b2cc2c3878609894ddff84cfe"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/libexec/tmuxifier-commands": {
+    "mtime": 1778952820.3704698,
+    "ast_hash": "380addf36d4ad969a25e5c0b7deafe34",
+    "semantic_hash": "380addf36d4ad969a25e5c0b7deafe34"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/libexec/tmuxifier-completions": {
+    "mtime": 1778952820.3704922,
+    "ast_hash": "8846815875d7edb9adbc24ad67633007",
+    "semantic_hash": "8846815875d7edb9adbc24ad67633007"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/libexec/tmuxifier-current-session": {
+    "mtime": 1778952820.3705149,
+    "ast_hash": "2b0a6e2f1c3105405f0054c349237b86",
+    "semantic_hash": "2b0a6e2f1c3105405f0054c349237b86"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/libexec/tmuxifier-edit-session": {
+    "mtime": 1778952820.3705375,
+    "ast_hash": "c51a1c95cbb95a23fe3147bbddeadc3f",
+    "semantic_hash": "c51a1c95cbb95a23fe3147bbddeadc3f"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/libexec/tmuxifier-edit-window": {
+    "mtime": 1778952820.3705604,
+    "ast_hash": "db9af14c028876f480a62afb95dbde07",
+    "semantic_hash": "db9af14c028876f480a62afb95dbde07"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/libexec/tmuxifier-help": {
+    "mtime": 1778952820.370583,
+    "ast_hash": "9a42ccbd7bf3f089ee8c679f6f449aca",
+    "semantic_hash": "9a42ccbd7bf3f089ee8c679f6f449aca"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/libexec/tmuxifier-init": {
+    "mtime": 1778952820.3706083,
+    "ast_hash": "8edfcf99e31d30cc1d965ba5c15d835b",
+    "semantic_hash": "8edfcf99e31d30cc1d965ba5c15d835b"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/libexec/tmuxifier-list": {
+    "mtime": 1778952820.3706357,
+    "ast_hash": "f5cfc89e0e72dac20438ec93c5f2f14a",
+    "semantic_hash": "f5cfc89e0e72dac20438ec93c5f2f14a"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/libexec/tmuxifier-list-sessions": {
+    "mtime": 1778952820.3706594,
+    "ast_hash": "5513c70512a23a6e55ce3b27ce3f25d5",
+    "semantic_hash": "5513c70512a23a6e55ce3b27ce3f25d5"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/libexec/tmuxifier-list-windows": {
+    "mtime": 1778952820.3706822,
+    "ast_hash": "3984417c66e098f52cb562ffacefcb31",
+    "semantic_hash": "3984417c66e098f52cb562ffacefcb31"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/libexec/tmuxifier-load-session": {
+    "mtime": 1778952820.3707063,
+    "ast_hash": "65ce9939d575d52b0c6c261d4ceaf0a1",
+    "semantic_hash": "65ce9939d575d52b0c6c261d4ceaf0a1"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/libexec/tmuxifier-load-window": {
+    "mtime": 1778952820.3707306,
+    "ast_hash": "ce253349d786c11a836c829a9beb9838",
+    "semantic_hash": "ce253349d786c11a836c829a9beb9838"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/libexec/tmuxifier-new-session": {
+    "mtime": 1778952820.3707633,
+    "ast_hash": "3688e8425580041926913541f7fe2926",
+    "semantic_hash": "3688e8425580041926913541f7fe2926"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/libexec/tmuxifier-new-window": {
+    "mtime": 1778952820.3707867,
+    "ast_hash": "112cea98ef1780cb11aeeb0c70f3351f",
+    "semantic_hash": "112cea98ef1780cb11aeeb0c70f3351f"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/libexec/tmuxifier-resolve-command-path": {
+    "mtime": 1778952820.3708115,
+    "ast_hash": "0d2acd6dabd2cff31b40d39141621bc4",
+    "semantic_hash": "0d2acd6dabd2cff31b40d39141621bc4"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/libexec/tmuxifier-tmux": {
+    "mtime": 1778952820.370837,
+    "ast_hash": "02a82ad1e990d20239f6f97da696f96c",
+    "semantic_hash": "02a82ad1e990d20239f6f97da696f96c"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/libexec/tmuxifier-tmux-version": {
+    "mtime": 1778952820.3708618,
+    "ast_hash": "3f1da9d20b0b8e8ceb8185d6f2b22632",
+    "semantic_hash": "3f1da9d20b0b8e8ceb8185d6f2b22632"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/libexec/tmuxifier-version": {
+    "mtime": 1778952820.3708856,
+    "ast_hash": "052d8be8973b5accc8a78a1a329a725c",
+    "semantic_hash": "052d8be8973b5accc8a78a1a329a725c"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/templates/session.sh": {
+    "mtime": 1778952820.370938,
+    "ast_hash": "ec5df31da7afed5362ac87c274026ac5",
+    "semantic_hash": "ec5df31da7afed5362ac87c274026ac5"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/templates/window.sh": {
+    "mtime": 1778952820.3709664,
+    "ast_hash": "f262a14532a3c116ec9cb383dc134bd3",
+    "semantic_hash": "f262a14532a3c116ec9cb383dc134bd3"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/test/lib/env.test.sh": {
+    "mtime": 1778952820.3712957,
+    "ast_hash": "047d289f66a4873fb7ce3c3f760e207e",
+    "semantic_hash": "047d289f66a4873fb7ce3c3f760e207e"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/test/lib/layout-helpers/__expand_path.test.sh": {
+    "mtime": 1778952820.3710914,
+    "ast_hash": "69fea5c2456bda05aeb098e9d96631c5",
+    "semantic_hash": "69fea5c2456bda05aeb098e9d96631c5"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/test/lib/layout-helpers/__get_current_window_index.test.sh": {
+    "mtime": 1778952820.371129,
+    "ast_hash": "2501656edcbbe60ef48048c76d0abab4",
+    "semantic_hash": "2501656edcbbe60ef48048c76d0abab4"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/test/lib/layout-helpers/__get_first_window_index.test.sh": {
+    "mtime": 1778952820.371153,
+    "ast_hash": "0d4d765c5c51a6f602628294d4fe83db",
+    "semantic_hash": "0d4d765c5c51a6f602628294d4fe83db"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/test/lib/layout-helpers/__go_to_session.test.sh": {
+    "mtime": 1778952820.3711774,
+    "ast_hash": "43f6c56f28819c99a8d3b9cb5ddf4df8",
+    "semantic_hash": "43f6c56f28819c99a8d3b9cb5ddf4df8"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/test/lib/layout-helpers/__go_to_window_or_session_path.test.sh": {
+    "mtime": 1778952820.3712013,
+    "ast_hash": "91d7dcfdd51ab77f4c7f3d3124b645ce",
+    "semantic_hash": "91d7dcfdd51ab77f4c7f3d3124b645ce"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/test/lib/layout-helpers/new_window.test.sh": {
+    "mtime": 1778952820.3712254,
+    "ast_hash": "36ed73e61e4407fe80b6c30c678f8277",
+    "semantic_hash": "36ed73e61e4407fe80b6c30c678f8277"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/test/lib/layout-helpers/select_window.test.sh": {
+    "mtime": 1778952820.3712487,
+    "ast_hash": "b5a9f726cba765220d0165a3015f75aa",
+    "semantic_hash": "b5a9f726cba765220d0165a3015f75aa"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/test/lib/layout-helpers/tmux.test.sh": {
+    "mtime": 1778952820.3712723,
+    "ast_hash": "c494a03302c4373ef6dac57b0cba06ec",
+    "semantic_hash": "c494a03302c4373ef6dac57b0cba06ec"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/test/lib/runtime.test.sh": {
+    "mtime": 1778952820.3713195,
+    "ast_hash": "e83d295f963b334fe4e3f302270d6eee",
+    "semantic_hash": "e83d295f963b334fe4e3f302270d6eee"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/test/lib/util.test.sh": {
+    "mtime": 1778952820.3713424,
+    "ast_hash": "3842c5b06915ac06f4ee96c739bf9920",
+    "semantic_hash": "3842c5b06915ac06f4ee96c739bf9920"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/test/libexec/tmuxifier-tmux.test.sh": {
+    "mtime": 1778952820.3714085,
+    "ast_hash": "63bd06213b27f4e0e4846ae36c99eba4",
+    "semantic_hash": "63bd06213b27f4e0e4846ae36c99eba4"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/test/test-helper.sh": {
+    "mtime": 1778952820.3714387,
+    "ast_hash": "a522a29ccd51c869e1ffe9b6f75b0571",
+    "semantic_hash": "a522a29ccd51c869e1ffe9b6f75b0571"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/bin/clean_plugins": {
+    "mtime": 1778952820.3808281,
+    "ast_hash": "201a113d82ef8ce67a4cdb0dc0c42f29",
+    "semantic_hash": "201a113d82ef8ce67a4cdb0dc0c42f29"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/bin/install_plugins": {
+    "mtime": 1778952820.38086,
+    "ast_hash": "d2434a92e5eb6c95a70ee73a820ef569",
+    "semantic_hash": "d2434a92e5eb6c95a70ee73a820ef569"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/bin/update_plugins": {
+    "mtime": 1778952820.380884,
+    "ast_hash": "4147434898cdd9ce7af13177cb7ecb6b",
+    "semantic_hash": "4147434898cdd9ce7af13177cb7ecb6b"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/bindings/clean_plugins": {
+    "mtime": 1778952820.380934,
+    "ast_hash": "334d4ebf7ec9ddc1f35a5f2483936ce0",
+    "semantic_hash": "334d4ebf7ec9ddc1f35a5f2483936ce0"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/bindings/install_plugins": {
+    "mtime": 1778952820.3809624,
+    "ast_hash": "4d3a0adc2619245143243ef1c296b4c9",
+    "semantic_hash": "4d3a0adc2619245143243ef1c296b4c9"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/bindings/update_plugins": {
+    "mtime": 1778952820.3809848,
+    "ast_hash": "e47e3262b378a69ff63e7119c8fbaf61",
+    "semantic_hash": "e47e3262b378a69ff63e7119c8fbaf61"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/lib/tmux-test/run_framework_tests": {
+    "mtime": 1778952820.3817844,
+    "ast_hash": "1be6a5c4afa0558bcd1fae523b7c113c",
+    "semantic_hash": "1be6a5c4afa0558bcd1fae523b7c113c"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/lib/tmux-test/run_tests": {
+    "mtime": 1778952820.3818078,
+    "ast_hash": "515a319cedf4569f93da0f235bcca5ce",
+    "semantic_hash": "515a319cedf4569f93da0f235bcca5ce"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/lib/tmux-test/setup": {
+    "mtime": 1778952820.3818328,
+    "ast_hash": "f508f702eb328be0a16f3bc67ab68680",
+    "semantic_hash": "f508f702eb328be0a16f3bc67ab68680"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/lib/tmux-test/tests/helpers/helpers.sh": {
+    "mtime": 1778952820.3813891,
+    "ast_hash": "e928735f92f531fc0f90db9e8f85906b",
+    "semantic_hash": "e928735f92f531fc0f90db9e8f85906b"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/lib/tmux-test/tests/run_tests_in_isolation": {
+    "mtime": 1778952820.3814142,
+    "ast_hash": "5bb83d6df8a3cd91adf7d157ec85520b",
+    "semantic_hash": "5bb83d6df8a3cd91adf7d157ec85520b"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/lib/tmux-test/tests/test_basic_script_execution.sh": {
+    "mtime": 1778952820.3814368,
+    "ast_hash": "c997461e5f0f14963126b986c2dc613e",
+    "semantic_hash": "c997461e5f0f14963126b986c2dc613e"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/lib/tmux-test/tests/test_default_session_name.sh": {
+    "mtime": 1778952820.3814607,
+    "ast_hash": "42a3dc51c142c547385387bf3f13b09b",
+    "semantic_hash": "42a3dc51c142c547385387bf3f13b09b"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/lib/tmux-test/tests/test_tmux_scripting.sh": {
+    "mtime": 1778952820.381484,
+    "ast_hash": "19dde00555a781cc79cb52d267ef05e8",
+    "semantic_hash": "19dde00555a781cc79cb52d267ef05e8"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/lib/tmux-test/vagrant_centos_provisioning.sh": {
+    "mtime": 1778952820.3818567,
+    "ast_hash": "5d4a22c0317c17a6d09db954284b856b",
+    "semantic_hash": "5d4a22c0317c17a6d09db954284b856b"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/lib/tmux-test/vagrant_ubuntu_provisioning.sh": {
+    "mtime": 1778952820.381883,
+    "ast_hash": "c961c783c553df6af1d85e70f8f6607e",
+    "semantic_hash": "c961c783c553df6af1d85e70f8f6607e"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/scripts/check_tmux_version.sh": {
+    "mtime": 1778952820.382106,
+    "ast_hash": "d2e1dceb1a96663e4a23f3c57c3d17a9",
+    "semantic_hash": "d2e1dceb1a96663e4a23f3c57c3d17a9"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/scripts/clean_plugins.sh": {
+    "mtime": 1778952820.3821414,
+    "ast_hash": "f00cc2385627311e350eb1f2ebdc6280",
+    "semantic_hash": "f00cc2385627311e350eb1f2ebdc6280"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/scripts/helpers/plugin_functions.sh": {
+    "mtime": 1778952820.3819861,
+    "ast_hash": "f2aa1267eb83646ba669571a0d70a7f6",
+    "semantic_hash": "f2aa1267eb83646ba669571a0d70a7f6"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/scripts/helpers/shell_echo_functions.sh": {
+    "mtime": 1778952820.3820105,
+    "ast_hash": "e0b1ea8989e600a5c5e2a9341aa54e44",
+    "semantic_hash": "e0b1ea8989e600a5c5e2a9341aa54e44"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/scripts/helpers/tmux_echo_functions.sh": {
+    "mtime": 1778952820.3820348,
+    "ast_hash": "887d22f40b49faa2a622adb5296e00c3",
+    "semantic_hash": "887d22f40b49faa2a622adb5296e00c3"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/scripts/helpers/tmux_utils.sh": {
+    "mtime": 1778952820.3820589,
+    "ast_hash": "f084a0399bd954bcff78c50a263488b1",
+    "semantic_hash": "f084a0399bd954bcff78c50a263488b1"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/scripts/helpers/utility.sh": {
+    "mtime": 1778952820.3820827,
+    "ast_hash": "44e92da8e559d4fe253f0de96c892c17",
+    "semantic_hash": "44e92da8e559d4fe253f0de96c892c17"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/scripts/install_plugins.sh": {
+    "mtime": 1778952820.3821664,
+    "ast_hash": "0d87927d1b6f3f2f3224ccc298cfc315",
+    "semantic_hash": "0d87927d1b6f3f2f3224ccc298cfc315"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/scripts/source_plugins.sh": {
+    "mtime": 1778952820.3821902,
+    "ast_hash": "025a682eea807803ed72fcc1743df741",
+    "semantic_hash": "025a682eea807803ed72fcc1743df741"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/scripts/update_plugin.sh": {
+    "mtime": 1778952820.3822181,
+    "ast_hash": "12ab39ed2097dde01b949d05cd5a42f6",
+    "semantic_hash": "12ab39ed2097dde01b949d05cd5a42f6"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/scripts/update_plugin_prompt_handler.sh": {
+    "mtime": 1778952820.382242,
+    "ast_hash": "a4b73e58f44f57957d052e36ffb61727",
+    "semantic_hash": "a4b73e58f44f57957d052e36ffb61727"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/scripts/variables.sh": {
+    "mtime": 1778952820.3822684,
+    "ast_hash": "e61467c1db2d7086d8fcdd77e4ed4917",
+    "semantic_hash": "e61467c1db2d7086d8fcdd77e4ed4917"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/tests/helpers/tpm.sh": {
+    "mtime": 1778952820.3823826,
+    "ast_hash": "508b99c9e1ec2bb25311b6118c608622",
+    "semantic_hash": "508b99c9e1ec2bb25311b6118c608622"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/tests/test_plugin_clean.sh": {
+    "mtime": 1778952820.3825474,
+    "ast_hash": "73c4e1fcd7d313bb4f086f5ec190cf0d",
+    "semantic_hash": "73c4e1fcd7d313bb4f086f5ec190cf0d"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/tests/test_plugin_installation.sh": {
+    "mtime": 1778952820.3825724,
+    "ast_hash": "ef255bce10da75ef99794e97b0c57bdc",
+    "semantic_hash": "ef255bce10da75ef99794e97b0c57bdc"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/tests/test_plugin_installation_legacy.sh": {
+    "mtime": 1778952820.3826032,
+    "ast_hash": "4b2e4f2d0ff37d60fdb6301865021dfd",
+    "semantic_hash": "4b2e4f2d0ff37d60fdb6301865021dfd"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/tests/test_plugin_sourcing.sh": {
+    "mtime": 1778952820.3826272,
+    "ast_hash": "f3bb753fedec85f6a6938fa3cbfb2773",
+    "semantic_hash": "f3bb753fedec85f6a6938fa3cbfb2773"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/tests/test_plugin_update.sh": {
+    "mtime": 1778952820.3826504,
+    "ast_hash": "617dc7acdbd2f6269c9d858265693e3c",
+    "semantic_hash": "617dc7acdbd2f6269c9d858265693e3c"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/tpm": {
+    "mtime": 1778952820.3831315,
+    "ast_hash": "6b92591436d4363ef0d96c8e6bc5ebc3",
+    "semantic_hash": "6b92591436d4363ef0d96c8e6bc5ebc3"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/scripts/open_url_smart.sh": {
+    "mtime": 1778952820.3832,
+    "ast_hash": "9cbf0d747271124ddd01239f04315b71",
+    "semantic_hash": "9cbf0d747271124ddd01239f04315b71"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/yank.sh": {
+    "mtime": 1778952820.2868805,
+    "ast_hash": "5aa708af1a21d506504cbfdde682517a",
+    "semantic_hash": "5aa708af1a21d506504cbfdde682517a"
+  },
+  "/home/shri/dotfiles/nix-config/AGENTS.md": {
+    "mtime": 1780723932.3633487,
+    "ast_hash": "c0a8689aef0c3bc900771ae54a72f577",
+    "semantic_hash": "c0a8689aef0c3bc900771ae54a72f577"
+  },
+  "/home/shri/dotfiles/nix-config/AGENTS_TEMPLATE.md": {
+    "mtime": 1778952820.2829885,
+    "ast_hash": "52b95088e47d5c3d406fa35f9b42214d",
+    "semantic_hash": "52b95088e47d5c3d406fa35f9b42214d"
+  },
+  "/home/shri/dotfiles/nix-config/docs/rclone-gdrive.md": {
+    "mtime": 1779011211.8921301,
+    "ast_hash": "328294107f4cced482e1653a939df947",
+    "semantic_hash": "328294107f4cced482e1653a939df947"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-click-copy/README.md": {
+    "mtime": 1778952820.2930095,
+    "ast_hash": "4ec20801f26a7e3103b1459d35bc7649",
+    "semantic_hash": "4ec20801f26a7e3103b1459d35bc7649"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/CHANGELOG.md": {
+    "mtime": 1778952820.3038664,
+    "ast_hash": "2ea4e06eb4aa741b2c6c8494fa8ab9f5",
+    "semantic_hash": "2ea4e06eb4aa741b2c6c8494fa8ab9f5"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/CONTRIBUTING.md": {
+    "mtime": 1778952820.3039234,
+    "ast_hash": "742f290d292a7b3a9cb7dff77ebc54af",
+    "semantic_hash": "742f290d292a7b3a9cb7dff77ebc54af"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/LICENSE.md": {
+    "mtime": 1778952820.3039794,
+    "ast_hash": "3c3ce34ec5ad2e54171bd0470a5e1eba",
+    "semantic_hash": "3c3ce34ec5ad2e54171bd0470a5e1eba"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/README.md": {
+    "mtime": 1778952820.3040338,
+    "ast_hash": "8179cbd417ee7baeb54a6740e350a41a",
+    "semantic_hash": "8179cbd417ee7baeb54a6740e350a41a"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/docs/automatic_start.md": {
+    "mtime": 1778952820.301949,
+    "ast_hash": "fc84d0d735758866b95d8284e52e5ee2",
+    "semantic_hash": "fc84d0d735758866b95d8284e52e5ee2"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/docs/continuum_status.md": {
+    "mtime": 1778952820.3020291,
+    "ast_hash": "2f6bf115aa7adabffb87e908f4401ca5",
+    "semantic_hash": "2f6bf115aa7adabffb87e908f4401ca5"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/docs/faq.md": {
+    "mtime": 1778952820.302107,
+    "ast_hash": "e46e6ac0b265b2067eff97582ed57ae5",
+    "semantic_hash": "e46e6ac0b265b2067eff97582ed57ae5"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/docs/multiple_tmux_servers.md": {
+    "mtime": 1778952820.3021967,
+    "ast_hash": "c8a7b156abc731caa3c613a82a49a898",
+    "semantic_hash": "c8a7b156abc731caa3c613a82a49a898"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/docs/systemd_details.md": {
+    "mtime": 1778952820.3022523,
+    "ast_hash": "16d147cfe61c35de96342bcf943c5b79",
+    "semantic_hash": "16d147cfe61c35de96342bcf943c5b79"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-continuum/scripts/handle_tmux_automatic_start/README.md": {
+    "mtime": 1778952820.301949,
+    "ast_hash": "fc84d0d735758866b95d8284e52e5ee2",
+    "semantic_hash": "fc84d0d735758866b95d8284e52e5ee2"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/.travis.yml": {
+    "mtime": 1778952820.3136194,
+    "ast_hash": "c57e665174e5e77781e5b9a761c7249e",
+    "semantic_hash": "c57e665174e5e77781e5b9a761c7249e"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/CHANGELOG.md": {
+    "mtime": 1778952820.3136463,
+    "ast_hash": "64f3075a0cda15f0fe7490f54e98ce01",
+    "semantic_hash": "64f3075a0cda15f0fe7490f54e98ce01"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/LICENSE.md": {
+    "mtime": 1778952820.3136716,
+    "ast_hash": "63f224ba79c1d680afaee29b75a060d4",
+    "semantic_hash": "63f224ba79c1d680afaee29b75a060d4"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/README.md": {
+    "mtime": 1778952820.313697,
+    "ast_hash": "20c4e761ee7500824f841874b00bc7de",
+    "semantic_hash": "20c4e761ee7500824f841874b00bc7de"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/docs/customizations.md": {
+    "mtime": 1778952820.312016,
+    "ast_hash": "fc8896c54d4be61468064e0e44014e96",
+    "semantic_hash": "fc8896c54d4be61468064e0e44014e96"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/docs/defining_new_stored_searches.md": {
+    "mtime": 1778952820.3120518,
+    "ast_hash": "d5accb65add851d9cd776480be08fb06",
+    "semantic_hash": "d5accb65add851d9cd776480be08fb06"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/docs/installation_for_tmux_2.3.md": {
+    "mtime": 1778952820.3120785,
+    "ast_hash": "476e44cbeceda2595d56cda941061087",
+    "semantic_hash": "476e44cbeceda2595d56cda941061087"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/docs/limitations.md": {
+    "mtime": 1778952820.312121,
+    "ast_hash": "9b7c1832764093f5db875b77c2148d88",
+    "semantic_hash": "9b7c1832764093f5db875b77c2148d88"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/test/README.md": {
+    "mtime": 1778952820.3129382,
+    "ast_hash": "7fc6425380940d0da11615e7df98f289",
+    "semantic_hash": "7fc6425380940d0da11615e7df98f289"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/video/README.md": {
+    "mtime": 1778952820.3132284,
+    "ast_hash": "ffa32d29d5ed125421f4cf0693159bd5",
+    "semantic_hash": "ffa32d29d5ed125421f4cf0693159bd5"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/video/script.md": {
+    "mtime": 1778952820.3133316,
+    "ast_hash": "357419f0176d5806e97ffebd2f062772",
+    "semantic_hash": "357419f0176d5806e97ffebd2f062772"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/CHANGELOG.md": {
+    "mtime": 1778952820.3264449,
+    "ast_hash": "8dde05e2d254920e47c7142f4d3178dc",
+    "semantic_hash": "8dde05e2d254920e47c7142f4d3178dc"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/README.md": {
+    "mtime": 1778952820.3265085,
+    "ast_hash": "165138121021f13c17bf5352177cb154",
+    "semantic_hash": "165138121021f13c17bf5352177cb154"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/docs/Caching.md": {
+    "mtime": 1778952820.3227048,
+    "ast_hash": "a5a1cc75768d58abf2ad71cac2799f28",
+    "semantic_hash": "a5a1cc75768d58abf2ad71cac2799f28"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/docs/CustomMenus.md": {
+    "mtime": 1778952820.3227394,
+    "ast_hash": "6e8bd973b816a78c962f1dd6eaca4e89",
+    "semantic_hash": "6e8bd973b816a78c962f1dd6eaca4e89"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/docs/Debugging.md": {
+    "mtime": 1778952820.3227649,
+    "ast_hash": "a4f6ea2b088966adbed1d7ee8eb76b10",
+    "semantic_hash": "a4f6ea2b088966adbed1d7ee8eb76b10"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/docs/Modifications.md": {
+    "mtime": 1778952820.322792,
+    "ast_hash": "c71eea6fb7152253b2a2540e9ade6c12",
+    "semantic_hash": "c71eea6fb7152253b2a2540e9ade6c12"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/docs/SingleQuotes.md": {
+    "mtime": 1778952820.3228178,
+    "ast_hash": "ae886503408da41086754149e0f26d73",
+    "semantic_hash": "ae886503408da41086754149e0f26d73"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/docs/Styling.md": {
+    "mtime": 1778952820.322844,
+    "ast_hash": "96c185db243902805501a97e84db71b6",
+    "semantic_hash": "96c185db243902805501a97e84db71b6"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-menus/docs/TODO.md": {
+    "mtime": 1778952820.3228855,
+    "ast_hash": "88677bfaa81b63fa74ac26e954f022cd",
+    "semantic_hash": "88677bfaa81b63fa74ac26e954f022cd"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-open/CHANGELOG.md": {
+    "mtime": 1778952820.33202,
+    "ast_hash": "0a4fcb6cb8e2087db71475f11856a7ff",
+    "semantic_hash": "0a4fcb6cb8e2087db71475f11856a7ff"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-open/LICENSE.md": {
+    "mtime": 1778952820.332042,
+    "ast_hash": "63f224ba79c1d680afaee29b75a060d4",
+    "semantic_hash": "63f224ba79c1d680afaee29b75a060d4"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-open/README.md": {
+    "mtime": 1778952820.3320649,
+    "ast_hash": "22b6f5d41c687012ea528ff7958eac58",
+    "semantic_hash": "22b6f5d41c687012ea528ff7958eac58"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-open/video/script.md": {
+    "mtime": 1778952820.331872,
+    "ast_hash": "ac9546e14964641a03ff7bd40a107004",
+    "semantic_hash": "ac9546e14964641a03ff7bd40a107004"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-prefix-highlight/README.md": {
+    "mtime": 1778952820.3367972,
+    "ast_hash": "a5b4c151fb722a56878d140fcfff9c22",
+    "semantic_hash": "a5b4c151fb722a56878d140fcfff9c22"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/.travis.yml": {
+    "mtime": 1778952820.3488944,
+    "ast_hash": "032785ddab875dae32781f7f5b7687f5",
+    "semantic_hash": "032785ddab875dae32781f7f5b7687f5"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/CHANGELOG.md": {
+    "mtime": 1778952820.3489213,
+    "ast_hash": "186382ab63aded0425aa45fe7ede99b2",
+    "semantic_hash": "186382ab63aded0425aa45fe7ede99b2"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/CONTRIBUTING.md": {
+    "mtime": 1778952820.3489497,
+    "ast_hash": "5d92552f2887b589390ef46b36f7d303",
+    "semantic_hash": "5d92552f2887b589390ef46b36f7d303"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/LICENSE.md": {
+    "mtime": 1778952820.3489728,
+    "ast_hash": "63f224ba79c1d680afaee29b75a060d4",
+    "semantic_hash": "63f224ba79c1d680afaee29b75a060d4"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/README.md": {
+    "mtime": 1778952820.3489969,
+    "ast_hash": "28aec1255c7f1a34d23241362f00cf07",
+    "semantic_hash": "28aec1255c7f1a34d23241362f00cf07"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/docs/custom_key_bindings.md": {
+    "mtime": 1778952820.3463943,
+    "ast_hash": "ae26e901f715b3cdd2217af8d28f1ade",
+    "semantic_hash": "ae26e901f715b3cdd2217af8d28f1ade"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/docs/hooks.md": {
+    "mtime": 1778952820.346423,
+    "ast_hash": "4696abd2fa05e1406dabc056ae2327bc",
+    "semantic_hash": "4696abd2fa05e1406dabc056ae2327bc"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/docs/migrating_from_tmuxinator.md": {
+    "mtime": 1778952820.3464456,
+    "ast_hash": "cde4863ed67793f7fb5965d3cb741263",
+    "semantic_hash": "cde4863ed67793f7fb5965d3cb741263"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/docs/restoring_bash_history.md": {
+    "mtime": 1778952820.3464692,
+    "ast_hash": "0826066980d8bfedbacbced863f8d970",
+    "semantic_hash": "0826066980d8bfedbacbced863f8d970"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/docs/restoring_pane_contents.md": {
+    "mtime": 1778952820.3464918,
+    "ast_hash": "7747ee55a1aecac4108a91d33c069dbe",
+    "semantic_hash": "7747ee55a1aecac4108a91d33c069dbe"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/docs/restoring_previously_saved_environment.md": {
+    "mtime": 1778952820.346516,
+    "ast_hash": "b06d30ddeac7a56d027c0ee295d369a1",
+    "semantic_hash": "b06d30ddeac7a56d027c0ee295d369a1"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/docs/restoring_programs.md": {
+    "mtime": 1778952820.346541,
+    "ast_hash": "e174c0197e17a015fe3b9d262211eb18",
+    "semantic_hash": "e174c0197e17a015fe3b9d262211eb18"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/docs/restoring_vim_and_neovim_sessions.md": {
+    "mtime": 1778952820.3465688,
+    "ast_hash": "1e9b2227ac0c27e4356bf9915fa9323d",
+    "semantic_hash": "1e9b2227ac0c27e4356bf9915fa9323d"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/docs/save_dir.md": {
+    "mtime": 1778952820.3465915,
+    "ast_hash": "a33e95e3dbc82f4601fb8d6fa3b1bba4",
+    "semantic_hash": "a33e95e3dbc82f4601fb8d6fa3b1bba4"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/lib/tmux-test/.travis.yml": {
+    "mtime": 1778952820.3470128,
+    "ast_hash": "032785ddab875dae32781f7f5b7687f5",
+    "semantic_hash": "032785ddab875dae32781f7f5b7687f5"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/lib/tmux-test/CHANGELOG.md": {
+    "mtime": 1778952820.3470373,
+    "ast_hash": "36caab8e0b0fea69dde1bba21168c9c7",
+    "semantic_hash": "36caab8e0b0fea69dde1bba21168c9c7"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/lib/tmux-test/LICENSE.md": {
+    "mtime": 1778952820.3470623,
+    "ast_hash": "3c3ce34ec5ad2e54171bd0470a5e1eba",
+    "semantic_hash": "3c3ce34ec5ad2e54171bd0470a5e1eba"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/lib/tmux-test/README.md": {
+    "mtime": 1778952820.3470876,
+    "ast_hash": "d3d173206e2a62044c44a4b7be1b8608",
+    "semantic_hash": "d3d173206e2a62044c44a4b7be1b8608"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/tests/fixtures/restore_file.txt": {
+    "mtime": 1778952820.347918,
+    "ast_hash": "ce28ca31503b2ad11355ae1112ad5484",
+    "semantic_hash": "ce28ca31503b2ad11355ae1112ad5484"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/tests/fixtures/save_file.txt": {
+    "mtime": 1778952820.3479474,
+    "ast_hash": "0609472b46f6f0116212ebb04de31dfd",
+    "semantic_hash": "0609472b46f6f0116212ebb04de31dfd"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/video/script.md": {
+    "mtime": 1778952820.3485575,
+    "ast_hash": "9bf55cabcc1a4150835a876bfaa27584",
+    "semantic_hash": "9bf55cabcc1a4150835a876bfaa27584"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-yank/.travis.yml": {
+    "mtime": 1778952820.3543024,
+    "ast_hash": "2eb2052149c9c5e3a7bbd7f03a742ff5",
+    "semantic_hash": "2eb2052149c9c5e3a7bbd7f03a742ff5"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-yank/CHANGELOG.md": {
+    "mtime": 1778952820.3543284,
+    "ast_hash": "81c8bf57e078751f46f51c7e8b044878",
+    "semantic_hash": "81c8bf57e078751f46f51c7e8b044878"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-yank/LICENSE.md": {
+    "mtime": 1778952820.3543515,
+    "ast_hash": "0c0c5299b16983e6426db7776f4039ba",
+    "semantic_hash": "0c0c5299b16983e6426db7776f4039ba"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-yank/README.md": {
+    "mtime": 1778952820.354375,
+    "ast_hash": "3de15569f9ec2d62b7ddf3f4d37379ba",
+    "semantic_hash": "3de15569f9ec2d62b7ddf3f4d37379ba"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-yank/_config.yml": {
+    "mtime": 1778952820.3544254,
+    "ast_hash": "932865e374757d33e321eeb2d5e88b6b",
+    "semantic_hash": "932865e374757d33e321eeb2d5e88b6b"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-yank/video/README.md": {
+    "mtime": 1778952820.3538706,
+    "ast_hash": "965f9ba42cfcf438367ad921f4df3bfc",
+    "semantic_hash": "965f9ba42cfcf438367ad921f4df3bfc"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-yank/video/script.md": {
+    "mtime": 1778952820.3539524,
+    "ast_hash": "e18090ca83a7304e14dc52d18df2731d",
+    "semantic_hash": "e18090ca83a7304e14dc52d18df2731d"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/.github/ISSUE_TEMPLATE/bug-report.md": {
+    "mtime": 1778952820.360535,
+    "ast_hash": "5c485df0ec6e2e87269b8aaa3802de47",
+    "semantic_hash": "5c485df0ec6e2e87269b8aaa3802de47"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/.github/ISSUE_TEMPLATE/feature_request.md": {
+    "mtime": 1778952820.3606427,
+    "ast_hash": "1815d77695a18fc1e6110b614a689cb1",
+    "semantic_hash": "1815d77695a18fc1e6110b614a689cb1"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/.github/PULL_REQUEST_TEMPLATE/pull_request_template.md": {
+    "mtime": 1778952820.360693,
+    "ast_hash": "d203e88701bb5b2ccec8a136e1cd4be7",
+    "semantic_hash": "d203e88701bb5b2ccec8a136e1cd4be7"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/.github/workflows/check-syntax.yml": {
+    "mtime": 1778952820.3608403,
+    "ast_hash": "c0f7df917adc0884c2e285782cef4699",
+    "semantic_hash": "c0f7df917adc0884c2e285782cef4699"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/INSTALL.md": {
+    "mtime": 1778952820.362585,
+    "ast_hash": "4f03240bc2be24bcdacc767b12baaa2d",
+    "semantic_hash": "4f03240bc2be24bcdacc767b12baaa2d"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/README.md": {
+    "mtime": 1778952820.362635,
+    "ast_hash": "39e01f170f122297edb8777531f0638e",
+    "semantic_hash": "39e01f170f122297edb8777531f0638e"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/docs/CONFIG.md": {
+    "mtime": 1778952820.361238,
+    "ast_hash": "bc0c17b5b28bc4a853655604a4b3b9d6",
+    "semantic_hash": "bc0c17b5b28bc4a853655604a4b3b9d6"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/docs/color_theming/README.md": {
+    "mtime": 1778952820.361141,
+    "ast_hash": "97df72f22dc4ffaafc46c443a9143831",
+    "semantic_hash": "97df72f22dc4ffaafc46c443a9143831"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/docs/color_theming/catppuccin.md": {
+    "mtime": 1778952820.361166,
+    "ast_hash": "cecddcabc018d8d988925be0efd5982c",
+    "semantic_hash": "cecddcabc018d8d988925be0efd5982c"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/docs/color_theming/gruvbox.md": {
+    "mtime": 1778952820.3611894,
+    "ast_hash": "a262b578db6331a4d28eecfe78865b36",
+    "semantic_hash": "a262b578db6331a4d28eecfe78865b36"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/docs/color_theming/tomorrow_night.md": {
+    "mtime": 1778952820.3612127,
+    "ast_hash": "ee41ae721167c646fd67e15a00d2ba9f",
+    "semantic_hash": "ee41ae721167c646fd67e15a00d2ba9f"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/.travis.yml": {
+    "mtime": 1778952820.371602,
+    "ast_hash": "7b86d0065c3e044a670072ffc82f9c6e",
+    "semantic_hash": "7b86d0065c3e044a670072ffc82f9c6e"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/README.md": {
+    "mtime": 1778952820.3716908,
+    "ast_hash": "ef50723041ab87b0353f2e6fe9fec328",
+    "semantic_hash": "ef50723041ab87b0353f2e6fe9fec328"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/.travis.yml": {
+    "mtime": 1778952820.3830006,
+    "ast_hash": "c35b7ce9bf1c45aa2ddedbd5a2824235",
+    "semantic_hash": "c35b7ce9bf1c45aa2ddedbd5a2824235"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/CHANGELOG.md": {
+    "mtime": 1778952820.3830254,
+    "ast_hash": "97080988659b5794cabbe8ffe2ec01fc",
+    "semantic_hash": "97080988659b5794cabbe8ffe2ec01fc"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/HOW_TO_PLUGIN.md": {
+    "mtime": 1778952820.3830495,
+    "ast_hash": "0e3027559380c753113d52c4c56947b8",
+    "semantic_hash": "0e3027559380c753113d52c4c56947b8"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/LICENSE.md": {
+    "mtime": 1778952820.383073,
+    "ast_hash": "fa6431b4e7d52f284e4162879cab16d1",
+    "semantic_hash": "fa6431b4e7d52f284e4162879cab16d1"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/README.md": {
+    "mtime": 1778952820.3830965,
+    "ast_hash": "ee264196dd37fa61bc7bbe64017c9e15",
+    "semantic_hash": "ee264196dd37fa61bc7bbe64017c9e15"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/docs/automatic_tpm_installation.md": {
+    "mtime": 1778952820.3810425,
+    "ast_hash": "e96208793bfeddfaf7e1bf3f1cbad58c",
+    "semantic_hash": "e96208793bfeddfaf7e1bf3f1cbad58c"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/docs/changing_plugins_install_dir.md": {
+    "mtime": 1778952820.3810847,
+    "ast_hash": "b37ed1df546301296d1042dad8c3fc82",
+    "semantic_hash": "b37ed1df546301296d1042dad8c3fc82"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/docs/how_to_create_plugin.md": {
+    "mtime": 1778952820.381126,
+    "ast_hash": "d9d10c372af6b2470ab5ff8a90a44ec1",
+    "semantic_hash": "d9d10c372af6b2470ab5ff8a90a44ec1"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/docs/managing_plugins_via_cmd_line.md": {
+    "mtime": 1778952820.3811595,
+    "ast_hash": "7d00f60dadd213f6763fa73cf8a2c5c3",
+    "semantic_hash": "7d00f60dadd213f6763fa73cf8a2c5c3"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/docs/tpm_not_working.md": {
+    "mtime": 1778952820.381192,
+    "ast_hash": "e2f4fbd0d7ac95cf3c4aa58391a6d405",
+    "semantic_hash": "e2f4fbd0d7ac95cf3c4aa58391a6d405"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/lib/tmux-test/.travis.yml": {
+    "mtime": 1778952820.3816478,
+    "ast_hash": "c35b7ce9bf1c45aa2ddedbd5a2824235",
+    "semantic_hash": "c35b7ce9bf1c45aa2ddedbd5a2824235"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/lib/tmux-test/CHANGELOG.md": {
+    "mtime": 1778952820.3816726,
+    "ast_hash": "95353f98722466bb5e8e584ee2f77551",
+    "semantic_hash": "95353f98722466bb5e8e584ee2f77551"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/lib/tmux-test/LICENSE.md": {
+    "mtime": 1778952820.3817072,
+    "ast_hash": "3c3ce34ec5ad2e54171bd0470a5e1eba",
+    "semantic_hash": "3c3ce34ec5ad2e54171bd0470a5e1eba"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tpm/lib/tmux-test/README.md": {
+    "mtime": 1778952820.3817317,
+    "ast_hash": "2209e26190e9cb08c98f18c8006147a7",
+    "semantic_hash": "2209e26190e9cb08c98f18c8006147a7"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-copycat/video/screencast_img.png": {
+    "mtime": 1778952820.3132646,
+    "ast_hash": "8fcef505ac2d8cf9fce47d59f728719c",
+    "semantic_hash": "8fcef505ac2d8cf9fce47d59f728719c"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-open/video/screencast_img.png": {
+    "mtime": 1778952820.3318086,
+    "ast_hash": "8fcef505ac2d8cf9fce47d59f728719c",
+    "semantic_hash": "8fcef505ac2d8cf9fce47d59f728719c"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-prefix-highlight/screenshots/prefix_off.png": {
+    "mtime": 1778952820.336696,
+    "ast_hash": "ef4bab5ea2afe1b87107bbbb791bdaa0",
+    "semantic_hash": "ef4bab5ea2afe1b87107bbbb791bdaa0"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-prefix-highlight/screenshots/prefix_on.png": {
+    "mtime": 1778952820.3367398,
+    "ast_hash": "e74131804513533ae8fded2953ea034c",
+    "semantic_hash": "e74131804513533ae8fded2953ea034c"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/video/issue_vid.png": {
+    "mtime": 1778952820.348217,
+    "ast_hash": "0bfd43e1beb4607b828db620c36fcc5b",
+    "semantic_hash": "0bfd43e1beb4607b828db620c36fcc5b"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-resurrect/video/screencast_img.png": {
+    "mtime": 1778952820.348289,
+    "ast_hash": "4220f576e465f0028b96bec841644590",
+    "semantic_hash": "4220f576e465f0028b96bec841644590"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux-yank/video/screencast_img.png": {
+    "mtime": 1778952820.353902,
+    "ast_hash": "8fcef505ac2d8cf9fce47d59f728719c",
+    "semantic_hash": "8fcef505ac2d8cf9fce47d59f728719c"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmux/screenshot.png": {
+    "mtime": 1778952820.362685,
+    "ast_hash": "28e4469e306caae327f4ffc988150d59",
+    "semantic_hash": "28e4469e306caae327f4ffc988150d59"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/examples/example.session-screenshot.png": {
+    "mtime": 1778952820.3700683,
+    "ast_hash": "a2b67f3fd57c18119bc4bacc02aed42b",
+    "semantic_hash": "a2b67f3fd57c18119bc4bacc02aed42b"
+  },
+  "/home/shri/dotfiles/nix-config/tmux/plugins/tmuxifier/examples/example.window-screenshot.png": {
+    "mtime": 1778952820.3701625,
+    "ast_hash": "d4bd629f99d281cbac392a409603822b",
+    "semantic_hash": "d4bd629f99d281cbac392a409603822b"
+  }
+}

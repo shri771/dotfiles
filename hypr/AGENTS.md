@@ -12,7 +12,7 @@ This directory is symlinked from `~/.config/hypr` via `modules/home-manager/link
 - `UserConfigs/UserSettings.conf`: input (kb_layout `us,us` variant `dvp,`, `grp:ctrls_toggle` to switch layouts), touchpad, touchdevice, tablet, `dwindle`/`master` layout (active layout is `master`), `misc` (vrr=2, swallow `^(kitty)$`), `binds`, `xwayland`, `cursor`.
 - `UserConfigs/UserKeybinds.conf`: user-level keybinds (app launchers, rofi `ALT+F`, pyprland scratchpads, kitty/vivaldi/ranger/notion launchers).
 - `UserConfigs/UserDecorAnimations.conf`: borders, gaps, rounding, blur, shadow, group bar, animations. Sources `wallust/wallust-hyprland.conf` for `$color*`. Animations currently `enabled = false`.
-- `UserConfigs/Startup_Apps.conf`: every `exec-once` (swww-daemon, waybar, swaync, ags, blueman-applet, kdeconnect-indicator, ydotoold, hypridle, pypr, gnome-keyring, kanshi, Polkit-NixOS.sh, temp_show.sh, cliphist watchers).
+- `UserConfigs/Startup_Apps.conf`: remaining `exec-once` lines after the uwsm migration — `awww`-daemon (renamed from `swww` in 26.05), waybar, ags, nm-applet, blueman-applet, ydotoold, hypridle, pypr, kanshi, `temp_show.sh`, `xhost +SI:localuser:root`. Everything else (gnome-keyring, polkit agent, swaync, kdeconnect-indicator, cliphist watchers, swappy) moved to HM-managed systemd user units — see "Daemons now run as systemd user units" below.
 - `UserConfigs/ENVariables.conf`: GDK/QT backends, XDG_*, scale factors, electron ozone hint, hyprland-qt-support QML path. NVIDIA block is commented out.
 - `UserConfigs/Monitors.conf`: only generic `preferred,auto,1` lines. Per-monitor wakeup workaround discussed in `Laptops.conf` (lid handling) routes overrides into `UserConfigs/LaptopDisplay.conf`.
 - `UserConfigs/Laptops.conf`: ASUS-specific keybinds (kbd brightness, `xf86Launch1` = rog-control-center, `xf86Launch3` = asusctl led-mode, `xf86Launch4` = asusctl profile), brightness/touchpad scripts, touchpad device name `asue1209:00-04f3r319f-touchpad`, lid-switch handling (currently commented).
@@ -30,8 +30,8 @@ This directory is symlinked from `~/.config/hypr` via `modules/home-manager/link
 - `scripts/Refresh.sh`: restarts waybar/swaync/rofi after color/template regeneration. Invoked at the end of `WallustSwww.sh` and from the `SUPER SHIFT R` keybind.
 - `scripts/ChangeLayout.sh`: toggles `general:layout` between `master` and `dwindle` *and* rebinds `SUPER+J/K/O` to match the active layout's idioms. Bound to `$mainMod CTRL+L`.
 - `scripts/GameMode.sh`: zero-cost mode — disables animations/shadow/blur/rounding/gaps/borders and forces opacity 1.0, then `swww kill`. Re-enabling rehydrates wallpaper + wallust + refresh. Bound to `$mainMod SHIFT+G`.
-- `scripts/keyring.sh`, `start_gnome_keyring.sh`, `Keyring-NixOS.sh`: GNOME keyring start variants. Active one is `keyring.sh` (called from `Startup_Apps.conf`).
-- `scripts/Polkit-NixOS.sh`: polkit agent launcher used at session start.
+- `scripts/start_gnome_keyring.sh`, `Keyring-NixOS.sh`: GNOME keyring start variants. **No longer active** — keyring is started by HM's `services.gnome-keyring` and unlocked by PAM (see nix-config AGENTS.md). The `keyring.sh` variant was deleted in the uwsm migration.
+- `scripts/Polkit-NixOS.sh`: **deleted** in the uwsm migration. Replaced by `hyprpolkitagent` which is activated via a wants-symlink from `core.nix`.
 - `scripts/PortalHyprland.sh`: xdg-desktop-portal restart helper. Useful when portal config in nix-config changes but the live daemon is stale.
 - `scripts/temp_show.sh` + `scripts/temp_sensor` (symlink to `/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input`): CPU temp readout for waybar/notifications. The symlink target is **hardware-specific** — if `hwmon5` reassigns after a kernel update, this breaks silently.
 - `scripts/lock_suspend.sh`, `LockScreen.sh`, `Hypridle.sh`: lockscreen entry points; `hypridle.conf` calls `hyprlock` directly so these are only used by manual keybinds / wlogout.
@@ -47,6 +47,38 @@ This directory is symlinked from `~/.config/hypr` via `modules/home-manager/link
 - `session/hypr.session`, `hypr.session`, `hyprsession.conf`: session-save artifacts; not actively read by hyprland.conf.
 - `scratchpads.json`: legacy pyprland scratchpad format; current scratchpads are defined in `pyprland.toml`.
 - `application-style.conf`, `con`, `check_temp.txt`, `tubely.db`, `v2.3.9`: stray/unused files. Do not source them from `hyprland.conf`.
+
+## Daemons now run as systemd user units (uwsm migration)
+
+NixOS sets `programs.hyprland.withUWSM = true` and SDDM defaults to `hyprland-uwsm`. uwsm sets up the session via `graphical-session.target`, so daemons that follow the Hyprland session lifecycle belong as systemd user units, not `exec-once` in `Startup_Apps.conf`.
+
+Daemons that were previously `exec-once` and are now systemd-managed:
+
+| Daemon | Activation point |
+|---|---|
+| `gnome-keyring` | HM `services.gnome-keyring` + PAM unlock (`security.pam.services.login.enableGnomeKeyring`). |
+| `kdeconnect-indicator` | HM `services.kdeconnect.indicator = true`. |
+| `cliphist` text + image watchers | HM `services.cliphist.enable`. |
+| `swaync` | Wants-symlink in `core.nix` — `services.swaync.enable` would write `~/.config/swaync/config.json` and collide with the `mkOutOfStoreSymlink` from `links.nix`. |
+| `hyprpolkitagent` | Wants-symlink in `core.nix` (no HM module exists yet). Replaces the pre-uwsm `polkit_gnome` + `Polkit-NixOS.sh` chain. |
+
+`swappy` was also dropped from `Startup_Apps.conf` — it's an interactive screenshot annotation tool, not a daemon.
+
+Deleted from `scripts/` because their job is now done by HM/PAM/systemd:
+
+- `scripts/keyring.sh`
+- `scripts/Polkit-NixOS.sh`
+
+What still runs from `Startup_Apps.conf` and why each one was kept there:
+
+- `awww`-daemon (was `swww` before the 26.05 rename) — wallpaper daemon, must precede `swww img`/`wallust` calls.
+- `temp_show.sh` — custom helper, not a packaged daemon.
+- `xhost +SI:localuser:root` — XWayland access control, no systemd equivalent.
+- `kanshi` — has an HM module but would write `~/.config/kanshi/config` and collide with the symlink from `links.nix`. Same conflict class as `swaync`.
+- `waybar` — same write-conflict risk on `~/.config/waybar`. Migrate via `programs.waybar.enable = true; programs.waybar.systemd.enable = true;` **only if** you also remove `"waybar"` from `configApps` in `links.nix`.
+- `nm-applet`, `blueman-applet`, `ags`, `pypr`, `ydotoold`, `hypridle` — no HM module conflict but left as exec-once for now. Each could be promoted to `uwsm app -- <cmd>` to run in its own systemd scope without going through HM.
+
+If `app-picom@autostart.service` reappears in the failed-units list, the suppressing override is in `nix-config:modules/home-manager/core.nix` (`xdg.configFile."autostart/picom.desktop"` writes `Hidden=true`). AwesomeWM's `autostart.lua` is the sole picom launcher.
 
 ## Exact Change Points
 
@@ -149,7 +181,8 @@ Binaries assumed to be on `$PATH` at session start (most are installed via the n
 
 - `Hyprland`, `start-hyprland`, `hyprctl`, `hyprlock`, `hypridle`.
 - `swww`, `swww-daemon`, `wallust` — wallpaper + palette pipeline.
-- `waybar`, `swaync`, `rofi`, `ags`, `wlogout`, `nm-applet`, `blueman-applet`, `kdeconnect-indicator`, `ydotoold` — startup apps.
+- `waybar`, `rofi`, `ags`, `wlogout`, `nm-applet`, `blueman-applet`, `ydotoold` — startup apps still in `Startup_Apps.conf`.
+- `swaync`, `hyprpolkitagent`, `kdeconnect-indicator`, `cliphist` — daemons activated as systemd user units via nix-config (see "Daemons now run as systemd user units").
 - `kanshi` — output config daemon.
 - `pypr` (pyprland) — scratchpad daemon.
 - `kitty` — primary terminal; many keybinds and scratchpads hard-code it. `kitty-dropterm` and `kitty-wlctl` are class names, not separate binaries.
@@ -158,7 +191,7 @@ Binaries assumed to be on `$PATH` at session start (most are installed via the n
 - `brightnessctl`, `playerctl`, `pactl`, `wpctl` — special-key scripts.
 - `grim`, `slurp`, `wf-recorder`, `swappy` — screenshot/record.
 - `asusctl`, `rog-control-center` — ASUS-only, only invoked from `Laptops.conf` keybinds (no-ops on non-ASUS hardware).
-- `gnome-keyring-daemon`, `polkit-gnome-authentication-agent-1` (or KDE polkit) — start chain.
+- `gnome-keyring-daemon` (via HM `services.gnome-keyring` + PAM unlock), `hyprpolkitagent` (via wants-symlink in `core.nix`). The pre-uwsm `polkit-gnome-authentication-agent-1` chain is gone — see "Daemons now run as systemd user units".
 - `jq`, `awk`, `sed`, `notify-send` — shell-script dependencies.
 
 Referenced but **not** in this directory:
@@ -355,6 +388,6 @@ Example:
 - After editing anything related to themes/colors (`UserDecorAnimations.conf`, `wallust/*`, `hyprlock*.conf`), do a wallpaper-change round-trip (`SUPER+X` or run `WallustSwww.sh` manually) to confirm the templates regenerate cleanly.
 - ASUS-specific keybinds (`Laptops.conf`) are no-ops on non-ASUS hardware but won't break anything — leave them in unless the machine model changes.
 - `pyprland.toml` requires a `pkill pypr && pypr &` reload, not `hyprctl reload`. Easy to forget.
-- For NixOS-specific scripts (`Polkit-NixOS.sh`, `Keyring-NixOS.sh`, `UptimeNixOS.sh`), do not "simplify" them to call the FHS paths — they exist because the FHS paths don't resolve here.
+- For NixOS-specific scripts (`Keyring-NixOS.sh`, `UptimeNixOS.sh`), do not "simplify" them to call the FHS paths — they exist because the FHS paths don't resolve here. `Polkit-NixOS.sh` was deleted in the uwsm migration; do not re-introduce a `/nix/store`-hunting hack.
 - Treat `wallust/hyprlock-colors.conf` lagging by one wallpaper as a feature, not a bug. See `scripts/WallustSwww.sh:57-62` for the rationale.
 - Do not remove `configs/`, `UserConfigs/`, or any file currently sourced by `hyprland.conf` without first grepping every script in `scripts/` and `UserScripts/` for references — many scripts re-source these for their own `$color*` lookups.

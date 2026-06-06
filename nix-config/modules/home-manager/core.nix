@@ -106,17 +106,6 @@ in
     programs.home-manager = {
       enable = true;
     };
-    programs.neovim = {
-      enable = true;
-      viAlias = true;
-      vimAlias = true;
-
-      # extraPackages = with pkgs; [
-      #   # Additional LSP servers and tools
-      #   nodePackages.typescript-language-server
-      #   nodePackages.vscode-langservers-extracted
-      # ];
-    };
 
     # Low battery waring
     services.batsignal = {
@@ -131,6 +120,13 @@ in
       ];
     };
     systemd.user.services.batsignal.Install.WantedBy = lib.mkForce [ "default.target" ]; # # forcefully start
+
+    services.cliphist.enable = true;
+
+    xdg.configFile."systemd/user/graphical-session.target.wants/swaync.service".source =
+      "${pkgs.swaynotificationcenter}/share/systemd/user/swaync.service";
+    xdg.configFile."systemd/user/graphical-session.target.wants/hyprpolkitagent.service".source =
+      "${pkgs.hyprpolkitagent}/share/systemd/user/hyprpolkitagent.service";
 
     # KDE
     services.kdeconnect = {
@@ -199,6 +195,11 @@ in
     # Required for xdg.desktopEntries to actually write files into
     # ~/.local/share/applications/ — without this the option is a silent no-op.
     xdg.enable = true;
+
+    xdg.configFile."autostart/picom.desktop".text = ''
+      [Desktop Entry]
+      Hidden=true
+    '';
 
     # Ranger as the default file manager — desktop entry to launch it in kitty
     xdg.desktopEntries.ranger = {

@@ -10,7 +10,7 @@ This repo is a NixOS + home-manager flake deployed at `/etc/nixos` (system) and 
 - `nixos/iso.nix`: live ISO entry; integrates `home-manager.nixosModules.home-manager` (the main `shri-nix` build does **not**).
 - `home-manager/home.nix`: user `shri` entry; imports every `modules/home-manager/*` file.
 - `home-manager/tst-home.nix`: user `tst` entry (test/secondary).
-- `modules/home-manager/core.nix`: nixpkgs config (overlays + unfree), neovim, gnome-keyring, kdeconnect, batsignal, `xdg.mimeApps`, `xdg.enable`, `xdg.desktopEntries`, `home.sessionVariables`, termfilechooser config.
+- `modules/home-manager/core.nix`: nixpkgs config (overlays + unfree), gnome-keyring, kdeconnect, cliphist, batsignal, `xdg.mimeApps`, `xdg.enable`, `xdg.desktopEntries`, `home.sessionVariables`, termfilechooser config, picom XDG-autostart suppression, wants-symlinks for `swaync.service` and `hyprpolkitagent.service` (see "26.05 Migration Notes" below).
 - `modules/home-manager/links.nix`: out-of-store symlinks from `~/dotfiles/<app>` into `~/.config/<app>` (hypr, kitty, ranger, fish, nvim, waybar, etc.). Listed in the `configApps` array; tmuxifier layouts are also linked here.
 - `modules/home-manager/theme.nix`: GTK/Qt/Kvantum/kdeglobals theming.
 - `modules/home-manager/git.nix`: git identity + config.
@@ -117,6 +117,55 @@ Optional runtime helpers:
 - `rclone` remote config at `~/.config/rclone/rclone.conf` — required for `modules/home-manager/rclone-gdrive.nix`; secrets/OAuth tokens are **not** stored in Nix.
 - `~/dotfiles/scripts/rclone-gdrive/` — external helper scripts for mount and Documents sync; not vendored in this repo and must be kept in sync manually.
 
+## 26.05 Migration Notes
+
+`flake.nix` is on `nixpkgs` 26.05 and `home-manager` release-26.05. `home.stateVersion = "26.05"` is set in both `home-manager/home.nix` and `home-manager/tst-home.nix`, which activates the new HM default-value behavior.
+
+### Package renames / removals applied to `modules/home-manager/pkgs/base.nix`
+
+- `swww` → `awww` (renamed upstream).
+- `xorg.xprop` → `xprop`, `xorg.xinit` → `xinit` (xorg package set deprecated).
+- `nixfmt-rfc-style` → `nixfmt` (alias collapsed).
+- `mysql80` removed upstream → already on `mysql84`.
+- `swagger-cli` removed (broken/unmaintained) → replace with `redocly` if OpenAPI work needs it.
+- `polkit_gnome` removed in favor of `hyprpolkitagent` under uwsm — see `~/dotfiles/hypr/AGENTS.md` "Daemons now run as systemd user units".
+- `cliphist` removed from packages — now installed via `services.cliphist.enable = true;` in `core.nix`.
+
+### Build-time pitfalls
+
+- **`pipx 1.8.0` tests fail on Python 3.13** — 7 assertions in `tests/test_package_specifier.py` fail on a whitespace change in the `packaging` library (`black @ url` vs `black@ url`). Worked around with `(pipx.overridePythonAttrs (_: { doCheck = false; }))` in `base.nix`. `uv` is in the package list as the modern replacement; drop the override and remove `pipx` when convenient.
+- **`programs.neovim.enable = true` collides with the `~/.config/nvim` symlink** — HM 26.05 unconditionally writes `~/.config/nvim/init.lua`. When that path is a `mkOutOfStoreSymlink` (defined in `links.nix:configApps`) HM resolves through it, lands at `~/dotfiles/nvim/init.lua`, sees it as "outside `$HOME`" (HM's build sandbox), and aborts with `Error installing file '.config/nvim/init.lua' outside $HOME`. Fix: removed the `programs.neovim` block entirely; `neovim` is installed via `base.nix`; nvim config still owned by `~/dotfiles/nvim/` through the symlink.
+
+### HM module ↔ links.nix symlink conflict pattern
+
+Every HM `services.<X>` module that writes a default config file under `~/.config/<X>/` will fail the same "outside `$HOME`" check if that directory is in `configApps` in `links.nix`. Confirmed cases:
+
+| HM module | Writes to | Conflicts with `links.nix`? | Verdict |
+|---|---|---|---|
+| `services.cliphist.enable` | nothing (CLI-only) | n/a | safe — use the module |
+| `services.kdeconnect.enable` | nothing | n/a | safe — use the module |
+| `services.gnome-keyring.enable` | nothing | n/a | safe — use the module |
+| `services.swaync.enable` | `~/.config/swaync/config.json` | yes | do **not** use; wants-symlink instead |
+
+### Wants-symlink pattern (preferred for package-shipped units)
+
+When a package ships a systemd user unit with `WantedBy=graphical-session.target` and you just want uwsm to activate it without HM writing any config:
+
+```nix
+xdg.configFile."systemd/user/graphical-session.target.wants/<unit>.service".source =
+  "${pkgs.<pkg>}/share/systemd/user/<unit>.service";
+```
+
+Currently used in `core.nix` for `swaync.service` (because `services.swaync.enable` conflicts with the symlink) and `hyprpolkitagent.service` (because no HM module exists for it yet). This plants the symlink that `systemctl --user enable` would normally create, declaratively.
+
+### Anti-pattern: `systemd.user.services.<n>.Install.WantedBy`
+
+Do **not** use this to activate a package-shipped unit. HM doesn't generate a drop-in — it writes a *full replacement* unit file at `~/.config/systemd/user/<n>.service` containing only the `[Install]` section. systemd loads HM's stub (no `[Service]`, no `ExecStart`) and rejects it as "bad unit file setting". Use the wants-symlink pattern above.
+
+### Picom XDG autostart suppression
+
+`core.nix` writes `~/.config/autostart/picom.desktop` with `Hidden=true`. The upstream `picom` package ships a desktop file at `share/applications/`; `systemd-xdg-autostart-generator` would otherwise generate `app-picom@autostart.service`. AwesomeWM's `autostart.lua` already launches picom, so the systemd-generated copy loses the race with "Another composite manager is already running" on every boot. Override hides the entry.
+
 ## Rclone / Google Drive Plan
 
 Target layout:
@@ -190,6 +239,17 @@ Interpretation:
 - New numbered generation → rebuild worked; live files now resolve to the new store path.
 - `~/.local/share/applications/<name>.desktop` missing after adding `xdg.desktopEntries.<name>` → `xdg.enable = true;` not set in any imported HM module.
 - MIME default not updated → check `~/.config/mimeapps.list` for the actual line; check that no stale `~/.local/share/applications/mimeapps.list` is shadowing.
+
+### HM build fails with `Error installing file '<path>' outside $HOME`
+
+You've enabled an HM `services.<X>` or `programs.<X>` module that writes a default file under `~/.config/<X>/`, but `~/.config/<X>` is a `mkOutOfStoreSymlink` from `links.nix:configApps`. HM resolves through the symlink, lands outside the build sandbox `$HOME`, refuses.
+
+Fix options, pick one:
+
+- Drop the HM module's `enable = true;` and use the wants-symlink pattern from "26.05 Migration Notes" to activate the systemd unit without HM writing config.
+- Remove the directory from `configApps` in `links.nix` and let HM own the entire `~/.config/<X>` tree from Nix.
+
+Done in this repo for: `programs.neovim` (replaced with `neovim` package in `base.nix`), `services.swaync.enable` (replaced with wants-symlink in `core.nix`).
 
 ### A custom package fails to build
 

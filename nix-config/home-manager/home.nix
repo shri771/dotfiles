@@ -25,7 +25,7 @@
 
   config = {
     home = {
-      stateVersion = "25.11";
+      stateVersion = "26.05";
       username = "shri";
       homeDirectory = "/home/shri";
     };

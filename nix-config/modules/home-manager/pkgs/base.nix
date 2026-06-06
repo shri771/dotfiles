@@ -51,7 +51,6 @@ in
     file
     rofi
     yad
-    cliphist
     playerctl
     pkgs.ente-auth
     imagemagick
@@ -72,6 +71,7 @@ in
     gnumake
     gcc
     htop
+    neovim
     bat
     fastfetch
     fd
@@ -82,6 +82,7 @@ in
     ripgrep
     rclone
     rsync
+    # cliphist installed via services.cliphist
     # rquickshare
 
     # --- 2. Hyprland / Wayland Stack ---
@@ -95,7 +96,7 @@ in
     swaybg
     swayimg
     swaynotificationcenter
-    swww
+    awww
     xdg-desktop-portal-hyprland
     kanshi
     nwg-displays
@@ -116,10 +117,10 @@ in
     xdotool
     xclip
     wmctrl
-    xorg.xprop
+    xprop
     xdo
     sxhkd
-    xorg.xinit
+    xinit
     xss-lock
     numlockx
     scrot
@@ -146,7 +147,6 @@ in
     loupe
 
     # --- 6. System, Hardware & Networking ---
-    polkit_gnome
     blueman
     bluez-tools
     networkmanagerapplet
@@ -234,7 +234,7 @@ in
     mysql84
     gofumpt
     # Python
-    pipx
+    (pipx.overridePythonAttrs (_: { doCheck = false; }))
     uv
     (pkgs.python3.withPackages (python-pkgs: [
       python-pkgs.numpy
@@ -242,14 +242,13 @@ in
     ]))
     # OpenAPI
     oapi-codegen
-    swagger-cli
     go-swagger
     openapi-generator-cli
     # Misc Dev
     unstable.nodejs
     jdk
     nil
-    nixfmt-rfc-style
+    nixfmt
     languagetool
     unstable.codex
     pkgs.telegram-desktop
