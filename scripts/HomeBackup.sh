@@ -20,6 +20,16 @@ SESSION_NAME="home-backup"
 BORG_REPO="/mnt/home-backup/nix-backup"
 BACKUP_STATUS_FILE="/tmp/${SESSION_NAME}-status-$$"
 
+mount_is_rw() {
+    local options
+    options=$(findmnt -rn -o OPTIONS --target "$MOUNT_POINT" 2>/dev/null || true)
+    [[ ",$options," == *,rw,* ]]
+}
+
+mount_options() {
+    findmnt -rn -o OPTIONS --target "$MOUNT_POINT" 2>/dev/null || true
+}
+
 # =============================================================================
 # udev mode: mount as root, then hand off to user session
 # =============================================================================
@@ -34,10 +44,24 @@ if [[ "${1:-}" == "--udev" ]]; then
     fi
 
     echo "HomeBackup: Mounting $MOUNT_POINT..." | systemd-cat -t home-backup -p info
-    mount UUID="$UUID" "$MOUNT_POINT" || {
+    mount -o rw UUID="$UUID" "$MOUNT_POINT" || {
         echo "HomeBackup: Failed to mount $MOUNT_POINT" | systemd-cat -t home-backup -p err
         exit 1
     }
+
+    if ! mount_is_rw; then
+        echo "HomeBackup: $MOUNT_POINT mounted read-only; trying remount rw..." | systemd-cat -t home-backup -p warning
+        mount -o remount,rw "$MOUNT_POINT" || {
+            echo "HomeBackup: Failed to remount $MOUNT_POINT read-write" | systemd-cat -t home-backup -p err
+            exit 1
+        }
+    fi
+
+    if ! mount_is_rw; then
+        echo "HomeBackup: $MOUNT_POINT is still not read-write after remount; options=$(mount_options)" | systemd-cat -t home-backup -p err
+        exit 1
+    fi
+
     echo "HomeBackup: Mount successful" | systemd-cat -t home-backup -p info
 
     # Run the interactive backup flow as the user with their full session environment.
@@ -88,8 +112,20 @@ export GNUPGHOME="${GNUPGHOME:-/home/$BACKUP_USER/.gnupg}"
 
 # --- Step 1: Mount the backup drive ---
 if ! mountpoint -q "$MOUNT_POINT"; then
-    if ! sudo mount UUID="$UUID" "$MOUNT_POINT"; then
+    if ! sudo mount -o rw UUID="$UUID" "$MOUNT_POINT"; then
         notify-send -t "$NOTIFY_TIMEOUT" -u critical -i "$ICON" "Backup Error" "Failed to mount backup drive at $MOUNT_POINT"
+        exit 1
+    fi
+fi
+
+if ! mount_is_rw; then
+    if ! remount_error=$(sudo mount -o remount,rw "$MOUNT_POINT" 2>&1); then
+        notify-send -t "$NOTIFY_TIMEOUT" -u critical -i "$ICON" "Backup Error" "Backup drive is mounted read-only: $remount_error"
+        exit 1
+    fi
+
+    if ! mount_is_rw; then
+        notify-send -t "$NOTIFY_TIMEOUT" -u critical -i "$ICON" "Backup Error" "Backup drive is still read-only after remount. Options: $(mount_options)"
         exit 1
     fi
 fi
@@ -110,11 +146,14 @@ fi
 PASSPHRASE=$(pass borg/passphrase)
 BORG_BIN=$(command -v borg)
 
-# --- Step 4: Run borg backup in a detached tmux session ---
-# Kill existing session if leftover from a previous run
-tmux kill-session -t "$SESSION_NAME" 2>/dev/null || true
+# --- Step 4: Run borg backup in tmux ---
+if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
+    TMUX_CMD=(tmux new-window -d -t "$SESSION_NAME" -n "backup-$(date +%H%M%S)")
+else
+    TMUX_CMD=(tmux new-session -d -s "$SESSION_NAME")
+fi
 
-tmux new-session -d -s "$SESSION_NAME" \
+"${TMUX_CMD[@]}" \
     -e "BORG_PASSPHRASE=$PASSPHRASE" \
     -e "BORG_REPO=$BORG_REPO" \
     -e "BORG_BIN=$BORG_BIN" \
@@ -156,7 +195,11 @@ tmux new-session -d -s "$SESSION_NAME" \
 
     printf "%s\n" "$borg_exit" > "$BACKUP_STATUS_FILE"
 
-    # Keep session alive for inspection
+    if [[ "$borg_exit" -eq 0 || "$borg_exit" -eq 1 ]]; then
+        exit "$borg_exit"
+    fi
+
+    # Keep failed session alive for inspection
     exec bash
 '
 

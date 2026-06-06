@@ -8,6 +8,10 @@
   # https://nixos.wiki/wiki/Overlays
   modifications = final: prev:
     {
+      android-tools = prev.android-tools.overrideAttrs (_oldAttrs: {
+        doCheck = false;
+      });
+
       # example = prev.example.overrideAttrs (oldAttrs: rec {
       # ...
       # });

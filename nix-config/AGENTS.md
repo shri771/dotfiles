@@ -4,7 +4,7 @@ This repo is a NixOS + home-manager flake deployed at `/etc/nixos` (system) and 
 
 ## Files That Matter
 
-- `flake.nix`: inputs (`nixpkgs` 25.11, `nixpkgs-unstable`, `home-manager` 25.11, `disko`, `neovim-nightly-overlay`), `nixosConfigurations.shri-nix` and `.iso`, standalone `homeConfigurations."shri@shri-nix"` and `"tst@shri-nix"`.
+- `flake.nix`: inputs (`nixpkgs` 26.05, `nixpkgs-unstable`, `home-manager` 26.05, `disko`, `neovim-nightly-overlay`), `nixosConfigurations.shri-nix` and `.iso`, standalone `homeConfigurations."shri@shri-nix"` and `"tst@shri-nix"`.
 - `nixos/configuration.nix`: system-wide config (Hyprland, pipewire, tlp, bluetooth, fish, nix-ld, XDG portal, GNOME keyring, KDE/Plasma off, Docker-Container imports, user imports).
 - `nixos/hardware.nix` / `nixos/hardware-configuration.nix` / `nixos/disk-config.nix`: machine-specific; imported from `flake.nix`, **not** from `configuration.nix`, so the ISO build can re-use `configuration.nix` without inheriting disk layout.
 - `nixos/iso.nix`: live ISO entry; integrates `home-manager.nixosModules.home-manager` (the main `shri-nix` build does **not**).
@@ -99,8 +99,8 @@ Rules:
 
 Required by current config:
 
-- `nixpkgs` 25.11 and `nixpkgs-unstable` (flake inputs).
-- `home-manager` release-25.11 (flake input).
+- `nixpkgs` 26.05 and `nixpkgs-unstable` (flake inputs).
+- `home-manager` release-26.05 (flake input).
 - `disko` (flake input) — used for declarative disk layout via `nixos/disk-config.nix`.
 - `neovim-nightly-overlay` (flake input; overlay line is currently commented out in `configuration.nix` but the input is fetched).
 - `xdg-desktop-portal-hyprland`, `kdePackages.xdg-desktop-portal-kde`, `xdg-desktop-portal-termfilechooser` — extra portals in `configuration.nix`.

@@ -273,7 +273,11 @@ in
   services.power-profiles-daemon.enable = false;
 
   # Enable Hyprland and Awesome
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
+  services.displayManager.defaultSession = "hyprland-uwsm";
   services.xserver.windowManager.awesome.enable = true;
 
   # XDG Desktop Menu (needed for KDE apps like Dolphin to discover installed applications)

@@ -92,7 +92,7 @@ in
               # CoW ON
               "@" = {
                 mountpoint   = "/";
-                mountOptions = data;
+                mountOptions = data ++ [ "x-systemd.device-timeout=infinity" ];
               };
               "@home-btrfs" = {
                 mountpoint   = "/root";

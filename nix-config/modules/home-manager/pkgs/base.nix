@@ -53,6 +53,7 @@ in
     yad
     cliphist
     playerctl
+    pkgs.ente-auth
     imagemagick
     socat
     wallust
