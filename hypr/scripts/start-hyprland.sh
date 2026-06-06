@@ -6,5 +6,5 @@ export SSH_AUTH_SOCK
 export GPG_AGENT_INFO
 export PKCS11_MODULES
 
-# Launch Hyprland
-exec Hyprland
+# Launch Hyprland through the upstream wrapper for crash recovery / safe mode.
+exec start-hyprland
