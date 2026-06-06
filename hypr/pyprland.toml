@@ -6,6 +6,7 @@ plugins = ["scratchpads", "magnify"]
 # Scratchpads
 [scratchpads.term]
 command = "kitty --class kitty-dropterm"
+animation = ""
 class = "kitty-dropterm"
 lazy = true
 size = "55% 54%"
@@ -13,6 +14,7 @@ position = "24% 5%"
 focus = true
 
 [scratchpads.whatsie]
+animation = ""
 command = "zapzap"
 class = "com.rtosta.zapzap"
 size = "60% 58%"
@@ -20,6 +22,7 @@ focus = true
 lazy = true
 
 [scratchpads.mixer]
+animation = ""
 command = "pavucontrol"
 class = "org.pulseaudio.pavucontrol"
 size = "45% 46%"
@@ -28,6 +31,7 @@ lazy = true
 position = "30% 33%"
 
 [scratchpads.share]
+animation = ""
 command = "rquickshare"
 class = "rquickshare"
 size = "40% 45%"
@@ -35,6 +39,7 @@ focus = true
 lazy = true
 
 [scratchpads.cal]
+animation = ""
 command = "qalculate-gtk "
 class = "qalculate-gtk"
 size = "20% 46%"
@@ -44,6 +49,7 @@ position = "41% 44%"
 
 
 [scratchpads.mission]
+animation = ""
 command = "missioncenter"
 class = "io.missioncenter.MissionCenter"
 size = "46% 47%"
@@ -52,6 +58,7 @@ position = "28% 37%"
 
 
 [scratchpads.file]
+animation = ""
 command = "dolphin ~"
 class = "org.kde.dolphin"
 size = "46% 47%"
@@ -63,6 +70,7 @@ focus = true
 
 
 [scratchpads.kde]
+animation = ""
 command = "kdeconnect-app"
 class = "org.kde.kdeconnect.app"
 size = "24% 27%"
@@ -73,6 +81,7 @@ focus = true
 
 
 [scratchpads.kitty]
+animation = ""
 command = "kitty --class kitty-wlctl wlctl"
 class = "kitty-wlctl"
 size = "48% 63%"

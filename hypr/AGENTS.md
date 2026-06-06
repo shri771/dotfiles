@@ -24,12 +24,12 @@ This directory is symlinked from `~/.config/hypr` via `modules/home-manager/link
 - `pyprland.toml`: scratchpad definitions (term, whatsie/zapzap, mixer/pavucontrol, share/rquickshare, cal/qalculate-gtk, mission/missioncenter, file/dolphin, kde/kdeconnect-app, kitty/wlctl). Triggered from `UserKeybinds.conf` via `pypr toggle <name>`.
 - `wallust/wallust-hyprland.conf`: live `$color0..$color15` written by `wallust run`. Sourced by `UserDecorAnimations.conf`.
 - `wallust/hyprlock-colors.conf`: snapshot copied from `wallust-hyprland.conf` *before* the next `wallust run` overwrites it (see `scripts/WallustSwww.sh:60-62`). Sourced by `hyprlock.conf` so the lock screen keeps the *previous* desktop palette.
-- `initial-boot.sh`: runs once, guarded by `~/.config/hypr/.initial_startup_done`. Applies initial wallpaper via swww, wallust, gsettings (gtk/icon/cursor/color-scheme), kvantum theme, kb layout, waybar style symlink.
+- `initial-boot.sh`: runs once, guarded by `~/.config/hypr/.initial_startup_done`. Applies initial wallpaper via awww, wallust, gsettings (gtk/icon/cursor/color-scheme), kvantum theme, kb layout, waybar style symlink.
 - `scripts/start-hyprland.sh`: SDDM entry shim. Starts gnome-keyring-daemon then `exec start-hyprland` (the upstream wrapper). Referenced by `modules/nixos/sddm.nix` in the nix-config flake.
-- `scripts/WallustSwww.sh`: wallpaper-change pipeline. Resolves current wallpaper from `~/.cache/swww/<monitor>`, mirrors it into `~/.config/rofi/.current_wallpaper` and `~/.config/hypr/wallpaper_effects/.wallpaper_current`, snapshots the *current* `wallust-hyprland.conf` to `hyprlock-colors.conf` (intentional — lock screen lags behind by one wallpaper), then `wallust run -s` (foreground, so Refresh.sh sees regenerated templates).
+- `scripts/WallustSwww.sh`: wallpaper-change pipeline. Resolves current wallpaper from `~/.cache/awww/<monitor>`, mirrors it into `~/.config/rofi/.current_wallpaper` and `~/.config/hypr/wallpaper_effects/.wallpaper_current`, snapshots the *current* `wallust-hyprland.conf` to `hyprlock-colors.conf` (intentional — lock screen lags behind by one wallpaper), then `wallust run -s` (foreground, so Refresh.sh sees regenerated templates). Filename keeps the historical `Swww` capitalization; its body calls `awww` after the 26.05 rename.
 - `scripts/Refresh.sh`: restarts waybar/swaync/rofi after color/template regeneration. Invoked at the end of `WallustSwww.sh` and from the `SUPER SHIFT R` keybind.
 - `scripts/ChangeLayout.sh`: toggles `general:layout` between `master` and `dwindle` *and* rebinds `SUPER+J/K/O` to match the active layout's idioms. Bound to `$mainMod CTRL+L`.
-- `scripts/GameMode.sh`: zero-cost mode — disables animations/shadow/blur/rounding/gaps/borders and forces opacity 1.0, then `swww kill`. Re-enabling rehydrates wallpaper + wallust + refresh. Bound to `$mainMod SHIFT+G`.
+- `scripts/GameMode.sh`: zero-cost mode — disables animations/shadow/blur/rounding/gaps/borders and forces opacity 1.0, then `awww kill`. Re-enabling rehydrates wallpaper + wallust + refresh. Bound to `$mainMod SHIFT+G`.
 - `scripts/start_gnome_keyring.sh`, `Keyring-NixOS.sh`: GNOME keyring start variants. **No longer active** — keyring is started by HM's `services.gnome-keyring` and unlocked by PAM (see nix-config AGENTS.md). The `keyring.sh` variant was deleted in the uwsm migration.
 - `scripts/Polkit-NixOS.sh`: **deleted** in the uwsm migration. Replaced by `hyprpolkitagent` which is activated via a wants-symlink from `core.nix`.
 - `scripts/PortalHyprland.sh`: xdg-desktop-portal restart helper. Useful when portal config in nix-config changes but the live daemon is stale.
@@ -71,7 +71,7 @@ Deleted from `scripts/` because their job is now done by HM/PAM/systemd:
 
 What still runs from `Startup_Apps.conf` and why each one was kept there:
 
-- `awww`-daemon (was `swww` before the 26.05 rename) — wallpaper daemon, must precede `swww img`/`wallust` calls.
+- `awww`-daemon (was `swww` before the 26.05 rename) — wallpaper daemon, must precede `awww img`/`wallust` calls.
 - `temp_show.sh` — custom helper, not a packaged daemon.
 - `xhost +SI:localuser:root` — XWayland access control, no systemd equivalent.
 - `kanshi` — has an HM module but would write `~/.config/kanshi/config` and collide with the symlink from `links.nix`. Same conflict class as `swaync`.
@@ -105,7 +105,7 @@ Edit `UserConfigs/Startup_Apps.conf`. Add an `exec-once = <cmd> &` line. Group w
 Rules:
 
 - For services that must run *before* anything else (keyring, portal env vars), keep them above `waybar &`. The current order is load-bearing for the keyring/agent chain.
-- `swww-daemon` must be running before `swww img` is invoked. Already handled at the top of the file.
+- `awww-daemon` must be running before `awww img` is invoked. Already handled at the top of the file.
 - Do not use `exec` (run on reload) for one-shot startups — use `exec-once` (run only at compositor start). `exec` is reserved for things like the `hyprctl setcursor` line that needs to re-apply on reload.
 
 ### Add or change a window rule
@@ -180,7 +180,7 @@ Rules:
 Binaries assumed to be on `$PATH` at session start (most are installed via the nix-config flake, see `~/dotfiles/nix-config/modules/home-manager/pkgs/base.nix`):
 
 - `Hyprland`, `start-hyprland`, `hyprctl`, `hyprlock`, `hypridle`.
-- `swww`, `swww-daemon`, `wallust` — wallpaper + palette pipeline.
+- `awww`, `awww-daemon`, `wallust` — wallpaper + palette pipeline. `swww` was renamed to `awww` in nixpkgs 26.05; all wallpaper scripts call `awww`/`awww-daemon` and read `~/.cache/awww/`. Subcommands are identical to swww (`img`, `query`, `kill`, `restore`, `clear`).
 - `waybar`, `rofi`, `ags`, `wlogout`, `nm-applet`, `blueman-applet`, `ydotoold` — startup apps still in `Startup_Apps.conf`.
 - `swaync`, `hyprpolkitagent`, `kdeconnect-indicator`, `cliphist` — daemons activated as systemd user units via nix-config (see "Daemons now run as systemd user units").
 - `kanshi` — output config daemon.
@@ -199,7 +199,7 @@ Referenced but **not** in this directory:
 - `~/dotfiles/scripts/system/toggle_realmebuds_bind.sh` — bound from `Keybinds.conf:25`.
 - `~/.config/waybar/style/[Dark] Latte-Wallust combined.css` — `initial-boot.sh` symlinks this into `~/.config/waybar/style.css`. Must exist after the waybar dotfiles are linked.
 - `~/.config/rofi/.current_wallpaper` — symlink target, written by `WallustSwww.sh`.
-- `~/.cache/swww/<monitor>` — swww's own cache; `WallustSwww.sh` parses it to discover the current wallpaper.
+- `~/.cache/awww/<monitor>` — awww's own cache; `WallustSwww.sh` parses it to discover the current wallpaper.
 - `/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input` — target of `scripts/temp_sensor`. Hardware-specific.
 
 ## Precise Debug Flow

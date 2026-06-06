@@ -42,6 +42,7 @@ let
     "mpd"
     "kitty"
     "ranger"
+    "yazi"
   ];
 in
 {
