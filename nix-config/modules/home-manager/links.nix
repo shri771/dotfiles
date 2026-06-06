@@ -47,7 +47,9 @@ in
 {
   # --- 1. THE CONFIG SYMLINKS ---
   # Automatically generate symlinks for all apps in the list
-  xdg.configFile = lib.genAttrs configApps mkLink;
+  xdg.configFile = lib.genAttrs configApps mkLink // {
+    "pypr/config.toml".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/hypr/pyprland.toml";
+  };
 
   # --- 2. PACKAGES (TMUX & TMUXIFIER) ---
   home.packages = with pkgs; [

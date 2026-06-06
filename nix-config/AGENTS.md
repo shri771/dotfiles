@@ -11,7 +11,7 @@ This repo is a NixOS + home-manager flake deployed at `/etc/nixos` (system) and 
 - `home-manager/home.nix`: user `shri` entry; imports every `modules/home-manager/*` file.
 - `home-manager/tst-home.nix`: user `tst` entry (test/secondary).
 - `modules/home-manager/core.nix`: nixpkgs config (overlays + unfree), gnome-keyring, kdeconnect, cliphist, batsignal, `xdg.mimeApps`, `xdg.enable`, `xdg.desktopEntries`, `home.sessionVariables`, termfilechooser config, picom XDG-autostart suppression, wants-symlinks for `swaync.service` and `hyprpolkitagent.service` (see "26.05 Migration Notes" below).
-- `modules/home-manager/links.nix`: out-of-store symlinks from `~/dotfiles/<app>` into `~/.config/<app>` (hypr, kitty, ranger, fish, nvim, waybar, etc.). Listed in the `configApps` array; tmuxifier layouts are also linked here.
+- `modules/home-manager/links.nix`: out-of-store symlinks from `~/dotfiles/<app>` into `~/.config/<app>` (hypr, kitty, ranger, fish, nvim, waybar, etc.). Listed in the `configApps` array; tmuxifier layouts are also linked here. Also carries a one-off `pypr/config.toml` link (pyprland moved its config from the legacy `~/.config/hypr/pyprland.toml` to `~/.config/pypr/config.toml`; the link points the new path back at the existing file in the symlinked hypr dir so there's no duplicate).
 - `modules/home-manager/theme.nix`: GTK/Qt/Kvantum/kdeglobals theming.
 - `modules/home-manager/git.nix`: git identity + config.
 - `modules/home-manager/pkgs/base.nix`: core user packages (incl. inline `wlctl` rust derivation, `unstable` channel handle, ranger, dolphin, kdePackages, portals).
@@ -123,7 +123,7 @@ Optional runtime helpers:
 
 ### Package renames / removals applied to `modules/home-manager/pkgs/base.nix`
 
-- `swww` → `awww` (renamed upstream).
+- `swww` → `awww` (renamed upstream). The package ships `awww`/`awww-daemon` binaries (no `swww` compat names) and uses `~/.cache/awww/` instead of `~/.cache/swww/`. All ~10 wallpaper scripts in `~/dotfiles/hypr/` were rewritten `swww`→`awww` (subcommands are identical: `img`, `query`, `kill`, `restore`, `clear`); `scripts/WallustSwww.sh` also had its cache path updated. The `WallustSwww.sh` *filename* keeps its capitalization — only the body changed.
 - `xorg.xprop` → `xprop`, `xorg.xinit` → `xinit` (xorg package set deprecated).
 - `nixfmt-rfc-style` → `nixfmt` (alias collapsed).
 - `mysql80` removed upstream → already on `mysql84`.

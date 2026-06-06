@@ -55,6 +55,7 @@ in
     pkgs.ente-auth
     imagemagick
     socat
+    yazi
     wallust
     wtype
     ydotool
@@ -234,7 +235,9 @@ in
     mysql84
     gofumpt
     # Python
-    (pipx.overridePythonAttrs (_: { doCheck = false; }))
+    (pipx.overridePythonAttrs (_: {
+      doCheck = false;
+    }))
     uv
     (pkgs.python3.withPackages (python-pkgs: [
       python-pkgs.numpy
