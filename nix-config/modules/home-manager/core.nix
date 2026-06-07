@@ -188,7 +188,7 @@ in
         "text/plain" = "nvim.desktop";
 
         # File manager
-        "inode/directory" = "ranger.desktop";
+        "inode/directory" = "yazi.desktop";
       };
     };
 
@@ -201,7 +201,21 @@ in
       Hidden=true
     '';
 
-    # Ranger as the default file manager — desktop entry to launch it in kitty
+    # Yazi as the default file manager — desktop entry to launch it in kitty.
+    # This is what `inode/directory` resolves to, so xdg-open on a folder
+    # (and a Yazi mouse-open of a directory) lands in Yazi, not ranger.
+    xdg.desktopEntries.yazi = {
+      name = "Yazi";
+      genericName = "File Manager";
+      comment = "Blazing-fast terminal file manager";
+      icon = "utilities-terminal";
+      exec = "kitty --class yazi -e yazi %f";
+      terminal = false; # kitty is the terminal; don't double-wrap
+      categories = [ "System" "FileTools" "FileManager" "Utility" ];
+      mimeType = [ "inode/directory" ];
+    };
+
+    # Ranger kept available as a secondary file manager (no longer the default)
     xdg.desktopEntries.ranger = {
       name = "Ranger";
       genericName = "File Manager";
@@ -215,8 +229,8 @@ in
 
     # Hint apps that ask via env var which file manager to use
     home.sessionVariables = {
-      FILE_MANAGER = "ranger";
-      DEFAULT_FILE_MANAGER = "ranger";
+      FILE_MANAGER = "yazi";
+      DEFAULT_FILE_MANAGER = "yazi";
     };
 
     # Configure xdg-desktop-portal-termfilechooser to use ranger via our

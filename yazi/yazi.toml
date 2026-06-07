@@ -32,39 +32,43 @@ edit = [
   { run = '$EDITOR "$@"', desc = "$EDITOR", block = true, for = "unix" },
 ]
 open = [
-  { run = 'xdg-open "$@"', desc = "Open", for = "linux" },
+  { run = 'xdg-open "$@"', desc = "Open (xdg default)", for = "linux" },
 ]
 reveal = [
-  { run = 'xdg-open "$(dirname "$1")"', desc = "Reveal", for = "linux" },
+  { run = 'xdg-open "$(dirname "$0")"', desc = "Reveal", for = "linux" },
 ]
 extract = [
-  { run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },
-]
-play = [
-  { run = 'mpv "$@"', orphan = true, for = "unix" },
+  { run = '7z x -y "$@"', desc = "Extract here (7z)", for = "unix" },
 ]
 
 [open]
 rules = [
-  { name = "*/", use = [ "edit", "open", "reveal" ] },
+  # Directories: normal navigation is handled by the `smart-enter` plugin
+  # (see keymap.toml) which calls Yazi's internal `enter` — it never reaches
+  # this rule. This entry only fires on an explicit "open" (e.g. mouse
+  # double-click); `open` => xdg-open => the inode/directory default app.
+  { url = "*/", use = [ "open", "reveal" ] },
 
-  { mime = "text/*",                  use = [ "edit", "reveal" ] },
-  { mime = "image/*",                 use = [ "open", "reveal" ] },
-  { mime = "video/*",                 use = [ "play", "reveal" ] },
-  { mime = "audio/*",                 use = [ "play", "reveal" ] },
-  { mime = "inode/x-empty",           use = [ "edit", "reveal" ] },
-  { mime = "application/json",        use = [ "edit", "reveal" ] },
-  { mime = "*/javascript",            use = [ "edit", "reveal" ] },
-  { mime = "application/zip",         use = [ "extract", "reveal" ] },
-  { mime = "application/gzip",        use = [ "extract", "reveal" ] },
-  { mime = "application/x-tar",       use = [ "extract", "reveal" ] },
-  { mime = "application/x-bzip",      use = [ "extract", "reveal" ] },
-  { mime = "application/x-bzip2",     use = [ "extract", "reveal" ] },
-  { mime = "application/x-7z-compressed", use = [ "extract", "reveal" ] },
-  { mime = "application/x-rar",       use = [ "extract", "reveal" ] },
-  { mime = "application/xz",          use = [ "extract", "reveal" ] },
+  # Files default to the xdg-open handler so system XDG defaults win;
+  # `edit` ($EDITOR) kept as a secondary "open with" alternate.
+  { mime = "text/*",                      use = [ "open", "edit", "reveal" ] },
+  { mime = "image/*",                     use = [ "open", "reveal" ] },
+  { mime = "video/*",                     use = [ "open", "reveal" ] },
+  { mime = "audio/*",                     use = [ "open", "reveal" ] },
+  { mime = "inode/x-empty",               use = [ "edit", "open", "reveal" ] },
+  { mime = "application/json",            use = [ "open", "edit", "reveal" ] },
+  { mime = "*/javascript",                use = [ "open", "edit", "reveal" ] },
+  { mime = "application/zip",             use = [ "extract", "open", "reveal" ] },
+  { mime = "application/gzip",            use = [ "extract", "open", "reveal" ] },
+  { mime = "application/x-tar",           use = [ "extract", "open", "reveal" ] },
+  { mime = "application/x-bzip",          use = [ "extract", "open", "reveal" ] },
+  { mime = "application/x-bzip2",         use = [ "extract", "open", "reveal" ] },
+  { mime = "application/x-7z-compressed", use = [ "extract", "open", "reveal" ] },
+  { mime = "application/x-rar",           use = [ "extract", "open", "reveal" ] },
+  { mime = "application/xz",              use = [ "extract", "open", "reveal" ] },
 
-  { name = "*", use = [ "open", "reveal" ] },
+  # Everything else: xdg-open
+  { url = "*", use = [ "open", "edit", "reveal" ] },
 ]
 
 [plugin]

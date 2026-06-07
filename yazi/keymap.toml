@@ -1,12 +1,76 @@
-# Yazi keymap configuration
+# Yazi keymap — ported from ~/dotfiles/ranger/rc.conf
 # Docs: https://yazi-rs.github.io/docs/configuration/keymap
+# `prepend_keymap` layers on top of Yazi's built-in defaults (it does NOT
+# replace them), so all the stock keys still work.
+
+# ============================================================================
+# Smart enter — directory => enter (internal), file => open (xdg default).
+# This is what stops folders from being launched in ranger via xdg-open.
+# ============================================================================
+[[mgr.prepend_keymap]]
+on   = [ "l" ]
+run  = "plugin smart-enter"
+desc = "Enter dir, or open file"
 
 [[mgr.prepend_keymap]]
-on   = [ "<C-n>" ]
-run  = 'shell -- ya pub dds-notify --str "$0"'
-desc = "Notify current selection"
+on   = [ "<Right>" ]
+run  = "plugin smart-enter"
+desc = "Enter dir, or open file"
 
-# --- Navigation ---
+[[mgr.prepend_keymap]]
+on   = [ "<Enter>" ]
+run  = "plugin smart-enter"
+desc = "Enter dir, or open file"
+
+[[mgr.prepend_keymap]]
+on   = [ "o" ]
+run  = "plugin smart-enter"
+desc = "Enter dir, or open file"
+
+# ============================================================================
+# Mounting removable media   (ranger: dm -> ranger_udisk_menu)
+# ============================================================================
+[[mgr.prepend_keymap]]
+on   = [ "d", "m" ]
+run  = "shell '$HOME/.config/yazi/scripts/mount.sh' --block"
+desc = "Mount / unmount a device (udisks + fzf)"
+
+# ============================================================================
+# Create / navigate   (ranger: mk, cd/cD via zoxide, go-to maps)
+# ============================================================================
+[[mgr.prepend_keymap]]
+on   = [ "m", "k" ]
+run  = "create"
+desc = "Create file/dir (end name with / for a dir)"
+
+[[mgr.prepend_keymap]]
+on   = [ "z" ]
+run  = "plugin zoxide"
+desc = "Jump to a dir (zoxide)"
+
+[[mgr.prepend_keymap]]
+on   = [ "Z" ]
+run  = "plugin fzf"
+desc = "Jump to a file/dir (fzf)"
+
+# ranger muscle memory: `cd` = type a query, jump to zoxide's top match
+# (no fzf picker). `cD` keeps the fzf fuzzy picker for when you want to browse.
+[[mgr.prepend_keymap]]
+on   = [ "c", "d" ]
+run  = "plugin zquery"
+desc = "Type a query, jump via zoxide (z)"
+
+[[mgr.prepend_keymap]]
+on   = [ "c", "D" ]
+run  = "plugin zoxide"
+desc = "Jump to a dir (zoxide, fzf picker)"
+
+[[mgr.prepend_keymap]]
+on   = [ "." ]
+run  = "hidden toggle"
+desc = "Toggle hidden files"
+
+# Go-to bookmarks (ranger: gd/gs/gp/gv) + a couple of extras
 [[mgr.prepend_keymap]]
 on   = [ "g", "h" ]
 run  = "cd ~"
@@ -19,27 +83,104 @@ desc = "Go to ~/.config"
 
 [[mgr.prepend_keymap]]
 on   = [ "g", "d" ]
-run  = "cd ~/dotfiles"
-desc = "Go to dotfiles"
-
-[[mgr.prepend_keymap]]
-on   = [ "g", "D" ]
 run  = "cd ~/Downloads"
 desc = "Go to Downloads"
 
-# --- Toggle hidden files ---
 [[mgr.prepend_keymap]]
-on   = [ "." ]
-run  = "hidden toggle"
-desc = "Toggle hidden files"
-
-# --- zoxide / fzf jumping (bundled plugins; need zoxide & fzf binaries) ---
-[[mgr.prepend_keymap]]
-on   = [ "z" ]
-run  = "plugin zoxide"
-desc = "Jump via zoxide"
+on   = [ "g", "s" ]
+run  = "cd ~/Pictures/Screenshots"
+desc = "Go to Screenshots"
 
 [[mgr.prepend_keymap]]
-on   = [ "Z" ]
-run  = "plugin fzf"
-desc = "Jump via fzf"
+on   = [ "g", "p" ]
+run  = "cd ~/Pictures"
+desc = "Go to Pictures"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "v" ]
+run  = "cd ~/Videos"
+desc = "Go to Videos"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "D" ]
+run  = "cd ~/dotfiles"
+desc = "Go to dotfiles"
+
+# ============================================================================
+# Image viewer   (ranger: iv -> sxiv current dir, iV -> sxiv-fzf)
+# ============================================================================
+[[mgr.prepend_keymap]]
+on   = [ "i", "v" ]
+run  = "shell 'sxiv -t \"$PWD\"' --orphan"
+desc = "Open current dir in sxiv (thumbnails)"
+
+[[mgr.prepend_keymap]]
+on   = [ "i", "V" ]
+run  = "shell 'sxiv \"$@\"' --orphan"
+desc = "Open selected images in sxiv"
+
+# ============================================================================
+# Archives   (ranger: ex/eX/ec -> ranger_archives, via 7z here)
+# ============================================================================
+[[mgr.prepend_keymap]]
+on   = [ "e", "x" ]
+run  = "shell 'for f in \"$@\"; do 7z x -y \"$f\"; done' --block --confirm"
+desc = "Extract here"
+
+[[mgr.prepend_keymap]]
+on   = [ "e", "X" ]
+run  = "shell 'for f in \"$@\"; do 7z x -y -o\"${f%.*}\" \"$f\"; done' --block --confirm"
+desc = "Extract each into its own dir"
+
+[[mgr.prepend_keymap]]
+on   = [ "e", "c" ]
+run  = "shell '7z a \"${PWD##*/}.7z\" \"$@\"' --block --confirm"
+desc = "Compress selection to <cwd>.7z"
+
+# ============================================================================
+# Misc   (ranger: dD trash, du ncdu, yD dragon)
+# ============================================================================
+[[mgr.prepend_keymap]]
+on   = [ "d", "D" ]
+run  = "remove"
+desc = "Move to trash"
+
+[[mgr.prepend_keymap]]
+on   = [ "d", "u" ]
+run  = "shell 'ncdu' --block"
+desc = "Disk usage (ncdu)"
+
+[[mgr.prepend_keymap]]
+on   = [ "y", "D" ]
+run  = "shell 'dragon-drop -a -x \"$@\"' --orphan"
+desc = "Drag & drop selection (dragon-drop)"
+
+# ============================================================================
+# Yank metadata to clipboard   (ranger: yp/yd/yn/y.)
+# `Y` prefix avoids clobbering Yazi's `y` = yank/copy files.
+# ============================================================================
+[[mgr.prepend_keymap]]
+on   = [ "Y", "p" ]
+run  = "copy path"
+desc = "Copy full path to clipboard"
+
+[[mgr.prepend_keymap]]
+on   = [ "Y", "d" ]
+run  = "copy dirname"
+desc = "Copy parent dir to clipboard"
+
+[[mgr.prepend_keymap]]
+on   = [ "Y", "n" ]
+run  = "copy filename"
+desc = "Copy filename to clipboard"
+
+[[mgr.prepend_keymap]]
+on   = [ "Y", "." ]
+run  = "copy name_without_ext"
+desc = "Copy name without extension"
+
+# Toggle selection of all files (ranger: v)
+[[mgr.prepend_keymap]]
+on   = [ "V" ]
+run  = "toggle_all"
+desc = "Toggle selection of all files"
