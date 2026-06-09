@@ -11,14 +11,12 @@ class = "kitty-dropterm"
 lazy = true
 size = "55% 54%"
 position = "24% 5%"
-focus = true
 
 [scratchpads.whatsie]
 animation = ""
 command = "zapzap"
 class = "com.rtosta.zapzap"
 size = "60% 58%"
-focus = true
 lazy = true
 
 [scratchpads.mixer]
@@ -26,7 +24,6 @@ animation = ""
 command = "pavucontrol"
 class = "org.pulseaudio.pavucontrol"
 size = "45% 46%"
-focus = true
 lazy = true
 position = "30% 33%"
 
@@ -35,7 +32,6 @@ animation = ""
 command = "rquickshare"
 class = "rquickshare"
 size = "40% 45%"
-focus = true
 lazy = true
 
 [scratchpads.cal]
@@ -43,7 +39,6 @@ animation = ""
 command = "qalculate-gtk "
 class = "qalculate-gtk"
 size = "20% 46%"
-focus = true
 lazy = true
 position = "41% 44%"
 
@@ -64,9 +59,6 @@ class = "org.kde.dolphin"
 size = "46% 47%"
 lazy = true
 position = "28% 37%"
-opacity = 0.9
-ontop = false
-focus = true
 
 
 [scratchpads.kde]
@@ -76,8 +68,6 @@ class = "org.kde.kdeconnect.app"
 size = "24% 27%"
 lazy = true
 position = "37% 46%"
-opacity = 0.9
-focus = true
 
 
 [scratchpads.kitty]
@@ -88,4 +78,3 @@ size = "48% 63%"
 position = "24% 24%"
 lazy = true
 # opacity = 0.9
-focus = true

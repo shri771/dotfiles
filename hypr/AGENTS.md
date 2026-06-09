@@ -115,6 +115,9 @@ Edit `UserConfigs/WindowRules.conf`. Match the existing form: `windowrule = <rul
 Rules:
 
 - The file uses the **new** `windowrule` syntax (Hyprland ≥ 0.42 — single namespace, no `windowrulev2`). Do not introduce `windowrulev2` lines.
+- Field names in this dialect use **underscores**: it's `border_color` / `border_size`, NOT `bordercolor` / `bordersize`. The camel-case names fail with `invalid field type` on Hyprland 0.55.
+- `$color*` (wallust palette) only expands in a rule value if the palette is defined when this file is parsed. In `hyprland.conf`, `WindowRules.conf` (source line 17) is read **before** `UserDecorAnimations.conf` (line 18, which sources the wallust palette), so `WindowRules.conf` sources `wallust/wallust-hyprland.conf` at its own top to make `$color*` available for the `border_color` rules. Without it: `cannot parse "$color12" as a color`.
+- **Scratchpad borders not following the wallpaper:** `lazy = true` pyprland scratchpads are created once and persist hidden on the special workspace; Hyprland's auto-reload re-resolves `col.active_border` for windows on regular workspaces but persistent ones keep their creation-time gradient. The `border_color $color12 $color10, match:class ^(<scratchpad class>)$` block fixes it — windowrules are re-applied to all matching windows (including special) on every reload, so wallust colors reach the scratchpads.
 - Class names are case-sensitive and must match `hyprctl clients` exactly. Use `^(Foo|foo)$` rather than guessing.
 - Workspace assignment via `windowrule = workspace N silent` triggers on window *open*; combine with `match:title ...` only if the title is set before the rule needs to fire (some apps re-title late).
 - Floating + sizing + centering for an app is three separate lines, all with the same `match:` — keep them grouped.
@@ -125,6 +128,7 @@ Edit `pyprland.toml`. Add a `[scratchpads.<name>]` block (command, class, size, 
 
 Rules:
 
+- pyprland 3.4 schema dropped several options that older configs used; they now raise "Plugin 'scratchpads' has N config error(s)". Removed/renamed: `focus` (focusing on show is now default — just delete it), `opacity` (use a Hyprland `windowrule = opacity ...` for the class instead), `ontop` (gone; `pinned`, default true, is the closest). Valid 3.4 keys include: `command`, `class`, `animation` (`""` disables the slide), `size`, `position`, `margin`, `offset`, `max_size`, `lazy`, `pinned`, `multi`, `unfocus`, `hysteresis`, `excludes`, `preserve_aspect`, `hide_delay`, `force_monitor`, `smart_focus`, `close_on_hide`, `process_tracking`, `use`, `monitor`. Schema lives in the package: `…/pyprland/plugins/scratchpads/schema.py`.
 - `class` must match what the app actually reports — `hyprctl clients | rg <name>` after launching once.
 - `lazy = true` keeps the app warm in the background. Use it for slow-launching apps (zapzap, dolphin). Avoid for short-lived tools where startup is cheap.
 - After editing `pyprland.toml`, restart pypr: `pkill pypr && pypr &`. `hyprctl reload` does **not** reload pyprland.
