@@ -41,6 +41,7 @@
     openrgb-with-all-plugins
     noto-fonts
     noto-fonts-color-emoji
+    ags
 
     # Window Managers (Binaries)
     awesome

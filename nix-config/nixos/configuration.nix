@@ -280,8 +280,9 @@ in
     enable = true;
     withUWSM = true;
   };
-  services.displayManager.defaultSession = "hyprland-uwsm";
   services.xserver.windowManager.awesome.enable = true;
+
+  services.displayManager.defaultSession = "hyprland-uwsm";
 
   # XDG Desktop Menu (needed for KDE apps like Dolphin to discover installed applications)
   xdg.menus.enable = true;
@@ -404,11 +405,6 @@ in
   # Nfs Server
   services.nfs.server.enable = false;
 
-  # Specific range for GNOME Boxes NAT
-  services.nfs.server.exports = ''
-    /home/shri/downloads 10.0.2.0/24(rw,nohide,insecure,no_subtree_check,async,no_root_squash)
-  '';
-
   # Termbox
   environment.enableAllTerminfo = true;
 
@@ -436,7 +432,7 @@ in
 
   # MySQL
   services.mysql = {
-    enable = true;
+    enable = false;
     package = pkgs.mariadb;
   };
 
@@ -444,7 +440,7 @@ in
   # services.qemuGuest.enable = true;
   # services.spice-vdagentd.enable = true;
 
-  # USB
+  # For the sandisk borg backup
   services.udisks2.enable = true;
   services.udev.extraRules = ''
     # Make all USB block devices non-system and visible to udisks

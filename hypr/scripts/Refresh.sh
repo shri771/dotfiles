@@ -15,14 +15,14 @@ file_exists() {
 }
 
 # Kill already running processes
-_ps=(waybar rofi swaync)
+_ps=(waybar rofi)
 for _prs in "${_ps[@]}"; do
     if pidof "${_prs}" >/dev/null; then
         pkill "${_prs}"
     fi
 done
 
-killall -SIGUSR2 waybar # added since wallust sometimes not applying
+killall -SIGUSR2 waybar 2>/dev/null # added since wallust sometimes not applying
 
 # # quit ags
 # ags -q
@@ -30,21 +30,21 @@ killall -SIGUSR2 waybar # added since wallust sometimes not applying
 # # relaunch ags
 # ags &
 
-# Kill waybar & swaync (yet again) # added since wallust sometimes not applying
-_ps2=(waybar swaync)
+# Kill waybar yet again # added since wallust sometimes not applying
+_ps2=(waybar)
 for _prs2 in "${_ps2[@]}"; do
     if pidof "${_prs2}" >/dev/null; then
         killall "${_prs2}"
     fi
 done
 
-# relaunch swaync
+# Restart systemd-managed swaync
 sleep 0.5
-swaync >/dev/null 2>&1 &
+systemctl --user restart swaync.service >/dev/null 2>&1 || true
 
-#Restart waybar
+# Restart UWSM-managed waybar
 sleep 1
-waybar &
+uwsm app -- waybar >/dev/null 2>&1 &
 
 # Relaunching rainbow borders if the script exists
 sleep 1
