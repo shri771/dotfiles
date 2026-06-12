@@ -28,14 +28,14 @@ in
     # so the ISO build doesn't inherit machine-specific disk mounts.
 
     # Packages
-    ../modules/nixos/user-packages.nix
+    ../modules/pkgs/system-pkg.nix
     ../modules/nixos/sddm.nix
     # Users
     ../modules/nixos/users/shri.nix
     ../modules/nixos/users/tst.nix
 
     # Docker-Container
-    ../modules/nixos/Docker-Container/vaultwarden.nix
+    ../modules/Docker-Container/vaultwarden.nix
     # ../modules/nixos/Docker-Container/linkwarden.nix
 
   ];

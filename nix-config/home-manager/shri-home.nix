@@ -12,13 +12,13 @@
   imports = [
 
     # pkg
-    ../modules/home-manager/pkgs/base.nix
-    ../modules/home-manager/pkgs/extra.nix
+    ../modules/pkgs/user-base-pkg.nix
+    ../modules/pkgs/user-extra-pkg.nix
 
     # Base config
-    ../modules/home-manager/core.nix
-    ../modules/home-manager/theme.nix
-    ../modules/home-manager/links.nix
+    ../modules/home-manager/user-theme.nix
+    ../modules/home-manager/user-default.nix
+    ../modules/home-manager/symlinks.nix
     ../modules/home-manager/git.nix
     ../modules/home-manager/rclone-gdrive.nix
   ];
