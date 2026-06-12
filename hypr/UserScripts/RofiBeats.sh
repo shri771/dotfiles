@@ -8,7 +8,7 @@ ICON_PATH="/home/sh/.icons/Mkos-Big-Sur-Night/128x128@2x/apps/com.googleplaymusi
 
 # Function to display a sub-menu for updating YouTube Music playlists
 show_update_menu() {
-    local update_script="/home/sh/dotfiles/scripts/system/YT_music_update_rofi.sh"
+    local update_script="$HOME/dotfiles/scripts/system/YT_music_update_rofi.sh"
     local update_options="Cheerful\nFeel-Good💖\nRemix\nCurrent\ntest\nall"
 
     local chosen_update
