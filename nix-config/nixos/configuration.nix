@@ -177,9 +177,9 @@ in
 
   # Power Management
   powerManagement.resumeCommands = ''
-    ${pkgs.systemd}/bin/systemctl restart tailscaled
     ${pkgs.systemd}/bin/systemctl restart bluetooth
   '';
+  # ${pkgs.systemd}/bin/systemctl restart tailscaled
 
   # Locale
   i18n.extraLocaleSettings = {
@@ -268,6 +268,9 @@ in
     settings = {
       CPU_SCALING_GOVERNOR_ON_AC = "performance";
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+      START_CHARGE_THRESH_BAT0 = 75;
+      STOP_CHARGE_THRESH_BAT0 = 81;
     };
   };
   services.power-profiles-daemon.enable = false;
@@ -340,7 +343,9 @@ in
   services.flatpak.enable = true;
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
-  services.tailscale.enable = true;
+
+  # TailScale
+  # services.tailscale.enable = true;
 
   # # Install firefox.
   # programs.firefox.enable = true;
