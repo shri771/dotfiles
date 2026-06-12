@@ -156,7 +156,7 @@ in
   networking.hostName = "shri-nix";
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
+  # Time-Zone
   time.timeZone = "Asia/Kolkata";
 
   # Select internationalisation properties.
@@ -206,8 +206,15 @@ in
   services.xserver.enable = true;
 
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
+  # services.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
 
   # Passwordless sudo for borg backup (tmux session has no TTY for password input)
   security.sudo.extraRules = [
@@ -238,13 +245,6 @@ in
       ];
     }
   ];
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
 
   # Firmware
   hardware.enableAllFirmware = true;
