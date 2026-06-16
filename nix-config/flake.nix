@@ -32,6 +32,15 @@
       ...
     }@inputs:
     let
+      pkgsFor =
+        system:
+        import nixpkgs {
+          inherit system;
+          config = {
+            allowUnfree = true;
+            android_sdk.accept_license = true;
+          };
+        };
       # Supported systems for your flake packages, shell, etc.
       systems = [
         "aarch64-linux"
@@ -103,7 +112,7 @@
       homeConfigurations = {
         "shri@shri-nix" = home-manager.lib.homeManagerConfiguration {
           # Home-manager requires 'pkgs' instance
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          pkgs = pkgsFor "x86_64-linux";
           extraSpecialArgs = { inherit inputs; };
           modules = [
             # > Our main home-manager configuration file <
@@ -112,7 +121,7 @@
         };
         "tst@shri-nix" = home-manager.lib.homeManagerConfiguration {
           # Home-manager requires 'pkgs' instance
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          pkgs = pkgsFor "x86_64-linux";
           extraSpecialArgs = { inherit inputs; };
           modules = [
             # > Our main home-manager configuration file <

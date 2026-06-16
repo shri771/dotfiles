@@ -48,5 +48,9 @@
     hyprland
     adwaita-qt
     adwaita-qt6
+
+    ## Android
+    android-tools
+
   ];
 }

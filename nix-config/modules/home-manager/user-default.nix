@@ -86,6 +86,7 @@ in
         home-manager.backupFileExtension = "backup"; # Correct placement
         # Disable if you don't want unfree packages
         allowUnfree = true;
+        android_sdk.accept_license = true;
       };
     };
 
@@ -211,7 +212,12 @@ in
       icon = "utilities-terminal";
       exec = "kitty --class yazi -e yazi %f";
       terminal = false; # kitty is the terminal; don't double-wrap
-      categories = [ "System" "FileTools" "FileManager" "Utility" ];
+      categories = [
+        "System"
+        "FileTools"
+        "FileManager"
+        "Utility"
+      ];
       mimeType = [ "inode/directory" ];
     };
 
@@ -223,7 +229,12 @@ in
       icon = "utilities-terminal";
       exec = "kitty --class ranger -e ranger %f";
       terminal = false; # kitty is the terminal; don't double-wrap
-      categories = [ "System" "FileTools" "FileManager" "Utility" ];
+      categories = [
+        "System"
+        "FileTools"
+        "FileManager"
+        "Utility"
+      ];
       mimeType = [ "inode/directory" ];
     };
 
@@ -231,6 +242,8 @@ in
     home.sessionVariables = {
       FILE_MANAGER = "yazi";
       DEFAULT_FILE_MANAGER = "yazi";
+      ANDROID_HOME = "$HOME/.nix-profile/libexec/android-sdk";
+      ANDROID_SDK_ROOT = "$HOME/.nix-profile/libexec/android-sdk";
     };
 
     # Configure xdg-desktop-portal-termfilechooser to use ranger via our

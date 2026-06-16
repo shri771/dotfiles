@@ -193,8 +193,6 @@ in
     ncdu
     cargo
 
-    android-tools
-
     # --- 7. Apps & GUI Tools ---
     qrencode
     qalculate-gtk
@@ -249,7 +247,7 @@ in
     openapi-generator-cli
     # Misc Dev
     unstable.nodejs
-    jdk
+    jdk17
     nil
     nixfmt
     languagetool

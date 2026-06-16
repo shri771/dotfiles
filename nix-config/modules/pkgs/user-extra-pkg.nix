@@ -12,6 +12,11 @@ let
     system = pkgs.stdenv.hostPlatform.system;
     config.allowUnfree = true;
   };
+  androidSdk = pkgs.androidenv.composeAndroidPackages {
+    platformVersions = [ "34" ];
+    buildToolsVersions = [ "34.0.0" ];
+    includeNDK = false;
+  };
 in
 {
   home.packages = with pkgs; [
@@ -43,6 +48,10 @@ in
     gnome-boxes
     virt-manager
     easyeffects
+    wineWow64Packages.waylandFull
+    wineWow64Packages.fonts
+    winetricks
+    bottles
 
     # --- Development & Containers ---
     lazydocker
@@ -62,5 +71,9 @@ in
     typescript
     variety
     ostree
+
+    ## Android Dev
+    androidSdk.androidsdk
+    flutter
   ];
 }
