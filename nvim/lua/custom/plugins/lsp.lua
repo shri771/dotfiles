@@ -97,6 +97,9 @@ return {
       local servers = {
         clangd = {},
         marksman = {},
+        ltex_ls = {
+          filetypes = { "markdown", "text", "latex", "bibtex" },
+        },
 
         pyright = {},
         html = {}, -- Added HTML LSP (replaces htmlhint)

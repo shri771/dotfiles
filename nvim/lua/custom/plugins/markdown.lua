@@ -25,10 +25,4 @@ return {
     },
   },
 
-  -- ltex.nvim: Grammar/spell checking LSP (wraps ltex-ls + LanguageTool)
-  {
-    "erooke/ltex.nvim",
-    ft = { "markdown", "text", "latex", "bibtex" },
-    opts = {},
-  },
 }
