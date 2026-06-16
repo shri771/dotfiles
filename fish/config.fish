@@ -514,9 +514,12 @@ if command -q zoxide
 end
 # This sets GOBIN and exports it for other apps (like Neovim) to see
 set -gx GOBIN "$HOME/go/bin"
+set -gx ANDROID_HOME "$HOME/.nix-profile/libexec/android-sdk"
+set -gx ANDROID_SDK_ROOT "$ANDROID_HOME"
 
 # This adds the GOBIN directory to your PATH
 fish_add_path "$GOBIN"
+fish_add_path "$ANDROID_HOME/platform-tools" "$ANDROID_HOME/cmdline-tools/latest/bin" "$ANDROID_HOME/emulator"
 
 if test -f "$HOME/.tenv.completion.fish"
     source "$HOME/.tenv.completion.fish"

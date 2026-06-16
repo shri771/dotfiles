@@ -297,5 +297,6 @@ in
     unstable.gemini-cli
     unstable.antigravity
     unstable.claude-code
+    unstable.antigravity-cli
   ];
 }
