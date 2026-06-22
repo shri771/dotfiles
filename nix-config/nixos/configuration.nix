@@ -110,6 +110,9 @@ in
 
     # Use the latest Linux kernel package set
     kernelPackages = pkgs.linuxPackages_latest;
+    extraModulePackages = with config.boot.kernelPackages; [
+      v4l2loopback
+    ];
 
     # --- PLYMOUTH & GUI BOOT SETTINGS ---
 
@@ -123,6 +126,7 @@ in
     initrd.kernelModules = [
       "i915"
       "dm-mod"
+      "v4l2loopback"
     ];
 
     # Silence the scrolling text for a clean visual boot
@@ -247,15 +251,33 @@ in
     }
   ];
 
+  ## For foliate
+
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      avahi # libavahi-client.so.3, libavahi-common.so.3
+      alsa-lib # libasound.so.2
+      libdrm # libdrm.so.2
+      qt5.qtbase # libQt5Widgets, libQt5Gui, libQt5Network, libQt5Core
+      stdenv.cc.cc # libstdc++.so.6
+      qt5.qtwayland
+      libusb1
+      libGL
+      udev
+      v4l-utils
+      libpulseaudio
+    ];
+  };
+
   # Firmware
   hardware.enableAllFirmware = true;
 
   # Touchpad
   services.libinput.enable = true;
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # libglib glibc
-  ];
+  # programs.nix-ld.libraries = with pkgs; [
+  #   # libglib glibc
+  # ];
 
   # Enable Zram
   zramSwap = {

@@ -40,6 +40,7 @@ Rules:
 
 - System-only options (`services.*`, `programs.*` outside HM, `boot.*`, `networking.*`, `hardware.*`) belong here. HM has its own `services.*` namespace — do not confuse the two.
 - Machine-specific facts (disks, GPU) go in `nixos/hardware.nix` / `disk-config.nix`, not `configuration.nix`, so the ISO can re-use `configuration.nix`.
+- Out-of-tree kernel modules in `boot.extraModulePackages` must come from `config.boot.kernelPackages`, not `pkgs`, so they build against the selected kernel package set. Example: `boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];`.
 - New host: add an entry to `nixosConfigurations` in `flake.nix`, do **not** edit `shri-nix` to be host-conditional.
 
 ### Add or change a user-level setting (HM)

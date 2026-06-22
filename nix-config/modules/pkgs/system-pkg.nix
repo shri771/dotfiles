@@ -52,5 +52,7 @@
     ## Android
     android-tools
 
+    appimage-run
+
   ];
 }
