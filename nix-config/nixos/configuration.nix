@@ -113,6 +113,9 @@ in
     extraModulePackages = with config.boot.kernelPackages; [
       v4l2loopback
     ];
+    extraModprobeConfig = ''
+      options v4l2loopback exclusive_caps=1 devices=1 card_label="Iriun Webcam,Iriun Webcam #2,Iriun Webcam #3,Iriun Webcam #4"
+    '';
 
     # --- PLYMOUTH & GUI BOOT SETTINGS ---
 
@@ -126,7 +129,6 @@ in
     initrd.kernelModules = [
       "i915"
       "dm-mod"
-      "v4l2loopback"
     ];
 
     # Silence the scrolling text for a clean visual boot
@@ -142,6 +144,8 @@ in
     # Kernel modules that should be loaded during boot
     kernelModules = [
       "i2c-dev"
+      "v4l2loopback"
+      "snd-aloop"
     ];
   };
 
@@ -263,6 +267,7 @@ in
       stdenv.cc.cc # libstdc++.so.6
       qt5.qtwayland
       libusb1
+      libusbmuxd
       libGL
       udev
       v4l-utils
