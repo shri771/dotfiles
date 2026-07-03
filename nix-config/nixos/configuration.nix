@@ -524,8 +524,19 @@ in
         to = 1764;
       }
     ];
+
+    ## For Pi-hole
+    allowedTCPPorts = [
+      53
+      8881
+      884
+    ];
+    allowedUDPPorts = [ 53 ];
     allowedUDPPortRanges = allowedTCPPortRanges;
   };
+
+  ## For Pi-hole (disbale conflicting ports(docker proxy))
+  services.resolved.enable = false;
 
   services.avahi = {
     enable = true;

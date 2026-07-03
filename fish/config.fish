@@ -555,6 +555,7 @@ end
 
 # Export Pass keys
 set -x BORG_PASSPHRASE (pass borg/passphrase)
+set -x  ANTHROPIC_API_KEY (pass api/anthropic)
 set -x  HARBOR_SATELLITE (pass api/harbor-satellites)
 
 
