@@ -30,6 +30,7 @@ in
     # Packages
     ../modules/pkgs/system-pkg.nix
     ../modules/nixos/gnome.nix
+    ../modules/nixos/faillock.nix
     # Users
     ../modules/nixos/users/shri.nix
     ../modules/nixos/users/tst.nix

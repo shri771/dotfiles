@@ -17,7 +17,7 @@ This repo is a NixOS + home-manager flake deployed at `/etc/nixos` (system) and 
 - `modules/home-manager/pkgs/base.nix`: core user packages (incl. inline `wlctl` rust derivation, `unstable` channel handle, ranger, dolphin, kdePackages, portals).
 - `modules/home-manager/pkgs/extra.nix`: optional/extra user packages.
 - `modules/nixos/users/shri.nix` / `tst.nix`: user accounts, groups, shell.
-- `modules/nixos/sddm.nix`: login manager.
+- `modules/nixos/gnome.nix`: login manager + desktop — GDM greeter plus a minimal GNOME (`services.desktopManager.gnome.enable` with `core-apps`/`core-developer-tools`/`games` disabled, so it's shell-only). Hyprland remains the default session via `services.displayManager.defaultSession = "hyprland-uwsm"` in `configuration.nix`; GNOME/Awesome are selectable from GDM. (Replaced the former SDDM + Ittu-theme module.)
 - `modules/home-manager/rclone-gdrive.nix`: `shri`-specific Home Manager user units for Google Drive via rclone (`shri77:`, `/home/shri/Documents`, mount at `/home/shri/Drive/Shri77`).
 - `modules/nixos/Docker-Container/{vaultwarden,linkwarden}.nix`: containerised services.
 - `docs/rclone-gdrive.md`: operator guide for `rclone config`, first `--resync`, mount, timer, script locations, and verification commands.
