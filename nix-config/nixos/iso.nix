@@ -14,7 +14,7 @@ in
 {
   imports = [
     # Minimal live ISO base — no Plasma, no Calamares
-    # Your configuration.nix provides SDDM + Hyprland
+    # Your configuration.nix provides GDM + Hyprland
     "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
   ];
 

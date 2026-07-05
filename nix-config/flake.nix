@@ -86,7 +86,7 @@
           ];
         };
 
-        # Custom live ISO: Hyprland + SDDM + dotfiles + offline install
+        # Custom live ISO: Hyprland + GDM + dotfiles + offline install
         iso = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;

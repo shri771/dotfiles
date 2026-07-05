@@ -29,7 +29,7 @@ in
 
     # Packages
     ../modules/pkgs/system-pkg.nix
-    ../modules/nixos/sddm.nix
+    ../modules/nixos/gnome.nix
     # Users
     ../modules/nixos/users/shri.nix
     ../modules/nixos/users/tst.nix
