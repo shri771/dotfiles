@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<artist>
+  <biography />
+  <outline />
+  <lockdata>false</lockdata>
+  <dateadded>2026-07-08 10:35:25</dateadded>
+  <title>One Direction</title>
+  <runtime>4</runtime>
+  <genre>Music</genre>
+  <musicbrainzartistid>1a425bbd-cca4-4b2c-aeb7-71cb176c828a</musicbrainzartistid>
+  <art>
+    <poster>/config/metadata/artists/One Direction/folder.jpg</poster>
+    <fanart>/config/metadata/artists/One Direction/backdrop.jpg</fanart>
+  </art>
+</artist>

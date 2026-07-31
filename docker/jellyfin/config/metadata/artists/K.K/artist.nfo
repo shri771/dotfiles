@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<artist>
+  <biography />
+  <outline />
+  <lockdata>false</lockdata>
+  <dateadded>2026-07-16 15:52:07</dateadded>
+  <title>K.K. </title>
+  <runtime>4</runtime>
+  <genre>Music</genre>
+  <musicbrainzartistid>172e980e-ba97-4adb-acb0-d59733c599b6</musicbrainzartistid>
+  <art>
+    <poster>/config/metadata/artists/K.K/folder.jpg</poster>
+    <fanart>/config/metadata/artists/K.K/backdrop.jpg</fanart>
+  </art>
+</artist>

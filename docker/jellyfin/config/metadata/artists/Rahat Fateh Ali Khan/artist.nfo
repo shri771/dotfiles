@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<artist>
+  <biography />
+  <outline />
+  <lockdata>false</lockdata>
+  <dateadded>2026-07-08 10:36:13</dateadded>
+  <title>Rahat Fateh Ali Khan</title>
+  <runtime>10</runtime>
+  <genre>Music</genre>
+  <musicbrainzartistid>014431e3-c5a3-4a57-b86b-fe8f2e3253ff</musicbrainzartistid>
+  <art>
+    <poster>/config/metadata/artists/Rahat Fateh Ali Khan/folder.jpg</poster>
+    <fanart>/config/metadata/artists/Rahat Fateh Ali Khan/backdrop.jpg</fanart>
+  </art>
+</artist>

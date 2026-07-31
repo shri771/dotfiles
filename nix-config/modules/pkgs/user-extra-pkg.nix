@@ -72,6 +72,8 @@ in
     variety
     ostree
 
+    google-chrome
+
     ## Android Dev
     androidSdk.androidsdk
     flutter

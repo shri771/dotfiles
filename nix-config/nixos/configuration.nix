@@ -531,8 +531,12 @@ in
       53
       8881
       884
+      8096 # Jellyfin (web UI)
     ];
-    allowedUDPPorts = [ 53 ];
+    allowedUDPPorts = [
+      53
+      7359 # Jellyfin (client auto-discovery)
+    ];
     allowedUDPPortRanges = allowedTCPPortRanges;
   };
 

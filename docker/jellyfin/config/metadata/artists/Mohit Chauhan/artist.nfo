@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<artist>
+  <biography />
+  <outline />
+  <lockdata>false</lockdata>
+  <dateadded>2026-07-08 10:35:01</dateadded>
+  <title>Mohit Chauhan</title>
+  <runtime>10</runtime>
+  <genre>Music</genre>
+  <musicbrainzartistid>1dd28f27-4ab3-4a3f-8174-4ccd571a9dce</musicbrainzartistid>
+  <art>
+    <poster>/config/metadata/artists/Mohit Chauhan/folder.jpg</poster>
+    <fanart>/config/metadata/artists/Mohit Chauhan/backdrop.jpg</fanart>
+  </art>
+</artist>

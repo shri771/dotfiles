@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<artist>
+  <biography />
+  <outline />
+  <lockdata>false</lockdata>
+  <dateadded>2026-07-08 10:37:43</dateadded>
+  <title>Teriyaki Boyz</title>
+  <runtime>9</runtime>
+  <genre>Music</genre>
+  <musicbrainzartistid>afb3102c-b7e6-4140-b825-7f84ea97f73f</musicbrainzartistid>
+  <art>
+    <poster>/config/metadata/artists/Teriyaki Boyz/folder.jpg</poster>
+    <fanart>/config/metadata/artists/Teriyaki Boyz/backdrop.jpg</fanart>
+  </art>
+</artist>

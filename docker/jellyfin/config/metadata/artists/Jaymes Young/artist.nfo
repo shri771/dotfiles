@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<artist>
+  <biography />
+  <outline />
+  <lockdata>false</lockdata>
+  <dateadded>2026-07-08 10:33:56</dateadded>
+  <title>Jaymes Young</title>
+  <runtime>8</runtime>
+  <genre>Music</genre>
+  <musicbrainzartistid>1c494195-f8b9-456f-8516-42695bfae57b</musicbrainzartistid>
+  <art>
+    <poster>/config/metadata/artists/Jaymes Young/folder.jpg</poster>
+    <fanart>/config/metadata/artists/Jaymes Young/backdrop.jpg</fanart>
+  </art>
+</artist>

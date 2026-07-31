@@ -3,12 +3,14 @@
 { config, pkgs, lib, ... }:
 let
   # Services whose PAM stack should enforce lockout.
+  # NOTE: gdm-password is intentionally excluded — it's a stub that delegates
+  # to the `login` stack (its only rule is `login`, it has no `unix` to anchor
+  # against), so GDM logins are already covered transitively via `login`.
   services = [
     "login"
     "sudo"
     "su"
     "sshd"
-    "gdm-password"
   ];
 
   faillock = "${pkgs.pam}/lib/security/pam_faillock.so";

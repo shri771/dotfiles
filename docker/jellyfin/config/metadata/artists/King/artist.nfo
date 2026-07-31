@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<artist>
+  <biography />
+  <outline />
+  <lockdata>false</lockdata>
+  <dateadded>2026-07-08 10:34:18</dateadded>
+  <title>King</title>
+  <runtime>14</runtime>
+  <genre>Music</genre>
+  <musicbrainzartistid>a4ac255f-9775-4c16-8642-7f51502e45dd</musicbrainzartistid>
+  <art>
+    <poster>/config/metadata/artists/King/folder.jpg</poster>
+  </art>
+</artist>

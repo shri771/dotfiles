@@ -1,0 +1,51 @@
+1
+00:05:00,958 --> 00:05:04,083
+Berlin and the Lady with an Ermine
+Saundarya aur sadgun ka prateek
+
+2
+00:08:47,416 --> 00:08:51,958
+{\an8}Money Heist
+Berlin aur The Lady with an Ermine
+
+3
+00:16:35,708 --> 00:16:39,333
+{\an8}Kal raat 8 baje. Aapki naav par dinner.
+500,000 ke badle.
+
+4
+00:26:26,833 --> 00:26:28,833
+Rendering poorn huyi
+
+5
+00:31:32,708 --> 00:31:34,708
+X-ray gamma kiranen
+
+6
+00:39:29,750 --> 00:39:35,166
+<i>Goliyon ki bauchhar mein tum daude,</i>
+<i>meri jaan bachane, Azabache</i>
+
+7
+00:39:38,250 --> 00:39:40,541
+<i>Jo tumne mere liye kiya,</i>
+
+8
+00:39:40,875 --> 00:39:45,541
+<i>mere raftaar ke saudagar,</i>
+<i>na bhoolunga main</i>
+
+9
+00:39:47,000 --> 00:39:53,333
+<i>Main teri jaan na bacha saka,</i>
+<i>yahi dard mujhe rulaata hai</i>
+
+10
+00:39:56,666 --> 00:40:02,875
+<i>Isliye, Prieto Azabache,</i>
+<i>tujhko na bhoolunga main</i>
+
+11
+00:46:34,041 --> 00:46:35,291
+Sahi Code
+
