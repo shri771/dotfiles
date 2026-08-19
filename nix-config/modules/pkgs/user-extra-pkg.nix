@@ -74,6 +74,8 @@ in
 
     google-chrome
 
+    mongodb
+
     ## Android Dev
     androidSdk.androidsdk
     flutter
