@@ -1,9 +1,12 @@
 {
   description = "Kyverno development shell — Go toolchain matching kyverno/go.mod";
 
-  inputs.nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+  # Pinned to the same revision your system flake already uses, so it resolves
+  # from the local store/cache instead of hitting the GitHub API (rate limits).
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/ffa10e26ae11d676b2db836259889f1f571cb14f";
 
-  outputs = { self, nixpkgs }:
+  outputs =
+    { self, nixpkgs }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -27,7 +30,7 @@
         ];
 
         shellHook = ''
-          echo "🛡️  kyverno dev shell → $(go version | awk '{print $3}')"
+          # echo "🛡️  kyverno dev shell → $(go version | awk '{print $3}')"
         '';
       };
     };
