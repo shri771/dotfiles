@@ -20,18 +20,21 @@ in
 
     # --- CADDY & FIREWALL CONFIGURATION ---
     networking.firewall.allowedTCPPorts = [
-      80
-      443
       28880
       28843
     ];
     services.caddy = {
       enable = true;
+      # Disable the automatic HTTP->HTTPS redirect so Caddy stops binding port 80.
+      # (tls internal needs no ACME HTTP-01 challenge, so port 80 isn't required.)
+      globalConfig = ''
+        auto_https disable_redirects
+      '';
       # IMPORTANT: Change this to the IP address of your NixOS machine
-      virtualHosts."shri-nix, shri-nix.local, shri-nix:28880, shri-nix.local:28843" = {
+      virtualHosts."shri-nix:28880, shri-nix.local:28843" = {
         extraConfig = ''
           tls internal
-          reverse_proxy 127.0.0.1:8881
+          reverse_proxy 127.0.0.1:28881
         '';
       };
     };
@@ -45,10 +48,12 @@ in
         autoStart = true;
 
         ports = [
-          "127.0.0.1:8881:80"
+          "127.0.0.1:28881:28881"
         ];
 
         environment = {
+          # Move Vaultwarden's internal listener off the default port 80.
+          ROCKET_PORT = "28881";
           SIGNUPS_ALLOWED = "false";
           LOG_LEVEL = "info";
           WEBSOCKET_ENABLED = "true";

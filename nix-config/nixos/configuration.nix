@@ -538,6 +538,10 @@ in
       7359 # Jellyfin (client auto-discovery)
     ];
     allowedUDPPortRanges = allowedTCPPortRanges;
+
+    # Disable reverse path filtering so asymmetric VPN/container/Kubernetes/kind networking is not dropped.
+    checkReversePath = false;
+
   };
 
   ## For Pi-hole (disbale conflicting ports(docker proxy))

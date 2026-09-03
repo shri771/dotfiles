@@ -74,7 +74,8 @@ in
 
     google-chrome
 
-    mongodb
+    # mongodb
+    qbittorrent
 
     ## Android Dev
     androidSdk.androidsdk
