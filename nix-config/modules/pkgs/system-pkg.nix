@@ -25,9 +25,7 @@
 
     # Desktop Applications
     brave
-    (vivaldi.override {
-      proprietaryCodecs = true;
-    })
+    vivaldi
     kdePackages.kate
     neovim # Also in configuration.nix, but listed here for completeness
 

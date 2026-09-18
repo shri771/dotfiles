@@ -20,7 +20,9 @@
     ../modules/home-manager/user-default.nix
     ../modules/home-manager/symlinks.nix
     ../modules/home-manager/git.nix
-    ../modules/home-manager/rclone-gdrive.nix
+
+    ## Systemd's
+    # ../modules/home-manager/rclone-gdrive.nix
   ];
 
   config = {
