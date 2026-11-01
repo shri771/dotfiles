@@ -66,6 +66,9 @@ in
     };
   };
 
+  # Minimal Steam setup; Proton can be selected per game in Steam.
+  # programs.steam.enable = true;
+
   nix =
     let
       flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
