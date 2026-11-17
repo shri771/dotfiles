@@ -556,8 +556,10 @@ end
 # Export Pass keys
 set -x BORG_PASSPHRASE (pass borg/passphrase)
 set -x  CLAUDE_CODE_OAUTH_TOKEN (pass api/anthropic)
+# set -x  ANTHROPIC_API_KEY (pass api/anthropic-aayush)
 # set -x  HARBOR_SATELLITE (pass api/harbor-satellites)
 set -x ANTHROPIC_API_KEY ""
+# set -x CLAUDE_CODE_OAUTH_TOKEN ""
 
 
 ## Borg
